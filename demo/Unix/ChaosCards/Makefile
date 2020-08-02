@@ -14,7 +14,7 @@ build/card.exe: build/Makefile main.cpp Player.cpp Player.h card.generated.h
 translate: card.generated.h
 
 card.generated.h: card.xc
-	java -Xss6M -jar ../../ableC.jar card.xc --show-lifted-pp > card.generated.h
+	java -Xss6M -jar ../../../ableC.jar card.xc --show-lifted-pp > card.generated.h
 		
 	
 prepare: build/Makefile
