@@ -182,7 +182,7 @@ public:
 #define TARGET_IS_SHIELDED 0x8000u 				// 0b1000000000000000
 #define TARGET_IS_POISONOUS 0x10000u 			// 0b10000000000000000
 #define TARGET_IS_LIFESTEAL 0x20000u 			// 0b100000000000000000
-	#define TARGET_ANY_ATTR_TYPE 0x3F800u 					// 0b111111100000000000
+	#define TARGET_ANY_ABBL_TYPE 0x3F800u 					// 0b111111100000000000
 	#define	TARGET_NOT_CHARGE 0x3F000u 						// 0b111111000000000000
 	#define	TARGET_NOT_TAUNT 0x3E800u 						// 0b111110100000000000
 	#define TARGET_NOT_STEALTH 0x3D800u						// 0b111101100000000000
@@ -190,44 +190,44 @@ public:
 	#define TARGET_NOT_SHIELDED 0x37800u 					// 0b110111100000000000
 	#define TARGET_NOT_POISONOUS 0x2F800u 					// 0b101111100000000000
 	#define TARGET_NOT_LIFESTEAL 0x1F800u 					// 0b011111100000000000
-	#define TARGET_SPELL_ATTR 0x34000u						// 0b110100000000000000
-	#define TARGETABLE_CHAR_ATTR 0x39800u					// 0b111001100000000000 (targeting one's own stealth minion is allowed but we do not include such dedicated targetting condition)
-	#define TARGET_ANY_MINION_ATTR_TYPE (TARGET_ANY_MINION_TYPE|TARGET_ANY_ATTR_TYPE)
-	#define TARGET_ANY_ALLE_ATTR_TYPE (TARGET_ANY_ALLE_TYPE|TARGET_ANY_ATTR_TYPE)
-	#define TARGET_ANY_CARD_MINION_ATTR_TYPE (TARGET_ANY_CARD_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ATTR_TYPE)
-	#define TARGET_ANY_ALLE_MINION_ATTR_TYPE (TARGET_ANY_ALLE_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ATTR_TYPE)
-	#define TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE (TARGET_ANY_CARD_TYPE|TARGET_ANY_ALLE_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ATTR_TYPE)
+	#define TARGET_SPELL_ABBL 0x34000u						// 0b110100000000000000
+	#define TARGETABLE_CHAR_ABBL 0x39800u					// 0b111001100000000000 (targeting one's own stealth minion is allowed but we do not include such dedicated targetting condition)
+	#define TARGET_ANY_MINION_ABBL_TYPE (TARGET_ANY_MINION_TYPE|TARGET_ANY_ABBL_TYPE)
+	#define TARGET_ANY_ALLE_ABBL_TYPE (TARGET_ANY_ALLE_TYPE|TARGET_ANY_ABBL_TYPE)
+	#define TARGET_ANY_CARD_MINION_ABBL_TYPE (TARGET_ANY_CARD_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ABBL_TYPE)
+	#define TARGET_ANY_ALLE_MINION_ABBL_TYPE (TARGET_ANY_ALLE_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ABBL_TYPE)
+	#define TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE (TARGET_ANY_CARD_TYPE|TARGET_ANY_ALLE_TYPE|TARGET_ANY_MINION_TYPE|TARGET_ANY_ABBL_TYPE)
 // filters (the aboves are usually combined using bitwise ors (as components), but these are combined using bitwise ands (as full flags))
-#define FIELD_COND_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_ATTR_TYPE)
-#define HAND_COND_FILTER (TARGET_POS_HAND|TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE)
-#define DECK_COND_FILTER (TARGET_POS_DECK|TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE)
-#define HAND_OR_DECK_COND_FILTER (TARGET_POS_HAND_OR_DECK|TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE)
-#define NOT_HAND_COND_FILTER (TARGET_NOT_HAND|TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE)
-#define NOT_DECK_COND_FILTER (TARGET_NOT_DECK|TARGET_ANY_CARD_ALLE_MINION_ATTR_TYPE)
+#define FIELD_COND_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_ABBL_TYPE)
+#define HAND_COND_FILTER (TARGET_POS_HAND|TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE)
+#define DECK_COND_FILTER (TARGET_POS_DECK|TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE)
+#define HAND_OR_DECK_COND_FILTER (TARGET_POS_HAND_OR_DECK|TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE)
+#define NOT_HAND_COND_FILTER (TARGET_NOT_HAND|TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE)
+#define NOT_DECK_COND_FILTER (TARGET_NOT_DECK|TARGET_ANY_CARD_ALLE_MINION_ABBL_TYPE)
 #define LEADER_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_LEADER|TARGET_ANY_ALLE_TYPE|TARGET_NOT_STEALTH)
-#define MINION_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_ANY_ALLE_MINION_ATTR_TYPE)
-#define CHAR_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_ATTR_TYPE)
-#define SPELL_COND_FILTER (TARGET_POS_HAND_OR_DECK|TARGET_IS_SPELL|TARGET_ANY_ALLE_TYPE|TARGET_SPELL_ATTR)
-#define NOT_LEADER_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_NOT_LEADER|TARGET_ANY_ALLE_MINION_ATTR_TYPE)
-#define ALLY_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_ALLY|TARGET_ANY_CARD_MINION_ATTR_TYPE)
-#define OPPO_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_OPPO|TARGET_ANY_CARD_MINION_ATTR_TYPE)
-#define BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_BEAST|TARGET_ANY_ALLE_ATTR_TYPE)
-#define DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DRAGON|TARGET_ANY_ALLE_ATTR_TYPE)
-#define DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DEMON|TARGET_ANY_ALLE_ATTR_TYPE)
-#define NOT_BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_BEAST|TARGET_ANY_ALLE_ATTR_TYPE)
-#define NOT_DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DRAGON|TARGET_ANY_ALLE_ATTR_TYPE)
-#define NOT_DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DEMON|TARGET_ANY_ALLE_ATTR_TYPE)
-#define NOT_CHARGE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_CHARGE|TARGET_ANY_ALLE_MINION_TYPE) // this means charge is applicable but not present, similar for the below series about attribute keywords
+#define MINION_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_ANY_ALLE_MINION_ABBL_TYPE)
+#define CHAR_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_ABBL_TYPE)
+#define SPELL_COND_FILTER (TARGET_POS_HAND_OR_DECK|TARGET_IS_SPELL|TARGET_ANY_ALLE_TYPE|TARGET_SPELL_ABBL)
+#define NOT_LEADER_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_NOT_LEADER|TARGET_ANY_ALLE_MINION_ABBL_TYPE)
+#define ALLY_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_ALLY|TARGET_ANY_CARD_MINION_ABBL_TYPE)
+#define OPPO_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_OPPO|TARGET_ANY_CARD_MINION_ABBL_TYPE)
+#define BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_BEAST|TARGET_ANY_ALLE_ABBL_TYPE)
+#define DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DRAGON|TARGET_ANY_ALLE_ABBL_TYPE)
+#define DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DEMON|TARGET_ANY_ALLE_ABBL_TYPE)
+#define NOT_BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_BEAST|TARGET_ANY_ALLE_ABBL_TYPE)
+#define NOT_DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DRAGON|TARGET_ANY_ALLE_ABBL_TYPE)
+#define NOT_DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DEMON|TARGET_ANY_ALLE_ABBL_TYPE)
+#define NOT_CHARGE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_CHARGE|TARGET_ANY_ALLE_MINION_TYPE) // this means charge is applicable but not present, similar for the below series about ability keywords
 #define NOT_TAUNT_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_TAUNT|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_STEALTH_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_STEALTH|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_UNTARGETABLE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CARD_TYPE|TARGET_NOT_UNTARGETABLE|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_SHIELDED_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_SHIELDED|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_POISONOUS_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CARD_TYPE|TARGET_NOT_POISONOUS|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_LIFESTEAL_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CARD_TYPE|TARGET_NOT_LIFESTEAL|TARGET_ANY_ALLE_MINION_TYPE)
-#define PLAY_CHAR_TARGET_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_TYPE|TARGETABLE_CHAR_ATTR)
+#define PLAY_CHAR_TARGET_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_ANY_ALLE_MINION_TYPE|TARGETABLE_CHAR_ABBL)
 #define PLAY_CARD_TARGET_FILTER (TARGET_POS_HAND|TARGET_ANY_CARD_TYPE|TARGET_IS_ALLY|TARGET_ANY_MINION_TYPE|TARGET_NOT_UNTARGETABLE)
-#define PLAY_CHAR_SRC_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_IS_ALLY|TARGET_ANY_MINION_ATTR_TYPE)
-#define PLAY_SPELL_SRC_FILTER (TARGET_POS_HAND|TARGET_IS_SPELL|TARGET_IS_ALLY|TARGET_SPELL_ATTR)
+#define PLAY_CHAR_SRC_FILTER (TARGET_POS_FIELD|TARGET_ANY_CHAR|TARGET_IS_ALLY|TARGET_ANY_MINION_ABBL_TYPE)
+#define PLAY_SPELL_SRC_FILTER (TARGET_POS_HAND|TARGET_IS_SPELL|TARGET_IS_ALLY|TARGET_SPELL_ABBL)
 #define DESTROY_SRC_FILTER FIELD_COND_FILTER
 
 // target modes
@@ -279,9 +279,9 @@ public:
 	int min_n_atks, max_n_atks;
 };
 
-CondConfig GetInitConfigFromCard(const Card* card); // this does not consider the attributes and assume no attributes
+CondConfig GetInitConfigFromCard(const Card* card); // this does not consider the abilities and assume no abilities
 CondConfig ExtractEffectIndependentConfig(const CondConfig& config);
-CondConfig GetDefaultInitConfig(); // this version is for the initial state of the card, particularly, attribute fields of the flag are zero bits
+CondConfig GetDefaultInitConfig(); // this version is for the initial state of the card, particularly, ability fields of the flag are zero bits
 CondConfig GetDefaultConfig(); // just a constructor like function, due to artifact from GIGL
 CondConfig GetFlagConfig(unsigned flag);
 CondConfig GetMpConfig(int min_mp, int max_mp);
@@ -294,9 +294,9 @@ CondConfig GetAtkTimesConfig(unsigned flag, int min_n_atks, int max_n_atks);
 extern bool display_overheat_counts; // whether or not to display overheat counter in detailed discripition.
 
 string MinionTypeDescription(int type);
-string AttributeDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal); // comma separated list, starting with a " with " if there's any attribute
-string AttributeDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth,bool is_untargetable,bool is_shielded,bool is_poisonous, bool is_lifesteal);
-string AttributeDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size);
+string AbilityDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal); // comma separated list, starting with a " with " if there's any ability
+string AbilityDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth,bool is_untargetable,bool is_shielded,bool is_poisonous, bool is_lifesteal);
+string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size);
 
 
 /* Simulator Section */
@@ -308,15 +308,18 @@ double GetGiglRandFloat(double max_val); // 0.0 ~ max_val; artifact from file in
 vector<int> CreateRandomSelection(int n, int k); // select random k numbers from 0 ~ n-1 as a list (ordered randomly); artifact from file including issues
 vector<int> CreateRandomSelectionSorted(int n, int k); // same as above but return guarantee sorted in increasing order 
 Card* GenerateSingleCard(int seed);
+string GetCardName(Card* card); // artifact from file including issues
 string GetCardBrief(Card* card); // artifact from file including issues
 string GetCardDetail(Card* card); // artifact from file including issues
-vector<Card*> GenerateRandDeck(int n, int seed);
-vector<int> GenerateCardSetSeeds(int n, int seed);
-vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds);
-void InitMatch(const vector<int>& seed_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<int>& deck_a_seeds, vector<int>& deck_b_seeds); // shuffle the card indices, return the seed for the match (also modify shuffled indices in place, and pass back the ordered seeds for this match)
+vector<Card*> GenerateCardSet(int n, int seed); // giving no duplicate card seeds
+vector<int> GenerateCardSetSeeds(int n, int seed); // giving no duplicate card seeds
+//vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds);
+void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b); // shuffle the card indices, return the seed for the match (also modify shuffled indices in place, and pass back the ordered cards for this match)
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player);
+Card* HardCopyCard(Card* card); // artifact from file including issues
+vector<Card*> HardCopyCards(vector<Card*> cards); // artifact from file including issues
 void DeleteCard(Card* card); // artifact from file including issues
-
+void DeleteCards(vector<Card*> cards); // artifact from file including issues
 
 class DeferredEvent // certain parts of effects are not applied immediately but rather pushed into a queue and dealt with afterwards, this is because we don't want inserted events to AoE effects, and also sometimes we want to maintain target indexing unchanged until the effects on one card at a certain point is fully executed
 {
@@ -553,7 +556,8 @@ NodeRep mkNodeRep(int choice, const vector<double>& term_info);
 NodeRep mkNodeRep(int choice);
 
 double NormalizeCode(double val, double min_val, double max_val); // normalize to -1.0 ~ 1.0
-void GetCardRepsFromSeeds(const vector<int>& seed_list, vector<CardRep>& card_reps);
+void GetCardRep(Card* card, CardRep& card_rep);
+void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps);
 
 
 /* Neural network part not included in this version */

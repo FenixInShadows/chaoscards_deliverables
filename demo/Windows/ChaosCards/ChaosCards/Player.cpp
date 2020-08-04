@@ -23,8 +23,8 @@ Player::Player(const string& _name, int _hp, const vector<Card*>& _deck, bool _i
 Player::Player(const string & _name, int _hp, const vector<Card*>& _deck, bool _is_guest, queue<DeferredEvent*>& _event_queue, unsigned _ai_level) : Player(_name, _hp, _deck, _is_guest, _event_queue)
 {
 	ai_level = _ai_level;
-	if (ai_level > 9)
-		ai_level = 9;
+	if (ai_level > 5)
+		ai_level = 5;
 	else if (ai_level < 0)
 		ai_level = 0;
 
@@ -1062,29 +1062,35 @@ void Player::TakeSingleInput()
 			{
 				cout << "Playing card " << x << " at position " << y << " targetting at " << z << "." << endl << endl; //echo
 				if (CheckPlayValid(x, y, z))
-					Play(x, y, z);		
+				{
+					Play(x, y, z);
+					valid_type_found = true;
+				}
 			}
 			else
 			{
 				cout << "Format error." << endl << endl;
+				cin.clear(); cin.ignore(); // ignore the ill-formed input (otherwise stuck)
 				DisplayHelp();
 			}
-			valid_type_found = true;
-			break;				
+			break;
 		case 'A':
 		case 'a':
 			if (cin >> x >> z)
 			{
 				cout << "Commanding " << x << " to attack " << z << "." << endl << endl; //echo
 				if (CheckAttackValid(x, z))
+				{
 					Attack(x, z);
+					valid_type_found = true;
+				}
 			}
 			else
 			{
 				cout << "Format error." << endl << endl;
+				cin.clear(); cin.ignore(); // ignore the ill-formed input (otherwise stuck)
 				DisplayHelp();
 			}
-			valid_type_found = true;
 			break;
 		case 'E':
 		case 'e':
@@ -1110,13 +1116,14 @@ void Player::TakeSingleInput()
 			{
 				cout << "Querying " << x << "." << endl << endl; //echo
 				Query(x);
+				valid_type_found = true;
 			}
 			else
 			{
 				cout << "Format error." << endl << endl;
+				cin.clear(); cin.ignore(); // ignore the ill-formed input (otherwise stuck)
 				DisplayHelp();
-			}			
-			valid_type_found = true;
+			}
 			break;
 		case 'O':
 		case 'o':
@@ -1141,11 +1148,11 @@ void Player::DisplayHelp() const
 {
 	cout << "(Note that all numbering used below should be consistent to the numbering in the current board info, i.e. by the order of you leader, your minions, and then opponent minions, opponent leader, and finally your hand.)" << endl << endl;
 	cout << "P x y z: play card x from hand at position y and target z, the positioning y is for the minion on the left (0 if the first one), and the target z should be specified with the numbering on current board, y and/or z are sometimes not used;" << endl;
-	cout << "A x y: use your minion x to attack enemy leader/minion y, the ordering the same as they target in play card command;" << endl;
+	cout << "A x y: use your minion x to attack enemy leader/minion y, the ordering is the same as the target in play card command;" << endl;
 	cout << "E: end turn;" << endl;
 	cout << "R: resign;" << endl;
 	cout << "B: print board;" << endl;
-	cout << "Q x: query details on leader/minion x, the ordering the same as they target in play card command;" << endl;
+	cout << "Q x: query details on leader/minion/card x, the ordering is the same as the target in play card command;" << endl;
 	cout << "O: switch on/off the display of overheat counts, currently " << (display_overheat_counts ? "on;" : "off;") << endl;
 	cout << "H: help on commands." << endl << endl;
 }
@@ -1450,7 +1457,7 @@ string MinionTypeDescription(int type)
 	return "";
 }
 
-string AttributeDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal)
+string AbilityDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal)
 {
 	string desc =
 		(is_charge ? string("Charge, ") : string("")) // the string() is needed at least for the first item otherwise it would have trouble figuring out the type (wouldn't compile)
@@ -1469,7 +1476,7 @@ string AttributeDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth
 	return desc; // add a leading space
 }
 
-string AttributeDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal)
+string AbilityDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal)
 {
 	string desc = 
 		(is_charge ? string("Charge. ") : string("")) // the string() is needed at least for the first item otherwise it would have trouble figuring out the type (wouldn't compile)
@@ -1484,7 +1491,7 @@ string AttributeDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth,
 	return desc;
 }
 
-string AttributeDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size)
+string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size)
 {
 	return (is_charge ? string("Charge.\n") + RepeatSpace(indent_size) : string("")) // the string() is needed at least for the first item otherwise it would have trouble figuring out the type (wouldn't compile)
 		+ (is_taunt ? string("Taunt.\n") + RepeatSpace(indent_size) : string(""))
@@ -1542,6 +1549,11 @@ Card* GenerateSingleCard(int seed)
 	return GenerateCard(seed);
 }
 
+string GetCardName(Card* card)
+{
+	return card->name;
+}
+
 string GetCardBrief(Card* card)
 {
 	return card->BriefInfo();
@@ -1552,18 +1564,15 @@ string GetCardDetail(Card* card)
 	return card->DetailInfo();
 }
 
-vector<Card*> GenerateRandDeck(int n, int seed)
+vector<Card*> GenerateCardSet(int n, int seed)
 {
 	RandInit(seed);
 
+	vector<int> seed_list = GenerateCardSetSeeds(n, seed);
+
 	vector<Card*> deck(n);
 	for (int i = 0; i < n; i++)
-	{
-		seed = GetRandInt();
-		deck[i] = GenerateSingleCard(seed);
-		// deck[i] = GenerateSingleCard(1); // for testing
-		// deck[i] = CreateTestCard(i % 2); // for testing
-	}
+		deck[i] = GenerateSingleCard(seed_list[i]);
 
 	return deck;
 }
@@ -1610,7 +1619,7 @@ vector<int> GenerateCardSetSeeds(int n, int seed)
 	return seed_set;
 }
 
-vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds)
+/*vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds)
 {
 	int n = seeds.size();
 	vector<Card*> deck(n);
@@ -1618,9 +1627,9 @@ vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds)
 		deck[i] = GenerateSingleCard(seeds[i]);
 
 	return deck;
-}
+}*/
 
-void InitMatch(const vector<int>& seed_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<int>& deck_a_seeds, vector<int>& deck_b_seeds)
+void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b) // card_list didn't use const only because GIGL currently doesn't allow node sections to have const functions (can be made const when GIGL takes this into account)
 {
 	int seed = GetRandInt();
 	RandInit(seed);
@@ -1635,9 +1644,9 @@ void InitMatch(const vector<int>& seed_list, vector<int>& deck_a_indices, vector
 	
 	// index to seeds
 	for (int k = 0; k < size_a; k++)
-		deck_a_seeds[k] = seed_list[deck_a_indices[k]];
+		deck_a[k] = HardCopyCard(card_list[deck_a_indices[k]]);
 	for (int k = 0; k < size_b; k++)
-		deck_b_seeds[k] = seed_list[deck_b_indices[k]];
+		deck_b[k] = HardCopyCard(card_list[deck_b_indices[k]]);
 }
 
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player)
@@ -1656,9 +1665,31 @@ void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Pl
 	cout << first_player->name << " goes first." << endl << endl;
 }
 
+Card* HardCopyCard(Card* card)
+{
+	PtrRedirMap redir_map;
+	return card->CreateHardCopy(redir_map);
+}
+
+vector<Card*> HardCopyCards(vector<Card*> cards)
+{
+	vector<Card*> card_copies;
+	PtrRedirMap redir_map;
+	for (Card* card : cards)
+		card_copies.push_back(HardCopyCard(card));
+
+	return card_copies;
+}
+
 void DeleteCard(Card * card)
 {
 	delete card;
+}
+
+void DeleteCards(vector<Card*> cards)
+{
+	for (Card* card : cards)
+		delete card;
 }
 
 
@@ -2244,16 +2275,18 @@ double NormalizeCode(double val, double min_val, double max_val)
 	return (2* val - max_val - min_val) / (max_val - min_val);
 }
 
-void GetCardRepsFromSeeds(const vector<int>& seed_list, vector<CardRep>& card_reps)
+void GetCardRep(Card* card, CardRep& card_rep)
 {
-	int p = seed_list.size();
+	card->FillRep(card_rep);
+}
+
+void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps)
+{
+	int p = card_list.size();
 
 	card_reps.resize(p);
 	for (int i = 0; i < p; i++)
-	{
-		Card* tmp_card = GenerateSingleCard(seed_list[i]);
-		tmp_card->FillRep(card_reps[i]);
-	}
+		GetCardRep(card_list[i], card_reps[i]);
 }
 
 
