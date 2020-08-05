@@ -1,0 +1,8 @@
+compile: card.exe
+
+card.exe: main.cpp Player.cpp Player.h card.generated.h
+	g++ -std=c++11 -O3 -I../../../include/ *.cpp ../../../include/common/*.cpp -o card.exe
+
+
+clean:
+	rm -f *.i *.o *.exe *.out
