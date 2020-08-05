@@ -28,7 +28,7 @@
 **/*.lib
 
 # Executables
-**/*.exe
+demo/Unix/ChaosCards/*.exe
 **/*.out
 **/*.app
 **/*.ipa
