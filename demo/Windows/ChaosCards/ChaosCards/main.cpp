@@ -748,44 +748,28 @@ int TestMutation(int ai_level, vector<Card*>& card_list, vector<vector<int>>& de
 	return turn_count;
 }
 
-
-/*void WriteRawData(const vector<int>& card_seeds, const vector<MatchStat>& card_stats, const char* filename = Match_Card_Data_Path_Raw.c_str())
-{
-	int p = card_seeds.size();
-
-	ofstream fs(filename);
-	fs << p << endl;
-	for (int i = 0; i < p; i++)
-		fs << card_seeds[i] << " " << card_stats[i].eval << " "
-			<< card_stats[i].num_wins << " " << card_stats[i].num_losses << " " << card_stats[i].total_num << " "
-			<< card_stats[i].win_contribution << " " << card_stats[i].total_participation << endl;
-	fs.close();
-	fs.clear();
-}*/
-
-void WriteSingleCardData(Card* card, const CardRep& card_rep, double card_strength, ofstream& fs)
-{
-	fs << GetCardName(card) << endl;
-	int tmp_rep_len = card_rep.size();
-	fs << tmp_rep_len << ":: ";
-	for (int j = 0; j < tmp_rep_len; j++)
-		fs << card_rep[j].GetPrintVersion();
-	fs << endl << card_strength << endl;
-}
-
-void WriteCardData(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<double>& card_strengths, const char* filename)
+void WriteCardData(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<MatchStat>& card_stats, const char* filename)
 {
 	int p = card_reps.size();
 
 	ofstream fs(filename);
 	fs << p << endl;
 	for (int i = 0; i < p; i++)
-		WriteSingleCardData(cards[i], card_reps[i], card_strengths[i], fs);
+	{
+		fs << GetCardName(cards[i]) << endl;
+		int tmp_rep_len = card_reps[i].size();
+		fs << tmp_rep_len << ":: ";
+		for (int j = 0; j < tmp_rep_len; j++)
+			fs << card_reps[i][j].GetPrintVersion();
+		fs << endl << card_stats[i].eval << " "
+			<< card_stats[i].num_wins << " " << card_stats[i].num_losses << " " << card_stats[i].total_num << " "
+			<< card_stats[i].win_contribution << " " << card_stats[i].total_participation << endl;
+	}
 	fs.close();
 	fs.clear();
 }
 
-void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<double>& card_strengths, const char* filename) // more human readable verion, with card info
+void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<MatchStat>& card_stats, const char* filename) // more human readable verion, with card info
 {
 	int p = card_reps.size();
 
@@ -794,7 +778,12 @@ void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, 
 	for (int i = 0; i < p; i++)
 	{
 		fs << GetCardDetail(cards[i]) << endl << endl;
-		fs << "Eval (win rate): " << card_strengths[i] << endl << endl << endl;
+		fs << "Eval (win rate): " << card_stats[i].eval << endl;
+		fs << "Num wins: " << card_stats[i].num_wins << endl;
+		fs << "Num losses: " << card_stats[i].num_losses << endl;
+		fs << "Total num: " << card_stats[i].total_num << endl;
+		fs << "Win contribution: " << card_stats[i].win_contribution << endl;
+		fs << "Total participation: " << card_stats[i].total_participation << endl << endl << endl;
 	}
 	fs.close();
 	fs.clear();
@@ -813,12 +802,13 @@ void WriteDataDeckSorted(const vector<vector<int>>& deck_list, const vector<Matc
 	for (; i < num_outputs && rank < deck_num; i++, rank += rank_step)
 	{
 		int index = sorted_deck_indices[rank];
-		fs << rank + 1 << " " << deck_stats[index].eval << " "
-			<< deck_stats[index].num_wins << " " << deck_stats[index].num_losses << " " << deck_stats[index].total_num << " " << endl;
 		// index in the card seed list
 		for (int j = 0; j < deck_size; j++)
 			fs << deck_list[index][j] << " ";
 		fs << endl;
+		// other info
+		fs << rank + 1 << " " << deck_stats[index].eval << " "
+			<< deck_stats[index].num_wins << " " << deck_stats[index].num_losses << " " << deck_stats[index].total_num << " " << endl << endl;
 	}
 	if (i < num_outputs && rank >= deck_num)
 		cout << "Warning: not enough decks for outputting." << endl;
@@ -826,49 +816,9 @@ void WriteDataDeckSorted(const vector<vector<int>>& deck_list, const vector<Matc
 	fs.clear();		
 }
 
-void PrepareCardData(vector<Card*>& cards, const vector<MatchStat>& card_stats, vector<CardRep>& card_reps, vector<double>& card_strengths, vector<double>& card_weights, const char* filename, const char* filename_human)
-{
-	int p = cards.size();
+#define MAX_STR_LEN 256
 
-	GetCardsReps(cards, card_reps);
-
-	card_strengths.resize(p);
-	card_weights.resize(p);
-	for (int i = 0; i < p; i++)
-	{
-		card_strengths[i] = card_stats[i].eval;
-		card_weights[i] = card_stats[i].total_participation;
-	}
-	
-	// save the match data to a file (no card info)
-	WriteCardData(cards, card_reps, card_strengths, filename);
-
-	// save the match data with card info to a file
-	WriteCardDataHuman(cards, card_reps, card_strengths, filename_human);
-}
-
-/*void ReadRawData(vector<int>& card_seeds, vector<MatchStat>& card_stats, const char* filename = Match_Card_Data_Path_Raw.c_str())
-{
-	ifstream fs(filename);
-	if (!fs.is_open())
-        {
-                cout << "Error occurred when opening data file (due to file existence or permission issues)" << endl;
-                fs.clear();
-                exit(1);
-        }
-	int p;
-	fs >> p;
-	card_seeds.resize(p);
-	card_stats.resize(p);
-	for (int i = 0; i < p; i++)
-		fs >> card_seeds[i] >> card_stats[i].eval
-			>> card_stats[i].num_wins >> card_stats[i].num_losses >> card_stats[i].total_num 
-			>> card_stats[i].win_contribution >> card_stats[i].total_participation;
-	fs.close();
-	fs.clear();	
-}
-
-void ReadData(vector<CardRep>& card_reps, vector<double>& card_strengths, const char* filename = Match_Card_Data_Path_Processed.c_str())
+void ReadCardData(vector<Card*>& cards, vector<CardRep>& card_reps, vector<MatchStat>& card_stats, const char* filename)
 {
 	// often the match data file and read from it
 	ifstream fs(filename);
@@ -880,10 +830,14 @@ void ReadData(vector<CardRep>& card_reps, vector<double>& card_strengths, const 
 	}
 	int p;
 	fs >> p;
+	cards.resize(p);
 	card_reps.resize(p);
-	card_strengths.resize(p);
+	card_stats.resize(p);
 	for (int i = 0; i < p; i++)
 	{
+		fs.ignore(MAX_STR_LEN, '\n'); // skip the trailing newline from the previous line
+		char tmp_name[MAX_STR_LEN];
+		fs.getline(tmp_name, MAX_STR_LEN); // get the name
 		int tmp_rep_len;
 		fs >> tmp_rep_len;
 		char tmp_ch;
@@ -902,7 +856,10 @@ void ReadData(vector<CardRep>& card_reps, vector<double>& card_strengths, const 
 			fs >> tmp_ch; // read a semicolon
 			card_reps[i].push_back(NodeRep(tmp_choice, tmp_term_info));
 		}
-		fs >> card_strengths[i];
+		cards[i] = CreateCardFromRep(string(tmp_name), card_reps[i]);
+		fs >> card_stats[i].eval
+			>> card_stats[i].num_wins >> card_stats[i].num_losses >> card_stats[i].total_num
+			>> card_stats[i].win_contribution >> card_stats[i].total_participation;
 	}
 	fs.close();
 	fs.clear();
@@ -924,25 +881,45 @@ void ReadDeckData(vector<vector<int>>& deck_list, vector<MatchStat>& deck_stats,
 	deck_stats.resize(deck_num);
 	for (int i = 0; i < deck_num; i++)
 	{
+		// index in the card seed list
+		deck_list[i].resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> deck_list[i][j];
+		// other info
 		int rank;
 		fs >> rank // not recorded
 			>> deck_stats[i].eval
 			>> deck_stats[i].num_wins >> deck_stats[i].num_losses >> deck_stats[i].total_num;
 		deck_stats[i].win_contribution = deck_stats[i].num_wins - deck_stats[i].num_losses;
 		deck_stats[i].total_participation = deck_stats[i].total_num;
-		// index in the card seed list
-		deck_list[i].resize(deck_size);
-		for (int j = 0; j < deck_size; j++)
-			fs >> deck_list[i][j];
-		// the actual seeds, skipped for now, as we always require a card list file (seeds) to be read
-		int tmp_seed;
-		for (int j = 0; j < deck_size; j++)
-			fs >> tmp_seed;
 	}
 	fs.close();
 	fs.clear();
-}*/
+}
 
+void PrepareCardData(vector<Card*>& cards, const vector<MatchStat>& card_stats, vector<CardRep>& card_reps, vector<double>& card_strengths, vector<double>& card_weights, const char* filename, const char* filename_human) // pass in nullptrs to the filenames to indicate not saving to files
+{
+	int p = cards.size();
+
+	GetCardsReps(cards, card_reps);
+
+	card_strengths.resize(p);
+	card_weights.resize(p);
+	for (int i = 0; i < p; i++)
+	{
+		card_strengths[i] = card_stats[i].eval;
+		card_weights[i] = card_stats[i].total_participation;
+	}
+
+	if (filename && filename_human)
+	{
+		// save the match card data to a file (no card info)
+		WriteCardData(cards, card_reps, card_stats, filename);
+
+		// save the match card data with card info to a file in a human readable format
+		WriteCardDataHuman(cards, card_reps, card_stats, filename_human);
+	}
+}
 
 int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, file paths (with different semantics among modes)
 {
@@ -956,9 +933,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 	cout << "1 : Generate random cards with specified seeds." << endl;
 	cout << "2 : Play against AI using decks generated freely or with specified seeds." << endl;
 	cout << "3 : Play against yourself with decks generated with specified seeds." << endl;
-	cout << "4 : Simulate AI Vs AI matches between (different) AI's on the same set of random decks (warning: this may take hours to days)." << endl;
-	cout << "5 : Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same random card pool with both evolutionary and random deck building and matching scheme (warning: this may take hours to days)." << endl;
-	cout << "6 : Simulate AI Vs AI matches (with same AI) between different two small sets of given decks (warning: this may take hours to days)." << endl;
+	cout << "4 : Simulate AI Vs AI matches between (different) AI's on the same set of random decks (Warning: this may take hours to days)." << endl;
+	cout << "5 : Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same random card pool with both evolutionary and random deck building and matching scheme (Warning: this may take hours to days)." << endl;
+	cout << "6 : Simulate AI Vs AI matches (with same AI) between different two small sets of given decks (Warning: this may take hours to days)." << endl;
 	cout << "7 : Play against AI using decks in either the meta environment (generated by the evolutionary simulation) or the random environment (generated by the random simulation)." << endl;
 	
 	int mode;
@@ -1063,7 +1040,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			DeleteCards(card_list);
 		}
 		break;*/
-	case 5:
+	case 10:
 		{
 			int p = 1000; // size of the card pool
 
@@ -1106,7 +1083,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			double init_time;
 			double evolve_time;
 			double final_time;
-			
+
 			int display_num = 5; // the number of top and bottom cards to be displayed
 			vector<int> top_card_indices_random, bottom_card_indices_random;
 			vector<int> top_card_indices_evolved, bottom_card_indices_evolved;
@@ -1193,6 +1170,326 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 30, Match_Deck_Data_Path_Top_Random.c_str());
 				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 49, 100, 30, Match_Deck_Data_Path_Skip_Random.c_str());
 			}
+			/* evolved environment simulation */
+/*			{
+				string Match_Card_Data_Path_Evolved, Match_Card_Data_Path_Human_Evolved;
+				size_t post_fix_pos = Match_Card_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Card_Data_Path_Evolved = Match_Card_Data_Path + "_evolved";
+					Match_Card_Data_Path_Human_Evolved = Match_Card_Data_Path + "_human_evolved";
+				}
+				else
+				{
+					Match_Card_Data_Path_Evolved = Match_Card_Data_Path;
+					Match_Card_Data_Path_Evolved.insert(post_fix_pos, "_evolved");
+					Match_Card_Data_Path_Human_Evolved = Match_Card_Data_Path;
+					Match_Card_Data_Path_Human_Evolved.insert(post_fix_pos, "_human_evolved");
+				}
+
+				string Match_Deck_Data_Path_Evolved;
+				post_fix_pos = Match_Deck_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Deck_Data_Path_Evolved = Match_Deck_Data_Path + "_evolved";
+				}
+				else
+				{
+					Match_Deck_Data_Path_Evolved = Match_Deck_Data_Path;
+					Match_Deck_Data_Path_Evolved.insert(post_fix_pos, "_evolved");
+				}
+
+				unsigned ai_level = 2;
+
+				vector<MatchStat> card_stats(p);
+				vector<MatchStat> deck_stats(deck_pool_size);
+
+				vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
+
+				time_t timer_0 = time(NULL);
+
+				// initialization
+				cout << "Creating and testing initial deck pool." << endl;
+				for (int i = 0; i < deck_pool_size; i++)
+				{
+					vector<int> tmp_deck = CreateRandomSelectionSorted(p, n);
+					bool is_duplicate;
+					do // make sure we don't create duplicate decks
+					{
+						is_duplicate = false;
+						for (int j = 0; j < i; j++)
+							if (tmp_deck == deck_list[j])
+							{
+								is_duplicate = true;
+								break;
+							}
+					} while (is_duplicate);
+					deck_list.push_back(tmp_deck);
+				}
+				for (int i = 0; i < deck_pool_size - 1; i++)
+					for (int j = i + 1; j < deck_pool_size; j++)
+						for (int k = 0; k < num_pair_matches_init; k++)
+						{
+							cout << "Match Pair #" << ++match_pair_count_evolved << endl;
+							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], n);
+						}
+				cout << endl;
+				UpdateStatEvals(card_stats);
+				UpdateStatEvals(deck_stats);
+
+				time_t timer_1 = time(NULL);
+
+				// evolving the deck pool and continue testing
+				double t_init = 1.0; // intial "temperature"
+				double ln_t_init = log(t_init);
+				double t_final = 0.001;
+				double ln_t_final = log(t_final);
+				double action_probs_init[] = { 0.7, 0.1, 0.2 }; // new deck; cross-over; mutation
+				double action_probs_final[] = { 0.2, 0.5, 0.3 }; // new deck; cross-over; mutation 	
+				for (int iter = 1; iter <= num_evolve_iter; iter++)
+				{
+					cout << "Evolution iteration #" << iter << ": ";
+					double progress = iter / (double)num_evolve_iter;
+					double ln_t = ln_t_init + progress * (ln_t_final - ln_t_init); // temperature interpolated in log scale
+					double t = exp(ln_t);
+					int num_pair_matches = (int)(num_pair_matches_init + progress * (num_pair_matches_final - num_pair_matches_init));
+					double action_probs[2]; // the third one is not used
+					for (int i = 0; i < 2; i++)
+						action_probs[i] = action_probs_init[i] + progress * (action_probs_final[i] - action_probs_init[i]);
+					action_probs[1] += action_probs[0]; // cumulate
+					double roll = GetGiglRandFloat();
+					if (roll < action_probs[0]) // new deck
+					{
+						cout << "testing a new deck" << endl;
+						turn_count_evolved += TestNewDeck(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+					}
+					else if (roll < action_probs[1]) // cross-over
+					{
+						cout << "testing the cross-overs of two existing decks" << endl;
+						turn_count_evolved += TestCrossOver(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+					}
+					else // mutation
+					{
+						cout << "testing the mutation of an existing deck" << endl;
+						turn_count_evolved += TestMutation(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+					}
+					UpdateStatEvals(card_stats); // deck stats should already be updated inside those "Test" functions
+					cout << endl;
+				}
+
+				time_t timer_2 = time(NULL);
+
+				// stop evolving and do the final round of tests
+				cout << "Testing the final deck pool." << endl;
+				for (int i = 0; i < deck_pool_size - 1; i++)
+					for (int j = i + 1; j < deck_pool_size; j++)
+						for (int k = 0; k < num_pair_matches_final; k++)
+						{
+							cout << "Match Pair #" << ++match_pair_count_evolved << endl;
+							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], n);
+						}
+				cout << endl;
+				UpdateStatEvals(card_stats);
+				UpdateStatEvals(deck_stats);
+
+				time_t timer_3 = time(NULL);
+
+				init_time = difftime(timer_1, timer_0);
+				evolve_time = difftime(timer_2, timer_1);
+				final_time = difftime(timer_3, timer_2);
+
+				// prepare for displaying
+				vector<int> card_indices(p);
+				SortStatInIndices(card_stats, card_indices);
+				for (int i = 0; i < display_num; i++)
+				{
+					top_card_indices_evolved.push_back(card_indices[i]);
+					bottom_card_indices_evolved.push_back(card_indices[p - i - 1]);
+				}
+
+				// prepare data for training/post processing
+				// cards
+				vector<CardRep> card_reps;
+				vector<double> card_strengths;
+				vector<double> card_weights;
+				PrepareCardData(card_list, card_stats, card_reps, card_strengths, card_weights, Match_Card_Data_Path_Evolved.c_str(), Match_Card_Data_Path_Human_Evolved.c_str());
+				// decks
+				vector<int> deck_indices(deck_pool_size);
+				SortStatInIndices(deck_stats, deck_indices);
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 30, Match_Deck_Data_Path_Evolved.c_str());
+			}*/
+
+			/* performance report */
+			cout << endl;
+			cout << "Random game environment simulation summary" << endl;
+			cout << "------------------------------------------" << endl;
+			cout << "Total number of decks tested: " << deck_num_random << endl;
+			cout << "Total number of match pairs tested: " << match_pair_num_random << endl;
+			cout << "Total number of match turns simulated: " << turn_count_random << endl;
+			cout << "Total testing time: " << total_time_random << endl;
+			cout << "------------------------------------------" << endl << endl;
+/*			cout << "Meta game environment simulation summary" << endl;
+			cout << "------------------------------------------" << endl;
+			cout << "Total number of decks tested: " << deck_count_evolved << endl;
+			cout << "Total number of match pairs tested: " << match_pair_count_evolved << endl;
+			cout << "Total number of match turns simulated: " << turn_count_evolved << endl;
+			cout << "Initial deck pool testing time: " << init_time << endl;
+			cout << "Evolving time: " << evolve_time << endl;
+			cout << "Final deck pool testing time: " << final_time << endl;
+			cout << "Total testing time: " << init_time + evolve_time + final_time << endl;
+			cout << "------------------------------------------" << endl << endl;*/
+
+			/* example cards */
+			cout << endl;
+			cout << "Top cards rated by random game environment" << endl;
+			cout << "------------------------------------------" << endl;
+			BrowseCardSet(card_list, top_card_indices_random);
+/*			cout << endl;
+			cout << "Top cards rated by meta game environment" << endl;
+			cout << "------------------------------------------" << endl;
+			BrowseCardSet(card_list, top_card_indices_evolved);*/
+			cout << endl;
+			cout << "Bottom cards rated by random game environment" << endl;
+			cout << "------------------------------------------" << endl;
+			BrowseCardSet(card_list, bottom_card_indices_random);
+/*			cout << endl;
+			cout << "Bottom cards rated by meta game environment" << endl;
+			cout << "------------------------------------------" << endl;
+			BrowseCardSet(card_list, bottom_card_indices_evolved);*/
+
+			DeleteCards(card_list);
+		}
+		break;
+	case 5:
+		{
+			int p = 1000; // size of the card pool
+
+			if (argc > 2)
+			{
+				seed = atoi(argv[2]);
+			}
+			else
+			{
+				cout << "Input Seed" << endl;
+				cin >> seed;
+			}
+			cout << "Seed for card pool and simulation: " << seed << endl;
+
+			string Match_Card_Data_Path = "match_card_data.txt";
+			if (argc > 3)
+				Match_Card_Data_Path = argv[3];
+
+			string Match_Deck_Data_Path = "match_deck_data.txt";
+			if (argc > 4)
+				Match_Deck_Data_Path = argv[4];
+
+			// the card pool is shared between the two simulation methods
+			vector<Card*> card_list = GenerateCardSet(p, seed);
+
+			// random environment benchmark related parameters
+			int deck_num_random = 3000; // total number of decks
+			int match_pair_num_random = 200000; // total number of pair matches
+			int turn_count_random = 0; // number of match turns, not known before hand
+			double total_time_random;
+
+			// meta environment benchmark related parameters
+			int deck_pool_size = 30; // number of active decks (will evolve during the simulation)
+			int num_pair_matches_init = 2; // initial number of pair matches between each two decks
+			int num_pair_matches_final = 8; // final number of pair matches between each two decks
+			int num_evolve_iter = 1000;
+			int deck_count_evolved = deck_pool_size; // it starts with the initial deck pool size, but the total number is not known before hand
+			int match_pair_count_evolved = 0; // this is not known before hand
+			int turn_count_evolved = 0; // number of match turns, not known before hand
+			double init_time;
+			double evolve_time;
+			double final_time;
+			
+			int display_num = 5; // the number of top and bottom cards to be displayed
+			vector<int> top_card_indices_random, bottom_card_indices_random;
+			vector<int> top_card_indices_evolved, bottom_card_indices_evolved;
+
+			/* random environment simulation */
+/*			{
+				string Match_Card_Data_Path_Random, Match_Card_Data_Path_Human_Random;
+				size_t post_fix_pos = Match_Card_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Card_Data_Path_Random = Match_Card_Data_Path + "_random";
+					Match_Card_Data_Path_Human_Random = Match_Card_Data_Path + "_human_random";
+				}
+				else
+				{
+					Match_Card_Data_Path_Random = Match_Card_Data_Path;
+					Match_Card_Data_Path_Random.insert(post_fix_pos, "_random");
+					Match_Card_Data_Path_Human_Random = Match_Card_Data_Path;
+					Match_Card_Data_Path_Human_Random.insert(post_fix_pos, "_human_random");
+				}
+
+				string Match_Deck_Data_Path_All_Random, Match_Deck_Data_Path_Top_Random, Match_Deck_Data_Path_Skip_Random;
+				post_fix_pos = Match_Deck_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Deck_Data_Path_All_Random = Match_Deck_Data_Path + "_all_random";
+					Match_Deck_Data_Path_Top_Random = Match_Deck_Data_Path + "_top_random";
+					Match_Deck_Data_Path_Skip_Random = Match_Deck_Data_Path + "_skip_random";
+				}
+				else
+				{
+					Match_Deck_Data_Path_All_Random = Match_Deck_Data_Path;
+					Match_Deck_Data_Path_All_Random.insert(post_fix_pos, "_all_random");
+					Match_Deck_Data_Path_Top_Random = Match_Deck_Data_Path;
+					Match_Deck_Data_Path_Top_Random.insert(post_fix_pos, "_top_random");
+					Match_Deck_Data_Path_Skip_Random = Match_Deck_Data_Path;
+					Match_Deck_Data_Path_Skip_Random.insert(post_fix_pos, "_skip_random");
+				}
+
+				unsigned ai_level = 2;
+
+				vector<MatchStat> card_stats(p);
+				vector<MatchStat> deck_stats(deck_num_random);
+
+				time_t timer_0 = time(NULL);
+
+				vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
+				for (int i = 0; i < deck_num_random; i++)
+					deck_list.push_back(CreateRandomSelection(p, n)); // problematic as some cards may not get selected
+
+				for (int i = 0; i < match_pair_num_random; i++)
+				{
+					int index_a = GetGiglRandInt(deck_num_random);
+					int index_b = GetGiglRandInt(deck_num_random);
+					cout << "Match Pair " << i << ": Deck " << index_a << " VS Deck " << index_b << ". " << endl;
+					turn_count_random += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[index_a], deck_list[index_b], card_stats, deck_stats[index_a], deck_stats[index_b], n);
+				}
+				UpdateStatEvals(card_stats);
+				UpdateStatEvals(deck_stats);
+
+				time_t timer_1 = time(NULL);
+
+				total_time_random = difftime(timer_1, timer_0);
+
+				// prepare for displaying
+				vector<int> card_indices(p);
+				SortStatInIndices(card_stats, card_indices);
+				for (int i = 0; i < display_num; i++)
+				{
+					top_card_indices_random.push_back(card_indices[i]);
+					bottom_card_indices_random.push_back(card_indices[p - i - 1]);
+				}
+
+				// prepare data for training/post processing
+				// cards
+				vector<CardRep> card_reps;
+				vector<double> card_strengths;
+				vector<double> card_weights;
+				PrepareCardData(card_list, card_stats, card_reps, card_strengths, card_weights, Match_Card_Data_Path_Random.c_str(), Match_Card_Data_Path_Human_Random.c_str());
+				// decks
+				vector<int> deck_indices(deck_num_random);
+				SortStatInIndices(deck_stats, deck_indices);
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 3000, Match_Deck_Data_Path_All_Random.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 30, Match_Deck_Data_Path_Top_Random.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 49, 100, 30, Match_Deck_Data_Path_Skip_Random.c_str());
+			}*/
 			/* evolved environment simulation */
 			{
 				string Match_Card_Data_Path_Evolved, Match_Card_Data_Path_Human_Evolved;
@@ -1344,13 +1641,13 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 			/* performance report */
 			cout << endl;
-			cout << "Random game environment simulation summary" << endl;
+/*			cout << "Random game environment simulation summary" << endl;
 			cout << "------------------------------------------" << endl;
 			cout << "Total number of decks tested: " << deck_num_random << endl;
 			cout << "Total number of match pairs tested: " << match_pair_num_random << endl;
 			cout << "Total number of match turns simulated: " << turn_count_random << endl;
 			cout << "Total testing time: " << total_time_random << endl;
-			cout << "------------------------------------------" << endl << endl;
+			cout << "------------------------------------------" << endl << endl;*/
 			cout << "Meta game environment simulation summary" << endl;
 			cout << "------------------------------------------" << endl;
 			cout << "Total number of decks tested: " << deck_count_evolved << endl;
@@ -1363,18 +1660,18 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cout << "------------------------------------------" << endl << endl;
 
 			/* example cards */
-			cout << endl;
+/*			cout << endl;
 			cout << "Top cards rated by random game environment" << endl;
 			cout << "------------------------------------------" << endl;
-			BrowseCardSet(card_list, top_card_indices_random);
+			BrowseCardSet(card_list, top_card_indices_random);*/
 			cout << endl;
 			cout << "Top cards rated by meta game environment" << endl;
 			cout << "------------------------------------------" << endl;
 			BrowseCardSet(card_list, top_card_indices_evolved);
-			cout << endl;
+/*			cout << endl;
 			cout << "Bottom cards rated by random game environment" << endl;
 			cout << "------------------------------------------" << endl;
-			BrowseCardSet(card_list, bottom_card_indices_random);
+			BrowseCardSet(card_list, bottom_card_indices_random);*/
 			cout << endl;
 			cout << "Bottom cards rated by meta game environment" << endl;
 			cout << "------------------------------------------" << endl;

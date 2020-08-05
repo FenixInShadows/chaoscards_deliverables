@@ -17,13 +17,17 @@ class Card;
 typedecl PtrRedirMap;
 typedecl PtrRedirMapIter;
 typedecl CardRep;
+typedecl NodeRep;
+typedecl ExtraCardGenConfig;
 
-giglconfig GetDefaultGenConfig(int seed);
+giglconfig GetDefaultGenConfig(int seed, void* extra_config);
 Card* CreatePlainMinion(string parent_name);
 Card* CreateRandomMinion(string parent_name, int cost, int min_eff_num, int max_eff_num, int eff_depth);
 Card* CreateRandomCard(string parent_name, int cost, int min_eff_num, int max_eff_num, int eff_depth);
+Card* CreateNamedCardFromRep(const string& name, NodeRep* rep);
 
-gigltype Card{int seed, int max_eff_num, int max_eff_depth}: // seed is only used for naming (for generated cards), for constructed (including copied) cards it doesn't matter
+
+gigltype Card{int seed, int max_eff_num, int max_eff_depth, void* extra_config}: // seed is only used for default naming (for generated cards), for constructed (including copied) cards it doesn't matter; card_rep is for creating cards from a saved representation, if nullptr then it means generate from scratch
 {
 wrapper:
 	initializer
@@ -53,9 +57,27 @@ wrapper:
 	}
 	generator
 	{
-		name = "#" + IntToStr(seed);
+		ExtraCardGenConfig* ex_conf = (ExtraCardGenConfig*)extra_config;
+		if (ex_conf && ex_conf->name.length() > 0)
+			name = ex_conf->name;
+		else
+			name = "#" + IntToStr(seed);
 		CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-		root = generate CardRoot(tmp_config, false); // currently we only control the type and cost through the config so the issue on the range for hp is not a problem 
+		if (ex_conf)
+		{
+			root = generate CardRoot(tmp_config, false, ex_conf->rep); // currently we only control the type and cost through the config so the issue on the range for hp is not a problem
+		}
+		else
+		{
+			NodeRep* tmp_nullptr = nullptr;
+			root = generate CardRoot(tmp_config, false, tmp_nullptr); // currently we only control the type and cost through the config so the issue on the range for hp is not a problem
+		}
+	}
+	constructor
+	{
+		ExtraCardGenConfig* ex_conf = (ExtraCardGenConfig*)extra_config;
+		if (ex_conf && ex_conf->name.length() > 0)
+			name = ex_conf->name;
 	}
 	destructor
 	{
@@ -407,39 +429,39 @@ node:
 	int overheat_threshold; // the max number an effect may be triggered during a pair of turns, default is 10
 
 nonterminal:
-	CardRoot(CondConfig& global_config, bool is_plain); // if is_plain is true, then force no effects and single attack
-	AttackTimes;
-	MinionType;
-	Abilities(CondConfig& self_config, int damage);
-	DamageAbilities(CondConfig& self_config, unsigned target_mode, int damage);
-	ChargeAbbl(CondConfig& self_config);
-	TauntAbbl(CondConfig& self_config);
-	StealthAbbl(CondConfig& self_config);
-	UntargetableAbbl(CondConfig& self_config);
-	ShieldAbbl(CondConfig& self_config);
-	PoisonousAbbl(CondConfig& self_config, int damage);
-	LifestealAbbl(CondConfig& self_config, int damage);
-	SpecialEffects(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff); // give_eff denotes whether this is generated inside a giveEffectsEff
-	TargetedPlayEff(CondConfig& self_config, int effect_depth, bool give_eff);
-	OtherEffs(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff);
-	OtherEff(CondConfig& self_config, int effect_depth, bool give_eff);
-	TargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff);
-	UntargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff);
-	TargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing); // init_config applies refers to the original state (of the card), instant_config refers to state at the instant when the effect activates
-	CharTargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	CharTypeCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	CardTargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	CardTypeCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	CardPosCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	AllegianceCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	AbblCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing);
-	StatCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, bool force_nontrivial);
-	StatCondVariant(int lower_min, int lower_max, int upper_min, int upper_max);
-	IndeCond(CondConfig& init_config, CondConfig& instant_leader_config, unsigned effect_timing); // for conditions that are not associated with a specific card, the config would be associated to leader card though, as leader condition is considered in here
-	BaseTargetedEff(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, int effect_depth, bool give_eff);
-	BaseUntargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff);
-	Destination(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, unsigned dest_mode);
-	NewCardVariant(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, int effect_depth);
+	CardRoot(CondConfig& global_config, bool is_plain, NodeRep*& rep); // if is_plain is true, then force no effects and single attack
+	AttackTimes(NodeRep*& rep);
+	MinionType(NodeRep*& rep);
+	Abilities(CondConfig& self_config, int damage, NodeRep*& rep);
+	DamageAbilities(CondConfig& self_config, unsigned target_mode, int damage, NodeRep*& rep);
+	ChargeAbbl(CondConfig& self_config, NodeRep*& rep);
+	TauntAbbl(CondConfig& self_config, NodeRep*& rep);
+	StealthAbbl(CondConfig& self_config, NodeRep*& rep);
+	UntargetableAbbl(CondConfig& self_config, NodeRep*& rep);
+	ShieldAbbl(CondConfig& self_config, NodeRep*& rep);
+	PoisonousAbbl(CondConfig& self_config, int damage, NodeRep*& rep);
+	LifestealAbbl(CondConfig& self_config, int damage, NodeRep*& rep);
+	SpecialEffects(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff, NodeRep*& rep); // give_eff denotes whether this is generated inside a giveEffectsEff
+	TargetedPlayEff(CondConfig& self_config, int effect_depth, bool give_eff, NodeRep*& rep);
+	OtherEffs(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff, NodeRep*& rep);
+	OtherEff(CondConfig& self_config, int effect_depth, bool give_eff, NodeRep*& rep);
+	TargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff, NodeRep*& rep);
+	UntargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff, NodeRep*& rep);
+	TargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep); // init_config applies refers to the original state (of the card), instant_config refers to state at the instant when the effect activates
+	CharTargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	CharTypeCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	CardTargetCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	CardTypeCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	CardPosCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	AllegianceCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	AbblCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	StatCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, bool force_nontrivial, NodeRep*& rep);
+	StatCondVariant(int lower_min, int lower_max, int upper_min, int upper_max, NodeRep*& rep);
+	IndeCond(CondConfig& init_config, CondConfig& instant_leader_config, unsigned effect_timing, NodeRep*& rep); // for conditions that are not associated with a specific card, the config would be associated to leader card though, as leader condition is considered in here
+	BaseTargetedEff(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, int effect_depth, bool give_eff, NodeRep*& rep);
+	BaseUntargetedEff(CondConfig& self_config, unsigned effect_timing, int effect_depth, bool give_eff, NodeRep*& rep);
+	Destination(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, unsigned dest_mode, NodeRep*& rep);
+	NewCardVariant(CondConfig& self_config, unsigned target_mode, unsigned effect_timing, int effect_depth, NodeRep*& rep);
 
 wrapper: // due to some type system artifact in GIGL, certian parts (e.g. the arguement type in AddExtraEffects) wouldn't work if it is put before the nontermial declaration part
 	gigltable<SpecialEffects*> effects_extra;
@@ -537,7 +559,7 @@ wrapper: // due to some type system artifact in GIGL, certian parts (e.g. the ar
 																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
 																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
 												effects										
-												)) with GetDefaultGenConfig(-1);
+												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
 			case MINION_CARD:
 				card_copy = construct Card(minionCard(orig_mana, orig_atk, orig_hp, multipleAttack(orig_n_atks),
@@ -550,7 +572,7 @@ wrapper: // due to some type system artifact in GIGL, certian parts (e.g. the ar
 																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
 																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
 												effects								
-												)) with GetDefaultGenConfig(-1);
+												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
 			default:
 				card_copy = construct Card(spellCard(orig_mana,
@@ -562,7 +584,7 @@ wrapper: // due to some type system artifact in GIGL, certian parts (e.g. the ar
 																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
 																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
 												effects									
-												)) with GetDefaultGenConfig(-1);
+												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
 		}
 		
@@ -600,12 +622,19 @@ rule:
 		{
 			preselector
 			{
-				if (!(global_config & TARGET_IS_LEADER))
-					forbid leaderCard;
-				if (!(global_config & TARGET_IS_MINION))
-					forbid minionCard;
-				if (!(global_config & TARGET_IS_SPELL))
-					forbid spellCard;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (!(global_config & TARGET_IS_LEADER))
+						forbid leaderCard;
+					if (!(global_config & TARGET_IS_MINION))
+						forbid minionCard;
+					if (!(global_config & TARGET_IS_SPELL))
+						forbid spellCard;
+				}
 			}
 		}
 	:=
@@ -614,9 +643,18 @@ rule:
 			card_type = LEADER_CARD;
 			generator
 			{
-				cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
-				attack = GetRandInt(0, 10);
-				health = GetRandInt(10, 40);
+				if (rep)
+				{
+					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+					attack = DenormalizeCode(rep->term_info[1], 0, 10);
+					health = DenormalizeCode(rep->term_info[2], 10, 40);
+				}
+				else
+				{
+					cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
+					attack = GetRandInt(0, 10);
+					health = GetRandInt(10, 40);
+				}
 			}
 			orig_mana = mana = cost;
 			orig_atk = atk = attack;
@@ -624,22 +662,23 @@ rule:
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
-				abilities = generate Abilities(self_config, atk);
 				if (is_plain)
 				{
 					attack_times = construct singleAttack();
+					abilities = generate Abilities(self_config, atk, rep); // in this case rep will be nullptr anyway (can't just write a nullptr as it needs to fit Node*&)
 					effects = construct specialEffects(noTargetedPlayEff(), noOtherEffs());
 				}
 				else
 				{
-					attack_times = generate AttackTimes();
-					self_config = GetInitConfigFromCard(item); // update for attack times
-					effects = generate SpecialEffects(self_config, 0, max_eff_num, 0, false);
+					attack_times = generate AttackTimes(rep);
+					abilities = generate Abilities(self_config, atk, rep);
+					self_config = GetInitConfigFromCard(item); // update attack times info
+					effects = generate SpecialEffects(self_config, 0, max_eff_num, 0, false, rep);
 				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0, <double>{NormalizeCode(cost, 0, 10), NormalizeCode(attack, 0, 10), NormalizeCode(health, 10, 40)}));
+				rep.push_back(mkNodeRep(0u, <double>{NormalizeCode(cost, 0, 10), NormalizeCode(attack, 0, 10), NormalizeCode(health, 10, 40)}));
 				attack_times->FillRep(rep);
 				abilities->FillRep(rep);
 				effects->FillRep(rep);
@@ -860,13 +899,14 @@ rule:
 			TurnEnd { effects->TurnEnd(leader, parent_card); }
 			Mutate
 			{
+				NodeRep* tmp_nullptr = nullptr;
 				delete attack_times;
-				attack_times = generate AttackTimes();
+				attack_times = generate AttackTimes(tmp_nullptr);
 				CondConfig self_config = GetInitConfigFromCard(item);
 				effects->num_refs--;
 				if (effects->num_refs <= 0)
 					delete effects;
-				effects = generate SpecialEffects(self_config, min_eff_n, max_eff_n, effect_depth, false);
+				effects = generate SpecialEffects(self_config, min_eff_n, max_eff_n, effect_depth, false, tmp_nullptr);
 			}
 			SetOverheatCounts { effects->SetOverheatCounts(val); }
 			SetOverheatThresholds { effects->SetOverheatThresholds(val); }
@@ -883,9 +923,18 @@ rule:
 			card_type = MINION_CARD;
 			generator
 			{
-				cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
-				attack = GetRandInt(0, 10);
-				health = GetRandInt(1, 10);
+				if (rep)
+				{
+					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+					attack = DenormalizeCode(rep->term_info[1], 0, 10);
+					health = DenormalizeCode(rep->term_info[2], 1, 10);
+				}
+				else
+				{
+					cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
+					attack = GetRandInt(0, 10);
+					health = GetRandInt(1, 10);
+				}
 			}			
 			orig_mana = mana = cost;
 			orig_atk = atk = attack;
@@ -893,22 +942,25 @@ rule:
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
-				abilities = generate Abilities(self_config, atk);
 				if (is_plain)
 				{
 					attack_times = construct singleAttack();
+					type = generate MinionType(rep); // in this case it'll be nullptr anyway
+					abilities = generate Abilities(self_config, atk, rep); // in this case it'll be nullptr anyway
 					effects = construct specialEffects(noTargetedPlayEff(), noOtherEffs());
 				}
 				else
 				{
-					attack_times = generate AttackTimes();
+					attack_times = generate AttackTimes(rep);
+					type = generate MinionType(rep);
+					abilities = generate Abilities(self_config, atk, rep);
 					self_config = GetInitConfigFromCard(item); // update for attack times
-					effects = generate SpecialEffects(self_config, 0, max_eff_num, 0, false);
+					effects = generate SpecialEffects(self_config, 0, max_eff_num, 0, false, rep);
 				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1, <double>{NormalizeCode(cost, 0, 10), NormalizeCode(attack, 0, 10), NormalizeCode(health, 1, 10)}));
+				rep.push_back(mkNodeRep(1u, <double>{NormalizeCode(cost, 0, 10), NormalizeCode(attack, 0, 10), NormalizeCode(health, 1, 10)}));
 				attack_times->FillRep(rep);
 				type->FillRep(rep);
 				abilities->FillRep(rep);
@@ -1155,13 +1207,14 @@ rule:
 			TurnEnd { effects->TurnEnd(leader, parent_card); }
 			Mutate
 			{
+				NodeRep* tmp_nullptr = nullptr;
 				delete attack_times;
-				attack_times = generate AttackTimes();
+				attack_times = generate AttackTimes(tmp_nullptr);
 				CondConfig self_config = GetInitConfigFromCard(item);
 				effects->num_refs--;
 				if (effects->num_refs <= 0)
 					delete effects;
-				effects = generate SpecialEffects(self_config, min_eff_n, max_eff_n, effect_depth, false);
+				effects = generate SpecialEffects(self_config, min_eff_n, max_eff_n, effect_depth, false, tmp_nullptr);
 			}
 			SetOverheatCounts { effects->SetOverheatCounts(val); }
 			SetOverheatThresholds { effects->SetOverheatThresholds(val); }
@@ -1178,21 +1231,24 @@ rule:
 			card_type = SPELL_CARD;
 			generator
 			{
-				cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
+				if (rep)
+					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+				else
+					cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
 			}
 			orig_mana = mana = cost;
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
-				abilities = generate Abilities(self_config, -1); // -1 means not applicable
+				abilities = generate Abilities(self_config, -1, rep); // -1 means not applicable
 				if (is_plain)
-					effects = construct specialEffects(noTargetedPlayEff(), noOtherEffs());
+					effects = construct specialEffects(noTargetedPlayEff(), noOtherEffs()); 
 				else
-					effects = generate SpecialEffects(self_config, 1, max_eff_num, 0, false);
+					effects = generate SpecialEffects(self_config, 1, max_eff_num, 0, false, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2, <double>{NormalizeCode(cost, 0, 10)}));
+				rep.push_back(mkNodeRep(2u, <double>{NormalizeCode(cost, 0, 10)}));
 				abilities->FillRep(rep);
 				effects->FillRep(rep);
 			}
@@ -1267,7 +1323,8 @@ rule:
 				effects->num_refs--;
 				if (effects->num_refs <= 0)
 					delete effects;
-				effects = generate SpecialEffects(self_config, (min_eff_n > 1 ? min_eff_n : 1), max_eff_n, effect_depth, false); // spell has to at least have one effect
+				NodeRep* tmp_nullptr = nullptr;
+				effects = generate SpecialEffects(self_config, (min_eff_n > 1 ? min_eff_n : 1), max_eff_n, effect_depth, false, tmp_nullptr); // spell has to at least have one effect
 			}
 			SetOverheatCounts { effects->SetOverheatCounts(val); }
 			SetOverheatThresholds { effects->SetOverheatThresholds(val); }
@@ -1280,44 +1337,72 @@ rule:
 			}
 		}
 		
-	AttackTimes :=
+	AttackTimes
+	default:
+		{
+			preselector
+			{
+				if (rep)
+				{
+					int n = DenormalizeCode((rep++)->term_info[0], 0, 5);
+					if (n == 0)
+						return construct zeroAttack();
+					else if (n == 1)
+						return construct singleAttack();
+					else
+						return construct multipleAttack(n);
+				}
+			}
+		}
+	:=
 	| zeroAttack:
 		{
 			orig_n_atks = max_n_atks = 0;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
-			CreateNodeHardCopy = new zeroAttack(card_copy);	
+			CreateNodeHardCopy = new zeroAttack(card_copy);
 		}
 	| singleAttack:
 		{
 			orig_n_atks = max_n_atks = 1;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new singleAttack(card_copy);
 		}
 	| multipleAttack: int n_atks
 		{
-			generator { n_atks = 100 / GetRandInt(17, 50); } // 2 ~ 5 but not evenly distributed
+			generator { n_atks = 100 / GetRandInt(17, 50); }  // 2 ~ 5 but not evenly distributed
 			n_atks_loss = 0;
 			orig_n_atks = max_n_atks = n_atks;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2, <double>{NormalizeCode(n_atks, 0, 5)})); // not using the range of 2 ~ 5 for normalization for more consistent encoding considering the recursive nn version
+				rep.push_back(mkNodeRep(2u, <double>{NormalizeCode(n_atks, 0, 5)})); // not using the range of 2 ~ 5 for normalization for more consistent encoding considering the recursive nn version
 			}
 			CreateNodeHardCopy = new multipleAttack(card_copy, n_atks);
 		}
 
-	MinionType :=
+	MinionType
+	default:
+		{
+			preselector
+			{
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+			}
+		}
+	:=
 	| beastMinion:
 		{
 			orig_minion_type = minion_type = BEAST_MINION;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new beastMinion(card_copy);
 		}
@@ -1326,7 +1411,7 @@ rule:
 			orig_minion_type = minion_type = DRAGON_MINION;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new dragonMinion(card_copy);
 		}
@@ -1335,7 +1420,7 @@ rule:
 			orig_minion_type = minion_type = DEMON_MINION;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			CreateNodeHardCopy = new demonMinion(card_copy);
 		}
@@ -1345,13 +1430,13 @@ rule:
 		{
 			generator
 			{
-				c = generate ChargeAbbl(self_config);
-				t = generate TauntAbbl(self_config);
-				s = generate StealthAbbl(self_config);
-				u = generate UntargetableAbbl(self_config);
-				d = generate ShieldAbbl(self_config);
-				p = generate PoisonousAbbl(self_config, damage);
-				l = generate LifestealAbbl(self_config, damage);
+				c = generate ChargeAbbl(self_config, rep);
+				t = generate TauntAbbl(self_config, rep);
+				s = generate StealthAbbl(self_config, rep);
+				u = generate UntargetableAbbl(self_config, rep);
+				d = generate ShieldAbbl(self_config, rep);
+				p = generate PoisonousAbbl(self_config, damage, rep);
+				l = generate LifestealAbbl(self_config, damage, rep);
 			}
 			FillRep
 			{
@@ -1400,8 +1485,8 @@ rule:
 				if (target_mode == TARGET_MODE_LEADER || (target_mode == TARGET_MODE_SELF && !(self_config & TARGET_NOT_LEADER))) // damage towards leader shouldn't have poisonous abilities
 					p = construct noPoisonous();
 				else
-					p = generate PoisonousAbbl(self_config, damage);
-				l = generate LifestealAbbl(self_config, damage);
+					p = generate PoisonousAbbl(self_config, damage, rep);
+				l = generate LifestealAbbl(self_config, damage, rep);
 			}
 			FillRep
 			{
@@ -1420,8 +1505,15 @@ rule:
 		{
 			preselector
 			{
-				if (self_config & TARGET_IS_SPELL)
-					force noCharge;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (self_config & TARGET_IS_SPELL)
+						force noCharge;
+				}
 			}
 		}
 	:=
@@ -1429,7 +1521,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noCharge(card_copy);
 		}
@@ -1439,7 +1531,7 @@ rule:
 			generator { self_config |= TARGET_IS_CHARGE; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justCharge(card_copy);
 			GetInitAbblFlag = TARGET_IS_CHARGE;
@@ -1450,8 +1542,15 @@ rule:
 		{
 			preselector
 			{
-				if (self_config & TARGET_IS_SPELL)
-					force noTaunt;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (self_config & TARGET_IS_SPELL)
+						force noTaunt;
+				}
 			}
 		}
 	:=
@@ -1459,7 +1558,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noTaunt(card_copy);
 		}
@@ -1469,7 +1568,7 @@ rule:
 			generator { self_config |= TARGET_IS_TAUNT; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justTaunt(card_copy);
 			GetInitAbblFlag = TARGET_IS_TAUNT;
@@ -1480,8 +1579,15 @@ rule:
 		{
 			preselector
 			{
-				if (self_config & (TARGET_IS_LEADER | TARGET_IS_SPELL)) // leaders never get generated with stealth (otherwise too OP)
-					force noStealth;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (self_config & (TARGET_IS_LEADER | TARGET_IS_SPELL)) // leaders never get generated with stealth (otherwise too OP)
+						force noStealth;
+				}
 			}
 		}
 	:=
@@ -1489,7 +1595,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noStealth(card_copy);
 		}
@@ -1499,18 +1605,29 @@ rule:
 			generator { self_config |= TARGET_IS_STEALTH; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justStealth(card_copy);
 			GetInitAbblFlag = TARGET_IS_STEALTH;
 		}
 
-	UntargetableAbbl :=
+	UntargetableAbbl
+	default:
+		{
+			preselector
+			{
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+			}
+		}
+	:=
 	| noUntargetable:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noUntargetable(card_copy);
 		}
@@ -1520,7 +1637,7 @@ rule:
 			generator { self_config |= TARGET_IS_UNTARGETABLE; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justUntargetable(card_copy);
 			GetInitAbblFlag = TARGET_IS_UNTARGETABLE;
@@ -1531,8 +1648,15 @@ rule:
 		{
 			preselector
 			{
-				if (self_config & TARGET_IS_SPELL)
-					force noShield;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (self_config & TARGET_IS_SPELL)
+						force noShield;
+				}
 			}
 		}
 	:=
@@ -1540,7 +1664,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noShield(card_copy);
 		}
@@ -1550,7 +1674,7 @@ rule:
 			generator { self_config |= TARGET_IS_SHIELDED; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justShield(card_copy);
 			GetInitAbblFlag = TARGET_IS_SHIELDED;
@@ -1561,8 +1685,15 @@ rule:
 		{
 			preselector
 			{
-				if (damage < 0 || (self_config & TARGET_IS_POISONOUS)) // negative damage means not applicable; the other condition applies to two cases (mainly for the latter one): 1. it already had the ability, so it doesn't matter; 2. previous effect has source condition of it, so to avoid making it trivial, don't add the ability
-					force noPoisonous;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (damage < 0 || (self_config & TARGET_IS_POISONOUS)) // negative damage means not applicable; the other condition applies to two cases (mainly for the latter one): 1. it already had the ability, so it doesn't matter; 2. previous effect has source condition of it, so to avoid making it trivial, don't add the ability
+						force noPoisonous;
+				}
 			}
 		}
 	:=
@@ -1570,7 +1701,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noPoisonous(card_copy);
 		}
@@ -1580,7 +1711,7 @@ rule:
 			generator { self_config |= TARGET_IS_POISONOUS; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justPoisonous(card_copy);
 			GetInitAbblFlag = TARGET_IS_POISONOUS;
@@ -1591,8 +1722,15 @@ rule:
 		{
 			preselector
 			{
-				if (damage < 0 || (self_config & TARGET_IS_LIFESTEAL)) // negative damage means not applicable; the other condition applies to two cases (mainly for the latter one): 1. it already had the ability, so it doesn't matter; 2. previous effect has source condition of it, so to avoid making it trivial, don't add the ability
-					force noLifesteal;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (damage < 0 || (self_config & TARGET_IS_LIFESTEAL)) // negative damage means not applicable; the other condition applies to two cases (mainly for the latter one): 1. it already had the ability, so it doesn't matter; 2. previous effect has source condition of it, so to avoid making it trivial, don't add the ability
+						force noLifesteal;
+				}
 			}
 		}
 	:=
@@ -1600,7 +1738,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			CreateNodeHardCopy = new noLifesteal(card_copy);
 		}
@@ -1610,7 +1748,7 @@ rule:
 			generator { self_config |= TARGET_IS_LIFESTEAL; }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justLifesteal(card_copy);
 			GetInitAbblFlag = TARGET_IS_LIFESTEAL;
@@ -1629,10 +1767,10 @@ rule:
 		{
 			generator
 			{
-				effect = generate TargetedPlayEff(self_config, effect_depth, give_eff);
+				effect = generate TargetedPlayEff(self_config, effect_depth, give_eff, rep);
 				int l_num = effect->GetEffectNum(); // note implicit child generation is added before these
 				self_config &= ExtractEffectIndependentConfig(effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_DEFAULT));
-				effects = generate OtherEffs(self_config, min_n - l_num, max_n - l_num, effect_depth, give_eff);
+				effects = generate OtherEffs(self_config, min_n - l_num, max_n - l_num, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
@@ -1696,13 +1834,20 @@ rule:
 		{
 			preselector
 			{
-				// targeted effects on played leaders are never generated through recursive generation path, so there shouldn't need to be extra check for played leaders
-				if (give_eff)
-					force noTargetedPlayEff;
-				if (!(self_config & TARGET_ANY_CHAR))
-					forbid targetedBattlecryEff;
-				if (!(self_config & TARGET_IS_SPELL))
-					forbid targetedCastEff;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					// targeted effects on played leaders are never generated through recursive generation path, so there shouldn't need to be extra check for played leaders
+					if (give_eff)
+						force noTargetedPlayEff;
+					if (!(self_config & TARGET_ANY_CHAR))
+						forbid targetedBattlecryEff;
+					if (!(self_config & TARGET_IS_SPELL))
+						forbid targetedCastEff;
+				}
 			}
 		}
 	:=
@@ -1710,7 +1855,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			DetailIndent = ""; // avoid having extra spaces
 			CreateNodeHardCopy = new noTargetedPlayEff(card_copy);
@@ -1720,11 +1865,11 @@ rule:
 			generator
 			{
 				self_config &= CHAR_COND_FILTER;
-				effect = generate TargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff);
+				effect = generate TargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Battlecry" + effect->Brief() + ">";
@@ -1777,11 +1922,11 @@ rule:
 			generator
 			{
 				self_config &= SPELL_COND_FILTER;
-				effect = generate TargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff);
+				effect = generate TargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Cast" + effect->Brief() + ">";
@@ -1828,10 +1973,17 @@ rule:
 		{
 			preselector
 			{
-				if (min_n > 0) // this takes precedence as the lower bound is often some constant (0, or 1) while the upper bound may be accidentally smaller than the lower bound if computed by some formula
-					force consOtherEffs;
-				if (max_n <= 0)
-					force noOtherEffs;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (min_n > 0) // this takes precedence as the lower bound is often some constant (0, or 1) while the upper bound may be accidentally smaller than the lower bound if computed by some formula
+						force consOtherEffs;
+					if (max_n <= 0)
+						force noOtherEffs;
+				}
 			}
 		}
 	:=
@@ -1839,7 +1991,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			DetailIndent = ""; // avoid having extra spaces
 			CreateNodeHardCopy = new noOtherEffs(card_copy);
@@ -1848,13 +2000,13 @@ rule:
 		{
 			generator
 			{ 
-				effect = generate OtherEff(self_config, effect_depth, give_eff);
+				effect = generate OtherEff(self_config, effect_depth, give_eff, rep);
 				self_config &= ExtractEffectIndependentConfig(effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_DEFAULT));
-				effects = generate OtherEffs(self_config, min_n - 1, max_n - 1, effect_depth, give_eff);
+				effects = generate OtherEffs(self_config, min_n - 1, max_n - 1, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 				effects->FillRep(rep);
 			}
@@ -1886,14 +2038,21 @@ rule:
 		{
 			preselector
 			{
-				if (!(self_config & TARGET_ANY_CHAR))
-					forbid untargetedBattlecryEff;
-				if (!(self_config & TARGET_IS_SPELL))
-					forbid untargetedCastEff;
-				if (!(self_config & TARGET_IS_MINION))
-					forbid deathrattleEff;
-				if (!(self_config & TARGET_NOT_LEADER) && !(self_config & TARGET_POS_HAND_OR_DECK)) // played leaders should not be granted battlecry effects
-					forbid untargetedBattlecryEff, onDiscardEff;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (!(self_config & TARGET_ANY_CHAR))
+						forbid untargetedBattlecryEff;
+					if (!(self_config & TARGET_IS_SPELL))
+						forbid untargetedCastEff;
+					if (!(self_config & TARGET_IS_MINION))
+						forbid deathrattleEff;
+					if (!(self_config & TARGET_NOT_LEADER) && !(self_config & TARGET_POS_HAND_OR_DECK)) // played leaders should not be granted battlecry effects
+						forbid untargetedBattlecryEff, onDiscardEff;
+				}
 			}
 		}
 	:=
@@ -1902,11 +2061,11 @@ rule:
 			generator
 			{
 				self_config &= CHAR_COND_FILTER;
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Battlecry" + effect->Brief() + ">";
@@ -1948,11 +2107,11 @@ rule:
 			generator
 			{
 				self_config &= SPELL_COND_FILTER;
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_PLAY, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Cast" + effect->Brief() + ">";
@@ -1987,11 +2146,11 @@ rule:
 			generator
 			{
 				self_config &= MINION_COND_FILTER; 
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_DESTROY, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_DESTROY, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Deathrattle" + effect->Brief() + ">";
@@ -2025,11 +2184,11 @@ rule:
 		{
 			generator
 			{ 
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_DISCARD, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_DISCARD, effect_depth, give_eff, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 				effect->FillRep(rep);
 			}
 			Brief = "<Discard" + effect->Brief() + ">";
@@ -2069,15 +2228,15 @@ rule:
 		{
 			generator
 			{
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_TURN, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_TURN, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, EFFECT_TIMING_TURN);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, EFFECT_TIMING_TURN, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 				effect->FillRep(rep);
 				alle->FillRep(rep);
 			}
@@ -2112,15 +2271,15 @@ rule:
 		{
 			generator
 			{
-				effect = generate UntargetedEff(self_config, EFFECT_TIMING_TURN, effect_depth, give_eff);
+				effect = generate UntargetedEff(self_config, EFFECT_TIMING_TURN, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, EFFECT_TIMING_TURN);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, EFFECT_TIMING_TURN, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5));
+				rep.push_back(mkNodeRep(5u));
 				effect->FillRep(rep);
 				alle->FillRep(rep);
 			}
@@ -2157,9 +2316,16 @@ rule:
 		{
 			preselector
 			{
-				if ((self_config & TARGET_IS_SPELL) // as spell position at play is questionable we simply don't allow this sort of conditions
-					|| (!(self_config & TARGET_NOT_LEADER) && effect_timing == EFFECT_TIMING_PLAY)) // the source condition on leaders (as characters) at play is not needed as it can be covered by leader condition
-					forbid srcCondTargetedEff;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if ((self_config & TARGET_IS_SPELL) // as spell position at play is questionable we simply don't allow this sort of conditions
+						|| (!(self_config & TARGET_NOT_LEADER) && effect_timing == EFFECT_TIMING_PLAY)) // the source condition on leaders (as characters) at play is not needed as it can be covered by leader condition
+						forbid srcCondTargetedEff;
+				}
 			}
 		}
 	:=
@@ -2175,17 +2341,17 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;				
-				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetPlayTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing); 
+				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing, rep); 
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				effect->FillRep(rep);
 				desconstr->FillRep(rep);
 			}
@@ -2260,18 +2426,18 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;
-				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetPlayTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing);
-				cond = generate IndeCond(tmp_init_config = GetDefaultInitConfig(), tmp_config = GetDefaultConfig(), effect_timing); // reinitialize the configs as the target should not affect the independ cond
+				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing, rep);
+				cond = generate IndeCond(tmp_init_config = GetDefaultInitConfig(), tmp_config = GetDefaultConfig(), effect_timing, rep); // reinitialize the configs as the target should not affect the independ cond
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 				desconstr->FillRep(rep);
 				cond->FillRep(rep);
@@ -2347,12 +2513,12 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;
-				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config_copy, TARGET_MODE_PLAY, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetPlayTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing);
-				srccond = generate TargetCond(self_config_copy, tmp_config = GetFlagConfig(effect_timing_filter), TARGET_MODE_SOURCE, effect_timing);
+				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing, rep);
+				srccond = generate TargetCond(self_config_copy, tmp_config = GetFlagConfig(effect_timing_filter), TARGET_MODE_SOURCE, effect_timing, rep);
 
 				self_config |= srccond->GetInitAbblFlag();
 			}
@@ -2360,7 +2526,7 @@ rule:
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				effect->FillRep(rep);
 				desconstr->FillRep(rep);
 				srccond->FillRep(rep);
@@ -2436,10 +2602,17 @@ rule:
 		{
 			preselector
 			{
-				if (effect_timing == EFFECT_TIMING_TURN) // for turn start and turn end effects, it needs to at least specify where the card is (field/hand&/deck), doesn't apply to discard as discard doesn't happen so often as turn start/turn end
-					force srcCondUntargetedEff;
-				if (!(self_config & TARGET_NOT_LEADER) && effect_timing == EFFECT_TIMING_PLAY) // the source condition on leaders (as characters) at play is not needed as it can be covered by leader condition
-					forbid srcCondUntargetedEff;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (effect_timing == EFFECT_TIMING_TURN) // for turn start and turn end effects, it needs to at least specify where the card is (field/hand&/deck), doesn't apply to discard as discard doesn't happen so often as turn start/turn end
+						force srcCondUntargetedEff;
+					if (!(self_config & TARGET_NOT_LEADER) && effect_timing == EFFECT_TIMING_PLAY) // the source condition on leaders (as characters) at play is not needed as it can be covered by leader condition
+						forbid srcCondUntargetedEff;
+				}
 			}
 		}
 	:=
@@ -2463,13 +2636,13 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;
-				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff);
+				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff, rep);
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				effect->FillRep(rep);
 			}
 			Brief = (overheat_count < overheat_threshold ? "" : "(Overheated)");
@@ -2534,17 +2707,17 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;
-				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff);
+				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetLeaderConfig(); // to counter the problem of rvalue assignmed to lvalue 
-				cond = generate IndeCond(tmp_init_config, tmp_config, effect_timing);
+				cond = generate IndeCond(tmp_init_config, tmp_config, effect_timing, rep);
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 				cond->FillRep(rep);
 			}
@@ -2611,11 +2784,11 @@ rule:
 
 				CondConfig self_config_copy = self_config;
 				self_config_copy &= effect_timing_filter;
-				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff);
+				effect = generate BaseUntargetedEff(self_config_copy, effect_timing, effect_depth, give_eff, rep);
 				
 				CondConfig self_instant_config = effect->GetSelfConfig(self_config);
 				self_instant_config &= effect_timing_filter;
-				srccond = generate TargetCond(self_config_copy, self_instant_config, TARGET_MODE_SOURCE, effect_timing);
+				srccond = generate TargetCond(self_config_copy, self_instant_config, TARGET_MODE_SOURCE, effect_timing, rep);
 
 				self_config |= srccond->GetInitAbblFlag();
 			}
@@ -2623,7 +2796,7 @@ rule:
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				effect->FillRep(rep);
 				srccond->FillRep(rep);
 			}
@@ -2684,21 +2857,28 @@ rule:
 		{
 			preselector
 			{
-				if (!(init_config & TARGET_ANY_CHAR) || !(init_config & TARGET_POS_FIELD)|| !(instant_config & TARGET_ANY_CHAR) || !(instant_config & TARGET_POS_FIELD))
-					force cardTargetCond;
-				if (!(init_config & TARGET_POS_HAND_OR_DECK) || !(instant_config & TARGET_POS_HAND_OR_DECK)
-					|| (target_mode == TARGET_MODE_PLAY && (!(init_config & TARGET_IS_ALLY) || !(instant_config & TARGET_IS_ALLY) // for the target of an targeted effect, if doesn't allow ally, then it has to target at a character
-															|| !(init_config & TARGET_POS_HAND) || !(instant_config & TARGET_POS_HAND)))) // for the target of an targeted effect, if doesn't allow hand, then it has to target at a character
-					force charTargetCond;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (!(init_config & TARGET_ANY_CHAR) || !(init_config & TARGET_POS_FIELD)|| !(instant_config & TARGET_ANY_CHAR) || !(instant_config & TARGET_POS_FIELD))
+						force cardTargetCond;
+					else if (!(init_config & TARGET_POS_HAND_OR_DECK) || !(instant_config & TARGET_POS_HAND_OR_DECK)
+						|| (target_mode == TARGET_MODE_PLAY && (!(init_config & TARGET_IS_ALLY) || !(instant_config & TARGET_IS_ALLY) // for the target of an targeted effect, if doesn't allow ally, then it has to target at a character
+																|| !(init_config & TARGET_POS_HAND) || !(instant_config & TARGET_POS_HAND)))) // for the target of an targeted effect, if doesn't allow hand, then it has to target at a character
+						force charTargetCond;
+				}
 			}
 		}
 	:=
 	| charTargetCond: CharTargetCond* cond
 		{
-			generator { cond = generate CharTargetCond(init_config, instant_config, target_mode, effect_timing); }
+			generator { cond = generate CharTargetCond(init_config, instant_config, target_mode, effect_timing, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				cond->FillRep(rep);
 			}
 			Detail = cond->Detail();
@@ -2714,10 +2894,10 @@ rule:
 		}
 	| cardTargetCond: CardTargetCond* cond
 		{
-			generator { cond = generate CardTargetCond(init_config, instant_config, target_mode, effect_timing); }
+			generator { cond = generate CardTargetCond(init_config, instant_config, target_mode, effect_timing, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				cond->FillRep(rep);
 			}
 			Detail = cond->Detail();
@@ -2765,16 +2945,16 @@ rule:
 				}
 				else
 				{
-					alle = generate AllegianceCond(init_config, instant_config, target_mode, effect_timing);
-					typecond = generate CharTypeCond(init_config, instant_config, target_mode, effect_timing);
+					alle = generate AllegianceCond(init_config, instant_config, target_mode, effect_timing, rep);
+					typecond = generate CharTypeCond(init_config, instant_config, target_mode, effect_timing, rep);
 					init_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
 					instant_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
-					abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing);
+					abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing, rep);
 					if (!(instant_config & TARGET_POS_HAND_OR_DECK) && target_mode == TARGET_MODE_SOURCE
 						&& typecond->isCondTrivial() && abblcond->isCondTrivial()) // do not put trivial condition on source if it is always triggered on the field, e.g. deathrattle (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
-						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, true);
+						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, true, rep);
 					else
-						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, false);
+						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, false, rep);
 				}
 			}
 			FillRep
@@ -2814,23 +2994,30 @@ rule:
 		{
 			preselector
 			{
-				// note that the card type doesn't change (while minion type can)
-				// if it isn't a minion (so it is a leader) then isCharacter is the only choice
-				if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
-					force isCharacter;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					// note that the card type doesn't change (while minion type can)
+					// if it isn't a minion (so it is a leader) then isCharacter is the only choice
+					if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
+						force isCharacter;
 
-				//  if the condition doesn't allow leaders, we don't want to include leader as a possibility (well we could always say a charactor for source condition but it would sound better to say a minion, or a beast minion etc.)
-				if (!(init_config & TARGET_IS_LEADER) || !(instant_config & TARGET_IS_LEADER))
-					forbid isCharacter;
+					//  if the condition doesn't allow leaders, we don't want to include leader as a possibility (well we could always say a charactor for source condition but it would sound better to say a minion, or a beast minion etc.)
+					if (!(init_config & TARGET_IS_LEADER) || !(instant_config & TARGET_IS_LEADER))
+						forbid isCharacter;
 
-				// note forbidding a minion type meaning not specifically conditioned on that type, but the effect may still be applicable for that type
-				// also, we don't want the minion condition to be too trivial (initially true)
-				if (!(init_config & TARGET_NOT_BEAST) || !(instant_config & TARGET_IS_BEAST))
-					forbid isBeast;
-				if (!(init_config & TARGET_NOT_DRAGON) || !(instant_config & TARGET_IS_DRAGON))
-					forbid isDragon;
-				if (!(init_config & TARGET_NOT_DEMON) || !(instant_config & TARGET_IS_DEMON))
-					forbid isDemon;
+					// note forbidding a minion type meaning not specifically conditioned on that type, but the effect may still be applicable for that type
+					// also, we don't want the minion condition to be too trivial (initially true)
+					if (!(init_config & TARGET_NOT_BEAST) || !(instant_config & TARGET_IS_BEAST))
+						forbid isBeast;
+					if (!(init_config & TARGET_NOT_DRAGON) || !(instant_config & TARGET_IS_DRAGON))
+						forbid isDragon;
+					if (!(init_config & TARGET_NOT_DEMON) || !(instant_config & TARGET_IS_DEMON))
+						forbid isDemon;
+				}
 			}
 		}
 	:=
@@ -2838,7 +3025,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			Detail = "character";
@@ -2858,7 +3045,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			isCondTrivial = true; // card type cannot change, so for our purpose, this is also considered trivial
 			Detail = "minion";
@@ -2881,7 +3068,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			Detail = "Beast";
 			DetailAlt1 = "a Beast";
@@ -2911,7 +3098,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 			}
 			Detail = "Dragon";
 			DetailAlt1 = "a Dragon";
@@ -2941,7 +3128,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 			}	
 			Detail = "Demon";
 			DetailAlt1 = "a Demon";
@@ -2985,17 +3172,17 @@ rule:
 				if (target_mode == TARGET_MODE_PLAY)
 					instant_config &= PLAY_CARD_TARGET_FILTER;
 
-				pos = generate CardPosCond(init_config, instant_config, target_mode, effect_timing); // it is important not to update config with this part (or at least should not remove the bit on TARGET_POS_FIELD), as it is used for the trivialibility mechanism below
-				alle = generate AllegianceCond(init_config, instant_config, target_mode, effect_timing);
-				typecond = generate CardTypeCond(init_config, instant_config, target_mode, effect_timing);
+				pos = generate CardPosCond(init_config, instant_config, target_mode, effect_timing, rep); // it is important not to update config with this part (or at least should not remove the bit on TARGET_POS_FIELD), as it is used for the trivialibility mechanism below
+				alle = generate AllegianceCond(init_config, instant_config, target_mode, effect_timing, rep);
+				typecond = generate CardTypeCond(init_config, instant_config, target_mode, effect_timing, rep);
 				init_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
 				instant_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
-				abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing);
+				abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing, rep);
 				if (!(instant_config & TARGET_POS_FIELD) && target_mode == TARGET_MODE_SOURCE
 					&& pos->isCondTrivial() && typecond->isCondTrivial() && abblcond->isCondTrivial()) // do not put trivial condition on source (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
-					statcond = generate StatCond(init_config, instant_config, target_mode, true, effect_timing);
+					statcond = generate StatCond(init_config, instant_config, target_mode, true, effect_timing, rep);
 				else
-					statcond = generate StatCond(init_config, instant_config, target_mode, false, effect_timing);
+					statcond = generate StatCond(init_config, instant_config, target_mode, false, effect_timing, rep);
 			}
 			FillRep
 			{
@@ -3037,33 +3224,40 @@ rule:
 		{
 			preselector
 			{
-				// note that card type doesn't change (while minion type can)
-				// so don't just require on card type if it is source condition (somewhat different from the CardTypeCond mechanism just because there minion sounds better to say than character when it applies)
-				if (target_mode == TARGET_MODE_SOURCE)
+				if (rep)
 				{
-					forbid isLeaderCard, isMinionCard, isSpellCard;
-					if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
-						force isCard; // as all the detailed minion types are also forbidden in this case
+					force [(rep++)->choice];
 				}
 				else
 				{
-					// forbid card type if it is not allowed, also forbidding types that contains the type (isCard), as this is not the case of source condition
-					if (!(init_config & TARGET_IS_LEADER) || !(instant_config & TARGET_IS_LEADER))
-						forbid isCard, isLeaderCard;
-					if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
-						forbid isCard, isMinionCard, isBeastCard, isDragonCard, isDemonCard;
-					if (!(init_config & TARGET_IS_SPELL) || !(instant_config & TARGET_IS_SPELL))
-						forbid isCard, isSpellCard;
-				}
+					// note that card type doesn't change (while minion type can)
+					// so don't just require on card type if it is source condition (somewhat different from the CardTypeCond mechanism just because there minion sounds better to say than character when it applies)
+					if (target_mode == TARGET_MODE_SOURCE)
+					{
+						forbid isLeaderCard, isMinionCard, isSpellCard;
+						if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
+							force isCard; // as all the detailed minion types are also forbidden in this case
+					}
+					else
+					{
+						// forbid card type if it is not allowed, also forbidding types that contains the type (isCard), as this is not the case of source condition
+						if (!(init_config & TARGET_IS_LEADER) || !(instant_config & TARGET_IS_LEADER))
+							forbid isCard, isLeaderCard;
+						if (!(init_config & TARGET_IS_MINION) || !(instant_config & TARGET_IS_MINION))
+							forbid isCard, isMinionCard, isBeastCard, isDragonCard, isDemonCard;
+						if (!(init_config & TARGET_IS_SPELL) || !(instant_config & TARGET_IS_SPELL))
+							forbid isCard, isSpellCard;
+					}
 
-				// note forbidding a minion type meaning not specifically conditioned on that type, but the effect may still be applicable for that type
-				// also, we don't want the minion condition to be too trivial (initially true)
-				if (!(init_config & TARGET_NOT_BEAST) || !(instant_config & TARGET_IS_BEAST))
-					forbid isBeastCard;
-				if (!(init_config & TARGET_NOT_DRAGON) || !(instant_config & TARGET_IS_DRAGON))
-					forbid isDragonCard;
-				if (!(init_config & TARGET_NOT_DEMON) || !(instant_config & TARGET_IS_DEMON))
-					forbid isDemonCard;
+					// note forbidding a minion type meaning not specifically conditioned on that type, but the effect may still be applicable for that type
+					// also, we don't want the minion condition to be too trivial (initially true)
+					if (!(init_config & TARGET_NOT_BEAST) || !(instant_config & TARGET_IS_BEAST))
+						forbid isBeastCard;
+					if (!(init_config & TARGET_NOT_DRAGON) || !(instant_config & TARGET_IS_DRAGON))
+						forbid isDragonCard;
+					if (!(init_config & TARGET_NOT_DEMON) || !(instant_config & TARGET_IS_DEMON))
+						forbid isDemonCard;
+				}
 			}
 		}
 	:=
@@ -3071,7 +3265,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			Detail = "card";
@@ -3091,7 +3285,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			isCondTrivial = true; // card type cannot change, so for our purpose, this is also considered trivial
 			Detail = "leader card";
@@ -3107,7 +3301,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			isCondTrivial = true; // card type cannot change, so for our purpose, this is also considered trivial
 			Detail = "minion card";
@@ -3130,7 +3324,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 			}
 			isCondTrivial = true;
 			Detail = "spell card";
@@ -3146,7 +3340,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 			}
 			Detail = "Beast card";
 			DetailAlt1 = "a Beast card";
@@ -3176,7 +3370,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5));
+				rep.push_back(mkNodeRep(5u));
 			}
 			Detail = "Dragon card";
 			DetailAlt1 = "a Dragon card";
@@ -3206,7 +3400,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(6));
+				rep.push_back(mkNodeRep(6u));
 			}
 			Detail = "Demon card";
 			DetailAlt1 = "a Demon card";
@@ -3238,10 +3432,17 @@ rule:
 		{
 			preselector
 			{
-				if (!(instant_config & TARGET_POS_DECK))
-					force cardPosAtHand;
-				if (!(instant_config & TARGET_POS_HAND))
-					force cardPosAtDeck;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (!(instant_config & TARGET_POS_DECK))
+						force cardPosAtHand;
+					if (!(instant_config & TARGET_POS_HAND))
+						force cardPosAtDeck;
+				}
 			}
 		}
 	:=	// note that only cards in ones own hand is targetable at play, which is already deal with by the IsValidCardTarget function for the higher up rules, therefore no need to be considered here
@@ -3249,7 +3450,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			Detail = "hand or deck";
@@ -3261,7 +3462,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			Detail = "hand";
 			DetailAlt2 = "hands";
@@ -3273,7 +3474,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			Detail = "deck";
 			DetailAlt2 = "decks";
@@ -3287,14 +3488,21 @@ rule:
 		{
 			preselector
 			{
-				if (target_mode == TARGET_MODE_SOURCE) // for conditions on source it is forced anyAllegiance, as it is always ally, doesn't make sense to put any condition
-					force anyAllegiance;
-				if (target_mode == TARGET_MODE_MOVE_DEST || target_mode == TARGET_MODE_WIN_GAME) // for move destination, it can only be either ally or opponent, but not both; for win game we think an effect intensionally result in a draw is boring
-					forbid anyAllegiance;
-				if (!(instant_config & TARGET_IS_OPPO))
-					force allyAllegiance;
-				if (!(instant_config & TARGET_IS_ALLY))
-					force oppoAllegiance;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (target_mode == TARGET_MODE_SOURCE) // for conditions on source it is forced anyAllegiance, as it is always ally, doesn't make sense to put any condition
+						force anyAllegiance;
+					if (target_mode == TARGET_MODE_MOVE_DEST || target_mode == TARGET_MODE_WIN_GAME) // for move destination, it can only be either ally or opponent, but not both; for win game we think an effect intensionally result in a draw is boring
+						forbid anyAllegiance;
+					if (!(instant_config & TARGET_IS_OPPO))
+						force allyAllegiance;
+					if (!(instant_config & TARGET_IS_ALLY))
+						force oppoAllegiance;
+				}
 			}
 		}
 	:=
@@ -3302,7 +3510,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			DetailAlt2 = "both players\' "; // for aoe, etc.
@@ -3317,7 +3525,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			Detail = "friendly ";
 			DetailAlt1 = "a friendly ";
@@ -3335,7 +3543,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			Detail = "enemy ";
 			DetailAlt1 = "an enemy ";
@@ -3357,23 +3565,29 @@ rule:
 		{
 			preselector
 			{
-
-				// we don't want the ability condition to be too trivial (initially true)
-				// stealth and shield abilities are treated a little bit differently as they are easily lost
-				if ((init_config & TARGET_IS_CHARGE) || !(instant_config & TARGET_IS_CHARGE) || (init_config & TARGET_IS_SPELL))
-					forbid chargeCond;
-				if ((init_config & TARGET_IS_TAUNT) || !(instant_config & TARGET_IS_TAUNT) || (init_config & TARGET_IS_SPELL))
-					forbid tauntCond;
-				if (((init_config & TARGET_IS_STEALTH) && (!(instant_config & TARGET_POS_FIELD) || (target_mode == TARGET_MODE_SOURCE && effect_timing == EFFECT_TIMING_PLAY))) || !(instant_config & TARGET_IS_STEALTH) || (init_config & (TARGET_IS_SPELL | TARGET_IS_LEADER)))
-					forbid stealthCond;
-				if ((init_config & TARGET_IS_UNTARGETABLE) || !(instant_config & TARGET_IS_UNTARGETABLE))
-					forbid untargetableCond;
-				if (((init_config & TARGET_IS_SHIELDED) && (!(instant_config & TARGET_POS_FIELD) || (target_mode == TARGET_MODE_SOURCE && effect_timing == EFFECT_TIMING_PLAY))) || !(instant_config & TARGET_IS_SHIELDED) || (init_config & TARGET_IS_SPELL))
-					forbid shieldCond;
-				if ((init_config & TARGET_IS_POISONOUS) || !(instant_config & TARGET_IS_POISONOUS))
-					forbid poisonousCond;
-				if ((init_config & TARGET_IS_LIFESTEAL) || !(instant_config & TARGET_IS_LIFESTEAL))
-					forbid lifestealCond;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					// we don't want the ability condition to be too trivial (initially true)
+					// stealth and shield abilities are treated a little bit differently as they are easily lost
+					if ((init_config & TARGET_IS_CHARGE) || !(instant_config & TARGET_IS_CHARGE) || (init_config & TARGET_IS_SPELL))
+						forbid chargeCond;
+					if ((init_config & TARGET_IS_TAUNT) || !(instant_config & TARGET_IS_TAUNT) || (init_config & TARGET_IS_SPELL))
+						forbid tauntCond;
+					if (((init_config & TARGET_IS_STEALTH) && (!(instant_config & TARGET_POS_FIELD) || (target_mode == TARGET_MODE_SOURCE && effect_timing == EFFECT_TIMING_PLAY))) || !(instant_config & TARGET_IS_STEALTH) || (init_config & (TARGET_IS_SPELL | TARGET_IS_LEADER)))
+						forbid stealthCond;
+					if ((init_config & TARGET_IS_UNTARGETABLE) || !(instant_config & TARGET_IS_UNTARGETABLE))
+						forbid untargetableCond;
+					if (((init_config & TARGET_IS_SHIELDED) && (!(instant_config & TARGET_POS_FIELD) || (target_mode == TARGET_MODE_SOURCE && effect_timing == EFFECT_TIMING_PLAY))) || !(instant_config & TARGET_IS_SHIELDED) || (init_config & TARGET_IS_SPELL))
+						forbid shieldCond;
+					if ((init_config & TARGET_IS_POISONOUS) || !(instant_config & TARGET_IS_POISONOUS))
+						forbid poisonousCond;
+					if ((init_config & TARGET_IS_LIFESTEAL) || !(instant_config & TARGET_IS_LIFESTEAL))
+						forbid lifestealCond;
+				}
 			}
 		}
 	:=
@@ -3381,7 +3595,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			CreateNodeHardCopy = new noAbblCond(card_copy);
@@ -3390,7 +3604,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			Detail = " with Charge";
 			CreateNodeHardCopy = new chargeCond(card_copy);
@@ -3404,7 +3618,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 			}
 			Detail = " with Taunt";
 			CreateNodeHardCopy = new tauntCond(card_copy);
@@ -3418,7 +3632,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 			}
 			Detail = " with Stealth";
 			CreateNodeHardCopy = new stealthCond(card_copy);
@@ -3432,7 +3646,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 			}
 			Detail = " with Untargetability";
 			CreateNodeHardCopy = new untargetableCond(card_copy);
@@ -3446,7 +3660,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5));
+				rep.push_back(mkNodeRep(5u));
 			}
 			Detail = " with Shield";
 			CreateNodeHardCopy = new shieldCond(card_copy);
@@ -3460,7 +3674,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(6));
+				rep.push_back(mkNodeRep(6u));
 			}
 			Detail = " with Poison";
 			CreateNodeHardCopy = new poisonousCond(card_copy);
@@ -3474,7 +3688,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(7));
+				rep.push_back(mkNodeRep(7u));
 			}
 			Detail = " with Lifesteal";
 			CreateNodeHardCopy = new lifestealCond(card_copy);
@@ -3490,22 +3704,29 @@ rule:
 		{
 			preselector
 			{
-				if ((init_config & TARGET_IS_SPELL) || !(instant_config & TARGET_ANY_CHAR) || ((instant_config & TARGET_IS_SPELL) && target_mode != TARGET_MODE_SOURCE)) // spells only has cost stat; also for source condition it wouldn't say isSpellCard (it says isCard instead, so the check would be special)
-					forbid atkCond, hpCond, atkTimesCond;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if ((init_config & TARGET_IS_SPELL) || !(instant_config & TARGET_ANY_CHAR) || ((instant_config & TARGET_IS_SPELL) && target_mode != TARGET_MODE_SOURCE)) // spells only has cost stat; also for source condition it wouldn't say isSpellCard (it says isCard instead, so the check would be special)
+						forbid atkCond, hpCond, atkTimesCond;
 
-				// scale each type of condition with nontrival ranges (the range for lower bound requirement + the range for upper bound requirement), assuming when foring nontrival one of this has to have none zero weights
-				// note that the default clamping off of negative probs are done before these so we need to check if the scales are negative here manually
-				int cost_scale = init_config.max_cost - init_config.min_cost + instant_config.max_cost - instant_config.min_cost;
-				probof(costCond) *= (cost_scale > 0 ? 0.1 * cost_scale : 0); // the 0.1 is to balance with noStatCond
-				int atk_scale = init_config.max_atk - init_config.min_atk + instant_config.max_atk - instant_config.min_atk;
-				probof(atkCond) *= (atk_scale > 0 ? 0.1 * atk_scale : 0);
-				int hp_scale = init_config.max_hp - init_config.min_hp + instant_config.max_hp - instant_config.min_hp;
-				probof(hpCond) *= (hp_scale > 0 ? 0.1 * hp_scale : 0);
-				int n_atks_scale = init_config.max_n_atks - init_config.min_n_atks + instant_config.max_n_atks - instant_config.min_n_atks;
-				probof(atkTimesCond) *= (n_atks_scale > 0 ? 0.1 * n_atks_scale : 0);
+					// scale each type of condition with nontrival ranges (the range for lower bound requirement + the range for upper bound requirement), assuming when foring nontrival one of this has to have none zero weights
+					// note that the default clamping off of negative probs are done before these so we need to check if the scales are negative here manually
+					int cost_scale = init_config.max_cost - init_config.min_cost + instant_config.max_cost - instant_config.min_cost;
+					probof(costCond) *= (cost_scale > 0 ? 0.1 * cost_scale : 0); // the 0.1 is to balance with noStatCond
+					int atk_scale = init_config.max_atk - init_config.min_atk + instant_config.max_atk - instant_config.min_atk;
+					probof(atkCond) *= (atk_scale > 0 ? 0.1 * atk_scale : 0);
+					int hp_scale = init_config.max_hp - init_config.min_hp + instant_config.max_hp - instant_config.min_hp;
+					probof(hpCond) *= (hp_scale > 0 ? 0.1 * hp_scale : 0);
+					int n_atks_scale = init_config.max_n_atks - init_config.min_n_atks + instant_config.max_n_atks - instant_config.min_n_atks;
+					probof(atkTimesCond) *= (n_atks_scale > 0 ? 0.1 * n_atks_scale : 0);
 
-				if (force_nontrivial && (probof(costCond) > 0 || probof(atkCond) > 0 || probof(hpCond) > 0 || probof(atkTimesCond) > 0))
-					forbid noStatCond;
+					if (force_nontrivial && (probof(costCond) > 0 || probof(atkCond) > 0 || probof(hpCond) > 0 || probof(atkTimesCond) > 0))
+						forbid noStatCond;
+				}
 			}
 		}
 	:=
@@ -3513,7 +3734,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
 			CreateNodeHardCopy = new noStatCond(card_copy);
@@ -3526,11 +3747,11 @@ rule:
 				int lower_max = instant_config.max_cost;
 				int upper_min = instant_config.min_cost;
 				int upper_max = init_config.max_cost - 1;
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				variant->FillRep(rep);
 			}
 			Detail = " having" + variant->Detail() + " mana cost";
@@ -3554,11 +3775,11 @@ rule:
 				int lower_max = instant_config.max_atk;
 				int upper_min = instant_config.min_atk;
 				int upper_max = init_config.max_atk - 1;
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				variant->FillRep(rep);
 			}
 			Detail = " having" + variant->Detail() + " attack";
@@ -3582,11 +3803,11 @@ rule:
 				int lower_max = instant_config.max_hp;
 				int upper_min = instant_config.min_hp;
 				int upper_max = init_config.max_hp - 1;
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 				variant->FillRep(rep);
 			}
 			Detail = " having" + variant->Detail() + " health";
@@ -3610,11 +3831,11 @@ rule:
 				int lower_max = instant_config.max_n_atks;
 				int upper_min = instant_config.min_n_atks;
 				int upper_max = init_config.max_n_atks - 1;
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 				variant->FillRep(rep);
 			}
 			Detail = " having" + variant->Detail() + (variant->IsPlural() ? " attack times" : " attack time");
@@ -3636,18 +3857,31 @@ rule:
 		{
 			preselector
 			{
-				// scale the weights for "at least" and "at most" with the reasonable range
-				probof(statGe) *= lower_max - lower_min + 1;
-				probof(statLe) *= upper_max - upper_min + 1;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					// scale the weights for "at least" and "at most" with the reasonable range
+					probof(statGe) *= lower_max - lower_min + 1;
+					probof(statLe) *= upper_max - upper_min + 1;
+				}
 			}
 		}
 	:=
 	| statGe: int val
 		{
-			generator { val = GetRandInt(lower_min, lower_max); }
+			generator
+			{
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 0, 10);
+				else
+					val = GetRandInt(lower_min, lower_max);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0, <double>{NormalizeCode(val, 0, 10)})); // well the val can be outside this range but it will be in for most of the time
+				rep.push_back(mkNodeRep(0u, <double>{NormalizeCode(val, 0, 10)})); // well the val can be outside this range but it will be in for most of the time
 			}
 			Detail = " at least " + IntToStr(val);
 			IsPlural = (val != 1 && val != -1);
@@ -3657,10 +3891,16 @@ rule:
 		}
 	| statLe: int val
 		{
-			generator { val = GetRandInt(upper_min, upper_max); }
+			generator
+			{ 
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 0, 10);
+				else
+					val = GetRandInt(upper_min, upper_max);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1, <double>{NormalizeCode(val, 0, 10)})); // well the val can be outside this range but it will be in for most of the time
+				rep.push_back(mkNodeRep(1u, <double>{NormalizeCode(val, 0, 10)})); // well the val can be outside this range but it will be in for most of the time
 			}
 			Detail = " at most " + IntToStr(val);
 			IsPlural = (val != 1 && val != -1);
@@ -3674,8 +3914,15 @@ rule:
 		{
 			preselector
 			{
-				if (effect_timing == EFFECT_TIMING_PLAY) // as playing a card generally consumes MP, having mpCond on play effect has some nasty ambiguity, we just forbid this from happening
-					forbid mpCond;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (effect_timing == EFFECT_TIMING_PLAY) // as playing a card generally consumes MP, having mpCond on play effect has some nasty ambiguity, we just forbid this from happening
+						forbid mpCond;
+				}
 			}
 		}
 	:=
@@ -3685,11 +3932,11 @@ rule:
 			{ 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = TARGET_POS_FIELD | TARGET_IS_MINION | TARGET_ANY_ALLE_MINION_ABBL_TYPE; // to counter the problem of rvalue passed to lvalue ref
-				cond = generate CharTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing);
+				cond = generate CharTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				cond->FillRep(rep);
 			}
 			Detail = "there is " + cond->DetailAlt1() + " on the field (not considering this card)";
@@ -3717,11 +3964,11 @@ rule:
 			{
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = TARGET_POS_HAND_OR_DECK | TARGET_IS_ALLY | TARGET_ANY_CARD_MINION_ABBL_TYPE; // to counter the problem of rvalue passed to lvalue ref
-				cond = generate CardTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing);
+				cond = generate CardTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				cond->FillRep(rep);
 			}
 			Detail = "there is " + cond->DetailAlt1() + " (not considering this card)";
@@ -3751,19 +3998,19 @@ rule:
 				init_config.min_hp = 1; // condition on leaders should always ask for positive hp		
 				CondConfig instant_config = LEADER_COND_FILTER & FIELD_COND_FILTER;
 				instant_config.min_hp = 1; // condition on leaders should always ask for positive hp
-				alle = generate AllegianceCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing);
+				alle = generate AllegianceCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, rep);
 				// only apply the leader config if the allegiance setting in the config is covered by the allegiance setting here
 				if (!(instant_leader_config.flag & ~alle->GetTargetConfig().flag))
 					instant_config &= instant_leader_config;
-				abblcond = generate AbblCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing);
+				abblcond = generate AbblCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, rep);
 				if (abblcond->isCondTrivial())
-					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, true);
+					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, true, rep);
 				else
-					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, false);
+					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, false, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				alle->FillRep(rep);
 				abblcond->FillRep(rep);
 				statcond->FillRep(rep);
@@ -3792,7 +4039,7 @@ rule:
 			{
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 
 				// we are using the configure that is used for leader also for mp and max mp as currently they can't be both modified in the same effect.
 				int instant_min_mp = 0, instant_max_mp = 10;
@@ -3809,11 +4056,11 @@ rule:
 				int upper_min = instant_min_mp;
 				int upper_max = 9;
 
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 				alle->FillRep(rep);
 				variant->FillRep(rep);
 			}
@@ -3840,7 +4087,7 @@ rule:
 			{
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 
 				// we are using the configure that is used for leader also for mp and max mp as currently they can't be both modified in the same effect.
 				int instant_min_max_mp = 0, instant_max_max_mp = 10;
@@ -3857,11 +4104,11 @@ rule:
 				int upper_min = instant_min_max_mp;
 				int upper_max = 9;
 
-				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max);
+				variant = generate StatCondVariant(lower_min, lower_max, upper_min, upper_max, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 				alle->FillRep(rep);
 				variant->FillRep(rep);
 			}
@@ -3888,54 +4135,61 @@ rule:
 		{
 			preselector
 			{
-				if (target_mode == TARGET_MODE_LEADER)
+				if (rep)
 				{
-					forbid costModEff, destroyEff, discardEff, moveEff, copyEff, transformEff,
-						changeToBeastEff, changeToDragonEff, changeToDemonEff, giveStealthEff;
+					force [(rep++)->choice];
 				}
-				else if (target_mode == TARGET_MODE_SELF)
+				else
 				{
-					if (self_config & TARGET_IS_LEADER)
+					if (target_mode == TARGET_MODE_LEADER)
 					{
-						forbid destroyEff, changeToBeastEff, changeToDragonEff, changeToDemonEff, giveStealthEff;
-						if (!(self_config & TARGET_POS_HAND_OR_DECK)) // played leaders cannot be moved, copied, or transformed
-							forbid moveEff, copyEff, transformEff;
+						forbid costModEff, destroyEff, discardEff, moveEff, copyEff, transformEff,
+							changeToBeastEff, changeToDragonEff, changeToDemonEff, giveStealthEff;
 					}
-					else if (self_config & TARGET_IS_SPELL)
-						forbid damageEff, healEff, resAtkTimesEff, atkHpModEff, destroyEff, atkTimesModEff, changeToBeastEff, changeToDragonEff, changeToDemonEff, giveChargeEff, giveTauntEff, giveStealthEff, giveShieldEff;
+					else if (target_mode == TARGET_MODE_SELF)
+					{
+						if (self_config & TARGET_IS_LEADER)
+						{
+							forbid destroyEff, changeToBeastEff, changeToDragonEff, changeToDemonEff, giveStealthEff;
+							if (!(self_config & TARGET_POS_HAND_OR_DECK)) // played leaders cannot be moved, copied, or transformed
+								forbid moveEff, copyEff, transformEff;
+						}
+						else if (self_config & TARGET_IS_SPELL)
+							forbid damageEff, healEff, resAtkTimesEff, atkHpModEff, destroyEff, atkTimesModEff, changeToBeastEff, changeToDragonEff, changeToDemonEff, giveChargeEff, giveTauntEff, giveStealthEff, giveShieldEff;
 
-					// leader cards self directing effect when on the field can be covered by leader effect don't actually need self effect (to simplify the mechanism for avoiding trivial conditions)
-					if (!(self_config & TARGET_NOT_LEADER))
-						forbid damageEff, healEff, resAtkTimesEff;
+						// leader cards self directing effect when on the field can be covered by leader effect don't actually need self effect (to simplify the mechanism for avoiding trivial conditions)
+						if (!(self_config & TARGET_NOT_LEADER))
+							forbid damageEff, healEff, resAtkTimesEff;
 
-					if (effect_timing == EFFECT_TIMING_TURN) // repeatedly modifying itself with something that is not easily changed isn't interesting
-						forbid changeToBeastEff, changeToDragonEff, changeToDemonEff, giveChargeEff, giveTauntEff, giveUntargetableEff, givePoisonousEff, giveLifestealEff;
+						if (effect_timing == EFFECT_TIMING_TURN) // repeatedly modifying itself with something that is not easily changed isn't interesting
+							forbid changeToBeastEff, changeToDragonEff, changeToDemonEff, giveChargeEff, giveTauntEff, giveUntargetableEff, givePoisonousEff, giveLifestealEff;
 
-					// avoid modifying to something that is initially true, stealth and shield is a little bit special has they are easily lost 
-					if (!(self_config & TARGET_NOT_BEAST))
-						forbid changeToBeastEff;
-					if (!(self_config & TARGET_NOT_DRAGON))
-						forbid changeToDragonEff;
-					if (!(self_config & TARGET_NOT_DEMON))
-						forbid changeToDemonEff;
-					if (self_config & TARGET_IS_CHARGE)
-						forbid giveChargeEff;
-					if (self_config & TARGET_IS_TAUNT)
-						forbid giveTauntEff;
-					if ((self_config & TARGET_IS_STEALTH) && effect_timing == EFFECT_TIMING_PLAY)
-						forbid giveStealthEff;
-					if (self_config & TARGET_IS_UNTARGETABLE)
-						forbid giveUntargetableEff;
-					if ((self_config & TARGET_IS_SHIELDED) && effect_timing == EFFECT_TIMING_PLAY)
-						forbid giveShieldEff;
-					if (self_config & TARGET_IS_POISONOUS)
-						forbid givePoisonousEff;
-					if (self_config & TARGET_IS_LIFESTEAL)
-						forbid giveLifestealEff;
+						// avoid modifying to something that is initially true, stealth and shield is a little bit special has they are easily lost 
+						if (!(self_config & TARGET_NOT_BEAST))
+							forbid changeToBeastEff;
+						if (!(self_config & TARGET_NOT_DRAGON))
+							forbid changeToDragonEff;
+						if (!(self_config & TARGET_NOT_DEMON))
+							forbid changeToDemonEff;
+						if (self_config & TARGET_IS_CHARGE)
+							forbid giveChargeEff;
+						if (self_config & TARGET_IS_TAUNT)
+							forbid giveTauntEff;
+						if ((self_config & TARGET_IS_STEALTH) && effect_timing == EFFECT_TIMING_PLAY)
+							forbid giveStealthEff;
+						if (self_config & TARGET_IS_UNTARGETABLE)
+							forbid giveUntargetableEff;
+						if ((self_config & TARGET_IS_SHIELDED) && effect_timing == EFFECT_TIMING_PLAY)
+							forbid giveShieldEff;
+						if (self_config & TARGET_IS_POISONOUS)
+							forbid givePoisonousEff;
+						if (self_config & TARGET_IS_LIFESTEAL)
+							forbid giveLifestealEff;
+					}
+
+					if (effect_depth >= max_eff_depth)
+						forbid giveEffectsEff, transformEff;
 				}
-
-				if (effect_depth >= max_eff_depth)
-					forbid giveEffectsEff, transformEff;
 			}
 		}
 	:=
@@ -3943,15 +4197,18 @@ rule:
 		{
 			generator 
 			{
-				val = GetRandInt(1, 10);
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 10);
+				else
+					val = GetRandInt(1, 10);
 				if (give_eff)
 					abbl = construct damageAbilities(noPoisonous(), noLifesteal());
 				else
-					abbl = generate DamageAbilities(self_config, target_mode, val);
+					abbl = generate DamageAbilities(self_config, target_mode, val, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0, <double>{NormalizeCode(val, 1, 10)}));
+				rep.push_back(mkNodeRep(0u, <double>{NormalizeCode(val, 1, 10)}));
 				abbl->FillRep(rep);
 			}
 			Detail = "Deal " + IntToStr(val) + " damage to ";
@@ -3972,10 +4229,16 @@ rule:
 		}
 	| healEff: int val
 		{
-			generator { val = GetRandInt(1, 10); }
+			generator
+			{
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 10);
+				else
+					val = GetRandInt(1, 10);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1, <double>{NormalizeCode(val, 1, 10)}));
+				rep.push_back(mkNodeRep(1u, <double>{NormalizeCode(val, 1, 10)}));
 			}
 			Detail = "Restore " + IntToStr(val) + " health to ";
 			CreateNodeHardCopy = new healEff(card_copy, val);
@@ -3991,10 +4254,16 @@ rule:
 		}
 	| resAtkTimesEff: int val
 		{
-			generator { val = GetRandInt(1, 5); }
+			generator
+			{
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 5);
+				else
+					val = GetRandInt(1, 5);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2, <double>{NormalizeCode(val, 1, 5)}));
+				rep.push_back(mkNodeRep(2u, <double>{NormalizeCode(val, 1, 5)}));
 			}
 			Detail = "Restore " + IntToStr(val) + " attack " + (val == 1 ? "time" : "times") + " to ";
 			CreateNodeHardCopy = new resAtkTimesEff(card_copy, val);
@@ -4012,17 +4281,24 @@ rule:
 		{
 			generator
 			{
-				val = GetRandInt(1, 10);
-				if (RandomRoll(1.0 - inc_prob) && (target_mode != TARGET_MODE_SELF || self_config.max_cost > 0))
+				if (rep)
 				{
-					val = -val;
-					if (target_mode == TARGET_MODE_SELF && val < -self_config.max_cost)
-						val = -self_config.max_cost;
+					val = DenormalizeCode(rep->term_info[0], -10, 10);
+				}
+				else
+				{
+					val = GetRandInt(1, 10);
+					if (RandomRoll(1.0 - inc_prob) && (target_mode != TARGET_MODE_SELF || self_config.max_cost > 0))
+					{
+						val = -val;
+						if (target_mode == TARGET_MODE_SELF && val < -self_config.max_cost)
+							val = -self_config.max_cost;
+					}
 				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3, <double>{NormalizeCode(val, -10, 10)}));
+				rep.push_back(mkNodeRep(3u, <double>{NormalizeCode(val, -10, 10)}));
 			}
 			Detail = "Give " + ((val < 0 ? "" : "+") + IntToStr(val)) + " to the cost of ";
 			CreateNodeHardCopy = new costModEff(card_copy, val);
@@ -4041,17 +4317,25 @@ rule:
 		{
 			generator
 			{
-				atkmod = GetRandInt(-5, 5);
-				if (target_mode == TARGET_MODE_SELF && atkmod < -self_config.max_atk)
-					atkmod = -self_config.max_atk;
-				if (atkmod == 0)
-					hpmod = GetRandInt(1, 10); // having two zeros are pointless
+				if (rep)
+				{
+					atkmod = DenormalizeCode(rep->term_info[0], -5, 5);
+					hpmod = DenormalizeCode(rep->term_info[1], 0, 10);
+				}
 				else
-					hpmod = GetRandInt(0, 10);
+				{
+					atkmod = GetRandInt(-5, 5);
+					if (target_mode == TARGET_MODE_SELF && atkmod < -self_config.max_atk)
+						atkmod = -self_config.max_atk;
+					if (atkmod == 0)
+						hpmod = GetRandInt(1, 10); // having two zeros are pointless
+					else
+						hpmod = GetRandInt(0, 10);
+				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4, <double>{NormalizeCode(atkmod, -5, 5), NormalizeCode(hpmod, 0, 10)}));
+				rep.push_back(mkNodeRep(4u, <double>{NormalizeCode(atkmod, -5, 5), NormalizeCode(hpmod, 0, 10)}));
 			}
 			Detail = "Give " + ((atkmod < 0 ? "" : "+") + IntToStr(atkmod)) + "/" + ((hpmod < 0 ? "" : "+") + IntToStr(hpmod)) + " to ";
 			CreateNodeHardCopy = new atkHpModEff(card_copy, atkmod, hpmod);
@@ -4069,17 +4353,24 @@ rule:
 		{
 			generator
 			{
-				val = GetRandInt(1, 3);
-				if (RandomRoll(dec_prob) && (target_mode != TARGET_MODE_SELF || self_config.max_n_atks > 0))
+				if (rep)
 				{
-					val = -val;
-					if (target_mode == TARGET_MODE_SELF && val < -self_config.max_n_atks)
-						val = -self_config.max_n_atks;
+					val = DenormalizeCode(rep->term_info[0], -10, 10);
+				}
+				else
+				{
+					val = GetRandInt(1, 3);
+					if (RandomRoll(dec_prob) && (target_mode != TARGET_MODE_SELF || self_config.max_n_atks > 0))
+					{
+						val = -val;
+						if (target_mode == TARGET_MODE_SELF && val < -self_config.max_n_atks)
+							val = -self_config.max_n_atks;
+					}
 				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5, <double>{NormalizeCode(val, -3, 3)}));
+				rep.push_back(mkNodeRep(5u, <double>{NormalizeCode(val, -3, 3)}));
 			}
 			Detail = "Give " + ((val < 0 ? "" : "+") + IntToStr(val)) + " to the attack times of ";
 			CreateNodeHardCopy = new atkTimesModEff(card_copy, val);
@@ -4097,7 +4388,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(6));
+				rep.push_back(mkNodeRep(6u));
 			}
 			Detail = "Destroy ";
 			CreateNodeHardCopy = new destroyEff(card_copy);
@@ -4118,7 +4409,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(7));
+				rep.push_back(mkNodeRep(7u));
 			}
 			Detail = "Discard ";
 			CreateNodeHardCopy = new discardEff(card_copy);
@@ -4174,10 +4465,10 @@ rule:
 		}
 	| moveEff: Destination* dest
 		{
-			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_MOVE_DEST); }
+			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_MOVE_DEST, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(8));
+				rep.push_back(mkNodeRep(8u));
 				dest->FillRep(rep);
 			}
 			Detail = dest->Detail();
@@ -4284,10 +4575,10 @@ rule:
 		}
 	| copyEff: Destination* dest
 		{
-			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_COPY_DEST); }
+			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_COPY_DEST, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(9));
+				rep.push_back(mkNodeRep(9u));
 				dest->FillRep(rep);
 			}
 			Detail = dest->Detail() + "a copy of ";
@@ -4374,10 +4665,10 @@ rule:
 		}
 	| transformEff: NewCardVariant* variant
 		{
-			generator { variant = generate NewCardVariant(self_config, target_mode, effect_timing, effect_depth); }
+			generator { variant = generate NewCardVariant(self_config, target_mode, effect_timing, effect_depth, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(10));
+				rep.push_back(mkNodeRep(10u));
 				variant->FillRep(rep);
 			}
 			Detail = "Transform ";
@@ -4424,7 +4715,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(11));
+				rep.push_back(mkNodeRep(11u));
 			}
 			Detail = "Change the minion type of ";
 			DetailAlt1 = "Change the minion types of "; // for plural
@@ -4450,7 +4741,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(12));
+				rep.push_back(mkNodeRep(12u));
 			}
 			Detail = "Change the minion type of ";
 			DetailAlt1 = "Change the minion types of "; // for plural
@@ -4476,7 +4767,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(13));
+				rep.push_back(mkNodeRep(13u));
 			}
 			Detail = "Change the minion type of ";
 			DetailAlt1 = "Change the minion types of "; // for plural
@@ -4502,7 +4793,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(14));
+				rep.push_back(mkNodeRep(14u));
 			}
 			Detail = "Grant Charge to ";
 			CreateNodeHardCopy = new giveChargeEff(card_copy);
@@ -4525,7 +4816,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(15));
+				rep.push_back(mkNodeRep(15u));
 			}
 			Detail = "Grant Taunt to ";
 			CreateNodeHardCopy = new giveTauntEff(card_copy);
@@ -4548,7 +4839,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(16));
+				rep.push_back(mkNodeRep(16u));
 			}
 			Detail = "Grant Stealth to ";
 			CreateNodeHardCopy = new giveStealthEff(card_copy);
@@ -4573,7 +4864,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(17));
+				rep.push_back(mkNodeRep(17u));
 			}
 			Detail = "Grant Untargetability to ";
 			CreateNodeHardCopy = new giveUntargetableEff(card_copy);
@@ -4596,7 +4887,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(18));
+				rep.push_back(mkNodeRep(18u));
 			}
 			Detail = "Grant Shield to ";
 			CreateNodeHardCopy = new giveShieldEff(card_copy);
@@ -4621,7 +4912,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(19));
+				rep.push_back(mkNodeRep(19u));
 			}
 			Detail = "Grant Poisonous to ";
 			CreateNodeHardCopy = new givePoisonousEff(card_copy);
@@ -4644,7 +4935,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(20));
+				rep.push_back(mkNodeRep(20u));
 			}
 			Detail = "Grant Lifesteal to ";
 			CreateNodeHardCopy = new giveLifestealEff(card_copy);
@@ -4667,7 +4958,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(21));
+				rep.push_back(mkNodeRep(21u));
 			}
 			Detail = "Remove all ability keywords from ";
 			CreateNodeHardCopy = new rmAbilitiesEff(card_copy);
@@ -4695,7 +4986,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(22));
+				rep.push_back(mkNodeRep(22u));
 			}
 			Detail = "Set every effect on ";
 			Suffix = " to overheat";
@@ -4716,10 +5007,16 @@ rule:
 		}
 	| decOhThresholdEff: int val
 		{
-			generator { val = GetRandInt(1, 5); }
+			generator 
+			{
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 5);
+				else
+					val = GetRandInt(1, 5);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(23, <double>{NormalizeCode(val, 1, 5)}));
+				rep.push_back(mkNodeRep(23u, <double>{NormalizeCode(val, 1, 5)}));
 			}
 			Detail = "Reduce the overheat threshold for every effect on ";
 			Suffix = " by " + IntToStr(val) + " (applied repeatedly for duplicated effects)";
@@ -4742,7 +5039,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(24));
+				rep.push_back(mkNodeRep(24u));
 			}
 			Detail = "Reset ";
 			Suffix = " to its original state (not directly applying to the sleeping state, consumed attack times, and overheat counts)"; // if it is related to Charge, sleeping state may change indirectly though
@@ -4792,11 +5089,11 @@ rule:
 				}
 				else if (target_mode == TARGET_MODE_SELF)
 					tmp_config = self_config;
-				effects = generate SpecialEffects(tmp_config, min_num_effs, max_num_effs, next_depth, true);
+				effects = generate SpecialEffects(tmp_config, min_num_effs, max_num_effs, next_depth, true, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(25));
+				rep.push_back(mkNodeRep(25u));
 				effects->FillRep(rep);
 			}
 			Detail = "Give the following effect(s) to ";
@@ -4830,13 +5127,20 @@ rule:
 		{
 			preselector
 			{
-				if (effect_timing == EFFECT_TIMING_DESTROY || effect_timing == EFFECT_TIMING_DISCARD || // deathrattle and on-discard effects should not be directed to itself
-					((self_config & TARGET_IS_SPELL) && effect_timing == EFFECT_TIMING_PLAY) || // spell play effect should not be directed to itself
-					(!(self_config & TARGET_NOT_LEADER) && !(self_config & TARGET_POS_HAND_OR_DECK))) // leader cards self directing effect when on the field can be covered by leader effect don't actually need self effect (to simplify the mechanism for avoiding trivial conditions)
-					forbid selfEff;
+				if (rep)
+				{
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (effect_timing == EFFECT_TIMING_DESTROY || effect_timing == EFFECT_TIMING_DISCARD || // deathrattle and on-discard effects should not be directed to itself
+						((self_config & TARGET_IS_SPELL) && effect_timing == EFFECT_TIMING_PLAY) || // spell play effect should not be directed to itself
+						(!(self_config & TARGET_NOT_LEADER) && !(self_config & TARGET_POS_HAND_OR_DECK))) // leader cards self directing effect when on the field can be covered by leader effect don't actually need self effect (to simplify the mechanism for avoiding trivial conditions)
+						forbid selfEff;
 
-				if (effect_depth >= max_eff_depth)
-					forbid newEff; 
+					if (effect_depth >= max_eff_depth)
+						forbid newEff;
+				}
 			}
 		}
 	:=
@@ -4844,15 +5148,15 @@ rule:
 		{
 			generator
 			{
-				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				cond = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				cond = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				effect->FillRep(rep);
 				cond->FillRep(rep);
 			}
@@ -4879,15 +5183,15 @@ rule:
 		{
 			generator
 			{
-				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				cond = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				cond = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				effect->FillRep(rep);
 				cond->FillRep(rep);
 			}
@@ -4921,15 +5225,15 @@ rule:
 		{
 			generator
 			{
-				effect = generate BaseTargetedEff(self_config, TARGET_MODE_LEADER, effect_timing, effect_depth, give_eff);
+				effect = generate BaseTargetedEff(self_config, TARGET_MODE_LEADER, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = effect->GetTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_LEADER, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_LEADER, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				effect->FillRep(rep);
 				alle->FillRep(rep);
 			}
@@ -4958,10 +5262,10 @@ rule:
 		}
 	| selfEff: BaseTargetedEff* effect
 		{
-			generator { effect = generate BaseTargetedEff(self_config, TARGET_MODE_SELF, effect_timing, effect_depth, give_eff); }
+			generator { effect = generate BaseTargetedEff(self_config, TARGET_MODE_SELF, effect_timing, effect_depth, give_eff, rep); }
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 				effect->FillRep(rep);
 			}
 			Detail = effect->Detail() + "itself" + effect->Suffix();
@@ -5002,15 +5306,18 @@ rule:
 		{
 			generator 
 			{
-				val = 10/GetRandInt(3, 10); // 1 ~ 3 biased
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 3);
+				else
+					val = 10/GetRandInt(3, 10); // 1 ~ 3 biased
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4, <double>{NormalizeCode(val, 1, 3)}));
+				rep.push_back(mkNodeRep(4u, <double>{NormalizeCode(val, 1, 3)}));
 				alle->FillRep(rep);
 			}
 			Detail = alle->DetailAlt5() + (alle->IsThirdPersonSingle() ? "draws " : "draw ") + IntToStr(val) + (val == 1 ? " card" : " cards");
@@ -5039,17 +5346,24 @@ rule:
 		{
 			generator
 			{
-				val = 200/GetRandInt(18, 100); // 1 ~ 10 biased
-				if (RandomRoll(dec_prob))
-					val = -val;
+				if (rep)
+				{
+					val = DenormalizeCode(rep->term_info[0], -10, 10);
+				}
+				else
+				{
+					val = 200/GetRandInt(18, 100); // 1 ~ 10 biased
+					if (RandomRoll(dec_prob))
+						val = -val;
+				}
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref		
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5, <double>{NormalizeCode(val, -10, 10)}));
+				rep.push_back(mkNodeRep(5u, <double>{NormalizeCode(val, -10, 10)}));
 				alle->FillRep(rep);
 			}
 			Detail = alle->DetailAlt5() + (val >= 0 ? "recover" : "exhaust") + (alle->IsThirdPersonSingle() ? "s " : " ") + IntToStr(abs(val)) + " MP";
@@ -5079,17 +5393,24 @@ rule:
 		{
 			generator
 			{
-				val = 100/GetRandInt(18, 100); // 1 ~ 5 biased
-				if (RandomRoll(dec_prob))
-					val = -val;
+				if (rep)
+				{
+					val = DenormalizeCode(rep->term_info[0], -5, 5);
+				}
+				else
+				{
+					val = 100/GetRandInt(18, 100); // 1 ~ 5 biased
+					if (RandomRoll(dec_prob))
+						val = -val;
+				}
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_DEFAULT, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(6, <double>{NormalizeCode(val, -5, 5)}));
+				rep.push_back(mkNodeRep(6u, <double>{NormalizeCode(val, -5, 5)}));
 				alle->FillRep(rep);
 			}
 			Detail = alle->DetailAlt5() + (val >= 0 ? "gain" : "lose") + (alle->IsThirdPersonSingle() ? "s " : " ") + IntToStr(abs(val)) + " Max MP (and MP)";
@@ -5119,16 +5440,19 @@ rule:
 		{
 			generator
 			{
-				val = 120/GetRandInt(16, 120); // 1 ~ 7, biased to small numbers
+				if (rep)
+					val = DenormalizeCode(rep->term_info[0], 1, 7);
+				else
+					val = 120/GetRandInt(16, 120); // 1 ~ 7, biased to small numbers
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
-				dest = generate Destination(tmp_init_config, TARGET_MODE_NEW, effect_timing, TARGET_MODE_NEW_DEST);
+				dest = generate Destination(tmp_init_config, TARGET_MODE_NEW, effect_timing, TARGET_MODE_NEW_DEST, rep);
 				CondConfig tmp_config = dest->GetTargetConfig(); // to counter the problem of rvalue passed to lvalue ref
-				variant = generate NewCardVariant(tmp_config, TARGET_MODE_NEW, effect_timing, effect_depth);
+				variant = generate NewCardVariant(tmp_config, TARGET_MODE_NEW, effect_timing, effect_depth, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(7, <double>{NormalizeCode(val, 1, 7)}));
+				rep.push_back(mkNodeRep(7u, <double>{NormalizeCode(val, 1, 7)}));
 				dest->FillRep(rep);
 				variant->FillRep(rep);
 			}
@@ -5157,11 +5481,11 @@ rule:
 			{
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_WIN_GAME, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_WIN_GAME, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(8));
+				rep.push_back(mkNodeRep(8u));
 				alle->FillRep(rep);
 			}
 			Detail = alle->DetailAlt5() + "win" + (alle->IsThirdPersonSingle() ? "s " : " ") + "the game"; // well we don't actually want to have both players win the game but at least this is left as a possibility for constructed cards
@@ -5183,29 +5507,36 @@ rule:
 		{
 			preselector
 			{
-				if (target_mode == TARGET_MODE_SELF)
+				if (rep)
 				{
-					if ((self_config & TARGET_IS_LEADER) || (self_config & TARGET_IS_SPELL))
-						forbid fieldDest, ownerFieldDest;
-					if (dest_mode == TARGET_MODE_MOVE_DEST)
-					{
-						if(!(self_config & TARGET_POS_HAND_OR_DECK))
-							forbid ownerFieldDest;
-						if(!(self_config & TARGET_NOT_HAND))
-							forbid ownerHandDest;
-						if(!(self_config & TARGET_NOT_DECK))
-							forbid ownerDeckDest;
-					}
-					else if (dest_mode == TARGET_MODE_COPY_DEST)
-					{
-						if(!(self_config & TARGET_NOT_DECK)) // forbid deck to deck copy
-							forbid deckDest, ownerDeckDest;
-					}
+					force [(rep++)->choice];
 				}
-
-				if (target_mode = TARGET_MODE_NEW)
+				else
 				{
-					forbid ownerFieldDest, ownerHandDest, ownerDeckDest;
+					if (target_mode == TARGET_MODE_SELF)
+					{
+						if ((self_config & TARGET_IS_LEADER) || (self_config & TARGET_IS_SPELL))
+							forbid fieldDest, ownerFieldDest;
+						if (dest_mode == TARGET_MODE_MOVE_DEST)
+						{
+							if(!(self_config & TARGET_POS_HAND_OR_DECK))
+								forbid ownerFieldDest;
+							if(!(self_config & TARGET_NOT_HAND))
+								forbid ownerHandDest;
+							if(!(self_config & TARGET_NOT_DECK))
+								forbid ownerDeckDest;
+						}
+						else if (dest_mode == TARGET_MODE_COPY_DEST)
+						{
+							if(!(self_config & TARGET_NOT_DECK)) // forbid deck to deck copy
+								forbid deckDest, ownerDeckDest;
+						}
+					}
+
+					if (target_mode = TARGET_MODE_NEW)
+					{
+						forbid ownerFieldDest, ownerHandDest, ownerDeckDest;
+					}
 				}
 			}
 		}
@@ -5218,11 +5549,11 @@ rule:
 				CondConfig tmp_config = GetDefaultConfig();
 				if (target_mode == TARGET_MODE_SELF && dest_mode == TARGET_MODE_MOVE_DEST && !(self_config & TARGET_POS_HAND_OR_DECK))
 					tmp_config = OPPO_COND_FILTER;
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				alle->FillRep(rep);
 			}
 			Detail = "Summon ";
@@ -5250,7 +5581,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 			}
 			Detail = "Summon ";
 			Suffix = " to its owner's field";
@@ -5270,11 +5601,11 @@ rule:
 				CondConfig tmp_config = GetDefaultConfig();
 				if (target_mode == TARGET_MODE_SELF && dest_mode == TARGET_MODE_MOVE_DEST && !(self_config & TARGET_NOT_HAND))
 					tmp_config = OPPO_COND_FILTER;
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				alle->FillRep(rep);
 			}
 			Detail = "Put ";
@@ -5302,7 +5633,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 			}
 			Detail = "Put ";
 			Suffix = " to its owner's hand";
@@ -5322,11 +5653,11 @@ rule:
 				CondConfig tmp_config = GetDefaultConfig();
 				if (target_mode == TARGET_MODE_SELF && dest_mode == TARGET_MODE_MOVE_DEST && !(self_config & TARGET_NOT_DECK))
 					tmp_config = OPPO_COND_FILTER;
-				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing);
+				alle = generate AllegianceCond(tmp_init_config, tmp_config, dest_mode, effect_timing, rep);
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4));
+				rep.push_back(mkNodeRep(4u));
 				alle->FillRep(rep);
 			}
 			Detail = "Shuffle ";
@@ -5354,7 +5685,7 @@ rule:
 		{
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5));
+				rep.push_back(mkNodeRep(5u));
 			}
 			Detail = "Shuffle ";
 			Suffix = " to its owner's deck";
@@ -5372,22 +5703,35 @@ rule:
 		{
 			preselector
 			{
-				if (target_mode == TARGET_MODE_SELF || target_mode == TARGET_MODE_NEW) // the new mode uses self_config for the config from selecting destination
+				if (rep)
 				{
-					if (!(self_config & TARGET_POS_FIELD) || !(self_config & TARGET_NOT_LEADER)) // the second half makes sure not transforming played leaders
-						forbid plainMinion, fixedMinion, randomMinion;
-					if (!(self_config & TARGET_POS_HAND_OR_DECK))
-						forbid plainMinionCard, fixedCard, randomCard;
+					force [(rep++)->choice];
+				}
+				else
+				{
+					if (target_mode == TARGET_MODE_SELF || target_mode == TARGET_MODE_NEW) // the new mode uses self_config for the config from selecting destination
+					{
+						if (!(self_config & TARGET_POS_FIELD) || !(self_config & TARGET_NOT_LEADER)) // the second half makes sure not transforming played leaders
+							forbid plainMinion, fixedMinion, randomMinion;
+						if (!(self_config & TARGET_POS_HAND_OR_DECK))
+							forbid plainMinionCard, fixedCard, randomCard;
+					}
 				}
 			}
 		}
 	:=
 	| plainMinionCard: Card* card
 		{
-			generator { card = CreatePlainMinion(name); }
+			generator
+			{
+				if (rep)
+					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
+				else
+					card = CreatePlainMinion(name);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(0));
+				rep.push_back(mkNodeRep(0u));
 				card->FillRep(rep);
 			}
 			Detail = "a " + IntToStr(card->orig_mana) + "/" + IntToStr(card->orig_atk) + "/" + IntToStr(card->orig_hp) + " " + MinionTypeDescription(card->minion_type) + " minion card"
@@ -5400,10 +5744,16 @@ rule:
 		}
 	| plainMinion: Card* card
 		{
-			generator { card = CreatePlainMinion(name); }
+			generator
+			{
+				if (rep)
+					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
+				else
+					card = CreatePlainMinion(name);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(1));
+				rep.push_back(mkNodeRep(1u));
 				card->FillRep(rep);
 			}
 			Detail = "a " + IntToStr(card->orig_mana) + "/" + IntToStr(card->orig_atk) + "/" + IntToStr(card->orig_hp) + " " + MinionTypeDescription(card->minion_type) + " minion"
@@ -5422,14 +5772,21 @@ rule:
 		{
 			generator
 			{
-				int next_depth = effect_depth + 1;
-				int min_num_effs = 1;
-				int max_num_effs = max_eff_num >> next_depth;
-				card = CreateRandomCard(name, GetRandInt(0, 10), min_num_effs, max_num_effs, next_depth);
+				if (rep)
+				{
+					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
+				}
+				else
+				{
+					int next_depth = effect_depth + 1;
+					int min_num_effs = 1;
+					int max_num_effs = max_eff_num >> next_depth;
+					card = CreateRandomCard(name, GetRandInt(0, 10), min_num_effs, max_num_effs, next_depth);
+				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(2));
+				rep.push_back(mkNodeRep(2u));
 				card->FillRep(rep);
 			}
 			Detail = "a copy of the following card";
@@ -5444,14 +5801,21 @@ rule:
 		{
 			generator
 			{ 
-				int next_depth = effect_depth + 1;
-				int min_num_effs = 1;
-				int max_num_effs = max_eff_num >> next_depth;
-				card = CreateRandomMinion(name, GetRandInt(0, 10), min_num_effs, max_num_effs, next_depth);
+				if (rep)
+				{
+					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep);
+				}
+				else
+				{
+					int next_depth = effect_depth + 1;
+					int min_num_effs = 1;
+					int max_num_effs = max_eff_num >> next_depth;
+					card = CreateRandomMinion(name, GetRandInt(0, 10), min_num_effs, max_num_effs, next_depth);
+				}
 			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(3));
+				rep.push_back(mkNodeRep(3u));
 				card->FillRep(rep);
 			}
 			Detail = "a copy the following minion";
@@ -5468,10 +5832,16 @@ rule:
 		}
 	| randomCard: int cost
 		{
-			generator { cost = GetRandInt(0, 10); }
+			generator
+			{ 
+				if (rep)
+					cost = DenormalizeCode(rep->term_info[0], -10, 10);
+				else
+					cost = GetRandInt(0, 10);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(4, <double>{NormalizeCode(cost, 0, 10)}));
+				rep.push_back(mkNodeRep(4u, <double>{NormalizeCode(cost, 0, 10)}));
 			}
 			Detail = "a random cost " + IntToStr(cost) + " card";
 			DetailAlt1 = "random cost " + IntToStr(cost) + " cards";
@@ -5481,10 +5851,16 @@ rule:
 		}
 	| randomMinion: int cost
 		{
-			generator { cost = GetRandInt(0, 10); }
+			generator
+			{ 
+				if (rep)
+					cost = DenormalizeCode(rep->term_info[0], -10, 10);
+				else
+					cost = GetRandInt(0, 10);
+			}
 			FillRep
 			{
-				rep.push_back(mkNodeRep(5, <double>{NormalizeCode(cost, 0, 10)}));
+				rep.push_back(mkNodeRep(5u, <double>{NormalizeCode(cost, 0, 10)}));
 			}
 			Detail = "a random cost " + IntToStr(cost) + " minion";
 			DetailAlt1 = "random cost " + IntToStr(cost) + " minions"; // for plural
@@ -5499,9 +5875,9 @@ rule:
 
 };
 
-giglconfig GetDefaultGenConfig(int seed)
+giglconfig GetDefaultGenConfig(int seed, void* extra_config)
 {
-	return <* Card{#seed, 3, 2}: // after separated the config, it is important to add # to the local (non-reference) variables at configuration time, as local addresses are not preserved
+	return <* Card{#seed, 3, 2, #extra_config}: // after separated the config, it is important to add # to the local (non-reference) variables at configuration time, as local addresses are not preserved
 		CardRoot := leaderCard @ {0.1} | minionCard @ {0.6} | spellCard @ {0.3},
 		AttackTimes := zeroAttack @ {0.02} | singleAttack | multipleAttack @ {0.08},
 		MinionType := beastMinion | dragonMinion | demonMinion,
@@ -5543,12 +5919,12 @@ giglconfig GetDefaultGenConfig(int seed)
 Card* GenerateCard(int seed)
 {
 	RandInit(seed);
-	return generate Card with GetDefaultGenConfig(seed);
+	return generate Card with GetDefaultGenConfig(seed, nullptr);
 }
 
 Card* CreateDefaultLeader(int hp)
 {
-	Card* leader = construct Card(leaderCard(7, 0, hp, singleAttack(), justAbilities(noCharge(), noTaunt(), noStealth(), noUntargetable(), noShield(), noPoisonous(), noLifesteal()), specialEffects(noTargetedPlayEff(), noOtherEffs()))) with GetDefaultGenConfig(-1);
+	Card* leader = construct Card(leaderCard(7, 0, hp, singleAttack(), justAbilities(noCharge(), noTaunt(), noStealth(), noUntargetable(), noShield(), noPoisonous(), noLifesteal()), specialEffects(noTargetedPlayEff(), noOtherEffs()))) with GetDefaultGenConfig(-1, nullptr);
 	leader->name = "Default Leader";
 	return leader;
 }
@@ -5558,7 +5934,7 @@ Card* CreateSndPlayerToken()
 	Card* token = construct Card(spellCard(0, justAbilities(noCharge(), noTaunt(), noStealth(), noUntargetable(), noShield(), noPoisonous(), noLifesteal()),
 						specialEffects(targetedCastEff(noCondTargetedEff(costModEff(-1), cardTargetCond(justCardTargetCond(cardPosAtHand(), allyAllegiance(), isCard(), noAbblCond(), noStatCond())))),
 							consOtherEffs(untargetedCastEff(noCondUntargetedEff(drawCardEff(1, allyAllegiance()))),
-								noOtherEffs())))) with GetDefaultGenConfig(-1);
+								noOtherEffs())))) with GetDefaultGenConfig(-1, nullptr);
 	token->name = "Second Player Token";
 	return token;
 }
@@ -5568,7 +5944,8 @@ Card* CreatePlainMinion(string parent_name)
 	int seed = GetRandInt();
 	RandInit(seed);
 	CondConfig tmp_config = GetFlagConfig(MINION_COND_FILTER); // to get around the issue of rvalue passed to lvalue ref
-	Card* card = construct Card(generate CardRoot(tmp_config, true)) with GetDefaultGenConfig(-1);
+	NodeRep* tmp_nullptr = nullptr; // to get around the issue of ref type
+	Card* card = construct Card(generate CardRoot(tmp_config, true, tmp_nullptr)) with GetDefaultGenConfig(-1, nullptr);
 	card->name = parent_name + "_Spawn_#" + IntToStr(seed);
 	
 	return card;
@@ -5580,7 +5957,8 @@ Card* CreateRandomMinion(string parent_name, int cost, int min_eff_num, int max_
 	int seed = GetRandInt();
 	RandInit(seed);
 	CondConfig tmp_config = GetCostConfig(MINION_COND_FILTER, cost, cost); // to get around the issue of rvalue passed to lvalue ref
-	Card* card = construct Card(generate CardRoot(tmp_config, true)) with GetDefaultGenConfig(-1);
+	NodeRep* tmp_nullptr = nullptr; // to get around the issue of ref type
+	Card* card = construct Card(generate CardRoot(tmp_config, true, tmp_nullptr)) with GetDefaultGenConfig(-1, nullptr);
 	card->name = parent_name + "_Spawn_#" + IntToStr(seed);
 	card->Mutate(min_eff_num, max_eff_num, eff_depth);
 
@@ -5593,9 +5971,18 @@ Card* CreateRandomCard(string parent_name, int cost, int min_eff_num, int max_ef
 	int seed = GetRandInt();
 	RandInit(seed);
 	CondConfig tmp_config = GetCostConfig(TARGET_TYPE_ANY, cost, cost); // to get around the issue of rvalue passed to lvalue ref
-	Card* card = construct Card(generate CardRoot(tmp_config, true)) with GetDefaultGenConfig(-1);
+	NodeRep* tmp_nullptr = nullptr; // to get around the issue of ref type
+	Card* card = construct Card(generate CardRoot(tmp_config, true, tmp_nullptr)) with GetDefaultGenConfig(-1, nullptr);
 	card->name = parent_name + "_Spawn_#" + IntToStr(seed);
 	card->Mutate(min_eff_num, max_eff_num, eff_depth);
 
+	return card;
+}
+
+Card* CreateNamedCardFromRep(const string& name, NodeRep* rep)
+{
+	void* extra_config = (void*)MkExtraCardGenConfig(name, rep);
+	Card* card = generate Card with GetDefaultGenConfig(-1, extra_config);
+	delete extra_config;
 	return card;
 }

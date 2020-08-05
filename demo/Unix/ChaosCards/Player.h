@@ -313,7 +313,6 @@ string GetCardBrief(Card* card); // artifact from file including issues
 string GetCardDetail(Card* card); // artifact from file including issues
 vector<Card*> GenerateCardSet(int n, int seed); // giving no duplicate card seeds
 vector<int> GenerateCardSetSeeds(int n, int seed); // giving no duplicate card seeds
-//vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds);
 void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b); // shuffle the card indices, return the seed for the match (also modify shuffled indices in place, and pass back the ordered cards for this match)
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player);
 Card* HardCopyCard(Card* card); // artifact from file including issues
@@ -545,19 +544,30 @@ private:
 
 struct NodeRep
 {
-	NodeRep(int _choice, const vector<double>& _term_info);
+	NodeRep(unsigned _choice, const vector<double>& _term_info);
 	string GetPrintVersion() const;
-	int choice;
+	unsigned choice;
 	vector<double> term_info;
 };
 typedef vector<NodeRep> CardRep;
 
-NodeRep mkNodeRep(int choice, const vector<double>& term_info);
-NodeRep mkNodeRep(int choice);
+NodeRep mkNodeRep(unsigned choice, const vector<double>& term_info);
+NodeRep mkNodeRep(unsigned choice);
 
 double NormalizeCode(double val, double min_val, double max_val); // normalize to -1.0 ~ 1.0
+int DenormalizeCode(double code, double min_val, double max_val); // de-normalize from -1.0 ~ 1.0 to an integer
 void GetCardRep(Card* card, CardRep& card_rep);
 void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps);
+Card* CreateCardFromRep(const string& name, CardRep& card_rep); // card_rep should also be const but the argument type in subsequent function call is a little nasty to deal with...
+
+struct ExtraCardGenConfig
+{
+	ExtraCardGenConfig(const string& _name, NodeRep* _rep);
+	string name;
+	NodeRep* rep;
+};
+
+ExtraCardGenConfig* MkExtraCardGenConfig(const string& _name, NodeRep* _rep); 
 
 
 /* Neural network part not included in this version */

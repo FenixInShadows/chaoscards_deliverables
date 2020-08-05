@@ -1619,16 +1619,6 @@ vector<int> GenerateCardSetSeeds(int n, int seed)
 	return seed_set;
 }
 
-/*vector<Card*> GenerateRandDeckFromSeedList(const vector<int>& seeds)
-{
-	int n = seeds.size();
-	vector<Card*> deck(n);
-	for (int i = 0; i < n; i++)
-		deck[i] = GenerateSingleCard(seeds[i]);
-
-	return deck;
-}*/
-
 void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b) // card_list didn't use const only because GIGL currently doesn't allow node sections to have const functions (can be made const when GIGL takes this into account)
 {
 	int seed = GetRandInt();
@@ -2242,7 +2232,7 @@ void KnowledgeState::PerformAction()
 /* Machine Learning Section */
 
 
-NodeRep::NodeRep(int _choice, const vector<double>& _term_info)
+NodeRep::NodeRep(unsigned _choice, const vector<double>& _term_info)
 	: choice(_choice), term_info(_term_info)
 {
 }
@@ -2259,12 +2249,12 @@ string NodeRep::GetPrintVersion() const
 }
 
 
-NodeRep mkNodeRep(int choice, const vector<double>& term_info)
+NodeRep mkNodeRep(unsigned choice, const vector<double>& term_info)
 {
 	return NodeRep(choice, term_info);
 }
 
-NodeRep mkNodeRep(int choice)
+NodeRep mkNodeRep(unsigned choice)
 {
 	return NodeRep(choice, vector<double>{});
 }
@@ -2272,7 +2262,12 @@ NodeRep mkNodeRep(int choice)
 
 double NormalizeCode(double val, double min_val, double max_val)
 {
-	return (2* val - max_val - min_val) / (max_val - min_val);
+	return (2 * val - max_val - min_val) / (max_val - min_val);
+}
+
+int DenormalizeCode(double code, double min_val, double max_val)
+{
+	return round(0.5 * ((1 + code) * max_val + (1 - code) * min_val));
 }
 
 void GetCardRep(Card* card, CardRep& card_rep)
@@ -2287,6 +2282,22 @@ void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps)
 	card_reps.resize(p);
 	for (int i = 0; i < p; i++)
 		GetCardRep(card_list[i], card_reps[i]);
+}
+
+Card* CreateCardFromRep(const string& name, CardRep& card_rep)
+{
+	return CreateNamedCardFromRep(name, card_rep.data());
+}
+
+
+ExtraCardGenConfig::ExtraCardGenConfig(const string& _name, NodeRep* _rep)
+	: name(_name), rep(_rep)
+{
+}
+
+ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep* rep)
+{
+	return new ExtraCardGenConfig(name, rep);
 }
 
 
