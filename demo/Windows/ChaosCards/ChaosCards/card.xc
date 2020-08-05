@@ -6104,6 +6104,6 @@ Card* CreateNamedCardFromRep(const string& name, NodeRep*& rep)
 {
 	void* extra_config = (void*)MkExtraCardGenConfig(name, rep);
 	Card* card = generate Card with GetDefaultGenConfig(-1, extra_config);
-	delete extra_config;
+	delete (ExtraCardGenConfig*)extra_config;
 	return card;
 }
