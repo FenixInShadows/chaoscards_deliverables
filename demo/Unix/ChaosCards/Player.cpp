@@ -1505,6 +1505,11 @@ string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, 
 
 /* Simulator Section */
 
+void GiglRandInit(unsigned seed)
+{
+	RandInit(seed);
+}
+
 int GetGiglRandInt()
 {
 	return GetRandInt();
@@ -2286,16 +2291,17 @@ void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps)
 
 Card* CreateCardFromRep(const string& name, CardRep& card_rep)
 {
-	return CreateNamedCardFromRep(name, card_rep.data());
+	NodeRep* start_rep = card_rep.data();
+	return CreateNamedCardFromRep(name, start_rep);
 }
 
 
-ExtraCardGenConfig::ExtraCardGenConfig(const string& _name, NodeRep* _rep)
+ExtraCardGenConfig::ExtraCardGenConfig(const string& _name, NodeRep*& _rep)
 	: name(_name), rep(_rep)
 {
 }
 
-ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep* rep)
+ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep*& rep)
 {
 	return new ExtraCardGenConfig(name, rep);
 }

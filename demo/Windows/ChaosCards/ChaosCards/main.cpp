@@ -982,6 +982,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				vector<int> ai_deck_indices;
 				cout << "The default setting is you choose one of the meta decks (stronger) and ai chooses one of the top random decks (weaker). Change default? (y/n)" << endl;
 				cin >> ch;
+				cout << endl;
 				if (ch == 'Y' || ch == 'y')
 				{
 					cout << "Select your deck set: 0 - meta decks, 1 - top random decks" << endl;
@@ -992,9 +993,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 						selection = 1;
 					your_deck_set = selection;
 					if (selection == 0)
-						cout << "You selected meta decks." << endl;
+						cout << "You selected meta decks." << endl << endl;
 					else
-						cout << "You selected top random decks" << endl;
+						cout << "You selected top random decks" << endl << endl;
 
 					cout << "Select ai deck set: 0 - meta decks, 1 - top random decks" << endl;
 					while (!(cin >> selection)) { cin.clear(); cin.ignore(); }
@@ -1004,37 +1005,39 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 						selection = 1;
 					ai_deck_set = selection;
 					if (selection == 0)
-						cout << "AI selected meta decks." << endl;
+						cout << "AI selected meta decks." << endl << endl;
 					else
-						cout << "AI selected top random decks" << endl;
+						cout << "AI selected top random decks" << endl << endl;
 				}
-				cout << "Choose within the set the rank of the deck for you to play (1 ~ 30)" << endl;
+				cout << "Choose, within the set, the rank of the deck for you to play (1 ~ 30)" << endl;
 				while (!(cin >> selection)) { cin.clear(); cin.ignore(); }
 				if (selection <= 0)
 					selection = 1;
 				else if (selection > 30)
 					selection = 30;
 				if (your_deck_set == 0)
-					cout << "You selected #" << selection << " meta deck." << endl;
+					cout << "You selected #" << selection << " meta deck." << endl << endl;
 				else
-					cout << "You selected #" << selection << " random deck." << endl;
+					cout << "You selected #" << selection << " random deck." << endl << endl;
 				your_deck_indices = deck_lists[your_deck_set][selection - 1];
 				BrowseCardSet(card_list, your_deck_indices);
-				cout << "Choose within the set the rank of the deck for ai to play (1 ~ 30)" << endl;
+				cout << endl;
+				cout << "Choose, within the set, the rank of the deck for ai to play (1 ~ 30)" << endl;
 				while (!(cin >> selection)) { cin.clear(); cin.ignore(); }
 				if (selection <= 0)
 					selection = 1;
 				else if (selection > 30)
 					selection = 30;
 				if (ai_deck_set == 0)
-					cout << "AI selected #" << selection << " meta deck." << endl;
+					cout << "AI selected #" << selection << " meta deck." << endl << endl;
 				else
-					cout << "AI selected #" << selection << " random deck." << endl;
+					cout << "AI selected #" << selection << " random deck." << endl << endl;
 				ai_deck_indices = deck_lists[ai_deck_set][selection - 1];
 
 				cout << "Input AI level (integer, clamped to 0 ~ 5; 2 or above is recommended)" << endl;
 				unsigned ai_level;
 				while (!(cin >> ai_level)) { cin.clear(); cin.ignore(); }
+				cout << endl;
 
 				GiglRandInit(time(NULL));
 				vector<Card*> your_deck(deck_size);
