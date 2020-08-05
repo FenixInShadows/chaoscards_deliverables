@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <ctime>
+#include <cmath>
 
 /* Card/Player section */
 

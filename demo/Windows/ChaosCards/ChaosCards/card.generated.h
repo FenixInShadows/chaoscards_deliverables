@@ -22328,7 +22328,7 @@ Card  *CreateNamedCardFromRep(const string  & name, NodeRep  * & rep)
   {
     void  *extra_config = ((void *)((MkExtraCardGenConfig)((name), (rep))));
     Card  *card = (((Card__ItemRef__6107__30) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__6107__30)->Item__Generator)()));
-    delete (extra_config);
+    delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }

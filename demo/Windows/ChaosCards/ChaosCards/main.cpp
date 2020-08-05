@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <functional>
 #include <ctime>
+#include <cmath>
 
 #include "Player.h"
 
