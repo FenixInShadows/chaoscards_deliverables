@@ -7,16 +7,28 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChaosCards", "ChaosCards\Ch
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_SkipGigl|x64 = Debug_SkipGigl|x64
+		Debug_SkipGigl|x86 = Debug_SkipGigl|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release_SkipGigl|x64 = Release_SkipGigl|x64
+		Release_SkipGigl|x86 = Release_SkipGigl|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug_SkipGigl|x64.ActiveCfg = Debug_SkipGigl|x64
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug_SkipGigl|x64.Build.0 = Debug_SkipGigl|x64
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug_SkipGigl|x86.ActiveCfg = Debug_SkipGigl|Win32
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug_SkipGigl|x86.Build.0 = Debug_SkipGigl|Win32
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug|x64.ActiveCfg = Debug|x64
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug|x64.Build.0 = Debug|x64
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug|x86.ActiveCfg = Debug|Win32
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Debug|x86.Build.0 = Debug|Win32
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release_SkipGigl|x64.ActiveCfg = Release_SkipGigl|x64
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release_SkipGigl|x64.Build.0 = Release_SkipGigl|x64
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release_SkipGigl|x86.ActiveCfg = Release_SkipGigl|Win32
+		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release_SkipGigl|x86.Build.0 = Release_SkipGigl|Win32
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release|x64.ActiveCfg = Release|x64
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release|x64.Build.0 = Release|x64
 		{FD01F56D-46CA-4C69-8EA8-4BB52FCBDA31}.Release|x86.ActiveCfg = Release|Win32

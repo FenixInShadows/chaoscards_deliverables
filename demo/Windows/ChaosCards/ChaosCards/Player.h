@@ -8,7 +8,7 @@
 #include <map>
 #include <fstream>
 
-#define SUPPRESS_ALL_MSG
+//#define SUPPRESS_ALL_MSG
 
 using namespace std;
 
@@ -301,6 +301,7 @@ string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, 
 
 /* Simulator Section */
 
+void GiglRandInit(unsigned seed); // artifact from file including issues
 int GetGiglRandInt(); // artifact from file including issues
 int GetGiglRandInt(int n); // artifact from file including issues
 double GetGiglRandFloat(); // 0.0 ~ 1.0; artifact from file includeing issues
@@ -562,12 +563,12 @@ Card* CreateCardFromRep(const string& name, CardRep& card_rep); // card_rep shou
 
 struct ExtraCardGenConfig
 {
-	ExtraCardGenConfig(const string& _name, NodeRep* _rep);
+	ExtraCardGenConfig(const string& _name, NodeRep*& _rep);
 	string name;
-	NodeRep* rep;
+	NodeRep*& rep;
 };
 
-ExtraCardGenConfig* MkExtraCardGenConfig(const string& _name, NodeRep* _rep); 
+ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep*& rep); 
 
 
 /* Neural network part not included in this version */

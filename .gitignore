@@ -42,7 +42,7 @@
 **/*.pdb
 **/*.suo
 **/*.sdf
-**/Debug/*
-**/Release/*
+**/Debug*/*
+**/Release*/*
 
 **/*.opendb

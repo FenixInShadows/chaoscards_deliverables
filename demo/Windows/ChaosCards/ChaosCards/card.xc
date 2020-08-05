@@ -3,7 +3,7 @@ giglstart;
 import "Player.h";
 import <iostream>;
 
-#define SUPPRESS_ALL_MSG
+//#define SUPPRESS_ALL_MSG
 
 #define DEFAULT_OVERHEAT_THRESHOLD 10
 #define MAX_OVERHEAT_THRESHOLD 10
@@ -24,7 +24,7 @@ giglconfig GetDefaultGenConfig(int seed, void* extra_config);
 Card* CreatePlainMinion(string parent_name);
 Card* CreateRandomMinion(string parent_name, int cost, int min_eff_num, int max_eff_num, int eff_depth);
 Card* CreateRandomCard(string parent_name, int cost, int min_eff_num, int max_eff_num, int eff_depth);
-Card* CreateNamedCardFromRep(const string& name, NodeRep* rep);
+Card* CreateNamedCardFromRep(const string& name, NodeRep*& rep);
 
 
 gigltype Card{int seed, int max_eff_num, int max_eff_depth, void* extra_config}: // seed is only used for default naming (for generated cards), for constructed (including copied) cards it doesn't matter; card_rep is for creating cards from a saved representation, if nullptr then it means generate from scratch
@@ -624,7 +624,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [rep->choice]; // must wait until all terminal info is processed before ++
 				}
 				else
 				{
@@ -648,6 +648,7 @@ rule:
 					cost = DenormalizeCode(rep->term_info[0], 0, 10);
 					attack = DenormalizeCode(rep->term_info[1], 0, 10);
 					health = DenormalizeCode(rep->term_info[2], 10, 40);
+					rep++;
 				}
 				else
 				{
@@ -662,7 +663,7 @@ rule:
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
-				if (is_plain)
+				if (!rep && is_plain)
 				{
 					attack_times = construct singleAttack();
 					abilities = generate Abilities(self_config, atk, rep); // in this case rep will be nullptr anyway (can't just write a nullptr as it needs to fit Node*&)
@@ -928,6 +929,7 @@ rule:
 					cost = DenormalizeCode(rep->term_info[0], 0, 10);
 					attack = DenormalizeCode(rep->term_info[1], 0, 10);
 					health = DenormalizeCode(rep->term_info[2], 1, 10);
+					rep++;
 				}
 				else
 				{
@@ -942,7 +944,7 @@ rule:
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
-				if (is_plain)
+				if (!rep && is_plain)
 				{
 					attack_times = construct singleAttack();
 					type = generate MinionType(rep); // in this case it'll be nullptr anyway
@@ -1232,16 +1234,21 @@ rule:
 			generator
 			{
 				if (rep)
+				{
 					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+					rep++;
+				}
 				else
+				{
 					cost = GetRandInt(global_config.min_cost, global_config.max_cost); // currently we only control the cost through the config
+				}
 			}
 			orig_mana = mana = cost;
 			generator
 			{
 				CondConfig self_config = GetInitConfigFromCard(item);
 				abilities = generate Abilities(self_config, -1, rep); // -1 means not applicable
-				if (is_plain)
+				if (!rep && is_plain)
 					effects = construct specialEffects(noTargetedPlayEff(), noOtherEffs()); 
 				else
 					effects = generate SpecialEffects(self_config, 1, max_eff_num, 0, false, rep);
@@ -1344,19 +1351,14 @@ rule:
 			{
 				if (rep)
 				{
-					int n = DenormalizeCode((rep++)->term_info[0], 0, 5);
-					if (n == 0)
-						return construct zeroAttack();
-					else if (n == 1)
-						return construct singleAttack();
-					else
-						return construct multipleAttack(n);
+					force [rep->choice];
 				}
 			}
 		}
 	:=
 	| zeroAttack:
 		{
+			generator { if (rep) rep++; }
 			orig_n_atks = max_n_atks = 0;
 			FillRep
 			{
@@ -1366,6 +1368,7 @@ rule:
 		}
 	| singleAttack:
 		{
+			generator { if (rep) rep++; }
 			orig_n_atks = max_n_atks = 1;
 			FillRep
 			{
@@ -1375,7 +1378,18 @@ rule:
 		}
 	| multipleAttack: int n_atks
 		{
-			generator { n_atks = 100 / GetRandInt(17, 50); }  // 2 ~ 5 but not evenly distributed
+			generator
+			{ 
+				if (rep)
+				{
+					n_atks = DenormalizeCode(rep->term_info[0], 0, 5); // note the code is normalized against 0 ~ 5 range
+					rep++;
+				}
+				else
+				{
+					n_atks = 100 / GetRandInt(17, 50);  // 2 ~ 5 but not evenly distributed
+				}
+			}
 			n_atks_loss = 0;
 			orig_n_atks = max_n_atks = n_atks;
 			FillRep
@@ -1392,7 +1406,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 			}
 		}
@@ -1482,7 +1496,7 @@ rule:
 		{
 			generator
 			{
-				if (target_mode == TARGET_MODE_LEADER || (target_mode == TARGET_MODE_SELF && !(self_config & TARGET_NOT_LEADER))) // damage towards leader shouldn't have poisonous abilities
+				if (!rep && (target_mode == TARGET_MODE_LEADER || (target_mode == TARGET_MODE_SELF && !(self_config & TARGET_NOT_LEADER)))) // damage towards leader shouldn't have poisonous abilities
 					p = construct noPoisonous();
 				else
 					p = generate PoisonousAbbl(self_config, damage, rep);
@@ -1507,7 +1521,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1544,7 +1558,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1581,7 +1595,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1618,7 +1632,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 			}
 		}
@@ -1650,7 +1664,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1687,7 +1701,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1724,7 +1738,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1836,7 +1850,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -1975,7 +1989,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -2040,7 +2054,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -2318,7 +2332,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -2604,7 +2618,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -2859,7 +2873,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -2935,7 +2949,7 @@ rule:
 				if (target_mode == TARGET_MODE_PLAY)
 					instant_config &= PLAY_CHAR_TARGET_FILTER;
 
-				if (target_mode == TARGET_MODE_SOURCE && (!(init_config & TARGET_NOT_LEADER) || !(instant_config & TARGET_NOT_LEADER)))
+				if (!rep && (target_mode == TARGET_MODE_SOURCE && (!(init_config & TARGET_NOT_LEADER) || !(instant_config & TARGET_NOT_LEADER))))
 				{
 					// source cond on target that must be a leader should only say it is a charactor (as oppose to a card), as other cond should be covered by leader cond; currently applies for turn start/end effects
 					alle = construct anyAllegiance();
@@ -2996,7 +3010,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3226,7 +3240,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3434,7 +3448,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3490,7 +3504,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3567,7 +3581,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3706,7 +3720,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -3859,7 +3873,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [rep->choice];
 				}
 				else
 				{
@@ -3875,9 +3889,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 0, 10);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(lower_min, lower_max);
+				}
 			}
 			FillRep
 			{
@@ -3894,9 +3913,14 @@ rule:
 			generator
 			{ 
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 0, 10);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(upper_min, upper_max);
+				}
 			}
 			FillRep
 			{
@@ -3916,7 +3940,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -4137,7 +4161,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [rep->choice];
 				}
 				else
 				{
@@ -4198,10 +4222,15 @@ rule:
 			generator 
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 10);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(1, 10);
-				if (give_eff)
+				}
+				if (!rep && give_eff)
 					abbl = construct damageAbilities(noPoisonous(), noLifesteal());
 				else
 					abbl = generate DamageAbilities(self_config, target_mode, val, rep);
@@ -4232,9 +4261,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 10);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(1, 10);
+				}
 			}
 			FillRep
 			{
@@ -4257,9 +4291,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 5);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(1, 5);
+				}
 			}
 			FillRep
 			{
@@ -4284,6 +4323,7 @@ rule:
 				if (rep)
 				{
 					val = DenormalizeCode(rep->term_info[0], -10, 10);
+					rep++;
 				}
 				else
 				{
@@ -4321,6 +4361,7 @@ rule:
 				{
 					atkmod = DenormalizeCode(rep->term_info[0], -5, 5);
 					hpmod = DenormalizeCode(rep->term_info[1], 0, 10);
+					rep++;
 				}
 				else
 				{
@@ -4355,7 +4396,8 @@ rule:
 			{
 				if (rep)
 				{
-					val = DenormalizeCode(rep->term_info[0], -10, 10);
+					val = DenormalizeCode(rep->term_info[0], -3, 3);
+					rep++;
 				}
 				else
 				{
@@ -4386,6 +4428,7 @@ rule:
 		}
 	| destroyEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(6u));
@@ -4407,6 +4450,7 @@ rule:
 		}
 	| discardEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(7u));
@@ -4465,7 +4509,11 @@ rule:
 		}
 	| moveEff: Destination* dest
 		{
-			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_MOVE_DEST, rep); }
+			generator
+			{
+				if (rep) rep++;
+				dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_MOVE_DEST, rep);
+			}
 			FillRep
 			{
 				rep.push_back(mkNodeRep(8u));
@@ -4575,7 +4623,11 @@ rule:
 		}
 	| copyEff: Destination* dest
 		{
-			generator { dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_COPY_DEST, rep); }
+			generator
+			{
+				if (rep) rep++;
+				dest = generate Destination(self_config, target_mode, effect_timing, TARGET_MODE_COPY_DEST, rep);
+			}
 			FillRep
 			{
 				rep.push_back(mkNodeRep(9u));
@@ -4665,7 +4717,11 @@ rule:
 		}
 	| transformEff: NewCardVariant* variant
 		{
-			generator { variant = generate NewCardVariant(self_config, target_mode, effect_timing, effect_depth, rep); }
+			generator
+			{
+				if (rep) rep++;
+				variant = generate NewCardVariant(self_config, target_mode, effect_timing, effect_depth, rep);
+			}
 			FillRep
 			{
 				rep.push_back(mkNodeRep(10u));
@@ -4713,6 +4769,7 @@ rule:
 		}
 	| changeToBeastEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(11u));
@@ -4739,6 +4796,7 @@ rule:
 		}
 	| changeToDragonEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(12u));
@@ -4765,6 +4823,7 @@ rule:
 		}
 	| changeToDemonEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(13u));
@@ -4791,6 +4850,7 @@ rule:
 		}
 	| giveChargeEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(14u));
@@ -4814,6 +4874,7 @@ rule:
 		}
 	| giveTauntEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(15u));
@@ -4837,6 +4898,7 @@ rule:
 		}
 	| giveStealthEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(16u));
@@ -4862,6 +4924,7 @@ rule:
 		}
 	| giveUntargetableEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(17u));
@@ -4885,6 +4948,7 @@ rule:
 		}
 	| giveShieldEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(18u));
@@ -4910,6 +4974,7 @@ rule:
 		}
 	| givePoisonousEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(19u));
@@ -4933,6 +4998,7 @@ rule:
 		}
 	| giveLifestealEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(20u));
@@ -4956,6 +5022,7 @@ rule:
 		}
 	| rmAbilitiesEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(21u));
@@ -4984,6 +5051,7 @@ rule:
 		}
 	| setOverheatEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(22u));
@@ -5010,9 +5078,14 @@ rule:
 			generator 
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 5);
+					rep++;
+				}
 				else
+				{
 					val = GetRandInt(1, 5);
+				}
 			}
 			FillRep
 			{
@@ -5037,6 +5110,7 @@ rule:
 		}
 	| resetStateEff:
 		{
+			generator { if (rep) rep++; }
 			FillRep
 			{
 				rep.push_back(mkNodeRep(24u));
@@ -5078,6 +5152,7 @@ rule:
 		{
 			generator
 			{
+				if (rep) rep++;
 				int next_depth = effect_depth + 1;
 				int min_num_effs = 1;
 				int max_num_effs = max_eff_num >> next_depth;
@@ -5129,7 +5204,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [rep->choice];
 				}
 				else
 				{
@@ -5148,6 +5223,8 @@ rule:
 		{
 			generator
 			{
+				if (rep) rep++;
+
 				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
@@ -5183,6 +5260,8 @@ rule:
 		{
 			generator
 			{
+				if (rep) rep++;
+
 				effect = generate BaseTargetedEff(self_config, TARGET_MODE_DEFAULT, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
@@ -5225,6 +5304,8 @@ rule:
 		{
 			generator
 			{
+				if (rep) rep++;
+
 				effect = generate BaseTargetedEff(self_config, TARGET_MODE_LEADER, effect_timing, effect_depth, give_eff, rep);
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
@@ -5262,7 +5343,12 @@ rule:
 		}
 	| selfEff: BaseTargetedEff* effect
 		{
-			generator { effect = generate BaseTargetedEff(self_config, TARGET_MODE_SELF, effect_timing, effect_depth, give_eff, rep); }
+			generator
+			{
+				if (rep) rep++;
+				 
+				effect = generate BaseTargetedEff(self_config, TARGET_MODE_SELF, effect_timing, effect_depth, give_eff, rep);
+			}
 			FillRep
 			{
 				rep.push_back(mkNodeRep(3u));
@@ -5307,9 +5393,14 @@ rule:
 			generator 
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 3);
+					rep++;
+				}
 				else
+				{
 					val = 10/GetRandInt(3, 10); // 1 ~ 3 biased
+				}
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
@@ -5349,6 +5440,7 @@ rule:
 				if (rep)
 				{
 					val = DenormalizeCode(rep->term_info[0], -10, 10);
+					rep++;
 				}
 				else
 				{
@@ -5396,6 +5488,7 @@ rule:
 				if (rep)
 				{
 					val = DenormalizeCode(rep->term_info[0], -5, 5);
+					rep++;
 				}
 				else
 				{
@@ -5441,9 +5534,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
 					val = DenormalizeCode(rep->term_info[0], 1, 7);
+					rep++;
+				}
 				else
+				{
 					val = 120/GetRandInt(16, 120); // 1 ~ 7, biased to small numbers
+				}
 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				dest = generate Destination(tmp_init_config, TARGET_MODE_NEW, effect_timing, TARGET_MODE_NEW_DEST, rep);
@@ -5479,6 +5577,7 @@ rule:
 		{
 			generator
 			{
+				if (rep) rep++;
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
 				CondConfig tmp_config = GetDefaultConfig(); // to counter the problem of rvalue passed to lvalue ref
 				alle = generate AllegianceCond(tmp_init_config, tmp_config, TARGET_MODE_WIN_GAME, effect_timing, rep);
@@ -5509,7 +5608,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [(rep++)->choice]; // no terminal info, fine to ++
 				}
 				else
 				{
@@ -5705,7 +5804,7 @@ rule:
 			{
 				if (rep)
 				{
-					force [(rep++)->choice];
+					force [rep->choice];
 				}
 				else
 				{
@@ -5725,9 +5824,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
+					rep++;
 					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
+				}
 				else
+				{
 					card = CreatePlainMinion(name);
+				}
 			}
 			FillRep
 			{
@@ -5747,9 +5851,14 @@ rule:
 			generator
 			{
 				if (rep)
+				{
+					rep++;
 					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
+				}
 				else
+				{
 					card = CreatePlainMinion(name);
+				}
 			}
 			FillRep
 			{
@@ -5774,6 +5883,7 @@ rule:
 			{
 				if (rep)
 				{
+					rep++;
 					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep); // note as the spawned token name is not provided so we just append a random number in the name
 				}
 				else
@@ -5803,6 +5913,7 @@ rule:
 			{ 
 				if (rep)
 				{
+					rep++;
 					card = CreateNamedCardFromRep(name + "_Spawn_#" + IntToStr(GetRandInt()), rep);
 				}
 				else
@@ -5835,9 +5946,14 @@ rule:
 			generator
 			{ 
 				if (rep)
-					cost = DenormalizeCode(rep->term_info[0], -10, 10);
+				{
+					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+					rep++;
+				}
 				else
+				{
 					cost = GetRandInt(0, 10);
+				}
 			}
 			FillRep
 			{
@@ -5854,9 +5970,14 @@ rule:
 			generator
 			{ 
 				if (rep)
-					cost = DenormalizeCode(rep->term_info[0], -10, 10);
+				{
+					cost = DenormalizeCode(rep->term_info[0], 0, 10);
+					rep++;
+				}
 				else
+				{
 					cost = GetRandInt(0, 10);
+				}
 			}
 			FillRep
 			{
@@ -5979,7 +6100,7 @@ Card* CreateRandomCard(string parent_name, int cost, int min_eff_num, int max_ef
 	return card;
 }
 
-Card* CreateNamedCardFromRep(const string& name, NodeRep* rep)
+Card* CreateNamedCardFromRep(const string& name, NodeRep*& rep)
 {
 	void* extra_config = (void*)MkExtraCardGenConfig(name, rep);
 	Card* card = generate Card with GetDefaultGenConfig(-1, extra_config);
