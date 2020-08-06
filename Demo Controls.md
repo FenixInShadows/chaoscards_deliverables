@@ -1,6 +1,6 @@
 This file contains the instruction for controls when running the demo. The information is also included on the website https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls.
 
-Demo Modes
+## Demo Modes
 
 When running the demo, the first thing you are prompted with is selecting the mode to run. Each mode provide a different functionality of the program. Here is the list.
 
@@ -24,7 +24,7 @@ We recommend trying out mode 0, 2 and 7, and they are short to run. Mode 7 would
 
 
 
-Game Control Commands
+## Game Control Commands
 
 For most of the parts, you will only need to follow the prompts and input whatever is requested. If a format error occurs, the program is not likely to crash, but mostly would expect you to input the same information again. For the inputs for actually playing the matches (in mode 2, 3, and 7), there are quite a few actions you might want to choose from, so here we demonstrate a little. Note, the following inputs/commands are only valid inside an actual match (x, y, z below indicate integers, they refers to or is related to the numbering labeled on the board, ordered as your leader -> your minions -> opponents minions -> your hand, see the figures below).
 P x y z: play card x from hand at position y and target z, the positioning y is for the minion on the left (0 if the first one), y and/or z are sometimes not used. (Spells and leaders does not use position y, cards without targeted effects does not use z. A leader/minion card with a targeted battlecry but having no valid target is treated as not having targeted effects when playing, while a spell with a targeted cast effect but having not valid target cannot be played. It is important to include all three integers even if some are not used, in which case the value of the unused components does not matter.)
