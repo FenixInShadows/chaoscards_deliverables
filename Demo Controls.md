@@ -1,4 +1,4 @@
-This file contains the instruction for controls when running the demo. The information is also included on the website https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls.
+This file contains the instruction for controls when running the demo. The information is also included on the website https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls (the website version has more demonstrations).
 
 ## Demo Modes
 
