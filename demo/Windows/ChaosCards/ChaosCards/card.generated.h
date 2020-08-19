@@ -52,19 +52,19 @@ class Card__Abilities;
 
 class Card__DamageAbilities;
 
-class Card__ChargeAbbl;
+class Card__ChargeAbil;
 
-class Card__TauntAbbl;
+class Card__TauntAbil;
 
-class Card__StealthAbbl;
+class Card__StealthAbil;
 
-class Card__UntargetableAbbl;
+class Card__UntargetableAbil;
 
-class Card__ShieldAbbl;
+class Card__ShieldAbil;
 
-class Card__PoisonousAbbl;
+class Card__PoisonousAbil;
 
-class Card__LifestealAbbl;
+class Card__LifestealAbil;
 
 class Card__SpecialEffects;
 
@@ -92,7 +92,7 @@ class Card__CardPosCond;
 
 class Card__AllegianceCond;
 
-class Card__AbblCond;
+class Card__AbilCond;
 
 class Card__StatCond;
 
@@ -238,7 +238,7 @@ class Card__allyAllegiance;
 
 class Card__oppoAllegiance;
 
-class Card__noAbblCond;
+class Card__noAbilCond;
 
 class Card__chargeCond;
 
@@ -468,7 +468,7 @@ public:
   Card__SpecialEffects  *GetEffects();
   Card  *GetRelatedCard(Card  * parent_card);
   signed int isCondTrivial();
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetPlayTargetConfig();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   CondConfig GetSelfConfig(const CondConfig  & self_config);
@@ -521,25 +521,25 @@ public:
   Card__justAbilities  *Generate__justAbilities(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__DamageAbilities  *Generate__DamageAbilities(CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep);
   Card__damageAbilities  *Generate__damageAbilities(CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep);
-  Card__ChargeAbbl  *Generate__ChargeAbbl(CondConfig  & self_config, NodeRep  * & rep);
+  Card__ChargeAbil  *Generate__ChargeAbil(CondConfig  & self_config, NodeRep  * & rep);
   Card__noCharge  *Generate__noCharge(CondConfig  & self_config, NodeRep  * & rep);
   Card__justCharge  *Generate__justCharge(CondConfig  & self_config, NodeRep  * & rep);
-  Card__TauntAbbl  *Generate__TauntAbbl(CondConfig  & self_config, NodeRep  * & rep);
+  Card__TauntAbil  *Generate__TauntAbil(CondConfig  & self_config, NodeRep  * & rep);
   Card__noTaunt  *Generate__noTaunt(CondConfig  & self_config, NodeRep  * & rep);
   Card__justTaunt  *Generate__justTaunt(CondConfig  & self_config, NodeRep  * & rep);
-  Card__StealthAbbl  *Generate__StealthAbbl(CondConfig  & self_config, NodeRep  * & rep);
+  Card__StealthAbil  *Generate__StealthAbil(CondConfig  & self_config, NodeRep  * & rep);
   Card__noStealth  *Generate__noStealth(CondConfig  & self_config, NodeRep  * & rep);
   Card__justStealth  *Generate__justStealth(CondConfig  & self_config, NodeRep  * & rep);
-  Card__UntargetableAbbl  *Generate__UntargetableAbbl(CondConfig  & self_config, NodeRep  * & rep);
+  Card__UntargetableAbil  *Generate__UntargetableAbil(CondConfig  & self_config, NodeRep  * & rep);
   Card__noUntargetable  *Generate__noUntargetable(CondConfig  & self_config, NodeRep  * & rep);
   Card__justUntargetable  *Generate__justUntargetable(CondConfig  & self_config, NodeRep  * & rep);
-  Card__ShieldAbbl  *Generate__ShieldAbbl(CondConfig  & self_config, NodeRep  * & rep);
+  Card__ShieldAbil  *Generate__ShieldAbil(CondConfig  & self_config, NodeRep  * & rep);
   Card__noShield  *Generate__noShield(CondConfig  & self_config, NodeRep  * & rep);
   Card__justShield  *Generate__justShield(CondConfig  & self_config, NodeRep  * & rep);
-  Card__PoisonousAbbl  *Generate__PoisonousAbbl(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+  Card__PoisonousAbil  *Generate__PoisonousAbil(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__noPoisonous  *Generate__noPoisonous(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__justPoisonous  *Generate__justPoisonous(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-  Card__LifestealAbbl  *Generate__LifestealAbbl(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+  Card__LifestealAbil  *Generate__LifestealAbil(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__noLifesteal  *Generate__noLifesteal(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__justLifesteal  *Generate__justLifesteal(CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
   Card__SpecialEffects  *Generate__SpecialEffects(CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
@@ -595,8 +595,8 @@ public:
   Card__anyAllegiance  *Generate__anyAllegiance(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
   Card__allyAllegiance  *Generate__allyAllegiance(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
   Card__oppoAllegiance  *Generate__oppoAllegiance(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-  Card__AbblCond  *Generate__AbblCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-  Card__noAbblCond  *Generate__noAbblCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+  Card__AbilCond  *Generate__AbilCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+  Card__noAbilCond  *Generate__noAbilCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
   Card__chargeCond  *Generate__chargeCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
   Card__tauntCond  *Generate__tauntCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
   Card__stealthCond  *Generate__stealthCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
@@ -700,7 +700,7 @@ public:
   Card__SpecialEffects virtual  *GetEffects();
   Card virtual  *GetRelatedCard(Card  * parent_card);
   signed int virtual isCondTrivial();
-  unsigned int virtual GetInitAbblFlag();
+  unsigned int virtual GetInitAbilFlag();
   CondConfig virtual GetPlayTargetConfig();
   CondConfig virtual GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   CondConfig virtual GetSelfConfig(const CondConfig  & self_config);
@@ -767,52 +767,52 @@ public:
   
 
 };
-class Card__ChargeAbbl : public Card__Node {
+class Card__ChargeAbil : public Card__Node {
 public:
-  Card__ChargeAbbl(Card  * input__item);
-  Card__ChargeAbbl();
+  Card__ChargeAbil(Card  * input__item);
+  Card__ChargeAbil();
   
 
 };
-class Card__TauntAbbl : public Card__Node {
+class Card__TauntAbil : public Card__Node {
 public:
-  Card__TauntAbbl(Card  * input__item);
-  Card__TauntAbbl();
+  Card__TauntAbil(Card  * input__item);
+  Card__TauntAbil();
   
 
 };
-class Card__StealthAbbl : public Card__Node {
+class Card__StealthAbil : public Card__Node {
 public:
-  Card__StealthAbbl(Card  * input__item);
-  Card__StealthAbbl();
+  Card__StealthAbil(Card  * input__item);
+  Card__StealthAbil();
   
 
 };
-class Card__UntargetableAbbl : public Card__Node {
+class Card__UntargetableAbil : public Card__Node {
 public:
-  Card__UntargetableAbbl(Card  * input__item);
-  Card__UntargetableAbbl();
+  Card__UntargetableAbil(Card  * input__item);
+  Card__UntargetableAbil();
   
 
 };
-class Card__ShieldAbbl : public Card__Node {
+class Card__ShieldAbil : public Card__Node {
 public:
-  Card__ShieldAbbl(Card  * input__item);
-  Card__ShieldAbbl();
+  Card__ShieldAbil(Card  * input__item);
+  Card__ShieldAbil();
   
 
 };
-class Card__PoisonousAbbl : public Card__Node {
+class Card__PoisonousAbil : public Card__Node {
 public:
-  Card__PoisonousAbbl(Card  * input__item);
-  Card__PoisonousAbbl();
+  Card__PoisonousAbil(Card  * input__item);
+  Card__PoisonousAbil();
   
 
 };
-class Card__LifestealAbbl : public Card__Node {
+class Card__LifestealAbil : public Card__Node {
 public:
-  Card__LifestealAbbl(Card  * input__item);
-  Card__LifestealAbbl();
+  Card__LifestealAbil(Card  * input__item);
+  Card__LifestealAbil();
   
 
 };
@@ -907,10 +907,10 @@ public:
   
 
 };
-class Card__AbblCond : public Card__Node {
+class Card__AbilCond : public Card__Node {
 public:
-  Card__AbblCond(Card  * input__item);
-  Card__AbblCond();
+  Card__AbilCond(Card  * input__item);
+  Card__AbilCond();
   
 
 };
@@ -1120,38 +1120,38 @@ public:
 class Card__justAbilities : public Card__Abilities {
 public:
   Card__justAbilities();
-  Card__justAbilities(Card  * input__item, Card__ChargeAbbl  * input__c, Card__TauntAbbl  * input__t, Card__StealthAbbl  * input__s, Card__UntargetableAbbl  * input__u, Card__ShieldAbbl  * input__d, Card__PoisonousAbbl  * input__p, Card__LifestealAbbl  * input__l);
+  Card__justAbilities(Card  * input__item, Card__ChargeAbil  * input__c, Card__TauntAbil  * input__t, Card__StealthAbil  * input__s, Card__UntargetableAbil  * input__u, Card__ShieldAbil  * input__d, Card__PoisonousAbil  * input__p, Card__LifestealAbil  * input__l);
   ~Card__justAbilities();
-  Card__ChargeAbbl  *c;
-  Card__TauntAbbl  *t;
-  Card__StealthAbbl  *s;
-  Card__UntargetableAbbl  *u;
-  Card__ShieldAbbl  *d;
-  Card__PoisonousAbbl  *p;
-  Card__LifestealAbbl  *l;
+  Card__ChargeAbil  *c;
+  Card__TauntAbil  *t;
+  Card__StealthAbil  *s;
+  Card__UntargetableAbil  *u;
+  Card__ShieldAbil  *d;
+  Card__PoisonousAbil  *p;
+  Card__LifestealAbil  *l;
   void FillRep(CardRep  & rep);
   string Brief();
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
 class Card__damageAbilities : public Card__DamageAbilities {
 public:
   Card__damageAbilities();
-  Card__damageAbilities(Card  * input__item, Card__PoisonousAbbl  * input__p, Card__LifestealAbbl  * input__l);
+  Card__damageAbilities(Card  * input__item, Card__PoisonousAbil  * input__p, Card__LifestealAbil  * input__l);
   ~Card__damageAbilities();
-  Card__PoisonousAbbl  *p;
-  Card__LifestealAbbl  *l;
+  Card__PoisonousAbil  *p;
+  Card__LifestealAbil  *l;
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noCharge : public Card__ChargeAbbl {
+class Card__noCharge : public Card__ChargeAbil {
 public:
   Card__noCharge();
   Card__noCharge(Card  * input__item);
@@ -1161,18 +1161,18 @@ public:
   
 
 };
-class Card__justCharge : public Card__ChargeAbbl {
+class Card__justCharge : public Card__ChargeAbil {
 public:
   Card__justCharge();
   Card__justCharge(Card  * input__item);
   ~Card__justCharge();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noTaunt : public Card__TauntAbbl {
+class Card__noTaunt : public Card__TauntAbil {
 public:
   Card__noTaunt();
   Card__noTaunt(Card  * input__item);
@@ -1182,18 +1182,18 @@ public:
   
 
 };
-class Card__justTaunt : public Card__TauntAbbl {
+class Card__justTaunt : public Card__TauntAbil {
 public:
   Card__justTaunt();
   Card__justTaunt(Card  * input__item);
   ~Card__justTaunt();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noStealth : public Card__StealthAbbl {
+class Card__noStealth : public Card__StealthAbil {
 public:
   Card__noStealth();
   Card__noStealth(Card  * input__item);
@@ -1203,18 +1203,18 @@ public:
   
 
 };
-class Card__justStealth : public Card__StealthAbbl {
+class Card__justStealth : public Card__StealthAbil {
 public:
   Card__justStealth();
   Card__justStealth(Card  * input__item);
   ~Card__justStealth();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noUntargetable : public Card__UntargetableAbbl {
+class Card__noUntargetable : public Card__UntargetableAbil {
 public:
   Card__noUntargetable();
   Card__noUntargetable(Card  * input__item);
@@ -1224,18 +1224,18 @@ public:
   
 
 };
-class Card__justUntargetable : public Card__UntargetableAbbl {
+class Card__justUntargetable : public Card__UntargetableAbil {
 public:
   Card__justUntargetable();
   Card__justUntargetable(Card  * input__item);
   ~Card__justUntargetable();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noShield : public Card__ShieldAbbl {
+class Card__noShield : public Card__ShieldAbil {
 public:
   Card__noShield();
   Card__noShield(Card  * input__item);
@@ -1245,18 +1245,18 @@ public:
   
 
 };
-class Card__justShield : public Card__ShieldAbbl {
+class Card__justShield : public Card__ShieldAbil {
 public:
   Card__justShield();
   Card__justShield(Card  * input__item);
   ~Card__justShield();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noPoisonous : public Card__PoisonousAbbl {
+class Card__noPoisonous : public Card__PoisonousAbil {
 public:
   Card__noPoisonous();
   Card__noPoisonous(Card  * input__item);
@@ -1266,18 +1266,18 @@ public:
   
 
 };
-class Card__justPoisonous : public Card__PoisonousAbbl {
+class Card__justPoisonous : public Card__PoisonousAbil {
 public:
   Card__justPoisonous();
   Card__justPoisonous(Card  * input__item);
   ~Card__justPoisonous();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
-class Card__noLifesteal : public Card__LifestealAbbl {
+class Card__noLifesteal : public Card__LifestealAbil {
 public:
   Card__noLifesteal();
   Card__noLifesteal(Card  * input__item);
@@ -1287,14 +1287,14 @@ public:
   
 
 };
-class Card__justLifesteal : public Card__LifestealAbbl {
+class Card__justLifesteal : public Card__LifestealAbil {
 public:
   Card__justLifesteal();
   Card__justLifesteal(Card  * input__item);
   ~Card__justLifesteal();
   void FillRep(CardRep  & rep);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   
 
 };
@@ -1347,7 +1347,7 @@ public:
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
   signed int GetEffectNum();
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int isTargetedAtPlay(signed int  x, signed int  y, Card  * parent_card);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
@@ -1370,7 +1370,7 @@ public:
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
   signed int GetEffectNum();
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int isTargetedAtPlay(signed int  x, signed int  y, Card  * parent_card);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
@@ -1428,7 +1428,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void Play(signed int  x, signed int  y, signed int  z, Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1448,7 +1448,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void Play(signed int  x, signed int  y, signed int  z, Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1468,7 +1468,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void Destroy(Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1488,7 +1488,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void Discard(Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1509,7 +1509,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void TurnStart(Card  * leader, Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1530,7 +1530,7 @@ public:
   string Detail();
   string DetailIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void TurnEnd(Card  * leader, Card  * parent_card);
   void SetOverheatCounts(signed int  val);
@@ -1595,7 +1595,7 @@ public:
   string Postfix();
   string PostfixIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int isTargetedAtPlay(signed int  x, signed int  y, Card  * parent_card);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
@@ -1616,7 +1616,7 @@ public:
   string Postfix();
   string PostfixIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void UntargetedAction(Card  * parent_card);
   
@@ -1636,7 +1636,7 @@ public:
   string Postfix();
   string PostfixIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   void UntargetedAction(Card  * parent_card);
   
 
@@ -1655,7 +1655,7 @@ public:
   string Postfix();
   string PostfixIndent(signed int  indent_size);
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   void UntargetedAction(Card  * parent_card);
   
@@ -1673,7 +1673,7 @@ public:
   string DetailAlt2();
   string DetailAlt3();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -1693,7 +1693,7 @@ public:
   string DetailAlt2();
   string DetailAlt3();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -1704,11 +1704,11 @@ public:
 class Card__justCharTargetCond : public Card__CharTargetCond {
 public:
   Card__justCharTargetCond();
-  Card__justCharTargetCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__CharTypeCond  * input__typecond, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond);
+  Card__justCharTargetCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__CharTypeCond  * input__typecond, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond);
   ~Card__justCharTargetCond();
   Card__AllegianceCond  *alle;
   Card__CharTypeCond  *typecond;
-  Card__AbblCond  *abblcond;
+  Card__AbilCond  *abilcond;
   Card__StatCond  *statcond;
   void FillRep(CardRep  & rep);
   string Detail();
@@ -1716,7 +1716,7 @@ public:
   string DetailAlt2();
   string DetailAlt3();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -1814,12 +1814,12 @@ public:
 class Card__justCardTargetCond : public Card__CardTargetCond {
 public:
   Card__justCardTargetCond();
-  Card__justCardTargetCond(Card  * input__item, Card__CardPosCond  * input__pos, Card__AllegianceCond  * input__alle, Card__CardTypeCond  * input__typecond, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond);
+  Card__justCardTargetCond(Card  * input__item, Card__CardPosCond  * input__pos, Card__AllegianceCond  * input__alle, Card__CardTypeCond  * input__typecond, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond);
   ~Card__justCardTargetCond();
   Card__CardPosCond  *pos;
   Card__AllegianceCond  *alle;
   Card__CardTypeCond  *typecond;
-  Card__AbblCond  *abblcond;
+  Card__AbilCond  *abilcond;
   Card__StatCond  *statcond;
   void FillRep(CardRep  & rep);
   string Detail();
@@ -1827,7 +1827,7 @@ public:
   string DetailAlt2();
   string DetailAlt3();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2059,18 +2059,18 @@ public:
   
 
 };
-class Card__noAbblCond : public Card__AbblCond {
+class Card__noAbilCond : public Card__AbilCond {
 public:
-  Card__noAbblCond();
-  Card__noAbblCond(Card  * input__item);
-  ~Card__noAbblCond();
+  Card__noAbilCond();
+  Card__noAbilCond(Card  * input__item);
+  ~Card__noAbilCond();
   void FillRep(CardRep  & rep);
   signed int isCondTrivial();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
   
 
 };
-class Card__chargeCond : public Card__AbblCond {
+class Card__chargeCond : public Card__AbilCond {
 public:
   Card__chargeCond();
   Card__chargeCond(Card  * input__item);
@@ -2078,7 +2078,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2086,7 +2086,7 @@ public:
   
 
 };
-class Card__tauntCond : public Card__AbblCond {
+class Card__tauntCond : public Card__AbilCond {
 public:
   Card__tauntCond();
   Card__tauntCond(Card  * input__item);
@@ -2094,7 +2094,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2102,7 +2102,7 @@ public:
   
 
 };
-class Card__stealthCond : public Card__AbblCond {
+class Card__stealthCond : public Card__AbilCond {
 public:
   Card__stealthCond();
   Card__stealthCond(Card  * input__item);
@@ -2110,7 +2110,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2118,7 +2118,7 @@ public:
   
 
 };
-class Card__untargetableCond : public Card__AbblCond {
+class Card__untargetableCond : public Card__AbilCond {
 public:
   Card__untargetableCond();
   Card__untargetableCond(Card  * input__item);
@@ -2126,7 +2126,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2134,7 +2134,7 @@ public:
   
 
 };
-class Card__shieldCond : public Card__AbblCond {
+class Card__shieldCond : public Card__AbilCond {
 public:
   Card__shieldCond();
   Card__shieldCond(Card  * input__item);
@@ -2142,7 +2142,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2150,7 +2150,7 @@ public:
   
 
 };
-class Card__poisonousCond : public Card__AbblCond {
+class Card__poisonousCond : public Card__AbilCond {
 public:
   Card__poisonousCond();
   Card__poisonousCond(Card  * input__item);
@@ -2158,7 +2158,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2166,7 +2166,7 @@ public:
   
 
 };
-class Card__lifestealCond : public Card__AbblCond {
+class Card__lifestealCond : public Card__AbilCond {
 public:
   Card__lifestealCond();
   Card__lifestealCond(Card  * input__item);
@@ -2174,7 +2174,7 @@ public:
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
-  unsigned int GetInitAbblFlag();
+  unsigned int GetInitAbilFlag();
   CondConfig GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing);
   signed int CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card);
   signed int CheckCardValid(Card  * card, Card  * parent_card);
@@ -2316,10 +2316,10 @@ public:
 class Card__leaderCond : public Card__IndeCond {
 public:
   Card__leaderCond();
-  Card__leaderCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond);
+  Card__leaderCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond);
   ~Card__leaderCond();
   Card__AllegianceCond  *alle;
-  Card__AbblCond  *abblcond;
+  Card__AbilCond  *abilcond;
   Card__StatCond  *statcond;
   void FillRep(CardRep  & rep);
   string Detail();
@@ -2359,10 +2359,10 @@ public:
 class Card__damageEff : public Card__BaseTargetedEff {
 public:
   Card__damageEff();
-  Card__damageEff(Card  * input__item, signed int  input__val, Card__DamageAbilities  * input__abbl);
+  Card__damageEff(Card  * input__item, signed int  input__val, Card__DamageAbilities  * input__abil);
   ~Card__damageEff();
   signed int val;
-  Card__DamageAbilities  *abbl;
+  Card__DamageAbilities  *abil;
   void FillRep(CardRep  & rep);
   string Detail();
   Card__Node  *CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map);
@@ -3833,10 +3833,10 @@ signed int Card::isCondTrivial()
   return (((root)->isCondTrivial)());
 }
 
-unsigned int Card::GetInitAbblFlag()
+unsigned int Card::GetInitAbilFlag()
 {
 
-  return (((root)->GetInitAbblFlag)());
+  return (((root)->GetInitAbilFlag)());
 }
 
 CondConfig Card::GetPlayTargetConfig()
@@ -4120,15 +4120,15 @@ Card  *Card::CreateCopy()
     {
       {
         case (LEADER_CARD):
-          ((card_copy) = (((Card__ItemRef__554__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__554__54)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__554__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__554__54), (orig_n_atks))), (new Card__justAbilities((Card__ItemRef__554__54), (((orig_is_charge) ? ((Card__ChargeAbbl *)(new Card__justCharge((Card__ItemRef__554__54)))) : ((Card__ChargeAbbl *)(new Card__noCharge((Card__ItemRef__554__54)))))), (((orig_is_taunt) ? ((Card__TauntAbbl *)(new Card__justTaunt((Card__ItemRef__554__54)))) : ((Card__TauntAbbl *)(new Card__noTaunt((Card__ItemRef__554__54)))))), (((orig_is_stealth) ? ((Card__StealthAbbl *)(new Card__justStealth((Card__ItemRef__554__54)))) : ((Card__StealthAbbl *)(new Card__noStealth((Card__ItemRef__554__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbbl *)(new Card__justUntargetable((Card__ItemRef__554__54)))) : ((Card__UntargetableAbbl *)(new Card__noUntargetable((Card__ItemRef__554__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbbl *)(new Card__justShield((Card__ItemRef__554__54)))) : ((Card__ShieldAbbl *)(new Card__noShield((Card__ItemRef__554__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbbl *)(new Card__justPoisonous((Card__ItemRef__554__54)))) : ((Card__PoisonousAbbl *)(new Card__noPoisonous((Card__ItemRef__554__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbbl *)(new Card__justLifesteal((Card__ItemRef__554__54)))) : ((Card__LifestealAbbl *)(new Card__noLifesteal((Card__ItemRef__554__54)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__554__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__554__54)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__554__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__554__54), (orig_n_atks))), (new Card__justAbilities((Card__ItemRef__554__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__554__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__554__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__554__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__554__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__554__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__554__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__554__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__554__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__554__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__554__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__554__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__554__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__554__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__554__54)))))))), (effects)))))));
         
         break;
         case (MINION_CARD):
-          ((card_copy) = (((Card__ItemRef__566__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__566__54)->Item__Constructor)((new Card__minionCard((Card__ItemRef__566__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__566__54), (orig_n_atks))), ((((orig_minion_type) == (BEAST_MINION)) ? ((Card__MinionType *)(new Card__beastMinion((Card__ItemRef__566__54)))) : ((((orig_minion_type) == (DRAGON_MINION)) ? ((Card__MinionType *)(new Card__dragonMinion((Card__ItemRef__566__54)))) : ((Card__MinionType *)(new Card__demonMinion((Card__ItemRef__566__54)))))))), (new Card__justAbilities((Card__ItemRef__566__54), (((orig_is_charge) ? ((Card__ChargeAbbl *)(new Card__justCharge((Card__ItemRef__566__54)))) : ((Card__ChargeAbbl *)(new Card__noCharge((Card__ItemRef__566__54)))))), (((orig_is_taunt) ? ((Card__TauntAbbl *)(new Card__justTaunt((Card__ItemRef__566__54)))) : ((Card__TauntAbbl *)(new Card__noTaunt((Card__ItemRef__566__54)))))), (((orig_is_stealth) ? ((Card__StealthAbbl *)(new Card__justStealth((Card__ItemRef__566__54)))) : ((Card__StealthAbbl *)(new Card__noStealth((Card__ItemRef__566__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbbl *)(new Card__justUntargetable((Card__ItemRef__566__54)))) : ((Card__UntargetableAbbl *)(new Card__noUntargetable((Card__ItemRef__566__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbbl *)(new Card__justShield((Card__ItemRef__566__54)))) : ((Card__ShieldAbbl *)(new Card__noShield((Card__ItemRef__566__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbbl *)(new Card__justPoisonous((Card__ItemRef__566__54)))) : ((Card__PoisonousAbbl *)(new Card__noPoisonous((Card__ItemRef__566__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbbl *)(new Card__justLifesteal((Card__ItemRef__566__54)))) : ((Card__LifestealAbbl *)(new Card__noLifesteal((Card__ItemRef__566__54)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__566__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__566__54)->Item__Constructor)((new Card__minionCard((Card__ItemRef__566__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__566__54), (orig_n_atks))), ((((orig_minion_type) == (BEAST_MINION)) ? ((Card__MinionType *)(new Card__beastMinion((Card__ItemRef__566__54)))) : ((((orig_minion_type) == (DRAGON_MINION)) ? ((Card__MinionType *)(new Card__dragonMinion((Card__ItemRef__566__54)))) : ((Card__MinionType *)(new Card__demonMinion((Card__ItemRef__566__54)))))))), (new Card__justAbilities((Card__ItemRef__566__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__566__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__566__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__566__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__566__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__566__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__566__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__566__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__566__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__566__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__566__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__566__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__566__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__566__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__566__54)))))))), (effects)))))));
         
         break;
         default:
-          ((card_copy) = (((Card__ItemRef__579__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__579__54)->Item__Constructor)((new Card__spellCard((Card__ItemRef__579__54), (orig_mana), (new Card__justAbilities((Card__ItemRef__579__54), (((orig_is_charge) ? ((Card__ChargeAbbl *)(new Card__justCharge((Card__ItemRef__579__54)))) : ((Card__ChargeAbbl *)(new Card__noCharge((Card__ItemRef__579__54)))))), (((orig_is_taunt) ? ((Card__TauntAbbl *)(new Card__justTaunt((Card__ItemRef__579__54)))) : ((Card__TauntAbbl *)(new Card__noTaunt((Card__ItemRef__579__54)))))), (((orig_is_stealth) ? ((Card__StealthAbbl *)(new Card__justStealth((Card__ItemRef__579__54)))) : ((Card__StealthAbbl *)(new Card__noStealth((Card__ItemRef__579__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbbl *)(new Card__justUntargetable((Card__ItemRef__579__54)))) : ((Card__UntargetableAbbl *)(new Card__noUntargetable((Card__ItemRef__579__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbbl *)(new Card__justShield((Card__ItemRef__579__54)))) : ((Card__ShieldAbbl *)(new Card__noShield((Card__ItemRef__579__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbbl *)(new Card__justPoisonous((Card__ItemRef__579__54)))) : ((Card__PoisonousAbbl *)(new Card__noPoisonous((Card__ItemRef__579__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbbl *)(new Card__justLifesteal((Card__ItemRef__579__54)))) : ((Card__LifestealAbbl *)(new Card__noLifesteal((Card__ItemRef__579__54)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__579__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__579__54)->Item__Constructor)((new Card__spellCard((Card__ItemRef__579__54), (orig_mana), (new Card__justAbilities((Card__ItemRef__579__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__579__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__579__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__579__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__579__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__579__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__579__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__579__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__579__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__579__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__579__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__579__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__579__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__579__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__579__54)))))))), (effects)))))));
         
         break;
       }
@@ -4538,13 +4538,13 @@ Card__justAbilities  *Card::Generate__justAbilities(CondConfig  & self_config, s
   
   
   {
-    (((node)->c) = ((Generate__ChargeAbbl)((self_config), (rep))));
-    (((node)->t) = ((Generate__TauntAbbl)((self_config), (rep))));
-    (((node)->s) = ((Generate__StealthAbbl)((self_config), (rep))));
-    (((node)->u) = ((Generate__UntargetableAbbl)((self_config), (rep))));
-    (((node)->d) = ((Generate__ShieldAbbl)((self_config), (rep))));
-    (((node)->p) = ((Generate__PoisonousAbbl)((self_config), (damage), (rep))));
-    (((node)->l) = ((Generate__LifestealAbbl)((self_config), (damage), (rep))));
+    (((node)->c) = ((Generate__ChargeAbil)((self_config), (rep))));
+    (((node)->t) = ((Generate__TauntAbil)((self_config), (rep))));
+    (((node)->s) = ((Generate__StealthAbil)((self_config), (rep))));
+    (((node)->u) = ((Generate__UntargetableAbil)((self_config), (rep))));
+    (((node)->d) = ((Generate__ShieldAbil)((self_config), (rep))));
+    (((node)->p) = ((Generate__PoisonousAbil)((self_config), (damage), (rep))));
+    (((node)->l) = ((Generate__LifestealAbil)((self_config), (damage), (rep))));
   }
   return (node);
 }
@@ -4578,14 +4578,14 @@ Card__damageAbilities  *Card::Generate__damageAbilities(CondConfig  & self_confi
     {
       (((node)->p) = (new Card__noPoisonous((this))));
     } else {
-      (((node)->p) = ((Generate__PoisonousAbbl)((self_config), (damage), (rep))));
+      (((node)->p) = ((Generate__PoisonousAbil)((self_config), (damage), (rep))));
     }
-    (((node)->l) = ((Generate__LifestealAbbl)((self_config), (damage), (rep))));
+    (((node)->l) = ((Generate__LifestealAbil)((self_config), (damage), (rep))));
   }
   return (node);
 }
 
-Card__ChargeAbbl  *Card::Generate__ChargeAbbl(CondConfig  & self_config, NodeRep  * & rep)
+Card__ChargeAbil  *Card::Generate__ChargeAbil(CondConfig  & self_config, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[15]))((config), (self_config), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[16]))((config), (self_config), (rep)))};
@@ -4642,7 +4642,7 @@ Card__justCharge  *Card::Generate__justCharge(CondConfig  & self_config, NodeRep
   return (node);
 }
 
-Card__TauntAbbl  *Card::Generate__TauntAbbl(CondConfig  & self_config, NodeRep  * & rep)
+Card__TauntAbil  *Card::Generate__TauntAbil(CondConfig  & self_config, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[17]))((config), (self_config), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[18]))((config), (self_config), (rep)))};
@@ -4699,7 +4699,7 @@ Card__justTaunt  *Card::Generate__justTaunt(CondConfig  & self_config, NodeRep  
   return (node);
 }
 
-Card__StealthAbbl  *Card::Generate__StealthAbbl(CondConfig  & self_config, NodeRep  * & rep)
+Card__StealthAbil  *Card::Generate__StealthAbil(CondConfig  & self_config, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[19]))((config), (self_config), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[20]))((config), (self_config), (rep)))};
@@ -4756,7 +4756,7 @@ Card__justStealth  *Card::Generate__justStealth(CondConfig  & self_config, NodeR
   return (node);
 }
 
-Card__UntargetableAbbl  *Card::Generate__UntargetableAbbl(CondConfig  & self_config, NodeRep  * & rep)
+Card__UntargetableAbil  *Card::Generate__UntargetableAbil(CondConfig  & self_config, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[21]))((config), (self_config), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[22]))((config), (self_config), (rep)))};
@@ -4806,7 +4806,7 @@ Card__justUntargetable  *Card::Generate__justUntargetable(CondConfig  & self_con
   return (node);
 }
 
-Card__ShieldAbbl  *Card::Generate__ShieldAbbl(CondConfig  & self_config, NodeRep  * & rep)
+Card__ShieldAbil  *Card::Generate__ShieldAbil(CondConfig  & self_config, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[23]))((config), (self_config), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , NodeRep  * & ))(((config).funcs)[24]))((config), (self_config), (rep)))};
@@ -4863,7 +4863,7 @@ Card__justShield  *Card::Generate__justShield(CondConfig  & self_config, NodeRep
   return (node);
 }
 
-Card__PoisonousAbbl  *Card::Generate__PoisonousAbbl(CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+Card__PoisonousAbil  *Card::Generate__PoisonousAbil(CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , signed int  , NodeRep  * & ))(((config).funcs)[25]))((config), (self_config), (damage), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , signed int  , NodeRep  * & ))(((config).funcs)[26]))((config), (self_config), (damage), (rep)))};
@@ -4920,7 +4920,7 @@ Card__justPoisonous  *Card::Generate__justPoisonous(CondConfig  & self_config, s
   return (node);
 }
 
-Card__LifestealAbbl  *Card::Generate__LifestealAbbl(CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+Card__LifestealAbil  *Card::Generate__LifestealAbil(CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   double probs[2] = {(((double (*)(const GiglConfig  & , CondConfig  & , signed int  , NodeRep  * & ))(((config).funcs)[27]))((config), (self_config), (damage), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , signed int  , NodeRep  * & ))(((config).funcs)[28]))((config), (self_config), (damage), (rep)))};
@@ -5455,7 +5455,7 @@ Card__srcCondTargetedEff  *Card::Generate__srcCondTargetedEff(CondConfig  & self
     CondConfig tmp_config = ((((node)->effect)->GetPlayTargetConfig)());
     (((node)->desconstr) = ((Generate__TargetCond)((tmp_init_config), (tmp_config), (TARGET_MODE_PLAY), (effect_timing), (rep))));
     (((node)->srccond) = ((Generate__TargetCond)((self_config_copy), ((tmp_config) = ((GetFlagConfig)((effect_timing_filter)))), (TARGET_MODE_SOURCE), (effect_timing), (rep))));
-    ((self_config) |= ((((node)->srccond)->GetInitAbblFlag)()));
+    ((self_config) |= ((((node)->srccond)->GetInitAbilFlag)()));
   }
   (((node)->overheat_count) = 0);
   (((node)->overheat_threshold) = 10);
@@ -5630,7 +5630,7 @@ Card__srcCondUntargetedEff  *Card::Generate__srcCondUntargetedEff(CondConfig  & 
     CondConfig self_instant_config = ((((node)->effect)->GetSelfConfig)((self_config)));
     ((self_instant_config) &= (effect_timing_filter));
     (((node)->srccond) = ((Generate__TargetCond)((self_config_copy), (self_instant_config), (TARGET_MODE_SOURCE), (effect_timing), (rep))));
-    ((self_config) |= ((((node)->srccond)->GetInitAbblFlag)()));
+    ((self_config) |= ((((node)->srccond)->GetInitAbilFlag)()));
   }
   (((node)->overheat_count) = 0);
   (((node)->overheat_threshold) = 10);
@@ -5772,7 +5772,7 @@ Card__justCharTargetCond  *Card::Generate__justCharTargetCond(CondConfig  & init
       {
         (((node)->alle) = (new Card__anyAllegiance((this))));
         (((node)->typecond) = (new Card__isCharacter((this))));
-        (((node)->abblcond) = (new Card__noAbblCond((this))));
+        (((node)->abilcond) = (new Card__noAbilCond((this))));
         (((node)->statcond) = (new Card__noStatCond((this))));
       }
     } else {
@@ -5781,8 +5781,8 @@ Card__justCharTargetCond  *Card::Generate__justCharTargetCond(CondConfig  & init
         (((node)->typecond) = ((Generate__CharTypeCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
         ((init_config) &= ((((node)->typecond)->GetTargetConfig)()));
         ((instant_config) &= ((((node)->typecond)->GetTargetConfig)()));
-        (((node)->abblcond) = ((Generate__AbblCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
-        if (((((!(((instant_config) & (TARGET_POS_HAND_OR_DECK)))) && ((target_mode) == (TARGET_MODE_SOURCE))) && ((((node)->typecond)->isCondTrivial)())) && ((((node)->abblcond)->isCondTrivial)())))
+        (((node)->abilcond) = ((Generate__AbilCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
+        if (((((!(((instant_config) & (TARGET_POS_HAND_OR_DECK)))) && ((target_mode) == (TARGET_MODE_SOURCE))) && ((((node)->typecond)->isCondTrivial)())) && ((((node)->abilcond)->isCondTrivial)())))
         {
           (((node)->statcond) = ((Generate__StatCond)((init_config), (instant_config), (target_mode), (effect_timing), 1, (rep))));
         } else {
@@ -5969,8 +5969,8 @@ Card__justCardTargetCond  *Card::Generate__justCardTargetCond(CondConfig  & init
     (((node)->typecond) = ((Generate__CardTypeCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
     ((init_config) &= ((((node)->typecond)->GetTargetConfig)()));
     ((instant_config) &= ((((node)->typecond)->GetTargetConfig)()));
-    (((node)->abblcond) = ((Generate__AbblCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
-    if ((((((!(((instant_config) & (TARGET_POS_FIELD)))) && ((target_mode) == (TARGET_MODE_SOURCE))) && ((((node)->pos)->isCondTrivial)())) && ((((node)->typecond)->isCondTrivial)())) && ((((node)->abblcond)->isCondTrivial)())))
+    (((node)->abilcond) = ((Generate__AbilCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep))));
+    if ((((((!(((instant_config) & (TARGET_POS_FIELD)))) && ((target_mode) == (TARGET_MODE_SOURCE))) && ((((node)->pos)->isCondTrivial)())) && ((((node)->typecond)->isCondTrivial)())) && ((((node)->abilcond)->isCondTrivial)())))
     {
       (((node)->statcond) = ((Generate__StatCond)((init_config), (instant_config), (target_mode), 1, (effect_timing), (rep))));
     } else {
@@ -6311,7 +6311,7 @@ Card__oppoAllegiance  *Card::Generate__oppoAllegiance(CondConfig  & init_config,
   return (node);
 }
 
-Card__AbblCond  *Card::Generate__AbblCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+Card__AbilCond  *Card::Generate__AbilCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   double probs[8] = {(((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[69]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[70]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[71]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[72]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[73]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[74]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[75]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep))), (((double (*)(const GiglConfig  & , CondConfig  & , CondConfig  & , unsigned int  , unsigned int  , NodeRep  * & ))(((config).funcs)[76]))((config), (init_config), (instant_config), (target_mode), (effect_timing), (rep)))};
@@ -6381,7 +6381,7 @@ Card__AbblCond  *Card::Generate__AbblCond(CondConfig  & init_config, CondConfig 
   switch ((choice))
   {
     case 0:
-      return ((Generate__noAbblCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep)));
+      return ((Generate__noAbilCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep)));
     
     case 1:
       return ((Generate__chargeCond)((init_config), (instant_config), (target_mode), (effect_timing), (rep)));
@@ -6408,10 +6408,10 @@ Card__AbblCond  *Card::Generate__AbblCond(CondConfig  & init_config, CondConfig 
   return 0;
 }
 
-Card__noAbblCond  *Card::Generate__noAbblCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+Card__noAbilCond  *Card::Generate__noAbilCond(CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
-  Card__noAbblCond  *node = (new Card__noAbblCond);
+  Card__noAbilCond  *node = (new Card__noAbilCond);
   (((node)->item) = (this));
   
   return (node);
@@ -6746,7 +6746,7 @@ Card__fieldExistenceCond  *Card::Generate__fieldExistenceCond(CondConfig  & init
   
   {
     CondConfig tmp_init_config = ((GetDefaultInitConfig)());
-    CondConfig tmp_config = (((TARGET_POS_FIELD) | (TARGET_IS_MINION)) | (TARGET_ANY_ALLE_MINION_ABBL_TYPE));
+    CondConfig tmp_config = (((TARGET_POS_FIELD) | (TARGET_IS_MINION)) | (TARGET_ANY_ALLE_MINION_ABIL_TYPE));
     (((node)->cond) = ((Generate__CharTargetCond)((tmp_init_config), (tmp_config), (TARGET_MODE_EXIST), (effect_timing), (rep))));
   }
   return (node);
@@ -6760,7 +6760,7 @@ Card__cardExistenceCond  *Card::Generate__cardExistenceCond(CondConfig  & init_c
   
   {
     CondConfig tmp_init_config = ((GetDefaultInitConfig)());
-    CondConfig tmp_config = (((TARGET_POS_HAND_OR_DECK) | (TARGET_IS_ALLY)) | (TARGET_ANY_CARD_MINION_ABBL_TYPE));
+    CondConfig tmp_config = (((TARGET_POS_HAND_OR_DECK) | (TARGET_IS_ALLY)) | (TARGET_ANY_CARD_MINION_ABIL_TYPE));
     (((node)->cond) = ((Generate__CardTargetCond)((tmp_init_config), (tmp_config), (TARGET_MODE_EXIST), (effect_timing), (rep))));
   }
   return (node);
@@ -6786,8 +6786,8 @@ Card__leaderCond  *Card::Generate__leaderCond(CondConfig  & init_config, CondCon
     } else {
       
     }
-    (((node)->abblcond) = ((Generate__AbblCond)((init_config), (instant_config), (TARGET_MODE_LEADER), (effect_timing), (rep))));
-    if (((((node)->abblcond)->isCondTrivial)()))
+    (((node)->abilcond) = ((Generate__AbilCond)((init_config), (instant_config), (TARGET_MODE_LEADER), (effect_timing), (rep))));
+    if (((((node)->abilcond)->isCondTrivial)()))
     {
       (((node)->statcond) = ((Generate__StatCond)((init_config), (instant_config), (TARGET_MODE_LEADER), (effect_timing), 1, (rep))));
     } else {
@@ -7145,9 +7145,9 @@ Card__damageEff  *Card::Generate__damageEff(CondConfig  & self_config, unsigned 
     }
     if (((!(rep)) && (give_eff)))
     {
-      (((node)->abbl) = (new Card__damageAbilities((this), (new Card__noPoisonous((this))), (new Card__noLifesteal((this))))));
+      (((node)->abil) = (new Card__damageAbilities((this), (new Card__noPoisonous((this))), (new Card__noLifesteal((this))))));
     } else {
-      (((node)->abbl) = ((Generate__DamageAbilities)((self_config), (target_mode), ((node)->val), (rep))));
+      (((node)->abil) = ((Generate__DamageAbilities)((self_config), (target_mode), ((node)->val), (rep))));
     }
   }
   return (node);
@@ -8532,7 +8532,7 @@ signed int Card__Node::isCondTrivial()
   }
 }
 
-unsigned int Card__Node::GetInitAbblFlag()
+unsigned int Card__Node::GetInitAbilFlag()
 {
 
   {
@@ -8817,27 +8817,13 @@ Card__DamageAbilities::Card__DamageAbilities()
 
 
 
-Card__ChargeAbbl::Card__ChargeAbbl(Card  * input__item) : Card__Node((input__item))
+Card__ChargeAbil::Card__ChargeAbil(Card  * input__item) : Card__Node((input__item))
 {
 
   
 }
 
-Card__ChargeAbbl::Card__ChargeAbbl()
-{
-
-  
-}
-
-
-
-Card__TauntAbbl::Card__TauntAbbl(Card  * input__item) : Card__Node((input__item))
-{
-
-  
-}
-
-Card__TauntAbbl::Card__TauntAbbl()
+Card__ChargeAbil::Card__ChargeAbil()
 {
 
   
@@ -8845,27 +8831,13 @@ Card__TauntAbbl::Card__TauntAbbl()
 
 
 
-Card__StealthAbbl::Card__StealthAbbl(Card  * input__item) : Card__Node((input__item))
+Card__TauntAbil::Card__TauntAbil(Card  * input__item) : Card__Node((input__item))
 {
 
   
 }
 
-Card__StealthAbbl::Card__StealthAbbl()
-{
-
-  
-}
-
-
-
-Card__UntargetableAbbl::Card__UntargetableAbbl(Card  * input__item) : Card__Node((input__item))
-{
-
-  
-}
-
-Card__UntargetableAbbl::Card__UntargetableAbbl()
+Card__TauntAbil::Card__TauntAbil()
 {
 
   
@@ -8873,27 +8845,13 @@ Card__UntargetableAbbl::Card__UntargetableAbbl()
 
 
 
-Card__ShieldAbbl::Card__ShieldAbbl(Card  * input__item) : Card__Node((input__item))
+Card__StealthAbil::Card__StealthAbil(Card  * input__item) : Card__Node((input__item))
 {
 
   
 }
 
-Card__ShieldAbbl::Card__ShieldAbbl()
-{
-
-  
-}
-
-
-
-Card__PoisonousAbbl::Card__PoisonousAbbl(Card  * input__item) : Card__Node((input__item))
-{
-
-  
-}
-
-Card__PoisonousAbbl::Card__PoisonousAbbl()
+Card__StealthAbil::Card__StealthAbil()
 {
 
   
@@ -8901,13 +8859,55 @@ Card__PoisonousAbbl::Card__PoisonousAbbl()
 
 
 
-Card__LifestealAbbl::Card__LifestealAbbl(Card  * input__item) : Card__Node((input__item))
+Card__UntargetableAbil::Card__UntargetableAbil(Card  * input__item) : Card__Node((input__item))
 {
 
   
 }
 
-Card__LifestealAbbl::Card__LifestealAbbl()
+Card__UntargetableAbil::Card__UntargetableAbil()
+{
+
+  
+}
+
+
+
+Card__ShieldAbil::Card__ShieldAbil(Card  * input__item) : Card__Node((input__item))
+{
+
+  
+}
+
+Card__ShieldAbil::Card__ShieldAbil()
+{
+
+  
+}
+
+
+
+Card__PoisonousAbil::Card__PoisonousAbil(Card  * input__item) : Card__Node((input__item))
+{
+
+  
+}
+
+Card__PoisonousAbil::Card__PoisonousAbil()
+{
+
+  
+}
+
+
+
+Card__LifestealAbil::Card__LifestealAbil(Card  * input__item) : Card__Node((input__item))
+{
+
+  
+}
+
+Card__LifestealAbil::Card__LifestealAbil()
 {
 
   
@@ -9097,13 +9097,13 @@ Card__AllegianceCond::Card__AllegianceCond()
 
 
 
-Card__AbblCond::Card__AbblCond(Card  * input__item) : Card__Node((input__item))
+Card__AbilCond::Card__AbilCond(Card  * input__item) : Card__Node((input__item))
 {
 
   
 }
 
-Card__AbblCond::Card__AbblCond()
+Card__AbilCond::Card__AbilCond()
 {
 
   
@@ -9324,10 +9324,10 @@ string Card__leaderCard::Detail()
       ((att_times_explain) += ".");
     }
     string type_info = "TYPE: Leader (Does not counter-attack).";
-    string abbl_info = (((abilities)->Detail)());
+    string abil_info = (((abilities)->Detail)());
     string effect_info = (((effects)->Detail)());
     string extra_effect_info = (((item)->GetExtraEffectsDetail)());
-    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -9358,10 +9358,10 @@ string Card__leaderCard::DetailIndent(signed int  indent_size)
       ((att_times_explain) += ".");
     }
     string type_info = (((RepeatSpace)((indent_size))) + "TYPE: Leader (Does not counter-attack).");
-    string abbl_info = (((abilities)->DetailIndent)((indent_size)));
+    string abil_info = (((abilities)->DetailIndent)((indent_size)));
     string effect_info = (((effects)->DetailIndent)((indent_size)));
     string extra_effect_info = (((item)->GetExtraEffectsDetailIndent)((indent_size)));
-    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -9804,10 +9804,10 @@ string Card__minionCard::Detail()
       ((att_times_explain) += ".");
     }
     string type_info = (((("TYPE: " + ((MinionTypeDescription)(((item)->minion_type)))) + " (Originally ") + ((MinionTypeDescription)(((item)->orig_minion_type)))) + ") Minion.");
-    string abbl_info = (((abilities)->Detail)());
+    string abil_info = (((abilities)->Detail)());
     string effect_info = (((effects)->Detail)());
     string extra_effect_info = (((item)->GetExtraEffectsDetail)());
-    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -9838,10 +9838,10 @@ string Card__minionCard::DetailIndent(signed int  indent_size)
       ((att_times_explain) += ".");
     }
     string type_info = (((((((RepeatSpace)((indent_size))) + "TYPE: ") + ((MinionTypeDescription)(((item)->minion_type)))) + " (Originally ") + ((MinionTypeDescription)(((item)->orig_minion_type)))) + ") Minion.");
-    string abbl_info = (((abilities)->DetailIndent)((indent_size)));
+    string abil_info = (((abilities)->DetailIndent)((indent_size)));
     string effect_info = (((effects)->DetailIndent)((indent_size)));
     string extra_effect_info = (((item)->GetExtraEffectsDetailIndent)((indent_size)));
-    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return ((((((((((((((mana_info) + "\n") + (atk_info)) + "\n") + (hp_info)) + "\n") + (atk_times_info)) + (att_times_explain)) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -10264,10 +10264,10 @@ string Card__spellCard::Detail()
   {
     string mana_info = (((("MANA: " + ((IntToStr)(((item)->mana)))) + " (originally ") + ((IntToStr)(((item)->orig_mana)))) + ")");
     string type_info = "TYPE: Spell.";
-    string abbl_info = (((abilities)->Detail)());
+    string abil_info = (((abilities)->Detail)());
     string effect_info = (((effects)->Detail)());
     string extra_effect_info = (((item)->GetExtraEffectsDetail)());
-    return (((((((mana_info) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return (((((((mana_info) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -10277,10 +10277,10 @@ string Card__spellCard::DetailIndent(signed int  indent_size)
   {
     string mana_info = (((((((RepeatSpace)((indent_size))) + "MANA: ") + ((IntToStr)(((item)->mana)))) + " (originally ") + ((IntToStr)(((item)->orig_mana)))) + ")");
     string type_info = (((RepeatSpace)((indent_size))) + "TYPE: Spell.");
-    string abbl_info = (((abilities)->DetailIndent)((indent_size)));
+    string abil_info = (((abilities)->DetailIndent)((indent_size)));
     string effect_info = (((effects)->DetailIndent)((indent_size)));
     string extra_effect_info = (((item)->GetExtraEffectsDetailIndent)((indent_size)));
-    return (((((((mana_info) + "\n") + (type_info)) + "\n") + (abbl_info)) + (effect_info)) + (extra_effect_info));
+    return (((((((mana_info) + "\n") + (type_info)) + "\n") + (abil_info)) + (effect_info)) + (extra_effect_info));
   }
 }
 
@@ -10624,7 +10624,7 @@ Card__justAbilities::Card__justAbilities()
   
 }
 
-Card__justAbilities::Card__justAbilities(Card  * input__item, Card__ChargeAbbl  * input__c, Card__TauntAbbl  * input__t, Card__StealthAbbl  * input__s, Card__UntargetableAbbl  * input__u, Card__ShieldAbbl  * input__d, Card__PoisonousAbbl  * input__p, Card__LifestealAbbl  * input__l) : Card__Abilities((input__item)), c((input__c)), t((input__t)), s((input__s)), u((input__u)), d((input__d)), p((input__p)), l((input__l))
+Card__justAbilities::Card__justAbilities(Card  * input__item, Card__ChargeAbil  * input__c, Card__TauntAbil  * input__t, Card__StealthAbil  * input__s, Card__UntargetableAbil  * input__u, Card__ShieldAbil  * input__d, Card__PoisonousAbil  * input__p, Card__LifestealAbil  * input__l) : Card__Abilities((input__item)), c((input__c)), t((input__t)), s((input__s)), u((input__u)), d((input__d)), p((input__p)), l((input__l))
 {
 
   
@@ -10761,13 +10761,13 @@ string Card__justAbilities::DetailIndent(signed int  indent_size)
 Card__Node  *Card__justAbilities::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__justAbilities((card_copy), ((Card__ChargeAbbl *)((((c)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__TauntAbbl *)((((t)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StealthAbbl *)((((s)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__UntargetableAbbl *)((((u)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__ShieldAbbl *)((((d)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__PoisonousAbbl *)((((p)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__LifestealAbbl *)((((l)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__justAbilities((card_copy), ((Card__ChargeAbil *)((((c)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__TauntAbil *)((((t)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StealthAbil *)((((s)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__UntargetableAbil *)((((u)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__ShieldAbil *)((((d)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__PoisonousAbil *)((((p)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__LifestealAbil *)((((l)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__justAbilities::GetInitAbblFlag()
+unsigned int Card__justAbilities::GetInitAbilFlag()
 {
 
-  return (((((((((c)->GetInitAbblFlag)()) | (((t)->GetInitAbblFlag)())) | (((s)->GetInitAbblFlag)())) | (((u)->GetInitAbblFlag)())) | (((d)->GetInitAbblFlag)())) | (((p)->GetInitAbblFlag)())) | (((l)->GetInitAbblFlag)()));
+  return (((((((((c)->GetInitAbilFlag)()) | (((t)->GetInitAbilFlag)())) | (((s)->GetInitAbilFlag)())) | (((u)->GetInitAbilFlag)())) | (((d)->GetInitAbilFlag)())) | (((p)->GetInitAbilFlag)())) | (((l)->GetInitAbilFlag)()));
 }
 
 
@@ -10778,7 +10778,7 @@ Card__damageAbilities::Card__damageAbilities()
   
 }
 
-Card__damageAbilities::Card__damageAbilities(Card  * input__item, Card__PoisonousAbbl  * input__p, Card__LifestealAbbl  * input__l) : Card__DamageAbilities((input__item)), p((input__p)), l((input__l))
+Card__damageAbilities::Card__damageAbilities(Card  * input__item, Card__PoisonousAbil  * input__p, Card__LifestealAbil  * input__l) : Card__DamageAbilities((input__item)), p((input__p)), l((input__l))
 {
 
   
@@ -10822,13 +10822,13 @@ void Card__damageAbilities::FillRep(CardRep  & rep)
 Card__Node  *Card__damageAbilities::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__damageAbilities((card_copy), ((Card__PoisonousAbbl *)((((p)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__LifestealAbbl *)((((l)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__damageAbilities((card_copy), ((Card__PoisonousAbil *)((((p)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__LifestealAbil *)((((l)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__damageAbilities::GetInitAbblFlag()
+unsigned int Card__damageAbilities::GetInitAbilFlag()
 {
 
-  return ((((p)->GetInitAbblFlag)()) | (((l)->GetInitAbblFlag)()));
+  return ((((p)->GetInitAbilFlag)()) | (((l)->GetInitAbilFlag)()));
 }
 
 
@@ -10839,7 +10839,7 @@ Card__noCharge::Card__noCharge()
   
 }
 
-Card__noCharge::Card__noCharge(Card  * input__item) : Card__ChargeAbbl((input__item))
+Card__noCharge::Card__noCharge(Card  * input__item) : Card__ChargeAbil((input__item))
 {
 
   
@@ -10873,7 +10873,7 @@ Card__justCharge::Card__justCharge()
   
 }
 
-Card__justCharge::Card__justCharge(Card  * input__item) : Card__ChargeAbbl((input__item))
+Card__justCharge::Card__justCharge(Card  * input__item) : Card__ChargeAbil((input__item))
 {
 
   (((item)->orig_is_charge) = (((item)->is_charge) = 1));
@@ -10899,7 +10899,7 @@ Card__Node  *Card__justCharge::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap
   return (new Card__justCharge((card_copy)));
 }
 
-unsigned int Card__justCharge::GetInitAbblFlag()
+unsigned int Card__justCharge::GetInitAbilFlag()
 {
 
   return (TARGET_IS_CHARGE);
@@ -10913,7 +10913,7 @@ Card__noTaunt::Card__noTaunt()
   
 }
 
-Card__noTaunt::Card__noTaunt(Card  * input__item) : Card__TauntAbbl((input__item))
+Card__noTaunt::Card__noTaunt(Card  * input__item) : Card__TauntAbil((input__item))
 {
 
   
@@ -10947,7 +10947,7 @@ Card__justTaunt::Card__justTaunt()
   
 }
 
-Card__justTaunt::Card__justTaunt(Card  * input__item) : Card__TauntAbbl((input__item))
+Card__justTaunt::Card__justTaunt(Card  * input__item) : Card__TauntAbil((input__item))
 {
 
   (((item)->orig_is_taunt) = (((item)->is_taunt) = 1));
@@ -10973,7 +10973,7 @@ Card__Node  *Card__justTaunt::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap 
   return (new Card__justTaunt((card_copy)));
 }
 
-unsigned int Card__justTaunt::GetInitAbblFlag()
+unsigned int Card__justTaunt::GetInitAbilFlag()
 {
 
   return (TARGET_IS_TAUNT);
@@ -10987,7 +10987,7 @@ Card__noStealth::Card__noStealth()
   
 }
 
-Card__noStealth::Card__noStealth(Card  * input__item) : Card__StealthAbbl((input__item))
+Card__noStealth::Card__noStealth(Card  * input__item) : Card__StealthAbil((input__item))
 {
 
   
@@ -11021,7 +11021,7 @@ Card__justStealth::Card__justStealth()
   
 }
 
-Card__justStealth::Card__justStealth(Card  * input__item) : Card__StealthAbbl((input__item))
+Card__justStealth::Card__justStealth(Card  * input__item) : Card__StealthAbil((input__item))
 {
 
   (((item)->orig_is_stealth) = (((item)->is_stealth) = 1));
@@ -11047,7 +11047,7 @@ Card__Node  *Card__justStealth::CreateNodeHardCopy(Card  * card_copy, PtrRedirMa
   return (new Card__justStealth((card_copy)));
 }
 
-unsigned int Card__justStealth::GetInitAbblFlag()
+unsigned int Card__justStealth::GetInitAbilFlag()
 {
 
   return (TARGET_IS_STEALTH);
@@ -11061,7 +11061,7 @@ Card__noUntargetable::Card__noUntargetable()
   
 }
 
-Card__noUntargetable::Card__noUntargetable(Card  * input__item) : Card__UntargetableAbbl((input__item))
+Card__noUntargetable::Card__noUntargetable(Card  * input__item) : Card__UntargetableAbil((input__item))
 {
 
   
@@ -11095,7 +11095,7 @@ Card__justUntargetable::Card__justUntargetable()
   
 }
 
-Card__justUntargetable::Card__justUntargetable(Card  * input__item) : Card__UntargetableAbbl((input__item))
+Card__justUntargetable::Card__justUntargetable(Card  * input__item) : Card__UntargetableAbil((input__item))
 {
 
   (((item)->orig_is_untargetable) = (((item)->is_untargetable) = 1));
@@ -11121,7 +11121,7 @@ Card__Node  *Card__justUntargetable::CreateNodeHardCopy(Card  * card_copy, PtrRe
   return (new Card__justUntargetable((card_copy)));
 }
 
-unsigned int Card__justUntargetable::GetInitAbblFlag()
+unsigned int Card__justUntargetable::GetInitAbilFlag()
 {
 
   return (TARGET_IS_UNTARGETABLE);
@@ -11135,7 +11135,7 @@ Card__noShield::Card__noShield()
   
 }
 
-Card__noShield::Card__noShield(Card  * input__item) : Card__ShieldAbbl((input__item))
+Card__noShield::Card__noShield(Card  * input__item) : Card__ShieldAbil((input__item))
 {
 
   
@@ -11169,7 +11169,7 @@ Card__justShield::Card__justShield()
   
 }
 
-Card__justShield::Card__justShield(Card  * input__item) : Card__ShieldAbbl((input__item))
+Card__justShield::Card__justShield(Card  * input__item) : Card__ShieldAbil((input__item))
 {
 
   (((item)->orig_is_shielded) = (((item)->is_shielded) = 1));
@@ -11195,7 +11195,7 @@ Card__Node  *Card__justShield::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap
   return (new Card__justShield((card_copy)));
 }
 
-unsigned int Card__justShield::GetInitAbblFlag()
+unsigned int Card__justShield::GetInitAbilFlag()
 {
 
   return (TARGET_IS_SHIELDED);
@@ -11209,7 +11209,7 @@ Card__noPoisonous::Card__noPoisonous()
   
 }
 
-Card__noPoisonous::Card__noPoisonous(Card  * input__item) : Card__PoisonousAbbl((input__item))
+Card__noPoisonous::Card__noPoisonous(Card  * input__item) : Card__PoisonousAbil((input__item))
 {
 
   
@@ -11243,7 +11243,7 @@ Card__justPoisonous::Card__justPoisonous()
   
 }
 
-Card__justPoisonous::Card__justPoisonous(Card  * input__item) : Card__PoisonousAbbl((input__item))
+Card__justPoisonous::Card__justPoisonous(Card  * input__item) : Card__PoisonousAbil((input__item))
 {
 
   (((item)->orig_is_poisonous) = (((item)->is_poisonous) = 1));
@@ -11269,7 +11269,7 @@ Card__Node  *Card__justPoisonous::CreateNodeHardCopy(Card  * card_copy, PtrRedir
   return (new Card__justPoisonous((card_copy)));
 }
 
-unsigned int Card__justPoisonous::GetInitAbblFlag()
+unsigned int Card__justPoisonous::GetInitAbilFlag()
 {
 
   return (TARGET_IS_POISONOUS);
@@ -11283,7 +11283,7 @@ Card__noLifesteal::Card__noLifesteal()
   
 }
 
-Card__noLifesteal::Card__noLifesteal(Card  * input__item) : Card__LifestealAbbl((input__item))
+Card__noLifesteal::Card__noLifesteal(Card  * input__item) : Card__LifestealAbil((input__item))
 {
 
   
@@ -11317,7 +11317,7 @@ Card__justLifesteal::Card__justLifesteal()
   
 }
 
-Card__justLifesteal::Card__justLifesteal(Card  * input__item) : Card__LifestealAbbl((input__item))
+Card__justLifesteal::Card__justLifesteal(Card  * input__item) : Card__LifestealAbil((input__item))
 {
 
   (((item)->orig_is_lifesteal) = (((item)->is_lifesteal) = 1));
@@ -11343,7 +11343,7 @@ Card__Node  *Card__justLifesteal::CreateNodeHardCopy(Card  * card_copy, PtrRedir
   return (new Card__justLifesteal((card_copy)));
 }
 
-unsigned int Card__justLifesteal::GetInitAbblFlag()
+unsigned int Card__justLifesteal::GetInitAbilFlag()
 {
 
   return (TARGET_IS_LIFESTEAL);
@@ -11656,10 +11656,10 @@ signed int Card__targetedBattlecryEff::GetEffectNum()
   return 1;
 }
 
-unsigned int Card__targetedBattlecryEff::GetInitAbblFlag()
+unsigned int Card__targetedBattlecryEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__targetedBattlecryEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -11820,10 +11820,10 @@ signed int Card__targetedCastEff::GetEffectNum()
   return 1;
 }
 
-unsigned int Card__targetedCastEff::GetInitAbblFlag()
+unsigned int Card__targetedCastEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__targetedCastEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12199,10 +12199,10 @@ Card__Node  *Card__untargetedBattlecryEff::CreateNodeHardCopy(Card  * card_copy,
   return (new Card__untargetedBattlecryEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__untargetedBattlecryEff::GetInitAbblFlag()
+unsigned int Card__untargetedBattlecryEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__untargetedBattlecryEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12333,10 +12333,10 @@ Card__Node  *Card__untargetedCastEff::CreateNodeHardCopy(Card  * card_copy, PtrR
   return (new Card__untargetedCastEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__untargetedCastEff::GetInitAbblFlag()
+unsigned int Card__untargetedCastEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__untargetedCastEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12456,10 +12456,10 @@ Card__Node  *Card__deathrattleEff::CreateNodeHardCopy(Card  * card_copy, PtrRedi
   return (new Card__deathrattleEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__deathrattleEff::GetInitAbblFlag()
+unsigned int Card__deathrattleEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__deathrattleEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12579,10 +12579,10 @@ Card__Node  *Card__onDiscardEff::CreateNodeHardCopy(Card  * card_copy, PtrRedirM
   return (new Card__onDiscardEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__onDiscardEff::GetInitAbblFlag()
+unsigned int Card__onDiscardEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__onDiscardEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12723,10 +12723,10 @@ Card__Node  *Card__turnStartEff::CreateNodeHardCopy(Card  * card_copy, PtrRedirM
   return (new Card__turnStartEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__turnStartEff::GetInitAbblFlag()
+unsigned int Card__turnStartEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__turnStartEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -12860,10 +12860,10 @@ Card__Node  *Card__turnEndEff::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap
   return (new Card__turnEndEff((card_copy), ((Card__UntargetedEff *)((((effect)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__turnEndEff::GetInitAbblFlag()
+unsigned int Card__turnEndEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__turnEndEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -13347,10 +13347,10 @@ Card__Node  *Card__srcCondTargetedEff::CreateNodeHardCopy(Card  * card_copy, Ptr
   }
 }
 
-unsigned int Card__srcCondTargetedEff::GetInitAbblFlag()
+unsigned int Card__srcCondTargetedEff::GetInitAbilFlag()
 {
 
-  return (((srccond)->GetInitAbblFlag)());
+  return (((srccond)->GetInitAbilFlag)());
 }
 
 CondConfig Card__srcCondTargetedEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -13502,10 +13502,10 @@ Card__Node  *Card__noCondUntargetedEff::CreateNodeHardCopy(Card  * card_copy, Pt
   }
 }
 
-unsigned int Card__noCondUntargetedEff::GetInitAbblFlag()
+unsigned int Card__noCondUntargetedEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 CondConfig Card__noCondUntargetedEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -13636,10 +13636,10 @@ Card__Node  *Card__indeCondUntargetedEff::CreateNodeHardCopy(Card  * card_copy, 
   }
 }
 
-unsigned int Card__indeCondUntargetedEff::GetInitAbblFlag()
+unsigned int Card__indeCondUntargetedEff::GetInitAbilFlag()
 {
 
-  return (((effect)->GetInitAbblFlag)());
+  return (((effect)->GetInitAbilFlag)());
 }
 
 void Card__indeCondUntargetedEff::UntargetedAction(Card  * parent_card)
@@ -13764,10 +13764,10 @@ Card__Node  *Card__srcCondUntargetedEff::CreateNodeHardCopy(Card  * card_copy, P
   }
 }
 
-unsigned int Card__srcCondUntargetedEff::GetInitAbblFlag()
+unsigned int Card__srcCondUntargetedEff::GetInitAbilFlag()
 {
 
-  return ((((effect)->GetInitAbblFlag)()) | (((srccond)->GetInitAbblFlag)()));
+  return ((((effect)->GetInitAbilFlag)()) | (((srccond)->GetInitAbilFlag)()));
 }
 
 CondConfig Card__srcCondUntargetedEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -13873,10 +13873,10 @@ Card__Node  *Card__charTargetCond::CreateNodeHardCopy(Card  * card_copy, PtrRedi
   return (new Card__charTargetCond((card_copy), ((Card__CharTargetCond *)((((cond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__charTargetCond::GetInitAbblFlag()
+unsigned int Card__charTargetCond::GetInitAbilFlag()
 {
 
-  return (((cond)->GetInitAbblFlag)());
+  return (((cond)->GetInitAbilFlag)());
 }
 
 CondConfig Card__charTargetCond::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -13972,10 +13972,10 @@ Card__Node  *Card__cardTargetCond::CreateNodeHardCopy(Card  * card_copy, PtrRedi
   return (new Card__cardTargetCond((card_copy), ((Card__CardTargetCond *)((((cond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__cardTargetCond::GetInitAbblFlag()
+unsigned int Card__cardTargetCond::GetInitAbilFlag()
 {
 
-  return (((cond)->GetInitAbblFlag)());
+  return (((cond)->GetInitAbilFlag)());
 }
 
 CondConfig Card__cardTargetCond::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -14010,7 +14010,7 @@ Card__justCharTargetCond::Card__justCharTargetCond()
   
 }
 
-Card__justCharTargetCond::Card__justCharTargetCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__CharTypeCond  * input__typecond, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond) : Card__CharTargetCond((input__item)), alle((input__alle)), typecond((input__typecond)), abblcond((input__abblcond)), statcond((input__statcond))
+Card__justCharTargetCond::Card__justCharTargetCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__CharTypeCond  * input__typecond, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond) : Card__CharTargetCond((input__item)), alle((input__alle)), typecond((input__typecond)), abilcond((input__abilcond)), statcond((input__statcond))
 {
 
   
@@ -14025,9 +14025,9 @@ Card__justCharTargetCond::~Card__justCharTargetCond()
 
   
   {
-    if ((abblcond))
+    if ((abilcond))
     {
-      delete (abblcond);
+      delete (abilcond);
     } else {
       
     }
@@ -14068,7 +14068,7 @@ void Card__justCharTargetCond::FillRep(CardRep  & rep)
   {
     (((alle)->FillRep)((rep)));
     (((typecond)->FillRep)((rep)));
-    (((abblcond)->FillRep)((rep)));
+    (((abilcond)->FillRep)((rep)));
     (((statcond)->FillRep)((rep)));
   }
 }
@@ -14076,37 +14076,37 @@ void Card__justCharTargetCond::FillRep(CardRep  & rep)
 string Card__justCharTargetCond::Detail()
 {
 
-  return ((((((alle)->Detail)()) + (((typecond)->Detail)())) + (((abblcond)->Detail)())) + (((statcond)->Detail)()));
+  return ((((((alle)->Detail)()) + (((typecond)->Detail)())) + (((abilcond)->Detail)())) + (((statcond)->Detail)()));
 }
 
 string Card__justCharTargetCond::DetailAlt1()
 {
 
-  return (((((((((((alle)->Detail)())).length)()) == 0) ? (((typecond)->DetailAlt1)()) : ((((alle)->DetailAlt1)()) + (((typecond)->Detail)())))) + (((abblcond)->Detail)())) + (((statcond)->Detail)()));
+  return (((((((((((alle)->Detail)())).length)()) == 0) ? (((typecond)->DetailAlt1)()) : ((((alle)->DetailAlt1)()) + (((typecond)->Detail)())))) + (((abilcond)->Detail)())) + (((statcond)->Detail)()));
 }
 
 string Card__justCharTargetCond::DetailAlt2()
 {
 
-  return ((((((alle)->Detail)()) + (((typecond)->DetailAlt2)())) + (((abblcond)->Detail)())) + (((statcond)->Detail)()));
+  return ((((((alle)->Detail)()) + (((typecond)->DetailAlt2)())) + (((abilcond)->Detail)())) + (((statcond)->Detail)()));
 }
 
 string Card__justCharTargetCond::DetailAlt3()
 {
 
-  return (((((typecond)->DetailAlt1)()) + (((abblcond)->Detail)())) + (((statcond)->Detail)()));
+  return (((((typecond)->DetailAlt1)()) + (((abilcond)->Detail)())) + (((statcond)->Detail)()));
 }
 
 Card__Node  *Card__justCharTargetCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__justCharTargetCond((card_copy), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__CharTypeCond *)((((typecond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbblCond *)((((abblcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__justCharTargetCond((card_copy), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__CharTypeCond *)((((typecond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbilCond *)((((abilcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__justCharTargetCond::GetInitAbblFlag()
+unsigned int Card__justCharTargetCond::GetInitAbilFlag()
 {
 
-  return (((abblcond)->GetInitAbblFlag)());
+  return (((abilcond)->GetInitAbilFlag)());
 }
 
 CondConfig Card__justCharTargetCond::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -14114,7 +14114,7 @@ CondConfig Card__justCharTargetCond::GetGlobalSelfConfig(const CondConfig  & sel
 
   {
     CondConfig tmp_config = (((typecond)->GetGlobalSelfConfig)((self_config), (effect_timing)));
-    ((tmp_config) &= (((abblcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
+    ((tmp_config) &= (((abilcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
     ((tmp_config) &= (((statcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
     return (tmp_config);
   }
@@ -14123,19 +14123,19 @@ CondConfig Card__justCharTargetCond::GetGlobalSelfConfig(const CondConfig  & sel
 signed int Card__justCharTargetCond::CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card)
 {
 
-  return ((((((alle)->CheckPlayValid)((x), (y), (z), (parent_card))) && (((typecond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((abblcond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((statcond)->CheckPlayValid)((x), (y), (z), (parent_card))));
+  return ((((((alle)->CheckPlayValid)((x), (y), (z), (parent_card))) && (((typecond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((abilcond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((statcond)->CheckPlayValid)((x), (y), (z), (parent_card))));
 }
 
 signed int Card__justCharTargetCond::CheckCardValid(Card  * card, Card  * parent_card)
 {
 
-  return ((((((alle)->CheckCardValid)((card), (parent_card))) && (((typecond)->CheckCardValid)((card), (parent_card)))) && (((abblcond)->CheckCardValid)((card), (parent_card)))) && (((statcond)->CheckCardValid)((card), (parent_card))));
+  return ((((((alle)->CheckCardValid)((card), (parent_card))) && (((typecond)->CheckCardValid)((card), (parent_card)))) && (((abilcond)->CheckCardValid)((card), (parent_card)))) && (((statcond)->CheckCardValid)((card), (parent_card))));
 }
 
 signed int Card__justCharTargetCond::CheckThisValid(Card  * parent_card)
 {
 
-  return ((((((alle)->CheckThisValid)((parent_card))) && (((typecond)->CheckThisValid)((parent_card)))) && (((abblcond)->CheckThisValid)((parent_card)))) && (((statcond)->CheckThisValid)((parent_card))));
+  return ((((((alle)->CheckThisValid)((parent_card))) && (((typecond)->CheckThisValid)((parent_card)))) && (((abilcond)->CheckThisValid)((parent_card)))) && (((statcond)->CheckThisValid)((parent_card))));
 }
 
 
@@ -14618,7 +14618,7 @@ Card__justCardTargetCond::Card__justCardTargetCond()
   
 }
 
-Card__justCardTargetCond::Card__justCardTargetCond(Card  * input__item, Card__CardPosCond  * input__pos, Card__AllegianceCond  * input__alle, Card__CardTypeCond  * input__typecond, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond) : Card__CardTargetCond((input__item)), pos((input__pos)), alle((input__alle)), typecond((input__typecond)), abblcond((input__abblcond)), statcond((input__statcond))
+Card__justCardTargetCond::Card__justCardTargetCond(Card  * input__item, Card__CardPosCond  * input__pos, Card__AllegianceCond  * input__alle, Card__CardTypeCond  * input__typecond, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond) : Card__CardTargetCond((input__item)), pos((input__pos)), alle((input__alle)), typecond((input__typecond)), abilcond((input__abilcond)), statcond((input__statcond))
 {
 
   
@@ -14634,9 +14634,9 @@ Card__justCardTargetCond::~Card__justCardTargetCond()
 
   
   {
-    if ((abblcond))
+    if ((abilcond))
     {
-      delete (abblcond);
+      delete (abilcond);
     } else {
       
     }
@@ -14687,7 +14687,7 @@ void Card__justCardTargetCond::FillRep(CardRep  & rep)
     (((pos)->FillRep)((rep)));
     (((alle)->FillRep)((rep)));
     (((typecond)->FillRep)((rep)));
-    (((abblcond)->FillRep)((rep)));
+    (((abilcond)->FillRep)((rep)));
     (((statcond)->FillRep)((rep)));
   }
 }
@@ -14695,37 +14695,37 @@ void Card__justCardTargetCond::FillRep(CardRep  & rep)
 string Card__justCardTargetCond::Detail()
 {
 
-  return ((((((((typecond)->Detail)()) + (((abblcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt3)())) + (((pos)->Detail)()));
+  return ((((((((typecond)->Detail)()) + (((abilcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt3)())) + (((pos)->Detail)()));
 }
 
 string Card__justCardTargetCond::DetailAlt1()
 {
 
-  return ((((((((typecond)->DetailAlt1)()) + (((abblcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt2)())) + (((pos)->Detail)()));
+  return ((((((((typecond)->DetailAlt1)()) + (((abilcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt2)())) + (((pos)->Detail)()));
 }
 
 string Card__justCardTargetCond::DetailAlt2()
 {
 
-  return ((((((((typecond)->DetailAlt2)()) + (((abblcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt2)())) + (((((((((alle)->Detail)())).length)()) == 0) ? (((pos)->DetailAlt2)()) : (((pos)->DetailAlt1)()))));
+  return ((((((((typecond)->DetailAlt2)()) + (((abilcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((alle)->DetailAlt2)())) + (((((((((alle)->Detail)())).length)()) == 0) ? (((pos)->DetailAlt2)()) : (((pos)->DetailAlt1)()))));
 }
 
 string Card__justCardTargetCond::DetailAlt3()
 {
 
-  return (((((((typecond)->DetailAlt1)()) + (((abblcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((pos)->Detail)()));
+  return (((((((typecond)->DetailAlt1)()) + (((abilcond)->Detail)())) + (((statcond)->Detail)())) + " at ") + (((pos)->Detail)()));
 }
 
 Card__Node  *Card__justCardTargetCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__justCardTargetCond((card_copy), ((Card__CardPosCond *)((((pos)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__CardTypeCond *)((((typecond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbblCond *)((((abblcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__justCardTargetCond((card_copy), ((Card__CardPosCond *)((((pos)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__CardTypeCond *)((((typecond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbilCond *)((((abilcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
-unsigned int Card__justCardTargetCond::GetInitAbblFlag()
+unsigned int Card__justCardTargetCond::GetInitAbilFlag()
 {
 
-  return (((abblcond)->GetInitAbblFlag)());
+  return (((abilcond)->GetInitAbilFlag)());
 }
 
 CondConfig Card__justCardTargetCond::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -14733,7 +14733,7 @@ CondConfig Card__justCardTargetCond::GetGlobalSelfConfig(const CondConfig  & sel
 
   {
     CondConfig tmp_config = (((typecond)->GetGlobalSelfConfig)((self_config), (effect_timing)));
-    ((tmp_config) &= (((abblcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
+    ((tmp_config) &= (((abilcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
     ((tmp_config) &= (((statcond)->GetGlobalSelfConfig)((self_config), (effect_timing))));
     return (tmp_config);
   }
@@ -14742,19 +14742,19 @@ CondConfig Card__justCardTargetCond::GetGlobalSelfConfig(const CondConfig  & sel
 signed int Card__justCardTargetCond::CheckPlayValid(signed int  x, signed int  y, signed int  & z, Card  * parent_card)
 {
 
-  return (((((((pos)->CheckPlayValid)((x), (y), (z), (parent_card))) && (((alle)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((typecond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((abblcond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((statcond)->CheckPlayValid)((x), (y), (z), (parent_card))));
+  return (((((((pos)->CheckPlayValid)((x), (y), (z), (parent_card))) && (((alle)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((typecond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((abilcond)->CheckPlayValid)((x), (y), (z), (parent_card)))) && (((statcond)->CheckPlayValid)((x), (y), (z), (parent_card))));
 }
 
 signed int Card__justCardTargetCond::CheckCardValid(Card  * card, Card  * parent_card)
 {
 
-  return (((((((pos)->CheckCardValid)((card), (parent_card))) && (((alle)->CheckCardValid)((card), (parent_card)))) && (((typecond)->CheckCardValid)((card), (parent_card)))) && (((abblcond)->CheckCardValid)((card), (parent_card)))) && (((statcond)->CheckCardValid)((card), (parent_card))));
+  return (((((((pos)->CheckCardValid)((card), (parent_card))) && (((alle)->CheckCardValid)((card), (parent_card)))) && (((typecond)->CheckCardValid)((card), (parent_card)))) && (((abilcond)->CheckCardValid)((card), (parent_card)))) && (((statcond)->CheckCardValid)((card), (parent_card))));
 }
 
 signed int Card__justCardTargetCond::CheckThisValid(Card  * parent_card)
 {
 
-  return (((((((pos)->CheckThisValid)((parent_card))) && (((alle)->CheckThisValid)((parent_card)))) && (((typecond)->CheckThisValid)((parent_card)))) && (((abblcond)->CheckThisValid)((parent_card)))) && (((statcond)->CheckThisValid)((parent_card))));
+  return (((((((pos)->CheckThisValid)((parent_card))) && (((alle)->CheckThisValid)((parent_card)))) && (((typecond)->CheckThisValid)((parent_card)))) && (((abilcond)->CheckThisValid)((parent_card)))) && (((statcond)->CheckThisValid)((parent_card))));
 }
 
 
@@ -15845,25 +15845,25 @@ signed int Card__oppoAllegiance::CheckCardValid(Card  * card, Card  * parent_car
 
 
 
-Card__noAbblCond::Card__noAbblCond()
+Card__noAbilCond::Card__noAbilCond()
 {
 
   
 }
 
-Card__noAbblCond::Card__noAbblCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__noAbilCond::Card__noAbilCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
 }
 
-Card__noAbblCond::~Card__noAbblCond()
+Card__noAbilCond::~Card__noAbilCond()
 {
 
   
 }
 
-void Card__noAbblCond::FillRep(CardRep  & rep)
+void Card__noAbilCond::FillRep(CardRep  & rep)
 {
 
   {
@@ -15871,16 +15871,16 @@ void Card__noAbblCond::FillRep(CardRep  & rep)
   }
 }
 
-signed int Card__noAbblCond::isCondTrivial()
+signed int Card__noAbilCond::isCondTrivial()
 {
 
   return 1;
 }
 
-Card__Node  *Card__noAbblCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
+Card__Node  *Card__noAbilCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__noAbblCond((card_copy)));
+  return (new Card__noAbilCond((card_copy)));
 }
 
 
@@ -15891,7 +15891,7 @@ Card__chargeCond::Card__chargeCond()
   
 }
 
-Card__chargeCond::Card__chargeCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__chargeCond::Card__chargeCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -15923,7 +15923,7 @@ Card__Node  *Card__chargeCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap
   return (new Card__chargeCond((card_copy)));
 }
 
-unsigned int Card__chargeCond::GetInitAbblFlag()
+unsigned int Card__chargeCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_CHARGE);
@@ -15961,7 +15961,7 @@ Card__tauntCond::Card__tauntCond()
   
 }
 
-Card__tauntCond::Card__tauntCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__tauntCond::Card__tauntCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -15993,7 +15993,7 @@ Card__Node  *Card__tauntCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap 
   return (new Card__tauntCond((card_copy)));
 }
 
-unsigned int Card__tauntCond::GetInitAbblFlag()
+unsigned int Card__tauntCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_TAUNT);
@@ -16031,7 +16031,7 @@ Card__stealthCond::Card__stealthCond()
   
 }
 
-Card__stealthCond::Card__stealthCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__stealthCond::Card__stealthCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -16063,7 +16063,7 @@ Card__Node  *Card__stealthCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMa
   return (new Card__stealthCond((card_copy)));
 }
 
-unsigned int Card__stealthCond::GetInitAbblFlag()
+unsigned int Card__stealthCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_STEALTH);
@@ -16101,7 +16101,7 @@ Card__untargetableCond::Card__untargetableCond()
   
 }
 
-Card__untargetableCond::Card__untargetableCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__untargetableCond::Card__untargetableCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -16133,7 +16133,7 @@ Card__Node  *Card__untargetableCond::CreateNodeHardCopy(Card  * card_copy, PtrRe
   return (new Card__untargetableCond((card_copy)));
 }
 
-unsigned int Card__untargetableCond::GetInitAbblFlag()
+unsigned int Card__untargetableCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_UNTARGETABLE);
@@ -16171,7 +16171,7 @@ Card__shieldCond::Card__shieldCond()
   
 }
 
-Card__shieldCond::Card__shieldCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__shieldCond::Card__shieldCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -16203,7 +16203,7 @@ Card__Node  *Card__shieldCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap
   return (new Card__shieldCond((card_copy)));
 }
 
-unsigned int Card__shieldCond::GetInitAbblFlag()
+unsigned int Card__shieldCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_SHIELDED);
@@ -16241,7 +16241,7 @@ Card__poisonousCond::Card__poisonousCond()
   
 }
 
-Card__poisonousCond::Card__poisonousCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__poisonousCond::Card__poisonousCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -16273,7 +16273,7 @@ Card__Node  *Card__poisonousCond::CreateNodeHardCopy(Card  * card_copy, PtrRedir
   return (new Card__poisonousCond((card_copy)));
 }
 
-unsigned int Card__poisonousCond::GetInitAbblFlag()
+unsigned int Card__poisonousCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_POISONOUS);
@@ -16311,7 +16311,7 @@ Card__lifestealCond::Card__lifestealCond()
   
 }
 
-Card__lifestealCond::Card__lifestealCond(Card  * input__item) : Card__AbblCond((input__item))
+Card__lifestealCond::Card__lifestealCond(Card  * input__item) : Card__AbilCond((input__item))
 {
 
   
@@ -16343,7 +16343,7 @@ Card__Node  *Card__lifestealCond::CreateNodeHardCopy(Card  * card_copy, PtrRedir
   return (new Card__lifestealCond((card_copy)));
 }
 
-unsigned int Card__lifestealCond::GetInitAbblFlag()
+unsigned int Card__lifestealCond::GetInitAbilFlag()
 {
 
   return (TARGET_IS_LIFESTEAL);
@@ -17053,7 +17053,7 @@ Card__leaderCond::Card__leaderCond()
   
 }
 
-Card__leaderCond::Card__leaderCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__AbblCond  * input__abblcond, Card__StatCond  * input__statcond) : Card__IndeCond((input__item)), alle((input__alle)), abblcond((input__abblcond)), statcond((input__statcond))
+Card__leaderCond::Card__leaderCond(Card  * input__item, Card__AllegianceCond  * input__alle, Card__AbilCond  * input__abilcond, Card__StatCond  * input__statcond) : Card__IndeCond((input__item)), alle((input__alle)), abilcond((input__abilcond)), statcond((input__statcond))
 {
 
   
@@ -17067,9 +17067,9 @@ Card__leaderCond::~Card__leaderCond()
 
   
   {
-    if ((abblcond))
+    if ((abilcond))
     {
-      delete (abblcond);
+      delete (abilcond);
     } else {
       
     }
@@ -17101,7 +17101,7 @@ void Card__leaderCond::FillRep(CardRep  & rep)
   {
     (((rep).push_back)(((mkNodeRep)(2u))));
     (((alle)->FillRep)((rep)));
-    (((abblcond)->FillRep)((rep)));
+    (((abilcond)->FillRep)((rep)));
     (((statcond)->FillRep)((rep)));
   }
 }
@@ -17109,13 +17109,13 @@ void Card__leaderCond::FillRep(CardRep  & rep)
 string Card__leaderCond::Detail()
 {
 
-  return ((((((alle)->DetailAlt4)()) + (((((alle)->IsPlural)()) ? " are" : " is"))) + (((abblcond)->Detail)())) + (((statcond)->Detail)()));
+  return ((((((alle)->DetailAlt4)()) + (((((alle)->IsPlural)()) ? " are" : " is"))) + (((abilcond)->Detail)())) + (((statcond)->Detail)()));
 }
 
 Card__Node  *Card__leaderCond::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__leaderCond((card_copy), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbblCond *)((((abblcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__leaderCond((card_copy), ((Card__AllegianceCond *)((((alle)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__AbilCond *)((((abilcond)->CreateNodeHardCopy)((card_copy), (redir_map))))), ((Card__StatCond *)((((statcond)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
 signed int Card__leaderCond::CheckThisValid(Card  * parent_card)
@@ -17125,7 +17125,7 @@ signed int Card__leaderCond::CheckThisValid(Card  * parent_card)
     Card  *target_a = (((parent_card)->owner)->leader);
     if ((((alle)->CheckCardValid)((target_a), (parent_card))))
     {
-      if ((!(((((abblcond)->CheckCardValid)((target_a), (parent_card))) && (((statcond)->CheckCardValid)((target_a), (parent_card)))))))
+      if ((!(((((abilcond)->CheckCardValid)((target_a), (parent_card))) && (((statcond)->CheckCardValid)((target_a), (parent_card)))))))
       {
         return 0;
       } else {
@@ -17137,7 +17137,7 @@ signed int Card__leaderCond::CheckThisValid(Card  * parent_card)
     Card  *target_b = (((parent_card)->opponent)->leader);
     if ((((alle)->CheckCardValid)((target_b), (parent_card))))
     {
-      if ((!(((((abblcond)->CheckCardValid)((target_b), (parent_card))) && (((statcond)->CheckCardValid)((target_b), (parent_card)))))))
+      if ((!(((((abilcond)->CheckCardValid)((target_b), (parent_card))) && (((statcond)->CheckCardValid)((target_b), (parent_card)))))))
       {
         return 0;
       } else {
@@ -17346,7 +17346,7 @@ Card__damageEff::Card__damageEff()
   
 }
 
-Card__damageEff::Card__damageEff(Card  * input__item, signed int  input__val, Card__DamageAbilities  * input__abbl) : Card__BaseTargetedEff((input__item)), val((input__val)), abbl((input__abbl))
+Card__damageEff::Card__damageEff(Card  * input__item, signed int  input__val, Card__DamageAbilities  * input__abil) : Card__BaseTargetedEff((input__item)), val((input__val)), abil((input__abil))
 {
 
   
@@ -17359,9 +17359,9 @@ Card__damageEff::~Card__damageEff()
 
   
   {
-    if ((abbl))
+    if ((abil))
     {
-      delete (abbl);
+      delete (abil);
     } else {
       
     }
@@ -17378,7 +17378,7 @@ void Card__damageEff::FillRep(CardRep  & rep)
 
   {
     (((rep).push_back)(((mkNodeRep)(0u, (vector<double>{((NormalizeCode)((val), 1, 10))})))));
-    (((abbl)->FillRep)((rep)));
+    (((abil)->FillRep)((rep)));
   }
 }
 
@@ -17391,7 +17391,7 @@ string Card__damageEff::Detail()
 Card__Node  *Card__damageEff::CreateNodeHardCopy(Card  * card_copy, PtrRedirMap  & redir_map)
 {
 
-  return (new Card__damageEff((card_copy), (val), ((Card__DamageAbilities *)((((abbl)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
+  return (new Card__damageEff((card_copy), (val), ((Card__DamageAbilities *)((((abil)->CreateNodeHardCopy)((card_copy), (redir_map)))))));
 }
 
 CondConfig Card__damageEff::GetGlobalSelfConfig(const CondConfig  & self_config, unsigned int  effect_timing)
@@ -17828,7 +17828,7 @@ CondConfig Card__destroyEff::GetGlobalSelfConfig(const CondConfig  & self_config
 CondConfig Card__destroyEff::GetTargetConfig()
 {
 
-  return (((TARGET_POS_FIELD) | (TARGET_IS_MINION)) | (TARGET_ANY_ALLE_MINION_ABBL_TYPE));
+  return (((TARGET_POS_FIELD) | (TARGET_IS_MINION)) | (TARGET_ANY_ALLE_MINION_ABIL_TYPE));
 }
 
 signed int Card__destroyEff::TargetedAction(signed int  z, Card  * parent_card, signed int  start_of_batch)
@@ -22268,7 +22268,7 @@ Card  *CreateSndPlayerToken()
 {
 
   {
-    Card  *token = (((Card__ItemRef__6056__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__6056__32)->Item__Constructor)((new Card__spellCard((Card__ItemRef__6056__32), 0, (new Card__justAbilities((Card__ItemRef__6056__32), (new Card__noCharge((Card__ItemRef__6056__32))), (new Card__noTaunt((Card__ItemRef__6056__32))), (new Card__noStealth((Card__ItemRef__6056__32))), (new Card__noUntargetable((Card__ItemRef__6056__32))), (new Card__noShield((Card__ItemRef__6056__32))), (new Card__noPoisonous((Card__ItemRef__6056__32))), (new Card__noLifesteal((Card__ItemRef__6056__32))))), (new Card__specialEffects((Card__ItemRef__6056__32), (new Card__targetedCastEff((Card__ItemRef__6056__32), (new Card__noCondTargetedEff((Card__ItemRef__6056__32), (new Card__costModEff((Card__ItemRef__6056__32), (-1))), (new Card__cardTargetCond((Card__ItemRef__6056__32), (new Card__justCardTargetCond((Card__ItemRef__6056__32), (new Card__cardPosAtHand((Card__ItemRef__6056__32))), (new Card__allyAllegiance((Card__ItemRef__6056__32))), (new Card__isCard((Card__ItemRef__6056__32))), (new Card__noAbblCond((Card__ItemRef__6056__32))), (new Card__noStatCond((Card__ItemRef__6056__32))))))))))), (new Card__consOtherEffs((Card__ItemRef__6056__32), (new Card__untargetedCastEff((Card__ItemRef__6056__32), (new Card__noCondUntargetedEff((Card__ItemRef__6056__32), (new Card__drawCardEff((Card__ItemRef__6056__32), 1, (new Card__allyAllegiance((Card__ItemRef__6056__32))))))))), (new Card__noOtherEffs((Card__ItemRef__6056__32))))))))))));
+    Card  *token = (((Card__ItemRef__6056__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__6056__32)->Item__Constructor)((new Card__spellCard((Card__ItemRef__6056__32), 0, (new Card__justAbilities((Card__ItemRef__6056__32), (new Card__noCharge((Card__ItemRef__6056__32))), (new Card__noTaunt((Card__ItemRef__6056__32))), (new Card__noStealth((Card__ItemRef__6056__32))), (new Card__noUntargetable((Card__ItemRef__6056__32))), (new Card__noShield((Card__ItemRef__6056__32))), (new Card__noPoisonous((Card__ItemRef__6056__32))), (new Card__noLifesteal((Card__ItemRef__6056__32))))), (new Card__specialEffects((Card__ItemRef__6056__32), (new Card__targetedCastEff((Card__ItemRef__6056__32), (new Card__noCondTargetedEff((Card__ItemRef__6056__32), (new Card__costModEff((Card__ItemRef__6056__32), (-1))), (new Card__cardTargetCond((Card__ItemRef__6056__32), (new Card__justCardTargetCond((Card__ItemRef__6056__32), (new Card__cardPosAtHand((Card__ItemRef__6056__32))), (new Card__allyAllegiance((Card__ItemRef__6056__32))), (new Card__isCard((Card__ItemRef__6056__32))), (new Card__noAbilCond((Card__ItemRef__6056__32))), (new Card__noStatCond((Card__ItemRef__6056__32))))))))))), (new Card__consOtherEffs((Card__ItemRef__6056__32), (new Card__untargetedCastEff((Card__ItemRef__6056__32), (new Card__noCondUntargetedEff((Card__ItemRef__6056__32), (new Card__drawCardEff((Card__ItemRef__6056__32), 1, (new Card__allyAllegiance((Card__ItemRef__6056__32))))))))), (new Card__noOtherEffs((Card__ItemRef__6056__32))))))))))));
     (((token)->name) = "Second Player Token");
     return (token);
   }

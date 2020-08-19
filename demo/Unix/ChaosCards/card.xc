@@ -381,7 +381,7 @@ node:
 	SpecialEffects* GetEffects() { return nullptr; }
 	Card* GetRelatedCard(Card* parent_card) { return nullptr; }
 	bool isCondTrivial() { return false; }
-	unsigned GetInitAbblFlag() { return TARGET_TYPE_NOTHING; } // this is applied with bitwise or's so the default should be all zeros, this shouldn't be needed until we construct the card in parts (because generator would just modify the config in place)
+	unsigned GetInitAbilFlag() { return TARGET_TYPE_NOTHING; } // this is applied with bitwise or's so the default should be all zeros, this shouldn't be needed until we construct the card in parts (because generator would just modify the config in place)
 	CondConfig GetPlayTargetConfig() { return GetTargetConfig(); } // for the target of a targeted effect
 	CondConfig GetGlobalSelfConfig(const CondConfig& self_config, unsigned effect_timing) { return GetTargetConfig(); } // for getting constraints for effects that gives effects to cards
 	CondConfig GetSelfConfig(const CondConfig& self_config) { return GetTargetConfig(); } // for getting constraints for source condition, those are mostly caused by self-targetting effects
@@ -434,13 +434,13 @@ nonterminal:
 	MinionType(NodeRep*& rep);
 	Abilities(CondConfig& self_config, int damage, NodeRep*& rep);
 	DamageAbilities(CondConfig& self_config, unsigned target_mode, int damage, NodeRep*& rep);
-	ChargeAbbl(CondConfig& self_config, NodeRep*& rep);
-	TauntAbbl(CondConfig& self_config, NodeRep*& rep);
-	StealthAbbl(CondConfig& self_config, NodeRep*& rep);
-	UntargetableAbbl(CondConfig& self_config, NodeRep*& rep);
-	ShieldAbbl(CondConfig& self_config, NodeRep*& rep);
-	PoisonousAbbl(CondConfig& self_config, int damage, NodeRep*& rep);
-	LifestealAbbl(CondConfig& self_config, int damage, NodeRep*& rep);
+	ChargeAbil(CondConfig& self_config, NodeRep*& rep);
+	TauntAbil(CondConfig& self_config, NodeRep*& rep);
+	StealthAbil(CondConfig& self_config, NodeRep*& rep);
+	UntargetableAbil(CondConfig& self_config, NodeRep*& rep);
+	ShieldAbil(CondConfig& self_config, NodeRep*& rep);
+	PoisonousAbil(CondConfig& self_config, int damage, NodeRep*& rep);
+	LifestealAbil(CondConfig& self_config, int damage, NodeRep*& rep);
 	SpecialEffects(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff, NodeRep*& rep); // give_eff denotes whether this is generated inside a giveEffectsEff
 	TargetedPlayEff(CondConfig& self_config, int effect_depth, bool give_eff, NodeRep*& rep);
 	OtherEffs(CondConfig& self_config, int min_n, int max_n, int effect_depth, bool give_eff, NodeRep*& rep);
@@ -454,7 +454,7 @@ nonterminal:
 	CardTypeCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
 	CardPosCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
 	AllegianceCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
-	AbblCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
+	AbilCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, NodeRep*& rep);
 	StatCond(CondConfig& init_config, CondConfig& instant_config, unsigned target_mode, unsigned effect_timing, bool force_nontrivial, NodeRep*& rep);
 	StatCondVariant(int lower_min, int lower_max, int upper_min, int upper_max, NodeRep*& rep);
 	IndeCond(CondConfig& init_config, CondConfig& instant_leader_config, unsigned effect_timing, NodeRep*& rep); // for conditions that are not associated with a specific card, the config would be associated to leader card though, as leader condition is considered in here
@@ -551,38 +551,38 @@ wrapper: // due to some type system artifact in GIGL, certian parts (e.g. the ar
 		{
 			case LEADER_CARD:
 				card_copy = construct Card(leaderCard(orig_mana, orig_atk, orig_hp, multipleAttack(orig_n_atks),
-												justAbilities((orig_is_charge ? (ChargeAbbl*)justCharge() : (ChargeAbbl*)noCharge()),
-																(orig_is_taunt ? (TauntAbbl*)justTaunt() : (TauntAbbl*)noTaunt()),
-																(orig_is_stealth ? (StealthAbbl*)justStealth() : (StealthAbbl*)noStealth()),
-																(orig_is_untargetable ? (UntargetableAbbl*)justUntargetable() : (UntargetableAbbl*)noUntargetable()),
-																(orig_is_shielded ? (ShieldAbbl*)justShield() : (ShieldAbbl*)noShield()),
-																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
-																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
+												justAbilities((orig_is_charge ? (ChargeAbil*)justCharge() : (ChargeAbil*)noCharge()),
+																(orig_is_taunt ? (TauntAbil*)justTaunt() : (TauntAbil*)noTaunt()),
+																(orig_is_stealth ? (StealthAbil*)justStealth() : (StealthAbil*)noStealth()),
+																(orig_is_untargetable ? (UntargetableAbil*)justUntargetable() : (UntargetableAbil*)noUntargetable()),
+																(orig_is_shielded ? (ShieldAbil*)justShield() : (ShieldAbil*)noShield()),
+																(orig_is_poisonous ? (PoisonousAbil*)justPoisonous() : (PoisonousAbil*)noPoisonous()),
+																(orig_is_lifesteal ? (LifestealAbil*)justLifesteal() : (LifestealAbil*)noLifesteal())),
 												effects										
 												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
 			case MINION_CARD:
 				card_copy = construct Card(minionCard(orig_mana, orig_atk, orig_hp, multipleAttack(orig_n_atks),
 												(orig_minion_type == BEAST_MINION ? (MinionType*)beastMinion() : (orig_minion_type == DRAGON_MINION ? (MinionType*)dragonMinion() : (MinionType*)demonMinion())),
-												justAbilities((orig_is_charge ? (ChargeAbbl*)justCharge() : (ChargeAbbl*)noCharge()),
-																(orig_is_taunt ? (TauntAbbl*)justTaunt() : (TauntAbbl*)noTaunt()),
-																(orig_is_stealth ? (StealthAbbl*)justStealth() : (StealthAbbl*)noStealth()),
-																(orig_is_untargetable ? (UntargetableAbbl*)justUntargetable() : (UntargetableAbbl*)noUntargetable()),
-																(orig_is_shielded ? (ShieldAbbl*)justShield() : (ShieldAbbl*)noShield()),
-																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
-																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
+												justAbilities((orig_is_charge ? (ChargeAbil*)justCharge() : (ChargeAbil*)noCharge()),
+																(orig_is_taunt ? (TauntAbil*)justTaunt() : (TauntAbil*)noTaunt()),
+																(orig_is_stealth ? (StealthAbil*)justStealth() : (StealthAbil*)noStealth()),
+																(orig_is_untargetable ? (UntargetableAbil*)justUntargetable() : (UntargetableAbil*)noUntargetable()),
+																(orig_is_shielded ? (ShieldAbil*)justShield() : (ShieldAbil*)noShield()),
+																(orig_is_poisonous ? (PoisonousAbil*)justPoisonous() : (PoisonousAbil*)noPoisonous()),
+																(orig_is_lifesteal ? (LifestealAbil*)justLifesteal() : (LifestealAbil*)noLifesteal())),
 												effects								
 												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
 			default:
 				card_copy = construct Card(spellCard(orig_mana,
-												justAbilities((orig_is_charge ? (ChargeAbbl*)justCharge() : (ChargeAbbl*)noCharge()),
-																(orig_is_taunt ? (TauntAbbl*)justTaunt() : (TauntAbbl*)noTaunt()),
-																(orig_is_stealth ? (StealthAbbl*)justStealth() : (StealthAbbl*)noStealth()),
-																(orig_is_untargetable ? (UntargetableAbbl*)justUntargetable() : (UntargetableAbbl*)noUntargetable()),
-																(orig_is_shielded ? (ShieldAbbl*)justShield() : (ShieldAbbl*)noShield()),
-																(orig_is_poisonous ? (PoisonousAbbl*)justPoisonous() : (PoisonousAbbl*)noPoisonous()),
-																(orig_is_lifesteal ? (LifestealAbbl*)justLifesteal() : (LifestealAbbl*)noLifesteal())),
+												justAbilities((orig_is_charge ? (ChargeAbil*)justCharge() : (ChargeAbil*)noCharge()),
+																(orig_is_taunt ? (TauntAbil*)justTaunt() : (TauntAbil*)noTaunt()),
+																(orig_is_stealth ? (StealthAbil*)justStealth() : (StealthAbil*)noStealth()),
+																(orig_is_untargetable ? (UntargetableAbil*)justUntargetable() : (UntargetableAbil*)noUntargetable()),
+																(orig_is_shielded ? (ShieldAbil*)justShield() : (ShieldAbil*)noShield()),
+																(orig_is_poisonous ? (PoisonousAbil*)justPoisonous() : (PoisonousAbil*)noPoisonous()),
+																(orig_is_lifesteal ? (LifestealAbil*)justLifesteal() : (LifestealAbil*)noLifesteal())),
 												effects									
 												)) with GetDefaultGenConfig(-1, nullptr);
 				break;
@@ -705,10 +705,10 @@ rule:
 				else
 					att_times_explain += ".";
 				string type_info = "TYPE: Leader (Does not counter-attack).";
-				string abbl_info = abilities->Detail();
+				string abil_info = abilities->Detail();
 				string effect_info = effects->Detail();
 				string extra_effect_info = GetExtraEffectsDetail();
-				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			DetailIndent
 			{
@@ -726,10 +726,10 @@ rule:
 				else
 					att_times_explain += ".";
 				string type_info = RepeatSpace(indent_size) + "TYPE: Leader (Does not counter-attack).";
-				string abbl_info = abilities->DetailIndent(indent_size);
+				string abil_info = abilities->DetailIndent(indent_size);
 				string effect_info = effects->DetailIndent(indent_size);
 				string extra_effect_info = GetExtraEffectsDetailIndent(indent_size);
-				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			CreateNodeHardCopy = new leaderCard(card_copy, cost, attack, health, 
 				(AttackTimes*)(attack_times->CreateNodeHardCopy(card_copy, redir_map)),
@@ -989,10 +989,10 @@ rule:
 				else
 					att_times_explain += ".";
 				string type_info = "TYPE: " + MinionTypeDescription(minion_type) + " (Originally " + MinionTypeDescription(orig_minion_type) + ") Minion."; // note the type may be modified in place
-				string abbl_info = abilities->Detail();
+				string abil_info = abilities->Detail();
 				string effect_info = effects->Detail();
 				string extra_effect_info = GetExtraEffectsDetail();
-				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			DetailIndent
 			{
@@ -1010,10 +1010,10 @@ rule:
 				else
 					att_times_explain += ".";
 				string type_info = RepeatSpace(indent_size) + "TYPE: " + MinionTypeDescription(minion_type) + " (Originally " + MinionTypeDescription(orig_minion_type) + ") Minion."; // note the type may be modified in place
-				string abbl_info = abilities->DetailIndent(indent_size);
+				string abil_info = abilities->DetailIndent(indent_size);
 				string effect_info = effects->DetailIndent(indent_size);
 				string extra_effect_info = GetExtraEffectsDetailIndent(indent_size);
-				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + atk_info + "\n" + hp_info + "\n" + atk_times_info + att_times_explain + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			CreateNodeHardCopy = new minionCard(card_copy, cost, attack, health, 
 				(AttackTimes*)(attack_times->CreateNodeHardCopy(card_copy, redir_map)),
@@ -1267,19 +1267,19 @@ rule:
 			{
 				string mana_info = "MANA: " + IntToStr(mana) + " (originally " + IntToStr(orig_mana) + ")";
 				string type_info = "TYPE: Spell.";
-				string abbl_info = abilities->Detail();
+				string abil_info = abilities->Detail();
 				string effect_info = effects->Detail();
 				string extra_effect_info = GetExtraEffectsDetail();
-				return mana_info + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			DetailIndent
 			{
 				string mana_info = RepeatSpace(indent_size) + "MANA: " + IntToStr(mana) + " (originally " + IntToStr(orig_mana) + ")";
 				string type_info = RepeatSpace(indent_size) + "TYPE: Spell.";
-				string abbl_info = abilities->DetailIndent(indent_size);
+				string abil_info = abilities->DetailIndent(indent_size);
 				string effect_info = effects->DetailIndent(indent_size);
 				string extra_effect_info = GetExtraEffectsDetailIndent(indent_size);
-				return mana_info + "\n" + type_info + "\n" + abbl_info + effect_info + extra_effect_info;
+				return mana_info + "\n" + type_info + "\n" + abil_info + effect_info + extra_effect_info;
 			}
 			CreateNodeHardCopy = new spellCard(card_copy, cost,
 				(Abilities*)(abilities->CreateNodeHardCopy(card_copy, redir_map)),
@@ -1440,17 +1440,17 @@ rule:
 		}
 
 	Abilities :=
-	| justAbilities: ChargeAbbl* c, TauntAbbl* t, StealthAbbl* s, UntargetableAbbl* u, ShieldAbbl* d, PoisonousAbbl* p, LifestealAbbl* l
+	| justAbilities: ChargeAbil* c, TauntAbil* t, StealthAbil* s, UntargetableAbil* u, ShieldAbil* d, PoisonousAbil* p, LifestealAbil* l
 		{
 			generator
 			{
-				c = generate ChargeAbbl(self_config, rep);
-				t = generate TauntAbbl(self_config, rep);
-				s = generate StealthAbbl(self_config, rep);
-				u = generate UntargetableAbbl(self_config, rep);
-				d = generate ShieldAbbl(self_config, rep);
-				p = generate PoisonousAbbl(self_config, damage, rep);
-				l = generate LifestealAbbl(self_config, damage, rep);
+				c = generate ChargeAbil(self_config, rep);
+				t = generate TauntAbil(self_config, rep);
+				s = generate StealthAbil(self_config, rep);
+				u = generate UntargetableAbil(self_config, rep);
+				d = generate ShieldAbil(self_config, rep);
+				p = generate PoisonousAbil(self_config, damage, rep);
+				l = generate LifestealAbil(self_config, damage, rep);
 			}
 			FillRep
 			{
@@ -1481,26 +1481,26 @@ rule:
 				return RepeatSpace(indent_size) + (cur_info.length() == 0 ? "No Ability " : cur_info) + "(Originally " + (orig_info.length() == 0 ? "No Ability" : orig_info) + ")\n";
 			}
 			CreateNodeHardCopy = new justAbilities(card_copy,
-				(ChargeAbbl*)(c->CreateNodeHardCopy(card_copy, redir_map)),
-				(TauntAbbl*)(t->CreateNodeHardCopy(card_copy, redir_map)),
-				(StealthAbbl*)(s->CreateNodeHardCopy(card_copy, redir_map)),
-				(UntargetableAbbl*)(u->CreateNodeHardCopy(card_copy, redir_map)),
-				(ShieldAbbl*)(d->CreateNodeHardCopy(card_copy, redir_map)),
-				(PoisonousAbbl*)(p->CreateNodeHardCopy(card_copy, redir_map)),
-				(LifestealAbbl*)(l->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = c->GetInitAbblFlag() | t->GetInitAbblFlag() | s->GetInitAbblFlag() | u->GetInitAbblFlag() | d->GetInitAbblFlag() | p->GetInitAbblFlag() | l->GetInitAbblFlag(); // currently not used
+				(ChargeAbil*)(c->CreateNodeHardCopy(card_copy, redir_map)),
+				(TauntAbil*)(t->CreateNodeHardCopy(card_copy, redir_map)),
+				(StealthAbil*)(s->CreateNodeHardCopy(card_copy, redir_map)),
+				(UntargetableAbil*)(u->CreateNodeHardCopy(card_copy, redir_map)),
+				(ShieldAbil*)(d->CreateNodeHardCopy(card_copy, redir_map)),
+				(PoisonousAbil*)(p->CreateNodeHardCopy(card_copy, redir_map)),
+				(LifestealAbil*)(l->CreateNodeHardCopy(card_copy, redir_map)));
+			GetInitAbilFlag = c->GetInitAbilFlag() | t->GetInitAbilFlag() | s->GetInitAbilFlag() | u->GetInitAbilFlag() | d->GetInitAbilFlag() | p->GetInitAbilFlag() | l->GetInitAbilFlag(); // currently not used
 		}
 
 	DamageAbilities := // this doesn't need description, just contributing to abilities
-	| damageAbilities: PoisonousAbbl* p, LifestealAbbl* l
+	| damageAbilities: PoisonousAbil* p, LifestealAbil* l
 		{
 			generator
 			{
 				if (!rep && (target_mode == TARGET_MODE_LEADER || (target_mode == TARGET_MODE_SELF && !(self_config & TARGET_NOT_LEADER)))) // damage towards leader shouldn't have poisonous abilities
 					p = construct noPoisonous();
 				else
-					p = generate PoisonousAbbl(self_config, damage, rep);
-				l = generate LifestealAbbl(self_config, damage, rep);
+					p = generate PoisonousAbil(self_config, damage, rep);
+				l = generate LifestealAbil(self_config, damage, rep);
 			}
 			FillRep
 			{
@@ -1509,12 +1509,12 @@ rule:
 				l->FillRep(rep);
 			}
 			CreateNodeHardCopy = new damageAbilities(card_copy,
-				(PoisonousAbbl*)(p->CreateNodeHardCopy(card_copy, redir_map)),
-				(LifestealAbbl*)(l->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = p->GetInitAbblFlag() | l->GetInitAbblFlag();
+				(PoisonousAbil*)(p->CreateNodeHardCopy(card_copy, redir_map)),
+				(LifestealAbil*)(l->CreateNodeHardCopy(card_copy, redir_map)));
+			GetInitAbilFlag = p->GetInitAbilFlag() | l->GetInitAbilFlag();
 		}
 
-	ChargeAbbl
+	ChargeAbil
 	default:
 		{
 			preselector
@@ -1548,10 +1548,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justCharge(card_copy);
-			GetInitAbblFlag = TARGET_IS_CHARGE;
+			GetInitAbilFlag = TARGET_IS_CHARGE;
 		}
 		
-	TauntAbbl
+	TauntAbil
 	default:
 		{
 			preselector
@@ -1585,10 +1585,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justTaunt(card_copy);
-			GetInitAbblFlag = TARGET_IS_TAUNT;
+			GetInitAbilFlag = TARGET_IS_TAUNT;
 		}
 
-	StealthAbbl
+	StealthAbil
 	default:
 		{
 			preselector
@@ -1622,10 +1622,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justStealth(card_copy);
-			GetInitAbblFlag = TARGET_IS_STEALTH;
+			GetInitAbilFlag = TARGET_IS_STEALTH;
 		}
 
-	UntargetableAbbl
+	UntargetableAbil
 	default:
 		{
 			preselector
@@ -1654,10 +1654,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justUntargetable(card_copy);
-			GetInitAbblFlag = TARGET_IS_UNTARGETABLE;
+			GetInitAbilFlag = TARGET_IS_UNTARGETABLE;
 		}
 
-	ShieldAbbl
+	ShieldAbil
 	default:
 		{
 			preselector
@@ -1691,10 +1691,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justShield(card_copy);
-			GetInitAbblFlag = TARGET_IS_SHIELDED;
+			GetInitAbilFlag = TARGET_IS_SHIELDED;
 		}
 
-	PoisonousAbbl
+	PoisonousAbil
 	default:
 		{
 			preselector
@@ -1728,10 +1728,10 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justPoisonous(card_copy);
-			GetInitAbblFlag = TARGET_IS_POISONOUS;
+			GetInitAbilFlag = TARGET_IS_POISONOUS;
 		}
 
-	LifestealAbbl
+	LifestealAbil
 	default:
 		{
 			preselector
@@ -1765,7 +1765,7 @@ rule:
 				rep.push_back(mkNodeRep(1u));
 			}
 			CreateNodeHardCopy = new justLifesteal(card_copy);
-			GetInitAbblFlag = TARGET_IS_LIFESTEAL;
+			GetInitAbilFlag = TARGET_IS_LIFESTEAL;
 		}
 
 	SpecialEffects
@@ -1891,7 +1891,7 @@ rule:
 			DetailIndent = RepeatSpace(indent_size) + "Battlecry: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new targetedBattlecryEff(card_copy, (TargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
 			GetEffectNum = 1;
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_PLAY);
@@ -1948,7 +1948,7 @@ rule:
 			DetailIndent = RepeatSpace(indent_size) + "Cast: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new targetedCastEff(card_copy, (TargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
 			GetEffectNum = 1;
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_PLAY);
@@ -2086,7 +2086,7 @@ rule:
 			Detail = "Battlecry: " + effect->Detail() + "." + effect->Postfix();
 			DetailIndent = RepeatSpace(indent_size) + "Battlecry: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new untargetedBattlecryEff(card_copy, (UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_PLAY);
@@ -2132,7 +2132,7 @@ rule:
 			Detail = "Cast: " + effect->Detail() + "." + effect->Postfix();
 			DetailIndent = RepeatSpace(indent_size) + "Cast: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new untargetedCastEff(card_copy, (UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_PLAY);
@@ -2171,7 +2171,7 @@ rule:
 			Detail = "Deathrattle: " + effect->Detail() + "." + effect->Postfix();
 			DetailIndent = RepeatSpace(indent_size) + "Deathrattle: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new deathrattleEff(card_copy, (UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_DESTROY);
@@ -2209,7 +2209,7 @@ rule:
 			Detail = "Discard: " + effect->Detail() + "." + effect->Postfix();
 			DetailIndent = RepeatSpace(indent_size) + "Discard: " + effect->Detail() + "." + effect->PostfixIndent(indent_size);
 			CreateNodeHardCopy = new onDiscardEff(card_copy, (UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_DISCARD);
@@ -2260,7 +2260,7 @@ rule:
 			CreateNodeHardCopy = new turnStartEff(card_copy,
 				(UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)),
 				(AllegianceCond*)(alle->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_TURN);
 			TurnStart 
 			{ 
@@ -2303,7 +2303,7 @@ rule:
 			CreateNodeHardCopy = new turnEndEff(card_copy,
 				(UntargetedEff*)(effect->CreateNodeHardCopy(card_copy, redir_map)),
 				(AllegianceCond*)(alle->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig = effect->GetGlobalSelfConfig(self_config, EFFECT_TIMING_TURN);
 			TurnEnd 
 			{ 
@@ -2534,7 +2534,7 @@ rule:
 				desconstr = generate TargetCond(tmp_init_config, tmp_config, TARGET_MODE_PLAY, effect_timing, rep);
 				srccond = generate TargetCond(self_config_copy, tmp_config = GetFlagConfig(effect_timing_filter), TARGET_MODE_SOURCE, effect_timing, rep);
 
-				self_config |= srccond->GetInitAbblFlag();
+				self_config |= srccond->GetInitAbilFlag();
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
@@ -2573,7 +2573,7 @@ rule:
 
 				return effect_copy;
 			}
-			GetInitAbblFlag = srccond->GetInitAbblFlag();
+			GetInitAbilFlag = srccond->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig self_config_copy = self_config; // make a copy for making detailed changes when considering the subtree of the srccond (in particular, whether it is a target on the field or some card target)
@@ -2684,7 +2684,7 @@ rule:
 
 				return effect_copy;
 			}
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			GetGlobalSelfConfig = effect->GetGlobalSelfConfig(self_config, effect_timing);
 			UntargetedAction
 			{
@@ -2762,7 +2762,7 @@ rule:
 
 				return effect_copy;
 			}
-			GetInitAbblFlag = effect->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag();
 			UntargetedAction
 			{ 
 				if (cond->CheckThisValid(parent_card) && overheat_count < overheat_threshold)
@@ -2804,7 +2804,7 @@ rule:
 				self_instant_config &= effect_timing_filter;
 				srccond = generate TargetCond(self_config_copy, self_instant_config, TARGET_MODE_SOURCE, effect_timing, rep);
 
-				self_config |= srccond->GetInitAbblFlag();
+				self_config |= srccond->GetInitAbilFlag();
 			}
 			overheat_count = 0;
 			overheat_threshold = DEFAULT_OVERHEAT_THRESHOLD;
@@ -2841,7 +2841,7 @@ rule:
 
 				return effect_copy;
 			}
-			GetInitAbblFlag = effect->GetInitAbblFlag() | srccond->GetInitAbblFlag();
+			GetInitAbilFlag = effect->GetInitAbilFlag() | srccond->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				CondConfig tmp_config = effect->GetGlobalSelfConfig(self_config, effect_timing);
@@ -2900,7 +2900,7 @@ rule:
 			DetailAlt2 = cond->DetailAlt2();
 			DetailAlt3 = cond->DetailAlt3() + " on the field"; // for source condition
 			CreateNodeHardCopy = new charTargetCond(card_copy, (CharTargetCond*)(cond->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = cond->GetInitAbblFlag();
+			GetInitAbilFlag = cond->GetInitAbilFlag();
 			GetGlobalSelfConfig = cond->GetGlobalSelfConfig(self_config, effect_timing);
 			CheckPlayValid = parent_card->owner->IsValidCharTarget(z) && cond->CheckPlayValid(x, y, z, parent_card);
 			CheckCardValid = (card->card_pos == CARD_POS_AT_LEADER || card->card_pos == CARD_POS_AT_FIELD) && cond->CheckCardValid(card, parent_card);
@@ -2919,7 +2919,7 @@ rule:
 			DetailAlt2 = cond->DetailAlt2();
 			DetailAlt3 = cond->DetailAlt3(); // for source condition
 			CreateNodeHardCopy = new cardTargetCond(card_copy, (CardTargetCond*)(cond->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = cond->GetInitAbblFlag();
+			GetInitAbilFlag = cond->GetInitAbilFlag();
 			GetGlobalSelfConfig = cond->GetGlobalSelfConfig(self_config, effect_timing);
 			CheckPlayValid = parent_card->owner->IsValidCardTarget(z) && cond->CheckPlayValid(x, y, z, parent_card);
 			CheckCardValid = (card->card_pos == CARD_POS_AT_HAND || card->card_pos == CARD_POS_AT_DECK) && cond->CheckCardValid(card, parent_card);
@@ -2927,7 +2927,7 @@ rule:
 		}
 
 	CharTargetCond :=
-	| justCharTargetCond: AllegianceCond* alle, CharTypeCond* typecond, AbblCond* abblcond, StatCond* statcond
+	| justCharTargetCond: AllegianceCond* alle, CharTypeCond* typecond, AbilCond* abilcond, StatCond* statcond
 		{
 			generator
 			{
@@ -2954,7 +2954,7 @@ rule:
 					// source cond on target that must be a leader should only say it is a charactor (as oppose to a card), as other cond should be covered by leader cond; currently applies for turn start/end effects
 					alle = construct anyAllegiance();
 					typecond = construct isCharacter();
-					abblcond = construct noAbblCond();
+					abilcond = construct noAbilCond();
 					statcond = construct noStatCond();
 				}
 				else
@@ -2963,9 +2963,9 @@ rule:
 					typecond = generate CharTypeCond(init_config, instant_config, target_mode, effect_timing, rep);
 					init_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
 					instant_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
-					abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing, rep);
+					abilcond = generate AbilCond(init_config, instant_config, target_mode, effect_timing, rep);
 					if (!(instant_config & TARGET_POS_HAND_OR_DECK) && target_mode == TARGET_MODE_SOURCE
-						&& typecond->isCondTrivial() && abblcond->isCondTrivial()) // do not put trivial condition on source if it is always triggered on the field, e.g. deathrattle (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
+						&& typecond->isCondTrivial() && abilcond->isCondTrivial()) // do not put trivial condition on source if it is always triggered on the field, e.g. deathrattle (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
 						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, true, rep);
 					else
 						statcond = generate StatCond(init_config, instant_config, target_mode, effect_timing, false, rep);
@@ -2976,31 +2976,31 @@ rule:
 				// this is just a pass-down node
 				alle->FillRep(rep);
 				typecond->FillRep(rep);
-				abblcond->FillRep(rep);
+				abilcond->FillRep(rep);
 				statcond->FillRep(rep);
 			}
-			Detail = alle->Detail() + typecond->Detail() + abblcond->Detail() + statcond->Detail(); // no leading article (for random targetting etc.)
-			DetailAlt1 = ((alle->Detail()).length() == 0 ? typecond->DetailAlt1() : alle->DetailAlt1() + typecond->Detail()) + abblcond->Detail() + statcond->Detail();
-			DetailAlt2 = alle->Detail() + typecond->DetailAlt2() + abblcond->Detail() + statcond->Detail(); // plural
-			DetailAlt3 = typecond->DetailAlt1() + abblcond->Detail() + statcond->Detail(); // source cond always does not need to check for allegiance (any allegiance but in fact is always ally)
+			Detail = alle->Detail() + typecond->Detail() + abilcond->Detail() + statcond->Detail(); // no leading article (for random targetting etc.)
+			DetailAlt1 = ((alle->Detail()).length() == 0 ? typecond->DetailAlt1() : alle->DetailAlt1() + typecond->Detail()) + abilcond->Detail() + statcond->Detail();
+			DetailAlt2 = alle->Detail() + typecond->DetailAlt2() + abilcond->Detail() + statcond->Detail(); // plural
+			DetailAlt3 = typecond->DetailAlt1() + abilcond->Detail() + statcond->Detail(); // source cond always does not need to check for allegiance (any allegiance but in fact is always ally)
 			CreateNodeHardCopy = new justCharTargetCond(card_copy,
 				(AllegianceCond*)(alle->CreateNodeHardCopy(card_copy, redir_map)),
 				(CharTypeCond*)(typecond->CreateNodeHardCopy(card_copy, redir_map)),
-				(AbblCond*)(abblcond->CreateNodeHardCopy(card_copy, redir_map)),
+				(AbilCond*)(abilcond->CreateNodeHardCopy(card_copy, redir_map)),
 				(StatCond*)(statcond->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = abblcond->GetInitAbblFlag();
+			GetInitAbilFlag = abilcond->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{ 
 				// the alle part doesn't matter as it is only relevant in source cond where there is no need to check for alle (always generated as any alle but effectively always ally)
 				// no need to update self_config in the middle as only whether or not it is on field matters
 				CondConfig tmp_config = typecond->GetGlobalSelfConfig(self_config, effect_timing);
-				tmp_config &= abblcond->GetGlobalSelfConfig(self_config, effect_timing);
+				tmp_config &= abilcond->GetGlobalSelfConfig(self_config, effect_timing);
 				tmp_config &= statcond->GetGlobalSelfConfig(self_config, effect_timing);
 				return tmp_config;
 			}
-			CheckPlayValid = alle->CheckPlayValid(x, y, z, parent_card) && typecond->CheckPlayValid(x, y, z, parent_card) && abblcond->CheckPlayValid(x, y, z, parent_card) && statcond->CheckPlayValid(x, y, z, parent_card);
-			CheckCardValid = alle->CheckCardValid(card, parent_card) && typecond->CheckCardValid(card, parent_card) && abblcond->CheckCardValid(card, parent_card) && statcond->CheckCardValid(card, parent_card);
-			CheckThisValid = alle->CheckThisValid(parent_card) && typecond->CheckThisValid(parent_card) && abblcond->CheckThisValid(parent_card) && statcond->CheckThisValid(parent_card);
+			CheckPlayValid = alle->CheckPlayValid(x, y, z, parent_card) && typecond->CheckPlayValid(x, y, z, parent_card) && abilcond->CheckPlayValid(x, y, z, parent_card) && statcond->CheckPlayValid(x, y, z, parent_card);
+			CheckCardValid = alle->CheckCardValid(card, parent_card) && typecond->CheckCardValid(card, parent_card) && abilcond->CheckCardValid(card, parent_card) && statcond->CheckCardValid(card, parent_card);
+			CheckThisValid = alle->CheckThisValid(parent_card) && typecond->CheckThisValid(parent_card) && abilcond->CheckThisValid(parent_card) && statcond->CheckThisValid(parent_card);
 		}
 
 	CharTypeCond
@@ -3170,7 +3170,7 @@ rule:
 		}
 
 	CardTargetCond :=
-	| justCardTargetCond: CardPosCond* pos, AllegianceCond* alle, CardTypeCond* typecond, AbblCond* abblcond, StatCond* statcond
+	| justCardTargetCond: CardPosCond* pos, AllegianceCond* alle, CardTypeCond* typecond, AbilCond* abilcond, StatCond* statcond
 		{
 			generator
 			{
@@ -3191,9 +3191,9 @@ rule:
 				typecond = generate CardTypeCond(init_config, instant_config, target_mode, effect_timing, rep);
 				init_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
 				instant_config &= typecond->GetTargetConfig(); // choice of earlier part may affect what is available later
-				abblcond = generate AbblCond(init_config, instant_config, target_mode, effect_timing, rep);
+				abilcond = generate AbilCond(init_config, instant_config, target_mode, effect_timing, rep);
 				if (!(instant_config & TARGET_POS_FIELD) && target_mode == TARGET_MODE_SOURCE
-					&& pos->isCondTrivial() && typecond->isCondTrivial() && abblcond->isCondTrivial()) // do not put trivial condition on source (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
+					&& pos->isCondTrivial() && typecond->isCondTrivial() && abilcond->isCondTrivial()) // do not put trivial condition on source (current implementation relies this specific part to resolve it, alle part is always trivial on source mode)
 					statcond = generate StatCond(init_config, instant_config, target_mode, true, effect_timing, rep);
 				else
 					statcond = generate StatCond(init_config, instant_config, target_mode, false, effect_timing, rep);
@@ -3204,33 +3204,33 @@ rule:
 				pos->FillRep(rep);
 				alle->FillRep(rep);
 				typecond->FillRep(rep);
-				abblcond->FillRep(rep);
+				abilcond->FillRep(rep);
 				statcond->FillRep(rep);
 			}
-			Detail = typecond->Detail() + abblcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt3() + pos->Detail(); // no leading article (for random targetting etc.)
-			DetailAlt1 = typecond->DetailAlt1() + abblcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt2() + pos->Detail();
-			DetailAlt2 = typecond->DetailAlt2() + abblcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt2() + ((alle->Detail()).length() == 0 ? pos->DetailAlt2() : pos->DetailAlt1()); // plural
-			DetailAlt3 = typecond->DetailAlt1() + abblcond->Detail() + statcond->Detail() + " at " + pos->Detail(); // source cond always does not need to check for allegiance (any allegiance but in fact is always ally)
+			Detail = typecond->Detail() + abilcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt3() + pos->Detail(); // no leading article (for random targetting etc.)
+			DetailAlt1 = typecond->DetailAlt1() + abilcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt2() + pos->Detail();
+			DetailAlt2 = typecond->DetailAlt2() + abilcond->Detail() + statcond->Detail() + " at " + alle->DetailAlt2() + ((alle->Detail()).length() == 0 ? pos->DetailAlt2() : pos->DetailAlt1()); // plural
+			DetailAlt3 = typecond->DetailAlt1() + abilcond->Detail() + statcond->Detail() + " at " + pos->Detail(); // source cond always does not need to check for allegiance (any allegiance but in fact is always ally)
 			CreateNodeHardCopy = new justCardTargetCond(card_copy,
 				(CardPosCond*)(pos->CreateNodeHardCopy(card_copy, redir_map)),
 				(AllegianceCond*)(alle->CreateNodeHardCopy(card_copy, redir_map)),
 				(CardTypeCond*)(typecond->CreateNodeHardCopy(card_copy, redir_map)),
-				(AbblCond*)(abblcond->CreateNodeHardCopy(card_copy, redir_map)),
+				(AbilCond*)(abilcond->CreateNodeHardCopy(card_copy, redir_map)),
 				(StatCond*)(statcond->CreateNodeHardCopy(card_copy, redir_map)));
-			GetInitAbblFlag = abblcond->GetInitAbblFlag();
+			GetInitAbilFlag = abilcond->GetInitAbilFlag();
 			GetGlobalSelfConfig
 			{
 				// the pos part doesn't matter as pos isn't giving any globally meaningful constraints 
 				// the alle part doesn't matter as it is only relevant in source cond where there is no need to check for alle (always generated as any alle but effectively always ally)
 				// no need to update self_config in the middle as only whether or not it is on field matters
 				CondConfig tmp_config = typecond->GetGlobalSelfConfig(self_config, effect_timing);
-				tmp_config &= abblcond->GetGlobalSelfConfig(self_config, effect_timing);
+				tmp_config &= abilcond->GetGlobalSelfConfig(self_config, effect_timing);
 				tmp_config &= statcond->GetGlobalSelfConfig(self_config, effect_timing);
 				return tmp_config;
 			}
-			CheckPlayValid = pos->CheckPlayValid(x, y, z, parent_card) && alle->CheckPlayValid(x, y, z, parent_card) && typecond->CheckPlayValid(x, y, z, parent_card) && abblcond->CheckPlayValid(x, y, z, parent_card) && statcond->CheckPlayValid(x, y, z, parent_card);
-			CheckCardValid = pos->CheckCardValid(card, parent_card) && alle->CheckCardValid(card, parent_card) && typecond->CheckCardValid(card, parent_card) && abblcond->CheckCardValid(card, parent_card) && statcond->CheckCardValid(card, parent_card);
-			CheckThisValid = pos->CheckThisValid(parent_card) && alle->CheckThisValid(parent_card) && typecond->CheckThisValid(parent_card) && abblcond->CheckThisValid(parent_card) && statcond->CheckThisValid(parent_card);
+			CheckPlayValid = pos->CheckPlayValid(x, y, z, parent_card) && alle->CheckPlayValid(x, y, z, parent_card) && typecond->CheckPlayValid(x, y, z, parent_card) && abilcond->CheckPlayValid(x, y, z, parent_card) && statcond->CheckPlayValid(x, y, z, parent_card);
+			CheckCardValid = pos->CheckCardValid(card, parent_card) && alle->CheckCardValid(card, parent_card) && typecond->CheckCardValid(card, parent_card) && abilcond->CheckCardValid(card, parent_card) && statcond->CheckCardValid(card, parent_card);
+			CheckThisValid = pos->CheckThisValid(parent_card) && alle->CheckThisValid(parent_card) && typecond->CheckThisValid(parent_card) && abilcond->CheckThisValid(parent_card) && statcond->CheckThisValid(parent_card);
 		}
 
 	CardTypeCond
@@ -3574,7 +3574,7 @@ rule:
 			CheckCardValid = card->owner == parent_card->opponent;
 		}
 
-	AbblCond
+	AbilCond
 	default:
 		{
 			preselector
@@ -3605,14 +3605,14 @@ rule:
 			}
 		}
 	:=
-	| noAbblCond:
+	| noAbilCond:
 		{
 			FillRep
 			{
 				rep.push_back(mkNodeRep(0u));
 			}
 			isCondTrivial = true;
-			CreateNodeHardCopy = new noAbblCond(card_copy);
+			CreateNodeHardCopy = new noAbilCond(card_copy);
 		}
 	| chargeCond:
 		{
@@ -3622,7 +3622,7 @@ rule:
 			}
 			Detail = " with Charge";
 			CreateNodeHardCopy = new chargeCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_CHARGE;
+			GetInitAbilFlag = TARGET_IS_CHARGE;
 			GetGlobalSelfConfig = NOT_CHARGE_COND_FILTER;
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_charge;
 			CheckCardValid = card->is_charge;
@@ -3636,7 +3636,7 @@ rule:
 			}
 			Detail = " with Taunt";
 			CreateNodeHardCopy = new tauntCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_TAUNT;
+			GetInitAbilFlag = TARGET_IS_TAUNT;
 			GetGlobalSelfConfig = NOT_TAUNT_COND_FILTER;
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_taunt;
 			CheckCardValid = card->is_taunt;
@@ -3650,7 +3650,7 @@ rule:
 			}
 			Detail = " with Stealth";
 			CreateNodeHardCopy = new stealthCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_STEALTH;
+			GetInitAbilFlag = TARGET_IS_STEALTH;
 			GetGlobalSelfConfig = ((!(self_config & TARGET_POS_FIELD) || effect_timing == EFFECT_TIMING_PLAY) ? NOT_STEALTH_COND_FILTER : TARGET_TYPE_ANY); // special as stealth is easily lost when staying on the field
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_stealth;
 			CheckCardValid = card->is_stealth;
@@ -3664,7 +3664,7 @@ rule:
 			}
 			Detail = " with Untargetability";
 			CreateNodeHardCopy = new untargetableCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_UNTARGETABLE;
+			GetInitAbilFlag = TARGET_IS_UNTARGETABLE;
 			GetGlobalSelfConfig = NOT_UNTARGETABLE_COND_FILTER;
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_untargetable;
 			CheckCardValid = card->is_untargetable;
@@ -3678,7 +3678,7 @@ rule:
 			}
 			Detail = " with Shield";
 			CreateNodeHardCopy = new shieldCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_SHIELDED;
+			GetInitAbilFlag = TARGET_IS_SHIELDED;
 			GetGlobalSelfConfig = ((!(self_config & TARGET_POS_FIELD) || effect_timing == EFFECT_TIMING_PLAY) ? NOT_SHIELDED_COND_FILTER : TARGET_TYPE_ANY); // special as stealth is easily lost when staying on the field
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_shielded;
 			CheckCardValid = card->is_shielded;
@@ -3692,7 +3692,7 @@ rule:
 			}
 			Detail = " with Poison";
 			CreateNodeHardCopy = new poisonousCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_POISONOUS;
+			GetInitAbilFlag = TARGET_IS_POISONOUS;
 			GetGlobalSelfConfig = NOT_POISONOUS_COND_FILTER;
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_poisonous;
 			CheckCardValid = card->is_poisonous;
@@ -3706,7 +3706,7 @@ rule:
 			}
 			Detail = " with Lifesteal";
 			CreateNodeHardCopy = new lifestealCond(card_copy);
-			GetInitAbblFlag = TARGET_IS_LIFESTEAL;
+			GetInitAbilFlag = TARGET_IS_LIFESTEAL;
 			GetGlobalSelfConfig = NOT_LIFESTEAL_COND_FILTER;
 			CheckPlayValid = parent_card->owner->IsValidTarget(z) && parent_card->owner->GetTargetCard(z)->is_lifesteal;
 			CheckCardValid = card->is_lifesteal;
@@ -3955,7 +3955,7 @@ rule:
 			generator 
 			{ 
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
-				CondConfig tmp_config = TARGET_POS_FIELD | TARGET_IS_MINION | TARGET_ANY_ALLE_MINION_ABBL_TYPE; // to counter the problem of rvalue passed to lvalue ref
+				CondConfig tmp_config = TARGET_POS_FIELD | TARGET_IS_MINION | TARGET_ANY_ALLE_MINION_ABIL_TYPE; // to counter the problem of rvalue passed to lvalue ref
 				cond = generate CharTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing, rep);
 			}
 			FillRep
@@ -3987,7 +3987,7 @@ rule:
 			generator
 			{
 				CondConfig tmp_init_config = GetDefaultInitConfig(); // to counter the problem of rvalue passed to lvalue ref
-				CondConfig tmp_config = TARGET_POS_HAND_OR_DECK | TARGET_IS_ALLY | TARGET_ANY_CARD_MINION_ABBL_TYPE; // to counter the problem of rvalue passed to lvalue ref
+				CondConfig tmp_config = TARGET_POS_HAND_OR_DECK | TARGET_IS_ALLY | TARGET_ANY_CARD_MINION_ABIL_TYPE; // to counter the problem of rvalue passed to lvalue ref
 				cond = generate CardTargetCond(tmp_init_config, tmp_config, TARGET_MODE_EXIST, effect_timing, rep);
 			}
 			FillRep
@@ -4014,7 +4014,7 @@ rule:
 				return false;
 			}
 		}
-	| leaderCond: AllegianceCond* alle, AbblCond* abblcond, StatCond* statcond
+	| leaderCond: AllegianceCond* alle, AbilCond* abilcond, StatCond* statcond
 		{
 			generator
 			{
@@ -4026,8 +4026,8 @@ rule:
 				// only apply the leader config if the allegiance setting in the config is covered by the allegiance setting here
 				if (!(instant_leader_config.flag & ~alle->GetTargetConfig().flag))
 					instant_config &= instant_leader_config;
-				abblcond = generate AbblCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, rep);
-				if (abblcond->isCondTrivial())
+				abilcond = generate AbilCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, rep);
+				if (abilcond->isCondTrivial())
 					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, true, rep);
 				else
 					statcond = generate StatCond(init_config, instant_config, TARGET_MODE_LEADER, effect_timing, false, rep);
@@ -4036,23 +4036,23 @@ rule:
 			{
 				rep.push_back(mkNodeRep(2u));
 				alle->FillRep(rep);
-				abblcond->FillRep(rep);
+				abilcond->FillRep(rep);
 				statcond->FillRep(rep);
 			}
-			Detail = alle->DetailAlt4() + (alle->IsPlural() ? " are" : " is") + abblcond->Detail() + statcond->Detail();
+			Detail = alle->DetailAlt4() + (alle->IsPlural() ? " are" : " is") + abilcond->Detail() + statcond->Detail();
 			CreateNodeHardCopy = new leaderCond(card_copy,
 				(AllegianceCond*)(alle->CreateNodeHardCopy(card_copy, redir_map)),
-				(AbblCond*)(abblcond->CreateNodeHardCopy(card_copy, redir_map)),
+				(AbilCond*)(abilcond->CreateNodeHardCopy(card_copy, redir_map)),
 				(StatCond*)(statcond->CreateNodeHardCopy(card_copy, redir_map)));
 			CheckThisValid
 			{
 				Card* target_a = parent_card->owner->leader;
 				if (alle->CheckCardValid(target_a, parent_card))
-					if (!(abblcond->CheckCardValid(target_a, parent_card) && statcond->CheckCardValid(target_a, parent_card)))
+					if (!(abilcond->CheckCardValid(target_a, parent_card) && statcond->CheckCardValid(target_a, parent_card)))
 						return false;
 				Card* target_b = parent_card->opponent->leader;
 				if (alle->CheckCardValid(target_b, parent_card))
-					if (!(abblcond->CheckCardValid(target_b, parent_card) && statcond->CheckCardValid(target_b, parent_card)))
+					if (!(abilcond->CheckCardValid(target_b, parent_card) && statcond->CheckCardValid(target_b, parent_card)))
 						return false;
 				return true;
 			}
@@ -4217,7 +4217,7 @@ rule:
 			}
 		}
 	:=
-	| damageEff: int val, DamageAbilities* abbl // abbl part doesn't need description here, it is only to contribute to abilities
+	| damageEff: int val, DamageAbilities* abil // abil part doesn't need description here, it is only to contribute to abilities
 		{
 			generator 
 			{
@@ -4231,18 +4231,18 @@ rule:
 					val = GetRandInt(1, 10);
 				}
 				if (!rep && give_eff)
-					abbl = construct damageAbilities(noPoisonous(), noLifesteal());
+					abil = construct damageAbilities(noPoisonous(), noLifesteal());
 				else
-					abbl = generate DamageAbilities(self_config, target_mode, val, rep);
+					abil = generate DamageAbilities(self_config, target_mode, val, rep);
 			}
 			FillRep
 			{
 				rep.push_back(mkNodeRep(0u, <double>{NormalizeCode(val, 1, 10)}));
-				abbl->FillRep(rep);
+				abil->FillRep(rep);
 			}
 			Detail = "Deal " + IntToStr(val) + " damage to ";
 			CreateNodeHardCopy = new damageEff(card_copy, val,
-				(DamageAbilities*)(abbl->CreateNodeHardCopy(card_copy, redir_map)));
+				(DamageAbilities*)(abil->CreateNodeHardCopy(card_copy, redir_map)));
 			GetGlobalSelfConfig = CHAR_COND_FILTER;
 			GetTargetConfig = FIELD_COND_FILTER;
 			TargetedAction
@@ -4436,7 +4436,7 @@ rule:
 			Detail = "Destroy ";
 			CreateNodeHardCopy = new destroyEff(card_copy);
 			GetGlobalSelfConfig = MINION_COND_FILTER;
-			GetTargetConfig = TARGET_POS_FIELD | TARGET_IS_MINION | TARGET_ANY_ALLE_MINION_ABBL_TYPE;
+			GetTargetConfig = TARGET_POS_FIELD | TARGET_IS_MINION | TARGET_ANY_ALLE_MINION_ABIL_TYPE;
 			TargetedAction 
 			{
 				Card* target = parent_card->owner->GetTargetCard(z);
@@ -6004,13 +6004,13 @@ giglconfig GetDefaultGenConfig(int seed, void* extra_config)
 		MinionType := beastMinion | dragonMinion | demonMinion,
 		Abilities := justAbilities,
 		DamageAbilities := damageAbilities,
-		ChargeAbbl := noCharge | justCharge @ {0.05},
-		TauntAbbl := noTaunt | justTaunt @ {0.05},
-		StealthAbbl := noStealth | justStealth @ {0.05},
-		UntargetableAbbl := noUntargetable | justUntargetable @ {0.05},
-		ShieldAbbl := noShield | justShield @ {0.05},
-		PoisonousAbbl := noPoisonous | justPoisonous @ {0.01*(10 - damage)},
-		LifestealAbbl := noLifesteal | justLifesteal @ {damage == 0 ? 0.01 : 0.05},
+		ChargeAbil := noCharge | justCharge @ {0.05},
+		TauntAbil := noTaunt | justTaunt @ {0.05},
+		StealthAbil := noStealth | justStealth @ {0.05},
+		UntargetableAbil := noUntargetable | justUntargetable @ {0.05},
+		ShieldAbil := noShield | justShield @ {0.05},
+		PoisonousAbil := noPoisonous | justPoisonous @ {0.01*(10 - damage)},
+		LifestealAbil := noLifesteal | justLifesteal @ {damage == 0 ? 0.01 : 0.05},
 		SpecialEffects := specialEffects,
 		TargetedPlayEff := noTargetedPlayEff | targetedBattlecryEff @ {0.15} | targetedCastEff @ {0.30},
 		OtherEffs := noOtherEffs | consOtherEffs @ {-1.0 / (min_n - 2)}, // note min_n can be at most 1 and will be come smaller (more negative) as it goes deeper
@@ -6024,7 +6024,7 @@ giglconfig GetDefaultGenConfig(int seed, void* extra_config)
 		CardTypeCond := isCard @ {0.5} | isLeaderCard @ {0.03} | isMinionCard @ {0.15} | isSpellCard @ {0.12} | isBeastCard | isDragonCard | isDemonCard,
 		CardPosCond := cardPosAtHandOrDeck @ {0.1} | cardPosAtHand @ {0.7} | cardPosAtDeck,
 		AllegianceCond := anyAllegiance @ {0.3} | allyAllegiance | oppoAllegiance,
-		AbblCond := noAbblCond @ {950} | chargeCond @ {10} | tauntCond @ {10} | stealthCond @ {8} | untargetableCond @ {7} | shieldCond @ {5} | poisonousCond @ {5} | lifestealCond @ {5},
+		AbilCond := noAbilCond @ {950} | chargeCond @ {10} | tauntCond @ {10} | stealthCond @ {8} | untargetableCond @ {7} | shieldCond @ {5} | poisonousCond @ {5} | lifestealCond @ {5},
 		StatCond := noStatCond @ {900} | costCond @ {30} | atkCond @ {30} | hpCond @ {30} | atkTimesCond @ {10}, 
 		StatCondVariant := statGe | statLe,
 		IndeCond := fieldExistenceCond @ {0.4} | cardExistenceCond @ {0.2} | leaderCond @ {0.2} | mpCond @ {0.1} | maxMpCond @ {0.1},
@@ -6053,7 +6053,7 @@ Card* CreateDefaultLeader(int hp)
 Card* CreateSndPlayerToken()
 {
 	Card* token = construct Card(spellCard(0, justAbilities(noCharge(), noTaunt(), noStealth(), noUntargetable(), noShield(), noPoisonous(), noLifesteal()),
-						specialEffects(targetedCastEff(noCondTargetedEff(costModEff(-1), cardTargetCond(justCardTargetCond(cardPosAtHand(), allyAllegiance(), isCard(), noAbblCond(), noStatCond())))),
+						specialEffects(targetedCastEff(noCondTargetedEff(costModEff(-1), cardTargetCond(justCardTargetCond(cardPosAtHand(), allyAllegiance(), isCard(), noAbilCond(), noStatCond())))),
 							consOtherEffs(untargetedCastEff(noCondUntargetedEff(drawCardEff(1, allyAllegiance()))),
 								noOtherEffs())))) with GetDefaultGenConfig(-1, nullptr);
 	token->name = "Second Player Token";
