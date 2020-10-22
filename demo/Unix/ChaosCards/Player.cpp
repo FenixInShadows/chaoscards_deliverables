@@ -900,6 +900,8 @@ double Player::GetHeuristicEval() const
 			// collect ally strength information
 			int effective_ally_atk = leader->atk * leader->max_n_atks;
 			int effective_ally_hp = leader->max_hp - leader->hp_loss; // note this is mostly considering leader's hp
+			if (leader->is_shielded)
+				effective_ally_hp += 1; // counts shield as 1 effective hp (very rough estimate), so that the AI knows to break/save shield when it is good to do so
 			if (deck.empty() && turn_num < MAX_NUM_TURNS) // if we don't have next turn then we don't need to consider fatigue (it is possible the game has not ended yet as the opponent may still has a turn)
 				effective_ally_hp -= fatigue;
 			for (auto it = field.begin(); it != field.end(); it++)
@@ -907,13 +909,15 @@ double Player::GetHeuristicEval() const
 				Card* tmp_minion = *it;
 				effective_ally_atk += tmp_minion->atk * tmp_minion->max_n_atks;
 				if (!leader->is_taunt && tmp_minion->is_taunt) // minion only contribute to effective hp if it has taunt (and the leader does not)
-					effective_ally_hp += tmp_minion->max_hp - tmp_minion->hp_loss;
+					effective_ally_hp += tmp_minion->max_hp - tmp_minion->hp_loss + (tmp_minion->is_shielded ? 1 : 0);
 			}
 			
 			// collect opponent strength information
 			int effective_oppo_atk = opponent->leader->atk * opponent->leader->max_n_atks;
 			int effective_oppo_hp = opponent->leader->max_hp - opponent->leader->hp_loss; // note this is mostly considering leader's hp
-			if (opponent->deck.empty()) // do not need to check for max turn number because if opponent has completed the last turn then at this point the game would have already ended in a draw (we only use the heuristic as end of turn evaluation) 
+			if (opponent->leader->is_shielded)
+				effective_oppo_hp += 1; // counts shield as 1 effective hp (very rough estimate), so that the AI knows to break/save shield when it is good to do so
+			if (opponent->deck.empty()) // do not need to check for max turn number because if opponent has completed the last turn then at this point the game would have already ended in a draw (we only use the heuristic as end of turn evaluation)
 				effective_oppo_hp -= opponent->fatigue;
 			if (effective_oppo_hp <= 0) // opponent will first take the next fatigure damage so this is ALMOST a gauranteed win (not 100% as turn start effects triggers before card draw, and there can also be divine shield on leaders etc.)
 				almost_win = true;
@@ -922,7 +926,7 @@ double Player::GetHeuristicEval() const
 				Card* tmp_minion = *it;
 				effective_oppo_atk += tmp_minion->atk * tmp_minion->max_n_atks;
 				if (!opponent->leader->is_taunt && tmp_minion->is_taunt) // minion only contribute to effective hp if it has taunt (and the leader does not)
-					effective_oppo_hp += tmp_minion->max_hp - tmp_minion->hp_loss;
+					effective_oppo_hp += tmp_minion->max_hp - tmp_minion->hp_loss + (tmp_minion->is_shielded ? 1 : 0);
 			}
 
 			// opponent will attack next turn (and then allied leader suffers fatigue) so this will be a check point for a potentially ALMOST gauranteed loss
