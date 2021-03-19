@@ -47,3 +47,4 @@ demo/Unix/ChaosCards/*.exe
 
 **/*.opendb
 **/ipch*/*
+**/*.VC.db
