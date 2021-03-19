@@ -12,9 +12,9 @@
 
 using namespace std;
 
-struct MatchStat // can be for a deck or a card
+struct BalanceStat // can be for a deck or a card
 {
-	MatchStat() : num_wins(0), num_losses(0), total_num(0), win_contribution(0.0), total_participation(0.0), eval(0.5) {}
+	BalanceStat() : num_wins(0), num_losses(0), total_num(0), win_contribution(0.0), total_participation(0.0), eval(0.5) {}
 	void WinUpdate(double participation) 
 	{
 		num_wins++;
@@ -48,18 +48,18 @@ struct MatchStat // can be for a deck or a card
 	double eval;
 };
 
-void UpdateStatEvals(vector<MatchStat>& stats)
+void UpdateStatEvals(vector<BalanceStat>& stats)
 {
 	for (auto& stat: stats) // note the & is very important otherwise it won't update the original copies
 		stat.UpdateEval();
 }
 
-bool StatIndexComparator(const vector<MatchStat>& stats, int i, int j)
+bool StatIndexComparator(const vector<BalanceStat>& stats, int i, int j)
 {
 	return stats[i].eval > stats[j].eval;
 }
 
-void SortStatInIndices(const vector<MatchStat>& stats, vector<int>& indices)
+void SortStatInIndices(const vector<BalanceStat>& stats, vector<int>& indices)
 {
 	iota(indices.begin(), indices.end(), 0); // fill index with {0,1,2,...}
 	sort(indices.begin(), indices.end(), bind(StatIndexComparator, stats, placeholders::_1, placeholders::_2)); 
@@ -145,19 +145,21 @@ void InteractiveMatch(Player& player_a, Player& player_b, bool rand_play_order =
 
 void TestAIs(int ai_level_a, int ai_level_b, vector<Card*>& card_list, const vector<vector<int>>& deck_list, int deck_num, int deck_size) // deck_list stores indices in the seed_list, not the seeds themselves
 {
-	MatchStat ai_stat_a, ai_stat_b;
+	BalanceStat ai_stat_a, ai_stat_b;
 	for (int i = 0; i < deck_num; i++)
 	{
 		for (int j = 0; j < deck_num; j++)
 		{
 			cout << "AI_A Deck " << i << " VS AI_B Deck " << j << ". ";
 
-			vector<int> deck_a_indices = deck_list[i]; // make a copy so that if needed it is easier to reproduce with shuffling from the original order
-			vector<int> deck_b_indices = deck_list[j]; // make a copy so that if needed it is easier to reproduce with shuffling from the original order
+			vector<int> deck_a_shuffle(deck_size);
+			vector<int> deck_b_shuffle(deck_size);
+			vector<int> deck_a_indices(deck_size);
+			vector<int> deck_b_indices(deck_size);
 			vector<Card*> deck_a(deck_size);
 			vector<Card*> deck_b(deck_size);
 
-			InitMatch(card_list, deck_a_indices, deck_b_indices, deck_a, deck_b);
+			InitMatch(card_list, deck_list[i], deck_list[j], deck_a_shuffle, deck_b_shuffle, deck_a_indices, deck_b_indices, deck_a, deck_b);
 
 			queue<DeferredEvent*> event_queue;
 			Player player1("AI_A", 30, deck_a, true, event_queue, ai_level_a);
@@ -234,14 +236,16 @@ void TestAIs(int ai_level_a, int ai_level_b, vector<Card*>& card_list, const vec
 }
 
 
-int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<MatchStat>& card_stats, MatchStat& deck_a_stat, MatchStat& deck_b_stat, int deck_size) // return number of turns when the match ends, both sides summed
+int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<BalanceStat>& card_stats, BalanceStat& deck_a_stat, BalanceStat& deck_b_stat, MatchRec& rec, bool is_inverted, int deck_size) // return number of turns when the match ends, both sides summed
 {
-	vector<int> deck_a_indices = deck_a_orig_indices; // make a copy so that if needed it is easier to reproduce with shuffling from the original order
-	vector<int> deck_b_indices = deck_b_orig_indices; // make a copy so that if needed it is easier to reproduce with shuffling from the original order
+	vector<int> deck_a_shuffle(deck_size);
+	vector<int> deck_b_shuffle(deck_size);
+	vector<int> deck_a_indices(deck_size);
+	vector<int> deck_b_indices(deck_size);
 	vector<Card*> deck_a(deck_size);
 	vector<Card*> deck_b(deck_size);
 
-	InitMatch(card_list, deck_a_indices, deck_b_indices, deck_a, deck_b);
+	InitMatch(card_list, deck_a_orig_indices, deck_b_orig_indices, deck_a_shuffle, deck_b_shuffle, deck_a_indices, deck_b_indices, deck_a, deck_b);
 
 	queue<DeferredEvent*> event_queue;
 	Player player1("AI_Deck_A", 30, deck_a, true, event_queue, ai_level);
@@ -287,29 +291,41 @@ int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, cons
 	for (int k = 0; k < deck_size; k++)
 		sum_contribution_b += contribution_counters_b[k];
 
+	vector<double> processed_contribution_a(deck_size); // recorded to orginal card order before shuffling, also normalize (only used for match records)
+	for (int k = 0; k < deck_size; k++)
+		processed_contribution_a[k] = (double)contribution_counters_a[deck_a_shuffle[k]] / (double)sum_contribution_a;
+	vector<double> processed_contribution_b(deck_size);
+	for (int k = 0; k < deck_size; k++)
+		processed_contribution_b[k] = (double)contribution_counters_b[deck_b_shuffle[k]] / (double)sum_contribution_b;
+
 	if (player1.CheckLose())
 	{
 		if (player2.CheckLose())
 		{
 			// draw
+			rec.DrawUpdate(processed_contribution_a, processed_contribution_b);
 			deck_a_stat.DrawUpdate(1.0);
 			deck_b_stat.DrawUpdate(1.0);
 			for (int k = 0; k < deck_size; k++)
 			{
-				card_stats[deck_a_indices[k]].DrawUpdate(contribution_counters_a[k] / (double)sum_contribution_a);
-				card_stats[deck_b_indices[k]].DrawUpdate(contribution_counters_b[k] / (double)sum_contribution_b);
+				card_stats[deck_a_indices[k]].DrawUpdate((double)contribution_counters_a[k] / (double)sum_contribution_a);
+				card_stats[deck_b_indices[k]].DrawUpdate((double)contribution_counters_b[k] / (double)sum_contribution_b);
 			}
 			cout << "They drew." << endl;
 		}
 		else
 		{
 			// deck i loses, deck j wins
+			if (is_inverted)
+				rec.LoseUpdate(processed_contribution_b, processed_contribution_a);
+			else
+				rec.WinUpdate(processed_contribution_a, processed_contribution_b);
 			deck_a_stat.LoseUpdate(1.0);
 			deck_b_stat.WinUpdate(1.0);
 			for (int k = 0; k < deck_size; k++)
 			{
-				card_stats[deck_a_indices[k]].LoseUpdate(contribution_counters_a[k] / (double)sum_contribution_a);
-				card_stats[deck_b_indices[k]].WinUpdate(contribution_counters_b[k] / (double)sum_contribution_b);
+				card_stats[deck_a_indices[k]].LoseUpdate((double)contribution_counters_a[k] / (double)sum_contribution_a);
+				card_stats[deck_b_indices[k]].WinUpdate((double)contribution_counters_b[k] / (double)sum_contribution_b);
 			}
 			cout << "The second deck won." << endl;
 		}
@@ -317,12 +333,16 @@ int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, cons
 	else
 	{
 		// deck i wins, deck j loses
+		if (is_inverted)
+			rec.WinUpdate(processed_contribution_b, processed_contribution_a);
+		else
+			rec.LoseUpdate(processed_contribution_a, processed_contribution_b);
 		deck_a_stat.WinUpdate(1.0);
 		deck_b_stat.LoseUpdate(1.0);
 		for (int k = 0; k < deck_size; k++)
 		{
-			card_stats[deck_a_indices[k]].WinUpdate(contribution_counters_a[k] / (double)sum_contribution_a);
-			card_stats[deck_b_indices[k]].LoseUpdate(contribution_counters_b[k] / (double)sum_contribution_b);
+			card_stats[deck_a_indices[k]].WinUpdate((double)contribution_counters_a[k] / (double)sum_contribution_a);
+			card_stats[deck_b_indices[k]].LoseUpdate((double)contribution_counters_b[k] / (double)sum_contribution_b);
 		}
 		cout << "The first deck won." << endl;
 	}
@@ -330,15 +350,15 @@ int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, cons
 	return player1.turn_num + player2.turn_num;
 }
 
-int SimulatePairMatchBetweenDecks(int ai_level, vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<MatchStat>& card_stats, MatchStat& deck_a_stat, MatchStat& deck_b_stat, int deck_size) // return total number of match turns (both sides summed)
+int SimulatePairMatchBetweenDecks(int ai_level, vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<BalanceStat>& card_stats, BalanceStat& deck_a_stat, BalanceStat& deck_b_stat, MatchRec& rec, int deck_size) // return total number of match turns (both sides summed)
 {
 	// test both the playing order (which player plays first and with plays second)
-	int turn_count_1 = SimulateSingleMatchBetweenDecks(ai_level, card_list, deck_a_orig_indices, deck_b_orig_indices, card_stats, deck_a_stat, deck_b_stat, deck_size);
-	int turn_count_2 = SimulateSingleMatchBetweenDecks(ai_level, card_list, deck_b_orig_indices, deck_a_orig_indices, card_stats, deck_b_stat, deck_a_stat, deck_size);
+	int turn_count_1 = SimulateSingleMatchBetweenDecks(ai_level, card_list, deck_a_orig_indices, deck_b_orig_indices, card_stats, deck_a_stat, deck_b_stat, rec, false, deck_size);
+	int turn_count_2 = SimulateSingleMatchBetweenDecks(ai_level, card_list, deck_b_orig_indices, deck_a_orig_indices, card_stats, deck_b_stat, deck_a_stat, rec, true, deck_size);
 	return turn_count_1 + turn_count_2;
 }
 
-int TestNewDeck(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<MatchStat>& card_stats, vector<MatchStat>& deck_stats, int deck_size, double temperature, int num_pair_matches, int& deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
+int TestNewDeck(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<BalanceStat>& card_stats, vector<BalanceStat>& deck_stats, vector<MatchRec>& rec_list, int deck_size, double temperature, int num_pair_matches, int& deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
 {
 	int p = card_list.size();
 	int n_decks = deck_list.size();
@@ -404,23 +424,33 @@ int TestNewDeck(int ai_level, vector<Card*>& card_list, vector<vector<int>>& dec
 	{
 		for (int i = 0; i < n_decks; i++)
 			if (i != duplicate_index)
-				for (int k = 0; k < num_pair_matches; k++) 
+			{
+				MatchRec rec(deck_list[i], deck_list[duplicate_index]);
+				for (int k = 0; k < num_pair_matches; k++)
 				{
 					cout << "Match Pair #" << ++match_pair_count << endl;
-					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[duplicate_index], card_stats, deck_stats[i], deck_stats[duplicate_index], deck_size);
-				}		
+					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[duplicate_index], card_stats, deck_stats[i], deck_stats[duplicate_index], rec, deck_size);
+				}
+				rec.UpdateStats();
+				rec_list.push_back(rec);
+			}
 		UpdateStatEvals(deck_stats);
 	}
 	else // if it is not a duplicate, test and decide whether to replace the worst among other decks
 	{
 		deck_count++;
-		MatchStat tmp_deck_stat;
+		BalanceStat tmp_deck_stat;
 		for (int i = 0; i < n_decks; i++)
-			for (int k = 0; k < num_pair_matches; k++) 
+		{
+			MatchRec rec(deck_list[i], new_deck);
+			for (int k = 0; k < num_pair_matches; k++)
 			{
 				cout << "Match Pair #" << ++match_pair_count << endl;
-				turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], new_deck, card_stats, deck_stats[i], tmp_deck_stat, deck_size);
+				turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], new_deck, card_stats, deck_stats[i], tmp_deck_stat, rec, deck_size);
 			}
+			rec.UpdateStats();
+			rec_list.push_back(rec);
+		}
 		UpdateStatEvals(deck_stats);
 		tmp_deck_stat.UpdateEval();
 
@@ -452,7 +482,7 @@ int TestNewDeck(int ai_level, vector<Card*>& card_list, vector<vector<int>>& dec
 	return turn_count;
 }
 
-int TestCrossOver(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<MatchStat>& card_stats, vector<MatchStat>& deck_stats, int deck_size, double temperature, int num_pair_matches, int& deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
+int TestCrossOver(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<BalanceStat>& card_stats, vector<BalanceStat>& deck_stats, vector<MatchRec>& rec_list, int deck_size, double temperature, int num_pair_matches, int& deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
 {
 	int n_decks = deck_list.size();
 
@@ -527,29 +557,39 @@ int TestCrossOver(int ai_level, vector<Card*>& card_list, vector<vector<int>>& d
 	
 	/* perform tests */
 	int turn_count = 0;
-	vector<MatchStat> tmp_deck_stats(2);
+	vector<BalanceStat> tmp_deck_stats(2);
 	for (int i = 0; i < 2; i++)
 	{
 		if (duplicate_indices[i] >= 0) // if it is a duplicate
 		{
 			for (int j = 0; j < n_decks; j++)
 				if (j != duplicate_indices[i])
-					for (int k = 0; k < num_pair_matches; k++) 
+				{
+					MatchRec rec(deck_list[j], deck_list[duplicate_indices[i]]);
+					for (int k = 0; k < num_pair_matches; k++)
 					{
 						cout << "Match Pair #" << ++match_pair_count << endl;
-						turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[j], deck_list[duplicate_indices[i]], card_stats, deck_stats[j], deck_stats[duplicate_indices[i]], deck_size);
-					}		
+						turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[j], deck_list[duplicate_indices[i]], card_stats, deck_stats[j], deck_stats[duplicate_indices[i]], rec, deck_size);
+					}
+					rec.UpdateStats();
+					rec_list.push_back(rec);
+				}
 			UpdateStatEvals(deck_stats);
 		}
 		else // if it is not a duplicate
 		{
 			deck_count++;
 			for (int j = 0; j < n_decks; j++)
-				for (int k = 0; k < num_pair_matches; k++) 
+			{
+				MatchRec rec(deck_list[j], deck_copies[i]);
+				for (int k = 0; k < num_pair_matches; k++)
 				{
 					cout << "Match Pair #" << ++match_pair_count << endl;
-					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[j], deck_copies[i], card_stats, deck_stats[j], tmp_deck_stats[i], deck_size);
+					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[j], deck_copies[i], card_stats, deck_stats[j], tmp_deck_stats[i], rec, deck_size);
 				}
+				rec.UpdateStats();
+				rec_list.push_back(rec);
+			}
 			UpdateStatEvals(deck_stats);
 			tmp_deck_stats[i].UpdateEval();
 		}	
@@ -557,11 +597,14 @@ int TestCrossOver(int ai_level, vector<Card*>& card_list, vector<vector<int>>& d
 	// if both are not duplicates, do a set of matches between them
 	if (duplicate_indices[0] < 0 && duplicate_indices[1] < 0)
 	{
+		MatchRec rec(deck_copies[0], deck_copies[1]);
 		for (int k = 0; k < num_pair_matches; k++)
 		{
 			cout << "Match Pair #" << ++match_pair_count << endl;
-			turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_copies[0], deck_copies[1], card_stats, tmp_deck_stats[0], tmp_deck_stats[1], deck_size);
+			turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_copies[0], deck_copies[1], card_stats, tmp_deck_stats[0], tmp_deck_stats[1], rec, deck_size);
 		}
+		rec.UpdateStats();
+		rec_list.push_back(rec);
 		tmp_deck_stats[0].UpdateEval();
 		tmp_deck_stats[1].UpdateEval();
 	}
@@ -637,7 +680,7 @@ int TestCrossOver(int ai_level, vector<Card*>& card_list, vector<vector<int>>& d
 	return turn_count;
 }
 
-int TestMutation(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<MatchStat>& card_stats, vector<MatchStat>& deck_stats, int deck_size, double temperature, int num_pair_matches, int deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
+int TestMutation(int ai_level, vector<Card*>& card_list, vector<vector<int>>& deck_list, vector<BalanceStat>& card_stats, vector<BalanceStat>& deck_stats, vector<MatchRec>& rec_list, int deck_size, double temperature, int num_pair_matches, int deck_count, int& match_pair_count) // return total number of match turns (both sides summed)
 {
 	int p = card_list.size();
 	int n_decks = deck_list.size();
@@ -711,23 +754,33 @@ int TestMutation(int ai_level, vector<Card*>& card_list, vector<vector<int>>& de
 	{
 		for (int i = 0; i < n_decks; i++)
 			if (i != duplicate_index)
-				for (int k = 0; k < num_pair_matches; k++) 
+			{
+				MatchRec rec(deck_list[i], deck_list[duplicate_index]);
+				for (int k = 0; k < num_pair_matches; k++)
 				{
 					cout << "Match Pair #" << ++match_pair_count << endl;
-					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[duplicate_index], card_stats, deck_stats[i], deck_stats[duplicate_index], deck_size);
-				}		
+					turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[duplicate_index], card_stats, deck_stats[i], deck_stats[duplicate_index], rec, deck_size);
+				}
+				rec.UpdateStats();
+				rec_list.push_back(rec);
+			}
 		UpdateStatEvals(deck_stats);
 	}
 	else // if it is not a duplicate, test and decide whether to replace the original deck it mutates from
 	{
 		deck_count++;
-		MatchStat tmp_deck_stat;
+		BalanceStat tmp_deck_stat;
 		for (int i = 0; i < n_decks; i++)
-			for (int k = 0; k < num_pair_matches; k++) 		
+		{
+			MatchRec rec(deck_list[i], deck_copy);
+			for (int k = 0; k < num_pair_matches; k++)
 			{
 				cout << "Match Pair #" << ++match_pair_count << endl;
-				turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_copy, card_stats, deck_stats[i], tmp_deck_stat, deck_size);
+				turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_copy, card_stats, deck_stats[i], tmp_deck_stat, rec, deck_size);
 			}
+			rec.UpdateStats();
+			rec_list.push_back(rec);
+		}
 		UpdateStatEvals(deck_stats);
 		tmp_deck_stat.UpdateEval();
 		
@@ -749,7 +802,7 @@ int TestMutation(int ai_level, vector<Card*>& card_list, vector<vector<int>>& de
 	return turn_count;
 }
 
-void WriteCardData(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<MatchStat>& card_stats, const char* filename)
+void WriteCardData(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<BalanceStat>& card_stats, const char* filename)
 {
 	int p = card_reps.size();
 
@@ -770,7 +823,7 @@ void WriteCardData(vector<Card*>& cards, const vector<CardRep>& card_reps, const
 	fs.clear();
 }
 
-void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<MatchStat>& card_stats, const char* filename) // more human readable verion, with card info
+void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, const vector<BalanceStat>& card_stats, const char* filename) // more human readable verion, with card info
 {
 	int p = card_reps.size();
 
@@ -790,7 +843,7 @@ void WriteCardDataHuman(vector<Card*>& cards, const vector<CardRep>& card_reps, 
 	fs.clear();
 }
 
-void WriteDataDeckSorted(const vector<vector<int>>& deck_list, const vector<MatchStat>& deck_stats, const vector<int>& sorted_deck_indices, int start_rank, int rank_step, int num_outputs, const char* filename) // Note: the rank passed in to the function should be zero-indexed (while in the file output it is one-indexed
+void WriteDataDeckSorted(const vector<vector<int>>& deck_list, const vector<BalanceStat>& deck_stats, const vector<int>& sorted_deck_indices, int start_rank, int rank_step, int num_outputs, const char* filename) // Note: the rank passed in to the function should be zero-indexed (while in the file output it is one-indexed
 {
 	int deck_num = deck_list.size();
 	int deck_size = deck_list[0].size();
@@ -819,7 +872,7 @@ void WriteDataDeckSorted(const vector<vector<int>>& deck_list, const vector<Matc
 
 #define MAX_STR_LEN 256
 
-void ReadCardData(vector<Card*>& cards, vector<CardRep>& card_reps, vector<MatchStat>& card_stats, const char* filename)
+void ReadCardData(vector<Card*>& cards, vector<CardRep>& card_reps, vector<BalanceStat>& card_stats, const char* filename)
 {
 	// often the match data file and read from it
 	ifstream fs(filename);
@@ -868,7 +921,7 @@ void ReadCardData(vector<Card*>& cards, vector<CardRep>& card_reps, vector<Match
 	fs.clear();
 }
 
-void ReadDeckData(vector<vector<int>>& deck_list, vector<MatchStat>& deck_stats, const char* filename)
+void ReadDeckData(vector<vector<int>>& deck_list, vector<BalanceStat>& deck_stats, const char* filename)
 {
 	ifstream fs(filename);
 	if (!fs.is_open())
@@ -900,7 +953,7 @@ void ReadDeckData(vector<vector<int>>& deck_list, vector<MatchStat>& deck_stats,
 	fs.clear();
 }
 
-void PrepareCardData(vector<Card*>& cards, const vector<MatchStat>& card_stats, vector<CardRep>& card_reps, vector<double>& card_strengths, vector<double>& card_weights, const char* filename, const char* filename_human) // pass in nullptrs to the filenames to indicate not saving to files
+void PrepareCardData(vector<Card*>& cards, const vector<BalanceStat>& card_stats, vector<CardRep>& card_reps, vector<double>& card_strengths, vector<double>& card_weights, const char* filename, const char* filename_human) // pass in nullptrs to the filenames to indicate not saving to files
 {
 	int p = cards.size();
 
@@ -924,6 +977,99 @@ void PrepareCardData(vector<Card*>& cards, const vector<MatchStat>& card_stats, 
 	}
 }
 
+void WriteMatchRecords(const vector<MatchRec>& recs, int deck_size, const char* filename)
+{
+	int n_recs = recs.size();
+
+	ofstream fs(filename);
+	fs << n_recs << endl << endl;
+	for (int i = 0; i < n_recs; i++)
+	{
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].deck_a_indices[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].deck_b_indices[j] << " ";
+		fs << endl;
+		fs << recs[i].win_weight << endl;
+		fs << recs[i].weight << endl;
+		fs << recs[i].win_rate << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].sum_win_contrib_a[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].ave_win_contrib_a[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].sum_total_partic_a[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].ave_total_partic_a[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].sum_win_contrib_b[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].ave_win_contrib_b[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].sum_total_partic_b[j] << " ";
+		fs << endl;
+		for (int j = 0; j < deck_size; j++)
+			fs << recs[i].ave_total_partic_b[j] << " ";
+		fs << endl;
+		fs << endl;
+	}
+	fs.close();
+	fs.clear();
+}
+
+void ReadMatchRecords(vector<MatchRec>& recs, int deck_size, const char* filename)
+{
+	ifstream fs(filename);
+	int n_recs;
+	fs >> n_recs;
+	recs.resize(n_recs);
+	for (int i = 0; i < n_recs; i++)
+	{
+		recs[i].deck_a_indices.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].deck_a_indices[j];
+		recs[i].deck_b_indices.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].deck_b_indices[j];
+		fs >> recs[i].win_weight;
+		fs >> recs[i].weight;
+		fs >> recs[i].win_rate;
+		recs[i].sum_win_contrib_a.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].sum_win_contrib_a[j];
+		recs[i].ave_win_contrib_a.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].ave_win_contrib_a[j];
+		recs[i].sum_total_partic_a.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].sum_total_partic_a[j];
+		recs[i].ave_total_partic_a.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].ave_total_partic_a[j];
+		recs[i].sum_win_contrib_b.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].sum_win_contrib_b[j];
+		recs[i].ave_win_contrib_b.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].ave_win_contrib_b[j];
+		recs[i].sum_total_partic_b.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].sum_total_partic_b[j];
+		recs[i].ave_total_partic_b.resize(deck_size);
+		for (int j = 0; j < deck_size; j++)
+			fs >> recs[i].ave_total_partic_b[j];
+	}
+	fs.close();
+	fs.clear();
+}
+
 int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, file paths (with different semantics among modes)
 {
 	int seed = 0;
@@ -937,7 +1083,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 	cout << "2 : Play against AI using decks generated freely or with specified seeds." << endl;
 	cout << "3 : Play against yourself with decks generated with specified seeds." << endl;
 	cout << "4 : Simulate AI Vs AI matches between (different) AI's on the same set of random decks (Warning: this may take hours to days)." << endl;
-	cout << "5 : Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same random card pool with both evolutionary and random deck building and matching scheme (Warning: this may take hours to days)." << endl;
+	cout << "5 : Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same random card pool with both random and evolutionary deck building/matching scheme (Warning: this may take hours to days)." << endl;
 	cout << "6 : Simulate AI Vs AI matches (with same AI) between different two small sets of given decks (Warning: this may take hours to days)." << endl;
 	cout << "7 : Play against AI using decks in either the meta environment (generated by the evolutionary simulation) or the random environment (generated by the random simulation)." << endl;
 	
@@ -962,12 +1108,12 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			// read card data
 			vector<Card*> card_list;
 			vector<CardRep> card_reps;
-			vector<MatchStat> card_stats; // it is questionable whether we should clear this before simulation, but these are not used here so it should be fine for now
+			vector<BalanceStat> card_stats; // it is questionable whether we should clear this before simulation, but these are not used here so it should be fine for now
 			ReadCardData(card_list, card_reps, card_stats, Card_Path.c_str());
 
 			// read deck data
 			vector<vector<int>> deck_lists[2];
-			vector<MatchStat> deck_stat_lists[2]; // not actually used here, the original stats from when the deck where initially created and tested
+			vector<BalanceStat> deck_stat_lists[2]; // not actually used here, the original stats from when the deck where initially created and tested
 			for (int i = 0; i < 2; i++)
 				ReadDeckData(deck_lists[i], deck_stat_lists[i], Deck_Paths[i].c_str());
 			int deck_size = deck_lists[0][0].size();
@@ -978,7 +1124,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				int your_deck_set = 0;
 				int your_deck_rank = 1;
 				int ai_deck_set = 1;
-				int ai_deck_rank = 30;
+				int ai_deck_rank = 10;
 				vector<int> your_deck_indices;
 				vector<int> ai_deck_indices;
 				cout << "The default setting is you choose one of the meta decks (stronger) and ai chooses one of the top random decks (weaker). Change default? (y/n)" << endl;
@@ -1010,12 +1156,12 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					else
 						cout << "AI selected top random decks" << endl << endl;
 				}
-				cout << "Choose, within the set, the rank of the deck for you to play (1 ~ 30)" << endl;
+				cout << "Choose, within the set, the rank of the deck for you to play (1 ~ 10)" << endl;
 				while (!(cin >> selection)) { cin.clear(); cin.ignore(); }
 				if (selection <= 0)
 					selection = 1;
-				else if (selection > 30)
-					selection = 30;
+				else if (selection > 10)
+					selection = 10;
 				if (your_deck_set == 0)
 					cout << "You selected #" << selection << " meta deck." << endl << endl;
 				else
@@ -1023,12 +1169,12 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				your_deck_indices = deck_lists[your_deck_set][selection - 1];
 				BrowseCardSet(card_list, your_deck_indices);
 				cout << endl;
-				cout << "Choose, within the set, the rank of the deck for ai to play (1 ~ 30)" << endl;
+				cout << "Choose, within the set, the rank of the deck for ai to play (1 ~ 10)" << endl;
 				while (!(cin >> selection)) { cin.clear(); cin.ignore(); }
 				if (selection <= 0)
 					selection = 1;
-				else if (selection > 30)
-					selection = 30;
+				else if (selection > 10)
+					selection = 10;
 				if (ai_deck_set == 0)
 					cout << "AI selected #" << selection << " meta deck." << endl << endl;
 				else
@@ -1041,9 +1187,13 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << endl;
 
 				GiglRandInit(time(NULL));
+				vector<int> your_deck_shuffle(deck_size);
+				vector<int> ai_deck_shuffle(deck_size);
+				vector<int> your_shuffled_indices(deck_size);
+				vector<int> ai_shuffled_indices(deck_size);
 				vector<Card*> your_deck(deck_size);
 				vector<Card*> ai_deck(deck_size);
-				InitMatch(card_list, your_deck_indices, ai_deck_indices, your_deck, ai_deck);
+				InitMatch(card_list, your_deck_indices, ai_deck_indices, your_deck_shuffle, ai_deck_shuffle, your_shuffled_indices, ai_shuffled_indices, your_deck, ai_deck);
 
 				queue<DeferredEvent*> event_queue;
 				Player human_player("Player", 30, your_deck, false, event_queue);
@@ -1099,12 +1249,12 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			// read card data
 			vector<Card*> card_list;
 			vector<CardRep> card_reps;
-			vector<MatchStat> card_stats; // it is questionable whether we should clear this before simulation, but these are not used here so it should be fine for now
+			vector<BalanceStat> card_stats; // it is questionable whether we should clear this before simulation, but these are not used here so it should be fine for now
 			ReadCardData(card_list, card_reps, card_stats, Card_Path.c_str());
 
 			// read deck data
 			vector<vector<int>> deck_list_a, deck_list_b;
-			vector<MatchStat> deck_stats_a, deck_stats_b; // not actually used here, the original stats from when the deck where initially created and tested
+			vector<BalanceStat> deck_stats_a, deck_stats_b; // not actually used here, the original stats from when the deck where initially created and tested
 			ReadDeckData(deck_list_a, deck_stats_a, Deck_A_Path.c_str());
 			ReadDeckData(deck_list_b, deck_stats_b, Deck_B_Path.c_str());
 			int deck_num_a = deck_list_a.size();
@@ -1123,12 +1273,14 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			{
 				for (int j = 0; j < deck_num_b; j++)
 				{
-					MatchStat tmp_stat_a, tmp_stat_b; // only tmp_stat_a is recorded to output (well they should be symmetric)
+					BalanceStat tmp_stat_a, tmp_stat_b; // only tmp_stat_a is recorded to output (well they should be symmetric)
 					cout << "Deck " << i << " from the first list VS Deck " << j << " from the second list." << endl;
 					for (int k = 0; k < num_pair_matches; k++)
 					{
 						cout << "Match Pair " << k << ":" << endl;
-						turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list_a[i], deck_list_b[j], card_stats, tmp_stat_a, tmp_stat_b, deck_size);
+						MatchRec rec(deck_list_a[i], deck_list_b[j]); // not actually used
+						turn_count += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list_a[i], deck_list_b[j], card_stats, tmp_stat_a, tmp_stat_b, rec, deck_size);
+						rec.UpdateStats();
 					}
 					tmp_stat_a.UpdateEval();
 					tmp_stat_b.UpdateEval(); // not actually necessary
@@ -1154,7 +1306,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 		break;
 	case 5:
 		{
-			int p = 1000; // size of the card pool
+			int p = 100; // size of the card pool
 
 			if (argc > 2)
 			{
@@ -1175,20 +1327,24 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			if (argc > 4)
 				Match_Deck_Data_Path = argv[4];
 
+			string Match_Match_Data_Path = "match_match_data.txt";
+			if (argc > 5)
+				Match_Deck_Data_Path = argv[5];
+
 			// the card pool is shared between the two simulation methods
 			vector<Card*> card_list = GenerateCardSet(p, seed);
 
 			// random environment benchmark related parameters
-			int deck_num_random = 3000; // total number of decks
-			int match_pair_num_random = 200000; // total number of pair matches
+			int deck_num_random = 1000; // total number of decks
+			int match_pair_num_random = 10000; // total number of pair matches
 			int turn_count_random = 0; // number of match turns, not known before hand
 			double total_time_random;
 
 			// meta environment benchmark related parameters
-			int deck_pool_size = 30; // number of active decks (will evolve during the simulation)
+			int deck_pool_size = 10; // number of active decks (will evolve during the simulation)
 			int num_pair_matches_init = 2; // initial number of pair matches between each two decks
 			int num_pair_matches_final = 8; // final number of pair matches between each two decks
-			int num_evolve_iter = 1000;
+			int num_evolve_iter = 100;
 			int deck_count_evolved = deck_pool_size; // it starts with the initial deck pool size, but the total number is not known before hand
 			int match_pair_count_evolved = 0; // this is not known before hand
 			int turn_count_evolved = 0; // number of match turns, not known before hand
@@ -1235,10 +1391,22 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					Match_Deck_Data_Path_Skip_Random.insert(post_fix_pos, "_skip_random");
 				}
 
+				string Match_Match_Data_Path_Random;
+				post_fix_pos = Match_Match_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Match_Data_Path_Random = Match_Match_Data_Path + "_random";
+				}
+				else
+				{
+					Match_Match_Data_Path_Random = Match_Match_Data_Path;
+					Match_Match_Data_Path_Random.insert(post_fix_pos, "_random");
+				}
+
 				unsigned ai_level = 2;
 
-				vector<MatchStat> card_stats(p);
-				vector<MatchStat> deck_stats(deck_num_random);
+				vector<BalanceStat> card_stats(p);
+				vector<BalanceStat> deck_stats(deck_num_random);
 
 				time_t timer_0 = time(NULL);
 
@@ -1246,12 +1414,16 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				for (int i = 0; i < deck_num_random; i++)
 					deck_list.push_back(CreateRandomSelection(p, n)); // problematic as some cards may not get selected
 
+				vector<MatchRec> rec_list;
 				for (int i = 0; i < match_pair_num_random; i++)
 				{
 					int index_a = GetGiglRandInt(deck_num_random);
 					int index_b = GetGiglRandInt(deck_num_random);
 					cout << "Match Pair " << i << ": Deck " << index_a << " VS Deck " << index_b << ". " << endl;
-					turn_count_random += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[index_a], deck_list[index_b], card_stats, deck_stats[index_a], deck_stats[index_b], n);
+					MatchRec rec(deck_list[index_a], deck_list[index_b]);
+					turn_count_random += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[index_a], deck_list[index_b], card_stats, deck_stats[index_a], deck_stats[index_b], rec, n);
+					rec.UpdateStats();
+					rec_list.push_back(rec);
 				}
 				UpdateStatEvals(card_stats);
 				UpdateStatEvals(deck_stats);
@@ -1278,9 +1450,11 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				// decks
 				vector<int> deck_indices(deck_num_random);
 				SortStatInIndices(deck_stats, deck_indices);
-				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 3000, Match_Deck_Data_Path_All_Random.c_str());
-				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 30, Match_Deck_Data_Path_Top_Random.c_str());
-				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 49, 100, 30, Match_Deck_Data_Path_Skip_Random.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 1000, Match_Deck_Data_Path_All_Random.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 10, Match_Deck_Data_Path_Top_Random.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 49, 100, 10, Match_Deck_Data_Path_Skip_Random.c_str());
+				// matches
+				WriteMatchRecords(rec_list, n, Match_Match_Data_Path_Random.c_str());
 			}
 			/* evolved environment simulation */
 			{
@@ -1311,14 +1485,28 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					Match_Deck_Data_Path_Evolved.insert(post_fix_pos, "_evolved");
 				}
 
+				string Match_Match_Data_Path_Evolved;
+				post_fix_pos = Match_Match_Data_Path.rfind(".");
+				if (post_fix_pos == string::npos)
+				{
+					Match_Match_Data_Path_Evolved = Match_Match_Data_Path + "_evolved";
+				}
+				else
+				{
+					Match_Match_Data_Path_Evolved = Match_Match_Data_Path;
+					Match_Match_Data_Path_Evolved.insert(post_fix_pos, "_evolved");
+				}
+
 				unsigned ai_level = 2;
 
-				vector<MatchStat> card_stats(p);
-				vector<MatchStat> deck_stats(deck_pool_size);
-
-				vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
+				vector<BalanceStat> card_stats(p);
+				vector<BalanceStat> deck_stats(deck_pool_size);
 
 				time_t timer_0 = time(NULL);
+
+				vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
+				
+				vector<MatchRec> rec_list;
 
 				// initialization
 				cout << "Creating and testing initial deck pool." << endl;
@@ -1340,11 +1528,16 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				}
 				for (int i = 0; i < deck_pool_size - 1; i++)
 					for (int j = i + 1; j < deck_pool_size; j++)
+					{
+						MatchRec rec(deck_list[i], deck_list[j]);
 						for (int k = 0; k < num_pair_matches_init; k++)
 						{
 							cout << "Match Pair #" << ++match_pair_count_evolved << endl;
-							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], n);
+							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], rec, n);
 						}
+						rec.UpdateStats();
+						rec_list.push_back(rec);
+					}
 				cout << endl;
 				UpdateStatEvals(card_stats);
 				UpdateStatEvals(deck_stats);
@@ -1364,7 +1557,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					double progress = iter / (double)num_evolve_iter;
 					double ln_t = ln_t_init + progress * (ln_t_final - ln_t_init); // temperature interpolated in log scale
 					double t = exp(ln_t);
-					int num_pair_matches = (int)(num_pair_matches_init + progress * (num_pair_matches_final - num_pair_matches_init));
+					int num_pair_matches = (int)(num_pair_matches_init + progress * (double)(num_pair_matches_final - num_pair_matches_init));
 					double action_probs[2]; // the third one is not used
 					for (int i = 0; i < 2; i++)
 						action_probs[i] = action_probs_init[i] + progress * (action_probs_final[i] - action_probs_init[i]);
@@ -1373,17 +1566,17 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					if (roll < action_probs[0]) // new deck
 					{
 						cout << "testing a new deck" << endl;
-						turn_count_evolved += TestNewDeck(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+						turn_count_evolved += TestNewDeck(ai_level, card_list, deck_list, card_stats, deck_stats, rec_list, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
 					}
 					else if (roll < action_probs[1]) // cross-over
 					{
 						cout << "testing the cross-overs of two existing decks" << endl;
-						turn_count_evolved += TestCrossOver(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+						turn_count_evolved += TestCrossOver(ai_level, card_list, deck_list, card_stats, deck_stats, rec_list, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
 					}
 					else // mutation
 					{
 						cout << "testing the mutation of an existing deck" << endl;
-						turn_count_evolved += TestMutation(ai_level, card_list, deck_list, card_stats, deck_stats, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
+						turn_count_evolved += TestMutation(ai_level, card_list, deck_list, card_stats, deck_stats, rec_list, n, t, num_pair_matches, deck_count_evolved, match_pair_count_evolved);
 					}
 					UpdateStatEvals(card_stats); // deck stats should already be updated inside those "Test" functions
 					cout << endl;
@@ -1395,11 +1588,16 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << "Testing the final deck pool." << endl;
 				for (int i = 0; i < deck_pool_size - 1; i++)
 					for (int j = i + 1; j < deck_pool_size; j++)
+					{
+						MatchRec rec(deck_list[i], deck_list[j]);
 						for (int k = 0; k < num_pair_matches_final; k++)
 						{
 							cout << "Match Pair #" << ++match_pair_count_evolved << endl;
-							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], n);
+							turn_count_evolved += SimulatePairMatchBetweenDecks(ai_level, card_list, deck_list[i], deck_list[j], card_stats, deck_stats[i], deck_stats[j], rec, n);
 						}
+						rec.UpdateStats();
+						rec_list.push_back(rec);
+					}
 				cout << endl;
 				UpdateStatEvals(card_stats);
 				UpdateStatEvals(deck_stats);
@@ -1428,7 +1626,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				// decks
 				vector<int> deck_indices(deck_pool_size);
 				SortStatInIndices(deck_stats, deck_indices);
-				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 30, Match_Deck_Data_Path_Evolved.c_str());
+				WriteDataDeckSorted(deck_list, deck_stats, deck_indices, 0, 1, 10, Match_Deck_Data_Path_Evolved.c_str());
+				// matches
+				WriteMatchRecords(rec_list, n, Match_Match_Data_Path_Evolved.c_str());
 			}
 
 			/* performance report */

@@ -1,5 +1,7 @@
 // note that this is a file containing rep for variety of purposes, approximately indicated by the sections with the comments
-// it is not easy to separate into different files due to artifacts from GIGL (not separating header and implementation), which requires all interface to Cards (accessing class member variable or methods, exceptions includes only using the class type) must be defined in one file (here it is Player.cpp)
+// it is not easy to separate into different files due to artifacts from GIGL (not separating header and implementation), which requires all interface to Cards (accessing class member variable or methods, exceptions includes only using the class type) 
+// must be implemented in one file (here it is Player.cpp), so there is only one file (Player.cpp) that directly or indirectly include card.generated.h,
+// having #pragma once or #include guards on card.generated.h would NOT work as an alternative
 #pragma once
 
 #include <vector>
@@ -314,7 +316,7 @@ string GetCardBrief(Card* card); // artifact from file including issues
 string GetCardDetail(Card* card); // artifact from file including issues
 vector<Card*> GenerateCardSet(int n, int seed); // giving no duplicate card seeds
 vector<int> GenerateCardSetSeeds(int n, int seed); // giving no duplicate card seeds
-void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b); // shuffle the card indices, return the seed for the match (also modify shuffled indices in place, and pass back the ordered cards for this match)
+void InitMatch(vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<int>& deck_a_shuffle, vector<int>& deck_b_shuffle, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b); // shuffle the card indices, the "shuffle" vectors pass back how the deck is ordered using indices in the deck, the "indices" vectors pass back the indices in the card pool
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player);
 Card* HardCopyCard(Card* card); // artifact from file including issues
 vector<Card*> HardCopyCards(vector<Card*> cards); // artifact from file including issues
@@ -570,5 +572,28 @@ struct ExtraCardGenConfig
 
 ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep*& rep); 
 
+struct MatchRec // records for matches between two specific decks
+{
+	MatchRec();
+	MatchRec(const vector<int>& _deck_a_indices, const vector<int>& _deck_b_indices);
+	void WinUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // b wins
+	void LoseUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // b losses
+	void DrawUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // draw
+	void UpdateStats();
+	vector<int> deck_a_indices;
+	vector<int> deck_b_indices;
+	double weight; // number of matches
+	double win_weight; // wins for deck b over a (one draw counts as 0.5 wins for b)
+	double win_rate; // win rate for deck b over a (one draw counts as 0.5 wins for b)
+	vector<double> sum_win_contrib_a; // accumlated card win contribution for cards in deck a
+	vector<double> ave_win_contrib_a; // average over matches
+	vector<double> sum_total_partic_a; // accumulated card total participation for cards in deck a
+	vector<double> ave_total_partic_a; // average over matches
+	vector<double> sum_win_contrib_b;
+	vector<double> ave_win_contrib_b;
+	vector<double> sum_total_partic_b;
+	vector<double> ave_total_partic_b;
+};
 
-/* Neural network part not included in this version */
+
+// More neural network source are in other source files

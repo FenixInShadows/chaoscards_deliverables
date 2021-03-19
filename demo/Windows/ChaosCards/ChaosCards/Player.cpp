@@ -5,15 +5,19 @@
 #include <algorithm>
 #include <ctime>
 #include <cmath>
+#include <numeric>
 
 /* Card/Player section */
 
 
-Player::Player(queue<DeferredEvent*>& _event_queue) : field(), hand(), deck(), event_queue(_event_queue)
+Player::Player(queue<DeferredEvent*>& _event_queue) : field(), hand(), deck(), event_queue(_event_queue),
+	name(""), is_lost(false), is_turn_active(false), turn_num(0), max_mp(0), mp_loss(0), fatigue(0), field_size_adjust(0), hand_size_adjust(0), deck_size_adjust(0), is_guest(true), is_exploration(false), input_func(&Player::TakeInputs),
+	ai_level(0), opponent(nullptr), leader(nullptr)
 {
 }
 
-Player::Player(const string& _name, int _hp, const vector<Card*>& _deck, bool _is_guest, queue<DeferredEvent*>& _event_queue) : name(_name), is_lost(false), is_turn_active(false), turn_num(0), max_mp(0), mp_loss(0), fatigue(0), field(), hand(), deck(_deck), field_size_adjust(0), hand_size_adjust(0), deck_size_adjust(0), is_guest(_is_guest), is_exploration(false), event_queue(_event_queue), input_func(&Player::TakeInputs)
+Player::Player(const string& _name, int _hp, const vector<Card*>& _deck, bool _is_guest, queue<DeferredEvent*>& _event_queue) : name(_name), is_lost(false), is_turn_active(false), turn_num(0), max_mp(0), mp_loss(0), fatigue(0), field(), hand(), deck(_deck), field_size_adjust(0), hand_size_adjust(0), deck_size_adjust(0), is_guest(_is_guest), is_exploration(false), event_queue(_event_queue), input_func(&Player::TakeInputs),
+	ai_level(2), opponent(nullptr)
 {
 	leader = CreateDefaultLeader(_hp);
 	leader->card_pos = CARD_POS_AT_LEADER;
@@ -1629,7 +1633,7 @@ vector<int> GenerateCardSetSeeds(int n, int seed)
 	return seed_set;
 }
 
-void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b) // card_list didn't use const only because GIGL currently doesn't allow node sections to have const functions (can be made const when GIGL takes this into account)
+void InitMatch(vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<int>& deck_a_shuffle, vector<int>& deck_b_shuffle, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b) // card_list didn't use const only because GIGL currently doesn't allow node sections to have const functions (can be made const when GIGL takes this into account)
 {
 	int seed = GetRandInt();
 	RandInit(seed);
@@ -1638,15 +1642,21 @@ void InitMatch(vector<Card*>& card_list, vector<int>& deck_a_indices, vector<int
 	int size_a = deck_a_indices.size();
 	int size_b = deck_b_indices.size();
 
-	// Shuffle
-	RandShuffle(deck_a_indices.data(), size_a);
-	RandShuffle(deck_b_indices.data(), size_b);
-	
-	// index to seeds
+	// shuffle and reproduce the orders to other info
+	iota(deck_a_shuffle.begin(), deck_a_shuffle.end(), 0); // fill index with {0,1,2,...}
+	RandShuffle(deck_a_shuffle.data(), size_a);
 	for (int k = 0; k < size_a; k++)
+	{
+		deck_a_indices[k] = deck_a_orig_indices[deck_a_shuffle[k]];
 		deck_a[k] = HardCopyCard(card_list[deck_a_indices[k]]);
+	}
+	iota(deck_b_shuffle.begin(), deck_b_shuffle.end(), 0); // fill index with {0,1,2,...}
+	RandShuffle(deck_b_shuffle.data(), size_b);
 	for (int k = 0; k < size_b; k++)
+	{
+		deck_b_indices[k] = deck_b_orig_indices[deck_b_shuffle[k]];
 		deck_b[k] = HardCopyCard(card_list[deck_b_indices[k]]);
+	}
 }
 
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player)
@@ -2312,4 +2322,90 @@ ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep*& rep)
 }
 
 
-/* Neural network part not included in this version */
+MatchRec::MatchRec()
+{
+}
+
+MatchRec::MatchRec(const vector<int>& _deck_a_indices, const vector<int>& _deck_b_indices)
+	: deck_a_indices(_deck_a_indices), deck_b_indices(_deck_b_indices), win_weight(0.0), weight(0.0), win_rate(0.5),
+	sum_win_contrib_a(_deck_a_indices.size(), 0.0), ave_win_contrib_a(_deck_a_indices.size(), 0.5 / (double)deck_a_indices.size()),
+	sum_total_partic_a(_deck_a_indices.size(), 0.0), ave_total_partic_a(_deck_a_indices.size(), 1.0 / (double)deck_a_indices.size()),
+	sum_win_contrib_b(_deck_b_indices.size(), 0.0), ave_win_contrib_b(_deck_b_indices.size(), 0.5 / (double)deck_b_indices.size()),
+	sum_total_partic_b(_deck_b_indices.size(), 0.0), ave_total_partic_b(_deck_b_indices.size(), 1.0 / (double)deck_b_indices.size())
+{
+}
+
+void MatchRec::WinUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b)
+{
+	win_weight += 1.0;
+	weight += 1.0;
+	for (int i = 0; i < contribution_a.size(); i++)
+		sum_total_partic_a[i] += contribution_a[i];
+	for (int i = 0; i < contribution_b.size(); i++)
+	{
+		sum_win_contrib_b[i] += contribution_b[i];
+		sum_total_partic_b[i] += contribution_b[i];
+	}
+}
+
+void MatchRec::LoseUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b)
+{
+	weight += 1.0;
+	for (int i = 0; i < contribution_a.size(); i++)
+	{
+		sum_win_contrib_a[i] += contribution_a[i];
+		sum_total_partic_a[i] += contribution_a[i];
+	}
+	for (int i = 0; i < contribution_b.size(); i++)
+		sum_total_partic_b[i] += contribution_b[i];
+}
+
+
+void MatchRec::DrawUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b)
+{
+	win_weight += 0.5;
+	weight += 1.0;
+	for (int i = 0; i < contribution_a.size(); i++)
+	{
+		sum_win_contrib_a[i] += 0.5 * contribution_a[i];
+		sum_total_partic_a[i] += contribution_a[i];
+	}
+	for (int i = 0; i < contribution_b.size(); i++)
+	{
+		sum_win_contrib_b[i] += 0.5 * contribution_b[i];
+		sum_total_partic_b[i] += contribution_b[i];
+	}
+}
+
+void MatchRec::UpdateStats()
+{
+	if (weight > 0)
+	{
+		win_rate = win_weight / weight;
+		for (int i = 0; i < sum_win_contrib_a.size(); i++)
+		{
+			ave_win_contrib_a[i] = sum_win_contrib_a[i] / weight;
+			ave_total_partic_a[i] = sum_total_partic_a[i] / weight;
+		}
+		for (int i = 0; i < sum_win_contrib_b.size(); i++)
+		{
+			ave_win_contrib_b[i] = sum_win_contrib_b[i] / weight;
+			ave_total_partic_b[i] = sum_total_partic_b[i] / weight;
+		}
+	}
+}
+
+
+/*torch::Tensor GetCardCode(Card* card, CardEncoderNet* encoder)
+{
+
+}
+
+Card* RecreateCard(Card* card, CardEncoderNet* encoder)
+{
+	GetCardMeanCode()
+	return CreateCardFromRep(card->name, );
+}*/
+
+
+// More neural network source are in other source files
