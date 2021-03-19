@@ -46,3 +46,4 @@ demo/Unix/ChaosCards/*.exe
 **/Release*/*
 
 **/*.opendb
+**/ipch*/*
