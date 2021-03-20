@@ -39,6 +39,9 @@
     <ClCompile Include="..\..\..\..\include\common\StrConfig.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
+    <ClCompile Include="DataUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\include\common\StrConfig.h">
       <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="DataUtil.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

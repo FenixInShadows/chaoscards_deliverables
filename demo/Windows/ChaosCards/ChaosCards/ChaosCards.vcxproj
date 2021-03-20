@@ -295,6 +295,7 @@
     <ClCompile Include="..\..\..\..\include\common\GiglConfig.cpp" />
     <ClCompile Include="..\..\..\..\include\common\RandConfig.cpp" />
     <ClCompile Include="..\..\..\..\include\common\StrConfig.cpp" />
+    <ClCompile Include="DataUtil.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
@@ -305,6 +306,7 @@
     <ClInclude Include="..\..\..\..\include\common\StrConfig.h" />
     <ClInclude Include="..\..\..\..\include\GiglDefaultInclude.h" />
     <ClInclude Include="card.generated.h" />
+    <ClInclude Include="DataUtil.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>

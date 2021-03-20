@@ -4,6 +4,8 @@
 // having #pragma once or #include guards on card.generated.h would NOT work as an alternative
 #pragma once
 
+#include "DataUtil.h"
+
 #include <vector>
 #include <queue>
 #include <string>
@@ -544,56 +546,11 @@ private:
 
 /* Machine Learning Section */
 
-
-struct NodeRep
-{
-	NodeRep(unsigned _choice, const vector<double>& _term_info);
-	string GetPrintVersion() const;
-	unsigned choice;
-	vector<double> term_info;
-};
-typedef vector<NodeRep> CardRep;
-
-NodeRep mkNodeRep(unsigned choice, const vector<double>& term_info);
-NodeRep mkNodeRep(unsigned choice);
-
 double NormalizeCode(double val, double min_val, double max_val); // normalize to -1.0 ~ 1.0
 int DenormalizeCode(double code, double min_val, double max_val); // de-normalize from -1.0 ~ 1.0 to an integer
 void GetCardRep(Card* card, CardRep& card_rep);
 void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps);
 Card* CreateCardFromRep(const string& name, CardRep& card_rep); // card_rep should also be const but the argument type in subsequent function call is a little nasty to deal with...
-
-struct ExtraCardGenConfig
-{
-	ExtraCardGenConfig(const string& _name, NodeRep*& _rep);
-	string name;
-	NodeRep*& rep;
-};
-
-ExtraCardGenConfig* MkExtraCardGenConfig(const string& name, NodeRep*& rep); 
-
-struct MatchRec // records for matches between two specific decks
-{
-	MatchRec();
-	MatchRec(const vector<int>& _deck_a_indices, const vector<int>& _deck_b_indices);
-	void WinUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // b wins
-	void LoseUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // b losses
-	void DrawUpdate(const vector<double>& contribution_a, const vector<double>& contribution_b); // draw
-	void UpdateStats();
-	vector<int> deck_a_indices;
-	vector<int> deck_b_indices;
-	double weight; // number of matches
-	double win_weight; // wins for deck b over a (one draw counts as 0.5 wins for b)
-	double win_rate; // win rate for deck b over a (one draw counts as 0.5 wins for b)
-	vector<double> sum_win_contrib_a; // accumlated card win contribution for cards in deck a
-	vector<double> ave_win_contrib_a; // average over matches
-	vector<double> sum_total_partic_a; // accumulated card total participation for cards in deck a
-	vector<double> ave_total_partic_a; // average over matches
-	vector<double> sum_win_contrib_b;
-	vector<double> ave_win_contrib_b;
-	vector<double> sum_total_partic_b;
-	vector<double> ave_total_partic_b;
-};
 
 
 // More neural network source are in other source files

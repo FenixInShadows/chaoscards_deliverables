@@ -1,6 +1,6 @@
 compile: card.exe
 
-card.exe: main.cpp Player.cpp Player.h card.generated.h
+card.exe: main.cpp Player.cpp Player.h DataUtil.cpp DataUtil.h card.generated.h
 	g++ -std=c++11 -O3 -I../../../include/ *.cpp ../../../include/common/*.cpp -o card.exe
 
 translate: card.generated.h
