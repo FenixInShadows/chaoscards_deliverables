@@ -1174,6 +1174,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					break;
 			}
 			
+			DeleteCards(card_list);
 		}
 		break;
 	case 6:
