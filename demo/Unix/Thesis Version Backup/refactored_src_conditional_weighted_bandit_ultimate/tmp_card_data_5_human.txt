@@ -1,0 +1,1822 @@
+100
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.555536
+Num wins: 5723
+Num losses: 4149
+Total num: 9872
+Effective win contribution: 288.783
+Draw contribution: 0
+Second player effective win contribution: 140.086
+Total participation: 519.828
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.438791
+Num wins: 1487
+Num losses: 1799
+Total num: 3286
+Effective win contribution: 72.4618
+Draw contribution: 0
+Second player effective win contribution: 35.1256
+Total participation: 165.14
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Both players lose 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.26589
+Num wins: 630
+Num losses: 1108
+Total num: 1738
+Effective win contribution: 17.9207
+Draw contribution: 0
+Second player effective win contribution: 8.89556
+Total participation: 67.3989
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.595907
+Num wins: 5907
+Num losses: 4251
+Total num: 10158
+Effective win contribution: 380.846
+Draw contribution: 0
+Second player effective win contribution: 189.738
+Total participation: 639.103
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.417907
+Num wins: 885
+Num losses: 1103
+Total num: 1988
+Effective win contribution: 45.7164
+Draw contribution: 0
+Second player effective win contribution: 23.8589
+Total participation: 109.394
+
+
+Name: Anonymous.
+MANA: 5 (originally 5)
+TYPE: Spell.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+Cast: Give +0/+5 to a friendly Demon with Poison having at most 5 health.
+
+
+Eval (win rate): 0.400645
+Num wins: 2734
+Num losses: 2780
+Total num: 5514
+Effective win contribution: 75.0807
+Draw contribution: 0
+Second player effective win contribution: 39.0738
+Total participation: 187.399
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.384359
+Num wins: 1816
+Num losses: 2406
+Total num: 4222
+Effective win contribution: 76.7828
+Draw contribution: 0
+Second player effective win contribution: 36.6153
+Total participation: 199.768
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.47825
+Num wins: 2383
+Num losses: 2521
+Total num: 4904
+Effective win contribution: 154.371
+Draw contribution: 0
+Second player effective win contribution: 77.33
+Total participation: 322.783
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.390069
+Num wins: 1791
+Num losses: 2233
+Total num: 4024
+Effective win contribution: 64.6501
+Draw contribution: 0
+Second player effective win contribution: 33.1747
+Total participation: 165.74
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.500564
+Num wins: 3357
+Num losses: 2593
+Total num: 5950
+Effective win contribution: 117.005
+Draw contribution: 0
+Second player effective win contribution: 59.3203
+Total participation: 233.746
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.531639
+Num wins: 4892
+Num losses: 3876
+Total num: 8768
+Effective win contribution: 237.974
+Draw contribution: 0
+Second player effective win contribution: 120.493
+Total participation: 447.623
+
+
+Name: Anonymous.
+MANA: 8 (originally 8).
+ATK: 5 (originally 5).
+HP: 25 of 25 (originally 25).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Leader (Does not counter-attack).
+Taunt.
+Lifesteal.
+(Originally Taunt. Lifesteal.)
+
+
+Eval (win rate): 0.344742
+Num wins: 1519
+Num losses: 2157
+Total num: 3676
+Effective win contribution: 47.7311
+Draw contribution: 0
+Second player effective win contribution: 23.6379
+Total participation: 138.454
+
+
+Name: Anonymous.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.399982
+Num wins: 1654
+Num losses: 1762
+Total num: 3416
+Effective win contribution: 48.9863
+Draw contribution: 0
+Second player effective win contribution: 24.8699
+Total participation: 122.472
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.487775
+Num wins: 2879
+Num losses: 2167
+Total num: 5046
+Effective win contribution: 88.8499
+Draw contribution: 0
+Second player effective win contribution: 45.0917
+Total participation: 182.153
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+Charge.
+Taunt.
+Untargetable (Cannot be targeted by spells or battlecries).
+Lifesteal.
+(Originally Charge. Taunt. Untargetable. Lifesteal.)
+
+
+Eval (win rate): 0.659252
+Num wins: 8799
+Num losses: 6285
+Total num: 15084
+Effective win contribution: 632.598
+Draw contribution: 0
+Second player effective win contribution: 312.931
+Total participation: 959.569
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.386408
+Num wins: 1938
+Num losses: 2382
+Total num: 4320
+Effective win contribution: 75.3519
+Draw contribution: 0
+Second player effective win contribution: 37.2257
+Total participation: 195.006
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.358238
+Num wins: 1163
+Num losses: 2027
+Total num: 3190
+Effective win contribution: 61.2223
+Draw contribution: 0
+Second player effective win contribution: 27.5818
+Total participation: 170.899
+
+
+Name: Anonymous.
+MANA: 8 (originally 8).
+ATK: 4 (originally 4).
+HP: 25 of 25 (originally 25).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Leader (Does not counter-attack).
+Taunt.
+Poisonous.
+Lifesteal.
+(Originally Taunt. Poisonous. Lifesteal.)
+
+
+Eval (win rate): 0.349924
+Num wins: 1441
+Num losses: 2057
+Total num: 3498
+Effective win contribution: 46.6514
+Draw contribution: 0
+Second player effective win contribution: 24.128
+Total participation: 133.318
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.324747
+Num wins: 592
+Num losses: 1144
+Total num: 1736
+Effective win contribution: 28.8583
+Draw contribution: 0
+Second player effective win contribution: 13.9311
+Total participation: 88.8639
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.469954
+Num wins: 2718
+Num losses: 2978
+Total num: 5696
+Effective win contribution: 170.185
+Draw contribution: 0
+Second player effective win contribution: 87.9937
+Total participation: 362.131
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.490091
+Num wins: 2932
+Num losses: 2830
+Total num: 5762
+Effective win contribution: 178.513
+Draw contribution: 0
+Second player effective win contribution: 87.5804
+Total participation: 364.245
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.419764
+Num wins: 2028
+Num losses: 2178
+Total num: 4206
+Effective win contribution: 85.9105
+Draw contribution: 0
+Second player effective win contribution: 44.1894
+Total participation: 204.664
+
+
+Name: Anonymous.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.387197
+Num wins: 2265
+Num losses: 2585
+Total num: 4850
+Effective win contribution: 66.3982
+Draw contribution: 0
+Second player effective win contribution: 33.5507
+Total participation: 171.484
+
+
+Name: Anonymous.
+MANA: 0 (originally 0).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.554958
+Num wins: 4962
+Num losses: 4762
+Total num: 9724
+Effective win contribution: 368.365
+Draw contribution: 0
+Second player effective win contribution: 183.607
+Total participation: 663.772
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+Taunt.
+Untargetable (Cannot be targeted by spells or battlecries).
+Shielded (Divine Shield).
+Poisonous.
+Lifesteal.
+(Originally Charge. Taunt. Untargetable. Shielded. Poisonous. Lifesteal.)
+
+
+Eval (win rate): 0.84684
+Num wins: 12029
+Num losses: 9717
+Total num: 21746
+Effective win contribution: 1168.67
+Draw contribution: 0
+Second player effective win contribution: 582.211
+Total participation: 1380.04
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.426751
+Num wins: 1781
+Num losses: 1851
+Total num: 3632
+Effective win contribution: 75.2809
+Draw contribution: 0
+Second player effective win contribution: 37.3158
+Total participation: 176.405
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.393375
+Num wins: 3586
+Num losses: 3852
+Total num: 7438
+Effective win contribution: 102.461
+Draw contribution: 0
+Second player effective win contribution: 51.1427
+Total participation: 260.466
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.360141
+Num wins: 2267
+Num losses: 3387
+Total num: 5654
+Effective win contribution: 101.939
+Draw contribution: 0
+Second player effective win contribution: 50.3263
+Total participation: 283.054
+
+
+Name: Anonymous.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Both players lose 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.490292
+Num wins: 1315
+Num losses: 983
+Total num: 2298
+Effective win contribution: 38.309
+Draw contribution: 0
+Second player effective win contribution: 19.8641
+Total participation: 78.135
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.434092
+Num wins: 1734
+Num losses: 1876
+Total num: 3610
+Effective win contribution: 90.2471
+Draw contribution: 0
+Second player effective win contribution: 44.2772
+Total participation: 207.899
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.400108
+Num wins: 2756
+Num losses: 3436
+Total num: 6192
+Effective win contribution: 133.999
+Draw contribution: 0
+Second player effective win contribution: 66.7607
+Total participation: 334.908
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.381753
+Num wins: 1430
+Num losses: 1922
+Total num: 3352
+Effective win contribution: 63.9145
+Draw contribution: 0
+Second player effective win contribution: 28.7647
+Total participation: 167.424
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.423048
+Num wins: 1336
+Num losses: 1452
+Total num: 2788
+Effective win contribution: 50.8613
+Draw contribution: 0
+Second player effective win contribution: 25.0366
+Total participation: 120.226
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.56147
+Num wins: 5011
+Num losses: 3935
+Total num: 8946
+Effective win contribution: 304.823
+Draw contribution: 0
+Second player effective win contribution: 153.7
+Total participation: 542.903
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.296919
+Num wins: 1207
+Num losses: 2083
+Total num: 3290
+Effective win contribution: 35.9637
+Draw contribution: 0
+Second player effective win contribution: 18.4686
+Total participation: 121.123
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.352629
+Num wins: 1277
+Num losses: 1581
+Total num: 2858
+Effective win contribution: 37.1296
+Draw contribution: 0
+Second player effective win contribution: 18.7151
+Total participation: 105.294
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.541495
+Num wins: 2970
+Num losses: 2626
+Total num: 5596
+Effective win contribution: 196.074
+Draw contribution: 0
+Second player effective win contribution: 101.099
+Total participation: 362.097
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.420958
+Num wins: 3125
+Num losses: 3085
+Total num: 6210
+Effective win contribution: 94.7909
+Draw contribution: 0
+Second player effective win contribution: 46.7628
+Total participation: 225.179
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.46441
+Num wins: 3022
+Num losses: 2728
+Total num: 5750
+Effective win contribution: 112.328
+Draw contribution: 0
+Second player effective win contribution: 53.3581
+Total participation: 241.872
+
+
+Name: Anonymous.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.471715
+Num wins: 3564
+Num losses: 2852
+Total num: 6416
+Effective win contribution: 104.729
+Draw contribution: 0
+Second player effective win contribution: 51.0541
+Total participation: 222.016
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.412126
+Num wins: 4687
+Num losses: 4591
+Total num: 9278
+Effective win contribution: 134.056
+Draw contribution: 0
+Second player effective win contribution: 67.2838
+Total participation: 325.278
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.488621
+Num wins: 4321
+Num losses: 3701
+Total num: 8022
+Effective win contribution: 197.588
+Draw contribution: 0
+Second player effective win contribution: 99.5618
+Total participation: 404.38
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.432692
+Num wins: 1712
+Num losses: 2034
+Total num: 3746
+Effective win contribution: 98.0442
+Draw contribution: 0
+Second player effective win contribution: 47.8576
+Total participation: 226.591
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.590492
+Num wins: 7702
+Num losses: 6246
+Total num: 13948
+Effective win contribution: 515.665
+Draw contribution: 0
+Second player effective win contribution: 259.407
+Total participation: 873.28
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.526048
+Num wins: 6188
+Num losses: 5092
+Total num: 11280
+Effective win contribution: 312.86
+Draw contribution: 0
+Second player effective win contribution: 156.294
+Total participation: 594.736
+
+
+Name: Anonymous.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+Cast: Give +0/+5 to a friendly Demon with Poison having at most 5 health.
+
+
+Eval (win rate): 0.376268
+Num wins: 1223
+Num losses: 1403
+Total num: 2626
+Effective win contribution: 35.3138
+Draw contribution: 0
+Second player effective win contribution: 18.1523
+Total participation: 93.8528
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+Stealth.
+Poisonous.
+Lifesteal.
+(Originally Charge. Stealth. Poisonous. Lifesteal.)
+
+
+Eval (win rate): 0.34834
+Num wins: 992
+Num losses: 1720
+Total num: 2712
+Effective win contribution: 37.9431
+Draw contribution: 0
+Second player effective win contribution: 19.3372
+Total participation: 108.925
+
+
+Name: Anonymous.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.435608
+Num wins: 2911
+Num losses: 2687
+Total num: 5598
+Effective win contribution: 87.3318
+Draw contribution: 0
+Second player effective win contribution: 43.2342
+Total participation: 200.482
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.393528
+Num wins: 1637
+Num losses: 2085
+Total num: 3722
+Effective win contribution: 77.5234
+Draw contribution: 0
+Second player effective win contribution: 38.8773
+Total participation: 196.996
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.499417
+Num wins: 3098
+Num losses: 2882
+Total num: 5980
+Effective win contribution: 180.391
+Draw contribution: 0
+Second player effective win contribution: 85.6844
+Total participation: 361.203
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.409683
+Num wins: 1581
+Num losses: 1655
+Total num: 3236
+Effective win contribution: 52.7668
+Draw contribution: 0
+Second player effective win contribution: 26.3945
+Total participation: 128.799
+
+
+Name: Anonymous.
+MANA: 6 (originally 6)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.349886
+Num wins: 1216
+Num losses: 1736
+Total num: 2952
+Effective win contribution: 37.2647
+Draw contribution: 0
+Second player effective win contribution: 18.4258
+Total participation: 106.505
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.394109
+Num wins: 1132
+Num losses: 1480
+Total num: 2612
+Effective win contribution: 47.3828
+Draw contribution: 0
+Second player effective win contribution: 21.9032
+Total participation: 120.228
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.337542
+Num wins: 1593
+Num losses: 2157
+Total num: 3750
+Effective win contribution: 47.468
+Draw contribution: 0
+Second player effective win contribution: 24.3106
+Total participation: 140.628
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.346301
+Num wins: 1236
+Num losses: 1918
+Total num: 3154
+Effective win contribution: 47.2244
+Draw contribution: 0
+Second player effective win contribution: 22.311
+Total participation: 136.368
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.475377
+Num wins: 2199
+Num losses: 2117
+Total num: 4316
+Effective win contribution: 108.326
+Draw contribution: 0
+Second player effective win contribution: 53.2178
+Total participation: 227.873
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.522625
+Num wins: 5390
+Num losses: 4494
+Total num: 9884
+Effective win contribution: 299.196
+Draw contribution: 0
+Second player effective win contribution: 148.627
+Total participation: 572.487
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.29922
+Num wins: 1489
+Num losses: 2653
+Total num: 4142
+Effective win contribution: 52.0761
+Draw contribution: 0
+Second player effective win contribution: 24.7408
+Total participation: 174.039
+
+
+Name: Anonymous.
+MANA: 0 (originally 0).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.508453
+Num wins: 3728
+Num losses: 4198
+Total num: 7926
+Effective win contribution: 247.547
+Draw contribution: 0
+Second player effective win contribution: 118.463
+Total participation: 486.864
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.401845
+Num wins: 1257
+Num losses: 1631
+Total num: 2888
+Effective win contribution: 51.1037
+Draw contribution: 0
+Second player effective win contribution: 22.8459
+Total participation: 127.173
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.468626
+Num wins: 1930
+Num losses: 1760
+Total num: 3690
+Effective win contribution: 78.0772
+Draw contribution: 0
+Second player effective win contribution: 36.8624
+Total participation: 166.609
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.452823
+Num wins: 4310
+Num losses: 3990
+Total num: 8300
+Effective win contribution: 156.882
+Draw contribution: 0
+Second player effective win contribution: 76.6914
+Total participation: 346.452
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.471736
+Num wins: 1832
+Num losses: 1664
+Total num: 3496
+Effective win contribution: 55.4389
+Draw contribution: 0
+Second player effective win contribution: 28.1085
+Total participation: 117.521
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.394583
+Num wins: 1488
+Num losses: 1734
+Total num: 3222
+Effective win contribution: 46.1096
+Draw contribution: 0
+Second player effective win contribution: 22.6323
+Total participation: 116.856
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+Poisonous.
+(Originally Taunt. Poisonous.)
+
+
+Eval (win rate): 0.618651
+Num wins: 8063
+Num losses: 6229
+Total num: 14292
+Effective win contribution: 457.111
+Draw contribution: 0
+Second player effective win contribution: 225.963
+Total participation: 738.884
+
+
+Name: Anonymous.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.416005
+Num wins: 3443
+Num losses: 3451
+Total num: 6894
+Effective win contribution: 101.293
+Draw contribution: 0
+Second player effective win contribution: 50.968
+Total participation: 243.49
+
+
+Name: Anonymous.
+MANA: 10 (originally 10).
+ATK: 4 (originally 4).
+HP: 27 of 27 (originally 27).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Leader (Does not counter-attack).
+Charge.
+Taunt.
+Untargetable (Cannot be targeted by spells or battlecries).
+Shielded (Divine Shield).
+Poisonous.
+Lifesteal.
+(Originally Charge. Taunt. Untargetable. Shielded. Poisonous. Lifesteal.)
+
+
+Eval (win rate): 0.275721
+Num wins: 723
+Num losses: 1447
+Total num: 2170
+Effective win contribution: 23.7941
+Draw contribution: 0
+Second player effective win contribution: 11.193
+Total participation: 86.2977
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.481859
+Num wins: 4941
+Num losses: 4441
+Total num: 9382
+Effective win contribution: 204.219
+Draw contribution: 0
+Second player effective win contribution: 99.0054
+Total participation: 423.814
+
+
+Name: Anonymous.
+MANA: 9 (originally 9).
+ATK: 5 (originally 5).
+HP: 28 of 28 (originally 28).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Leader (Does not counter-attack).
+Charge.
+Taunt.
+Untargetable (Cannot be targeted by spells or battlecries).
+Shielded (Divine Shield).
+Lifesteal.
+(Originally Charge. Taunt. Untargetable. Shielded. Lifesteal.)
+Battlecry: Give +0/+5 to a friendly Demon with Poison having at most 5 health.
+
+
+Eval (win rate): 0.432135
+Num wins: 1661
+Num losses: 1657
+Total num: 3318
+Effective win contribution: 51.1237
+Draw contribution: 0
+Second player effective win contribution: 26.3183
+Total participation: 118.305
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.551279
+Num wins: 6667
+Num losses: 5435
+Total num: 12102
+Effective win contribution: 420.939
+Draw contribution: 0
+Second player effective win contribution: 211.197
+Total participation: 763.568
+
+
+Name: Anonymous.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.316415
+Num wins: 1142
+Num losses: 1750
+Total num: 2892
+Effective win contribution: 33.349
+Draw contribution: 0
+Second player effective win contribution: 16.1626
+Total participation: 105.396
+
+
+Name: Anonymous.
+MANA: 9 (originally 9).
+ATK: 5 (originally 5).
+HP: 24 of 24 (originally 24).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Leader (Does not counter-attack).
+Taunt.
+Untargetable (Cannot be targeted by spells or battlecries).
+Shielded (Divine Shield).
+Poisonous.
+(Originally Taunt. Untargetable. Shielded. Poisonous.)
+
+
+Eval (win rate): 0.32047
+Num wins: 1495
+Num losses: 2435
+Total num: 3930
+Effective win contribution: 47.3937
+Draw contribution: 0
+Second player effective win contribution: 24.6447
+Total participation: 147.888
+
+
+Name: Anonymous.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.373859
+Num wins: 1988
+Num losses: 2374
+Total num: 4362
+Effective win contribution: 58.1436
+Draw contribution: 0
+Second player effective win contribution: 29.8871
+Total participation: 155.523
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.343109
+Num wins: 1385
+Num losses: 2125
+Total num: 3510
+Effective win contribution: 47.2143
+Draw contribution: 0
+Second player effective win contribution: 23.1575
+Total participation: 137.607
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.456658
+Num wins: 2379
+Num losses: 2761
+Total num: 5140
+Effective win contribution: 149.593
+Draw contribution: 0
+Second player effective win contribution: 75.2991
+Total participation: 327.581
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.548958
+Num wins: 4554
+Num losses: 3582
+Total num: 8136
+Effective win contribution: 264.909
+Draw contribution: 0
+Second player effective win contribution: 124.293
+Total participation: 482.567
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.396535
+Num wins: 2110
+Num losses: 2336
+Total num: 4446
+Effective win contribution: 65.5034
+Draw contribution: 0
+Second player effective win contribution: 32.8389
+Total participation: 165.189
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.454271
+Num wins: 2109
+Num losses: 1819
+Total num: 3928
+Effective win contribution: 62.7719
+Draw contribution: 0
+Second player effective win contribution: 30.3237
+Total participation: 138.182
+
+
+Name: Anonymous.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.492661
+Num wins: 3290
+Num losses: 2672
+Total num: 5962
+Effective win contribution: 125.585
+Draw contribution: 0
+Second player effective win contribution: 60.4499
+Total participation: 254.912
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.503636
+Num wins: 3394
+Num losses: 2620
+Total num: 6014
+Effective win contribution: 123.89
+Draw contribution: 0
+Second player effective win contribution: 62.234
+Total participation: 245.991
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.475595
+Num wins: 4336
+Num losses: 4420
+Total num: 8756
+Effective win contribution: 255.589
+Draw contribution: 0
+Second player effective win contribution: 129.623
+Total participation: 537.409
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.365555
+Num wins: 1651
+Num losses: 2759
+Total num: 4410
+Effective win contribution: 95.5264
+Draw contribution: 0
+Second player effective win contribution: 49.6378
+Total participation: 261.319
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.257424
+Num wins: 545
+Num losses: 1255
+Total num: 1800
+Effective win contribution: 20.0735
+Draw contribution: 0
+Second player effective win contribution: 8.91429
+Total participation: 77.9785
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Both players gain 1 Max MP (and MP), if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.359367
+Num wins: 2931
+Num losses: 3897
+Total num: 6828
+Effective win contribution: 92.7344
+Draw contribution: 0
+Second player effective win contribution: 44.6255
+Total participation: 258.049
+
+
+Name: Anonymous.
+MANA: 10 (originally 10).
+ATK: 5 (originally 5).
+HP: 22 of 22 (originally 22).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Leader (Does not counter-attack).
+
+
+Eval (win rate): 0.291299
+Num wins: 1335
+Num losses: 2351
+Total num: 3686
+Effective win contribution: 41.7555
+Draw contribution: 0
+Second player effective win contribution: 18.7185
+Total participation: 143.343
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.362267
+Num wins: 2613
+Num losses: 3035
+Total num: 5648
+Effective win contribution: 73.7923
+Draw contribution: 0
+Second player effective win contribution: 36.2513
+Total participation: 203.696
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.382427
+Num wins: 1697
+Num losses: 2547
+Total num: 4244
+Effective win contribution: 85.4198
+Draw contribution: 0
+Second player effective win contribution: 39.747
+Total participation: 223.362
+
+
+Name: Anonymous.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: You win the game, if your leader is with Poison having at least 5 attack.
+
+
+Eval (win rate): 0.457486
+Num wins: 1066
+Num losses: 826
+Total num: 1892
+Effective win contribution: 30.5957
+Draw contribution: 0
+Second player effective win contribution: 15.4316
+Total participation: 66.8779
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 6 of 6 (originally 6).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+Taunt.
+Stealth.
+Untargetable (Cannot be targeted by spells or battlecries).
+Poisonous.
+Lifesteal.
+(Originally Charge. Taunt. Stealth. Untargetable. Poisonous. Lifesteal.)
+
+
+Eval (win rate): 0.679331
+Num wins: 9532
+Num losses: 8058
+Total num: 17590
+Effective win contribution: 750.757
+Draw contribution: 0
+Second player effective win contribution: 362.993
+Total participation: 1105.14
+
+
+Name: Anonymous.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.452905
+Num wins: 1405
+Num losses: 1285
+Total num: 2690
+Effective win contribution: 46.7978
+Draw contribution: 0
+Second player effective win contribution: 23.0344
+Total participation: 103.328
+
+
+Name: Anonymous.
+MANA: 8 (originally 8).
+ATK: 5 (originally 5).
+HP: 22 of 22 (originally 22).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Leader (Does not counter-attack).
+
+
+Eval (win rate): 0.304173
+Num wins: 1326
+Num losses: 2346
+Total num: 3672
+Effective win contribution: 42.9495
+Draw contribution: 0
+Second player effective win contribution: 21.0278
+Total participation: 141.201
+
+
+Name: Anonymous.
+MANA: 2 (originally 2)
+TYPE: Spell.
+At the start of the opponent's turns: You win the game, if itself is a card with Poison having at most 1 mana cost at hand.
+
+
+Eval (win rate): 0.297978
+Num wins: 637
+Num losses: 1283
+Total num: 1920
+Effective win contribution: 21.2339
+Draw contribution: 0
+Second player effective win contribution: 10.4474
+Total participation: 71.26
+
+
+Name: Anonymous.
+MANA: 1 (originally 1).
+ATK: 5 (originally 5).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.52494
+Num wins: 4690
+Num losses: 4130
+Total num: 8820
+Effective win contribution: 275.217
+Draw contribution: 0
+Second player effective win contribution: 130.78
+Total participation: 524.282
+
+
+Name: Anonymous.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.383253
+Num wins: 3039
+Num losses: 3605
+Total num: 6644
+Effective win contribution: 99.0447
+Draw contribution: 0
+Second player effective win contribution: 49.1774
+Total participation: 258.432
+
+
+Name: Anonymous.
+MANA: 5 (originally 5)
+TYPE: Spell.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+Cast: Give +0/+5 to a friendly Demon with Poison having at least 5 health.
+
+
+Eval (win rate): 0.378822
+Num wins: 1858
+Num losses: 2200
+Total num: 4058
+Effective win contribution: 58.9056
+Draw contribution: 0
+Second player effective win contribution: 28.4294
+Total participation: 155.497
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.393231
+Num wins: 3416
+Num losses: 4638
+Total num: 8054
+Effective win contribution: 171.682
+Draw contribution: 0
+Second player effective win contribution: 86.8818
+Total participation: 436.593
+
+
+Name: Anonymous.
+MANA: 3 (originally 3).
+ATK: 6 (originally 6).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.516503
+Num wins: 4153
+Num losses: 3381
+Total num: 7534
+Effective win contribution: 213.613
+Draw contribution: 0
+Second player effective win contribution: 105.335
+Total participation: 413.576
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.463122
+Num wins: 2818
+Num losses: 3210
+Total num: 6028
+Effective win contribution: 155.904
+Draw contribution: 0
+Second player effective win contribution: 78.2688
+Total participation: 336.636
+
+
+Name: Anonymous.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 3 of 3 (originally 3) (Can attack 3 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.493815
+Num wins: 2628
+Num losses: 1982
+Total num: 4610
+Effective win contribution: 97.797
+Draw contribution: 0
+Second player effective win contribution: 46.378
+Total participation: 198.044
+
+
+Name: Anonymous.
+MANA: 2 (originally 2).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.526464
+Num wins: 4303
+Num losses: 3611
+Total num: 7914
+Effective win contribution: 241.468
+Draw contribution: 0
+Second player effective win contribution: 121.253
+Total participation: 458.66
+
+

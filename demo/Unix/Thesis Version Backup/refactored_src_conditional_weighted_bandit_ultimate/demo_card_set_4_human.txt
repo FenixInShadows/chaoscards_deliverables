@@ -1,0 +1,1903 @@
+100
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490222
+Num wins: 23629
+Num losses: 23725
+Total num: 47354
+Effective win contribution: 1254.48
+Draw contribution: 0
+Second player effective win contribution: 834.748
+Total participation: 2559
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.486175
+Num wins: 19655
+Num losses: 19971
+Total num: 39626
+Effective win contribution: 1027.33
+Draw contribution: 0
+Second player effective win contribution: 674.804
+Total participation: 2113.08
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490787
+Num wins: 23318
+Num losses: 23520
+Total num: 46838
+Effective win contribution: 1238
+Draw contribution: 0
+Second player effective win contribution: 818.259
+Total participation: 2522.49
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.491787
+Num wins: 22043
+Num losses: 22119
+Total num: 44162
+Effective win contribution: 1165.71
+Draw contribution: 0
+Second player effective win contribution: 771.782
+Total participation: 2370.35
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.489192
+Num wins: 21909
+Num losses: 22055
+Total num: 43964
+Effective win contribution: 1161.52
+Draw contribution: 0
+Second player effective win contribution: 765.987
+Total participation: 2374.36
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.485303
+Num wins: 19240
+Num losses: 19470
+Total num: 38710
+Effective win contribution: 1003.49
+Draw contribution: 0
+Second player effective win contribution: 661.762
+Total participation: 2067.75
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.485674
+Num wins: 21989
+Num losses: 22255
+Total num: 44244
+Effective win contribution: 1145.85
+Draw contribution: 0
+Second player effective win contribution: 754.794
+Total participation: 2359.29
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490567
+Num wins: 20592
+Num losses: 20784
+Total num: 41376
+Effective win contribution: 1097.31
+Draw contribution: 0
+Second player effective win contribution: 724.872
+Total participation: 2236.82
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.492037
+Num wins: 22613
+Num losses: 22775
+Total num: 45388
+Effective win contribution: 1198.65
+Draw contribution: 0
+Second player effective win contribution: 791.986
+Total participation: 2436.09
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.494835
+Num wins: 22801
+Num losses: 22745
+Total num: 45546
+Effective win contribution: 1198.48
+Draw contribution: 0
+Second player effective win contribution: 778.549
+Total participation: 2421.98
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490512
+Num wins: 22267
+Num losses: 22213
+Total num: 44480
+Effective win contribution: 1173.27
+Draw contribution: 0
+Second player effective win contribution: 771.308
+Total participation: 2391.93
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493193
+Num wins: 23477
+Num losses: 23489
+Total num: 46966
+Effective win contribution: 1243.6
+Draw contribution: 0
+Second player effective win contribution: 817.527
+Total participation: 2521.52
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.48773
+Num wins: 20252
+Num losses: 20584
+Total num: 40836
+Effective win contribution: 1067.13
+Draw contribution: 0
+Second player effective win contribution: 701.614
+Total participation: 2187.95
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.48993
+Num wins: 20722
+Num losses: 20986
+Total num: 41708
+Effective win contribution: 1086.74
+Draw contribution: 0
+Second player effective win contribution: 715.522
+Total participation: 2218.16
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.491141
+Num wins: 21474
+Num losses: 21524
+Total num: 42998
+Effective win contribution: 1137.43
+Draw contribution: 0
+Second player effective win contribution: 753.007
+Total participation: 2315.89
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.486554
+Num wins: 22213
+Num losses: 22125
+Total num: 44338
+Effective win contribution: 1161.28
+Draw contribution: 0
+Second player effective win contribution: 767.893
+Total participation: 2386.74
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.499906
+Num wins: 28073
+Num losses: 27793
+Total num: 55866
+Effective win contribution: 1507.46
+Draw contribution: 0
+Second player effective win contribution: 995.537
+Total participation: 3015.48
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.49167
+Num wins: 21490
+Num losses: 21578
+Total num: 43068
+Effective win contribution: 1140.41
+Draw contribution: 0
+Second player effective win contribution: 763.795
+Total participation: 2319.46
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.498178
+Num wins: 24379
+Num losses: 24633
+Total num: 49012
+Effective win contribution: 1307.62
+Draw contribution: 0
+Second player effective win contribution: 867.73
+Total participation: 2624.81
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490179
+Num wins: 23868
+Num losses: 24182
+Total num: 48050
+Effective win contribution: 1263.78
+Draw contribution: 0
+Second player effective win contribution: 827.182
+Total participation: 2578.2
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.489452
+Num wins: 18618
+Num losses: 18832
+Total num: 37450
+Effective win contribution: 979.554
+Draw contribution: 0
+Second player effective win contribution: 650.367
+Total participation: 2001.33
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493006
+Num wins: 23138
+Num losses: 23280
+Total num: 46418
+Effective win contribution: 1223.25
+Draw contribution: 0
+Second player effective win contribution: 812.735
+Total participation: 2481.22
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.492743
+Num wins: 22844
+Num losses: 22988
+Total num: 45832
+Effective win contribution: 1208.81
+Draw contribution: 0
+Second player effective win contribution: 799.317
+Total participation: 2453.24
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.48546
+Num wins: 19944
+Num losses: 20282
+Total num: 40226
+Effective win contribution: 1058.91
+Draw contribution: 0
+Second player effective win contribution: 697.003
+Total participation: 2181.25
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.492253
+Num wins: 20887
+Num losses: 20849
+Total num: 41736
+Effective win contribution: 1123.76
+Draw contribution: 0
+Second player effective win contribution: 744.566
+Total participation: 2282.89
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.49001
+Num wins: 20435
+Num losses: 20817
+Total num: 41252
+Effective win contribution: 1088.33
+Draw contribution: 0
+Second player effective win contribution: 724.451
+Total participation: 2221.04
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490977
+Num wins: 22918
+Num losses: 23084
+Total num: 46002
+Effective win contribution: 1206.06
+Draw contribution: 0
+Second player effective win contribution: 802.679
+Total participation: 2456.45
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.492729
+Num wins: 26947
+Num losses: 26679
+Total num: 53626
+Effective win contribution: 1408.75
+Draw contribution: 0
+Second player effective win contribution: 946.648
+Total participation: 2859.08
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493987
+Num wins: 22211
+Num losses: 22247
+Total num: 44458
+Effective win contribution: 1183.3
+Draw contribution: 0
+Second player effective win contribution: 790.072
+Total participation: 2395.41
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493867
+Num wins: 22909
+Num losses: 22819
+Total num: 45728
+Effective win contribution: 1213.39
+Draw contribution: 0
+Second player effective win contribution: 807.834
+Total participation: 2456.93
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493912
+Num wins: 23158
+Num losses: 23052
+Total num: 46210
+Effective win contribution: 1230
+Draw contribution: 0
+Second player effective win contribution: 818.223
+Total participation: 2490.33
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490203
+Num wins: 20499
+Num losses: 20621
+Total num: 41120
+Effective win contribution: 1085.32
+Draw contribution: 0
+Second player effective win contribution: 717.968
+Total participation: 2214.01
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.483414
+Num wins: 18504
+Num losses: 19038
+Total num: 37542
+Effective win contribution: 965.102
+Draw contribution: 0
+Second player effective win contribution: 648.342
+Total participation: 1996.43
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.49274
+Num wins: 21954
+Num losses: 22342
+Total num: 44296
+Effective win contribution: 1180.6
+Draw contribution: 0
+Second player effective win contribution: 781.384
+Total participation: 2395.99
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.48592
+Num wins: 17783
+Num losses: 18037
+Total num: 35820
+Effective win contribution: 930.999
+Draw contribution: 0
+Second player effective win contribution: 614.453
+Total participation: 1915.95
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490801
+Num wins: 19292
+Num losses: 19608
+Total num: 38900
+Effective win contribution: 1021.41
+Draw contribution: 0
+Second player effective win contribution: 676.357
+Total participation: 2081.1
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.486104
+Num wins: 19503
+Num losses: 19817
+Total num: 39320
+Effective win contribution: 1026.29
+Draw contribution: 0
+Second player effective win contribution: 680.753
+Total participation: 2111.25
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493113
+Num wins: 23062
+Num losses: 22954
+Total num: 46016
+Effective win contribution: 1231.19
+Draw contribution: 0
+Second player effective win contribution: 820.63
+Total participation: 2496.77
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.490932
+Num wins: 26981
+Num losses: 27073
+Total num: 54054
+Effective win contribution: 1420.36
+Draw contribution: 0
+Second player effective win contribution: 933.157
+Total participation: 2893.2
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.489797
+Num wins: 25545
+Num losses: 25887
+Total num: 51432
+Effective win contribution: 1340.5
+Draw contribution: 0
+Second player effective win contribution: 887.385
+Total participation: 2736.85
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.500114
+Num wins: 27623
+Num losses: 27379
+Total num: 55002
+Effective win contribution: 1470.36
+Draw contribution: 0
+Second player effective win contribution: 970.086
+Total participation: 2940.05
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.488637
+Num wins: 22454
+Num losses: 22594
+Total num: 45048
+Effective win contribution: 1179.4
+Draw contribution: 0
+Second player effective win contribution: 782.813
+Total participation: 2413.64
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.486814
+Num wins: 16475
+Num losses: 16867
+Total num: 33342
+Effective win contribution: 870.282
+Draw contribution: 0
+Second player effective win contribution: 568.436
+Total participation: 1787.71
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.491703
+Num wins: 22798
+Num losses: 23032
+Total num: 45830
+Effective win contribution: 1209.72
+Draw contribution: 0
+Second player effective win contribution: 796.614
+Total participation: 2460.26
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493898
+Num wins: 21910
+Num losses: 21796
+Total num: 43706
+Effective win contribution: 1167.06
+Draw contribution: 0
+Second player effective win contribution: 771.325
+Total participation: 2362.97
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.487045
+Num wins: 22560
+Num losses: 22874
+Total num: 45434
+Effective win contribution: 1204.33
+Draw contribution: 0
+Second player effective win contribution: 792.913
+Total participation: 2472.73
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.491359
+Num wins: 20824
+Num losses: 20914
+Total num: 41738
+Effective win contribution: 1110.56
+Draw contribution: 0
+Second player effective win contribution: 739.651
+Total participation: 2260.18
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.493603
+Num wins: 23369
+Num losses: 23483
+Total num: 46852
+Effective win contribution: 1249.1
+Draw contribution: 0
+Second player effective win contribution: 833.494
+Total participation: 2530.59
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.49089
+Num wins: 23761
+Num losses: 24011
+Total num: 47772
+Effective win contribution: 1266.29
+Draw contribution: 0
+Second player effective win contribution: 830.037
+Total participation: 2579.58
+
+
+Name: Demo Card 4 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 5 damage to an enemy character.
+
+
+Eval (win rate): 0.492273
+Num wins: 25232
+Num losses: 25432
+Total num: 50664
+Effective win contribution: 1348.55
+Draw contribution: 0
+Second player effective win contribution: 898.462
+Total participation: 2739.44
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510368
+Num wins: 30421
+Num losses: 29893
+Total num: 60314
+Effective win contribution: 1469.49
+Draw contribution: 0
+Second player effective win contribution: 995.231
+Total participation: 2879.27
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.503756
+Num wins: 30308
+Num losses: 30522
+Total num: 60830
+Effective win contribution: 1448.41
+Draw contribution: 0
+Second player effective win contribution: 980.76
+Total participation: 2875.22
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505469
+Num wins: 27567
+Num losses: 27493
+Total num: 55060
+Effective win contribution: 1317.27
+Draw contribution: 0
+Second player effective win contribution: 896.212
+Total participation: 2606.04
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506254
+Num wins: 33707
+Num losses: 33893
+Total num: 67600
+Effective win contribution: 1620.36
+Draw contribution: 0
+Second player effective win contribution: 1086.34
+Total participation: 3200.69
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.507801
+Num wins: 30862
+Num losses: 30568
+Total num: 61430
+Effective win contribution: 1483.09
+Draw contribution: 0
+Second player effective win contribution: 998.846
+Total participation: 2920.61
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510989
+Num wins: 32300
+Num losses: 32182
+Total num: 64482
+Effective win contribution: 1548.95
+Draw contribution: 0
+Second player effective win contribution: 1038.4
+Total participation: 3031.27
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508143
+Num wins: 30164
+Num losses: 29934
+Total num: 60098
+Effective win contribution: 1429.79
+Draw contribution: 0
+Second player effective win contribution: 960.387
+Total participation: 2813.76
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.50787
+Num wins: 35571
+Num losses: 35505
+Total num: 71076
+Effective win contribution: 1709.21
+Draw contribution: 0
+Second player effective win contribution: 1167.71
+Total participation: 3365.44
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.50562
+Num wins: 31862
+Num losses: 31700
+Total num: 63562
+Effective win contribution: 1519.29
+Draw contribution: 0
+Second player effective win contribution: 1023.24
+Total participation: 3004.8
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.498757
+Num wins: 28804
+Num losses: 28966
+Total num: 57770
+Effective win contribution: 1363.73
+Draw contribution: 0
+Second player effective win contribution: 928.678
+Total participation: 2734.25
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.502598
+Num wins: 26111
+Num losses: 26027
+Total num: 52138
+Effective win contribution: 1246.95
+Draw contribution: 0
+Second player effective win contribution: 835.584
+Total participation: 2481.01
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510442
+Num wins: 34230
+Num losses: 33832
+Total num: 68062
+Effective win contribution: 1646.6
+Draw contribution: 0
+Second player effective win contribution: 1104.36
+Total participation: 3225.83
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.504099
+Num wins: 26361
+Num losses: 26501
+Total num: 52862
+Effective win contribution: 1263.94
+Draw contribution: 0
+Second player effective win contribution: 859.358
+Total participation: 2507.32
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.509586
+Num wins: 35620
+Num losses: 35370
+Total num: 70990
+Effective win contribution: 1707.48
+Draw contribution: 0
+Second player effective win contribution: 1154.76
+Total participation: 3350.72
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510714
+Num wins: 31561
+Num losses: 31307
+Total num: 62868
+Effective win contribution: 1518.66
+Draw contribution: 0
+Second player effective win contribution: 1028.15
+Total participation: 2973.6
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.503956
+Num wins: 23730
+Num losses: 23860
+Total num: 47590
+Effective win contribution: 1143.11
+Draw contribution: 0
+Second player effective win contribution: 780.553
+Total participation: 2268.27
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510649
+Num wins: 39406
+Num losses: 38732
+Total num: 78138
+Effective win contribution: 1895.59
+Draw contribution: 0
+Second player effective win contribution: 1280.57
+Total participation: 3712.12
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506056
+Num wins: 30839
+Num losses: 30647
+Total num: 61486
+Effective win contribution: 1482.19
+Draw contribution: 0
+Second player effective win contribution: 999.915
+Total participation: 2928.9
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.507674
+Num wins: 35378
+Num losses: 35420
+Total num: 70798
+Effective win contribution: 1692.67
+Draw contribution: 0
+Second player effective win contribution: 1135.69
+Total participation: 3334.16
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505778
+Num wins: 32420
+Num losses: 32052
+Total num: 64472
+Effective win contribution: 1549.68
+Draw contribution: 0
+Second player effective win contribution: 1055.27
+Total participation: 3063.95
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.512443
+Num wins: 34003
+Num losses: 33559
+Total num: 67562
+Effective win contribution: 1639.89
+Draw contribution: 0
+Second player effective win contribution: 1115.6
+Total participation: 3200.15
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.511515
+Num wins: 33785
+Num losses: 33405
+Total num: 67190
+Effective win contribution: 1615.04
+Draw contribution: 0
+Second player effective win contribution: 1092.06
+Total participation: 3157.37
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.507676
+Num wins: 28604
+Num losses: 28704
+Total num: 57308
+Effective win contribution: 1381.91
+Draw contribution: 0
+Second player effective win contribution: 937.45
+Total participation: 2722.02
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.507434
+Num wins: 33191
+Num losses: 33191
+Total num: 66382
+Effective win contribution: 1597.43
+Draw contribution: 0
+Second player effective win contribution: 1081.51
+Total participation: 3148.07
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508781
+Num wins: 29103
+Num losses: 29161
+Total num: 58264
+Effective win contribution: 1404.56
+Draw contribution: 0
+Second player effective win contribution: 954.105
+Total participation: 2760.63
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.5079
+Num wins: 38321
+Num losses: 38253
+Total num: 76574
+Effective win contribution: 1838
+Draw contribution: 0
+Second player effective win contribution: 1247.95
+Total participation: 3618.82
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508679
+Num wins: 31606
+Num losses: 31502
+Total num: 63108
+Effective win contribution: 1526.39
+Draw contribution: 0
+Second player effective win contribution: 1030.71
+Total participation: 3000.7
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508267
+Num wins: 30601
+Num losses: 30159
+Total num: 60760
+Effective win contribution: 1475.31
+Draw contribution: 0
+Second player effective win contribution: 992.003
+Total participation: 2902.63
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505253
+Num wins: 32366
+Num losses: 31984
+Total num: 64350
+Effective win contribution: 1540.94
+Draw contribution: 0
+Second player effective win contribution: 1038.54
+Total participation: 3049.84
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506001
+Num wins: 27124
+Num losses: 27156
+Total num: 54280
+Effective win contribution: 1290.43
+Draw contribution: 0
+Second player effective win contribution: 867.32
+Total participation: 2550.25
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505317
+Num wins: 29213
+Num losses: 29355
+Total num: 58568
+Effective win contribution: 1391.07
+Draw contribution: 0
+Second player effective win contribution: 947.201
+Total participation: 2752.87
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.503201
+Num wins: 28427
+Num losses: 28131
+Total num: 56558
+Effective win contribution: 1358.16
+Draw contribution: 0
+Second player effective win contribution: 918.025
+Total participation: 2699.05
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.502985
+Num wins: 33621
+Num losses: 33411
+Total num: 67032
+Effective win contribution: 1595.78
+Draw contribution: 0
+Second player effective win contribution: 1087.17
+Total participation: 3172.62
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.512576
+Num wins: 34273
+Num losses: 34029
+Total num: 68302
+Effective win contribution: 1648.91
+Draw contribution: 0
+Second player effective win contribution: 1117.01
+Total participation: 3216.91
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505728
+Num wins: 29627
+Num losses: 29361
+Total num: 58988
+Effective win contribution: 1412.22
+Draw contribution: 0
+Second player effective win contribution: 960.778
+Total participation: 2792.45
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508239
+Num wins: 31520
+Num losses: 31506
+Total num: 63026
+Effective win contribution: 1511.16
+Draw contribution: 0
+Second player effective win contribution: 1020.55
+Total participation: 2973.32
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.508337
+Num wins: 33615
+Num losses: 33231
+Total num: 66846
+Effective win contribution: 1609.87
+Draw contribution: 0
+Second player effective win contribution: 1086.2
+Total participation: 3166.94
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506277
+Num wins: 30631
+Num losses: 30775
+Total num: 61406
+Effective win contribution: 1477.4
+Draw contribution: 0
+Second player effective win contribution: 996.984
+Total participation: 2918.17
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.499214
+Num wins: 24819
+Num losses: 25043
+Total num: 49862
+Effective win contribution: 1179.43
+Draw contribution: 0
+Second player effective win contribution: 798.439
+Total participation: 2362.57
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.50299
+Num wins: 27739
+Num losses: 27355
+Total num: 55094
+Effective win contribution: 1310.49
+Draw contribution: 0
+Second player effective win contribution: 882.856
+Total participation: 2605.39
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.504713
+Num wins: 28897
+Num losses: 29125
+Total num: 58022
+Effective win contribution: 1379.26
+Draw contribution: 0
+Second player effective win contribution: 947.439
+Total participation: 2732.77
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.505183
+Num wins: 30927
+Num losses: 30989
+Total num: 61916
+Effective win contribution: 1486.47
+Draw contribution: 0
+Second player effective win contribution: 1015.03
+Total participation: 2942.45
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506013
+Num wins: 30710
+Num losses: 31010
+Total num: 61720
+Effective win contribution: 1483.23
+Draw contribution: 0
+Second player effective win contribution: 1013.75
+Total participation: 2931.21
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.509671
+Num wins: 34184
+Num losses: 33594
+Total num: 67778
+Effective win contribution: 1634.93
+Draw contribution: 0
+Second player effective win contribution: 1106.48
+Total participation: 3207.82
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.507866
+Num wins: 27965
+Num losses: 27441
+Total num: 55406
+Effective win contribution: 1336.36
+Draw contribution: 0
+Second player effective win contribution: 902.771
+Total participation: 2631.32
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.512324
+Num wins: 39362
+Num losses: 38844
+Total num: 78206
+Effective win contribution: 1885.89
+Draw contribution: 0
+Second player effective win contribution: 1275.27
+Total participation: 3681.06
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.504123
+Num wins: 28419
+Num losses: 28685
+Total num: 57104
+Effective win contribution: 1361.57
+Draw contribution: 0
+Second player effective win contribution: 915.724
+Total participation: 2700.87
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506676
+Num wins: 33025
+Num losses: 32765
+Total num: 65790
+Effective win contribution: 1568.95
+Draw contribution: 0
+Second player effective win contribution: 1075.41
+Total participation: 3096.55
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.506815
+Num wins: 30291
+Num losses: 30265
+Total num: 60556
+Effective win contribution: 1456.91
+Draw contribution: 0
+Second player effective win contribution: 986.697
+Total participation: 2874.65
+
+
+Name: Demo Card 4 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 1 damage to an enemy character.
+
+
+Eval (win rate): 0.510079
+Num wins: 34227
+Num losses: 33953
+Total num: 68180
+Effective win contribution: 1642.49
+Draw contribution: 0
+Second player effective win contribution: 1117.15
+Total participation: 3220.07
+
+

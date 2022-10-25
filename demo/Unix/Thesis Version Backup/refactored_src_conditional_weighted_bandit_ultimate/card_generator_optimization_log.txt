@@ -1,0 +1,16 @@
+Initial VAE Training Time: 6
+Round#  #Tests  Balance  Symmetry  Strength  Coverage  Diversity  Interaction  VAE_Loss  KL_Loss  Classify_Acc  Value_MSE  Timestamp
+0  1  -4.81748  0.997938  -5.87865  0.5625  0.398379  1.05576  0.948309  0.497755  0.195076  0.694871  138
+1  2  -4.04213  0.925305  -4.94881  0.442225  0.38671  1.11752  1.07678  1.68759  0.27269  0.739677  420
+2  3  -4.07759  0.899617  -4.99944  0.5041  0.388457  1.25633  0.687433  0.400845  0.570929  0.253035  722
+3  3  -4.07759  0.899617  -4.99944  0.5041  0.388457  1.25633  0.555371  2.24242  0.659392  0.265184  938
+4  4  -4.07759  0.899617  -4.99944  0.5041  0.388457  1.25633  0.555371  2.24242  0.659392  0.265184  1047
+5  4  -4.02296  0.989766  -4.93514  0.543906  0.202201  1.32819  0.555371  2.24242  0.659392  0.265184  1157
+Total number of decks tested: 338
+Total match pairs tested: 16778
+Total match turns tested: 295920
+Best card pool stats as follows: 
+Num. Tournaments Tested: 4 ; Balance Score: -4.02296 ; Symmetry Score: 0.989766 ; Strength Score: -4.93514 ; Coverage Score: 0.543906 ; Diversity Score: 0.202201 ; Interaction Score: 1.32819
+
+Final VAE Loss: 0.200158; KL Divergence: 2.87207; Classify Accuracy: 0.916587; Value MSE: 0.0793875
+Final Timer: 1163

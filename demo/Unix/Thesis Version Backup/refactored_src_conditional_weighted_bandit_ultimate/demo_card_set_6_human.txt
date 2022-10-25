@@ -1,0 +1,1903 @@
+100
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.518035
+Num wins: 50107
+Num losses: 47325
+Total num: 97432
+Effective win contribution: 2624.42
+Draw contribution: 0
+Second player effective win contribution: 1244.93
+Total participation: 5066.1
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.518523
+Num wins: 51720
+Num losses: 48888
+Total num: 100608
+Effective win contribution: 2731.1
+Draw contribution: 0
+Second player effective win contribution: 1304.44
+Total participation: 5267.07
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.514073
+Num wins: 54615
+Num losses: 52155
+Total num: 106770
+Effective win contribution: 2831.84
+Draw contribution: 0
+Second player effective win contribution: 1373.24
+Total participation: 5508.64
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.50695
+Num wins: 32052
+Num losses: 31408
+Total num: 63460
+Effective win contribution: 1712.89
+Draw contribution: 0
+Second player effective win contribution: 807.704
+Total participation: 3378.82
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.513644
+Num wins: 42910
+Num losses: 41468
+Total num: 84378
+Effective win contribution: 2284.14
+Draw contribution: 0
+Second player effective win contribution: 1093.54
+Total participation: 4446.93
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.51584
+Num wins: 36192
+Num losses: 34974
+Total num: 71166
+Effective win contribution: 1947.73
+Draw contribution: 0
+Second player effective win contribution: 934.508
+Total participation: 3775.84
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.515947
+Num wins: 55600
+Num losses: 53078
+Total num: 108678
+Effective win contribution: 2955.36
+Draw contribution: 0
+Second player effective win contribution: 1423.85
+Total participation: 5728.03
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.510596
+Num wins: 43249
+Num losses: 41813
+Total num: 85062
+Effective win contribution: 2266.16
+Draw contribution: 0
+Second player effective win contribution: 1078.91
+Total participation: 4438.25
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.508117
+Num wins: 40678
+Num losses: 39378
+Total num: 80056
+Effective win contribution: 2144.97
+Draw contribution: 0
+Second player effective win contribution: 1019.2
+Total participation: 4221.41
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.515783
+Num wins: 42689
+Num losses: 41121
+Total num: 83810
+Effective win contribution: 2285.59
+Draw contribution: 0
+Second player effective win contribution: 1102.62
+Total participation: 4431.31
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.516476
+Num wins: 44009
+Num losses: 41819
+Total num: 85828
+Effective win contribution: 2349.98
+Draw contribution: 0
+Second player effective win contribution: 1129.67
+Total participation: 4550.02
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.503633
+Num wins: 34029
+Num losses: 34159
+Total num: 68188
+Effective win contribution: 1816.64
+Draw contribution: 0
+Second player effective win contribution: 874.886
+Total participation: 3607.07
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.507914
+Num wins: 44102
+Num losses: 43224
+Total num: 87326
+Effective win contribution: 2340.1
+Draw contribution: 0
+Second player effective win contribution: 1102.57
+Total participation: 4607.27
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.499018
+Num wins: 26074
+Num losses: 26098
+Total num: 52172
+Effective win contribution: 1352.43
+Draw contribution: 0
+Second player effective win contribution: 655.432
+Total participation: 2710.18
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.515033
+Num wins: 37962
+Num losses: 37090
+Total num: 75052
+Effective win contribution: 2046.22
+Draw contribution: 0
+Second player effective win contribution: 975.366
+Total participation: 3972.98
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.52012
+Num wins: 59613
+Num losses: 56099
+Total num: 115712
+Effective win contribution: 3173.14
+Draw contribution: 0
+Second player effective win contribution: 1506.6
+Total participation: 6100.79
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.505946
+Num wins: 34171
+Num losses: 33975
+Total num: 68146
+Effective win contribution: 1816.3
+Draw contribution: 0
+Second player effective win contribution: 865.351
+Total participation: 3589.91
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.515591
+Num wins: 56743
+Num losses: 53767
+Total num: 110510
+Effective win contribution: 2976.52
+Draw contribution: 0
+Second player effective win contribution: 1429.59
+Total participation: 5773.04
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.5154
+Num wins: 40849
+Num losses: 39271
+Total num: 80120
+Effective win contribution: 2169.51
+Draw contribution: 0
+Second player effective win contribution: 1051.25
+Total participation: 4209.37
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.517148
+Num wins: 49326
+Num losses: 46862
+Total num: 96188
+Effective win contribution: 2599.81
+Draw contribution: 0
+Second player effective win contribution: 1227.09
+Total participation: 5027.21
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.507999
+Num wins: 38630
+Num losses: 38090
+Total num: 76720
+Effective win contribution: 2043.89
+Draw contribution: 0
+Second player effective win contribution: 979.439
+Total participation: 4023.41
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.511143
+Num wins: 41643
+Num losses: 40537
+Total num: 82180
+Effective win contribution: 2220.31
+Draw contribution: 0
+Second player effective win contribution: 1057.34
+Total participation: 4343.81
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.509532
+Num wins: 45128
+Num losses: 43810
+Total num: 88938
+Effective win contribution: 2378.42
+Draw contribution: 0
+Second player effective win contribution: 1133.7
+Total participation: 4667.86
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.508743
+Num wins: 43630
+Num losses: 42860
+Total num: 86490
+Effective win contribution: 2340.2
+Draw contribution: 0
+Second player effective win contribution: 1126.48
+Total participation: 4599.96
+
+
+Name: Demo Card 5 Beast Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +1/+1 to a friendly Beast.
+
+
+Eval (win rate): 0.513959
+Num wins: 42772
+Num losses: 41100
+Total num: 83872
+Effective win contribution: 2272.61
+Draw contribution: 0
+Second player effective win contribution: 1102.23
+Total participation: 4421.78
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.458669
+Num wins: 11798
+Num losses: 13112
+Total num: 24910
+Effective win contribution: 475.625
+Draw contribution: 0
+Second player effective win contribution: 224.165
+Total participation: 1036.97
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.454764
+Num wins: 12336
+Num losses: 13566
+Total num: 25902
+Effective win contribution: 487.221
+Draw contribution: 0
+Second player effective win contribution: 230.07
+Total participation: 1071.37
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.47179
+Num wins: 15195
+Num losses: 16343
+Total num: 31538
+Effective win contribution: 631.457
+Draw contribution: 0
+Second player effective win contribution: 292.2
+Total participation: 1338.43
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.468533
+Num wins: 16410
+Num losses: 17396
+Total num: 33806
+Effective win contribution: 668.56
+Draw contribution: 0
+Second player effective win contribution: 306.575
+Total participation: 1426.92
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.471836
+Num wins: 16518
+Num losses: 17184
+Total num: 33702
+Effective win contribution: 668.061
+Draw contribution: 0
+Second player effective win contribution: 317.778
+Total participation: 1415.87
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.450568
+Num wins: 10002
+Num losses: 11144
+Total num: 21146
+Effective win contribution: 399.698
+Draw contribution: 0
+Second player effective win contribution: 184.839
+Total participation: 887.098
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.419247
+Num wins: 5939
+Num losses: 7571
+Total num: 13510
+Effective win contribution: 240.95
+Draw contribution: 0
+Second player effective win contribution: 109.311
+Total participation: 574.721
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.424253
+Num wins: 7204
+Num losses: 8822
+Total num: 16026
+Effective win contribution: 284.349
+Draw contribution: 0
+Second player effective win contribution: 129.791
+Total participation: 670.236
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.453816
+Num wins: 11232
+Num losses: 12652
+Total num: 23884
+Effective win contribution: 456.337
+Draw contribution: 0
+Second player effective win contribution: 209.568
+Total participation: 1005.56
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.47198
+Num wins: 12195
+Num losses: 13517
+Total num: 25712
+Effective win contribution: 512.373
+Draw contribution: 0
+Second player effective win contribution: 237.379
+Total participation: 1085.58
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.46323
+Num wins: 12903
+Num losses: 14227
+Total num: 27130
+Effective win contribution: 539.305
+Draw contribution: 0
+Second player effective win contribution: 247.752
+Total participation: 1164.23
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.462891
+Num wins: 12836
+Num losses: 14504
+Total num: 27340
+Effective win contribution: 535.619
+Draw contribution: 0
+Second player effective win contribution: 242.521
+Total participation: 1157.12
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.473801
+Num wins: 17939
+Num losses: 18533
+Total num: 36472
+Effective win contribution: 726.685
+Draw contribution: 0
+Second player effective win contribution: 337.918
+Total participation: 1533.74
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.436316
+Num wins: 6406
+Num losses: 7646
+Total num: 14052
+Effective win contribution: 251.959
+Draw contribution: 0
+Second player effective win contribution: 113.89
+Total participation: 577.468
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.467113
+Num wins: 13212
+Num losses: 14168
+Total num: 27380
+Effective win contribution: 543.076
+Draw contribution: 0
+Second player effective win contribution: 252.413
+Total participation: 1162.62
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.494717
+Num wins: 20679
+Num losses: 20929
+Total num: 41608
+Effective win contribution: 890.185
+Draw contribution: 0
+Second player effective win contribution: 408.75
+Total participation: 1799.38
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.457319
+Num wins: 9597
+Num losses: 10397
+Total num: 19994
+Effective win contribution: 377.381
+Draw contribution: 0
+Second player effective win contribution: 175.903
+Total participation: 825.204
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.46865
+Num wins: 18334
+Num losses: 19884
+Total num: 38218
+Effective win contribution: 753.52
+Draw contribution: 0
+Second player effective win contribution: 349.836
+Total participation: 1607.85
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.445115
+Num wins: 9849
+Num losses: 11469
+Total num: 21318
+Effective win contribution: 398.236
+Draw contribution: 0
+Second player effective win contribution: 184.949
+Total participation: 894.681
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.461796
+Num wins: 12767
+Num losses: 13919
+Total num: 26686
+Effective win contribution: 513.956
+Draw contribution: 0
+Second player effective win contribution: 236.808
+Total participation: 1112.95
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.474654
+Num wins: 16910
+Num losses: 18208
+Total num: 35118
+Effective win contribution: 720.705
+Draw contribution: 0
+Second player effective win contribution: 330.374
+Total participation: 1518.38
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.38906
+Num wins: 3650
+Num losses: 4958
+Total num: 8608
+Effective win contribution: 142.205
+Draw contribution: 0
+Second player effective win contribution: 68.8108
+Total participation: 365.509
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.474069
+Num wins: 16254
+Num losses: 17262
+Total num: 33516
+Effective win contribution: 677.766
+Draw contribution: 0
+Second player effective win contribution: 311.813
+Total participation: 1429.68
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.491893
+Num wins: 19331
+Num losses: 19291
+Total num: 38622
+Effective win contribution: 815.895
+Draw contribution: 0
+Second player effective win contribution: 384.599
+Total participation: 1658.69
+
+
+Name: Demo Card 5 Beast Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Give +5/+5 to a friendly Beast.
+
+
+Eval (win rate): 0.446026
+Num wins: 9907
+Num losses: 11145
+Total num: 21052
+Effective win contribution: 389.184
+Draw contribution: 0
+Second player effective win contribution: 175.798
+Total participation: 872.559
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.50475
+Num wins: 33460
+Num losses: 32720
+Total num: 66180
+Effective win contribution: 1753.06
+Draw contribution: 0
+Second player effective win contribution: 844.411
+Total participation: 3473.13
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.515928
+Num wins: 59562
+Num losses: 55530
+Total num: 115092
+Effective win contribution: 3073.29
+Draw contribution: 0
+Second player effective win contribution: 1474.24
+Total participation: 5956.83
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.5114
+Num wins: 41210
+Num losses: 38796
+Total num: 80006
+Effective win contribution: 2124.27
+Draw contribution: 0
+Second player effective win contribution: 1010.7
+Total participation: 4153.82
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.508909
+Num wins: 41202
+Num losses: 40348
+Total num: 81550
+Effective win contribution: 2174.55
+Draw contribution: 0
+Second player effective win contribution: 1047.28
+Total participation: 4272.96
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.512484
+Num wins: 46749
+Num losses: 45483
+Total num: 92232
+Effective win contribution: 2460.58
+Draw contribution: 0
+Second player effective win contribution: 1170.15
+Total participation: 4801.29
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.512842
+Num wins: 44528
+Num losses: 43098
+Total num: 87626
+Effective win contribution: 2355.94
+Draw contribution: 0
+Second player effective win contribution: 1137.55
+Total participation: 4593.89
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.500451
+Num wins: 41500
+Num losses: 41492
+Total num: 82992
+Effective win contribution: 2163.66
+Draw contribution: 0
+Second player effective win contribution: 1037.95
+Total participation: 4323.43
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.498291
+Num wins: 29478
+Num losses: 29614
+Total num: 59092
+Effective win contribution: 1540.65
+Draw contribution: 0
+Second player effective win contribution: 734.28
+Total participation: 3091.86
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.506466
+Num wins: 43873
+Num losses: 42641
+Total num: 86514
+Effective win contribution: 2300.04
+Draw contribution: 0
+Second player effective win contribution: 1099.2
+Total participation: 4541.35
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.507684
+Num wins: 39960
+Num losses: 38610
+Total num: 78570
+Effective win contribution: 2043.15
+Draw contribution: 0
+Second player effective win contribution: 987.611
+Total participation: 4024.45
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.499372
+Num wins: 39374
+Num losses: 39604
+Total num: 78978
+Effective win contribution: 2070.69
+Draw contribution: 0
+Second player effective win contribution: 994.766
+Total participation: 4146.59
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.500463
+Num wins: 39265
+Num losses: 39015
+Total num: 78280
+Effective win contribution: 2037.06
+Draw contribution: 0
+Second player effective win contribution: 982.538
+Total participation: 4070.35
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.51004
+Num wins: 39603
+Num losses: 38385
+Total num: 77988
+Effective win contribution: 2082.71
+Draw contribution: 0
+Second player effective win contribution: 996.949
+Total participation: 4083.43
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.509937
+Num wins: 46905
+Num losses: 44525
+Total num: 91430
+Effective win contribution: 2422.24
+Draw contribution: 0
+Second player effective win contribution: 1164.46
+Total participation: 4750.07
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.510026
+Num wins: 46681
+Num losses: 45987
+Total num: 92668
+Effective win contribution: 2477.74
+Draw contribution: 0
+Second player effective win contribution: 1186.31
+Total participation: 4858.06
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.497182
+Num wins: 32163
+Num losses: 32287
+Total num: 64450
+Effective win contribution: 1677.99
+Draw contribution: 0
+Second player effective win contribution: 802.363
+Total participation: 3375
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.499964
+Num wins: 35468
+Num losses: 35466
+Total num: 70934
+Effective win contribution: 1846.71
+Draw contribution: 0
+Second player effective win contribution: 880.461
+Total participation: 3693.68
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.507151
+Num wins: 45060
+Num losses: 43556
+Total num: 88616
+Effective win contribution: 2335.78
+Draw contribution: 0
+Second player effective win contribution: 1126.09
+Total participation: 4605.68
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.491586
+Num wins: 24609
+Num losses: 25189
+Total num: 49798
+Effective win contribution: 1285.68
+Draw contribution: 0
+Second player effective win contribution: 617.862
+Total participation: 2615.37
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.503546
+Num wins: 34754
+Num losses: 34720
+Total num: 69474
+Effective win contribution: 1840.46
+Draw contribution: 0
+Second player effective win contribution: 889.427
+Total participation: 3655
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.502354
+Num wins: 34116
+Num losses: 33854
+Total num: 67970
+Effective win contribution: 1767.73
+Draw contribution: 0
+Second player effective win contribution: 849.194
+Total participation: 3518.89
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.505128
+Num wins: 38582
+Num losses: 37576
+Total num: 76158
+Effective win contribution: 2010.86
+Draw contribution: 0
+Second player effective win contribution: 966.626
+Total participation: 3980.89
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.507383
+Num wins: 48536
+Num losses: 47310
+Total num: 95846
+Effective win contribution: 2532.85
+Draw contribution: 0
+Second player effective win contribution: 1219.04
+Total participation: 4991.99
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.51659
+Num wins: 41926
+Num losses: 38982
+Total num: 80908
+Effective win contribution: 2173.33
+Draw contribution: 0
+Second player effective win contribution: 1043.33
+Total participation: 4207.07
+
+
+Name: Demo Card 5 Dragon Ver.1.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly Dragon.
+
+
+Eval (win rate): 0.507133
+Num wins: 33854
+Num losses: 33110
+Total num: 66964
+Effective win contribution: 1788.44
+Draw contribution: 0
+Second player effective win contribution: 849.77
+Total participation: 3526.56
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.455366
+Num wins: 12947
+Num losses: 14537
+Total num: 27484
+Effective win contribution: 527.761
+Draw contribution: 0
+Second player effective win contribution: 246.066
+Total participation: 1158.98
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.46602
+Num wins: 13356
+Num losses: 14622
+Total num: 27978
+Effective win contribution: 557.796
+Draw contribution: 0
+Second player effective win contribution: 259.277
+Total participation: 1196.94
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.447109
+Num wins: 11620
+Num losses: 13524
+Total num: 25144
+Effective win contribution: 471.063
+Draw contribution: 0
+Second player effective win contribution: 212.348
+Total participation: 1053.58
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.481869
+Num wins: 16398
+Num losses: 17384
+Total num: 33782
+Effective win contribution: 680.738
+Draw contribution: 0
+Second player effective win contribution: 317.477
+Total participation: 1412.7
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.433351
+Num wins: 7111
+Num losses: 8719
+Total num: 15830
+Effective win contribution: 290.838
+Draw contribution: 0
+Second player effective win contribution: 137.522
+Total participation: 671.137
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.444987
+Num wins: 9232
+Num losses: 10532
+Total num: 19764
+Effective win contribution: 371.774
+Draw contribution: 0
+Second player effective win contribution: 172.486
+Total participation: 835.471
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.463109
+Num wins: 13003
+Num losses: 14315
+Total num: 27318
+Effective win contribution: 538.439
+Draw contribution: 0
+Second player effective win contribution: 251.658
+Total participation: 1162.66
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.458365
+Num wins: 9385
+Num losses: 10485
+Total num: 19870
+Effective win contribution: 382.583
+Draw contribution: 0
+Second player effective win contribution: 178.764
+Total participation: 834.67
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.435753
+Num wins: 6343
+Num losses: 7685
+Total num: 14028
+Effective win contribution: 256.075
+Draw contribution: 0
+Second player effective win contribution: 119.302
+Total participation: 587.662
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.44652
+Num wins: 10045
+Num losses: 11761
+Total num: 21806
+Effective win contribution: 405.098
+Draw contribution: 0
+Second player effective win contribution: 184.28
+Total participation: 907.234
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.455526
+Num wins: 12145
+Num losses: 13347
+Total num: 25492
+Effective win contribution: 488.773
+Draw contribution: 0
+Second player effective win contribution: 229.51
+Total participation: 1072.98
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.47094
+Num wins: 15591
+Num losses: 16677
+Total num: 32268
+Effective win contribution: 644.181
+Draw contribution: 0
+Second player effective win contribution: 297.602
+Total participation: 1367.86
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.464588
+Num wins: 10511
+Num losses: 11149
+Total num: 21660
+Effective win contribution: 405.166
+Draw contribution: 0
+Second player effective win contribution: 181.372
+Total participation: 872.097
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.423139
+Num wins: 8068
+Num losses: 9550
+Total num: 17618
+Effective win contribution: 311.619
+Draw contribution: 0
+Second player effective win contribution: 144.991
+Total participation: 736.445
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.438916
+Num wins: 8633
+Num losses: 9877
+Total num: 18510
+Effective win contribution: 330.96
+Draw contribution: 0
+Second player effective win contribution: 153.605
+Total participation: 754.04
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.442684
+Num wins: 9227
+Num losses: 10847
+Total num: 20074
+Effective win contribution: 376.335
+Draw contribution: 0
+Second player effective win contribution: 171.222
+Total participation: 850.12
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.469207
+Num wins: 13619
+Num losses: 14881
+Total num: 28500
+Effective win contribution: 571.589
+Draw contribution: 0
+Second player effective win contribution: 270.551
+Total participation: 1218.2
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.450106
+Num wins: 11440
+Num losses: 13080
+Total num: 24520
+Effective win contribution: 453.689
+Draw contribution: 0
+Second player effective win contribution: 207.772
+Total participation: 1007.96
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.450692
+Num wins: 14370
+Num losses: 16172
+Total num: 30542
+Effective win contribution: 569.037
+Draw contribution: 0
+Second player effective win contribution: 260.004
+Total participation: 1262.58
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.45711
+Num wins: 12602
+Num losses: 14074
+Total num: 26676
+Effective win contribution: 516.872
+Draw contribution: 0
+Second player effective win contribution: 242.636
+Total participation: 1130.74
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.39337
+Num wins: 5010
+Num losses: 6482
+Total num: 11492
+Effective win contribution: 184.79
+Draw contribution: 0
+Second player effective win contribution: 81.6665
+Total participation: 469.761
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.462527
+Num wins: 12603
+Num losses: 13603
+Total num: 26206
+Effective win contribution: 508.82
+Draw contribution: 0
+Second player effective win contribution: 245.589
+Total participation: 1100.09
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.398301
+Num wins: 4814
+Num losses: 6254
+Total num: 11068
+Effective win contribution: 180.982
+Draw contribution: 0
+Second player effective win contribution: 82.72
+Total participation: 454.386
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.443155
+Num wins: 10275
+Num losses: 12027
+Total num: 22302
+Effective win contribution: 408.767
+Draw contribution: 0
+Second player effective win contribution: 191.794
+Total participation: 922.402
+
+
+Name: Demo Card 5 Dragon Ver.5.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +5/+5 to a friendly Dragon.
+
+
+Eval (win rate): 0.446547
+Num wins: 10378
+Num losses: 11342
+Total num: 21720
+Effective win contribution: 398.224
+Draw contribution: 0
+Second player effective win contribution: 187.492
+Total participation: 891.785
+
+

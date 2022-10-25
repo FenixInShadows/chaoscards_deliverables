@@ -1,0 +1,1803 @@
+100
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.446967
+Num wins: 8710
+Num losses: 9088
+Total num: 17798
+Effective win contribution: 301.724
+Draw contribution: 0
+Second player effective win contribution: 237.29
+Total participation: 675.047
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.422676
+Num wins: 6716
+Num losses: 7486
+Total num: 14202
+Effective win contribution: 231.78
+Draw contribution: 0
+Second player effective win contribution: 185.692
+Total participation: 548.364
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.431772
+Num wins: 7970
+Num losses: 8910
+Total num: 16880
+Effective win contribution: 280.403
+Draw contribution: 0
+Second player effective win contribution: 219.425
+Total participation: 649.423
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.44353
+Num wins: 10697
+Num losses: 11343
+Total num: 22040
+Effective win contribution: 370.799
+Draw contribution: 0
+Second player effective win contribution: 290.141
+Total participation: 836.018
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.44417
+Num wins: 9619
+Num losses: 10199
+Total num: 19818
+Effective win contribution: 329.18
+Draw contribution: 0
+Second player effective win contribution: 260.422
+Total participation: 741.112
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.446257
+Num wins: 13948
+Num losses: 14906
+Total num: 28854
+Effective win contribution: 484.027
+Draw contribution: 0
+Second player effective win contribution: 393.531
+Total participation: 1084.64
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.447793
+Num wins: 10212
+Num losses: 11068
+Total num: 21280
+Effective win contribution: 360.944
+Draw contribution: 0
+Second player effective win contribution: 286.304
+Total participation: 806.051
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.445873
+Num wins: 10459
+Num losses: 11265
+Total num: 21724
+Effective win contribution: 373.237
+Draw contribution: 0
+Second player effective win contribution: 292.62
+Total participation: 837.092
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.454872
+Num wins: 11324
+Num losses: 11844
+Total num: 23168
+Effective win contribution: 394.145
+Draw contribution: 0
+Second player effective win contribution: 314.939
+Total participation: 866.497
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.440471
+Num wins: 8735
+Num losses: 9333
+Total num: 18068
+Effective win contribution: 307.648
+Draw contribution: 0
+Second player effective win contribution: 243.458
+Total participation: 698.453
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.45753
+Num wins: 14022
+Num losses: 14314
+Total num: 28336
+Effective win contribution: 493.923
+Draw contribution: 0
+Second player effective win contribution: 393.652
+Total participation: 1079.54
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.452684
+Num wins: 13817
+Num losses: 14387
+Total num: 28204
+Effective win contribution: 482.704
+Draw contribution: 0
+Second player effective win contribution: 400.399
+Total participation: 1066.32
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.45816
+Num wins: 13884
+Num losses: 14168
+Total num: 28052
+Effective win contribution: 483.464
+Draw contribution: 0
+Second player effective win contribution: 391.172
+Total participation: 1055.23
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.441036
+Num wins: 11233
+Num losses: 12087
+Total num: 23320
+Effective win contribution: 394.032
+Draw contribution: 0
+Second player effective win contribution: 315.302
+Total participation: 893.423
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.433136
+Num wins: 7351
+Num losses: 8253
+Total num: 15604
+Effective win contribution: 260.43
+Draw contribution: 0
+Second player effective win contribution: 207.569
+Total participation: 601.266
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.441014
+Num wins: 11054
+Num losses: 11832
+Total num: 22886
+Effective win contribution: 381.684
+Draw contribution: 0
+Second player effective win contribution: 311.175
+Total participation: 865.47
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.428034
+Num wins: 7870
+Num losses: 8740
+Total num: 16610
+Effective win contribution: 277.282
+Draw contribution: 0
+Second player effective win contribution: 220.238
+Total participation: 647.803
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.434412
+Num wins: 8986
+Num losses: 9928
+Total num: 18914
+Effective win contribution: 314.207
+Draw contribution: 0
+Second player effective win contribution: 243.227
+Total participation: 723.292
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.438138
+Num wins: 10362
+Num losses: 11326
+Total num: 21688
+Effective win contribution: 362.852
+Draw contribution: 0
+Second player effective win contribution: 284.443
+Total participation: 828.167
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.448532
+Num wins: 12441
+Num losses: 13157
+Total num: 25598
+Effective win contribution: 434.447
+Draw contribution: 0
+Second player effective win contribution: 355.303
+Total participation: 968.596
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.447344
+Num wins: 13725
+Num losses: 14475
+Total num: 28200
+Effective win contribution: 481.62
+Draw contribution: 0
+Second player effective win contribution: 389.108
+Total participation: 1076.62
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.445171
+Num wins: 10019
+Num losses: 10693
+Total num: 20712
+Effective win contribution: 350.618
+Draw contribution: 0
+Second player effective win contribution: 281.201
+Total participation: 787.603
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.435795
+Num wins: 8886
+Num losses: 9556
+Total num: 18442
+Effective win contribution: 305.605
+Draw contribution: 0
+Second player effective win contribution: 245.164
+Total participation: 701.259
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.447855
+Num wins: 10968
+Num losses: 11574
+Total num: 22542
+Effective win contribution: 376.309
+Draw contribution: 0
+Second player effective win contribution: 294.359
+Total participation: 840.246
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.45133
+Num wins: 13881
+Num losses: 14411
+Total num: 28292
+Effective win contribution: 485.367
+Draw contribution: 0
+Second player effective win contribution: 393.294
+Total participation: 1075.41
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.453766
+Num wins: 11090
+Num losses: 11512
+Total num: 22602
+Effective win contribution: 389.793
+Draw contribution: 0
+Second player effective win contribution: 319.947
+Total participation: 859.018
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.442389
+Num wins: 9732
+Num losses: 10534
+Total num: 20266
+Effective win contribution: 345.799
+Draw contribution: 0
+Second player effective win contribution: 277.894
+Total participation: 781.663
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.450558
+Num wins: 11331
+Num losses: 11879
+Total num: 23210
+Effective win contribution: 396.852
+Draw contribution: 0
+Second player effective win contribution: 319.717
+Total participation: 880.801
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.436204
+Num wins: 9655
+Num losses: 10583
+Total num: 20238
+Effective win contribution: 337.522
+Draw contribution: 0
+Second player effective win contribution: 267.558
+Total participation: 773.771
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.456615
+Num wins: 13305
+Num losses: 13839
+Total num: 27144
+Effective win contribution: 465.495
+Draw contribution: 0
+Second player effective win contribution: 379.363
+Total participation: 1019.45
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.439116
+Num wins: 10444
+Num losses: 11078
+Total num: 21522
+Effective win contribution: 358.494
+Draw contribution: 0
+Second player effective win contribution: 281.563
+Total participation: 816.4
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.457794
+Num wins: 15053
+Num losses: 15411
+Total num: 30464
+Effective win contribution: 532.574
+Draw contribution: 0
+Second player effective win contribution: 433.996
+Total participation: 1163.35
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.441206
+Num wins: 9453
+Num losses: 10119
+Total num: 19572
+Effective win contribution: 326.291
+Draw contribution: 0
+Second player effective win contribution: 261.709
+Total participation: 739.544
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.451713
+Num wins: 13043
+Num losses: 13255
+Total num: 26298
+Effective win contribution: 444.73
+Draw contribution: 0
+Second player effective win contribution: 361.193
+Total participation: 984.542
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.456611
+Num wins: 11844
+Num losses: 11988
+Total num: 23832
+Effective win contribution: 409.564
+Draw contribution: 0
+Second player effective win contribution: 331.023
+Total participation: 896.963
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.443838
+Num wins: 9736
+Num losses: 10400
+Total num: 20136
+Effective win contribution: 341.936
+Draw contribution: 0
+Second player effective win contribution: 270.147
+Total participation: 770.407
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.443749
+Num wins: 12060
+Num losses: 12674
+Total num: 24734
+Effective win contribution: 419.621
+Draw contribution: 0
+Second player effective win contribution: 333.091
+Total participation: 945.628
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.444699
+Num wins: 11342
+Num losses: 11812
+Total num: 23154
+Effective win contribution: 389.081
+Draw contribution: 0
+Second player effective win contribution: 311.834
+Total participation: 874.931
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.42656
+Num wins: 7657
+Num losses: 8467
+Total num: 16124
+Effective win contribution: 261.511
+Draw contribution: 0
+Second player effective win contribution: 209.239
+Total participation: 613.07
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.447902
+Num wins: 9996
+Num losses: 10694
+Total num: 20690
+Effective win contribution: 351.467
+Draw contribution: 0
+Second player effective win contribution: 282.199
+Total participation: 784.696
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.448166
+Num wins: 11686
+Num losses: 12294
+Total num: 23980
+Effective win contribution: 407.567
+Draw contribution: 0
+Second player effective win contribution: 326.192
+Total participation: 909.411
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.438394
+Num wins: 9336
+Num losses: 10096
+Total num: 19432
+Effective win contribution: 327.419
+Draw contribution: 0
+Second player effective win contribution: 261.19
+Total participation: 746.862
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.448932
+Num wins: 10458
+Num losses: 10996
+Total num: 21454
+Effective win contribution: 364.969
+Draw contribution: 0
+Second player effective win contribution: 294.016
+Total participation: 812.972
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.436079
+Num wins: 9419
+Num losses: 9949
+Total num: 19368
+Effective win contribution: 322.863
+Draw contribution: 0
+Second player effective win contribution: 261.841
+Total participation: 740.377
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.446418
+Num wins: 11815
+Num losses: 12415
+Total num: 24230
+Effective win contribution: 405.312
+Draw contribution: 0
+Second player effective win contribution: 327.764
+Total participation: 907.92
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.443523
+Num wins: 10520
+Num losses: 11380
+Total num: 21900
+Effective win contribution: 372.624
+Draw contribution: 0
+Second player effective win contribution: 299.617
+Total participation: 840.146
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.43718
+Num wins: 11985
+Num losses: 12963
+Total num: 24948
+Effective win contribution: 420.907
+Draw contribution: 0
+Second player effective win contribution: 335.187
+Total participation: 962.777
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.439487
+Num wins: 8832
+Num losses: 9372
+Total num: 18204
+Effective win contribution: 304.585
+Draw contribution: 0
+Second player effective win contribution: 243.551
+Total participation: 693.046
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.443937
+Num wins: 11284
+Num losses: 12002
+Total num: 23286
+Effective win contribution: 390.667
+Draw contribution: 0
+Second player effective win contribution: 313.549
+Total participation: 880.004
+
+
+Name: Demo Card 2 Ver.1.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.450588
+Num wins: 11159
+Num losses: 11609
+Total num: 22768
+Effective win contribution: 386.306
+Draw contribution: 0
+Second player effective win contribution: 310.503
+Total participation: 857.338
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.513272
+Num wins: 46174
+Num losses: 45198
+Total num: 91372
+Effective win contribution: 2481.93
+Draw contribution: 0
+Second player effective win contribution: 2098.43
+Total participation: 4835.51
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.509177
+Num wins: 47310
+Num losses: 46514
+Total num: 93824
+Effective win contribution: 2532.79
+Draw contribution: 0
+Second player effective win contribution: 2124.02
+Total participation: 4974.28
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508745
+Num wins: 42753
+Num losses: 42067
+Total num: 84820
+Effective win contribution: 2306.93
+Draw contribution: 0
+Second player effective win contribution: 1925.88
+Total participation: 4534.55
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.506529
+Num wins: 42186
+Num losses: 41544
+Total num: 83730
+Effective win contribution: 2251.35
+Draw contribution: 0
+Second player effective win contribution: 1876.51
+Total participation: 4444.66
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.5035
+Num wins: 34267
+Num losses: 34359
+Total num: 68626
+Effective win contribution: 1855.08
+Draw contribution: 0
+Second player effective win contribution: 1529.4
+Total participation: 3684.37
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.514441
+Num wins: 51682
+Num losses: 50418
+Total num: 102100
+Effective win contribution: 2773.76
+Draw contribution: 0
+Second player effective win contribution: 2331.11
+Total participation: 5391.8
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.507607
+Num wins: 39480
+Num losses: 39162
+Total num: 78642
+Effective win contribution: 2132.1
+Draw contribution: 0
+Second player effective win contribution: 1774.23
+Total participation: 4200.3
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.513726
+Num wins: 51265
+Num losses: 50017
+Total num: 101282
+Effective win contribution: 2769.73
+Draw contribution: 0
+Second player effective win contribution: 2321.15
+Total participation: 5391.46
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.511004
+Num wins: 48181
+Num losses: 46881
+Total num: 95062
+Effective win contribution: 2564.03
+Draw contribution: 0
+Second player effective win contribution: 2172.73
+Total participation: 5017.64
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508395
+Num wins: 43521
+Num losses: 43243
+Total num: 86764
+Effective win contribution: 2327.25
+Draw contribution: 0
+Second player effective win contribution: 1947.03
+Total participation: 4577.64
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510375
+Num wins: 46222
+Num losses: 45490
+Total num: 91712
+Effective win contribution: 2480.47
+Draw contribution: 0
+Second player effective win contribution: 2069.44
+Total participation: 4860.08
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.511541
+Num wins: 47451
+Num losses: 46639
+Total num: 94090
+Effective win contribution: 2557.38
+Draw contribution: 0
+Second player effective win contribution: 2142.74
+Total participation: 4999.36
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.506646
+Num wins: 37499
+Num losses: 37105
+Total num: 74604
+Effective win contribution: 2015.85
+Draw contribution: 0
+Second player effective win contribution: 1699.35
+Total participation: 3978.81
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510427
+Num wins: 42118
+Num losses: 41220
+Total num: 83338
+Effective win contribution: 2259.27
+Draw contribution: 0
+Second player effective win contribution: 1901.61
+Total participation: 4426.24
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.509983
+Num wins: 42738
+Num losses: 42356
+Total num: 85094
+Effective win contribution: 2314.3
+Draw contribution: 0
+Second player effective win contribution: 1935.12
+Total participation: 4537.99
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.511167
+Num wins: 41757
+Num losses: 41365
+Total num: 83122
+Effective win contribution: 2268.6
+Draw contribution: 0
+Second player effective win contribution: 1881.61
+Total participation: 4438.08
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.507034
+Num wins: 40424
+Num losses: 40160
+Total num: 80584
+Effective win contribution: 2186.81
+Draw contribution: 0
+Second player effective win contribution: 1821.55
+Total participation: 4312.95
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.512655
+Num wins: 45890
+Num losses: 45058
+Total num: 90948
+Effective win contribution: 2478.9
+Draw contribution: 0
+Second player effective win contribution: 2072.98
+Total participation: 4835.43
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508551
+Num wins: 33291
+Num losses: 33451
+Total num: 66742
+Effective win contribution: 1824.04
+Draw contribution: 0
+Second player effective win contribution: 1520.82
+Total participation: 3586.74
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.511761
+Num wins: 42002
+Num losses: 41684
+Total num: 83686
+Effective win contribution: 2283.98
+Draw contribution: 0
+Second player effective win contribution: 1883.04
+Total participation: 4462.97
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.509934
+Num wins: 40008
+Num losses: 39598
+Total num: 79606
+Effective win contribution: 2159.95
+Draw contribution: 0
+Second player effective win contribution: 1807.53
+Total participation: 4235.75
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.507359
+Num wins: 36184
+Num losses: 36288
+Total num: 72472
+Effective win contribution: 1967.47
+Draw contribution: 0
+Second player effective win contribution: 1639.88
+Total participation: 3877.87
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.512734
+Num wins: 48493
+Num losses: 47107
+Total num: 95600
+Effective win contribution: 2581.74
+Draw contribution: 0
+Second player effective win contribution: 2171.19
+Total participation: 5035.25
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.509664
+Num wins: 38418
+Num losses: 37728
+Total num: 76146
+Effective win contribution: 2056.91
+Draw contribution: 0
+Second player effective win contribution: 1714.36
+Total participation: 4035.81
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.504432
+Num wins: 34350
+Num losses: 34568
+Total num: 68918
+Effective win contribution: 1843.56
+Draw contribution: 0
+Second player effective win contribution: 1543.83
+Total participation: 3654.73
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.51192
+Num wins: 46832
+Num losses: 46206
+Total num: 93038
+Effective win contribution: 2534.21
+Draw contribution: 0
+Second player effective win contribution: 2128.81
+Total participation: 4950.4
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.51136
+Num wins: 48141
+Num losses: 47471
+Total num: 95612
+Effective win contribution: 2612.43
+Draw contribution: 0
+Second player effective win contribution: 2191.01
+Total participation: 5108.78
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.51267
+Num wins: 43376
+Num losses: 42204
+Total num: 85580
+Effective win contribution: 2328.15
+Draw contribution: 0
+Second player effective win contribution: 1972.89
+Total participation: 4541.23
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.506224
+Num wins: 37471
+Num losses: 37469
+Total num: 74940
+Effective win contribution: 2017.12
+Draw contribution: 0
+Second player effective win contribution: 1677.64
+Total participation: 3984.64
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510253
+Num wins: 43863
+Num losses: 43041
+Total num: 86904
+Effective win contribution: 2349.91
+Draw contribution: 0
+Second player effective win contribution: 1957.68
+Total participation: 4605.39
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.515787
+Num wins: 51153
+Num losses: 49835
+Total num: 100988
+Effective win contribution: 2760.14
+Draw contribution: 0
+Second player effective win contribution: 2324.54
+Total participation: 5351.33
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510388
+Num wins: 39829
+Num losses: 39343
+Total num: 79172
+Effective win contribution: 2150.67
+Draw contribution: 0
+Second player effective win contribution: 1787.25
+Total participation: 4213.79
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.513202
+Num wins: 45135
+Num losses: 44239
+Total num: 89374
+Effective win contribution: 2419.56
+Draw contribution: 0
+Second player effective win contribution: 2035.78
+Total participation: 4714.64
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508538
+Num wins: 37735
+Num losses: 37465
+Total num: 75200
+Effective win contribution: 2031.81
+Draw contribution: 0
+Second player effective win contribution: 1696.25
+Total participation: 3995.4
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510624
+Num wins: 48769
+Num losses: 47367
+Total num: 96136
+Effective win contribution: 2595.54
+Draw contribution: 0
+Second player effective win contribution: 2175.92
+Total participation: 5083.07
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.51149
+Num wins: 42892
+Num losses: 41942
+Total num: 84834
+Effective win contribution: 2293.46
+Draw contribution: 0
+Second player effective win contribution: 1923.37
+Total participation: 4483.88
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.510921
+Num wins: 43337
+Num losses: 43023
+Total num: 86360
+Effective win contribution: 2346.88
+Draw contribution: 0
+Second player effective win contribution: 1961.53
+Total participation: 4593.43
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.516108
+Num wins: 49273
+Num losses: 47813
+Total num: 97086
+Effective win contribution: 2652.19
+Draw contribution: 0
+Second player effective win contribution: 2230.03
+Total participation: 5138.83
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508672
+Num wins: 46578
+Num losses: 45654
+Total num: 92232
+Effective win contribution: 2483.18
+Draw contribution: 0
+Second player effective win contribution: 2089.12
+Total participation: 4881.68
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508419
+Num wins: 39160
+Num losses: 38768
+Total num: 77928
+Effective win contribution: 2096.96
+Draw contribution: 0
+Second player effective win contribution: 1752.26
+Total participation: 4124.47
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.511272
+Num wins: 42716
+Num losses: 42266
+Total num: 84982
+Effective win contribution: 2309.03
+Draw contribution: 0
+Second player effective win contribution: 1927.6
+Total participation: 4516.25
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.507578
+Num wins: 38573
+Num losses: 38083
+Total num: 76656
+Effective win contribution: 2078.27
+Draw contribution: 0
+Second player effective win contribution: 1726.29
+Total participation: 4094.48
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.509896
+Num wins: 46321
+Num losses: 45083
+Total num: 91404
+Effective win contribution: 2476.6
+Draw contribution: 0
+Second player effective win contribution: 2081.31
+Total participation: 4857.07
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.512453
+Num wins: 47068
+Num losses: 45842
+Total num: 92910
+Effective win contribution: 2524.49
+Draw contribution: 0
+Second player effective win contribution: 2104.35
+Total participation: 4926.29
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.507881
+Num wins: 37057
+Num losses: 36445
+Total num: 73502
+Effective win contribution: 1982
+Draw contribution: 0
+Second player effective win contribution: 1658.55
+Total participation: 3902.49
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.503512
+Num wins: 31504
+Num losses: 31854
+Total num: 63358
+Effective win contribution: 1716.65
+Draw contribution: 0
+Second player effective win contribution: 1406.3
+Total participation: 3409.36
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.512063
+Num wins: 39653
+Num losses: 39477
+Total num: 79130
+Effective win contribution: 2168.06
+Draw contribution: 0
+Second player effective win contribution: 1801.66
+Total participation: 4233.96
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508572
+Num wins: 40582
+Num losses: 39848
+Total num: 80430
+Effective win contribution: 2170.43
+Draw contribution: 0
+Second player effective win contribution: 1821.98
+Total participation: 4267.68
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.512127
+Num wins: 44404
+Num losses: 43036
+Total num: 87440
+Effective win contribution: 2371.32
+Draw contribution: 0
+Second player effective win contribution: 1978.53
+Total participation: 4630.33
+
+
+Name: Demo Card 2 Ver.5.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.508592
+Num wins: 41430
+Num losses: 40982
+Total num: 82412
+Effective win contribution: 2246.36
+Draw contribution: 0
+Second player effective win contribution: 1847.51
+Total participation: 4416.82
+
+

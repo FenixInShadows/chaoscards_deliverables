@@ -1,0 +1,1821 @@
+100
+
+
+Name: Elven Archer.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Deal 1 damage to a character.
+
+
+Eval (win rate): 0.506611
+Num wins: 36597
+Num losses: 36124
+Total num: 72760
+Effective win contribution: 2397.26
+Draw contribution: 2.58168
+Second player effective win contribution: 1069.33
+Total participation: 4731.96
+
+
+Name: Goldshire Footman.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.512511
+Num wins: 37200
+Num losses: 36365
+Total num: 73598
+Effective win contribution: 1654.66
+Draw contribution: 1.31574
+Second player effective win contribution: 728.381
+Total participation: 3228.54
+
+
+Name: Murloc Raider.
+MANA: 1 (originally 1).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.49445
+Num wins: 33285
+Num losses: 33238
+Total num: 66564
+Effective win contribution: 1486.41
+Draw contribution: 1.82831
+Second player effective win contribution: 655.437
+Total participation: 3006.2
+
+
+Name: Stonetusk Boar.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.490665
+Num wins: 22131
+Num losses: 22438
+Total num: 44592
+Effective win contribution: 992.074
+Draw contribution: 1.08335
+Second player effective win contribution: 429.102
+Total participation: 2021.89
+
+
+Name: Voodoo Doctor.
+MANA: 1 (originally 1).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Restore 2 health to a character.
+
+
+Eval (win rate): 0.511274
+Num wins: 39912
+Num losses: 39245
+Total num: 79184
+Effective win contribution: 2653.15
+Draw contribution: 1.75113
+Second player effective win contribution: 1172.72
+Total participation: 5189.29
+
+
+Name: Bloodfen Rapter.
+MANA: 2 (originally 2).
+ATK: 3 (originally 3).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.498688
+Num wins: 27405
+Num losses: 28177
+Total num: 55604
+Effective win contribution: 1251.5
+Draw contribution: 0.828616
+Second player effective win contribution: 548.714
+Total participation: 2509.57
+
+
+Name: Bluegill Warrior.
+MANA: 2 (originally 2).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.488016
+Num wins: 24581
+Num losses: 25414
+Total num: 50014
+Effective win contribution: 1091.11
+Draw contribution: 0.910024
+Second player effective win contribution: 480.664
+Total participation: 2235.82
+
+
+Name: Frostwolf Grunt.
+MANA: 2 (originally 2).
+ATK: 2 (originally 2).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.492885
+Num wins: 24011
+Num losses: 24063
+Total num: 48094
+Effective win contribution: 1032.56
+Draw contribution: 0.893869
+Second player effective win contribution: 458.071
+Total participation: 2094.93
+
+
+Name: Murloc Tidehunter.
+MANA: 2 (originally 2).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Summon a 1/1/1 Demon minion to your field.
+
+
+Eval (win rate): 0.52144
+Num wins: 59605
+Num losses: 57422
+Total num: 117086
+Effective win contribution: 3844.43
+Draw contribution: 3.28978
+Second player effective win contribution: 1697.25
+Total participation: 7372.73
+
+
+Name: Novice Engineer.
+MANA: 2 (originally 2).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: You draw 1 card.
+
+
+Eval (win rate): 0.496274
+Num wins: 30790
+Num losses: 31005
+Total num: 61816
+Effective win contribution: 1684.35
+Draw contribution: 1.36753
+Second player effective win contribution: 721.835
+Total participation: 3394
+
+
+Name: River Crocolisk.
+MANA: 2 (originally 2).
+ATK: 2 (originally 2).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.506276
+Num wins: 41792
+Num losses: 41701
+Total num: 83546
+Effective win contribution: 1849.75
+Draw contribution: 2.08513
+Second player effective win contribution: 817.886
+Total participation: 3653.63
+
+
+Name: Ironforge Rifleman.
+MANA: 3 (originally 3).
+ATK: 2 (originally 2).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Deal 1 damage to a character.
+
+
+Eval (win rate): 0.473961
+Num wins: 20853
+Num losses: 21842
+Total num: 42714
+Effective win contribution: 1258.93
+Draw contribution: 0.943258
+Second player effective win contribution: 539.905
+Total participation: 2656.19
+
+
+Name: Ironfur Grizzly.
+MANA: 3 (originally 3).
+ATK: 3 (originally 3).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.496242
+Num wins: 32072
+Num losses: 31351
+Total num: 63444
+Effective win contribution: 1355.53
+Draw contribution: 0.694581
+Second player effective win contribution: 597.172
+Total participation: 2731.6
+
+
+Name: Magma Rager.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.420304
+Num wins: 7787
+Num losses: 9041
+Total num: 16832
+Effective win contribution: 317.919
+Draw contribution: 0.0842199
+Second player effective win contribution: 140.012
+Total participation: 756.404
+
+
+Name: Razorfen Hunter.
+MANA: 3 (originally 3).
+ATK: 2 (originally 2).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Summon a 1/1/1 Beast minion to your field.
+
+
+Eval (win rate): 0.497482
+Num wins: 29377
+Num losses: 29421
+Total num: 58824
+Effective win contribution: 1697.12
+Draw contribution: 1.52463
+Second player effective win contribution: 732.67
+Total participation: 3411.41
+
+
+Name: Shattered Sun Cleric.
+MANA: 3 (originally 3).
+ATK: 3 (originally 3).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Give +1/+1 to a friendly minion.
+
+
+Eval (win rate): 0.508891
+Num wins: 32745
+Num losses: 32782
+Total num: 65554
+Effective win contribution: 2069.5
+Draw contribution: 1.60756
+Second player effective win contribution: 893.013
+Total participation: 4066.69
+
+
+Name: Silverback Patriarch.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.475265
+Num wins: 22201
+Num losses: 22605
+Total num: 44830
+Effective win contribution: 903.735
+Draw contribution: 1.0931
+Second player effective win contribution: 393.941
+Total participation: 1901.54
+
+
+Name: Wolfrider.
+MANA: 3 (originally 3).
+ATK: 3 (originally 3).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.462003
+Num wins: 11467
+Num losses: 12408
+Total num: 23894
+Effective win contribution: 520.767
+Draw contribution: 0.892745
+Second player effective win contribution: 226.882
+Total participation: 1127.19
+
+
+Name: Chillwind Yeti.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.482511
+Num wins: 16914
+Num losses: 16789
+Total num: 33716
+Effective win contribution: 674.226
+Draw contribution: 0.571762
+Second player effective win contribution: 277.477
+Total participation: 1397.33
+
+
+Name: Dragonling Mechanic.
+MANA: 4 (originally 4).
+ATK: 2 (originally 2).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Summon a 1/2/1 Dragon minion to your field.
+
+
+Eval (win rate): 0.472023
+Num wins: 18508
+Num losses: 19444
+Total num: 37980
+Effective win contribution: 999.927
+Draw contribution: 1.46666
+Second player effective win contribution: 435.266
+Total participation: 2118.39
+
+
+Name: Gnomish Inventor.
+MANA: 4 (originally 4).
+ATK: 2 (originally 2).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: You draw 1 card.
+
+
+Eval (win rate): 0.488992
+Num wins: 24222
+Num losses: 24403
+Total num: 48650
+Effective win contribution: 1011.7
+Draw contribution: 1.29527
+Second player effective win contribution: 424.352
+Total participation: 2068.96
+
+
+Name: Oasis Snapjaw.
+MANA: 4 (originally 4).
+ATK: 2 (originally 2).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.431134
+Num wins: 7892
+Num losses: 9272
+Total num: 17176
+Effective win contribution: 263.943
+Draw contribution: 0.291109
+Second player effective win contribution: 114.853
+Total participation: 612.206
+
+
+Name: Senjin Shieldmasta.
+MANA: 4 (originally 4).
+ATK: 3 (originally 3).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.502309
+Num wins: 40024
+Num losses: 38805
+Total num: 78880
+Effective win contribution: 1742.02
+Draw contribution: 2.30053
+Second player effective win contribution: 772.548
+Total participation: 3468.03
+
+
+Name: Stormwind Knight.
+MANA: 4 (originally 4).
+ATK: 2 (originally 2).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.496425
+Num wins: 24398
+Num losses: 24343
+Total num: 48768
+Effective win contribution: 1018.11
+Draw contribution: 1.12693
+Second player effective win contribution: 438.109
+Total participation: 2050.88
+
+
+Name: Booty Bay Bodyguard.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.417113
+Num wins: 6150
+Num losses: 7161
+Total num: 13318
+Effective win contribution: 248.18
+Draw contribution: 0.223378
+Second player effective win contribution: 109.689
+Total participation: 594.994
+
+
+Name: Darkscale Healer.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Restore 2 health to all friendly characters.
+
+
+Eval (win rate): 0.471269
+Num wins: 16353
+Num losses: 16737
+Total num: 33100
+Effective win contribution: 921.267
+Draw contribution: 0.76679
+Second player effective win contribution: 385.372
+Total participation: 1954.86
+
+
+Name: Nightblade.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Deal 3 damage to the opponent's leader.
+
+
+Eval (win rate): 0.494764
+Num wins: 31800
+Num losses: 31882
+Total num: 63720
+Effective win contribution: 2044.1
+Draw contribution: 2.4305
+Second player effective win contribution: 863.777
+Total participation: 4131.47
+
+
+Name: Stormpike Commando.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Deal 2 damage to a character.
+
+
+Eval (win rate): 0.469659
+Num wins: 15464
+Num losses: 15957
+Total num: 31440
+Effective win contribution: 943.259
+Draw contribution: 1.21935
+Second player effective win contribution: 410.564
+Total participation: 2008.39
+
+
+Name: Boulderfist Orge.
+MANA: 6 (originally 6).
+ATK: 6 (originally 6).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.47884
+Num wins: 18655
+Num losses: 18692
+Total num: 37352
+Effective win contribution: 680.557
+Draw contribution: 0.197422
+Second player effective win contribution: 284.351
+Total participation: 1421.26
+
+
+Name: Lord of the Arena.
+MANA: 6 (originally 6).
+ATK: 6 (originally 6).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+(Originally Taunt.)
+
+
+Eval (win rate): 0.427582
+Num wins: 9882
+Num losses: 10694
+Total num: 20586
+Effective win contribution: 376.495
+Draw contribution: 0.351093
+Second player effective win contribution: 166.674
+Total participation: 880.522
+
+
+Name: Reckless Rocketeer.
+MANA: 6 (originally 6).
+ATK: 5 (originally 5).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.477219
+Num wins: 19857
+Num losses: 21237
+Total num: 41120
+Effective win contribution: 891.989
+Draw contribution: 1.13742
+Second player effective win contribution: 378.921
+Total participation: 1869.14
+
+
+Name: Core Hound.
+MANA: 7 (originally 7).
+ATK: 9 (originally 9).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.425307
+Num wins: 7677
+Num losses: 8561
+Total num: 16248
+Effective win contribution: 261.309
+Draw contribution: 0.357647
+Second player effective win contribution: 116.84
+Total participation: 614.401
+
+
+Name: War Golem.
+MANA: 7 (originally 7).
+ATK: 7 (originally 7).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.4535
+Num wins: 10965
+Num losses: 11896
+Total num: 22868
+Effective win contribution: 379.107
+Draw contribution: 0.332394
+Second player effective win contribution: 153.828
+Total participation: 835.958
+
+
+Name: Chaos Nova.
+MANA: 5 (originally 5)
+TYPE: Spell.
+Cast: Deal 4 damage to all minions.
+
+
+Eval (win rate): 0.440281
+Num wins: 10006
+Num losses: 10556
+Total num: 20576
+Effective win contribution: 293.053
+Draw contribution: 0.570394
+Second player effective win contribution: 132.33
+Total participation: 665.606
+
+
+Name: Moonfire.
+MANA: 0 (originally 0)
+TYPE: Spell.
+Cast: Deal 1 damage to a character.
+
+
+Eval (win rate): 0.454241
+Num wins: 12300
+Num losses: 13232
+Total num: 25538
+Effective win contribution: 524.909
+Draw contribution: 0.227328
+Second player effective win contribution: 234.67
+Total participation: 1155.57
+
+
+Name: Healing Touch.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: Restore 8 health to a character.
+
+
+Eval (win rate): 0.40509
+Num wins: 6135
+Num losses: 7537
+Total num: 13678
+Effective win contribution: 235.559
+Draw contribution: 0.336363
+Second player effective win contribution: 103.845
+Total participation: 581.497
+
+
+Name: Starfire.
+MANA: 6 (originally 6)
+TYPE: Spell.
+Cast: Deal 5 damage to a character.
+Cast: You draw 1 card.
+
+
+Eval (win rate): 0.540645
+Num wins: 77703
+Num losses: 76470
+Total num: 154240
+Effective win contribution: 4343.24
+Draw contribution: 3.60144
+Second player effective win contribution: 1862.33
+Total participation: 8033.43
+
+
+Name: Arcane Shot.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Deal 2 damage to a character.
+
+
+Eval (win rate): 0.454323
+Num wins: 12060
+Num losses: 13073
+Total num: 25148
+Effective win contribution: 520.984
+Draw contribution: 0.524504
+Second player effective win contribution: 230.989
+Total participation: 1146.73
+
+
+Name: Mirror Image.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Summon 2 0/0/2 Dragon minions with Taunt to your field.
+
+
+Eval (win rate): 0.478045
+Num wins: 18560
+Num losses: 19052
+Total num: 37644
+Effective win contribution: 764.072
+Draw contribution: 1.33592
+Second player effective win contribution: 347.255
+Total participation: 1598.33
+
+
+Name: Arcane Explosion.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Deal 1 damage to all enemy minions.
+
+
+Eval (win rate): 0.484779
+Num wins: 20384
+Num losses: 20595
+Total num: 41000
+Effective win contribution: 769.617
+Draw contribution: 0.922096
+Second player effective win contribution: 334.701
+Total participation: 1587.56
+
+
+Name: Arcane Intellect.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: You draw 2 cards.
+
+
+Eval (win rate): 0.469953
+Num wins: 17034
+Num losses: 17172
+Total num: 34222
+Effective win contribution: 502.49
+Draw contribution: 0.673414
+Second player effective win contribution: 211.488
+Total participation: 1069.23
+
+
+Name: Fireball.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Deal 6 damage to a character.
+
+
+Eval (win rate): 0.464359
+Num wins: 15929
+Num losses: 16895
+Total num: 32846
+Effective win contribution: 733.867
+Draw contribution: 0.859244
+Second player effective win contribution: 330.333
+Total participation: 1580.39
+
+
+Name: Polymorph.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Transform a minion to a 1/1/1 Beast minion.
+
+
+Eval (win rate): 0.482103
+Num wins: 24979
+Num losses: 24483
+Total num: 49496
+Effective win contribution: 913.173
+Draw contribution: 1.45018
+Second player effective win contribution: 406.462
+Total participation: 1894.14
+
+
+Name: Flame Strike.
+MANA: 7 (originally 7)
+TYPE: Spell.
+Cast: Deal 5 damage to all enemy minions.
+
+
+Eval (win rate): 0.528859
+Num wins: 79710
+Num losses: 75978
+Total num: 155776
+Effective win contribution: 2845.96
+Draw contribution: 4.0636
+Second player effective win contribution: 1267.39
+Total participation: 5381.33
+
+
+Name: Blessing of Might.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Give +3/+0 to a minion.
+
+
+Eval (win rate): 0.469961
+Num wins: 16076
+Num losses: 17248
+Total num: 33344
+Effective win contribution: 726.446
+Draw contribution: 0.860938
+Second player effective win contribution: 319.848
+Total participation: 1545.76
+
+
+Name: Hand of Protection.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Grant Shield to a minion.
+
+
+Eval (win rate): 0.447769
+Num wins: 11966
+Num losses: 12565
+Total num: 24542
+Effective win contribution: 467.327
+Draw contribution: 0.451181
+Second player effective win contribution: 207.977
+Total participation: 1043.68
+
+
+Name: Holy Light.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Restore 8 health to your leader.
+
+
+Eval (win rate): 0.455874
+Num wins: 11902
+Num losses: 12539
+Total num: 24464
+Effective win contribution: 485.234
+Draw contribution: 0.86977
+Second player effective win contribution: 219.669
+Total participation: 1064.4
+
+
+Name: Blessing of Kings.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Give +4/+4 to a minion.
+
+
+Eval (win rate): 0.519852
+Num wins: 43062
+Num losses: 42748
+Total num: 85868
+Effective win contribution: 2149.75
+Draw contribution: 1.92938
+Second player effective win contribution: 929.263
+Total participation: 4135.32
+
+
+Name: Consecration.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Deal 2 damage to all enemy characters.
+
+
+Eval (win rate): 0.527146
+Num wins: 66289
+Num losses: 64078
+Total num: 130422
+Effective win contribution: 2756.9
+Draw contribution: 2.41069
+Second player effective win contribution: 1197.06
+Total participation: 5229.86
+
+
+Name: Hammer of Wrath.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Deal 3 damage to a character.
+Cast: You draw 1 card.
+
+
+Eval (win rate): 0.508777
+Num wins: 34023
+Num losses: 33639
+Total num: 67694
+Effective win contribution: 1825.07
+Draw contribution: 1.89831
+Second player effective win contribution: 790.026
+Total participation: 3587.18
+
+
+Name: Guardian of Kings.
+MANA: 7 (originally 7).
+ATK: 5 (originally 5).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+(Originally Taunt.)
+Battlecry: Restore 6 health to your leader.
+
+
+Eval (win rate): 0.511358
+Num wins: 46996
+Num losses: 44710
+Total num: 91754
+Effective win contribution: 2422.12
+Draw contribution: 2.42055
+Second player effective win contribution: 1062.39
+Total participation: 4736.64
+
+
+Name: Power Word - Shield.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Give +0/+2 to a minion.
+Cast: You draw 1 card.
+
+
+Eval (win rate): 0.489286
+Num wins: 24250
+Num losses: 24038
+Total num: 48302
+Effective win contribution: 1337.33
+Draw contribution: 0.667262
+Second player effective win contribution: 582.709
+Total participation: 2733.23
+
+
+Name: Holy Smite.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Deal 3 damage to a minion.
+
+
+Eval (win rate): 0.515321
+Num wins: 46239
+Num losses: 44445
+Total num: 90740
+Effective win contribution: 1997.44
+Draw contribution: 2.23351
+Second player effective win contribution: 884.983
+Total participation: 3876.12
+
+
+Name: Mind Vision.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Put a copy of a random card at the opponent's hand to your hand.
+
+
+Eval (win rate): 0.468567
+Num wins: 15209
+Num losses: 15684
+Total num: 30912
+Effective win contribution: 598.493
+Draw contribution: 0.893487
+Second player effective win contribution: 255.142
+Total participation: 1277.28
+
+
+Name: Psychic Conjurer.
+MANA: 1 (originally 1).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Put a copy of a random card at the opponent's deck to your hand.
+
+
+Eval (win rate): 0.522713
+Num wins: 57047
+Num losses: 54882
+Total num: 111980
+Effective win contribution: 3750.83
+Draw contribution: 2.82358
+Second player effective win contribution: 1611.9
+Total participation: 7175.7
+
+
+Name: Radiance.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Restore 5 health to your leader.
+
+
+Eval (win rate): 0.46426
+Num wins: 16964
+Num losses: 17075
+Total num: 34060
+Effective win contribution: 678.65
+Draw contribution: 0.79265
+Second player effective win contribution: 298.959
+Total participation: 1461.79
+
+
+Name: Shadow Word - Death.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Destroy a minion having at least 5 attack.
+
+
+Eval (win rate): 0.527097
+Num wins: 54613
+Num losses: 52454
+Total num: 107136
+Effective win contribution: 1941.67
+Draw contribution: 2.54109
+Second player effective win contribution: 883.365
+Total participation: 3683.71
+
+
+Name: Shadow Word - Pain.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Destroy a minion having at most 3 attack.
+
+
+Eval (win rate): 0.468333
+Num wins: 16566
+Num losses: 17531
+Total num: 34112
+Effective win contribution: 625.384
+Draw contribution: 0.34045
+Second player effective win contribution: 279.367
+Total participation: 1335.34
+
+
+Name: Holy Nova.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Deal 2 damage to all enemy minions.
+Cast: Restore 2 health to all friendly characters.
+
+
+Eval (win rate): 0.520986
+Num wins: 47151
+Num losses: 45082
+Total num: 92280
+Effective win contribution: 2551.49
+Draw contribution: 2.52877
+Second player effective win contribution: 1137.63
+Total participation: 4897.42
+
+
+Name: Power Infusion.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Give +2/+6 to a minion.
+
+
+Eval (win rate): 0.514033
+Num wins: 44699
+Num losses: 44256
+Total num: 88996
+Effective win contribution: 1828.35
+Draw contribution: 1.9928
+Second player effective win contribution: 780.458
+Total participation: 3556.88
+
+
+Name: Sinister Strike.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Deal 3 damage to the opponent's leader.
+
+
+Eval (win rate): 0.45028
+Num wins: 11190
+Num losses: 12300
+Total num: 23504
+Effective win contribution: 484.916
+Draw contribution: 0.483509
+Second player effective win contribution: 210.383
+Total participation: 1076.92
+
+
+Name: Sap.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Put an enemy minion to the opponent's hand.
+
+
+Eval (win rate): 0.483089
+Num wins: 20790
+Num losses: 20837
+Total num: 41650
+Effective win contribution: 845.578
+Draw contribution: 0.685466
+Second player effective win contribution: 378.252
+Total participation: 1750.36
+
+
+Name: Shiv.
+MANA: 2 (originally 2)
+TYPE: Spell.
+Cast: Deal 1 damage to a character.
+Cast: You draw 1 card.
+
+
+Eval (win rate): 0.494613
+Num wins: 28287
+Num losses: 28056
+Total num: 56376
+Effective win contribution: 1575.46
+Draw contribution: 1.96921
+Second player effective win contribution: 679.142
+Total participation: 3185.24
+
+
+Name: Fan of Knives.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: Deal 1 damage to all enemy minions.
+Cast: You draw 1 card.
+
+
+Eval (win rate): 0.505219
+Num wins: 27097
+Num losses: 26484
+Total num: 53612
+Effective win contribution: 1202.54
+Draw contribution: 1.57292
+Second player effective win contribution: 516.484
+Total participation: 2380.23
+
+
+Name: Plaguebringer.
+MANA: 4 (originally 4).
+ATK: 3 (originally 3).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Grant Poisonous to a friendly minion.
+
+
+Eval (win rate): 0.497059
+Num wins: 28511
+Num losses: 28996
+Total num: 57538
+Effective win contribution: 1619.64
+Draw contribution: 1.4756
+Second player effective win contribution: 698.174
+Total participation: 3258.45
+
+
+Name: Assassinate.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Destroy an enemy minion.
+
+
+Eval (win rate): 0.485986
+Num wins: 18243
+Num losses: 18344
+Total num: 36606
+Effective win contribution: 711.39
+Draw contribution: 0.761465
+Second player effective win contribution: 312.945
+Total participation: 1463.81
+
+
+Name: Hex.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Transform a minion to a 0/0/1 Demon minion with Taunt.
+
+
+Eval (win rate): 0.458688
+Num wins: 14610
+Num losses: 15130
+Total num: 29750
+Effective win contribution: 509.48
+Draw contribution: 0.369206
+Second player effective win contribution: 227.876
+Total participation: 1110.73
+
+
+Name: Fire Elemental.
+MANA: 6 (originally 6).
+ATK: 6 (originally 6).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Deal 4 damage to a character.
+
+
+Eval (win rate): 0.522524
+Num wins: 59846
+Num losses: 57085
+Total num: 116988
+Effective win contribution: 4130.29
+Draw contribution: 3.89248
+Second player effective win contribution: 1741.61
+Total participation: 7904.51
+
+
+Name: Soulfire.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Deal 4 damage to a character.
+Cast: Discard a random card at your hand.
+
+
+Eval (win rate): 0.372448
+Num wins: 2916
+Num losses: 4028
+Total num: 6946
+Effective win contribution: 177.698
+Draw contribution: 0.111111
+Second player effective win contribution: 82.4197
+Total participation: 477.109
+
+
+Name: Felstalker.
+MANA: 2 (originally 2).
+ATK: 4 (originally 4).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Discard a random card at your hand.
+
+
+Eval (win rate): 0.509363
+Num wins: 32335
+Num losses: 33082
+Total num: 65440
+Effective win contribution: 2320.03
+Draw contribution: 1.38337
+Second player effective win contribution: 1040.7
+Total participation: 4554.76
+
+
+Name: Drain Life.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: Deal 2 damage to a character.
+Cast: Restore 2 health to your leader.
+
+
+Eval (win rate): 0.44987
+Num wins: 12364
+Num losses: 13147
+Total num: 25526
+Effective win contribution: 701.139
+Draw contribution: 1.16823
+Second player effective win contribution: 302.782
+Total participation: 1558.54
+
+
+Name: Shadow Bolt.
+MANA: 3 (originally 3)
+TYPE: Spell.
+Cast: Deal 4 damage to a minion.
+
+
+Eval (win rate): 0.473345
+Num wins: 17441
+Num losses: 17626
+Total num: 35080
+Effective win contribution: 653.369
+Draw contribution: 0.770134
+Second player effective win contribution: 286.887
+Total participation: 1380.32
+
+
+Name: Hellfire.
+MANA: 4 (originally 4)
+TYPE: Spell.
+Cast: Deal 3 damage to all characters.
+
+
+Eval (win rate): 0.490264
+Num wins: 23606
+Num losses: 24206
+Total num: 47890
+Effective win contribution: 846.026
+Draw contribution: 4.53976
+Second player effective win contribution: 376.505
+Total participation: 1725.65
+
+
+Name: Whirlwind.
+MANA: 1 (originally 1)
+TYPE: Spell.
+Cast: Deal 1 damage to all minions.
+
+
+Eval (win rate): 0.426846
+Num wins: 8277
+Num losses: 9374
+Total num: 17662
+Effective win contribution: 295.324
+Draw contribution: 0.405686
+Second player effective win contribution: 134.72
+Total participation: 691.874
+
+
+Name: Korkron Elite.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Charge.
+(Originally Charge.)
+
+
+Eval (win rate): 0.516122
+Num wins: 51211
+Num losses: 49398
+Total num: 100666
+Effective win contribution: 2606.15
+Draw contribution: 2.77854
+Second player effective win contribution: 1113.16
+Total participation: 5049.49
+
+
+Name: Wisp.
+MANA: 0 (originally 0).
+ATK: 1 (originally 1).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+
+
+Eval (win rate): 0.470257
+Num wins: 14840
+Num losses: 16399
+Total num: 31252
+Effective win contribution: 676.986
+Draw contribution: 0.623519
+Second player effective win contribution: 302.564
+Total participation: 1439.61
+
+
+Name: Leper Gnome.
+MANA: 1 (originally 1).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Deathrattle: Deal 2 damage to the opponent's leader.
+
+
+Eval (win rate): 0.533312
+Num wins: 72202
+Num losses: 69404
+Total num: 141670
+Effective win contribution: 4640.85
+Draw contribution: 4.11601
+Second player effective win contribution: 2041.67
+Total participation: 8701.94
+
+
+Name: Worgen Infiltrator.
+MANA: 1 (originally 1).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Stealth.
+(Originally Stealth.)
+
+
+Eval (win rate): 0.50121
+Num wins: 33805
+Num losses: 33237
+Total num: 67072
+Effective win contribution: 1510.15
+Draw contribution: 1.63488
+Second player effective win contribution: 663.381
+Total participation: 3013
+
+
+Name: Wisp.
+MANA: 2 (originally 2).
+ATK: 3 (originally 3).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Untargetable (Cannot be targeted by spells or battlecries).
+(Originally Untargetable.)
+
+
+Eval (win rate): 0.505367
+Num wins: 39303
+Num losses: 38983
+Total num: 78316
+Effective win contribution: 1780.18
+Draw contribution: 1.54132
+Second player effective win contribution: 765.026
+Total participation: 3522.55
+
+
+Name: Loot Hoarder.
+MANA: 2 (originally 2).
+ATK: 2 (originally 2).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Deathrattle: You draw 1 card.
+
+
+Eval (win rate): 0.503343
+Num wins: 35690
+Num losses: 34638
+Total num: 70362
+Effective win contribution: 1908.98
+Draw contribution: 2.02029
+Second player effective win contribution: 814.918
+Total participation: 3792.6
+
+
+Name: Earthen Ring Farseer.
+MANA: 3 (originally 3).
+ATK: 3 (originally 3).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Restore 3 health to a character.
+
+
+Eval (win rate): 0.511862
+Num wins: 40445
+Num losses: 38960
+Total num: 79430
+Effective win contribution: 2685.82
+Draw contribution: 1.47442
+Second player effective win contribution: 1176.99
+Total participation: 5247.16
+
+
+Name: Harvest Golem.
+MANA: 3 (originally 3).
+ATK: 2 (originally 2).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Deathrattle: Summon a 1/2/1 Demon minion to your field.
+
+
+Eval (win rate): 0.471732
+Num wins: 15694
+Num losses: 16713
+Total num: 32420
+Effective win contribution: 697.41
+Draw contribution: 0.943436
+Second player effective win contribution: 300.952
+Total participation: 1478.4
+
+
+Name: Jungle Panther.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Stealth.
+(Originally Stealth.)
+
+
+Eval (win rate): 0.455668
+Num wins: 13311
+Num losses: 14666
+Total num: 27988
+Effective win contribution: 573.253
+Draw contribution: 0.488019
+Second player effective win contribution: 253.55
+Total participation: 1258.05
+
+
+Name: Scarlet Crusader.
+MANA: 3 (originally 3).
+ATK: 3 (originally 3).
+HP: 1 of 1 (originally 1).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Shielded (Divine Shield).
+(Originally Shielded.)
+
+
+Eval (win rate): 0.509214
+Num wins: 36084
+Num losses: 35635
+Total num: 71756
+Effective win contribution: 1529.12
+Draw contribution: 1.46898
+Second player effective win contribution: 669.26
+Total participation: 3002.91
+
+
+Name: Thrallmar Farseer.
+MANA: 3 (originally 3).
+ATK: 2 (originally 2).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Beast (Originally Beast) Minion.
+
+
+Eval (win rate): 0.491576
+Num wins: 21246
+Num losses: 21783
+Total num: 43056
+Effective win contribution: 934.732
+Draw contribution: 1.04154
+Second player effective win contribution: 401.959
+Total participation: 1901.5
+
+
+Name: Stranglethorn Tiger.
+MANA: 5 (originally 5).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Stealth.
+(Originally Stealth.)
+
+
+Eval (win rate): 0.482197
+Num wins: 19521
+Num losses: 19498
+Total num: 39046
+Effective win contribution: 780.421
+Draw contribution: 1.0831
+Second player effective win contribution: 337.312
+Total participation: 1618.47
+
+
+Name: Windfury Harpy.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 2 of 2 (originally 2) (Can attack 2 times per turn).
+TYPE: Dragon (Originally Dragon) Minion.
+
+
+Eval (win rate): 0.452093
+Num wins: 11917
+Num losses: 12545
+Total num: 24474
+Effective win contribution: 449.773
+Draw contribution: 0.55691
+Second player effective win contribution: 186.676
+Total participation: 994.868
+
+
+Name: Emperor Cobra.
+MANA: 3 (originally 3).
+ATK: 2 (originally 2).
+HP: 3 of 3 (originally 3).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Poisonous.
+(Originally Poisonous.)
+
+
+Eval (win rate): 0.495924
+Num wins: 22505
+Num losses: 22512
+Total num: 45050
+Effective win contribution: 873.549
+Draw contribution: 1.51205
+Second player effective win contribution: 379.573
+Total participation: 1761.46
+
+
+Name: Imp Master.
+MANA: 3 (originally 3).
+ATK: 1 (originally 1).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+At the end of your turns: Deal 1 damage to itself, if itself is a character on the field.
+At the end of your turns: Summon a 1/1/1 Demon minion to your field, if itself is a character on the field.
+
+
+Eval (win rate): 0.500939
+Num wins: 28923
+Num losses: 29527
+Total num: 58472
+Effective win contribution: 2540.38
+Draw contribution: 1.74262
+Second player effective win contribution: 1070.22
+Total participation: 5071.23
+
+
+Name: Injured Blademaster.
+MANA: 3 (originally 3).
+ATK: 4 (originally 4).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Deal 4 damage to itself.
+
+
+Eval (win rate): 0.502826
+Num wins: 32319
+Num losses: 31805
+Total num: 64154
+Effective win contribution: 2069.16
+Draw contribution: 2.07373
+Second player effective win contribution: 890.234
+Total participation: 4115.06
+
+
+Name: Abomination.
+MANA: 5 (originally 5).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Taunt.
+(Originally Taunt.)
+Deathrattle: Deal 2 damage to all characters.
+
+
+Eval (win rate): 0.481372
+Num wins: 25093
+Num losses: 24739
+Total num: 49878
+Effective win contribution: 1415.05
+Draw contribution: 3.16876
+Second player effective win contribution: 628.162
+Total participation: 2939.62
+
+
+Name: Stampeding Kodo.
+MANA: 5 (originally 5).
+ATK: 3 (originally 3).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Demon (Originally Demon) Minion.
+Battlecry: Destroy a random enemy minion having at most 2 attack.
+
+
+Eval (win rate): 0.480691
+Num wins: 19381
+Num losses: 19947
+Total num: 39342
+Effective win contribution: 974.029
+Draw contribution: 0.515623
+Second player effective win contribution: 417.57
+Total participation: 2026.31
+
+
+Name: Sunwalker.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Taunt.
+Shielded (Divine Shield).
+(Originally Taunt. Shielded.)
+
+
+Eval (win rate): 0.491071
+Num wins: 20722
+Num losses: 21334
+Total num: 42086
+Effective win contribution: 882.444
+Draw contribution: 1.18175
+Second player effective win contribution: 393.169
+Total participation: 1796.98
+
+
+Name: Ravenholdt Assassin.
+MANA: 7 (originally 7).
+ATK: 7 (originally 7).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Stealth.
+(Originally Stealth.)
+
+
+Eval (win rate): 0.457481
+Num wins: 11868
+Num losses: 12634
+Total num: 24510
+Effective win contribution: 408.728
+Draw contribution: 0.323924
+Second player effective win contribution: 176.723
+Total participation: 893.431
+
+
+Name: Big Game Hunter.
+MANA: 4 (originally 4).
+ATK: 4 (originally 4).
+HP: 2 of 2 (originally 2).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Destroy a minion having at least 7 attack.
+
+
+Eval (win rate): 0.45415
+Num wins: 11818
+Num losses: 12782
+Total num: 24604
+Effective win contribution: 470.164
+Draw contribution: 0.0934783
+Second player effective win contribution: 211.694
+Total participation: 1035.26
+
+
+Name: King Mukla.
+MANA: 3 (originally 3).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Battlecry: Put 2 copies of the following card to the opponent's hand.
+    MANA: 1 (originally 1)
+    TYPE: Spell.
+    Cast: Give +1/+1 to a minion.
+
+
+Eval (win rate): 0.502895
+Num wins: 37490
+Num losses: 37909
+Total num: 75444
+Effective win contribution: 2725.87
+Draw contribution: 2.37211
+Second player effective win contribution: 1167.36
+Total participation: 5420.36
+
+
+Name: CairneBloodhoof.
+MANA: 6 (originally 6).
+ATK: 5 (originally 5).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Deathrattle: Summon a 5/5/5 Beast minion to your field.
+
+
+Eval (win rate): 0.478762
+Num wins: 19133
+Num losses: 19620
+Total num: 38762
+Effective win contribution: 696.952
+Draw contribution: 0.149746
+Second player effective win contribution: 283.934
+Total participation: 1455.74
+
+
+Name: Hogger.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 4 of 4 (originally 4).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+At the end of your turns: Summon a 2/2/2 Beast minion with Taunt to your field, if itself is a character on the field.
+
+
+Eval (win rate): 0.512597
+Num wins: 48849
+Num losses: 48156
+Total num: 97046
+Effective win contribution: 3249.21
+Draw contribution: 3.50108
+Second player effective win contribution: 1387.44
+Total participation: 6338.72
+
+
+Name: The Beast.
+MANA: 6 (originally 6).
+ATK: 9 (originally 9).
+HP: 7 of 7 (originally 7).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Beast (Originally Beast) Minion.
+Deathrattle: Summon a 3/3/3 Beast minion to the opponent's field.
+
+
+Eval (win rate): 0.45622
+Num wins: 13272
+Num losses: 13585
+Total num: 26870
+Effective win contribution: 616.97
+Draw contribution: 0.818167
+Second player effective win contribution: 257.682
+Total participation: 1352.35
+
+
+Name: The Black Knight.
+MANA: 6 (originally 6).
+ATK: 4 (originally 4).
+HP: 5 of 5 (originally 5).
+ATK TIMES: 1 of 1 (originally 1).
+TYPE: Dragon (Originally Dragon) Minion.
+Battlecry: Destroy an enemy minion with Taunt.
+
+
+Eval (win rate): 0.517721
+Num wins: 45881
+Num losses: 44824
+Total num: 90744
+Effective win contribution: 2116.41
+Draw contribution: 2.12541
+Second player effective win contribution: 910.3
+Total participation: 4087.93
+
+
