@@ -59,7 +59,6 @@ struct TournamentState // note, when a card_list is managed through TournamentSt
 		}
 		neibor_dists = state.neibor_dists;
 		ave_neibor_dist = state.ave_neibor_dist;
-		card_codes = state.card_codes;
 		card_stats = state.card_stats;
 		all_decks = state.all_decks;
 		active_decks = state.active_decks;
@@ -1964,7 +1963,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set H." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_h.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_h_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_h_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSetH();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -1985,7 +1984,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S1." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_1.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_1_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_1_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet1();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2006,7 +2005,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S2." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_2.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_2_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_2_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet2();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2027,7 +2026,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S2*." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_2_star.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_2_star_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_2_star_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet2Alt();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2048,7 +2047,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S3." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_3.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_3_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_3_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet3();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2069,7 +2068,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S4." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_4.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_4_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_4_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet4();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2090,7 +2089,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card set S5." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_5.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_5_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_5_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet5();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2111,7 +2110,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Testing demo card Set S6." << endl;
 					cout << endl << "Card raw data will be written to demo_card_set_6.txt (can be used for other purposes e.g. converting to html)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_6_human.txt." << end;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_6_human.txt." << endl;
 					vector<Card*> card_list = CreateDemoCardSet6();
 					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
 					BrowseCardSet(card_list);
@@ -2125,23 +2124,26 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_6_human.txt");
 				}
 			default:
-				srand(seed);
-				GiglRandInit(seed);
+				{
+					srand(seed);
+					GiglRandInit(seed);
 
-				cout << endl << "Testing demo card Set S6." << endl;
-				cout << endl << "Card raw data will be written to demo_card_set_random.txt (can be used for other purposes e.g. converting to html)." << endl;
-				cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_random_human.txt." << end;
-				vector<Card*> card_list = GenerateCardSet(p, seed);
-				cout << "Browsing the card set, testing will start after finishing browsing." << endl;
-				BrowseCardSet(card_list);
+					cout << endl << "Testing a card set randomly generated on the fly." << endl;
+					cout << endl << "Card raw data will be written to demo_card_set_random.txt (can be used for other purposes e.g. converting to html)." << endl;
+					cout << endl << "A slightly more human readable (but less machine readable) text version will be written to demo_card_set_random_human.txt." << endl;
+					vector<Card*> card_list = GenerateCardSet(100, seed);
+					cout << "Browsing the card set, testing will start after finishing browsing." << endl;
+					BrowseCardSet(card_list);
 
-				cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-				SimulationNode node(card_list);
-				for (int k = 0; k < num_repeats; k++)
-					RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
+					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
+					SimulationNode node(card_list);
+					for (int k = 0; k < num_repeats; k++)
+						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
 
-				WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random.txt");
-				WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random_human.txt");
+					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random.txt");
+					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random_human.txt");
+				}
+				break;
 			}
 		}
 		break;
