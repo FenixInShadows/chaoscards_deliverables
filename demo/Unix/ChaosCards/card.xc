@@ -3,7 +3,7 @@ giglstart;
 import "Player.h";
 import <iostream>;
 
-#define SUPPRSS_MATCH_PROMPTS
+// #define SUPPRSS_MATCH_PROMPTS
 
 #define DEFAULT_OVERHEAT_THRESHOLD 10
 

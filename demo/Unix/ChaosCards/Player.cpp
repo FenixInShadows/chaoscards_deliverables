@@ -8,8 +8,8 @@
 
 using namespace std;
 
-#define SUPPRESS_TOURNAMENT_PROMPTS
-#define SUPPRSS_MATCH_PROMPTS
+// #define SUPPRESS_TOURNAMENT_PROMPTS
+// #define SUPPRSS_MATCH_PROMPTS
 
 
 /* Card/Player section */
