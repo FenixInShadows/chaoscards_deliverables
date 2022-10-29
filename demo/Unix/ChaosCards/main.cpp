@@ -1978,6 +1978,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
 			cout << "The html file will be written (overwrite) to " << card_html_path << "." << endl;
 			cout << "Note: please set the min font size of your browser (or whatever html renderer) to no bigger than 8 when viewing the html, in case certain small font sizes are not supported." << endl;
+			cout << "Input any character to continue: " << endl;
+			cin >> ch;
 
 			// print card data files
 			WriteCardData(card_list, card_reps, card_stats, output_card_data_path.c_str());
@@ -2041,6 +2043,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_h.txt (can be used as input for other purposes)." << endl;
 					cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_h_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2067,6 +2071,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_1.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_1_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2093,6 +2099,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_2.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_2_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2119,6 +2127,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_2_star.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_2_star_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2145,6 +2155,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_3.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_3_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2171,6 +2183,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_4.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_4_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2197,6 +2211,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_5.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_5_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2223,6 +2239,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_6.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_6_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2252,6 +2270,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_h_optimized.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_h_optimized_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
@@ -2277,6 +2297,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_random.txt (can be used as input for other purposes)." << endl;
 					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_random_human.txt." << endl;
+					cout << "Input any character to continue: " << endl;
+					cin >> ch;
 
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
