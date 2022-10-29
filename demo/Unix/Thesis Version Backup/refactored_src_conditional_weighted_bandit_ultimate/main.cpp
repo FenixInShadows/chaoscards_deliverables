@@ -14,7 +14,7 @@
 using namespace std;
 
 
-struct TournamentState // note, when a card_list is managed through TournamentState, do not delete cards elsewhere, only delete through ResetState or the destructor here.
+struct TournamentState // note, when a card_list is managed through TournamentState, when a card_list is managed with a TournamentState, do not delete cards elsewhere, only delete through ResetState or the destructor here.
 {
 	TournamentState() : card_list(), card_reps(), card_codes(), card_stats(), all_decks(), active_decks(), all_deck_stats(), active_deck_stats(), card_stats_in_all_decks(), card_stats_in_active_decks(), snd_player_stat(), rec_list(), card_pair_diffs(nullptr), neibor_dists(), ave_neibor_dist(0.0), match_pair_count(0), turn_count(0)
 	{
