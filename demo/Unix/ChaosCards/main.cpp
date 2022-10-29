@@ -1862,7 +1862,9 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat> card_s
 	cout << "Any other integer: Randomly generate on the fly." << endl;
 
 	int choice;
-	vector<Card*> card_list();
+	vector<Card*> card_list;
+	cin >> choice;
+
 	switch (choice)
 	{
 	case 0:
@@ -1903,6 +1905,7 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat> card_s
 		break;
 	default:
 		{
+			int seed = GetGiglRandInt();
 			card_list = GenerateCardSet(100, seed);
 			output_card_data_path = "demo_card_set_random.txt";
 			output_card_data_path_human = "demo_card_set_random_human.txt";
@@ -1958,16 +1961,17 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			string card_html_path;
 			if (post_fix_pos == string::npos)
 			{
-				card_html_path = output_card_data_path_human.substr(0, post_fix_pos) + ".html";
+				card_html_path = output_card_data_path_human + ".html";
 			}
 			else
 			{
-				card_html_path = output_card_data_path_human + ".html";
+				card_html_path = output_card_data_path_human.substr(0, post_fix_pos) + ".html";
 			}
 
 			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
 			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
 			cout << "The html file will be written (overwrite) to " << card_html_path << "." << endl;
+			cout << "Note: please set the min font size of your browser (or whatever html renderer) to no bigger than 8 when viewing the html, in case certain small font sizes are not supported." << endl;
 
 			// browsing
 			cout << "Browsing the card set, outputs will be created after finishing browsing." << endl;
@@ -1975,7 +1979,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 			// print card data files
 			WriteCardData(card_list, card_reps, card_stats, output_card_data_path.c_str());
-			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path_human.c_str());
+			WriteCardDataHuman(card_list, card_reps, card_stats, output_card_data_path_human.c_str());
 
 			// print html
 			PrintCardSetHtml(card_list, card_html_path.c_str());

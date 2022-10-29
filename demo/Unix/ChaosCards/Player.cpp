@@ -2907,7 +2907,9 @@ NewLineToken* mkNewLineToken()
 	return new NewLineToken();
 }
 
-#define NUM_FONT_LEVELS 5 // note: the character counting stats below are experimented for 100% zoom level, changing zoom level will mess up things
+#define NUM_FONT_LEVELS 5
+// note: the character counting stats below are experimented for 100% zoom level, changing zoom level will mess up things
+// also note: the browser's min font size should be set to no bigger than the smallest font here
 int Font_Size[NUM_FONT_LEVELS] = {12, 11, 10, 9, 8};
 int Max_Line_Len[NUM_FONT_LEVELS] = {18, 20, 22, 25, 28};
 int Max_Line_Num_Char[NUM_FONT_LEVELS] = {9, 11, 12, 13, 15};
