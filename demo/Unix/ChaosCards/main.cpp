@@ -1853,7 +1853,7 @@ void PrintCardSetHtml(vector<Card*>& card_list, const char* filename)
 	fs.clear();
 }
 
-vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat> card_stats, string& output_card_data_path, string& output_card_data_path_human)
+vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_stats, string& output_card_data_path, string& output_card_data_path_human)
 {
 	cout << "Pick Card Set: " << endl;
 	cout << "0: Set H in the thesis." << endl;
