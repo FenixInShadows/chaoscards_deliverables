@@ -1865,11 +1865,15 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 	vector<Card*> card_list;
 	cin >> choice;
 
+	const int p = 100;
+
 	switch (choice)
 	{
 	case 0:
 		{
 			card_list = CreateDemoCardSetH();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
 			output_card_data_path = "demo_card_set_h.txt";
 			output_card_data_path_human = "demo_card_set_h_human.txt";
 		}
@@ -1885,12 +1889,10 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 	case 2:
 		{
 			cout << "Input card path: " << endl;
-			string Card_Path;
-			cin >> Card_Path;
-			vector<CardRep> card_reps; // not used
-			vector<BalanceStat> card_stats; // not used
-			ReadCardData(card_list, card_reps, card_stats, Card_Path.c_str());
-			output_card_data_path = Card_Path;
+			string input_card_path;
+			cin >> input_card_path;
+			ReadCardData(card_list, card_reps, card_stats, input_card_path.c_str());
+			output_card_data_path = input_card_path;
 			output_card_data_path_human = output_card_data_path;
 			size_t post_fix_pos = output_card_data_path_human.rfind('.');
 			if (post_fix_pos == string::npos)
@@ -1906,7 +1908,9 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 	default:
 		{
 			int seed = GetGiglRandInt();
-			card_list = GenerateCardSet(100, seed);
+			card_list = GenerateCardSet(p, seed);
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
 			output_card_data_path = "demo_card_set_random.txt";
 			output_card_data_path_human = "demo_card_set_random_human.txt";
 		}
