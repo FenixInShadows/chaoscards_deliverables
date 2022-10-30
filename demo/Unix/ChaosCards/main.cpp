@@ -1981,7 +1981,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
 			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
 			cout << "The html file will be written (overwrite) to " << card_html_path << "." << endl;
-			cout << "Note: please set the min font size of your browser (or whatever html renderer) to no bigger than 8 when viewing the html, in case certain small font sizes are not supported." << endl;
+			cout << "Note1: The html should be viewed when the provided style.css is in the folder with it." << endl;
+			cout << "Note2: Please set the min font size of your browser (or whatever html renderer) to no bigger than 8 when viewing the html, in case certain small font sizes are not supported." << endl;
 			cout << "Input any character to continue: " << endl;
 			cin >> ch;
 
