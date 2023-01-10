@@ -1907,8 +1907,7 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 		break;
 	default:
 		{
-			int seed = GetGiglRandInt();
-			card_list = GenerateCardSet(p, seed);
+			card_list = GenerateCardSet(p, time(NULL));
 			GetCardsReps(card_list, card_reps);
 			card_stats.resize(p);
 			output_card_data_path = "demo_card_set_random.txt";
@@ -2007,7 +2006,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << "Input seed" << endl;
 				cin >> seed;
 			}
-			cout << "Seed: " << seed << endl;
+			cout << "Seed for simulation (not for card set generation): " << seed << endl;
 			
 			int num_repeats = 10;
 			int deck_pool_size = 10; // number of active decks (will evolve during the simulation)
@@ -2034,9 +2033,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			{
 			case 0:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set H." << endl;
 
 					vector<Card*> card_list = CreateDemoCardSetH();
@@ -2051,6 +2047,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2062,9 +2060,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 1:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S1." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet1();
@@ -2079,6 +2074,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2090,9 +2087,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 2:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S2." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet2();
@@ -2107,6 +2101,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2118,9 +2114,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 3:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S2*." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet2Alt();
@@ -2135,6 +2128,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2146,9 +2141,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 4:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S3." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet3();
@@ -2163,6 +2155,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2174,9 +2168,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 5:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S4." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet4();
@@ -2191,6 +2182,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2202,9 +2195,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 6:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card set S5." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet5();
@@ -2219,6 +2209,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2230,9 +2222,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				break;
 			case 7:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing demo card Set S6." << endl;
 					
 					vector<Card*> card_list = CreateDemoCardSet6();
@@ -2247,6 +2236,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2257,9 +2248,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				}
 			case 8:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing an optimized set starting from set H in the thesis." << endl;
 					
 					string Card_Path = "demo_card_set_h_optimized.txt";
@@ -2278,6 +2266,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2288,12 +2278,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				}
 			default:
 				{
-					srand(seed);
-					GiglRandInit(seed);
-
 					cout << endl << "Testing a card set randomly generated on the fly." << endl;
 					
-					vector<Card*> card_list = GenerateCardSet(100, seed);
+					vector<Card*> card_list = GenerateCardSet(100, time(NULL));
 					cout << endl << "Browsing the card set? (y/n)" << endl;
 					char ch;
 					cin >> ch;
@@ -2305,6 +2292,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 					cout << "Input any character to continue: " << endl;
 					cin >> ch;
 
+					srand(seed);
+					GiglRandInit(seed);
 					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
 					SimulationNode node(card_list);
 					for (int k = 0; k < num_repeats; k++)
@@ -2734,9 +2723,20 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << "Input seed" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for simulation: " << seed << endl;
+			cout << "Seed for simulation (not for card set generation): " << seed << endl;
 
-			vector<Card*> card_list = GenerateCardSet(p, seed);
+			string output_card_data_path;
+			string output_card_data_path_human;
+
+			vector<CardRep> card_reps;
+			vector<BalanceStat> card_stats;
+			vector<Card*> card_list = PickCardSet(card_reps, card_stats, output_card_data_path, output_card_data_path_human);
+
+			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
+			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
+			cout << "Note: however, in this mode, no card stats will be saved, i.e., they will be empty/zero/default values in the data files." << endl;
+			cout << "Input any character to continue: " << endl;
+			cin >> ch;
 
 			vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
 			for (int i = 0; i < deck_num; i++)
@@ -2749,6 +2749,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cout << "Input AI level for the second AI (integer, clamped to 0 ~ 2)" << endl;
 			cin >> ai_level_b;
 			TestAIs(ai_level_a, ai_level_b, card_list, deck_list, deck_num, n);
+
+			WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random.txt");
+			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random_human.txt");
 
 			DeleteCards(card_list);
 		}
