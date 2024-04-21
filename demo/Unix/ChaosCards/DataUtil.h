@@ -117,7 +117,7 @@ ExtraCardGenConfig* MkExtraCardGenConfigWithCost(const std::string& name, NodeRe
 
 /* Card/Deck Performance */
 
-struct BalanceStat // can be for a deck or a card
+struct BalanceStat // can be for a card, or for a deck, or for an ai etc.
 {
 	BalanceStat();
 	void SetCardCost(int cost);

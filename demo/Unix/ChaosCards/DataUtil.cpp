@@ -1203,7 +1203,7 @@ ExtraCardGenConfig* MkExtraCardGenConfigWithCost(const std::string& name, NodeRe
 }
 
 
-/* Card/Deck performance */
+/* Card/Deck/AI etc. performance */
 
 BalanceStat::BalanceStat()
 	: num_wins(0), num_losses(0), total_num(0), effective_win_contribution(0.0), draw_contribution(0.0), snd_player_eff_win_contrib(0.0), total_participation(0.0), eval(0.5), card_cost(-1), sum_weighted_num_turns(0.0), cost_constrained_participation(0.0), adjusted_participation(0.0)
@@ -1286,11 +1286,11 @@ void BalanceStat::UpdateEval()
 	{
 		double other_partic = total_participation - cost_constrained_participation;
 		double ave_match_len = (double)sum_weighted_num_turns / (double)total_participation;
-        	double factor = 30.0; // upper bound (maybe good to set to max turn num, not sure though)
-        	double diff = ave_match_len - (double)card_cost;
-        	if (diff > ave_match_len / factor)
-                	factor = ave_match_len / diff;
-        	adjusted_participation = other_partic + cost_constrained_participation * factor;
+		double factor = 30.0; // upper bound (maybe good to set to max turn num, not sure though)
+		double diff = ave_match_len - (double)card_cost;
+		if (diff > ave_match_len / factor)
+			factor = ave_match_len / diff;
+		adjusted_participation = other_partic + cost_constrained_participation * factor;
 	}
 }
 

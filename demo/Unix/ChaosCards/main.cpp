@@ -649,7 +649,7 @@ int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, cons
 	for (int k = 0; k < deck_size; k++)
 		sum_contribution_b += contribution_counters_b[k];
 
-	vector<double> processed_contribution_a(deck_size); // recorded to orginal card order before shuffling, also normalize (used for match records and per deck card stats)
+	vector<double> processed_contribution_a(deck_size); // recorded to orginal card order before shuffling, also normalize (used for match records)
 	for (int k = 0; k < deck_size; k++)
 		processed_contribution_a[deck_a_shuffle[k]] = (double)contribution_counters_a[k] / (double)sum_contribution_a;
 	vector<double> processed_contribution_b(deck_size);
@@ -1964,16 +1964,7 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 			cin >> input_card_path;
 			ReadCardData(card_list, card_reps, card_stats, input_card_path.c_str());
 			output_card_data_path = input_card_path;
-			output_card_data_path_human = output_card_data_path;
-			size_t post_fix_pos = output_card_data_path_human.rfind('.');
-			if (post_fix_pos == string::npos)
-			{
-				output_card_data_path_human += "_human";
-			}
-			else
-			{
-				output_card_data_path_human.insert(post_fix_pos, "_human");
-			}
+			output_card_data_path_human = GetAppendedFilePath(output_card_data_path, "_human");
 		}
 		break;
 	case 10:
@@ -2332,31 +2323,31 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 		{
 			int p = 100; // size of the card pool
 
+			string output_card_data_path;
+			string output_card_data_path_human; // this variable is not used in this mode
+
+			vector<CardRep> card_reps;
+			vector<BalanceStat> card_stats;
+			vector<Card*> card_list = PickCardSet(card_reps, card_stats, output_card_data_path, output_card_data_path_human);
+
+			Match_Card_Data_Path = GetAppendedFilePath(card_data_path, "card_data");
+			Match_Deck_Data_Path = GetAppendedFilePath(card_data_path, "deck_data");
+			Match_Match_Data_Path = GetAppendedFilePath(card_data_path, "match_data");
+
+			cout << "This mode will produce various output data files, for cards, decks, matches etc., for different matching schemes" << endl;
+
 			if (argc > 2)
 			{
 				seed = atoi(argv[2]);
 			}
 			else
 			{
-				cout << "Input Seed" << endl;
+				cout << "Input seed" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for card pool and simulation: " << seed << endl;
-
-			string Match_Card_Data_Path = "match_card_data.txt";
-			if (argc > 3)
-				Match_Card_Data_Path = argv[3];
-
-			string Match_Deck_Data_Path = "match_deck_data.txt";
-			if (argc > 4)
-				Match_Deck_Data_Path = argv[4];
-
-			string Match_Match_Data_Path = "match_match_data.txt";
-			if (argc > 5)
-				Match_Deck_Data_Path = argv[5];
-
-			// the card pool is shared between the two simulation methods
-			vector<Card*> card_list = GenerateCardSet(p, seed);
+			cout << "Seed for simulation (not for card set generation): " << seed << endl;
+			srand(seed);
+			GiglRandInit(seed);
 
 			// random environment benchmark related parameters
 			int deck_num_random = 1000; // total number of decks
@@ -2538,7 +2529,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
 			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
-			cout << "Note: however, in this mode, no card stats will be computed during the AI testing matches, i.e., they will be default values or original values in the input file." << endl;
+			cout << "Note: however, in this mode, no card stats will be computed during the AI testing matches, i.e., they will be default values or original values in the file." << endl;
 			cout << "Input any character to continue: " << endl;
 			cin >> ch;
 
