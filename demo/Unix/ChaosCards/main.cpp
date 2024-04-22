@@ -649,7 +649,7 @@ int SimulateSingleMatchBetweenDecks(int ai_level, vector<Card*>& card_list, cons
 	for (int k = 0; k < deck_size; k++)
 		sum_contribution_b += contribution_counters_b[k];
 
-	vector<double> processed_contribution_a(deck_size); // recorded to orginal card order before shuffling, also normalize (used for match records and per deck card stats)
+	vector<double> processed_contribution_a(deck_size); // recorded to orginal card order before shuffling, also normalize (used for match records)
 	for (int k = 0; k < deck_size; k++)
 		processed_contribution_a[deck_a_shuffle[k]] = (double)contribution_counters_a[k] / (double)sum_contribution_a;
 	vector<double> processed_contribution_b(deck_size);
@@ -1857,9 +1857,17 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 {
 	cout << "Pick Card Set: " << endl;
 	cout << "0: Set H in the thesis." << endl;
-	cout << "1: An optimized set starting from H in the thesis." << endl;
-	cout << "2: Read from specified file path." << endl;
-	cout << "Any other integer: Randomly generate on the fly." << endl;
+	cout << "1 : Set S1 in the thesis." << endl;
+	cout << "2 : Set S2 in the thesis." << endl;
+	cout << "3 : Set S2* in the thesis." << endl;
+	cout << "4 : Set S3 in the thesis." << endl;
+	cout << "5 : Set S4 in the thesis." << endl;
+	cout << "6 : Set S5 in the thesis." << endl;
+	cout << "7 : Set S6 in the thesis." << endl;
+	cout << "8: An optimized set starting from H in the thesis." << endl;
+	cout << "9: Read from specified file path." << endl;
+	cout << "10: Generate with specific seed." << endl;
+	cout << "Any other integer: Randomly generate freely." << endl;
 
 	int choice;
 	vector<Card*> card_list;
@@ -1880,29 +1888,95 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 		break;
 	case 1:
 		{
+			card_list = CreateDemoCardSet1();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_1.txt";
+			output_card_data_path_human = "demo_card_set_1_human.txt";
+		}
+		break;
+	case 2:
+		{
+			card_list = CreateDemoCardSet2();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_2.txt";
+			output_card_data_path_human = "demo_card_set_2_human.txt";
+		}
+		break;
+	case 3:
+		{
+			card_list = CreateDemoCardSet2Alt();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_2_star.txt";
+			output_card_data_path_human = "demo_card_set_2_star_human.txt";
+		}
+		break;
+	case 4:
+		{
+			card_list = CreateDemoCardSet3();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_3.txt";
+			output_card_data_path_human = "demo_card_set_3_human.txt";
+		}
+		break;
+	case 5:
+		{
+			card_list = CreateDemoCardSet4();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_4.txt";
+			output_card_data_path_human = "demo_card_set_4_human.txt";
+		}
+		break;
+	case 6:
+		{
+			card_list = CreateDemoCardSet5();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_5.txt";
+			output_card_data_path_human = "demo_card_set_5_human.txt";
+		}
+		break;
+	case 7:
+		{
+			card_list = CreateDemoCardSet6();
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = "demo_card_set_6.txt";
+			output_card_data_path_human = "demo_card_set_6_human.txt";
+		}
+		break;
+	case 8:
+		{
 			string Card_Path = "demo_card_set_h_optimized.txt";
 			ReadCardData(card_list, card_reps, card_stats, Card_Path.c_str());
 			output_card_data_path = "demo_card_set_h_optimized.txt";
 			output_card_data_path_human = "demo_card_set_h_optimized_human.txt";
 		}
 		break;
-	case 2:
+	case 9:
 		{
 			cout << "Input card path: " << endl;
 			string input_card_path;
 			cin >> input_card_path;
 			ReadCardData(card_list, card_reps, card_stats, input_card_path.c_str());
 			output_card_data_path = input_card_path;
-			output_card_data_path_human = output_card_data_path;
-			size_t post_fix_pos = output_card_data_path_human.rfind('.');
-			if (post_fix_pos == string::npos)
-			{
-				output_card_data_path_human += "_human";
-			}
-			else
-			{
-				output_card_data_path_human.insert(post_fix_pos, "_human");
-			}
+			output_card_data_path_human = GetAppendedFilePath(output_card_data_path, "_human");
+		}
+		break;
+	case 10:
+		{
+			cout << "Input seed: " << endl;
+			int seed;
+			cin >> seed;
+			card_list = GenerateCardSet(p, seed);
+			GetCardsReps(card_list, card_reps);
+			card_stats.resize(p);
+			output_card_data_path = string("demo_card_set_seed_") + to_string(seed) + string(".txt");
+			output_card_data_path_human = string("demo_card_set_seed_") + to_string(seed) + string("_human.txt");
 		}
 		break;
 	default:
@@ -1935,9 +2009,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 	cout << "Select Mode: " << endl;
 	cout << "0 (Default): Generate random cards freely." << endl;
 	cout << "1 : Generate random cards with specified seeds." << endl;
-	cout << "2 : Play against AI using decks generated freely or with specified seeds (card set unknown, generated on the fly)." << endl;
-	cout << "3 : Play against yourself with decks generated with specified seeds (card set unknown, generated on the fly)." << endl;
-	cout << "4 : Simulate AI Vs AI matches between (different) AI's on the same set of random decks (Warning: this may take hours to days)." << endl;
+	cout << "2 : Play against AI using decks generated freely or with specified seeds (card set unknown; directly generating cards for decks); random play order." << endl;
+	cout << "3 : Play against yourself with decks generated freely or with specified seeds (card set unknown; directly generating cards for decks); fixed play order." << endl;
+	cout << "4 : Simulate AI Vs AI matches between (different) AI's on the same set of random decks based on a card set (Warning: this may take hours to days)." << endl;
 	cout << "5 : Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same random card pool with both random and evolutionary deck building/matching scheme (Warning: this may take hours to days)." << endl;
 	cout << "6 : Simulate AI Vs AI matches (with same AI) between different two small sets of given decks (Warning: this may take hours to days)." << endl;
 	cout << "7 : Play against AI using decks in either the meta environment (generated by the evolutionary simulation) or the random environment (generated by the random simulation) given a card set." << endl;
@@ -1997,6 +2071,18 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 		break;
 	case 8:
 		{
+			string output_card_data_path;
+			string output_card_data_path_human;
+
+			vector<CardRep> card_reps;  // will be ignored (will use ones in the simulation node to manage)
+			vector<BalanceStat> card_stats;  // will be ignored (will use ones in the simulation node to manage)
+			vector<Card*> card_list = PickCardSet(card_reps, card_stats, output_card_data_path, output_card_data_path_human);
+
+			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
+			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
+			cout << "Input any character to continue: " << endl;
+			cin >> ch;
+
 			if (argc > 2)
 			{
 				seed = atoi(argv[2]);
@@ -2007,6 +2093,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cin >> seed;
 			}
 			cout << "Seed for simulation (not for card set generation): " << seed << endl;
+			srand(seed);
+			GiglRandInit(seed);
 			
 			int num_repeats = 10;
 			int deck_pool_size = 10; // number of active decks (will evolve during the simulation)
@@ -2014,296 +2102,13 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			int num_total_match_pairs = 0, num_total_turns = 0, num_total_decks = 0;
 			time_t start_time = time(NULL);
 
-			cout << "Choose card set to be tested: " << endl;
-			cout << "0 : Set H in the thesis." << endl;
-			cout << "1 : Set S1 in the thesis." << endl;
-			cout << "2 : Set S2 in the thesis." << endl;
-			cout << "3 : Set S2* in the thesis." << endl;
-			cout << "4 : Set S3 in the thesis." << endl;
-			cout << "5 : Set S4 in the thesis." << endl;
-			cout << "6 : Set S5 in the thesis." << endl;
-			cout << "7 : Set S6 in the thesis." << endl;
-			cout << "8 : An optimized set starting from H in the thesis" << endl;
-			cout << "Any other integer : A set randomly generated on the fly." << endl;
+			cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
+			SimulationNode node(card_list);
+			for (int k = 0; k < num_repeats; k++)
+				RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
 
-			int card_set_choice;
-			cin >> card_set_choice;
-
-			switch (card_set_choice)
-			{
-			case 0:
-				{
-					cout << endl << "Testing demo card set H." << endl;
-
-					vector<Card*> card_list = CreateDemoCardSetH();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_h.txt (can be used as input for other purposes)." << endl;
-					cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_h_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_h.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_h_human.txt");
-				}
-				break;
-			case 1:
-				{
-					cout << endl << "Testing demo card set S1." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet1();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_1.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_1_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_1.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_1_human.txt");
-				}
-				break;
-			case 2:
-				{
-					cout << endl << "Testing demo card set S2." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet2();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_2.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_2_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_2.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_2_human.txt");
-				}
-				break;
-			case 3:
-				{
-					cout << endl << "Testing demo card set S2*." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet2Alt();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_2_star.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_2_star_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_2_star.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_2_star_human.txt");
-				}
-				break;
-			case 4:
-				{
-					cout << endl << "Testing demo card set S3." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet3();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_3.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_3_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_3.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_3_human.txt");
-				}
-				break;
-			case 5:
-				{
-					cout << endl << "Testing demo card set S4." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet4();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_4.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_4_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_4.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_4_human.txt");
-				}
-				break;
-			case 6:
-				{
-					cout << endl << "Testing demo card set S5." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet5();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_5.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_5_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_5.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_5_human.txt");
-				}
-				break;
-			case 7:
-				{
-					cout << endl << "Testing demo card Set S6." << endl;
-					
-					vector<Card*> card_list = CreateDemoCardSet6();
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_6.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_6_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_6.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_6_human.txt");
-				}
-			case 8:
-				{
-					cout << endl << "Testing an optimized set starting from set H in the thesis." << endl;
-					
-					string Card_Path = "demo_card_set_h_optimized.txt";
-					vector<Card*> card_list;
-					vector<CardRep> card_reps;
-					vector<BalanceStat> card_stats; // it is questionable whether we should clear this before simulation, but these are not used here so it should be fine for now
-					ReadCardData(card_list, card_reps, card_stats, Card_Path.c_str());
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_h_optimized.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_h_optimized_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_h_optimized.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_h_optimized_human.txt");
-				}
-			default:
-				{
-					cout << endl << "Testing a card set randomly generated on the fly." << endl;
-					
-					vector<Card*> card_list = GenerateCardSet(100, time(NULL));
-					cout << endl << "Browsing the card set? (y/n)" << endl;
-					char ch;
-					cin >> ch;
-					if (ch == 'y' || ch == 'Y')
-						BrowseCardSet(card_list);
-
-					cout << endl << "Card raw data will be written (overwrite) to demo_card_set_random.txt (can be used as input for other purposes)." << endl;
-					cout << endl << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to demo_card_set_random_human.txt." << endl;
-					cout << "Input any character to continue: " << endl;
-					cin >> ch;
-
-					srand(seed);
-					GiglRandInit(seed);
-					cout << "Simulation starts, balance stats are cumulatively considered over rounds of simulation." << endl;
-					SimulationNode node(card_list);
-					for (int k = 0; k < num_repeats; k++)
-						RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
-
-					WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random.txt");
-					WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random_human.txt");
-				}
-				break;
-			}
+			WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path);
+			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path_human);
 		}
 		break;
 	case 7:
@@ -2390,6 +2195,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				while (!(cin >> ai_level)) { cin.clear(); cin.ignore(); }
 				cout << endl;
 
+				srand(time(NULL))
 				GiglRandInit(time(NULL));
 				vector<int> your_deck_shuffle(deck_size);
 				vector<int> ai_deck_shuffle(deck_size);
@@ -2517,31 +2323,31 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 		{
 			int p = 100; // size of the card pool
 
+			string output_card_data_path;
+			string output_card_data_path_human; // this variable is not used in this mode
+
+			vector<CardRep> card_reps;
+			vector<BalanceStat> card_stats;
+			vector<Card*> card_list = PickCardSet(card_reps, card_stats, output_card_data_path, output_card_data_path_human);
+
+			Match_Card_Data_Path = GetAppendedFilePath(card_data_path, "card_data");
+			Match_Deck_Data_Path = GetAppendedFilePath(card_data_path, "deck_data");
+			Match_Match_Data_Path = GetAppendedFilePath(card_data_path, "match_data");
+
+			cout << "This mode will produce various output data files, for cards, decks, matches etc., for different matching schemes" << endl;
+
 			if (argc > 2)
 			{
 				seed = atoi(argv[2]);
 			}
 			else
 			{
-				cout << "Input Seed" << endl;
+				cout << "Input seed" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for card pool and simulation: " << seed << endl;
-
-			string Match_Card_Data_Path = "match_card_data.txt";
-			if (argc > 3)
-				Match_Card_Data_Path = argv[3];
-
-			string Match_Deck_Data_Path = "match_deck_data.txt";
-			if (argc > 4)
-				Match_Deck_Data_Path = argv[4];
-
-			string Match_Match_Data_Path = "match_match_data.txt";
-			if (argc > 5)
-				Match_Deck_Data_Path = argv[5];
-
-			// the card pool is shared between the two simulation methods
-			vector<Card*> card_list = GenerateCardSet(p, seed);
+			cout << "Seed for simulation (not for card set generation): " << seed << endl;
+			srand(seed);
+			GiglRandInit(seed);
 
 			// random environment benchmark related parameters
 			int deck_num_random = 1000; // total number of decks
@@ -2714,17 +2520,6 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			int p = 100;
 			int deck_num = 100;
 
-			if (argc > 2)
-			{
-				seed = atoi(argv[2]);
-			}
-			else
-			{
-				cout << "Input seed" << endl;
-				cin >> seed;
-			}
-			cout << "Seed for simulation (not for card set generation): " << seed << endl;
-
 			string output_card_data_path;
 			string output_card_data_path_human;
 
@@ -2734,10 +2529,23 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 
 			cout << endl << "Card raw data will be written (overwrite) to " << output_card_data_path << " (can be used as input for other purposes)." << endl;
 			cout << "A slightly more human readable (but less machine readable) text version will be written (overwrite) to " << output_card_data_path_human << "." << endl;
-			cout << "Note: however, in this mode, no card stats will be saved, i.e., they will be empty/zero/default values in the data files." << endl;
+			cout << "Note: however, in this mode, no card stats will be computed during the AI testing matches, i.e., they will be default values or original values in the file." << endl;
 			cout << "Input any character to continue: " << endl;
 			cin >> ch;
 
+			if (argc > 2)
+			{
+				seed = atoi(argv[2]);
+			}
+			else
+			{
+				cout << "Input seed for deck creation and match simulation (not for card set generation)" << endl;
+				cin >> seed;
+			}
+			cout << "Seed for deck creation and match simulation " << seed << endl;
+			srand(seed);
+			GiglRandInit(seed);
+			
 			vector<vector<int>> deck_list; // storing card indices in the seed list (not the seeds themselves)
 			for (int i = 0; i < deck_num; i++)
 				deck_list.push_back(CreateRandomSelection(p, n));
@@ -2750,8 +2558,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cin >> ai_level_b;
 			TestAIs(ai_level_a, ai_level_b, card_list, deck_list, deck_num, n);
 
-			WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random.txt");
-			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, "demo_card_set_random_human.txt");
+			WriteCardData(card_list, card_reps, card_stats, output_card_data_path);
+			WriteCardDataHuman(card_list, card_reps, card_stats, output_card_data_path_human);
 
 			DeleteCards(card_list);
 		}
@@ -2759,28 +2567,34 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 	case 3:
 		while (true)
 		{
-			cout << endl << "Input seed (negative to quit) for Deck 1 (playing first)" << endl;
+			cout << "Input seed for Deck 1 (negative to randomize); note deck 1 always goes first" << endl;
 			while (!(cin >> seed)) { cin.clear(); cin.ignore(); } // the clear and ignore prevents stuck when the input is ill-formatted
 			if (seed < 0)
-				break;
+				seed = time(NULL);
+			cout << "Deck 1 seed: " << seed << endl; // echo
 			vector<Card*> deck1 = GenerateCardSet(n, seed);
 			BrowseCardSet(deck1);
 
-			cout << "Input seed (negative to quit) for Deck 2 (playing second)" << endl;
+			cout << "Input seed for Deck 2 (negative to randomize); note deck 2 always goes second" << endl;
 			while (!(cin >> seed)) { cin.clear(); cin.ignore(); } // the clear and ignore prevents stuck when the input is ill-formatted
 			if (seed < 0)
 			{
-				DeleteCards(deck1);
-				break;
+				seed = time(NULL) + GetGiglRandInt();
+				// the addition may overflow to negative value, but we want seed to be positive
+				if (seed < 0)
+					seed = abs(seed + 1); // +1 is to avoid the problem of INT_MIN not having a proper absolute value
 			}
 			vector<Card*> deck2 = GenerateCardSet(n, seed);
 			BrowseCardSet(deck2);
+
+			// making the match process always random
+			srand(time(NULL));
+			GiglRandInit(time(NULL));
 
 			cout << "Shuffle decks for the match? (y/n; default y; cards are drawn in reverse order from the deck)" << endl;
 			cin >> ch;
 			if (ch != 'N' && ch != 'n')
 			{
-				srand(time(NULL));
 				random_shuffle(deck1.begin(), deck1.end());
 				random_shuffle(deck2.begin(), deck2.end());
 			}
@@ -2806,15 +2620,15 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 	case 2:
 		while (true)
 		{
-			cout << "Input seed for your deck (negative to randomize) " << endl;
+			cout << "Input seed for your deck (negative to randomize); note player order is decided randomly " << endl;
 			while (!(cin >> seed)) { cin.clear(); cin.ignore(); } // the clear and ignore prevents stuck when the input is ill-formatted
 			if (seed < 0)
 				seed = time(NULL);
-			cout << "Deck seed: " << seed << endl; // echo
+			cout << "Deck 1 seed: " << seed << endl; // echo
 			vector<Card*> deck1 = GenerateCardSet(n, seed);
 			BrowseCardSet(deck1);
 
-			cout << "Input seed for AI's deck (negative to randomize) " << endl;
+			cout << "Input seed for AI's deck (negative to randomize); note player order is decided randomly" << endl;
 			while (!(cin >> seed)) { cin.clear(); cin.ignore(); } // the clear and ignore prevents stuck when the input is ill-formatted
 			if (seed < 0)
 			{
@@ -2823,14 +2637,17 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				if (seed < 0)
 					seed = abs(seed + 1); // +1 is to avoid the problem of INT_MIN not having a proper absolute value
 			}
-			cout << "Deck seed: " << seed << endl; // echo
+			cout << "Deck 2 seed: " << seed << endl; // echo
 			vector<Card*> deck2 = GenerateCardSet(n, seed);
+
+			// making the match process always random
+			srand(time(NULL));
+			GiglRandInit(time(NULL)); 
 
 			cout << "Shuffle decks for the match? (y/n; default y; cards are drawn in reverse order from the deck)" << endl;
 			cin >> ch;
 			if (ch != 'N' && ch != 'n')
 			{
-				srand(time(NULL));
 				random_shuffle(deck1.begin(), deck1.end());
 				random_shuffle(deck2.begin(), deck2.end());
 			}
