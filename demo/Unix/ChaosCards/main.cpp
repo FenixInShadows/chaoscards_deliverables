@@ -2107,8 +2107,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			for (int k = 0; k < num_repeats; k++)
 				RunSimulationNode(node, deck_pool_size, n, n_total_visits, num_total_match_pairs, num_total_turns, num_total_decks, start_time);
 
-			WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path);
-			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path_human);
+			WriteCardData(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path.c_str());
+			WriteCardDataHuman(node.tournmnt_state.card_list, node.tournmnt_state.card_reps, node.card_stats, output_card_data_path_human.c_str());
 		}
 		break;
 	case 7:
@@ -2195,7 +2195,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				while (!(cin >> ai_level)) { cin.clear(); cin.ignore(); }
 				cout << endl;
 
-				srand(time(NULL))
+				srand(time(NULL));
 				GiglRandInit(time(NULL));
 				vector<int> your_deck_shuffle(deck_size);
 				vector<int> ai_deck_shuffle(deck_size);
@@ -2330,9 +2330,9 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			vector<BalanceStat> card_stats;
 			vector<Card*> card_list = PickCardSet(card_reps, card_stats, output_card_data_path, output_card_data_path_human);
 
-			Match_Card_Data_Path = GetAppendedFilePath(card_data_path, "card_data");
-			Match_Deck_Data_Path = GetAppendedFilePath(card_data_path, "deck_data");
-			Match_Match_Data_Path = GetAppendedFilePath(card_data_path, "match_data");
+			string Match_Card_Data_Path = GetAppendedFilePath(output_card_data_path, "card_data");
+			string Match_Deck_Data_Path = GetAppendedFilePath(output_card_data_path, "deck_data");
+			string Match_Match_Data_Path = GetAppendedFilePath(output_card_data_path, "match_data");
 
 			cout << "This mode will produce various output data files, for cards, decks, matches etc., for different matching schemes" << endl;
 
@@ -2558,8 +2558,8 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			cin >> ai_level_b;
 			TestAIs(ai_level_a, ai_level_b, card_list, deck_list, deck_num, n);
 
-			WriteCardData(card_list, card_reps, card_stats, output_card_data_path);
-			WriteCardDataHuman(card_list, card_reps, card_stats, output_card_data_path_human);
+			WriteCardData(card_list, card_reps, card_stats, output_card_data_path.c_str());
+			WriteCardDataHuman(card_list, card_reps, card_stats, output_card_data_path_human.c_str());
 
 			DeleteCards(card_list);
 		}
