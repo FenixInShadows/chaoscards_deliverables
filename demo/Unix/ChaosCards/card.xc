@@ -3,7 +3,7 @@ giglstart;
 import "Player.h";
 import <iostream>;
 
-// #define SUPPRSS_MATCH_PROMPTS
+// #define SUPPRESS_MATCH_PROMPTS
 
 #define DEFAULT_OVERHEAT_THRESHOLD 10
 
@@ -305,7 +305,7 @@ wrapper:
 		{
 			if (amount > 0)
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!owner->is_exploration)
 					cout << "Damage to " << owner->name << "\'s " << name << " absorbed by divine shield." << endl;
 				#endif
@@ -313,13 +313,13 @@ wrapper:
 			}
 			if (src && src->is_poisonous && card_type == MINION_CARD) // note, zero damage poison function the same as non-zero damage poison on minions (probably not the same as Hearthstone; but similar to Shadowverse, except for blocked by shield though)
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!owner->is_exploration)
 					cout << "Poision to " << owner->name << "\'s " << name << " absorbed by divine shield." << endl;
 				#endif
 				is_shielded = false;
 			}
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!owner->is_exploration)
 			{
 				if (is_shielded) // note. zero damage does not break shield (probably not the same as Shadowverse but similar to Hearthstone) 
@@ -331,7 +331,7 @@ wrapper:
 		}
 		else
 		{
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!owner->is_exploration)
 				cout << IntToStr(amount) << " damage dealt to " << owner->name << "\'s " << name << "." << endl;
 			#endif
@@ -340,7 +340,7 @@ wrapper:
 			hp_loss += amount;
 			if (src && src->is_lifesteal && !src->owner->leader->is_dying)
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!owner->is_exploration)
 					cout << src->owner->name << "\'s " << src->name << " lifesteal ability activated." << endl;
 				#endif
@@ -350,7 +350,7 @@ wrapper:
 				owner->FlagDestroy(item, start_of_batch);
 			if (src && src->is_poisonous && card_type == MINION_CARD) // note, zero damage poison function the same as non-zero damage poison on minions (probably not the same as Hearthstone; but similart to Shadowverse, except for blocked by shield though)
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!owner->is_exploration)
 					cout << src->owner->name << "\'s " << src->name << " poisonous ability activated." << endl;
 				#endif
@@ -361,13 +361,13 @@ wrapper:
 	}
 	void RestoreHp(int amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!owner->is_exploration)
 			cout << IntToStr(amount) << " health restored to " << owner->name << "\'s " << name << "." << endl;
 		#endif
 		if (hp_loss < amount)
 		{
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!owner->is_exploration)
 				cout << "Actually only restored " << IntToStr(hp_loss) << "." << endl;
 			#endif
@@ -380,13 +380,13 @@ wrapper:
 	}
 	void RestoreAtkTimes(int amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!owner->is_exploration)
 			cout << IntToStr(amount) << " attack times restored to " << owner->name << "\'s " << name << "." << endl;
 		#endif
 		if (n_atks_loss < amount)
 		{
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!owner->is_exploration)
 				cout << "Actually only restored " << IntToStr(n_atks_loss) << "." << endl;
 			#endif
@@ -399,7 +399,7 @@ wrapper:
 	}
 	void ModifyAtkHp(int atkmod, int hpmod) // assume hpmod >= 0
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!owner->is_exploration)
 			cout << (atkmod < 0 ? "" : "+") << IntToStr(atkmod) << "/" << (hpmod < 0 ? "" : "+") << IntToStr(hpmod) << " given to " << owner->name << "\'s " << name << "." << endl;
 		#endif
@@ -410,7 +410,7 @@ wrapper:
 	}
 	void ModifyCost(int amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!owner->is_exploration)
 			cout << (amount < 0 ? "" : "+") << IntToStr(amount) << " applied to the mana cost of " << owner->name << "\'s " << name << "." << endl;
 		#endif
@@ -420,7 +420,7 @@ wrapper:
 	}
 	void ModifyAtkTimes(int amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!owner->is_exploration)
 			cout << (amount < 0 ? "" : "+") << IntToStr(amount) << " applied to the atk times of " << owner->name << "\'s " << name << "." << endl;
 		#endif
@@ -918,7 +918,7 @@ rule:
 				{
 					if (!effects->CheckPlayValid(x, y, z, parent_card))
 					{
-						#ifndef SUPPRSS_MATCH_PROMPTS
+						#ifndef SUPPRESS_MATCH_PROMPTS
 						if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 							cout << "Error: Invalid target for the targeted battlecry, while valid target exists." << endl << endl;
 						#endif
@@ -935,7 +935,7 @@ rule:
 			Play 
 			{
 				// Play card (replace leader)
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << "The leader card " << parent_card->name << " played and the current leader replaced." << endl << endl;
 				#endif
@@ -947,7 +947,7 @@ rule:
 
 				// Adjusting target index if necessary (the card gets played and the number of minions doesn't increase)
 				if (x < z) z--;
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					parent_card->owner->PrintBoard();
 				#endif
@@ -965,7 +965,7 @@ rule:
 				// Check if it can attack
 				if (parent_card->n_atks_loss >= parent_card->max_n_atks)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: This leader cannot attack currently." << endl << endl;
 					#endif
@@ -975,7 +975,7 @@ rule:
 				// Check if it is sleeping
 				if (parent_card->IsSleeping())
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: This leader cannot attack currently, please wait for next turn." << endl << endl;
 					#endif
@@ -985,7 +985,7 @@ rule:
 				// Check if the target is valid
 				if (z <= parent_card->owner->field.size() || z > parent_card->owner->field.size() + parent_card->opponent->field.size() + 1)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Invalid target for attacking." << endl << endl;
 					#endif
@@ -996,7 +996,7 @@ rule:
 				Card* target = (z == parent_card->owner->field.size() + parent_card->opponent->field.size() + 1 ? parent_card->opponent->leader : parent_card->opponent->field[z - parent_card->owner->field.size() - 1]);
 				if (target->is_stealth)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Stealth characters cannot be attacked." << endl << endl;
 					#endif
@@ -1008,7 +1008,7 @@ rule:
 					{
 						if (parent_card->opponent->field[i]->is_taunt && !parent_card->opponent->field[i]->is_stealth)
 						{
-							#ifndef SUPPRSS_MATCH_PROMPTS
+							#ifndef SUPPRESS_MATCH_PROMPTS
 							if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 								cout << "Error: You must attack a taunt character first." << endl << endl;
 							#endif
@@ -1017,7 +1017,7 @@ rule:
 					}
 					if (parent_card->opponent->leader->is_taunt && !parent_card->opponent->leader->is_stealth)
 					{
-						#ifndef SUPPRSS_MATCH_PROMPTS
+						#ifndef SUPPRESS_MATCH_PROMPTS
 						if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 							cout << "Error: You must attack a taunt character first." << endl << endl;
 						#endif
@@ -1038,7 +1038,7 @@ rule:
 
 				if (parent_card->is_stealth)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << " loses stealth." << endl << endl;
 					#endif
@@ -1049,7 +1049,7 @@ rule:
 				if (parent_card->is_dying || target->is_dying) return;
 
 				// Perform the actual attack
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << " attacks " << target->owner->name << "\'s " << target->name << "." << endl << endl;
 				#endif
@@ -1255,7 +1255,7 @@ rule:
 				// Check if the field is full
 				if (parent_card->owner->GetActualFieldSize() >= MAX_FIELD_SIZE)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Your field is full." << endl << endl;
 					#endif
@@ -1265,7 +1265,7 @@ rule:
 				// Check if the position is valid
 				if (y < 0 || y > parent_card->owner->field.size())
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Invalid position." << endl << endl;
 					#endif
@@ -1277,7 +1277,7 @@ rule:
 				{
 					if (!effects->CheckPlayValid(x, y, z, parent_card))
 					{
-						#ifndef SUPPRSS_MATCH_PROMPTS
+						#ifndef SUPPRESS_MATCH_PROMPTS
 						if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 							cout << "Error: Invalid target for the targeted battlecry, while valid target exists." << endl << endl;
 						#endif
@@ -1294,7 +1294,7 @@ rule:
 			Play 
 			{
 				// Play card (place minion)
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << "The minion card " << parent_card->name << " played." << endl << endl;
 				#endif
@@ -1305,7 +1305,7 @@ rule:
 
 				// Adjusting target index if necessary (the card gets played and the minion is inserted)
 				if (y < z && z < x) z++;
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					parent_card->owner->PrintBoard();
 				#endif
@@ -1328,7 +1328,7 @@ rule:
 				// Check if it can attack
 				if (parent_card->n_atks_loss >= parent_card->max_n_atks)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: This minion cannot attack currently." << endl << endl;
 					#endif
@@ -1338,7 +1338,7 @@ rule:
 				// Check if it is sleeping
 				if (parent_card->IsSleeping())
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: This minion cannot attack currently, please wait for next turn." << endl << endl;
 					#endif
@@ -1348,7 +1348,7 @@ rule:
 				// Check if the target is valid
 				if (z <= parent_card->owner->field.size() || z > parent_card->owner->field.size() + parent_card->opponent->field.size() + 1)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Invalid target for attacking." << endl << endl;
 					#endif
@@ -1359,7 +1359,7 @@ rule:
 				Card* target = (z == parent_card->owner->field.size() + parent_card->opponent->field.size() + 1 ? parent_card->opponent->leader : parent_card->opponent->field[z - parent_card->owner->field.size() - 1]);
 				if (target->is_stealth)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Stealth characters cannot be attacked." << endl << endl;
 					#endif
@@ -1371,7 +1371,7 @@ rule:
 					{
 						if (parent_card->opponent->field[i]->is_taunt && !parent_card->opponent->field[i]->is_stealth)
 						{
-							#ifndef SUPPRSS_MATCH_PROMPTS
+							#ifndef SUPPRESS_MATCH_PROMPTS
 							if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 								cout << "Error: You must attack a taunt character first." << endl << endl;
 							#endif
@@ -1380,7 +1380,7 @@ rule:
 					}
 					if (parent_card->opponent->leader->is_taunt && !parent_card->opponent->leader->is_stealth)
 					{
-						#ifndef SUPPRSS_MATCH_PROMPTS
+						#ifndef SUPPRESS_MATCH_PROMPTS
 						if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 							cout << "Error: You must attack a taunt character first." << endl << endl;
 						#endif
@@ -1401,7 +1401,7 @@ rule:
 
 				if (parent_card->is_stealth)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << " loses stealth." << endl << endl;
 					#endif
@@ -1412,7 +1412,7 @@ rule:
 				if (parent_card->is_dying || target->is_dying) return;
 
 				// Perform the actual attack
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << " attacks " << target->owner->name << "\'s " << target->name << "." << endl << endl;
 				#endif
@@ -1559,7 +1559,7 @@ rule:
 				// Check if the target for the spell is valid, if not return false
 				if (isTargetedAtPlay(x, y, parent_card) && !effects->CheckPlayValid(x, y, z, parent_card))
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration && !parent_card->owner->is_guest)
 						cout << "Error: Invalid target for the targeted spell." << endl << endl;
 					#endif
@@ -1571,7 +1571,7 @@ rule:
 			Play
 			{
 				// Play card (play spell)
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << "The spell card " << parent_card->name << " played." << endl << endl;
 				#endif
@@ -2215,17 +2215,17 @@ rule:
 			{
 				if (z >= 0)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s battlecry effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 					#endif
 					effect->TargetedAction(z, parent_card, true, true); // negative means no valid target and ignored; play effect is cost constrained
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << endl;
 					#endif
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)				
 						cout << "Note: condition failed or overheated or no valid target, target ignored, and battlecry not triggered." << endl;
@@ -2277,17 +2277,17 @@ rule:
 			{
 				if (z >= 0)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s spell cast effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 					#endif
 					effect->TargetedAction(z, parent_card, true, true); // negative means no valid target and ignored; play effect is cost constrained
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << endl;
 					#endif
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Note: condition failed or overheated or no valid target, target ignored, and cast effect not triggered." << endl;
@@ -2462,12 +2462,12 @@ rule:
 			}
 			Play 
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s battlecry effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 				#endif
 				effect->UntargetedAction(parent_card, true); // play effect is cost constrained
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << endl;
 				#endif
@@ -2513,12 +2513,12 @@ rule:
 			}
 			Play 
 			{ 
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s spell effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 				#endif
 				effect->UntargetedAction(parent_card, true); // play effect is cost constrained
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << endl;
 				#endif
@@ -2564,12 +2564,12 @@ rule:
 			}
 			Destroy
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s deathrattle effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 				#endif
 				effect->UntargetedAction(parent_card, true); // deathrattle is considered constrained as normally the card has be be played before the deathrattle can be triggered (exception exists)
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << endl;
 				#endif
@@ -2621,12 +2621,12 @@ rule:
 			}
 			Discard
 			{
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s on-discard effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 				#endif
 				effect->UntargetedAction(parent_card, parent_card->card_pos == CARD_POS_AT_FIELD); // on discard is considered cost constrained if discarded from the field (note, played leaders cannot be discarded)
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				if (!parent_card->owner->is_exploration)
 					cout << endl;
 				#endif
@@ -2678,12 +2678,12 @@ rule:
 			{ 
 				if (alle->CheckCardValid(leader, parent_card))
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s turn start effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 					#endif
 					effect->UntargetedAction(parent_card, parent_card->card_pos == CARD_POS_AT_FIELD || parent_card->card_pos == CARD_POS_AT_LEADER); // turn start effect is considered cost constrained if already on the field (or played leader) 
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << endl;
 					#endif
@@ -2735,12 +2735,12 @@ rule:
 			{ 
 				if (alle->CheckCardValid(leader, parent_card))
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << parent_card->owner->name << "\'s " << parent_card->name << "\'s turn end effect activated: " << effect->Detail() << "." << effect->PostfixIndent(4);
 					#endif
 					effect->UntargetedAction(parent_card, parent_card->card_pos == CARD_POS_AT_FIELD || parent_card->card_pos == CARD_POS_AT_LEADER); // turn end effect is considered cost constrained if already on the field (or played leader) 
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << endl;
 					#endif
@@ -2854,7 +2854,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained); // though currently targeted effects should always be cost constrained (play effects), but just in case for future extension
 					return effect->TargetedAction(z, parent_card, true, is_cost_constrained);
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Overheated, not actually activated." << endl;
@@ -2993,7 +2993,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained); // though currently targeted effects should always be cost constrained (play effects), but just in case for future extension
 					return effect->TargetedAction(z, parent_card, true, is_cost_constrained);
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Condition check failed or overheated, not actually activated." << endl;
@@ -3141,7 +3141,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained);
 					return effect->TargetedAction(z, parent_card, true, is_cost_constrained); // though currently targeted effects should always be cost constrained (play effects), but just in case for future extension
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Condition check failed or overheated, not actually activated." << endl;
@@ -3320,7 +3320,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained);
 					effect->UntargetedAction(parent_card, is_cost_constrained);
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Overheated, not actually activated." << endl;
@@ -3447,7 +3447,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained);
 					effect->UntargetedAction(parent_card, is_cost_constrained);
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Condition check failed or overheated, not actually activated." << endl;	
@@ -3587,7 +3587,7 @@ rule:
 					parent_card->IncContribution(is_cost_constrained);
 					effect->UntargetedAction(parent_card, is_cost_constrained);
 				}
-				#ifndef SUPPRSS_MATCH_PROMPTS
+				#ifndef SUPPRESS_MATCH_PROMPTS
 				else
 					if (!parent_card->owner->is_exploration)
 						cout << "Condition check failed or overheated, not actually activated." << endl;
@@ -6636,7 +6636,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << target->owner->name << "\'s " << target->name << " minion type set to Beast." << endl;
 					#endif
@@ -6690,7 +6690,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << target->owner->name << "\'s " << target->name << " minion type set to Dragon." << endl;
 					#endif
@@ -6744,7 +6744,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << target->owner->name << "\'s " << target->name << " minion type set to Demon." << endl;
 					#endif
@@ -6775,7 +6775,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Change ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6806,7 +6806,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Taunt ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6839,7 +6839,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Stealth ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6870,7 +6870,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Untargetability ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6903,7 +6903,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Divine Shield ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6934,7 +6934,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Poisonous ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6965,7 +6965,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Lifesteal ability given to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -6997,7 +6997,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Ability keywords removed from " << target->owner->name << "\'s " << target->name << endl;
 					#endif
@@ -7040,7 +7040,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Every effect on " << target->owner->name << "\'s " << target->name << " set to overheat." << endl;
 					#endif
@@ -7092,7 +7092,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "The overheat threshhold for every effects on " << target->owner->name << "\'s " << target->name << " reduced by " << IntToStr(val) << "." << endl;
 					#endif
@@ -7136,7 +7136,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << target->owner->name << "\'s " << target->name << " set to its original state." << endl;
 					#endif
@@ -7209,7 +7209,7 @@ rule:
 				Card* target = parent_card->owner->GetTargetCard(z);
 				if (target && !target->is_dying)
 				{
-					#ifndef SUPPRSS_MATCH_PROMPTS
+					#ifndef SUPPRESS_MATCH_PROMPTS
 					if (!parent_card->owner->is_exploration)
 						cout << "Extra effects granted to " << target->owner->name << "\'s " << target->name << endl;
 					#endif
