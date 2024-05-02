@@ -9,7 +9,7 @@
 using namespace std;
 
 // #define SUPPRESS_TOURNAMENT_PROMPTS
-// #define SUPPRSS_MATCH_PROMPTS
+// #define SUPPRESS_MATCH_PROMPTS
 
 
 /* Card/Player section */
@@ -382,7 +382,7 @@ void Player::FlagFieldSummon(Card* card, bool start_of_batch)
 	field_size_adjust++;
 	if (GetActualFieldSize() > MAX_FIELD_SIZE) // if field is full, also issue a discard event
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << name << "'s field is full." << endl;
 		#endif
@@ -396,7 +396,7 @@ void Player::FlagHandPut(Card* card, bool start_of_batch)
 	hand_size_adjust++;
 	if (GetActualHandSize() > MAX_HAND_SIZE) // if hand is full, also issue a discard event
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << name << "'s hand is full." << endl;
 		#endif
@@ -437,7 +437,7 @@ void Player::StartTurn()
 {
 	turn_num++;
 
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		cout << name << "\'s Turn " << turn_num << " starts." << endl << endl;
 	#endif
@@ -467,7 +467,7 @@ void Player::StartTurn()
 	DrawCard(true);
 	if (CleanUp()) return;
 
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		PrintBoard();
 	#endif
@@ -502,7 +502,7 @@ void Player::EndTurn()
 	for (int i = 0; i < deck.size(); i++)
 		deck[i]->SetAllOverheatCounts(0);
 
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 	{
 		PrintBoard();
@@ -513,7 +513,7 @@ void Player::EndTurn()
 	// force draw if maximum number of turns has been reached
 	if (turn_num >= MAX_NUM_TURNS && opponent->turn_num >= MAX_NUM_TURNS)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << "Maximun number of turns reached." << endl;
 		#endif
@@ -526,7 +526,7 @@ bool Player::CheckPlayValid(int x, int y, int& z) const
 {
 	if (x == z)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration && !is_guest)
 			cout << "Error: Cannot target itself." << endl << endl;
 		#endif
@@ -536,7 +536,7 @@ bool Player::CheckPlayValid(int x, int y, int& z) const
 	int i = x - (field.size() + opponent->field.size() + 2);
 	if (i >= hand.size())
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration && !is_guest)
 			cout << "Error: Invalid card numbering." << endl << endl;
 		#endif
@@ -546,7 +546,7 @@ bool Player::CheckPlayValid(int x, int y, int& z) const
 	Card* card = hand[i];
 	if (!CheckMP(card->mana))
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration && !is_guest)
 			cout << "Error: Not enough MP." << endl << endl;
 		#endif
@@ -572,7 +572,7 @@ void Player::Play(int x, int y, int z)
 
 	CleanUp();
 
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		PrintBoard();
 	#endif
@@ -582,7 +582,7 @@ bool Player::CheckAttackValid(int x, int z) const
 {
 	if (x < 0 || x > field.size())
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration && !is_guest)
 			cout << "Error: Invalid attacker numbering." << endl << endl;
 		#endif
@@ -604,7 +604,7 @@ void Player::Attack(int x, int z)
 
 	CleanUp();
 
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		PrintBoard();
 	#endif
@@ -624,7 +624,7 @@ void Player::DrawCard(bool start_of_batch)
 	if (deck.empty() || !(*it) || (*it)->is_dying)
 	{
 		fatigue++;
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << "Suffering fatigue: " << fatigue << "." << endl << endl;
 		#endif
@@ -633,7 +633,7 @@ void Player::DrawCard(bool start_of_batch)
 	}
 	
 	// add to hand
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		cout << name << " draws the card " << (*it)->name << "." << endl;
 	#endif
@@ -665,13 +665,13 @@ void Player::UseMP(int cost)
 
 void Player::ModifyMp(int amount)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		cout << abs(amount) << " MP" << (amount >= 0 ? " restored to " : " exhausted from ") << name << endl;
 	#endif
 	if (mp_loss < amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << "Actually only restored " << mp_loss << "." << endl;
 		#endif
@@ -679,7 +679,7 @@ void Player::ModifyMp(int amount)
 	}
 	else if (mp_loss > max_mp + amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << "Actually only exhausted " << max_mp - mp_loss << "." << endl;
 		#endif
@@ -693,13 +693,13 @@ void Player::ModifyMp(int amount)
 
 void Player::ModifyMaxMp(int amount)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!is_exploration)
 		cout << abs(amount) << " Max MP (and MP)" << (amount >= 0 ? " added to " : " lost from ") << name << endl;
 	#endif
 	if (max_mp < -amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 		{
 			cout << "Actually only lost " << max_mp << " Max MP." << endl;
@@ -711,14 +711,14 @@ void Player::ModifyMaxMp(int amount)
 	}
 	else if (max_mp > MAX_MP - amount)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!is_exploration)
 			cout << "Actually only added " << MAX_MP - max_mp << " Max MP." << endl;
 		#endif
 		int mp_loss_correction = max_mp + amount - MAX_MP;
 		if (mp_loss < mp_loss_correction)
 		{
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!is_exploration)
 				cout << "Actually only added " << MAX_MP - max_mp + mp_loss << " MP." << endl;
 			#endif
@@ -734,7 +734,7 @@ void Player::ModifyMaxMp(int amount)
 	{
 		if (max_mp - mp_loss < -amount)
 		{
-			#ifndef SUPPRSS_MATCH_PROMPTS
+			#ifndef SUPPRESS_MATCH_PROMPTS
 			if (!is_exploration)
 				cout << "Actually only lost " << max_mp - mp_loss << " MP." << endl;
 			#endif
@@ -2360,7 +2360,7 @@ void DestroyEvent::Process(Player* curr_player)
 {
 	if (card == curr_player->leader)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!curr_player->is_exploration)
 			cout << curr_player->name << "\'s leader " << card->name << " destroyed." << endl << endl;
 		#endif
@@ -2368,7 +2368,7 @@ void DestroyEvent::Process(Player* curr_player)
 	}
 	else if (card == curr_player->opponent->leader)
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!curr_player->is_exploration)
 			cout << curr_player->opponent->name << "\'s leader " << card->name << " destroyed." << endl << endl;
 		#endif
@@ -2376,7 +2376,7 @@ void DestroyEvent::Process(Player* curr_player)
 	}
 	else
 	{
-		#ifndef SUPPRSS_MATCH_PROMPTS
+		#ifndef SUPPRESS_MATCH_PROMPTS
 		if (!curr_player->is_exploration)
 			cout << card->owner->name << "\'s minion " << card->name << " destroyed." << endl << endl;
 		#endif
@@ -2399,7 +2399,7 @@ DiscardEvent::DiscardEvent(Card* _card, bool _start_of_batch) : DeferredEvent(_c
 
 void DiscardEvent::Process(Player* curr_player)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!curr_player->is_exploration)
 		cout << card->owner->name << "\'s " << card->name << " discarded." << endl << endl;
 	#endif
@@ -2412,7 +2412,7 @@ FieldSummonEvent::FieldSummonEvent(Card* _card, bool _start_of_batch, Player* _o
 
 void FieldSummonEvent::Process(Player* curr_player)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!curr_player->is_exploration) // don't print original card owner's (card->owner) info as theoretically cards that are in transfer or being spawned/copied does not have an owner until it reaches the destination
 		cout << card->name << " summoned to " << owner->name << "\'s field." << endl << endl;
 	#endif
@@ -2427,7 +2427,7 @@ HandPutEvent::HandPutEvent(Card* _card, bool _start_of_batch, Player* _owner) : 
 
 void HandPutEvent::Process(Player* curr_player)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!curr_player->is_exploration) // don't print original card owner's (card->owner) info as theoretically cards that are in transfer or being spawned/copied does not have an owner until it reaches the destination
 		cout << card->name << " put to " << owner->name << "\'s hand." << endl << endl;
 	#endif
@@ -2442,7 +2442,7 @@ DeckShuffleEvent::DeckShuffleEvent(Card* _card, bool _start_of_batch, Player* _o
 
 void DeckShuffleEvent::Process(Player* curr_player)
 {
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!curr_player->is_exploration) // don't print original card owner's (card->owner) info as theoretically cards that are in transfer or being spawned/copied does not have an owner until it reaches the destination
 		cout << card->name << " shuffled to " << owner->name << "\'s deck." << endl << endl;
 	#endif
@@ -2464,7 +2464,7 @@ CardTransformEvent::~CardTransformEvent()
 void CardTransformEvent::Process(Player* curr_player)
 {
 	// well many of the following could be put into the FlagCardTransform function but its not much of a difference for now
-	#ifndef SUPPRSS_MATCH_PROMPTS
+	#ifndef SUPPRESS_MATCH_PROMPTS
 	if (!curr_player->is_exploration)
 		cout << card->owner->name << "\'s " << card->name << " transformed to " << replacement->name << "." << endl << endl;
 	#endif
