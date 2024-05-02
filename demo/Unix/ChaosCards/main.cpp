@@ -2249,7 +2249,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			vector<Card*> card_list;
 			vector<CardRep> card_reps;
 			vector<BalanceStat> card_stats; // it is questionable whether we should clear this before simulation, but it doesn't affect the process and is not output in this mode
-			if (arc > 3)
+			if (argc > 3)
 			{
 				Card_Path = argv[3];
 				cout << "Using card pool: " << Card_Path << "." << endl;
