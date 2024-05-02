@@ -2089,10 +2089,10 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			}
 			else
 			{
-				cout << "Input seed" << endl;
+				cout << "Input seed for deck creation and match simulation (not for card set generation)" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for simulation (not for card set generation): " << seed << endl;
+			cout << "Seed for deck creation and match simulation: " << seed << endl;
 			srand(seed);
 			GiglRandInit(seed);
 			
@@ -2236,10 +2236,10 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			}
 			else
 			{
-				cout << "Input seed" << endl;
+				cout << "Input seed for match simulation (not for card set generation)" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for simulation (not for card set generation): " << seed << endl << endl;
+			cout << "Seed for simulation: " << seed << endl << endl;
 
 			cout << "Note that the default two deck lists are the active decks from the evolution simulation and the top decks from the random simulation for the given card pool." << endl;
 			cout << "If requiring custom deck set, please use commandline arguments, with format:" << endl;
@@ -2375,10 +2375,10 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 			}
 			else
 			{
-				cout << "Input seed" << endl;
+				cout << "Input seed for deck creation and match simulation (not for card set generation)" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for simulation (not for card set generation): " << seed << endl;
+			cout << "Seed for deck creation and match simulation: " << seed << endl;
 			srand(seed);
 			GiglRandInit(seed);
 
@@ -2575,7 +2575,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << "Input seed for deck creation and match simulation (not for card set generation)" << endl;
 				cin >> seed;
 			}
-			cout << "Seed for deck creation and match simulation " << seed << endl;
+			cout << "Seed for deck creation and match simulation: " << seed << endl;
 			srand(seed);
 			GiglRandInit(seed);
 			
