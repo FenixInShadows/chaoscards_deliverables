@@ -2284,7 +2284,7 @@ int main(int argc, char* argv[]) // argument order, if supplied: mode, seed, fil
 				cout << "Using default deck set for the second deck list: " << Deck_B_Path << "." << endl;
 			}
 
-			string Deck_Post_Simulation_Path = GetAppendedFilePath(Card_Path, "deck_match_post_simulation.txt");
+			string Deck_Post_Simulation_Path = GetAppendedFilePath(Card_Path, "_deck_match_post_simulation");
 			if (argc > 6)
 				Deck_Post_Simulation_Path = argv[6];
 
