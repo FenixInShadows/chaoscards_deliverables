@@ -10,12 +10,6 @@
 #include <queue>
 #include <string>
 #include <map>
-#include <fstream>
-
-//#define SUPPRESS_ALL_MSG
-
-using namespace std;
-
 
 /* Card/Player section */
 
@@ -47,21 +41,24 @@ using namespace std;
 #define COPY_OPPO 2
 
 class Card;
+class ActionEntity;
 class ActionSetEntity;
 class DeferredEvent;
 
-typedef map<void*, void*> PtrRedirMap;
-typedef map<void*, void*>::iterator PtrRedirMapIter;
+typedef std::map<void*, void*> PtrRedirMap;
+typedef std::map<void*, void*>::iterator PtrRedirMapIter;
 
 class Player
 {
 public:
-	Player(queue<DeferredEvent*>& _event_queue);
-	Player(const string& _name, int _hp, const vector<Card*>& _deck, bool _is_guest, queue<DeferredEvent*>& _event_queue);
-	Player(const string& _name, int _hp, const vector<Card*>& _deck, bool _is_guest, queue<DeferredEvent*>& _event_queue, unsigned _ai_level);
+	Player(std::queue<DeferredEvent*>& _event_queue);
+	Player(const std::string& _name, int _hp, const std::vector<Card*>& _deck, bool _is_guest, std::queue<DeferredEvent*>& _event_queue);
+	Player(const std::string& _name, int _hp, const std::vector<Card*>& _deck, bool _is_guest, std::queue<DeferredEvent*>& _event_queue, int _ai_level);
+	Player(const std::string& _name, int _hp, const std::vector<Card*>& _deck, bool _is_guest, std::queue<DeferredEvent*>& _event_queue, int _ai_level, const std::vector<Card*>& _card_pool);
 	~Player();
-	Player* CreateKnowledgeCopy(unsigned mode, queue<DeferredEvent*>& event_queue, PtrRedirMap& redir_map) const; // creating a copy for the purpose of AI exploring; different modes: COPY_EXACT - copy exactly; COPY_ALLY - copy for the allied player (field and hand are preserved, deck is randomly generated); COPY_OPPO - copy for the allied player (only field is preserved, others are randomly generated)
-	void RegisterCardContributions(vector<int>& counters); // link each card in the deck to a countribution counter used for evaluating card strength
+	Card* GetRandomUnknownCard() const;
+	Player* CreateKnowledgeCopy(unsigned mode, std::queue<DeferredEvent*>& event_queue, PtrRedirMap& redir_map) const; // creating a copy for the purpose of AI exploring; different modes: COPY_EXACT - copy exactly; COPY_ALLY - copy for the allied player (field and hand are preserved, deck is randomly generated); COPY_OPPO - copy for the allied player (only field is preserved, others are randomly generated)
+	void RegisterCardContributions(std::vector<int>& counters, std::vector<int>& cost_constrained_counters); // link each card in the deck to a countribution counter and a cost constrained (contribution) counter
 	void SetAllCardAfflications();
 	void SetCardAfflication(Card* card); // used after opponent of the owner is set
 	void InitialCardDraw(bool is_second_player); // this should be different from calling DrawCard() a few times, as effects (including fatigue, if any) should not be triggered here
@@ -83,9 +80,9 @@ public:
 	bool CheckLose() const;	
 	void StartTurn();
 	void EndTurn();
-	bool CheckPlayValid(int x, int y, int& z); // card x, poistion y, target z (if there is no valid target for a battlecry z will be modified to -1)
+	bool CheckPlayValid(int x, int y, int& z) const; // card x, poistion y, target z (if there is no valid target for a battlecry z will be modified to -1)
 	void Play(int x, int y, int z); // card x, poistion y, target z, assume already checked valid
-	bool CheckAttackValid(int x, int z); // card x, target z
+	bool CheckAttackValid(int x, int z) const; // card x, target z
 	void Attack(int x, int z); // card x, target z, assume already checked valid
 	void DrawCard(bool start_of_batch);
 	void RecoverAttackTimes(); // restore all attack times for friendly characters and switch off their is_first_turn_at_field flag
@@ -104,27 +101,31 @@ public:
 	void SummonToField(Card* card); // does not trigger battlecry, this function itself does not check for field full (if it were full it will be still added but there should be a discard event in the queue right after)
 	void PutToHand(Card* card); // if full, this function itself does not check for field full (if it were full it will be still added but there should be a discard event in the queue right after)
 	void ShuffleToDeck(Card* card); // the position is randomized
-	double GetHeuristicEval() const; // the heuristic about how good the situation is for the player, scaled and clamped within -1 ~ 1 (normally clamped to -0.9 ~ 0.9 unless (almost) lose or win), assumes at end of turn state
-	vector<ActionSetEntity*> GetOptionSet();
+	static double GetMaxReservedCardsValue(const std::vector<int>& card_costs, const std::vector<double>& card_values, const std::vector<int>& minion_flags, int avail_mp, int field_slots); // use dynamic programming to estimate the value that can be made out of the remaining mp 
+	double GetHeuristicAdjustment(int turn_num_adjust) const; // secondary portion of heuristic evaluation, assuming at the start of the turn that is turn_num_adjust ahead of the current one
+	double ForwardToNextTurnAndEval(); // evaluate a state that is either just before performing the end turn action, or just after the end turn action is performed, or already lost/drew/won, scaled and clamped withing -1 ~ 1 (normally -0.99 ~ 0.99 unless already lost or won, and more commonly -0.891 ~ 0.891)	
+	double GetHeuristicEval() const; // the heuristic about how good the situation is for the player, scaled and clamped within -1.0 ~ 1.0 (normally -0.9 ~ 0.9 unless (almost) lost or won), evaluated at the start of the opponent turn, but compensate for unused cost and attack times etc. as it may be artificially ended earlier
+	std::vector<ActionSetEntity*> GetOptionSet() const; // Get the collection of valid actions grouped by the type and source card index
+	std::vector<ActionEntity*> GetActionList() const; // Get the flat list of actions, not grouped (different combination of type, source, position, destination are all considered different individual action)
 	void TakeSearchAIInputs();
 	void TakeSearchAIInput();
 	void TakeRandomAIInputs();
-	void TakeRandomAIInput();	
+	void TakeRandomAIInput();
 	void TakeInputs();
 	void TakeSingleInput();
 	void DisplayHelp() const;
 	void Query(int x) const;
-	string BriefInfo() const;
-	string DetailInfo() const;
+	std::string BriefInfo() const;
+	std::string DetailInfo() const;
 	void PrintBoard() const;
 	int GetActualFieldSize() const; // the actual size, excluding those queued for deletion
 	int GetActualHandSize() const; // the actual size, excluding those queued for deletion
 	int GetActualDeckSize() const; // the actual size, excluding those queued for deletion
 	Card* leader; // essentially a played hero card
-	vector<Card*> field; // ordered from left to right
-	vector<Card*> hand; // ordered from left to right
-	vector<Card*> deck; // ordered from bottom to top
-	string name;
+	std::vector<Card*> field; // ordered from left to right
+	std::vector<Card*> hand; // ordered from left to right
+	std::vector<Card*> deck; // ordered from bottom to top
+	std::string name;
 	bool is_guest; // whether it is an active controlling player from this terminal (not displaying error message etc.)
 	bool is_exploration; // whether the steps it takes is exploring the 
 	Player* opponent;
@@ -137,9 +138,10 @@ public:
 	int field_size_adjust; // the discrepancy between the actual size and the size of the vector, due to the existence of deferred events
 	int hand_size_adjust; // the discrepancy between the actual size and the size of the vector, due to the existence of deferred events
 	int deck_size_adjust; // the discrepancy between the actual size and the size of the vector, due to the existence of deferred events
-	queue<DeferredEvent*>& event_queue; // reference to the queue for deferred event (shared between two players)
+	std::queue<DeferredEvent*>& event_queue; // reference to the queue for deferred event (shared between two players)
 	int ai_level; // 0 means random ai, 1 ~ 9 means search based ai (the numberical value indicate a scaling factor for the number of search trials)
 	void (Player::*input_func)();
+	std::vector<Card*> card_pool; // used in AI simulation to substitute unknown cards, if empty then randomly generate using the default generator; note, the player object does not own the cards so don't deallocate in this class
 };
 
 
@@ -215,12 +217,20 @@ public:
 #define NOT_LEADER_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_NOT_LEADER|TARGET_ANY_ALLE_MINION_ABIL_TYPE)
 #define ALLY_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_ALLY|TARGET_ANY_CARD_MINION_ABIL_TYPE)
 #define OPPO_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_OPPO|TARGET_ANY_CARD_MINION_ABIL_TYPE)
+#define FORCE_ANY_ALLE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CARD_MINION_ABIL_TYPE) // both bits being zero means forcing to not have allegiance constraints
 #define BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_BEAST|TARGET_ANY_ALLE_ABIL_TYPE)
 #define DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DRAGON|TARGET_ANY_ALLE_ABIL_TYPE)
 #define DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_IS_DEMON|TARGET_ANY_ALLE_ABIL_TYPE)
 #define NOT_BEAST_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_BEAST|TARGET_ANY_ALLE_ABIL_TYPE)
 #define NOT_DRAGON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DRAGON|TARGET_ANY_ALLE_ABIL_TYPE)
 #define NOT_DEMON_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_DEMON|TARGET_ANY_ALLE_ABIL_TYPE)
+#define CHARGE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_CHARGE|TARGET_ANY_ALLE_MINION_TYPE)
+#define TAUNT_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_TAUNT|TARGET_ANY_ALLE_MINION_TYPE)
+#define STEALTH_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_STEALTH|TARGET_ANY_ALLE_MINION_TYPE)
+#define UNTARGETABLE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_UNTARGETABLE|TARGET_ANY_ALLE_MINION_TYPE)
+#define SHIELDED_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_SHIELDED|TARGET_ANY_ALLE_MINION_TYPE)
+#define POISONOUS_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_POISONOUS|TARGET_ANY_ALLE_MINION_TYPE)
+#define LIFESTEAL_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_IS_LIFESTEAL|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_CHARGE_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_CHARGE|TARGET_ANY_ALLE_MINION_TYPE) // this means charge is applicable but not present, similar for the below series about ability keywords
 #define NOT_TAUNT_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_ANY_CHAR|TARGET_NOT_TAUNT|TARGET_ANY_ALLE_MINION_TYPE)
 #define NOT_STEALTH_COND_FILTER (TARGET_ANY_POS_TYPE|TARGET_IS_MINION|TARGET_NOT_STEALTH|TARGET_ANY_ALLE_MINION_TYPE)
@@ -268,10 +278,10 @@ public:
 		int _min_cost, int _max_cost, int _min_atk, int _max_atk, int _min_hp, int _max_hp, int _min_n_atks, int _max_n_atks); // this is the version without card-independent settings
 	CondConfig(unsigned _flag); // only with flag specified, all others are default
 	CondConfig(); // default
-	CondConfig operator &= (const CondConfig& config);
-	CondConfig operator &= (unsigned flag);
-	CondConfig operator |= (const CondConfig& config);
-	CondConfig operator |= (unsigned flag);
+	CondConfig& operator &= (const CondConfig& config);
+	CondConfig& operator &= (unsigned flag);
+	CondConfig& operator |= (const CondConfig& config);
+	CondConfig& operator |= (unsigned flag);
 	unsigned operator & (unsigned mask) const;
 	unsigned operator | (unsigned mask) const;
 	unsigned flag;
@@ -284,6 +294,8 @@ public:
 };
 
 CondConfig GetInitConfigFromCard(const Card* card); // this does not consider the abilities and assume no abilities
+CondConfig GetInstantConfigFromInitConfig(const CondConfig& config);
+void AdjustInitConfigWithAnotherConfig(CondConfig& init_config, const CondConfig& instant_config);
 CondConfig ExtractEffectIndependentConfig(const CondConfig& config);
 CondConfig GetDefaultInitConfig(); // this version is for the initial state of the card, particularly, ability fields of the flag are zero bits
 CondConfig GetDefaultConfig(); // just a constructor like function, due to artifact from GIGL
@@ -297,10 +309,10 @@ CondConfig GetAtkTimesConfig(unsigned flag, int min_n_atks, int max_n_atks);
 
 extern bool display_overheat_counts; // whether or not to display overheat counter in detailed discripition.
 
-string MinionTypeDescription(int type);
-string AbilityDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal); // comma separated list, starting with a " with " if there's any ability
-string AbilityDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth,bool is_untargetable,bool is_shielded,bool is_poisonous, bool is_lifesteal);
-string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size);
+std::string MinionTypeDescription(int type);
+std::string AbilityDescriptionInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal); // comma separated list, starting with a " with " if there's any ability
+std::string AbilityDescriptionBrief(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal);
+std::string AbilityDescriptionDetail(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, int indent_size);
 
 
 /* Simulator Section */
@@ -310,29 +322,49 @@ int GetGiglRandInt(); // artifact from file including issues
 int GetGiglRandInt(int n); // artifact from file including issues
 double GetGiglRandFloat(); // 0.0 ~ 1.0; artifact from file includeing issues
 double GetGiglRandFloat(double max_val); // 0.0 ~ max_val; artifact from file including issues
-vector<int> CreateRandomSelection(int n, int k); // select random k numbers from 0 ~ n-1 as a list (ordered randomly); artifact from file including issues
-vector<int> CreateRandomSelectionSorted(int n, int k); // same as above but return guarantee sorted in increasing order 
+double GetGiglRandFloat(double min_val, double max_val); // min_val ~ max_val; artifact from file including issues
+std::vector<int> CreateRandomSelection(int n, int k); // select random k numbers from 0 ~ n-1 as a list (ordered randomly); artifact from file including issues
+std::vector<int> CreateRandomSelectionSorted(int n, int k); // same as above but return guarantee sorted in increasing order 
 Card* GenerateSingleCard(int seed);
-string GetCardName(Card* card); // artifact from file including issues
-string GetCardBrief(Card* card); // artifact from file including issues
-string GetCardDetail(Card* card); // artifact from file including issues
-vector<Card*> GenerateCardSet(int n, int seed); // giving no duplicate card seeds
-vector<int> GenerateCardSetSeeds(int n, int seed); // giving no duplicate card seeds
-void InitMatch(vector<Card*>& card_list, const vector<int>& deck_a_orig_indices, const vector<int>& deck_b_orig_indices, vector<int>& deck_a_shuffle, vector<int>& deck_b_shuffle, vector<int>& deck_a_indices, vector<int>& deck_b_indices, vector<Card*>& deck_a, vector<Card*>& deck_b); // shuffle the card indices, the "shuffle" vectors pass back how the deck is ordered using indices in the deck, the "indices" vectors pass back the indices in the card pool
+Card* GenerateSingleCardWithCost(int cost, int seed);
+std::string GetCardName(Card* card); // artifact from file including issues
+std::string GetCardBrief(Card* card); // artifact from file including issues
+std::string GetCardDetail(Card* card); // artifact from file including issues
+int GetCardOrigCost(Card* card); // artifact from file including issues
+std::vector<Card*> GenerateCardSet(int n, int seed); // giving no duplicate card seeds
+std::vector<int> GenerateCardSetSeeds(int n, int seed); // giving no duplicate card seeds
+void InitMatch(std::vector<Card*>& card_list, const std::vector<int>& deck_a_orig_indices, const std::vector<int>& deck_b_orig_indices, std::vector<int>& deck_a_shuffle, std::vector<int>& deck_b_shuffle, std::vector<int>& deck_a_indices, std::vector<int>& deck_b_indices, std::vector<Card*>& deck_a, std::vector<Card*>& deck_b); // shuffle the card indices, the "shuffle" vectors pass back how the deck is ordered using indices in the deck, the "indices" vectors pass back the indices in the card pool
 void DecidePlayOrder(Player* player1, Player* player2, Player*& first_player, Player*& second_player);
 Card* HardCopyCard(Card* card); // artifact from file including issues
-vector<Card*> HardCopyCards(vector<Card*> cards); // artifact from file including issues
+std::vector<Card*> HardCopyCards(std::vector<Card*> cards); // artifact from file including issues; not using & for the argument type because of some const/non-const issues
 void DeleteCard(Card* card); // artifact from file including issues
-void DeleteCards(vector<Card*> cards); // artifact from file including issues
+void DeleteCards(std::vector<Card*>& cards); // artifact from file including issues
+
+std::vector<Card*> CreateDemoCardSet1();
+std::vector<Card*> CreateDemoCardSet1Alt();
+std::vector<Card*> CreateDemoCardSet1Alt2();
+std::vector<Card*> CreateDemoCardSet2();
+std::vector<Card*> CreateDemoCardSet2Alt();
+std::vector<Card*> CreateDemoCardSet3();
+std::vector<Card*> CreateDemoCardSet4();
+std::vector<Card*> CreateDemoCardSet4Alt();
+std::vector<Card*> CreateDemoCardSet5();
+std::vector<Card*> CreateDemoCardSet6();
+std::vector<Card*> CreateDemoCardSet7();
+std::vector<Card*> CreateDemoCardSet8();
+std::vector<Card*> CreateDemoCardSetX();
+std::vector<Card*> CreateDemoCardSetH();
 
 class DeferredEvent // certain parts of effects are not applied immediately but rather pushed into a queue and dealt with afterwards, this is because we don't want inserted events to AoE effects, and also sometimes we want to maintain target indexing unchanged until the effects on one card at a certain point is fully executed
 {
 public:
-	DeferredEvent(Card* _card, bool _start_of_batch);
+	DeferredEvent(Card* _card, bool is_owning_card, bool _start_of_batch);
+	virtual ~DeferredEvent();
 	virtual void Process(Player* curr_player) = 0;
 
 protected:
 	Card* card;
+	bool is_owning_card; // certain type of event owns the card (i.e. the address of the card is not stored anywhere else) before resolved, during which period object has to manage the memory
 
 public:
 	bool is_start_of_batch;
@@ -342,28 +374,28 @@ class DestroyEvent : public DeferredEvent
 {
 public:
 	DestroyEvent(Card* _card, bool _start_of_batch);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 };
 
 class CastEvent : public DeferredEvent // currently not actually needed as there isn't anything special to do after a spell is cast
 {
 public:
 	CastEvent(Card* _card, bool _start_of_batch);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 };
 
 class DiscardEvent : public DeferredEvent
 {
 public:
 	DiscardEvent(Card* _card, bool _start_of_batch);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 };
 
 class FieldSummonEvent : public DeferredEvent
 {
 public:
 	FieldSummonEvent(Card* _card, bool _start_of_batch, Player* _owner);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 
 private:
 	Player* owner;
@@ -373,7 +405,7 @@ class HandPutEvent : public DeferredEvent
 {
 public:
 	HandPutEvent(Card* _card, bool _start_of_batch, Player* _owner);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 
 private:
 	Player* owner;
@@ -383,7 +415,7 @@ class DeckShuffleEvent : public DeferredEvent
 {
 public:
 	DeckShuffleEvent(Card* _card, bool _start_of_batch, Player* _owner);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 
 private:
 	Player* owner;
@@ -393,28 +425,30 @@ class CardTransformEvent : public DeferredEvent
 {
 public:
 	CardTransformEvent(Card* _card, bool _start_of_batch, Card* _replacement);
-	virtual void Process(Player* curr_player);
+	~CardTransformEvent();
+	void Process(Player* curr_player);
 
 private:
 	Card* replacement;
+	bool is_owning_replacement; // owns the replacement until resolved
 };
 
 class CardResetEvent : public DeferredEvent // currently not actually needed as there isn't anything special to do after a card is reset to its original state
 {
 public:
 	CardResetEvent(Card* _card, bool _start_of_batch);
-	virtual void Process(Player* curr_player);
+	void Process(Player* curr_player);
 };
 
 
 /* AI Section */
 
-
 class ActionEntity
 {
 public:
 	ActionEntity();
-	virtual bool CheckValid(Player* player) const = 0;
+	virtual ~ActionEntity(); // virtual destructor needed for polymorphism even none of the derived class (and the base class) destructor needs to do anything special, because otherwise the deallocation size will be messed up
+	virtual bool CheckValid(const Player* player) const = 0;
 	virtual void PerformAction(Player* player) const = 0;
 };
 
@@ -422,8 +456,8 @@ class PlayAction : public ActionEntity
 {
 public:
 	PlayAction(int _src, int _pos, int _des);
-	virtual bool CheckValid(Player* player) const;
-	virtual void PerformAction(Player* player) const;
+	bool CheckValid(const Player* player) const;
+	void PerformAction(Player* player) const;
 
 private:
 	int src;
@@ -435,8 +469,8 @@ class AttackAction : public ActionEntity
 {
 public:
 	AttackAction(int _src, int _des);
-	virtual bool CheckValid(Player* player) const;
-	virtual void PerformAction(Player* player) const;
+	bool CheckValid(const Player* player) const;
+	void PerformAction(Player* player) const;
 
 private:
 	int src;
@@ -447,28 +481,28 @@ class EndTurnAction : public ActionEntity
 {
 public:
 	EndTurnAction();
-	virtual bool CheckValid(Player* player) const;
-	virtual void PerformAction(Player* player) const;
+	bool CheckValid(const Player* player) const;
+	void PerformAction(Player* player) const;
 };
 
 class ActionSetEntity // for the set of valid actions for to play/attack with a specific card, or end turn
 {
 public:
 	ActionSetEntity();
-	~ActionSetEntity(); // probably don't need virtual as there's nothing to do in the child class destructor
-	virtual int CreateValidSet(Player* player) = 0; // return the size of the set of valid actions
-	virtual int RecheckValidity(Player* player) = 0; // check if the current actions are still valid (mostly with a different state), remove actions that are no longer valid, returning the number of valid actions remaining
+	virtual ~ActionSetEntity();
+	void UnownActions(); // set this object to not managing the memory of the actions, used when the actions are passed to other places without passing this object
+	virtual int CreateValidSet(const Player* player) = 0; // return the size of the set of valid actions
 	virtual void PerformRandomAction(Player* player) const = 0;
-	vector<ActionEntity*> action_set;
+	std::vector<ActionEntity*> action_set;
+	bool is_owning_actions;
 };
 
 class PlayActionSet : public ActionSetEntity
 {
 public:
 	PlayActionSet(int _card_index);
-	virtual int CreateValidSet(Player* player);
-	virtual int RecheckValidity(Player* player);
-	virtual void PerformRandomAction(Player* player) const;
+	int CreateValidSet(const Player* player);
+	void PerformRandomAction(Player* player) const;
 
 private:
 	int card_index;
@@ -478,9 +512,8 @@ class AttackActionSet : public ActionSetEntity
 {
 public:
 	AttackActionSet(int _card_index);
-	virtual int CreateValidSet(Player* player);
-	virtual int RecheckValidity(Player* player);
-	virtual void PerformRandomAction(Player* player) const;
+	int CreateValidSet(const Player* player);
+	void PerformRandomAction(Player* player) const;
 
 private:
 	int card_index;
@@ -490,9 +523,8 @@ class EndTurnActionSet : public ActionSetEntity
 {
 public:
 	EndTurnActionSet();
-	virtual int CreateValidSet(Player* player);
-	virtual int RecheckValidity(Player* player);
-	virtual void PerformRandomAction(Player* player) const;
+	int CreateValidSet(const Player* player);
+	void PerformRandomAction(Player* player) const;
 };
 
 class KnowledgeActionNode
@@ -509,48 +541,95 @@ private:
 	const ActionEntity* action;
 };
 
-class KnowledgeOptionNode
-{
-public:
-	KnowledgeOptionNode(const ActionSetEntity* _action_set);
-	~KnowledgeOptionNode();
-	const KnowledgeActionNode* GetOptimalActionNode() const; // optimal action after testing/searching
-	double TestAction(Player* player); // do a single test of action (try a single trajectory), return the heuristic evaluation at the end of the simulated turn
-	int num_visits;
-	double sum_eval;
-	double ave_eval;
-	
-private:
-	vector<KnowledgeActionNode*> action_nodes;
-};
-
 class KnowledgeState
 {
 public:
-	KnowledgeState(Player* _player, queue<DeferredEvent*>& event_queue, PtrRedirMap& redir_map);
+	KnowledgeState(Player* _player, std::queue<DeferredEvent*>& event_queue, PtrRedirMap& redir_map);
 	~KnowledgeState();
-	const ActionEntity* GetOptimalAction() const; // optimal action after testing/searching
+	const ActionEntity* DecideAction() const; // decide the action to peform after testing/searching
 	double TestAction(Player* player); // do a single test of action (try a single trajectory), return the heuristic evaluation at the end of the simulated turn
 	void PerformAction(); // test (with a biased tree search) and execute the action of choice (optimal action)
 	int num_visits;
 
 private:
-	vector<KnowledgeOptionNode*> option_nodes;
-	int num_actions; // total number of actions (not necessarily equal to the number of option nodes, as each option node may correspond to multiple actions)
+	std::vector<ActionEntity*> action_list; // need this because it needs to manage the memory of those actions
+	std::vector<KnowledgeActionNode*> action_nodes;
 	int num_tests_scaling; // a scaling factor for number of trials (the number of trials is also related to the number of legal actions)
-	Player* orig_player; // the player for taking actual action
-	Player* ally_player;
-	Player* oppo_player;
+	Player* player;
+	Player* opponent;
 };
+
+
+/* Formatted Print Section */
+
+class DescToken
+{
+public:
+	virtual ~DescToken();
+	virtual void Append(std::string& script, int& row_index, int& column_index) const = 0; // this version simply append the content, not adding spacing, not checking for line switch etc.
+	virtual bool StartLine(std::string& script, int& row_index, int& column_index) const = 0; // return whether it results in a start of new line (only true when there's empty lines, which shouldn't happen, but just in case)
+	virtual bool AddToLine(std::string& script, int& row_index, int& column_index, int max_line_len) const = 0; // return whether it results in a start of new line (mostly caused by an explicit new line)
+};
+
+typedef std::vector<DescToken*> DescTokenVec;
+
+class WordToken : public DescToken
+{
+public:
+	WordToken(const std::string& _lexeme, int _curr_indent, bool _is_bold);
+	void Append(std::string& script, int& row_index, int& column_index) const;
+	bool StartLine(std::string& script, int& row_index, int& column_index) const;
+	bool AddToLine(std::string& script, int& row_index, int& column_index, int max_line_len) const;
+
+private:
+	std::string lexeme;
+	int curr_indent; // current indentation level
+	bool is_bold;
+};
+
+WordToken* mkWordToken(const std::string& lexme, int curr_indent, bool is_bold);
+
+class PunctToken : public DescToken // note: currently only consider punctuations on the right side of a word (i.e. not considering left paren etc.)
+{
+public:
+	PunctToken(const std::string& _lexeme, int _curr_indent, bool _is_bold);
+	void Append(std::string& script, int& row_index, int& column_index) const;
+	bool StartLine(std::string& script, int& row_index, int& column_index) const;
+	bool AddToLine(std::string& script, int& row_index, int& column_index, int max_line_len) const;
+
+private:
+	std::string lexeme;
+	int curr_indent; // current indentation level
+	bool is_bold;
+};
+
+PunctToken* mkPunctToken(const std::string& lexeme, int curr_indent, bool is_bold);
+
+class NewLineToken : public DescToken // note: do not add a new line token at the end of the last line
+{
+public:
+	NewLineToken();
+	void Append(std::string& script, int& row_index, int& column_index) const;
+	bool StartLine(std::string& script, int& row_index, int& column_index) const; // not used unless there's somehow empty lines (which shouldn't happen)
+	bool AddToLine(std::string& script, int& row_index, int& column_index, int max_line_len) const;
+};
+
+NewLineToken* mkNewLineToken();
+
+std::string SingleCardHtmlTableScript(Card* card);
+
+void AbilityFillTokens(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, DescTokenVec& tokens, int indent_size, int& need_starting_newline); // the int is intended to be bool but due to some GIGL artifacts, we make it int 
+void AbilityFillTokensInline(bool is_charge, bool is_taunt, bool is_stealth, bool is_untargetable, bool is_shielded, bool is_poisonous, bool is_lifesteal, DescTokenVec& tokens, int indent_size);
 
 
 /* Machine Learning Section */
 
-double NormalizeCode(double val, double min_val, double max_val); // normalize to -1.0 ~ 1.0
-int DenormalizeCode(double code, double min_val, double max_val); // de-normalize from -1.0 ~ 1.0 to an integer
 void GetCardRep(Card* card, CardRep& card_rep);
-void GetCardsReps(vector<Card*>& card_list, vector<CardRep>& card_reps);
-Card* CreateCardFromRep(const string& name, CardRep& card_rep); // card_rep should also be const but the argument type in subsequent function call is a little nasty to deal with...
+void GetCardsReps(std::vector<Card*>& card_list, std::vector<CardRep>& card_reps);
+Card* CreateCardFromRep(const std::string& name, CardRep& card_rep); // card_rep should also be const but the argument type in subsequent function call is a little nasty to deal with...(didn't get reference to const pointer work)
+std::vector<Card*> CreateCardsFromReps(std::vector<CardRep>& card_reps); // uses "Anonymous" as the names
+Card* GenerateNamedCardWithCost(const std::string& name, int cost);
+Card* GenerateNamedMinionWithCost(const std::string& name, int cost);
 
 
 // More neural network source are in other source files
