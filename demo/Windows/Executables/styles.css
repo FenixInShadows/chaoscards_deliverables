@@ -1,0 +1,117 @@
+body {
+  margin-left: 0;
+  margin-right: 0;
+}
+table {
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  vertical-align: center;
+}
+tr, td {
+  padding: 0;
+  margin: 0;
+}
+.grid {
+  margin-left: 5mm;
+  margin-right: 5mm;
+}
+.leader_card {
+  margin: 2mm;
+  border: 1px solid black;
+  background-color: #efefef;
+}
+.minion_card {
+  margin: 2mm;
+  border: 1px solid black;
+  background-color: #ffefcf;
+}
+.spell_card {
+  margin: 2mm;
+  border: 1px solid black;
+  background-color: #efcfff;
+}
+.mana_cell {
+  width: 6mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007fff;
+}
+.atk_cell {
+  width: 6mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff0000;
+}
+.hp_cell {
+  width: 6mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007f00;
+}
+.unused_corner_cell {
+  width: 6mm;
+  height: 6mm;
+}
+.leader_cell {
+  width: 36mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight:bold;
+  color: #ffff00;
+  background-color: #3f3f3f;
+}
+.minion_cell {
+  width: 36mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight:bold;
+  color: #ffff00;
+  background-color: #5f3f1f;
+}
+.spell_cell {
+  width: 36mm;
+  height: 6mm;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight:bold;
+  color: #ffff00;
+  background-color: #3f1f5f;
+}
+.bottom_cell {
+  width: 36mm;
+  height: 6mm;
+}
+.left_right_cell_char {
+  width: 6mm;
+  height: 36mm;
+}
+.left_right_cell_spell {
+  width: 6mm;
+  height: 42mm;
+}
+.detail_cell_char {
+  width: 36mm;
+  height: 36mm;
+  text-align: left;
+  font-family: Courier New;
+}
+.detail_cell_spell {
+  width: 36mm;
+  height: 42mm;
+  text-align: left;
+  font-family: Courier New;
+}
