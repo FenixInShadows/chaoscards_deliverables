@@ -1981,11 +1981,14 @@ vector<Card*> PickCardSet(vector<CardRep>& card_reps, vector<BalanceStat>& card_
 		break;
 	default:
 		{
-			card_list = GenerateCardSet(p, time(NULL));
+			GiglRandInit(time(NULL));
+			int seed = GetGiglRandInt();
+			cout << "Card set seed: " << seed << endl;
+			card_list = GenerateCardSet(p, seed);
 			GetCardsReps(card_list, card_reps);
 			card_stats.resize(p);
-			output_card_data_path = "demo_card_set_random.txt";
-			output_card_data_path_human = "demo_card_set_random_human.txt";
+			output_card_data_path = string("demo_card_set_seed_") + to_string(seed) + string(".txt");
+			output_card_data_path_human = string("demo_card_set_seed_") + to_string(seed) + string("_human.txt");
 		}
 		break;
 	}

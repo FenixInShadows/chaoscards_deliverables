@@ -39,9 +39,9 @@ Card  *CreateNamedCardFromRep(const string  & name, NodeRep  * & rep);
 Card  *CreateNamedCardWithCost(const string  & name, signed int  cost);
 
 Card  *CreateNamedMinionWithCost(const string  & name, signed int  cost);
-Card  *Card__ItemRef__686__26;
-Card  *Card__ItemRef__698__26;
-Card  *Card__ItemRef__711__26;
+Card  *Card__ItemRef__687__54;
+Card  *Card__ItemRef__699__54;
+Card  *Card__ItemRef__712__54;
 
 
 class Card;
@@ -4673,15 +4673,15 @@ Card  *Card::CreateCopy()
     {
       {
         case (LEADER_CARD):
-          ((card_copy) = (((Card__ItemRef__686__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__686__26)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__686__26), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__686__26), (orig_n_atks))), (new Card__justAbilities((Card__ItemRef__686__26), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__686__26)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__686__26)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__686__26)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__686__26)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__686__26)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__686__26)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__686__26)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__686__26)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__686__26)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__686__26)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__686__26)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__686__26)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__686__26)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__686__26)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__687__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__687__54)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__687__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__687__54), (orig_n_atks))), (new Card__justAbilities((Card__ItemRef__687__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__687__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__687__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__687__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__687__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__687__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__687__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__687__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__687__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__687__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__687__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__687__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__687__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__687__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__687__54)))))))), (effects)))))));
         
         break;
         case (MINION_CARD):
-          ((card_copy) = (((Card__ItemRef__698__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__698__26)->Item__Constructor)((new Card__minionCard((Card__ItemRef__698__26), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__698__26), (orig_n_atks))), ((((orig_minion_type) == (BEAST_MINION)) ? ((Card__MinionType *)(new Card__beastMinion((Card__ItemRef__698__26)))) : ((((orig_minion_type) == (DRAGON_MINION)) ? ((Card__MinionType *)(new Card__dragonMinion((Card__ItemRef__698__26)))) : ((Card__MinionType *)(new Card__demonMinion((Card__ItemRef__698__26)))))))), (new Card__justAbilities((Card__ItemRef__698__26), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__698__26)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__698__26)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__698__26)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__698__26)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__698__26)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__698__26)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__698__26)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__698__26)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__698__26)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__698__26)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__698__26)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__698__26)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__698__26)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__698__26)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__699__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__699__54)->Item__Constructor)((new Card__minionCard((Card__ItemRef__699__54), (orig_mana), (orig_atk), (orig_hp), (new Card__multipleAttack((Card__ItemRef__699__54), (orig_n_atks))), ((((orig_minion_type) == (BEAST_MINION)) ? ((Card__MinionType *)(new Card__beastMinion((Card__ItemRef__699__54)))) : ((((orig_minion_type) == (DRAGON_MINION)) ? ((Card__MinionType *)(new Card__dragonMinion((Card__ItemRef__699__54)))) : ((Card__MinionType *)(new Card__demonMinion((Card__ItemRef__699__54)))))))), (new Card__justAbilities((Card__ItemRef__699__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__699__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__699__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__699__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__699__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__699__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__699__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__699__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__699__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__699__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__699__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__699__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__699__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__699__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__699__54)))))))), (effects)))))));
         
         break;
         default:
-          ((card_copy) = (((Card__ItemRef__711__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__711__26)->Item__Constructor)((new Card__spellCard((Card__ItemRef__711__26), (orig_mana), (new Card__justAbilities((Card__ItemRef__711__26), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__711__26)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__711__26)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__711__26)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__711__26)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__711__26)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__711__26)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__711__26)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__711__26)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__711__26)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__711__26)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__711__26)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__711__26)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__711__26)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__711__26)))))))), (effects)))))));
+          ((card_copy) = (((Card__ItemRef__712__54) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__712__54)->Item__Constructor)((new Card__spellCard((Card__ItemRef__712__54), (orig_mana), (new Card__justAbilities((Card__ItemRef__712__54), (((orig_is_charge) ? ((Card__ChargeAbil *)(new Card__justCharge((Card__ItemRef__712__54)))) : ((Card__ChargeAbil *)(new Card__noCharge((Card__ItemRef__712__54)))))), (((orig_is_taunt) ? ((Card__TauntAbil *)(new Card__justTaunt((Card__ItemRef__712__54)))) : ((Card__TauntAbil *)(new Card__noTaunt((Card__ItemRef__712__54)))))), (((orig_is_stealth) ? ((Card__StealthAbil *)(new Card__justStealth((Card__ItemRef__712__54)))) : ((Card__StealthAbil *)(new Card__noStealth((Card__ItemRef__712__54)))))), (((orig_is_untargetable) ? ((Card__UntargetableAbil *)(new Card__justUntargetable((Card__ItemRef__712__54)))) : ((Card__UntargetableAbil *)(new Card__noUntargetable((Card__ItemRef__712__54)))))), (((orig_is_shielded) ? ((Card__ShieldAbil *)(new Card__justShield((Card__ItemRef__712__54)))) : ((Card__ShieldAbil *)(new Card__noShield((Card__ItemRef__712__54)))))), (((orig_is_poisonous) ? ((Card__PoisonousAbil *)(new Card__justPoisonous((Card__ItemRef__712__54)))) : ((Card__PoisonousAbil *)(new Card__noPoisonous((Card__ItemRef__712__54)))))), (((orig_is_lifesteal) ? ((Card__LifestealAbil *)(new Card__justLifesteal((Card__ItemRef__712__54)))) : ((Card__LifestealAbil *)(new Card__noLifesteal((Card__ItemRef__712__54)))))))), (effects)))))));
         
         break;
       }
@@ -26447,842 +26447,842 @@ Card  *Card__randomMinion::GetRelatedCard(Card  * parent_card)
 
 
 
-signed int Card__ConfigLambda__8410__17(const GiglConfig  & config);
-signed int Card__ConfigLambda__8410__23(const GiglConfig  & config);
-signed int Card__ConfigLambda__8410__26(const GiglConfig  & config);
-void  *Card__ConfigLambda__8410__30(const GiglConfig  & config);
-double Card__ConfigLambda__8411__28(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
-double Card__ConfigLambda__8411__49(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
-double Card__ConfigLambda__8411__69(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
-double Card__ConfigLambda__8412__31(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8412__51(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8412__72(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8413__27(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8413__42(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8413__56(const GiglConfig  & config, NodeRep  * & rep);
-double Card__ConfigLambda__8414__28(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8415__36(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8416__24(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8416__41(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8417__22(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+signed int Card__ConfigLambda__8411__24(const GiglConfig  & config);
+signed int Card__ConfigLambda__8411__30(const GiglConfig  & config);
+signed int Card__ConfigLambda__8411__33(const GiglConfig  & config);
+void  *Card__ConfigLambda__8411__37(const GiglConfig  & config);
+double Card__ConfigLambda__8412__42(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
+double Card__ConfigLambda__8412__63(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
+double Card__ConfigLambda__8412__83(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep);
+double Card__ConfigLambda__8413__45(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8413__65(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8413__86(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8414__41(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8414__56(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8414__70(const GiglConfig  & config, NodeRep  * & rep);
+double Card__ConfigLambda__8415__42(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+double Card__ConfigLambda__8416__50(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep);
 double Card__ConfigLambda__8417__38(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8418__26(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8418__44(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8419__36(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8419__59(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8420__24(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8420__41(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
-double Card__ConfigLambda__8421__30(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8421__50(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8422__30(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8422__50(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
-double Card__ConfigLambda__8423__34(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8424__42(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8424__72(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8424__97(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8425__26(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8425__46(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__40(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__67(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__91(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__113(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__134(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8426__153(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8427__34(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8427__60(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8427__90(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8428__38(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8428__66(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8428__98(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8429__34(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8429__59(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8430__38(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8431__33(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8431__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8431__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8431__77(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8431__87(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8432__38(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8433__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__76(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__99(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__118(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__133(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8433__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8434__40(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8434__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8434__88(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8435__37(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8435__83(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8435__114(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
-double Card__ConfigLambda__8436__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__49(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__68(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__89(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__114(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__133(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__155(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8436__177(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8437__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
-double Card__ConfigLambda__8437__47(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
-double Card__ConfigLambda__8437__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
-double Card__ConfigLambda__8437__80(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
-double Card__ConfigLambda__8437__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
-double Card__ConfigLambda__8438__27(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep);
-double Card__ConfigLambda__8438__36(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep);
-double Card__ConfigLambda__8439__36(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8439__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8439__85(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8439__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8439__122(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
-double Card__ConfigLambda__8440__34(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__77(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__94(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__102(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__144(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__152(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__172(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__192(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__209(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__226(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8440__248(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__25(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__78(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__101(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__147(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__176(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__199(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__225(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8441__251(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8442__23(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8442__47(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8442__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8442__97(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8442__121(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__33(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__51(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__71(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__89(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__110(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__131(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__146(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__154(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__169(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8443__189(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
-double Card__ConfigLambda__8444__30(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8444__54(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8444__72(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8444__95(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8444__113(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8444__135(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
-double Card__ConfigLambda__8445__39(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-double Card__ConfigLambda__8445__60(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-double Card__ConfigLambda__8445__79(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-double Card__ConfigLambda__8445__99(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-double Card__ConfigLambda__8445__119(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-double Card__ConfigLambda__8445__140(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
-signed int Card__ConfigLambda__8410__17(const GiglConfig  & config)
+double Card__ConfigLambda__8417__55(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8418__36(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8418__52(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8419__40(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8419__58(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8420__50(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8420__73(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8421__38(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8421__55(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep);
+double Card__ConfigLambda__8422__44(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+double Card__ConfigLambda__8422__64(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+double Card__ConfigLambda__8423__44(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+double Card__ConfigLambda__8423__64(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep);
+double Card__ConfigLambda__8424__48(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8425__56(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8425__86(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8425__111(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8426__40(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8426__60(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__54(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__81(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__105(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__127(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__148(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8427__167(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8428__48(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8428__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8428__104(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8429__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8429__80(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8429__112(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8430__48(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8430__73(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8431__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8432__47(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8432__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8432__80(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8432__91(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8432__101(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8433__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8434__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__90(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__113(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__132(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8434__161(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8435__54(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8435__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8435__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8436__51(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8436__97(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8436__128(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep);
+double Card__ConfigLambda__8437__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__63(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__82(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__103(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__128(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__169(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8437__191(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8438__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
+double Card__ConfigLambda__8438__61(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
+double Card__ConfigLambda__8438__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
+double Card__ConfigLambda__8438__94(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
+double Card__ConfigLambda__8438__116(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep);
+double Card__ConfigLambda__8439__41(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep);
+double Card__ConfigLambda__8439__50(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep);
+double Card__ConfigLambda__8440__50(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8440__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8440__99(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8440__116(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8440__136(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep);
+double Card__ConfigLambda__8441__48(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__66(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__91(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__108(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__116(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__137(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__158(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__166(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__186(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__206(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__223(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__240(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8441__262(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__46(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__73(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__99(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__122(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__144(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__168(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__197(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__220(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__246(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8442__272(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8443__44(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8443__68(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8443__95(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8443__118(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8443__142(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__47(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__65(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__85(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__103(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__124(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__137(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__145(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__160(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__168(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__183(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8444__203(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep);
+double Card__ConfigLambda__8445__44(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8445__68(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8445__86(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8445__109(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8445__127(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8445__149(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep);
+double Card__ConfigLambda__8446__53(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+double Card__ConfigLambda__8446__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+double Card__ConfigLambda__8446__93(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+double Card__ConfigLambda__8446__113(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+double Card__ConfigLambda__8446__133(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+double Card__ConfigLambda__8446__154(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep);
+signed int Card__ConfigLambda__8411__24(const GiglConfig  & config)
 {
 
   return (*((signed int *)(((config).vars)[0])));
 }
-signed int Card__ConfigLambda__8410__23(const GiglConfig  & config)
+signed int Card__ConfigLambda__8411__30(const GiglConfig  & config)
 {
 
   return 3;
 }
-signed int Card__ConfigLambda__8410__26(const GiglConfig  & config)
+signed int Card__ConfigLambda__8411__33(const GiglConfig  & config)
 {
 
   return 2;
 }
-void  *Card__ConfigLambda__8410__30(const GiglConfig  & config)
+void  *Card__ConfigLambda__8411__37(const GiglConfig  & config)
 {
 
   return (*((void * *)(((config).vars)[1])));
 }
-double Card__ConfigLambda__8411__28(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
+double Card__ConfigLambda__8412__42(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
 {
 
   return 0.1;
 }
-double Card__ConfigLambda__8411__49(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
+double Card__ConfigLambda__8412__63(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
 {
 
   return 0.6;
 }
-double Card__ConfigLambda__8411__69(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
+double Card__ConfigLambda__8412__83(const GiglConfig  & config, CondConfig  & global_config, signed int  is_plain, NodeRep  * & rep)
 {
 
   return 0.3;
 }
-double Card__ConfigLambda__8412__31(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8413__45(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return 0.02;
 }
-double Card__ConfigLambda__8412__51(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8413__65(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return (1.0 - (0.02 + 0.08));
 }
-double Card__ConfigLambda__8412__72(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8413__86(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return 0.08;
 }
-double Card__ConfigLambda__8413__27(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8414__41(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return ((1.0 - 0.0) / 3.0);
 }
-double Card__ConfigLambda__8413__42(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8414__56(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return ((1.0 - 0.0) / 3.0);
 }
-double Card__ConfigLambda__8413__56(const GiglConfig  & config, NodeRep  * & rep)
+double Card__ConfigLambda__8414__70(const GiglConfig  & config, NodeRep  * & rep)
 {
 
   return ((1.0 - 0.0) / 3.0);
 }
-double Card__ConfigLambda__8414__28(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8415__42(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   return (1.0 - 0.0);
 }
-double Card__ConfigLambda__8415__36(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8416__50(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, signed int  damage, NodeRep  * & rep)
 {
 
   return (1.0 - 0.0);
-}
-double Card__ConfigLambda__8416__24(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
-{
-
-  return (1.0 - 0.05);
-}
-double Card__ConfigLambda__8416__41(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
-{
-
-  return 0.05;
-}
-double Card__ConfigLambda__8417__22(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
-{
-
-  return (1.0 - 0.05);
 }
 double Card__ConfigLambda__8417__38(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
+  return (1.0 - 0.05);
+}
+double Card__ConfigLambda__8417__55(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+{
+
   return 0.05;
 }
-double Card__ConfigLambda__8418__26(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8418__36(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return (1.0 - 0.05);
 }
-double Card__ConfigLambda__8418__44(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8418__52(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return 0.05;
 }
-double Card__ConfigLambda__8419__36(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8419__40(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return (1.0 - 0.05);
 }
-double Card__ConfigLambda__8419__59(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8419__58(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return 0.05;
 }
-double Card__ConfigLambda__8420__24(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8420__50(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return (1.0 - 0.05);
 }
-double Card__ConfigLambda__8420__41(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+double Card__ConfigLambda__8420__73(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
 {
 
   return 0.05;
 }
-double Card__ConfigLambda__8421__30(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8421__38(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+{
+
+  return (1.0 - 0.05);
+}
+double Card__ConfigLambda__8421__55(const GiglConfig  & config, CondConfig  & self_config, NodeRep  * & rep)
+{
+
+  return 0.05;
+}
+double Card__ConfigLambda__8422__44(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   return (1.0 - (0.01 * ((10 - (damage)))));
 }
-double Card__ConfigLambda__8421__50(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8422__64(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   return (0.01 * ((10 - (damage))));
 }
-double Card__ConfigLambda__8422__30(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8423__44(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   return (1.0 - (((damage) == 0) ? 0.001 : 0.05));
 }
-double Card__ConfigLambda__8422__50(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
+double Card__ConfigLambda__8423__64(const GiglConfig  & config, CondConfig  & self_config, signed int  damage, NodeRep  * & rep)
 {
 
   return (((damage) == 0) ? 0.001 : 0.05);
 }
-double Card__ConfigLambda__8423__34(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8424__48(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (1.0 - 0.0);
 }
-double Card__ConfigLambda__8424__42(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8425__56(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 40;
 }
-double Card__ConfigLambda__8424__72(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8425__86(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 20;
 }
-double Card__ConfigLambda__8424__97(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8425__111(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 60;
 }
-double Card__ConfigLambda__8425__26(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8426__40(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (1.0 - 0.1);
 }
-double Card__ConfigLambda__8425__46(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8426__60(const GiglConfig  & config, CondConfig  & self_config, signed int  min_n, signed int  max_n, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.1;
 }
-double Card__ConfigLambda__8426__40(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__54(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 35;
 }
-double Card__ConfigLambda__8426__67(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__81(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 25;
 }
-double Card__ConfigLambda__8426__91(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__105(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 25;
 }
-double Card__ConfigLambda__8426__113(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__127(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8426__134(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__148(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8426__153(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8427__167(const GiglConfig  & config, CondConfig  & self_config, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8427__34(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8428__48(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (1.0 - (0.07 + 0.03));
 }
-double Card__ConfigLambda__8427__60(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8428__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.07;
 }
-double Card__ConfigLambda__8427__90(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8428__104(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.03;
 }
-double Card__ConfigLambda__8428__38(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8429__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (1.0 - (0.07 + 0.03));
 }
-double Card__ConfigLambda__8428__66(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8429__80(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.07;
 }
-double Card__ConfigLambda__8428__98(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8429__112(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.03;
 }
-double Card__ConfigLambda__8429__34(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8430__48(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return 0.8;
 }
-double Card__ConfigLambda__8429__59(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8430__73(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8430__38(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8431__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return (1.0 - 0.0);
 }
-double Card__ConfigLambda__8431__33(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8432__47(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.4;
 }
-double Card__ConfigLambda__8431__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8432__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.3;
 }
-double Card__ConfigLambda__8431__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8432__80(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.4 + 0.3)) / 3.0);
 }
-double Card__ConfigLambda__8431__77(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8432__91(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.4 + 0.3)) / 3.0);
 }
-double Card__ConfigLambda__8431__87(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8432__101(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.4 + 0.3)) / 3.0);
 }
-double Card__ConfigLambda__8432__38(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8433__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return (1.0 - 0.0);
 }
-double Card__ConfigLambda__8433__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.35;
 }
-double Card__ConfigLambda__8433__52(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__66(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.10;
 }
-double Card__ConfigLambda__8433__76(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__90(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.30;
 }
-double Card__ConfigLambda__8433__99(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__113(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.10;
 }
-double Card__ConfigLambda__8433__118(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__132(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.35 + (0.10 + (0.30 + 0.10)))) / 3.0);
 }
-double Card__ConfigLambda__8433__133(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.35 + (0.10 + (0.30 + 0.10)))) / 3.0);
 }
-double Card__ConfigLambda__8433__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8434__161(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return ((1.0 - (0.35 + (0.10 + (0.30 + 0.10)))) / 3.0);
 }
-double Card__ConfigLambda__8434__40(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8435__54(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.1;
 }
-double Card__ConfigLambda__8434__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8435__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.7;
 }
-double Card__ConfigLambda__8434__88(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8435__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8435__37(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8436__51(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return (0.25 * (((ally_bias) + 1.0)));
 }
-double Card__ConfigLambda__8435__83(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8436__97(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return (ally_bias);
 }
-double Card__ConfigLambda__8435__114(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
+double Card__ConfigLambda__8436__128(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, double  ally_bias, NodeRep  * & rep)
 {
 
   return 1.0;
 }
-double Card__ConfigLambda__8436__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 950;
 }
-double Card__ConfigLambda__8436__49(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__63(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8436__68(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__82(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8436__89(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__103(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 8;
 }
-double Card__ConfigLambda__8436__114(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__128(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 7;
 }
-double Card__ConfigLambda__8436__133(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__147(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8436__155(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__169(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8436__177(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8437__191(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8437__28(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
+double Card__ConfigLambda__8438__42(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
 {
 
   return 900;
 }
-double Card__ConfigLambda__8437__47(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
+double Card__ConfigLambda__8438__61(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
 {
 
   return 30;
 }
-double Card__ConfigLambda__8437__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
+double Card__ConfigLambda__8438__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
 {
 
   return 35;
 }
-double Card__ConfigLambda__8437__80(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
+double Card__ConfigLambda__8438__94(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
 {
 
   return 30;
 }
-double Card__ConfigLambda__8437__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
+double Card__ConfigLambda__8438__116(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  force_nontrivial, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8438__27(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep)
+double Card__ConfigLambda__8439__41(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep)
 {
 
   return ((1.0 - 0.0) / 2.0);
 }
-double Card__ConfigLambda__8438__36(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep)
+double Card__ConfigLambda__8439__50(const GiglConfig  & config, signed int  lower_min, signed int  lower_max, signed int  upper_min, signed int  upper_max, NodeRep  * & rep)
 {
 
   return ((1.0 - 0.0) / 2.0);
 }
-double Card__ConfigLambda__8439__36(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8440__50(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.4;
 }
-double Card__ConfigLambda__8439__64(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8440__78(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8439__85(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8440__99(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8439__102(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8440__116(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.1;
 }
-double Card__ConfigLambda__8439__122(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
+double Card__ConfigLambda__8440__136(const GiglConfig  & config, CondConfig  & init_config, CondConfig  & instant_self_config, CondConfig  & instant_leader_config, unsigned int  effect_timing, NodeRep  * & rep)
 {
 
   return 0.1;
 }
-double Card__ConfigLambda__8440__34(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__48(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 250;
 }
-double Card__ConfigLambda__8440__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__66(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 150;
 }
-double Card__ConfigLambda__8440__77(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__91(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 20;
 }
-double Card__ConfigLambda__8440__94(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__108(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.8;
 }
-double Card__ConfigLambda__8440__102(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__116(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 60;
 }
-double Card__ConfigLambda__8440__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__137(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 70;
 }
-double Card__ConfigLambda__8440__144(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__158(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8440__152(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__166(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8440__172(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__186(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 90;
 }
-double Card__ConfigLambda__8440__192(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__206(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 60;
 }
-double Card__ConfigLambda__8440__209(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__223(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 50;
 }
-double Card__ConfigLambda__8440__226(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__240(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 50;
 }
-double Card__ConfigLambda__8440__248(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8441__262(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (20.0 / ((1 + (effect_depth))));
 }
-double Card__ConfigLambda__8441__25(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__46(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__52(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__73(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__78(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__99(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__101(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__122(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__144(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__147(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__168(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__176(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__197(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__199(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__220(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__225(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__246(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8441__251(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8442__272(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8442__23(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8443__44(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 20;
 }
-double Card__ConfigLambda__8442__47(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8443__68(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8442__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8443__95(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8442__97(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8443__118(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8442__121(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8443__142(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return (20.0 / ((1 + (effect_depth))));
 }
-double Card__ConfigLambda__8443__33(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__47(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 400;
 }
-double Card__ConfigLambda__8443__51(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__65(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 250;
 }
-double Card__ConfigLambda__8443__71(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__85(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 150;
 }
-double Card__ConfigLambda__8443__89(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__103(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 50;
 }
-double Card__ConfigLambda__8443__110(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__124(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 100;
 }
-double Card__ConfigLambda__8443__123(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__137(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.2;
 }
-double Card__ConfigLambda__8443__131(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__145(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8443__146(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__160(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 0.3;
 }
-double Card__ConfigLambda__8443__154(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__168(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 9;
 }
-double Card__ConfigLambda__8443__169(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__183(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 30;
 }
-double Card__ConfigLambda__8443__189(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
+double Card__ConfigLambda__8444__203(const GiglConfig  & config, CondConfig  & self_config, unsigned int  effect_timing, signed int  effect_depth, signed int  give_eff, NodeRep  * & rep)
 {
 
   return 1;
 }
-double Card__ConfigLambda__8444__30(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__44(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8444__54(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__68(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 15;
 }
-double Card__ConfigLambda__8444__72(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__86(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 20;
 }
-double Card__ConfigLambda__8444__95(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__109(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 40;
 }
-double Card__ConfigLambda__8444__113(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__127(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8444__135(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
+double Card__ConfigLambda__8445__149(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, unsigned int  dest_mode, NodeRep  * & rep)
 {
 
   return 10;
 }
-double Card__ConfigLambda__8445__39(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__53(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 20;
 }
-double Card__ConfigLambda__8445__60(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__74(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 50;
 }
-double Card__ConfigLambda__8445__79(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__93(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 5;
 }
-double Card__ConfigLambda__8445__99(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__113(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 15;
 }
-double Card__ConfigLambda__8445__119(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__133(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 3;
 }
-double Card__ConfigLambda__8445__140(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
+double Card__ConfigLambda__8446__154(const GiglConfig  & config, CondConfig  & self_config, unsigned int  target_mode, unsigned int  effect_timing, signed int  effect_depth, NodeRep  * & rep)
 {
 
   return 7;
@@ -27292,20 +27292,20 @@ GiglConfig GetDefaultGenConfig(signed int  seed, void  * extra_config)
 {
 
   {
-    return (GiglConfig(2, 140, ((sizeof(signed int)) + (sizeof(void *))), (SizeVec{(sizeof(signed int)), (sizeof(void *))}), (VarPtrVec{((VarPtr)(&((*((signed int *)((malloc)((sizeof(signed int)))))) = (seed)))), ((VarPtr)(&((*((void * *)((malloc)((sizeof(void *)))))) = (extra_config))))}), (IndexVec{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 115, 92, 93, 116, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 117, 118, 119, 120, 121, 126, 122, 127, 123, 124, 125, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139}), (FuncPtrVec{((FuncPtr)(&(Card__ConfigLambda__8410__17))), ((FuncPtr)(&(Card__ConfigLambda__8410__23))), ((FuncPtr)(&(Card__ConfigLambda__8410__26))), ((FuncPtr)(&(Card__ConfigLambda__8410__30))), ((FuncPtr)(&(Card__ConfigLambda__8411__28))), ((FuncPtr)(&(Card__ConfigLambda__8411__49))), ((FuncPtr)(&(Card__ConfigLambda__8411__69))), ((FuncPtr)(&(Card__ConfigLambda__8412__31))), ((FuncPtr)(&(Card__ConfigLambda__8412__51))), ((FuncPtr)(&(Card__ConfigLambda__8412__72))), ((FuncPtr)(&(Card__ConfigLambda__8413__27))), ((FuncPtr)(&(Card__ConfigLambda__8413__42))), ((FuncPtr)(&(Card__ConfigLambda__8413__56))), ((FuncPtr)(&(Card__ConfigLambda__8414__28))), ((FuncPtr)(&(Card__ConfigLambda__8415__36))), ((FuncPtr)(&(Card__ConfigLambda__8416__24))), ((FuncPtr)(&(Card__ConfigLambda__8416__41))), ((FuncPtr)(&(Card__ConfigLambda__8417__22))), ((FuncPtr)(&(Card__ConfigLambda__8417__38))), ((FuncPtr)(&(Card__ConfigLambda__8418__26))), ((FuncPtr)(&(Card__ConfigLambda__8418__44))), ((FuncPtr)(&(Card__ConfigLambda__8419__36))), ((FuncPtr)(&(Card__ConfigLambda__8419__59))), ((FuncPtr)(&(Card__ConfigLambda__8420__24))), ((FuncPtr)(&(Card__ConfigLambda__8420__41))), ((FuncPtr)(&(Card__ConfigLambda__8421__30))), ((FuncPtr)(&(Card__ConfigLambda__8421__50))), ((FuncPtr)(&(Card__ConfigLambda__8422__30))), ((FuncPtr)(&(Card__ConfigLambda__8422__50))), ((FuncPtr)(&(Card__ConfigLambda__8423__34))), ((FuncPtr)(&(Card__ConfigLambda__8424__42))), ((FuncPtr)(&(Card__ConfigLambda__8424__72))), ((FuncPtr)(&(Card__ConfigLambda__8424__97))), ((FuncPtr)(&(Card__ConfigLambda__8425__26))), ((FuncPtr)(&(Card__ConfigLambda__8425__46))), ((FuncPtr)(&(Card__ConfigLambda__8426__40))), ((FuncPtr)(&(Card__ConfigLambda__8426__67))), ((FuncPtr)(&(Card__ConfigLambda__8426__91))), ((FuncPtr)(&(Card__ConfigLambda__8426__113))), ((FuncPtr)(&(Card__ConfigLambda__8426__134))), ((FuncPtr)(&(Card__ConfigLambda__8426__153))), ((FuncPtr)(&(Card__ConfigLambda__8427__34))), ((FuncPtr)(&(Card__ConfigLambda__8427__60))), ((FuncPtr)(&(Card__ConfigLambda__8427__90))), ((FuncPtr)(&(Card__ConfigLambda__8428__38))), ((FuncPtr)(&(Card__ConfigLambda__8428__66))), ((FuncPtr)(&(Card__ConfigLambda__8428__98))), ((FuncPtr)(&(Card__ConfigLambda__8429__34))), ((FuncPtr)(&(Card__ConfigLambda__8429__59))), ((FuncPtr)(&(Card__ConfigLambda__8430__38))), ((FuncPtr)(&(Card__ConfigLambda__8431__33))), ((FuncPtr)(&(Card__ConfigLambda__8431__52))), ((FuncPtr)(&(Card__ConfigLambda__8431__66))), ((FuncPtr)(&(Card__ConfigLambda__8431__77))), ((FuncPtr)(&(Card__ConfigLambda__8431__87))), ((FuncPtr)(&(Card__ConfigLambda__8432__38))), ((FuncPtr)(&(Card__ConfigLambda__8433__28))), ((FuncPtr)(&(Card__ConfigLambda__8433__52))), ((FuncPtr)(&(Card__ConfigLambda__8433__76))), ((FuncPtr)(&(Card__ConfigLambda__8433__99))), ((FuncPtr)(&(Card__ConfigLambda__8433__118))), ((FuncPtr)(&(Card__ConfigLambda__8433__133))), ((FuncPtr)(&(Card__ConfigLambda__8433__147))), ((FuncPtr)(&(Card__ConfigLambda__8434__40))), ((FuncPtr)(&(Card__ConfigLambda__8434__64))), ((FuncPtr)(&(Card__ConfigLambda__8434__88))), ((FuncPtr)(&(Card__ConfigLambda__8435__37))), ((FuncPtr)(&(Card__ConfigLambda__8435__83))), ((FuncPtr)(&(Card__ConfigLambda__8435__114))), ((FuncPtr)(&(Card__ConfigLambda__8436__28))), ((FuncPtr)(&(Card__ConfigLambda__8436__49))), ((FuncPtr)(&(Card__ConfigLambda__8436__68))), ((FuncPtr)(&(Card__ConfigLambda__8436__89))), ((FuncPtr)(&(Card__ConfigLambda__8436__114))), ((FuncPtr)(&(Card__ConfigLambda__8436__133))), ((FuncPtr)(&(Card__ConfigLambda__8436__155))), ((FuncPtr)(&(Card__ConfigLambda__8436__177))), ((FuncPtr)(&(Card__ConfigLambda__8437__28))), ((FuncPtr)(&(Card__ConfigLambda__8437__47))), ((FuncPtr)(&(Card__ConfigLambda__8437__64))), ((FuncPtr)(&(Card__ConfigLambda__8437__80))), ((FuncPtr)(&(Card__ConfigLambda__8437__102))), ((FuncPtr)(&(Card__ConfigLambda__8438__27))), ((FuncPtr)(&(Card__ConfigLambda__8438__36))), ((FuncPtr)(&(Card__ConfigLambda__8439__36))), ((FuncPtr)(&(Card__ConfigLambda__8439__64))), ((FuncPtr)(&(Card__ConfigLambda__8439__85))), ((FuncPtr)(&(Card__ConfigLambda__8439__102))), ((FuncPtr)(&(Card__ConfigLambda__8439__122))), ((FuncPtr)(&(Card__ConfigLambda__8440__34))), ((FuncPtr)(&(Card__ConfigLambda__8440__52))), ((FuncPtr)(&(Card__ConfigLambda__8440__77))), ((FuncPtr)(&(Card__ConfigLambda__8440__94))), ((FuncPtr)(&(Card__ConfigLambda__8440__102))), ((FuncPtr)(&(Card__ConfigLambda__8440__123))), ((FuncPtr)(&(Card__ConfigLambda__8440__144))), ((FuncPtr)(&(Card__ConfigLambda__8440__152))), ((FuncPtr)(&(Card__ConfigLambda__8440__172))), ((FuncPtr)(&(Card__ConfigLambda__8440__192))), ((FuncPtr)(&(Card__ConfigLambda__8440__209))), ((FuncPtr)(&(Card__ConfigLambda__8440__226))), ((FuncPtr)(&(Card__ConfigLambda__8440__248))), ((FuncPtr)(&(Card__ConfigLambda__8441__25))), ((FuncPtr)(&(Card__ConfigLambda__8441__52))), ((FuncPtr)(&(Card__ConfigLambda__8441__78))), ((FuncPtr)(&(Card__ConfigLambda__8441__101))), ((FuncPtr)(&(Card__ConfigLambda__8441__123))), ((FuncPtr)(&(Card__ConfigLambda__8441__147))), ((FuncPtr)(&(Card__ConfigLambda__8441__176))), ((FuncPtr)(&(Card__ConfigLambda__8441__199))), ((FuncPtr)(&(Card__ConfigLambda__8441__225))), ((FuncPtr)(&(Card__ConfigLambda__8441__251))), ((FuncPtr)(&(Card__ConfigLambda__8442__23))), ((FuncPtr)(&(Card__ConfigLambda__8442__47))), ((FuncPtr)(&(Card__ConfigLambda__8442__74))), ((FuncPtr)(&(Card__ConfigLambda__8442__97))), ((FuncPtr)(&(Card__ConfigLambda__8442__121))), ((FuncPtr)(&(Card__ConfigLambda__8443__33))), ((FuncPtr)(&(Card__ConfigLambda__8443__51))), ((FuncPtr)(&(Card__ConfigLambda__8443__71))), ((FuncPtr)(&(Card__ConfigLambda__8443__89))), ((FuncPtr)(&(Card__ConfigLambda__8443__110))), ((FuncPtr)(&(Card__ConfigLambda__8443__123))), ((FuncPtr)(&(Card__ConfigLambda__8443__131))), ((FuncPtr)(&(Card__ConfigLambda__8443__146))), ((FuncPtr)(&(Card__ConfigLambda__8443__154))), ((FuncPtr)(&(Card__ConfigLambda__8443__169))), ((FuncPtr)(&(Card__ConfigLambda__8443__189))), ((FuncPtr)(&(Card__ConfigLambda__8444__30))), ((FuncPtr)(&(Card__ConfigLambda__8444__54))), ((FuncPtr)(&(Card__ConfigLambda__8444__72))), ((FuncPtr)(&(Card__ConfigLambda__8444__95))), ((FuncPtr)(&(Card__ConfigLambda__8444__113))), ((FuncPtr)(&(Card__ConfigLambda__8444__135))), ((FuncPtr)(&(Card__ConfigLambda__8445__39))), ((FuncPtr)(&(Card__ConfigLambda__8445__60))), ((FuncPtr)(&(Card__ConfigLambda__8445__79))), ((FuncPtr)(&(Card__ConfigLambda__8445__99))), ((FuncPtr)(&(Card__ConfigLambda__8445__119))), ((FuncPtr)(&(Card__ConfigLambda__8445__140)))})));
+    return (GiglConfig(2, 140, ((sizeof(signed int)) + (sizeof(void *))), (SizeVec{(sizeof(signed int)), (sizeof(void *))}), (VarPtrVec{((VarPtr)(&((*((signed int *)((malloc)((sizeof(signed int)))))) = (seed)))), ((VarPtr)(&((*((void * *)((malloc)((sizeof(void *)))))) = (extra_config))))}), (IndexVec{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 115, 92, 93, 116, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 117, 118, 119, 120, 121, 126, 122, 127, 123, 124, 125, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139}), (FuncPtrVec{((FuncPtr)(&(Card__ConfigLambda__8411__24))), ((FuncPtr)(&(Card__ConfigLambda__8411__30))), ((FuncPtr)(&(Card__ConfigLambda__8411__33))), ((FuncPtr)(&(Card__ConfigLambda__8411__37))), ((FuncPtr)(&(Card__ConfigLambda__8412__42))), ((FuncPtr)(&(Card__ConfigLambda__8412__63))), ((FuncPtr)(&(Card__ConfigLambda__8412__83))), ((FuncPtr)(&(Card__ConfigLambda__8413__45))), ((FuncPtr)(&(Card__ConfigLambda__8413__65))), ((FuncPtr)(&(Card__ConfigLambda__8413__86))), ((FuncPtr)(&(Card__ConfigLambda__8414__41))), ((FuncPtr)(&(Card__ConfigLambda__8414__56))), ((FuncPtr)(&(Card__ConfigLambda__8414__70))), ((FuncPtr)(&(Card__ConfigLambda__8415__42))), ((FuncPtr)(&(Card__ConfigLambda__8416__50))), ((FuncPtr)(&(Card__ConfigLambda__8417__38))), ((FuncPtr)(&(Card__ConfigLambda__8417__55))), ((FuncPtr)(&(Card__ConfigLambda__8418__36))), ((FuncPtr)(&(Card__ConfigLambda__8418__52))), ((FuncPtr)(&(Card__ConfigLambda__8419__40))), ((FuncPtr)(&(Card__ConfigLambda__8419__58))), ((FuncPtr)(&(Card__ConfigLambda__8420__50))), ((FuncPtr)(&(Card__ConfigLambda__8420__73))), ((FuncPtr)(&(Card__ConfigLambda__8421__38))), ((FuncPtr)(&(Card__ConfigLambda__8421__55))), ((FuncPtr)(&(Card__ConfigLambda__8422__44))), ((FuncPtr)(&(Card__ConfigLambda__8422__64))), ((FuncPtr)(&(Card__ConfigLambda__8423__44))), ((FuncPtr)(&(Card__ConfigLambda__8423__64))), ((FuncPtr)(&(Card__ConfigLambda__8424__48))), ((FuncPtr)(&(Card__ConfigLambda__8425__56))), ((FuncPtr)(&(Card__ConfigLambda__8425__86))), ((FuncPtr)(&(Card__ConfigLambda__8425__111))), ((FuncPtr)(&(Card__ConfigLambda__8426__40))), ((FuncPtr)(&(Card__ConfigLambda__8426__60))), ((FuncPtr)(&(Card__ConfigLambda__8427__54))), ((FuncPtr)(&(Card__ConfigLambda__8427__81))), ((FuncPtr)(&(Card__ConfigLambda__8427__105))), ((FuncPtr)(&(Card__ConfigLambda__8427__127))), ((FuncPtr)(&(Card__ConfigLambda__8427__148))), ((FuncPtr)(&(Card__ConfigLambda__8427__167))), ((FuncPtr)(&(Card__ConfigLambda__8428__48))), ((FuncPtr)(&(Card__ConfigLambda__8428__74))), ((FuncPtr)(&(Card__ConfigLambda__8428__104))), ((FuncPtr)(&(Card__ConfigLambda__8429__52))), ((FuncPtr)(&(Card__ConfigLambda__8429__80))), ((FuncPtr)(&(Card__ConfigLambda__8429__112))), ((FuncPtr)(&(Card__ConfigLambda__8430__48))), ((FuncPtr)(&(Card__ConfigLambda__8430__73))), ((FuncPtr)(&(Card__ConfigLambda__8431__52))), ((FuncPtr)(&(Card__ConfigLambda__8432__47))), ((FuncPtr)(&(Card__ConfigLambda__8432__66))), ((FuncPtr)(&(Card__ConfigLambda__8432__80))), ((FuncPtr)(&(Card__ConfigLambda__8432__91))), ((FuncPtr)(&(Card__ConfigLambda__8432__101))), ((FuncPtr)(&(Card__ConfigLambda__8433__52))), ((FuncPtr)(&(Card__ConfigLambda__8434__42))), ((FuncPtr)(&(Card__ConfigLambda__8434__66))), ((FuncPtr)(&(Card__ConfigLambda__8434__90))), ((FuncPtr)(&(Card__ConfigLambda__8434__113))), ((FuncPtr)(&(Card__ConfigLambda__8434__132))), ((FuncPtr)(&(Card__ConfigLambda__8434__147))), ((FuncPtr)(&(Card__ConfigLambda__8434__161))), ((FuncPtr)(&(Card__ConfigLambda__8435__54))), ((FuncPtr)(&(Card__ConfigLambda__8435__78))), ((FuncPtr)(&(Card__ConfigLambda__8435__102))), ((FuncPtr)(&(Card__ConfigLambda__8436__51))), ((FuncPtr)(&(Card__ConfigLambda__8436__97))), ((FuncPtr)(&(Card__ConfigLambda__8436__128))), ((FuncPtr)(&(Card__ConfigLambda__8437__42))), ((FuncPtr)(&(Card__ConfigLambda__8437__63))), ((FuncPtr)(&(Card__ConfigLambda__8437__82))), ((FuncPtr)(&(Card__ConfigLambda__8437__103))), ((FuncPtr)(&(Card__ConfigLambda__8437__128))), ((FuncPtr)(&(Card__ConfigLambda__8437__147))), ((FuncPtr)(&(Card__ConfigLambda__8437__169))), ((FuncPtr)(&(Card__ConfigLambda__8437__191))), ((FuncPtr)(&(Card__ConfigLambda__8438__42))), ((FuncPtr)(&(Card__ConfigLambda__8438__61))), ((FuncPtr)(&(Card__ConfigLambda__8438__78))), ((FuncPtr)(&(Card__ConfigLambda__8438__94))), ((FuncPtr)(&(Card__ConfigLambda__8438__116))), ((FuncPtr)(&(Card__ConfigLambda__8439__41))), ((FuncPtr)(&(Card__ConfigLambda__8439__50))), ((FuncPtr)(&(Card__ConfigLambda__8440__50))), ((FuncPtr)(&(Card__ConfigLambda__8440__78))), ((FuncPtr)(&(Card__ConfigLambda__8440__99))), ((FuncPtr)(&(Card__ConfigLambda__8440__116))), ((FuncPtr)(&(Card__ConfigLambda__8440__136))), ((FuncPtr)(&(Card__ConfigLambda__8441__48))), ((FuncPtr)(&(Card__ConfigLambda__8441__66))), ((FuncPtr)(&(Card__ConfigLambda__8441__91))), ((FuncPtr)(&(Card__ConfigLambda__8441__108))), ((FuncPtr)(&(Card__ConfigLambda__8441__116))), ((FuncPtr)(&(Card__ConfigLambda__8441__137))), ((FuncPtr)(&(Card__ConfigLambda__8441__158))), ((FuncPtr)(&(Card__ConfigLambda__8441__166))), ((FuncPtr)(&(Card__ConfigLambda__8441__186))), ((FuncPtr)(&(Card__ConfigLambda__8441__206))), ((FuncPtr)(&(Card__ConfigLambda__8441__223))), ((FuncPtr)(&(Card__ConfigLambda__8441__240))), ((FuncPtr)(&(Card__ConfigLambda__8441__262))), ((FuncPtr)(&(Card__ConfigLambda__8442__46))), ((FuncPtr)(&(Card__ConfigLambda__8442__73))), ((FuncPtr)(&(Card__ConfigLambda__8442__99))), ((FuncPtr)(&(Card__ConfigLambda__8442__122))), ((FuncPtr)(&(Card__ConfigLambda__8442__144))), ((FuncPtr)(&(Card__ConfigLambda__8442__168))), ((FuncPtr)(&(Card__ConfigLambda__8442__197))), ((FuncPtr)(&(Card__ConfigLambda__8442__220))), ((FuncPtr)(&(Card__ConfigLambda__8442__246))), ((FuncPtr)(&(Card__ConfigLambda__8442__272))), ((FuncPtr)(&(Card__ConfigLambda__8443__44))), ((FuncPtr)(&(Card__ConfigLambda__8443__68))), ((FuncPtr)(&(Card__ConfigLambda__8443__95))), ((FuncPtr)(&(Card__ConfigLambda__8443__118))), ((FuncPtr)(&(Card__ConfigLambda__8443__142))), ((FuncPtr)(&(Card__ConfigLambda__8444__47))), ((FuncPtr)(&(Card__ConfigLambda__8444__65))), ((FuncPtr)(&(Card__ConfigLambda__8444__85))), ((FuncPtr)(&(Card__ConfigLambda__8444__103))), ((FuncPtr)(&(Card__ConfigLambda__8444__124))), ((FuncPtr)(&(Card__ConfigLambda__8444__137))), ((FuncPtr)(&(Card__ConfigLambda__8444__145))), ((FuncPtr)(&(Card__ConfigLambda__8444__160))), ((FuncPtr)(&(Card__ConfigLambda__8444__168))), ((FuncPtr)(&(Card__ConfigLambda__8444__183))), ((FuncPtr)(&(Card__ConfigLambda__8444__203))), ((FuncPtr)(&(Card__ConfigLambda__8445__44))), ((FuncPtr)(&(Card__ConfigLambda__8445__68))), ((FuncPtr)(&(Card__ConfigLambda__8445__86))), ((FuncPtr)(&(Card__ConfigLambda__8445__109))), ((FuncPtr)(&(Card__ConfigLambda__8445__127))), ((FuncPtr)(&(Card__ConfigLambda__8445__149))), ((FuncPtr)(&(Card__ConfigLambda__8446__53))), ((FuncPtr)(&(Card__ConfigLambda__8446__74))), ((FuncPtr)(&(Card__ConfigLambda__8446__93))), ((FuncPtr)(&(Card__ConfigLambda__8446__113))), ((FuncPtr)(&(Card__ConfigLambda__8446__133))), ((FuncPtr)(&(Card__ConfigLambda__8446__154)))})));
   }
 }
-Card  *Card__ItemRef__8453__17;
+Card  *Card__ItemRef__8454__24;
 
 Card  *GenerateCard(signed int  seed)
 {
 
   {
     ((RandInit)((seed)));
-    return (((Card__ItemRef__8453__17) = (new Card(((GetDefaultGenConfig)((seed), 0))))) , (((Card__ItemRef__8453__17)->Item__Generator)()));
+    return (((Card__ItemRef__8454__24) = (new Card(((GetDefaultGenConfig)((seed), 0))))) , (((Card__ItemRef__8454__24)->Item__Generator)()));
   }
 }
-Card  *Card__ItemRef__8462__23;
+Card  *Card__ItemRef__8463__30;
 
 Card  *GenerateCardWithCost(signed int  cost, signed int  seed)
 {
@@ -27315,34 +27315,34 @@ Card  *GenerateCardWithCost(signed int  cost, signed int  seed)
     NodeRep  *tmp_nullptr = 0;
     string name = ((("#" + ((IntToStr)((seed)))) + "_Cost_") + ((IntToStr)((cost))));
     void  *extra_config = ((void *)((MkExtraCardGenConfigWithCost)((name), (tmp_nullptr), (cost))));
-    Card  *card = (((Card__ItemRef__8462__23) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8462__23)->Item__Generator)()));
+    Card  *card = (((Card__ItemRef__8463__30) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8463__30)->Item__Generator)()));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8469__26;
+Card  *Card__ItemRef__8470__33;
 
 Card  *CreateDefaultLeader(signed int  hp)
 {
 
   {
-    Card  *leader = (((Card__ItemRef__8469__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8469__26)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8469__26), 9, 0, (hp), (new Card__singleAttack((Card__ItemRef__8469__26))), (new Card__justAbilities((Card__ItemRef__8469__26), (new Card__noCharge((Card__ItemRef__8469__26))), (new Card__noTaunt((Card__ItemRef__8469__26))), (new Card__noStealth((Card__ItemRef__8469__26))), (new Card__noUntargetable((Card__ItemRef__8469__26))), (new Card__noShield((Card__ItemRef__8469__26))), (new Card__noPoisonous((Card__ItemRef__8469__26))), (new Card__noLifesteal((Card__ItemRef__8469__26))))), (new Card__specialEffects((Card__ItemRef__8469__26), (new Card__noTargetedPlayEff((Card__ItemRef__8469__26))), (new Card__noOtherEffs((Card__ItemRef__8469__26))))))))));
+    Card  *leader = (((Card__ItemRef__8470__33) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8470__33)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8470__33), 9, 0, (hp), (new Card__singleAttack((Card__ItemRef__8470__33))), (new Card__justAbilities((Card__ItemRef__8470__33), (new Card__noCharge((Card__ItemRef__8470__33))), (new Card__noTaunt((Card__ItemRef__8470__33))), (new Card__noStealth((Card__ItemRef__8470__33))), (new Card__noUntargetable((Card__ItemRef__8470__33))), (new Card__noShield((Card__ItemRef__8470__33))), (new Card__noPoisonous((Card__ItemRef__8470__33))), (new Card__noLifesteal((Card__ItemRef__8470__33))))), (new Card__specialEffects((Card__ItemRef__8470__33), (new Card__noTargetedPlayEff((Card__ItemRef__8470__33))), (new Card__noOtherEffs((Card__ItemRef__8470__33))))))))));
     (((leader)->name) = "Default Leader");
     return (leader);
   }
 }
-Card  *Card__ItemRef__8476__25;
+Card  *Card__ItemRef__8477__32;
 
 Card  *CreateSndPlayerToken()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8476__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8476__25)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8476__25), 0, (new Card__justAbilities((Card__ItemRef__8476__25), (new Card__noCharge((Card__ItemRef__8476__25))), (new Card__noTaunt((Card__ItemRef__8476__25))), (new Card__noStealth((Card__ItemRef__8476__25))), (new Card__noUntargetable((Card__ItemRef__8476__25))), (new Card__noShield((Card__ItemRef__8476__25))), (new Card__noPoisonous((Card__ItemRef__8476__25))), (new Card__noLifesteal((Card__ItemRef__8476__25))))), (new Card__specialEffects((Card__ItemRef__8476__25), (new Card__targetedCastEff((Card__ItemRef__8476__25), (new Card__noCondTargetedEff((Card__ItemRef__8476__25), (new Card__costModEff((Card__ItemRef__8476__25), (-1))), (new Card__cardTargetCond((Card__ItemRef__8476__25), (new Card__justCardTargetCond((Card__ItemRef__8476__25), (new Card__cardPosAtHand((Card__ItemRef__8476__25))), (new Card__allyAllegiance((Card__ItemRef__8476__25))), (new Card__isCard((Card__ItemRef__8476__25))), (new Card__noAbilCond((Card__ItemRef__8476__25))), (new Card__noStatCond((Card__ItemRef__8476__25))))))))))), (new Card__consOtherEffs((Card__ItemRef__8476__25), (new Card__untargetedCastEff((Card__ItemRef__8476__25), (new Card__noCondUntargetedEff((Card__ItemRef__8476__25), (new Card__drawCardEff((Card__ItemRef__8476__25), 1, (new Card__allyAllegiance((Card__ItemRef__8476__25))))))))), (new Card__noOtherEffs((Card__ItemRef__8476__25))))))))))));
+    Card  *token = (((Card__ItemRef__8477__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8477__32)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8477__32), 0, (new Card__justAbilities((Card__ItemRef__8477__32), (new Card__noCharge((Card__ItemRef__8477__32))), (new Card__noTaunt((Card__ItemRef__8477__32))), (new Card__noStealth((Card__ItemRef__8477__32))), (new Card__noUntargetable((Card__ItemRef__8477__32))), (new Card__noShield((Card__ItemRef__8477__32))), (new Card__noPoisonous((Card__ItemRef__8477__32))), (new Card__noLifesteal((Card__ItemRef__8477__32))))), (new Card__specialEffects((Card__ItemRef__8477__32), (new Card__targetedCastEff((Card__ItemRef__8477__32), (new Card__noCondTargetedEff((Card__ItemRef__8477__32), (new Card__costModEff((Card__ItemRef__8477__32), (-1))), (new Card__cardTargetCond((Card__ItemRef__8477__32), (new Card__justCardTargetCond((Card__ItemRef__8477__32), (new Card__cardPosAtHand((Card__ItemRef__8477__32))), (new Card__allyAllegiance((Card__ItemRef__8477__32))), (new Card__isCard((Card__ItemRef__8477__32))), (new Card__noAbilCond((Card__ItemRef__8477__32))), (new Card__noStatCond((Card__ItemRef__8477__32))))))))))), (new Card__consOtherEffs((Card__ItemRef__8477__32), (new Card__untargetedCastEff((Card__ItemRef__8477__32), (new Card__noCondUntargetedEff((Card__ItemRef__8477__32), (new Card__drawCardEff((Card__ItemRef__8477__32), 1, (new Card__allyAllegiance((Card__ItemRef__8477__32))))))))), (new Card__noOtherEffs((Card__ItemRef__8477__32))))))))))));
     (((token)->name) = "Second Player Token");
     return (token);
   }
 }
-Card  *Card__ItemRef__8489__24;
+Card  *Card__ItemRef__8490__31;
 
 Card  *CreatePlainMinionToken(string  parent_name)
 {
@@ -27351,12 +27351,12 @@ Card  *CreatePlainMinionToken(string  parent_name)
     CondConfig tmp_config = ((GetFlagConfig)((MINION_COND_FILTER)));
     NodeRep  *tmp_nullptr = 0;
     void  *extra_config = ((void *)((MkExtraCardGenConfig)(((parent_name) + "_Spawn"), (tmp_nullptr))));
-    Card  *card = (((Card__ItemRef__8489__24) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8489__24)->Item__Constructor)((((Card__ItemRef__8489__24)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
+    Card  *card = (((Card__ItemRef__8490__31) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8490__31)->Item__Constructor)((((Card__ItemRef__8490__31)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8500__24;
+Card  *Card__ItemRef__8501__31;
 
 Card  *CreateFixedCardToken(string  parent_name, signed int  min_eff_num, signed int  max_eff_num, signed int  eff_depth)
 {
@@ -27365,13 +27365,13 @@ Card  *CreateFixedCardToken(string  parent_name, signed int  min_eff_num, signed
     CondConfig tmp_config = ((GetDefaultConfig)());
     NodeRep  *tmp_nullptr = 0;
     void  *extra_config = ((void *)((MkExtraCardGenConfig)(((parent_name) + "_Spawn"), (tmp_nullptr))));
-    Card  *card = (((Card__ItemRef__8500__24) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8500__24)->Item__Constructor)((((Card__ItemRef__8500__24)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
+    Card  *card = (((Card__ItemRef__8501__31) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8501__31)->Item__Constructor)((((Card__ItemRef__8501__31)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
     (((card)->Mutate)((min_eff_num), (max_eff_num), (eff_depth)));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8512__24;
+Card  *Card__ItemRef__8513__31;
 
 Card  *CreateFixedMinionToken(string  parent_name, signed int  min_eff_num, signed int  max_eff_num, signed int  eff_depth)
 {
@@ -27380,25 +27380,25 @@ Card  *CreateFixedMinionToken(string  parent_name, signed int  min_eff_num, sign
     CondConfig tmp_config = ((GetFlagConfig)((MINION_COND_FILTER)));
     NodeRep  *tmp_nullptr = 0;
     void  *extra_config = ((void *)((MkExtraCardGenConfig)(((parent_name) + "_Spawn"), (tmp_nullptr))));
-    Card  *card = (((Card__ItemRef__8512__24) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8512__24)->Item__Constructor)((((Card__ItemRef__8512__24)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
+    Card  *card = (((Card__ItemRef__8513__31) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8513__31)->Item__Constructor)((((Card__ItemRef__8513__31)->Generate__CardRoot)((tmp_config), 1, (tmp_nullptr))))));
     (((card)->Mutate)((min_eff_num), (max_eff_num), (eff_depth)));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8521__23;
+Card  *Card__ItemRef__8522__30;
 
 Card  *CreateNamedCardFromRep(const string  & name, NodeRep  * & rep)
 {
 
   {
     void  *extra_config = ((void *)((MkExtraCardGenConfig)((name), (rep))));
-    Card  *card = (((Card__ItemRef__8521__23) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8521__23)->Item__Generator)()));
+    Card  *card = (((Card__ItemRef__8522__30) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8522__30)->Item__Generator)()));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8531__23;
+Card  *Card__ItemRef__8532__30;
 
 Card  *CreateNamedCardWithCost(const string  & name, signed int  cost)
 {
@@ -27406,12 +27406,12 @@ Card  *CreateNamedCardWithCost(const string  & name, signed int  cost)
   {
     NodeRep  *tmp_nullptr = 0;
     void  *extra_config = ((void *)((MkExtraCardGenConfigWithCost)((name), (tmp_nullptr), (cost))));
-    Card  *card = (((Card__ItemRef__8531__23) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8531__23)->Item__Generator)()));
+    Card  *card = (((Card__ItemRef__8532__30) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8532__30)->Item__Generator)()));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8541__23;
+Card  *Card__ItemRef__8542__30;
 
 Card  *CreateNamedMinionWithCost(const string  & name, signed int  cost)
 {
@@ -27419,1364 +27419,1364 @@ Card  *CreateNamedMinionWithCost(const string  & name, signed int  cost)
   {
     NodeRep  *tmp_nullptr = 0;
     void  *extra_config = ((void *)((MkExtraCardGenConfigWithCost)((name), (tmp_nullptr), (cost), 1)));
-    Card  *card = (((Card__ItemRef__8541__23) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8541__23)->Item__Generator)()));
+    Card  *card = (((Card__ItemRef__8542__30) = (new Card(((GetDefaultGenConfig)((-1), (extra_config)))))) , (((Card__ItemRef__8542__30)->Item__Generator)()));
     delete ((ExtraCardGenConfig *)(extra_config));
     return (card);
   }
 }
-Card  *Card__ItemRef__8549__24;
+Card  *Card__ItemRef__8550__31;
 
 Card  *CreateDemoCard1()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8549__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8549__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8549__24), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8549__24))), (new Card__beastMinion((Card__ItemRef__8549__24))), (new Card__justAbilities((Card__ItemRef__8549__24), (new Card__noCharge((Card__ItemRef__8549__24))), (new Card__noTaunt((Card__ItemRef__8549__24))), (new Card__noStealth((Card__ItemRef__8549__24))), (new Card__noUntargetable((Card__ItemRef__8549__24))), (new Card__noShield((Card__ItemRef__8549__24))), (new Card__noPoisonous((Card__ItemRef__8549__24))), (new Card__noLifesteal((Card__ItemRef__8549__24))))), (new Card__specialEffects((Card__ItemRef__8549__24), (new Card__noTargetedPlayEff((Card__ItemRef__8549__24))), (new Card__noOtherEffs((Card__ItemRef__8549__24))))))))));
+    Card  *card = (((Card__ItemRef__8550__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8550__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8550__31), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8550__31))), (new Card__beastMinion((Card__ItemRef__8550__31))), (new Card__justAbilities((Card__ItemRef__8550__31), (new Card__noCharge((Card__ItemRef__8550__31))), (new Card__noTaunt((Card__ItemRef__8550__31))), (new Card__noStealth((Card__ItemRef__8550__31))), (new Card__noUntargetable((Card__ItemRef__8550__31))), (new Card__noShield((Card__ItemRef__8550__31))), (new Card__noPoisonous((Card__ItemRef__8550__31))), (new Card__noLifesteal((Card__ItemRef__8550__31))))), (new Card__specialEffects((Card__ItemRef__8550__31), (new Card__noTargetedPlayEff((Card__ItemRef__8550__31))), (new Card__noOtherEffs((Card__ItemRef__8550__31))))))))));
     (((card)->name) = "Demo Card 1");
     return (card);
   }
 }
-Card  *Card__ItemRef__8556__24;
+Card  *Card__ItemRef__8557__31;
 
 Card  *CreateDemoCard1Alt(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8556__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8556__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8556__24), 3, (v), (6 - (v)), (new Card__singleAttack((Card__ItemRef__8556__24))), (new Card__beastMinion((Card__ItemRef__8556__24))), (new Card__justAbilities((Card__ItemRef__8556__24), (new Card__noCharge((Card__ItemRef__8556__24))), (new Card__noTaunt((Card__ItemRef__8556__24))), (new Card__noStealth((Card__ItemRef__8556__24))), (new Card__noUntargetable((Card__ItemRef__8556__24))), (new Card__noShield((Card__ItemRef__8556__24))), (new Card__noPoisonous((Card__ItemRef__8556__24))), (new Card__noLifesteal((Card__ItemRef__8556__24))))), (new Card__specialEffects((Card__ItemRef__8556__24), (new Card__noTargetedPlayEff((Card__ItemRef__8556__24))), (new Card__noOtherEffs((Card__ItemRef__8556__24))))))))));
+    Card  *card = (((Card__ItemRef__8557__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8557__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8557__31), 3, (v), (6 - (v)), (new Card__singleAttack((Card__ItemRef__8557__31))), (new Card__beastMinion((Card__ItemRef__8557__31))), (new Card__justAbilities((Card__ItemRef__8557__31), (new Card__noCharge((Card__ItemRef__8557__31))), (new Card__noTaunt((Card__ItemRef__8557__31))), (new Card__noStealth((Card__ItemRef__8557__31))), (new Card__noUntargetable((Card__ItemRef__8557__31))), (new Card__noShield((Card__ItemRef__8557__31))), (new Card__noPoisonous((Card__ItemRef__8557__31))), (new Card__noLifesteal((Card__ItemRef__8557__31))))), (new Card__specialEffects((Card__ItemRef__8557__31), (new Card__noTargetedPlayEff((Card__ItemRef__8557__31))), (new Card__noOtherEffs((Card__ItemRef__8557__31))))))))));
     (((card)->name) = ("Demo Card 1 Alt Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8563__24;
+Card  *Card__ItemRef__8564__31;
 
 Card  *CreateDemoCard2(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8563__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8563__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8563__24), 3, (v), (v), (new Card__singleAttack((Card__ItemRef__8563__24))), (new Card__beastMinion((Card__ItemRef__8563__24))), (new Card__justAbilities((Card__ItemRef__8563__24), (new Card__noCharge((Card__ItemRef__8563__24))), (new Card__noTaunt((Card__ItemRef__8563__24))), (new Card__noStealth((Card__ItemRef__8563__24))), (new Card__noUntargetable((Card__ItemRef__8563__24))), (new Card__noShield((Card__ItemRef__8563__24))), (new Card__noPoisonous((Card__ItemRef__8563__24))), (new Card__noLifesteal((Card__ItemRef__8563__24))))), (new Card__specialEffects((Card__ItemRef__8563__24), (new Card__noTargetedPlayEff((Card__ItemRef__8563__24))), (new Card__noOtherEffs((Card__ItemRef__8563__24))))))))));
+    Card  *card = (((Card__ItemRef__8564__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8564__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8564__31), 3, (v), (v), (new Card__singleAttack((Card__ItemRef__8564__31))), (new Card__beastMinion((Card__ItemRef__8564__31))), (new Card__justAbilities((Card__ItemRef__8564__31), (new Card__noCharge((Card__ItemRef__8564__31))), (new Card__noTaunt((Card__ItemRef__8564__31))), (new Card__noStealth((Card__ItemRef__8564__31))), (new Card__noUntargetable((Card__ItemRef__8564__31))), (new Card__noShield((Card__ItemRef__8564__31))), (new Card__noPoisonous((Card__ItemRef__8564__31))), (new Card__noLifesteal((Card__ItemRef__8564__31))))), (new Card__specialEffects((Card__ItemRef__8564__31), (new Card__noTargetedPlayEff((Card__ItemRef__8564__31))), (new Card__noOtherEffs((Card__ItemRef__8564__31))))))))));
     (((card)->name) = ("Demo Card 2 Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8570__24;
+Card  *Card__ItemRef__8571__31;
 
 Card  *CreateDemoCard3(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8570__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8570__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8570__24), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8570__24))), (new Card__beastMinion((Card__ItemRef__8570__24))), (new Card__justAbilities((Card__ItemRef__8570__24), (new Card__noCharge((Card__ItemRef__8570__24))), (new Card__noTaunt((Card__ItemRef__8570__24))), (new Card__noStealth((Card__ItemRef__8570__24))), (new Card__noUntargetable((Card__ItemRef__8570__24))), (new Card__noShield((Card__ItemRef__8570__24))), (new Card__noPoisonous((Card__ItemRef__8570__24))), (new Card__noLifesteal((Card__ItemRef__8570__24))))), (new Card__specialEffects((Card__ItemRef__8570__24), (new Card__noTargetedPlayEff((Card__ItemRef__8570__24))), (new Card__noOtherEffs((Card__ItemRef__8570__24))))))))));
+    Card  *card = (((Card__ItemRef__8571__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8571__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8571__31), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8571__31))), (new Card__beastMinion((Card__ItemRef__8571__31))), (new Card__justAbilities((Card__ItemRef__8571__31), (new Card__noCharge((Card__ItemRef__8571__31))), (new Card__noTaunt((Card__ItemRef__8571__31))), (new Card__noStealth((Card__ItemRef__8571__31))), (new Card__noUntargetable((Card__ItemRef__8571__31))), (new Card__noShield((Card__ItemRef__8571__31))), (new Card__noPoisonous((Card__ItemRef__8571__31))), (new Card__noLifesteal((Card__ItemRef__8571__31))))), (new Card__specialEffects((Card__ItemRef__8571__31), (new Card__noTargetedPlayEff((Card__ItemRef__8571__31))), (new Card__noOtherEffs((Card__ItemRef__8571__31))))))))));
     (((card)->name) = ("Demo Card 3 Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8577__24;
+Card  *Card__ItemRef__8578__31;
 
 Card  *CreateDemoCard4(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8577__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8577__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8577__24), 3, (v), (v), (new Card__singleAttack((Card__ItemRef__8577__24))), (new Card__beastMinion((Card__ItemRef__8577__24))), (new Card__justAbilities((Card__ItemRef__8577__24), (new Card__noCharge((Card__ItemRef__8577__24))), (new Card__noTaunt((Card__ItemRef__8577__24))), (new Card__noStealth((Card__ItemRef__8577__24))), (new Card__noUntargetable((Card__ItemRef__8577__24))), (new Card__noShield((Card__ItemRef__8577__24))), (new Card__noPoisonous((Card__ItemRef__8577__24))), (new Card__noLifesteal((Card__ItemRef__8577__24))))), (new Card__specialEffects((Card__ItemRef__8577__24), (new Card__targetedBattlecryEff((Card__ItemRef__8577__24), (new Card__noCondTargetedEff((Card__ItemRef__8577__24), (new Card__damageEff((Card__ItemRef__8577__24), (6 - (v)), (new Card__damageAbilities((Card__ItemRef__8577__24), (new Card__noPoisonous((Card__ItemRef__8577__24))), (new Card__noLifesteal((Card__ItemRef__8577__24))))))), (new Card__charTargetCond((Card__ItemRef__8577__24), (new Card__justCharTargetCond((Card__ItemRef__8577__24), (new Card__oppoAllegiance((Card__ItemRef__8577__24))), (new Card__isCharacter((Card__ItemRef__8577__24))), (new Card__noAbilCond((Card__ItemRef__8577__24))), (new Card__noStatCond((Card__ItemRef__8577__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8577__24))))))))));
+    Card  *card = (((Card__ItemRef__8578__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8578__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8578__31), 3, (v), (v), (new Card__singleAttack((Card__ItemRef__8578__31))), (new Card__beastMinion((Card__ItemRef__8578__31))), (new Card__justAbilities((Card__ItemRef__8578__31), (new Card__noCharge((Card__ItemRef__8578__31))), (new Card__noTaunt((Card__ItemRef__8578__31))), (new Card__noStealth((Card__ItemRef__8578__31))), (new Card__noUntargetable((Card__ItemRef__8578__31))), (new Card__noShield((Card__ItemRef__8578__31))), (new Card__noPoisonous((Card__ItemRef__8578__31))), (new Card__noLifesteal((Card__ItemRef__8578__31))))), (new Card__specialEffects((Card__ItemRef__8578__31), (new Card__targetedBattlecryEff((Card__ItemRef__8578__31), (new Card__noCondTargetedEff((Card__ItemRef__8578__31), (new Card__damageEff((Card__ItemRef__8578__31), (6 - (v)), (new Card__damageAbilities((Card__ItemRef__8578__31), (new Card__noPoisonous((Card__ItemRef__8578__31))), (new Card__noLifesteal((Card__ItemRef__8578__31))))))), (new Card__charTargetCond((Card__ItemRef__8578__31), (new Card__justCharTargetCond((Card__ItemRef__8578__31), (new Card__oppoAllegiance((Card__ItemRef__8578__31))), (new Card__isCharacter((Card__ItemRef__8578__31))), (new Card__noAbilCond((Card__ItemRef__8578__31))), (new Card__noStatCond((Card__ItemRef__8578__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8578__31))))))))));
     (((card)->name) = ("Demo Card 4 Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8586__24;
+Card  *Card__ItemRef__8587__31;
 
 Card  *CreateDemoCard4Alt(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8586__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8586__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8586__24), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8586__24))), (new Card__beastMinion((Card__ItemRef__8586__24))), (new Card__justAbilities((Card__ItemRef__8586__24), (new Card__noCharge((Card__ItemRef__8586__24))), (new Card__noTaunt((Card__ItemRef__8586__24))), (new Card__noStealth((Card__ItemRef__8586__24))), (new Card__noUntargetable((Card__ItemRef__8586__24))), (new Card__noShield((Card__ItemRef__8586__24))), (new Card__noPoisonous((Card__ItemRef__8586__24))), (new Card__noLifesteal((Card__ItemRef__8586__24))))), (new Card__specialEffects((Card__ItemRef__8586__24), (new Card__targetedBattlecryEff((Card__ItemRef__8586__24), (new Card__noCondTargetedEff((Card__ItemRef__8586__24), (new Card__damageEff((Card__ItemRef__8586__24), (v), (new Card__damageAbilities((Card__ItemRef__8586__24), (new Card__noPoisonous((Card__ItemRef__8586__24))), (new Card__noLifesteal((Card__ItemRef__8586__24))))))), (new Card__charTargetCond((Card__ItemRef__8586__24), (new Card__justCharTargetCond((Card__ItemRef__8586__24), (new Card__oppoAllegiance((Card__ItemRef__8586__24))), (new Card__isCharacter((Card__ItemRef__8586__24))), (new Card__noAbilCond((Card__ItemRef__8586__24))), (new Card__noStatCond((Card__ItemRef__8586__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8586__24))))))))));
+    Card  *card = (((Card__ItemRef__8587__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8587__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8587__31), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8587__31))), (new Card__beastMinion((Card__ItemRef__8587__31))), (new Card__justAbilities((Card__ItemRef__8587__31), (new Card__noCharge((Card__ItemRef__8587__31))), (new Card__noTaunt((Card__ItemRef__8587__31))), (new Card__noStealth((Card__ItemRef__8587__31))), (new Card__noUntargetable((Card__ItemRef__8587__31))), (new Card__noShield((Card__ItemRef__8587__31))), (new Card__noPoisonous((Card__ItemRef__8587__31))), (new Card__noLifesteal((Card__ItemRef__8587__31))))), (new Card__specialEffects((Card__ItemRef__8587__31), (new Card__targetedBattlecryEff((Card__ItemRef__8587__31), (new Card__noCondTargetedEff((Card__ItemRef__8587__31), (new Card__damageEff((Card__ItemRef__8587__31), (v), (new Card__damageAbilities((Card__ItemRef__8587__31), (new Card__noPoisonous((Card__ItemRef__8587__31))), (new Card__noLifesteal((Card__ItemRef__8587__31))))))), (new Card__charTargetCond((Card__ItemRef__8587__31), (new Card__justCharTargetCond((Card__ItemRef__8587__31), (new Card__oppoAllegiance((Card__ItemRef__8587__31))), (new Card__isCharacter((Card__ItemRef__8587__31))), (new Card__noAbilCond((Card__ItemRef__8587__31))), (new Card__noStatCond((Card__ItemRef__8587__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8587__31))))))))));
     (((card)->name) = ("Demo Card 4 Alt Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8595__24;
+Card  *Card__ItemRef__8596__31;
 
 Card  *CreateDemoCard5Beast()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8595__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8595__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8595__24), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8595__24))), (new Card__beastMinion((Card__ItemRef__8595__24))), (new Card__justAbilities((Card__ItemRef__8595__24), (new Card__noCharge((Card__ItemRef__8595__24))), (new Card__noTaunt((Card__ItemRef__8595__24))), (new Card__noStealth((Card__ItemRef__8595__24))), (new Card__noUntargetable((Card__ItemRef__8595__24))), (new Card__noShield((Card__ItemRef__8595__24))), (new Card__noPoisonous((Card__ItemRef__8595__24))), (new Card__noLifesteal((Card__ItemRef__8595__24))))), (new Card__specialEffects((Card__ItemRef__8595__24), (new Card__targetedBattlecryEff((Card__ItemRef__8595__24), (new Card__noCondTargetedEff((Card__ItemRef__8595__24), (new Card__atkHpModEff((Card__ItemRef__8595__24), 3, 3)), (new Card__charTargetCond((Card__ItemRef__8595__24), (new Card__justCharTargetCond((Card__ItemRef__8595__24), (new Card__allyAllegiance((Card__ItemRef__8595__24))), (new Card__isBeast((Card__ItemRef__8595__24))), (new Card__noAbilCond((Card__ItemRef__8595__24))), (new Card__noStatCond((Card__ItemRef__8595__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8595__24))))))))));
+    Card  *card = (((Card__ItemRef__8596__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8596__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8596__31), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8596__31))), (new Card__beastMinion((Card__ItemRef__8596__31))), (new Card__justAbilities((Card__ItemRef__8596__31), (new Card__noCharge((Card__ItemRef__8596__31))), (new Card__noTaunt((Card__ItemRef__8596__31))), (new Card__noStealth((Card__ItemRef__8596__31))), (new Card__noUntargetable((Card__ItemRef__8596__31))), (new Card__noShield((Card__ItemRef__8596__31))), (new Card__noPoisonous((Card__ItemRef__8596__31))), (new Card__noLifesteal((Card__ItemRef__8596__31))))), (new Card__specialEffects((Card__ItemRef__8596__31), (new Card__targetedBattlecryEff((Card__ItemRef__8596__31), (new Card__noCondTargetedEff((Card__ItemRef__8596__31), (new Card__atkHpModEff((Card__ItemRef__8596__31), 3, 3)), (new Card__charTargetCond((Card__ItemRef__8596__31), (new Card__justCharTargetCond((Card__ItemRef__8596__31), (new Card__allyAllegiance((Card__ItemRef__8596__31))), (new Card__isBeast((Card__ItemRef__8596__31))), (new Card__noAbilCond((Card__ItemRef__8596__31))), (new Card__noStatCond((Card__ItemRef__8596__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8596__31))))))))));
     (((card)->name) = "Demo Card 5 Beast");
     return (card);
   }
 }
-Card  *Card__ItemRef__8604__24;
+Card  *Card__ItemRef__8605__31;
 
 Card  *CreateDemoCard5Dragon()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8604__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8604__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8604__24), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8604__24))), (new Card__dragonMinion((Card__ItemRef__8604__24))), (new Card__justAbilities((Card__ItemRef__8604__24), (new Card__noCharge((Card__ItemRef__8604__24))), (new Card__noTaunt((Card__ItemRef__8604__24))), (new Card__noStealth((Card__ItemRef__8604__24))), (new Card__noUntargetable((Card__ItemRef__8604__24))), (new Card__noShield((Card__ItemRef__8604__24))), (new Card__noPoisonous((Card__ItemRef__8604__24))), (new Card__noLifesteal((Card__ItemRef__8604__24))))), (new Card__specialEffects((Card__ItemRef__8604__24), (new Card__targetedBattlecryEff((Card__ItemRef__8604__24), (new Card__noCondTargetedEff((Card__ItemRef__8604__24), (new Card__atkHpModEff((Card__ItemRef__8604__24), 3, 3)), (new Card__charTargetCond((Card__ItemRef__8604__24), (new Card__justCharTargetCond((Card__ItemRef__8604__24), (new Card__allyAllegiance((Card__ItemRef__8604__24))), (new Card__isDragon((Card__ItemRef__8604__24))), (new Card__noAbilCond((Card__ItemRef__8604__24))), (new Card__noStatCond((Card__ItemRef__8604__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8604__24))))))))));
+    Card  *card = (((Card__ItemRef__8605__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8605__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8605__31), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8605__31))), (new Card__dragonMinion((Card__ItemRef__8605__31))), (new Card__justAbilities((Card__ItemRef__8605__31), (new Card__noCharge((Card__ItemRef__8605__31))), (new Card__noTaunt((Card__ItemRef__8605__31))), (new Card__noStealth((Card__ItemRef__8605__31))), (new Card__noUntargetable((Card__ItemRef__8605__31))), (new Card__noShield((Card__ItemRef__8605__31))), (new Card__noPoisonous((Card__ItemRef__8605__31))), (new Card__noLifesteal((Card__ItemRef__8605__31))))), (new Card__specialEffects((Card__ItemRef__8605__31), (new Card__targetedBattlecryEff((Card__ItemRef__8605__31), (new Card__noCondTargetedEff((Card__ItemRef__8605__31), (new Card__atkHpModEff((Card__ItemRef__8605__31), 3, 3)), (new Card__charTargetCond((Card__ItemRef__8605__31), (new Card__justCharTargetCond((Card__ItemRef__8605__31), (new Card__allyAllegiance((Card__ItemRef__8605__31))), (new Card__isDragon((Card__ItemRef__8605__31))), (new Card__noAbilCond((Card__ItemRef__8605__31))), (new Card__noStatCond((Card__ItemRef__8605__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8605__31))))))))));
     (((card)->name) = "Demo Card 5 Dragon");
     return (card);
   }
 }
-Card  *Card__ItemRef__8613__24;
+Card  *Card__ItemRef__8614__31;
 
 Card  *CreateDemoCard6Beast(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8613__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8613__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8613__24), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8613__24))), (new Card__beastMinion((Card__ItemRef__8613__24))), (new Card__justAbilities((Card__ItemRef__8613__24), (new Card__noCharge((Card__ItemRef__8613__24))), (new Card__noTaunt((Card__ItemRef__8613__24))), (new Card__noStealth((Card__ItemRef__8613__24))), (new Card__noUntargetable((Card__ItemRef__8613__24))), (new Card__noShield((Card__ItemRef__8613__24))), (new Card__noPoisonous((Card__ItemRef__8613__24))), (new Card__noLifesteal((Card__ItemRef__8613__24))))), (new Card__specialEffects((Card__ItemRef__8613__24), (new Card__targetedBattlecryEff((Card__ItemRef__8613__24), (new Card__noCondTargetedEff((Card__ItemRef__8613__24), (new Card__atkHpModEff((Card__ItemRef__8613__24), (v), (v))), (new Card__charTargetCond((Card__ItemRef__8613__24), (new Card__justCharTargetCond((Card__ItemRef__8613__24), (new Card__allyAllegiance((Card__ItemRef__8613__24))), (new Card__isBeast((Card__ItemRef__8613__24))), (new Card__noAbilCond((Card__ItemRef__8613__24))), (new Card__noStatCond((Card__ItemRef__8613__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8613__24))))))))));
+    Card  *card = (((Card__ItemRef__8614__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8614__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8614__31), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8614__31))), (new Card__beastMinion((Card__ItemRef__8614__31))), (new Card__justAbilities((Card__ItemRef__8614__31), (new Card__noCharge((Card__ItemRef__8614__31))), (new Card__noTaunt((Card__ItemRef__8614__31))), (new Card__noStealth((Card__ItemRef__8614__31))), (new Card__noUntargetable((Card__ItemRef__8614__31))), (new Card__noShield((Card__ItemRef__8614__31))), (new Card__noPoisonous((Card__ItemRef__8614__31))), (new Card__noLifesteal((Card__ItemRef__8614__31))))), (new Card__specialEffects((Card__ItemRef__8614__31), (new Card__targetedBattlecryEff((Card__ItemRef__8614__31), (new Card__noCondTargetedEff((Card__ItemRef__8614__31), (new Card__atkHpModEff((Card__ItemRef__8614__31), (v), (v))), (new Card__charTargetCond((Card__ItemRef__8614__31), (new Card__justCharTargetCond((Card__ItemRef__8614__31), (new Card__allyAllegiance((Card__ItemRef__8614__31))), (new Card__isBeast((Card__ItemRef__8614__31))), (new Card__noAbilCond((Card__ItemRef__8614__31))), (new Card__noStatCond((Card__ItemRef__8614__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8614__31))))))))));
     (((card)->name) = ("Demo Card 5 Beast Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8622__24;
+Card  *Card__ItemRef__8623__31;
 
 Card  *CreateDemoCard6Dragon(signed int  v)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8622__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8622__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8622__24), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8622__24))), (new Card__dragonMinion((Card__ItemRef__8622__24))), (new Card__justAbilities((Card__ItemRef__8622__24), (new Card__noCharge((Card__ItemRef__8622__24))), (new Card__noTaunt((Card__ItemRef__8622__24))), (new Card__noStealth((Card__ItemRef__8622__24))), (new Card__noUntargetable((Card__ItemRef__8622__24))), (new Card__noShield((Card__ItemRef__8622__24))), (new Card__noPoisonous((Card__ItemRef__8622__24))), (new Card__noLifesteal((Card__ItemRef__8622__24))))), (new Card__specialEffects((Card__ItemRef__8622__24), (new Card__targetedBattlecryEff((Card__ItemRef__8622__24), (new Card__noCondTargetedEff((Card__ItemRef__8622__24), (new Card__atkHpModEff((Card__ItemRef__8622__24), (v), (v))), (new Card__charTargetCond((Card__ItemRef__8622__24), (new Card__justCharTargetCond((Card__ItemRef__8622__24), (new Card__allyAllegiance((Card__ItemRef__8622__24))), (new Card__isDragon((Card__ItemRef__8622__24))), (new Card__noAbilCond((Card__ItemRef__8622__24))), (new Card__noStatCond((Card__ItemRef__8622__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8622__24))))))))));
+    Card  *card = (((Card__ItemRef__8623__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8623__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8623__31), (v), (v), (v), (new Card__singleAttack((Card__ItemRef__8623__31))), (new Card__dragonMinion((Card__ItemRef__8623__31))), (new Card__justAbilities((Card__ItemRef__8623__31), (new Card__noCharge((Card__ItemRef__8623__31))), (new Card__noTaunt((Card__ItemRef__8623__31))), (new Card__noStealth((Card__ItemRef__8623__31))), (new Card__noUntargetable((Card__ItemRef__8623__31))), (new Card__noShield((Card__ItemRef__8623__31))), (new Card__noPoisonous((Card__ItemRef__8623__31))), (new Card__noLifesteal((Card__ItemRef__8623__31))))), (new Card__specialEffects((Card__ItemRef__8623__31), (new Card__targetedBattlecryEff((Card__ItemRef__8623__31), (new Card__noCondTargetedEff((Card__ItemRef__8623__31), (new Card__atkHpModEff((Card__ItemRef__8623__31), (v), (v))), (new Card__charTargetCond((Card__ItemRef__8623__31), (new Card__justCharTargetCond((Card__ItemRef__8623__31), (new Card__allyAllegiance((Card__ItemRef__8623__31))), (new Card__isDragon((Card__ItemRef__8623__31))), (new Card__noAbilCond((Card__ItemRef__8623__31))), (new Card__noStatCond((Card__ItemRef__8623__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8623__31))))))))));
     (((card)->name) = ("Demo Card 5 Dragon Ver." + ((IntToStr)((v)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8631__24;
+Card  *Card__ItemRef__8632__31;
 
 Card  *CreateDemoCard8Beast()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8631__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8631__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8631__24), 0, 1, 1, (new Card__singleAttack((Card__ItemRef__8631__24))), (new Card__beastMinion((Card__ItemRef__8631__24))), (new Card__justAbilities((Card__ItemRef__8631__24), (new Card__noCharge((Card__ItemRef__8631__24))), (new Card__noTaunt((Card__ItemRef__8631__24))), (new Card__noStealth((Card__ItemRef__8631__24))), (new Card__noUntargetable((Card__ItemRef__8631__24))), (new Card__noShield((Card__ItemRef__8631__24))), (new Card__noPoisonous((Card__ItemRef__8631__24))), (new Card__noLifesteal((Card__ItemRef__8631__24))))), (new Card__specialEffects((Card__ItemRef__8631__24), (new Card__noTargetedPlayEff((Card__ItemRef__8631__24))), (new Card__consOtherEffs((Card__ItemRef__8631__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8631__24), (new Card__noCondUntargetedEff((Card__ItemRef__8631__24), (new Card__newEff((Card__ItemRef__8631__24), 1, (new Card__handDest((Card__ItemRef__8631__24), (new Card__anyAllegiance((Card__ItemRef__8631__24))))), (new Card__randomCard((Card__ItemRef__8631__24), 3)))))))), (new Card__noOtherEffs((Card__ItemRef__8631__24))))))))))));
+    Card  *card = (((Card__ItemRef__8632__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8632__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8632__31), 0, 1, 1, (new Card__singleAttack((Card__ItemRef__8632__31))), (new Card__beastMinion((Card__ItemRef__8632__31))), (new Card__justAbilities((Card__ItemRef__8632__31), (new Card__noCharge((Card__ItemRef__8632__31))), (new Card__noTaunt((Card__ItemRef__8632__31))), (new Card__noStealth((Card__ItemRef__8632__31))), (new Card__noUntargetable((Card__ItemRef__8632__31))), (new Card__noShield((Card__ItemRef__8632__31))), (new Card__noPoisonous((Card__ItemRef__8632__31))), (new Card__noLifesteal((Card__ItemRef__8632__31))))), (new Card__specialEffects((Card__ItemRef__8632__31), (new Card__noTargetedPlayEff((Card__ItemRef__8632__31))), (new Card__consOtherEffs((Card__ItemRef__8632__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8632__31), (new Card__noCondUntargetedEff((Card__ItemRef__8632__31), (new Card__newEff((Card__ItemRef__8632__31), 1, (new Card__handDest((Card__ItemRef__8632__31), (new Card__anyAllegiance((Card__ItemRef__8632__31))))), (new Card__randomCard((Card__ItemRef__8632__31), 3)))))))), (new Card__noOtherEffs((Card__ItemRef__8632__31))))))))))));
     (((card)->name) = "Demo Card 8 Beast");
     return (card);
   }
 }
-Card  *Card__ItemRef__8641__25;
-Card  *Card__ItemRef__8643__24;
+Card  *Card__ItemRef__8642__32;
+Card  *Card__ItemRef__8644__31;
 
 Card  *CreateDemoCard8Spell()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8641__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8641__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8641__25), 2, 3, 3, (new Card__singleAttack((Card__ItemRef__8641__25))), (new Card__demonMinion((Card__ItemRef__8641__25))), (new Card__justAbilities((Card__ItemRef__8641__25), (new Card__noCharge((Card__ItemRef__8641__25))), (new Card__noTaunt((Card__ItemRef__8641__25))), (new Card__noStealth((Card__ItemRef__8641__25))), (new Card__noUntargetable((Card__ItemRef__8641__25))), (new Card__noShield((Card__ItemRef__8641__25))), (new Card__noPoisonous((Card__ItemRef__8641__25))), (new Card__noLifesteal((Card__ItemRef__8641__25))))), (new Card__specialEffects((Card__ItemRef__8641__25), (new Card__noTargetedPlayEff((Card__ItemRef__8641__25))), (new Card__noOtherEffs((Card__ItemRef__8641__25))))))))));
+    Card  *token = (((Card__ItemRef__8642__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8642__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8642__32), 2, 3, 3, (new Card__singleAttack((Card__ItemRef__8642__32))), (new Card__demonMinion((Card__ItemRef__8642__32))), (new Card__justAbilities((Card__ItemRef__8642__32), (new Card__noCharge((Card__ItemRef__8642__32))), (new Card__noTaunt((Card__ItemRef__8642__32))), (new Card__noStealth((Card__ItemRef__8642__32))), (new Card__noUntargetable((Card__ItemRef__8642__32))), (new Card__noShield((Card__ItemRef__8642__32))), (new Card__noPoisonous((Card__ItemRef__8642__32))), (new Card__noLifesteal((Card__ItemRef__8642__32))))), (new Card__specialEffects((Card__ItemRef__8642__32), (new Card__noTargetedPlayEff((Card__ItemRef__8642__32))), (new Card__noOtherEffs((Card__ItemRef__8642__32))))))))));
     (((token)->name) = "Demo Card 8 Spell Token");
-    Card  *card = (((Card__ItemRef__8643__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8643__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8643__24), 3, (new Card__justAbilities((Card__ItemRef__8643__24), (new Card__noCharge((Card__ItemRef__8643__24))), (new Card__noTaunt((Card__ItemRef__8643__24))), (new Card__noStealth((Card__ItemRef__8643__24))), (new Card__noUntargetable((Card__ItemRef__8643__24))), (new Card__noShield((Card__ItemRef__8643__24))), (new Card__noPoisonous((Card__ItemRef__8643__24))), (new Card__noLifesteal((Card__ItemRef__8643__24))))), (new Card__specialEffects((Card__ItemRef__8643__24), (new Card__noTargetedPlayEff((Card__ItemRef__8643__24))), (new Card__consOtherEffs((Card__ItemRef__8643__24), (new Card__untargetedCastEff((Card__ItemRef__8643__24), (new Card__noCondUntargetedEff((Card__ItemRef__8643__24), (new Card__newEff((Card__ItemRef__8643__24), 2, (new Card__deckDest((Card__ItemRef__8643__24), (new Card__allyAllegiance((Card__ItemRef__8643__24))))), (new Card__randomCard((Card__ItemRef__8643__24), 9)))))))), (new Card__consOtherEffs((Card__ItemRef__8643__24), (new Card__untargetedCastEff((Card__ItemRef__8643__24), (new Card__noCondUntargetedEff((Card__ItemRef__8643__24), (new Card__newEff((Card__ItemRef__8643__24), 1, (new Card__fieldDest((Card__ItemRef__8643__24), (new Card__allyAllegiance((Card__ItemRef__8643__24))))), (new Card__plainMinion((Card__ItemRef__8643__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8643__24))))))))))))));
+    Card  *card = (((Card__ItemRef__8644__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8644__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8644__31), 3, (new Card__justAbilities((Card__ItemRef__8644__31), (new Card__noCharge((Card__ItemRef__8644__31))), (new Card__noTaunt((Card__ItemRef__8644__31))), (new Card__noStealth((Card__ItemRef__8644__31))), (new Card__noUntargetable((Card__ItemRef__8644__31))), (new Card__noShield((Card__ItemRef__8644__31))), (new Card__noPoisonous((Card__ItemRef__8644__31))), (new Card__noLifesteal((Card__ItemRef__8644__31))))), (new Card__specialEffects((Card__ItemRef__8644__31), (new Card__noTargetedPlayEff((Card__ItemRef__8644__31))), (new Card__consOtherEffs((Card__ItemRef__8644__31), (new Card__untargetedCastEff((Card__ItemRef__8644__31), (new Card__noCondUntargetedEff((Card__ItemRef__8644__31), (new Card__newEff((Card__ItemRef__8644__31), 2, (new Card__deckDest((Card__ItemRef__8644__31), (new Card__allyAllegiance((Card__ItemRef__8644__31))))), (new Card__randomCard((Card__ItemRef__8644__31), 9)))))))), (new Card__consOtherEffs((Card__ItemRef__8644__31), (new Card__untargetedCastEff((Card__ItemRef__8644__31), (new Card__noCondUntargetedEff((Card__ItemRef__8644__31), (new Card__newEff((Card__ItemRef__8644__31), 1, (new Card__fieldDest((Card__ItemRef__8644__31), (new Card__allyAllegiance((Card__ItemRef__8644__31))))), (new Card__plainMinion((Card__ItemRef__8644__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8644__31))))))))))))));
     (((card)->name) = "Demo Card 8 Spell");
     return (card);
   }
 }
-Card  *Card__ItemRef__8654__25;
-Card  *Card__ItemRef__8659__24;
+Card  *Card__ItemRef__8655__32;
+Card  *Card__ItemRef__8660__31;
 
 Card  *CreateDemoCard8Dragon()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8654__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8654__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8654__25), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8654__25))), (new Card__demonMinion((Card__ItemRef__8654__25))), (new Card__justAbilities((Card__ItemRef__8654__25), (new Card__noCharge((Card__ItemRef__8654__25))), (new Card__noTaunt((Card__ItemRef__8654__25))), (new Card__noStealth((Card__ItemRef__8654__25))), (new Card__noUntargetable((Card__ItemRef__8654__25))), (new Card__noShield((Card__ItemRef__8654__25))), (new Card__noPoisonous((Card__ItemRef__8654__25))), (new Card__noLifesteal((Card__ItemRef__8654__25))))), (new Card__specialEffects((Card__ItemRef__8654__25), (new Card__noTargetedPlayEff((Card__ItemRef__8654__25))), (new Card__consOtherEffs((Card__ItemRef__8654__25), (new Card__deathrattleEff((Card__ItemRef__8654__25), (new Card__noCondUntargetedEff((Card__ItemRef__8654__25), (new Card__aoeEff((Card__ItemRef__8654__25), (new Card__decOhThresholdEff((Card__ItemRef__8654__25), 10)), (new Card__charTargetCond((Card__ItemRef__8654__25), (new Card__justCharTargetCond((Card__ItemRef__8654__25), (new Card__oppoAllegiance((Card__ItemRef__8654__25))), (new Card__isCharacter((Card__ItemRef__8654__25))), (new Card__noAbilCond((Card__ItemRef__8654__25))), (new Card__noStatCond((Card__ItemRef__8654__25))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8654__25))))))))))));
+    Card  *token = (((Card__ItemRef__8655__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8655__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8655__32), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8655__32))), (new Card__demonMinion((Card__ItemRef__8655__32))), (new Card__justAbilities((Card__ItemRef__8655__32), (new Card__noCharge((Card__ItemRef__8655__32))), (new Card__noTaunt((Card__ItemRef__8655__32))), (new Card__noStealth((Card__ItemRef__8655__32))), (new Card__noUntargetable((Card__ItemRef__8655__32))), (new Card__noShield((Card__ItemRef__8655__32))), (new Card__noPoisonous((Card__ItemRef__8655__32))), (new Card__noLifesteal((Card__ItemRef__8655__32))))), (new Card__specialEffects((Card__ItemRef__8655__32), (new Card__noTargetedPlayEff((Card__ItemRef__8655__32))), (new Card__consOtherEffs((Card__ItemRef__8655__32), (new Card__deathrattleEff((Card__ItemRef__8655__32), (new Card__noCondUntargetedEff((Card__ItemRef__8655__32), (new Card__aoeEff((Card__ItemRef__8655__32), (new Card__decOhThresholdEff((Card__ItemRef__8655__32), 10)), (new Card__charTargetCond((Card__ItemRef__8655__32), (new Card__justCharTargetCond((Card__ItemRef__8655__32), (new Card__oppoAllegiance((Card__ItemRef__8655__32))), (new Card__isCharacter((Card__ItemRef__8655__32))), (new Card__noAbilCond((Card__ItemRef__8655__32))), (new Card__noStatCond((Card__ItemRef__8655__32))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8655__32))))))))))));
     (((token)->name) = "Demo Card 8 Dragon Token");
-    Card  *card = (((Card__ItemRef__8659__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8659__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8659__24), 6, 4, 4, (new Card__singleAttack((Card__ItemRef__8659__24))), (new Card__dragonMinion((Card__ItemRef__8659__24))), (new Card__justAbilities((Card__ItemRef__8659__24), (new Card__noCharge((Card__ItemRef__8659__24))), (new Card__noTaunt((Card__ItemRef__8659__24))), (new Card__noStealth((Card__ItemRef__8659__24))), (new Card__noUntargetable((Card__ItemRef__8659__24))), (new Card__noShield((Card__ItemRef__8659__24))), (new Card__noPoisonous((Card__ItemRef__8659__24))), (new Card__noLifesteal((Card__ItemRef__8659__24))))), (new Card__specialEffects((Card__ItemRef__8659__24), (new Card__targetedBattlecryEff((Card__ItemRef__8659__24), (new Card__noCondTargetedEff((Card__ItemRef__8659__24), (new Card__transformEff((Card__ItemRef__8659__24), (new Card__randomMinion((Card__ItemRef__8659__24), 0)))), (new Card__charTargetCond((Card__ItemRef__8659__24), (new Card__justCharTargetCond((Card__ItemRef__8659__24), (new Card__oppoAllegiance((Card__ItemRef__8659__24))), (new Card__isMinion((Card__ItemRef__8659__24))), (new Card__noAbilCond((Card__ItemRef__8659__24))), (new Card__noStatCond((Card__ItemRef__8659__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__8659__24), (new Card__deathrattleEff((Card__ItemRef__8659__24), (new Card__noCondUntargetedEff((Card__ItemRef__8659__24), (new Card__newEff((Card__ItemRef__8659__24), 1, (new Card__fieldDest((Card__ItemRef__8659__24), (new Card__allyAllegiance((Card__ItemRef__8659__24))))), (new Card__fixedMinion((Card__ItemRef__8659__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8659__24))))))))))));
+    Card  *card = (((Card__ItemRef__8660__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8660__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8660__31), 6, 4, 4, (new Card__singleAttack((Card__ItemRef__8660__31))), (new Card__dragonMinion((Card__ItemRef__8660__31))), (new Card__justAbilities((Card__ItemRef__8660__31), (new Card__noCharge((Card__ItemRef__8660__31))), (new Card__noTaunt((Card__ItemRef__8660__31))), (new Card__noStealth((Card__ItemRef__8660__31))), (new Card__noUntargetable((Card__ItemRef__8660__31))), (new Card__noShield((Card__ItemRef__8660__31))), (new Card__noPoisonous((Card__ItemRef__8660__31))), (new Card__noLifesteal((Card__ItemRef__8660__31))))), (new Card__specialEffects((Card__ItemRef__8660__31), (new Card__targetedBattlecryEff((Card__ItemRef__8660__31), (new Card__noCondTargetedEff((Card__ItemRef__8660__31), (new Card__transformEff((Card__ItemRef__8660__31), (new Card__randomMinion((Card__ItemRef__8660__31), 0)))), (new Card__charTargetCond((Card__ItemRef__8660__31), (new Card__justCharTargetCond((Card__ItemRef__8660__31), (new Card__oppoAllegiance((Card__ItemRef__8660__31))), (new Card__isMinion((Card__ItemRef__8660__31))), (new Card__noAbilCond((Card__ItemRef__8660__31))), (new Card__noStatCond((Card__ItemRef__8660__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__8660__31), (new Card__deathrattleEff((Card__ItemRef__8660__31), (new Card__noCondUntargetedEff((Card__ItemRef__8660__31), (new Card__newEff((Card__ItemRef__8660__31), 1, (new Card__fieldDest((Card__ItemRef__8660__31), (new Card__allyAllegiance((Card__ItemRef__8660__31))))), (new Card__fixedMinion((Card__ItemRef__8660__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8660__31))))))))))));
     (((card)->name) = "Demo Card 8 Dragon");
     return (card);
   }
 }
-Card  *Card__ItemRef__8669__26;
-Card  *Card__ItemRef__8673__26;
-Card  *Card__ItemRef__8675__24;
+Card  *Card__ItemRef__8670__33;
+Card  *Card__ItemRef__8674__33;
+Card  *Card__ItemRef__8676__31;
 
 Card  *CreateDemoCard8Leader()
 {
 
   {
-    Card  *token1 = (((Card__ItemRef__8669__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8669__26)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8669__26), 1, (new Card__justAbilities((Card__ItemRef__8669__26), (new Card__noCharge((Card__ItemRef__8669__26))), (new Card__noTaunt((Card__ItemRef__8669__26))), (new Card__noStealth((Card__ItemRef__8669__26))), (new Card__noUntargetable((Card__ItemRef__8669__26))), (new Card__noShield((Card__ItemRef__8669__26))), (new Card__noPoisonous((Card__ItemRef__8669__26))), (new Card__noLifesteal((Card__ItemRef__8669__26))))), (new Card__specialEffects((Card__ItemRef__8669__26), (new Card__targetedCastEff((Card__ItemRef__8669__26), (new Card__noCondTargetedEff((Card__ItemRef__8669__26), (new Card__resetStateEff((Card__ItemRef__8669__26))), (new Card__charTargetCond((Card__ItemRef__8669__26), (new Card__justCharTargetCond((Card__ItemRef__8669__26), (new Card__anyAllegiance((Card__ItemRef__8669__26))), (new Card__isCharacter((Card__ItemRef__8669__26))), (new Card__noAbilCond((Card__ItemRef__8669__26))), (new Card__noStatCond((Card__ItemRef__8669__26))))))))))), (new Card__noOtherEffs((Card__ItemRef__8669__26))))))))));
+    Card  *token1 = (((Card__ItemRef__8670__33) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8670__33)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8670__33), 1, (new Card__justAbilities((Card__ItemRef__8670__33), (new Card__noCharge((Card__ItemRef__8670__33))), (new Card__noTaunt((Card__ItemRef__8670__33))), (new Card__noStealth((Card__ItemRef__8670__33))), (new Card__noUntargetable((Card__ItemRef__8670__33))), (new Card__noShield((Card__ItemRef__8670__33))), (new Card__noPoisonous((Card__ItemRef__8670__33))), (new Card__noLifesteal((Card__ItemRef__8670__33))))), (new Card__specialEffects((Card__ItemRef__8670__33), (new Card__targetedCastEff((Card__ItemRef__8670__33), (new Card__noCondTargetedEff((Card__ItemRef__8670__33), (new Card__resetStateEff((Card__ItemRef__8670__33))), (new Card__charTargetCond((Card__ItemRef__8670__33), (new Card__justCharTargetCond((Card__ItemRef__8670__33), (new Card__anyAllegiance((Card__ItemRef__8670__33))), (new Card__isCharacter((Card__ItemRef__8670__33))), (new Card__noAbilCond((Card__ItemRef__8670__33))), (new Card__noStatCond((Card__ItemRef__8670__33))))))))))), (new Card__noOtherEffs((Card__ItemRef__8670__33))))))))));
     (((token1)->name) = "Demo Card 8 Leader Token 1");
-    Card  *token2 = (((Card__ItemRef__8673__26) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8673__26)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8673__26), 7, 0, 1, (new Card__singleAttack((Card__ItemRef__8673__26))), (new Card__demonMinion((Card__ItemRef__8673__26))), (new Card__justAbilities((Card__ItemRef__8673__26), (new Card__noCharge((Card__ItemRef__8673__26))), (new Card__noTaunt((Card__ItemRef__8673__26))), (new Card__noStealth((Card__ItemRef__8673__26))), (new Card__noUntargetable((Card__ItemRef__8673__26))), (new Card__noShield((Card__ItemRef__8673__26))), (new Card__noPoisonous((Card__ItemRef__8673__26))), (new Card__noLifesteal((Card__ItemRef__8673__26))))), (new Card__specialEffects((Card__ItemRef__8673__26), (new Card__noTargetedPlayEff((Card__ItemRef__8673__26))), (new Card__noOtherEffs((Card__ItemRef__8673__26))))))))));
+    Card  *token2 = (((Card__ItemRef__8674__33) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8674__33)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8674__33), 7, 0, 1, (new Card__singleAttack((Card__ItemRef__8674__33))), (new Card__demonMinion((Card__ItemRef__8674__33))), (new Card__justAbilities((Card__ItemRef__8674__33), (new Card__noCharge((Card__ItemRef__8674__33))), (new Card__noTaunt((Card__ItemRef__8674__33))), (new Card__noStealth((Card__ItemRef__8674__33))), (new Card__noUntargetable((Card__ItemRef__8674__33))), (new Card__noShield((Card__ItemRef__8674__33))), (new Card__noPoisonous((Card__ItemRef__8674__33))), (new Card__noLifesteal((Card__ItemRef__8674__33))))), (new Card__specialEffects((Card__ItemRef__8674__33), (new Card__noTargetedPlayEff((Card__ItemRef__8674__33))), (new Card__noOtherEffs((Card__ItemRef__8674__33))))))))));
     (((token2)->name) = "Demo Card 8 Leader Token 2");
-    Card  *card = (((Card__ItemRef__8675__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8675__24)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8675__24), 9, 2, 35, (new Card__multipleAttack((Card__ItemRef__8675__24), 2)), (new Card__justAbilities((Card__ItemRef__8675__24), (new Card__noCharge((Card__ItemRef__8675__24))), (new Card__noTaunt((Card__ItemRef__8675__24))), (new Card__noStealth((Card__ItemRef__8675__24))), (new Card__noUntargetable((Card__ItemRef__8675__24))), (new Card__noShield((Card__ItemRef__8675__24))), (new Card__noPoisonous((Card__ItemRef__8675__24))), (new Card__noLifesteal((Card__ItemRef__8675__24))))), (new Card__specialEffects((Card__ItemRef__8675__24), (new Card__targetedBattlecryEff((Card__ItemRef__8675__24), (new Card__noCondTargetedEff((Card__ItemRef__8675__24), (new Card__transformEff((Card__ItemRef__8675__24), (new Card__randomCard((Card__ItemRef__8675__24), 6)))), (new Card__cardTargetCond((Card__ItemRef__8675__24), (new Card__justCardTargetCond((Card__ItemRef__8675__24), (new Card__cardPosAtHand((Card__ItemRef__8675__24))), (new Card__allyAllegiance((Card__ItemRef__8675__24))), (new Card__isCard((Card__ItemRef__8675__24))), (new Card__noAbilCond((Card__ItemRef__8675__24))), (new Card__noStatCond((Card__ItemRef__8675__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__8675__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8675__24), (new Card__noCondUntargetedEff((Card__ItemRef__8675__24), (new Card__newEff((Card__ItemRef__8675__24), 2, (new Card__handDest((Card__ItemRef__8675__24), (new Card__allyAllegiance((Card__ItemRef__8675__24))))), (new Card__fixedCard((Card__ItemRef__8675__24), (token1))))))))), (new Card__consOtherEffs((Card__ItemRef__8675__24), (new Card__turnEndEff((Card__ItemRef__8675__24), (new Card__srcCondUntargetedEff((Card__ItemRef__8675__24), (new Card__newEff((Card__ItemRef__8675__24), 1, (new Card__handDest((Card__ItemRef__8675__24), (new Card__oppoAllegiance((Card__ItemRef__8675__24))))), (new Card__plainMinionCard((Card__ItemRef__8675__24), (token2))))), (new Card__charTargetCond((Card__ItemRef__8675__24), (new Card__justCharTargetCond((Card__ItemRef__8675__24), (new Card__anyAllegiance((Card__ItemRef__8675__24))), (new Card__isCharacter((Card__ItemRef__8675__24))), (new Card__noAbilCond((Card__ItemRef__8675__24))), (new Card__noStatCond((Card__ItemRef__8675__24))))))))), (new Card__allyAllegiance((Card__ItemRef__8675__24))))), (new Card__noOtherEffs((Card__ItemRef__8675__24))))))))))))));
+    Card  *card = (((Card__ItemRef__8676__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8676__31)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8676__31), 9, 2, 35, (new Card__multipleAttack((Card__ItemRef__8676__31), 2)), (new Card__justAbilities((Card__ItemRef__8676__31), (new Card__noCharge((Card__ItemRef__8676__31))), (new Card__noTaunt((Card__ItemRef__8676__31))), (new Card__noStealth((Card__ItemRef__8676__31))), (new Card__noUntargetable((Card__ItemRef__8676__31))), (new Card__noShield((Card__ItemRef__8676__31))), (new Card__noPoisonous((Card__ItemRef__8676__31))), (new Card__noLifesteal((Card__ItemRef__8676__31))))), (new Card__specialEffects((Card__ItemRef__8676__31), (new Card__targetedBattlecryEff((Card__ItemRef__8676__31), (new Card__noCondTargetedEff((Card__ItemRef__8676__31), (new Card__transformEff((Card__ItemRef__8676__31), (new Card__randomCard((Card__ItemRef__8676__31), 6)))), (new Card__cardTargetCond((Card__ItemRef__8676__31), (new Card__justCardTargetCond((Card__ItemRef__8676__31), (new Card__cardPosAtHand((Card__ItemRef__8676__31))), (new Card__allyAllegiance((Card__ItemRef__8676__31))), (new Card__isCard((Card__ItemRef__8676__31))), (new Card__noAbilCond((Card__ItemRef__8676__31))), (new Card__noStatCond((Card__ItemRef__8676__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__8676__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8676__31), (new Card__noCondUntargetedEff((Card__ItemRef__8676__31), (new Card__newEff((Card__ItemRef__8676__31), 2, (new Card__handDest((Card__ItemRef__8676__31), (new Card__allyAllegiance((Card__ItemRef__8676__31))))), (new Card__fixedCard((Card__ItemRef__8676__31), (token1))))))))), (new Card__consOtherEffs((Card__ItemRef__8676__31), (new Card__turnEndEff((Card__ItemRef__8676__31), (new Card__srcCondUntargetedEff((Card__ItemRef__8676__31), (new Card__newEff((Card__ItemRef__8676__31), 1, (new Card__handDest((Card__ItemRef__8676__31), (new Card__oppoAllegiance((Card__ItemRef__8676__31))))), (new Card__plainMinionCard((Card__ItemRef__8676__31), (token2))))), (new Card__charTargetCond((Card__ItemRef__8676__31), (new Card__justCharTargetCond((Card__ItemRef__8676__31), (new Card__anyAllegiance((Card__ItemRef__8676__31))), (new Card__isCharacter((Card__ItemRef__8676__31))), (new Card__noAbilCond((Card__ItemRef__8676__31))), (new Card__noStatCond((Card__ItemRef__8676__31))))))))), (new Card__allyAllegiance((Card__ItemRef__8676__31))))), (new Card__noOtherEffs((Card__ItemRef__8676__31))))))))))))));
     (((card)->name) = "Demo Card 8 Leader");
     return (card);
   }
 }
-Card  *Card__ItemRef__8686__24;
+Card  *Card__ItemRef__8687__31;
 
 Card  *CreateDemoCardXBeast(signed int  c)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8686__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8686__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8686__24), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8686__24))), (new Card__beastMinion((Card__ItemRef__8686__24))), (new Card__justAbilities((Card__ItemRef__8686__24), (new Card__noCharge((Card__ItemRef__8686__24))), (new Card__noTaunt((Card__ItemRef__8686__24))), (new Card__noStealth((Card__ItemRef__8686__24))), (new Card__noUntargetable((Card__ItemRef__8686__24))), (new Card__noShield((Card__ItemRef__8686__24))), (new Card__noPoisonous((Card__ItemRef__8686__24))), (new Card__noLifesteal((Card__ItemRef__8686__24))))), (new Card__specialEffects((Card__ItemRef__8686__24), (new Card__noTargetedPlayEff((Card__ItemRef__8686__24))), (new Card__noOtherEffs((Card__ItemRef__8686__24))))))))));
+    Card  *card = (((Card__ItemRef__8687__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8687__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8687__31), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8687__31))), (new Card__beastMinion((Card__ItemRef__8687__31))), (new Card__justAbilities((Card__ItemRef__8687__31), (new Card__noCharge((Card__ItemRef__8687__31))), (new Card__noTaunt((Card__ItemRef__8687__31))), (new Card__noStealth((Card__ItemRef__8687__31))), (new Card__noUntargetable((Card__ItemRef__8687__31))), (new Card__noShield((Card__ItemRef__8687__31))), (new Card__noPoisonous((Card__ItemRef__8687__31))), (new Card__noLifesteal((Card__ItemRef__8687__31))))), (new Card__specialEffects((Card__ItemRef__8687__31), (new Card__noTargetedPlayEff((Card__ItemRef__8687__31))), (new Card__noOtherEffs((Card__ItemRef__8687__31))))))))));
     (((card)->name) = ("Demo Card X Beast Cost " + ((IntToStr)((c)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8693__24;
+Card  *Card__ItemRef__8694__31;
 
 Card  *CreateDemoCardXDragon(signed int  c)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8693__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8693__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8693__24), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8693__24))), (new Card__dragonMinion((Card__ItemRef__8693__24))), (new Card__justAbilities((Card__ItemRef__8693__24), (new Card__noCharge((Card__ItemRef__8693__24))), (new Card__noTaunt((Card__ItemRef__8693__24))), (new Card__noStealth((Card__ItemRef__8693__24))), (new Card__noUntargetable((Card__ItemRef__8693__24))), (new Card__noShield((Card__ItemRef__8693__24))), (new Card__noPoisonous((Card__ItemRef__8693__24))), (new Card__noLifesteal((Card__ItemRef__8693__24))))), (new Card__specialEffects((Card__ItemRef__8693__24), (new Card__noTargetedPlayEff((Card__ItemRef__8693__24))), (new Card__noOtherEffs((Card__ItemRef__8693__24))))))))));
+    Card  *card = (((Card__ItemRef__8694__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8694__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8694__31), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8694__31))), (new Card__dragonMinion((Card__ItemRef__8694__31))), (new Card__justAbilities((Card__ItemRef__8694__31), (new Card__noCharge((Card__ItemRef__8694__31))), (new Card__noTaunt((Card__ItemRef__8694__31))), (new Card__noStealth((Card__ItemRef__8694__31))), (new Card__noUntargetable((Card__ItemRef__8694__31))), (new Card__noShield((Card__ItemRef__8694__31))), (new Card__noPoisonous((Card__ItemRef__8694__31))), (new Card__noLifesteal((Card__ItemRef__8694__31))))), (new Card__specialEffects((Card__ItemRef__8694__31), (new Card__noTargetedPlayEff((Card__ItemRef__8694__31))), (new Card__noOtherEffs((Card__ItemRef__8694__31))))))))));
     (((card)->name) = ("Demo Card X Dragon Cost " + ((IntToStr)((c)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8700__24;
+Card  *Card__ItemRef__8701__31;
 
 Card  *CreateDemoCardXDemon(signed int  c)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8700__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8700__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8700__24), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8700__24))), (new Card__demonMinion((Card__ItemRef__8700__24))), (new Card__justAbilities((Card__ItemRef__8700__24), (new Card__noCharge((Card__ItemRef__8700__24))), (new Card__noTaunt((Card__ItemRef__8700__24))), (new Card__noStealth((Card__ItemRef__8700__24))), (new Card__noUntargetable((Card__ItemRef__8700__24))), (new Card__noShield((Card__ItemRef__8700__24))), (new Card__noPoisonous((Card__ItemRef__8700__24))), (new Card__noLifesteal((Card__ItemRef__8700__24))))), (new Card__specialEffects((Card__ItemRef__8700__24), (new Card__noTargetedPlayEff((Card__ItemRef__8700__24))), (new Card__noOtherEffs((Card__ItemRef__8700__24))))))))));
+    Card  *card = (((Card__ItemRef__8701__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8701__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8701__31), (c), ((c) + 1), ((c) + 1), (new Card__singleAttack((Card__ItemRef__8701__31))), (new Card__demonMinion((Card__ItemRef__8701__31))), (new Card__justAbilities((Card__ItemRef__8701__31), (new Card__noCharge((Card__ItemRef__8701__31))), (new Card__noTaunt((Card__ItemRef__8701__31))), (new Card__noStealth((Card__ItemRef__8701__31))), (new Card__noUntargetable((Card__ItemRef__8701__31))), (new Card__noShield((Card__ItemRef__8701__31))), (new Card__noPoisonous((Card__ItemRef__8701__31))), (new Card__noLifesteal((Card__ItemRef__8701__31))))), (new Card__specialEffects((Card__ItemRef__8701__31), (new Card__noTargetedPlayEff((Card__ItemRef__8701__31))), (new Card__noOtherEffs((Card__ItemRef__8701__31))))))))));
     (((card)->name) = ("Demo Card X Demon Cost " + ((IntToStr)((c)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8707__24;
+Card  *Card__ItemRef__8708__31;
 
 Card  *CreateDemoCardXSpell(signed int  c)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8707__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8707__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8707__24), (c), (new Card__justAbilities((Card__ItemRef__8707__24), (new Card__noCharge((Card__ItemRef__8707__24))), (new Card__noTaunt((Card__ItemRef__8707__24))), (new Card__noStealth((Card__ItemRef__8707__24))), (new Card__noUntargetable((Card__ItemRef__8707__24))), (new Card__noShield((Card__ItemRef__8707__24))), (new Card__noPoisonous((Card__ItemRef__8707__24))), (new Card__noLifesteal((Card__ItemRef__8707__24))))), (new Card__specialEffects((Card__ItemRef__8707__24), (new Card__targetedCastEff((Card__ItemRef__8707__24), (new Card__noCondTargetedEff((Card__ItemRef__8707__24), (new Card__damageEff((Card__ItemRef__8707__24), ((c) + 1), (new Card__damageAbilities((Card__ItemRef__8707__24), (new Card__noPoisonous((Card__ItemRef__8707__24))), (new Card__noLifesteal((Card__ItemRef__8707__24))))))), (new Card__charTargetCond((Card__ItemRef__8707__24), (new Card__justCharTargetCond((Card__ItemRef__8707__24), (new Card__oppoAllegiance((Card__ItemRef__8707__24))), (new Card__isCharacter((Card__ItemRef__8707__24))), (new Card__noAbilCond((Card__ItemRef__8707__24))), (new Card__noStatCond((Card__ItemRef__8707__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8707__24))))))))));
+    Card  *card = (((Card__ItemRef__8708__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8708__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8708__31), (c), (new Card__justAbilities((Card__ItemRef__8708__31), (new Card__noCharge((Card__ItemRef__8708__31))), (new Card__noTaunt((Card__ItemRef__8708__31))), (new Card__noStealth((Card__ItemRef__8708__31))), (new Card__noUntargetable((Card__ItemRef__8708__31))), (new Card__noShield((Card__ItemRef__8708__31))), (new Card__noPoisonous((Card__ItemRef__8708__31))), (new Card__noLifesteal((Card__ItemRef__8708__31))))), (new Card__specialEffects((Card__ItemRef__8708__31), (new Card__targetedCastEff((Card__ItemRef__8708__31), (new Card__noCondTargetedEff((Card__ItemRef__8708__31), (new Card__damageEff((Card__ItemRef__8708__31), ((c) + 1), (new Card__damageAbilities((Card__ItemRef__8708__31), (new Card__noPoisonous((Card__ItemRef__8708__31))), (new Card__noLifesteal((Card__ItemRef__8708__31))))))), (new Card__charTargetCond((Card__ItemRef__8708__31), (new Card__justCharTargetCond((Card__ItemRef__8708__31), (new Card__oppoAllegiance((Card__ItemRef__8708__31))), (new Card__isCharacter((Card__ItemRef__8708__31))), (new Card__noAbilCond((Card__ItemRef__8708__31))), (new Card__noStatCond((Card__ItemRef__8708__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8708__31))))))))));
     (((card)->name) = ("Demo Card X Spell Cost " + ((IntToStr)((c)))));
     return (card);
   }
 }
-Card  *Card__ItemRef__8716__24;
+Card  *Card__ItemRef__8717__31;
 
 Card  *CreateDemoCardXLeader(signed int  c)
 {
 
   {
-    Card  *card = (((Card__ItemRef__8716__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8716__24)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8716__24), (c), ((3 * (c)) - 23), ((10 * (c)) - 65), (new Card__singleAttack((Card__ItemRef__8716__24))), (new Card__justAbilities((Card__ItemRef__8716__24), (new Card__noCharge((Card__ItemRef__8716__24))), (new Card__noTaunt((Card__ItemRef__8716__24))), (new Card__noStealth((Card__ItemRef__8716__24))), (new Card__noUntargetable((Card__ItemRef__8716__24))), (new Card__noShield((Card__ItemRef__8716__24))), (new Card__noPoisonous((Card__ItemRef__8716__24))), (new Card__noLifesteal((Card__ItemRef__8716__24))))), (new Card__specialEffects((Card__ItemRef__8716__24), (new Card__noTargetedPlayEff((Card__ItemRef__8716__24))), (new Card__noOtherEffs((Card__ItemRef__8716__24))))))))));
+    Card  *card = (((Card__ItemRef__8717__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8717__31)->Item__Constructor)((new Card__leaderCard((Card__ItemRef__8717__31), (c), ((3 * (c)) - 23), ((10 * (c)) - 65), (new Card__singleAttack((Card__ItemRef__8717__31))), (new Card__justAbilities((Card__ItemRef__8717__31), (new Card__noCharge((Card__ItemRef__8717__31))), (new Card__noTaunt((Card__ItemRef__8717__31))), (new Card__noStealth((Card__ItemRef__8717__31))), (new Card__noUntargetable((Card__ItemRef__8717__31))), (new Card__noShield((Card__ItemRef__8717__31))), (new Card__noPoisonous((Card__ItemRef__8717__31))), (new Card__noLifesteal((Card__ItemRef__8717__31))))), (new Card__specialEffects((Card__ItemRef__8717__31), (new Card__noTargetedPlayEff((Card__ItemRef__8717__31))), (new Card__noOtherEffs((Card__ItemRef__8717__31))))))))));
     (((card)->name) = "Demo Card X Leader Cost");
     return (card);
   }
 }
-Card  *Card__ItemRef__8723__24;
+Card  *Card__ItemRef__8724__31;
 
 Card  *CreateElvenArcher()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8723__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8723__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8723__24), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8723__24))), (new Card__demonMinion((Card__ItemRef__8723__24))), (new Card__justAbilities((Card__ItemRef__8723__24), (new Card__noCharge((Card__ItemRef__8723__24))), (new Card__noTaunt((Card__ItemRef__8723__24))), (new Card__noStealth((Card__ItemRef__8723__24))), (new Card__noUntargetable((Card__ItemRef__8723__24))), (new Card__noShield((Card__ItemRef__8723__24))), (new Card__noPoisonous((Card__ItemRef__8723__24))), (new Card__noLifesteal((Card__ItemRef__8723__24))))), (new Card__specialEffects((Card__ItemRef__8723__24), (new Card__targetedBattlecryEff((Card__ItemRef__8723__24), (new Card__noCondTargetedEff((Card__ItemRef__8723__24), (new Card__damageEff((Card__ItemRef__8723__24), 1, (new Card__damageAbilities((Card__ItemRef__8723__24), (new Card__noPoisonous((Card__ItemRef__8723__24))), (new Card__noLifesteal((Card__ItemRef__8723__24))))))), (new Card__charTargetCond((Card__ItemRef__8723__24), (new Card__justCharTargetCond((Card__ItemRef__8723__24), (new Card__anyAllegiance((Card__ItemRef__8723__24))), (new Card__isCharacter((Card__ItemRef__8723__24))), (new Card__noAbilCond((Card__ItemRef__8723__24))), (new Card__noStatCond((Card__ItemRef__8723__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8723__24))))))))));
+    Card  *card = (((Card__ItemRef__8724__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8724__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8724__31), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8724__31))), (new Card__demonMinion((Card__ItemRef__8724__31))), (new Card__justAbilities((Card__ItemRef__8724__31), (new Card__noCharge((Card__ItemRef__8724__31))), (new Card__noTaunt((Card__ItemRef__8724__31))), (new Card__noStealth((Card__ItemRef__8724__31))), (new Card__noUntargetable((Card__ItemRef__8724__31))), (new Card__noShield((Card__ItemRef__8724__31))), (new Card__noPoisonous((Card__ItemRef__8724__31))), (new Card__noLifesteal((Card__ItemRef__8724__31))))), (new Card__specialEffects((Card__ItemRef__8724__31), (new Card__targetedBattlecryEff((Card__ItemRef__8724__31), (new Card__noCondTargetedEff((Card__ItemRef__8724__31), (new Card__damageEff((Card__ItemRef__8724__31), 1, (new Card__damageAbilities((Card__ItemRef__8724__31), (new Card__noPoisonous((Card__ItemRef__8724__31))), (new Card__noLifesteal((Card__ItemRef__8724__31))))))), (new Card__charTargetCond((Card__ItemRef__8724__31), (new Card__justCharTargetCond((Card__ItemRef__8724__31), (new Card__anyAllegiance((Card__ItemRef__8724__31))), (new Card__isCharacter((Card__ItemRef__8724__31))), (new Card__noAbilCond((Card__ItemRef__8724__31))), (new Card__noStatCond((Card__ItemRef__8724__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8724__31))))))))));
     (((card)->name) = "Elven Archer");
     return (card);
   }
 }
-Card  *Card__ItemRef__8732__24;
+Card  *Card__ItemRef__8733__31;
 
 Card  *CreateGoldshireFootman()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8732__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8732__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8732__24), 1, 1, 2, (new Card__singleAttack((Card__ItemRef__8732__24))), (new Card__dragonMinion((Card__ItemRef__8732__24))), (new Card__justAbilities((Card__ItemRef__8732__24), (new Card__noCharge((Card__ItemRef__8732__24))), (new Card__justTaunt((Card__ItemRef__8732__24))), (new Card__noStealth((Card__ItemRef__8732__24))), (new Card__noUntargetable((Card__ItemRef__8732__24))), (new Card__noShield((Card__ItemRef__8732__24))), (new Card__noPoisonous((Card__ItemRef__8732__24))), (new Card__noLifesteal((Card__ItemRef__8732__24))))), (new Card__specialEffects((Card__ItemRef__8732__24), (new Card__noTargetedPlayEff((Card__ItemRef__8732__24))), (new Card__noOtherEffs((Card__ItemRef__8732__24))))))))));
+    Card  *card = (((Card__ItemRef__8733__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8733__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8733__31), 1, 1, 2, (new Card__singleAttack((Card__ItemRef__8733__31))), (new Card__dragonMinion((Card__ItemRef__8733__31))), (new Card__justAbilities((Card__ItemRef__8733__31), (new Card__noCharge((Card__ItemRef__8733__31))), (new Card__justTaunt((Card__ItemRef__8733__31))), (new Card__noStealth((Card__ItemRef__8733__31))), (new Card__noUntargetable((Card__ItemRef__8733__31))), (new Card__noShield((Card__ItemRef__8733__31))), (new Card__noPoisonous((Card__ItemRef__8733__31))), (new Card__noLifesteal((Card__ItemRef__8733__31))))), (new Card__specialEffects((Card__ItemRef__8733__31), (new Card__noTargetedPlayEff((Card__ItemRef__8733__31))), (new Card__noOtherEffs((Card__ItemRef__8733__31))))))))));
     (((card)->name) = "Goldshire Footman");
     return (card);
   }
 }
-Card  *Card__ItemRef__8739__24;
+Card  *Card__ItemRef__8740__31;
 
 Card  *CreateMurlocRaider()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8739__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8739__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8739__24), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8739__24))), (new Card__demonMinion((Card__ItemRef__8739__24))), (new Card__justAbilities((Card__ItemRef__8739__24), (new Card__noCharge((Card__ItemRef__8739__24))), (new Card__noTaunt((Card__ItemRef__8739__24))), (new Card__noStealth((Card__ItemRef__8739__24))), (new Card__noUntargetable((Card__ItemRef__8739__24))), (new Card__noShield((Card__ItemRef__8739__24))), (new Card__noPoisonous((Card__ItemRef__8739__24))), (new Card__noLifesteal((Card__ItemRef__8739__24))))), (new Card__specialEffects((Card__ItemRef__8739__24), (new Card__noTargetedPlayEff((Card__ItemRef__8739__24))), (new Card__noOtherEffs((Card__ItemRef__8739__24))))))))));
+    Card  *card = (((Card__ItemRef__8740__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8740__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8740__31), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8740__31))), (new Card__demonMinion((Card__ItemRef__8740__31))), (new Card__justAbilities((Card__ItemRef__8740__31), (new Card__noCharge((Card__ItemRef__8740__31))), (new Card__noTaunt((Card__ItemRef__8740__31))), (new Card__noStealth((Card__ItemRef__8740__31))), (new Card__noUntargetable((Card__ItemRef__8740__31))), (new Card__noShield((Card__ItemRef__8740__31))), (new Card__noPoisonous((Card__ItemRef__8740__31))), (new Card__noLifesteal((Card__ItemRef__8740__31))))), (new Card__specialEffects((Card__ItemRef__8740__31), (new Card__noTargetedPlayEff((Card__ItemRef__8740__31))), (new Card__noOtherEffs((Card__ItemRef__8740__31))))))))));
     (((card)->name) = "Murloc Raider");
     return (card);
   }
 }
-Card  *Card__ItemRef__8746__24;
+Card  *Card__ItemRef__8747__31;
 
 Card  *CreateStonetuskBoar()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8746__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8746__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8746__24), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8746__24))), (new Card__beastMinion((Card__ItemRef__8746__24))), (new Card__justAbilities((Card__ItemRef__8746__24), (new Card__justCharge((Card__ItemRef__8746__24))), (new Card__noTaunt((Card__ItemRef__8746__24))), (new Card__noStealth((Card__ItemRef__8746__24))), (new Card__noUntargetable((Card__ItemRef__8746__24))), (new Card__noShield((Card__ItemRef__8746__24))), (new Card__noPoisonous((Card__ItemRef__8746__24))), (new Card__noLifesteal((Card__ItemRef__8746__24))))), (new Card__specialEffects((Card__ItemRef__8746__24), (new Card__noTargetedPlayEff((Card__ItemRef__8746__24))), (new Card__noOtherEffs((Card__ItemRef__8746__24))))))))));
+    Card  *card = (((Card__ItemRef__8747__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8747__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8747__31), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8747__31))), (new Card__beastMinion((Card__ItemRef__8747__31))), (new Card__justAbilities((Card__ItemRef__8747__31), (new Card__justCharge((Card__ItemRef__8747__31))), (new Card__noTaunt((Card__ItemRef__8747__31))), (new Card__noStealth((Card__ItemRef__8747__31))), (new Card__noUntargetable((Card__ItemRef__8747__31))), (new Card__noShield((Card__ItemRef__8747__31))), (new Card__noPoisonous((Card__ItemRef__8747__31))), (new Card__noLifesteal((Card__ItemRef__8747__31))))), (new Card__specialEffects((Card__ItemRef__8747__31), (new Card__noTargetedPlayEff((Card__ItemRef__8747__31))), (new Card__noOtherEffs((Card__ItemRef__8747__31))))))))));
     (((card)->name) = "Stonetusk Boar");
     return (card);
   }
 }
-Card  *Card__ItemRef__8753__24;
+Card  *Card__ItemRef__8754__31;
 
 Card  *CreateVoodooDoctor()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8753__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8753__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8753__24), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8753__24))), (new Card__demonMinion((Card__ItemRef__8753__24))), (new Card__justAbilities((Card__ItemRef__8753__24), (new Card__noCharge((Card__ItemRef__8753__24))), (new Card__noTaunt((Card__ItemRef__8753__24))), (new Card__noStealth((Card__ItemRef__8753__24))), (new Card__noUntargetable((Card__ItemRef__8753__24))), (new Card__noShield((Card__ItemRef__8753__24))), (new Card__noPoisonous((Card__ItemRef__8753__24))), (new Card__noLifesteal((Card__ItemRef__8753__24))))), (new Card__specialEffects((Card__ItemRef__8753__24), (new Card__targetedBattlecryEff((Card__ItemRef__8753__24), (new Card__noCondTargetedEff((Card__ItemRef__8753__24), (new Card__healEff((Card__ItemRef__8753__24), 2)), (new Card__charTargetCond((Card__ItemRef__8753__24), (new Card__justCharTargetCond((Card__ItemRef__8753__24), (new Card__anyAllegiance((Card__ItemRef__8753__24))), (new Card__isCharacter((Card__ItemRef__8753__24))), (new Card__noAbilCond((Card__ItemRef__8753__24))), (new Card__noStatCond((Card__ItemRef__8753__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8753__24))))))))));
+    Card  *card = (((Card__ItemRef__8754__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8754__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8754__31), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8754__31))), (new Card__demonMinion((Card__ItemRef__8754__31))), (new Card__justAbilities((Card__ItemRef__8754__31), (new Card__noCharge((Card__ItemRef__8754__31))), (new Card__noTaunt((Card__ItemRef__8754__31))), (new Card__noStealth((Card__ItemRef__8754__31))), (new Card__noUntargetable((Card__ItemRef__8754__31))), (new Card__noShield((Card__ItemRef__8754__31))), (new Card__noPoisonous((Card__ItemRef__8754__31))), (new Card__noLifesteal((Card__ItemRef__8754__31))))), (new Card__specialEffects((Card__ItemRef__8754__31), (new Card__targetedBattlecryEff((Card__ItemRef__8754__31), (new Card__noCondTargetedEff((Card__ItemRef__8754__31), (new Card__healEff((Card__ItemRef__8754__31), 2)), (new Card__charTargetCond((Card__ItemRef__8754__31), (new Card__justCharTargetCond((Card__ItemRef__8754__31), (new Card__anyAllegiance((Card__ItemRef__8754__31))), (new Card__isCharacter((Card__ItemRef__8754__31))), (new Card__noAbilCond((Card__ItemRef__8754__31))), (new Card__noStatCond((Card__ItemRef__8754__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8754__31))))))))));
     (((card)->name) = "Voodoo Doctor");
     return (card);
   }
 }
-Card  *Card__ItemRef__8762__24;
+Card  *Card__ItemRef__8763__31;
 
 Card  *CreateBloodfenRapter()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8762__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8762__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8762__24), 2, 3, 2, (new Card__singleAttack((Card__ItemRef__8762__24))), (new Card__beastMinion((Card__ItemRef__8762__24))), (new Card__justAbilities((Card__ItemRef__8762__24), (new Card__noCharge((Card__ItemRef__8762__24))), (new Card__noTaunt((Card__ItemRef__8762__24))), (new Card__noStealth((Card__ItemRef__8762__24))), (new Card__noUntargetable((Card__ItemRef__8762__24))), (new Card__noShield((Card__ItemRef__8762__24))), (new Card__noPoisonous((Card__ItemRef__8762__24))), (new Card__noLifesteal((Card__ItemRef__8762__24))))), (new Card__specialEffects((Card__ItemRef__8762__24), (new Card__noTargetedPlayEff((Card__ItemRef__8762__24))), (new Card__noOtherEffs((Card__ItemRef__8762__24))))))))));
+    Card  *card = (((Card__ItemRef__8763__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8763__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8763__31), 2, 3, 2, (new Card__singleAttack((Card__ItemRef__8763__31))), (new Card__beastMinion((Card__ItemRef__8763__31))), (new Card__justAbilities((Card__ItemRef__8763__31), (new Card__noCharge((Card__ItemRef__8763__31))), (new Card__noTaunt((Card__ItemRef__8763__31))), (new Card__noStealth((Card__ItemRef__8763__31))), (new Card__noUntargetable((Card__ItemRef__8763__31))), (new Card__noShield((Card__ItemRef__8763__31))), (new Card__noPoisonous((Card__ItemRef__8763__31))), (new Card__noLifesteal((Card__ItemRef__8763__31))))), (new Card__specialEffects((Card__ItemRef__8763__31), (new Card__noTargetedPlayEff((Card__ItemRef__8763__31))), (new Card__noOtherEffs((Card__ItemRef__8763__31))))))))));
     (((card)->name) = "Bloodfen Rapter");
     return (card);
   }
 }
-Card  *Card__ItemRef__8769__24;
+Card  *Card__ItemRef__8770__31;
 
 Card  *CreateBluegillWarrior()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8769__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8769__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8769__24), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__8769__24))), (new Card__demonMinion((Card__ItemRef__8769__24))), (new Card__justAbilities((Card__ItemRef__8769__24), (new Card__justCharge((Card__ItemRef__8769__24))), (new Card__noTaunt((Card__ItemRef__8769__24))), (new Card__noStealth((Card__ItemRef__8769__24))), (new Card__noUntargetable((Card__ItemRef__8769__24))), (new Card__noShield((Card__ItemRef__8769__24))), (new Card__noPoisonous((Card__ItemRef__8769__24))), (new Card__noLifesteal((Card__ItemRef__8769__24))))), (new Card__specialEffects((Card__ItemRef__8769__24), (new Card__noTargetedPlayEff((Card__ItemRef__8769__24))), (new Card__noOtherEffs((Card__ItemRef__8769__24))))))))));
+    Card  *card = (((Card__ItemRef__8770__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8770__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8770__31), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__8770__31))), (new Card__demonMinion((Card__ItemRef__8770__31))), (new Card__justAbilities((Card__ItemRef__8770__31), (new Card__justCharge((Card__ItemRef__8770__31))), (new Card__noTaunt((Card__ItemRef__8770__31))), (new Card__noStealth((Card__ItemRef__8770__31))), (new Card__noUntargetable((Card__ItemRef__8770__31))), (new Card__noShield((Card__ItemRef__8770__31))), (new Card__noPoisonous((Card__ItemRef__8770__31))), (new Card__noLifesteal((Card__ItemRef__8770__31))))), (new Card__specialEffects((Card__ItemRef__8770__31), (new Card__noTargetedPlayEff((Card__ItemRef__8770__31))), (new Card__noOtherEffs((Card__ItemRef__8770__31))))))))));
     (((card)->name) = "Bluegill Warrior");
     return (card);
   }
 }
-Card  *Card__ItemRef__8776__24;
+Card  *Card__ItemRef__8777__31;
 
 Card  *CreateFrostwolfGrunt()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8776__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8776__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8776__24), 2, 2, 2, (new Card__singleAttack((Card__ItemRef__8776__24))), (new Card__dragonMinion((Card__ItemRef__8776__24))), (new Card__justAbilities((Card__ItemRef__8776__24), (new Card__noCharge((Card__ItemRef__8776__24))), (new Card__justTaunt((Card__ItemRef__8776__24))), (new Card__noStealth((Card__ItemRef__8776__24))), (new Card__noUntargetable((Card__ItemRef__8776__24))), (new Card__noShield((Card__ItemRef__8776__24))), (new Card__noPoisonous((Card__ItemRef__8776__24))), (new Card__noLifesteal((Card__ItemRef__8776__24))))), (new Card__specialEffects((Card__ItemRef__8776__24), (new Card__noTargetedPlayEff((Card__ItemRef__8776__24))), (new Card__noOtherEffs((Card__ItemRef__8776__24))))))))));
+    Card  *card = (((Card__ItemRef__8777__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8777__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8777__31), 2, 2, 2, (new Card__singleAttack((Card__ItemRef__8777__31))), (new Card__dragonMinion((Card__ItemRef__8777__31))), (new Card__justAbilities((Card__ItemRef__8777__31), (new Card__noCharge((Card__ItemRef__8777__31))), (new Card__justTaunt((Card__ItemRef__8777__31))), (new Card__noStealth((Card__ItemRef__8777__31))), (new Card__noUntargetable((Card__ItemRef__8777__31))), (new Card__noShield((Card__ItemRef__8777__31))), (new Card__noPoisonous((Card__ItemRef__8777__31))), (new Card__noLifesteal((Card__ItemRef__8777__31))))), (new Card__specialEffects((Card__ItemRef__8777__31), (new Card__noTargetedPlayEff((Card__ItemRef__8777__31))), (new Card__noOtherEffs((Card__ItemRef__8777__31))))))))));
     (((card)->name) = "Frostwolf Grunt");
     return (card);
   }
 }
-Card  *Card__ItemRef__8783__25;
-Card  *Card__ItemRef__8785__24;
+Card  *Card__ItemRef__8784__32;
+Card  *Card__ItemRef__8786__31;
 
 Card  *CreateMurlocTidehunter()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8783__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8783__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8783__25), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8783__25))), (new Card__demonMinion((Card__ItemRef__8783__25))), (new Card__justAbilities((Card__ItemRef__8783__25), (new Card__noCharge((Card__ItemRef__8783__25))), (new Card__noTaunt((Card__ItemRef__8783__25))), (new Card__noStealth((Card__ItemRef__8783__25))), (new Card__noUntargetable((Card__ItemRef__8783__25))), (new Card__noShield((Card__ItemRef__8783__25))), (new Card__noPoisonous((Card__ItemRef__8783__25))), (new Card__noLifesteal((Card__ItemRef__8783__25))))), (new Card__specialEffects((Card__ItemRef__8783__25), (new Card__noTargetedPlayEff((Card__ItemRef__8783__25))), (new Card__noOtherEffs((Card__ItemRef__8783__25))))))))));
+    Card  *token = (((Card__ItemRef__8784__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8784__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8784__32), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8784__32))), (new Card__demonMinion((Card__ItemRef__8784__32))), (new Card__justAbilities((Card__ItemRef__8784__32), (new Card__noCharge((Card__ItemRef__8784__32))), (new Card__noTaunt((Card__ItemRef__8784__32))), (new Card__noStealth((Card__ItemRef__8784__32))), (new Card__noUntargetable((Card__ItemRef__8784__32))), (new Card__noShield((Card__ItemRef__8784__32))), (new Card__noPoisonous((Card__ItemRef__8784__32))), (new Card__noLifesteal((Card__ItemRef__8784__32))))), (new Card__specialEffects((Card__ItemRef__8784__32), (new Card__noTargetedPlayEff((Card__ItemRef__8784__32))), (new Card__noOtherEffs((Card__ItemRef__8784__32))))))))));
     (((token)->name) = "Murloc Scout");
-    Card  *card = (((Card__ItemRef__8785__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8785__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8785__24), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__8785__24))), (new Card__demonMinion((Card__ItemRef__8785__24))), (new Card__justAbilities((Card__ItemRef__8785__24), (new Card__noCharge((Card__ItemRef__8785__24))), (new Card__noTaunt((Card__ItemRef__8785__24))), (new Card__noStealth((Card__ItemRef__8785__24))), (new Card__noUntargetable((Card__ItemRef__8785__24))), (new Card__noShield((Card__ItemRef__8785__24))), (new Card__noPoisonous((Card__ItemRef__8785__24))), (new Card__noLifesteal((Card__ItemRef__8785__24))))), (new Card__specialEffects((Card__ItemRef__8785__24), (new Card__noTargetedPlayEff((Card__ItemRef__8785__24))), (new Card__consOtherEffs((Card__ItemRef__8785__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8785__24), (new Card__noCondUntargetedEff((Card__ItemRef__8785__24), (new Card__newEff((Card__ItemRef__8785__24), 1, (new Card__fieldDest((Card__ItemRef__8785__24), (new Card__allyAllegiance((Card__ItemRef__8785__24))))), (new Card__plainMinion((Card__ItemRef__8785__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8785__24))))))))))));
+    Card  *card = (((Card__ItemRef__8786__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8786__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8786__31), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__8786__31))), (new Card__demonMinion((Card__ItemRef__8786__31))), (new Card__justAbilities((Card__ItemRef__8786__31), (new Card__noCharge((Card__ItemRef__8786__31))), (new Card__noTaunt((Card__ItemRef__8786__31))), (new Card__noStealth((Card__ItemRef__8786__31))), (new Card__noUntargetable((Card__ItemRef__8786__31))), (new Card__noShield((Card__ItemRef__8786__31))), (new Card__noPoisonous((Card__ItemRef__8786__31))), (new Card__noLifesteal((Card__ItemRef__8786__31))))), (new Card__specialEffects((Card__ItemRef__8786__31), (new Card__noTargetedPlayEff((Card__ItemRef__8786__31))), (new Card__consOtherEffs((Card__ItemRef__8786__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8786__31), (new Card__noCondUntargetedEff((Card__ItemRef__8786__31), (new Card__newEff((Card__ItemRef__8786__31), 1, (new Card__fieldDest((Card__ItemRef__8786__31), (new Card__allyAllegiance((Card__ItemRef__8786__31))))), (new Card__plainMinion((Card__ItemRef__8786__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8786__31))))))))))));
     (((card)->name) = "Murloc Tidehunter");
     return (card);
   }
 }
-Card  *Card__ItemRef__8795__24;
+Card  *Card__ItemRef__8796__31;
 
 Card  *CreateNoviceEngineer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8795__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8795__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8795__24), 2, 1, 1, (new Card__singleAttack((Card__ItemRef__8795__24))), (new Card__dragonMinion((Card__ItemRef__8795__24))), (new Card__justAbilities((Card__ItemRef__8795__24), (new Card__noCharge((Card__ItemRef__8795__24))), (new Card__noTaunt((Card__ItemRef__8795__24))), (new Card__noStealth((Card__ItemRef__8795__24))), (new Card__noUntargetable((Card__ItemRef__8795__24))), (new Card__noShield((Card__ItemRef__8795__24))), (new Card__noPoisonous((Card__ItemRef__8795__24))), (new Card__noLifesteal((Card__ItemRef__8795__24))))), (new Card__specialEffects((Card__ItemRef__8795__24), (new Card__noTargetedPlayEff((Card__ItemRef__8795__24))), (new Card__consOtherEffs((Card__ItemRef__8795__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8795__24), (new Card__noCondUntargetedEff((Card__ItemRef__8795__24), (new Card__drawCardEff((Card__ItemRef__8795__24), 1, (new Card__allyAllegiance((Card__ItemRef__8795__24))))))))), (new Card__noOtherEffs((Card__ItemRef__8795__24))))))))))));
+    Card  *card = (((Card__ItemRef__8796__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8796__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8796__31), 2, 1, 1, (new Card__singleAttack((Card__ItemRef__8796__31))), (new Card__dragonMinion((Card__ItemRef__8796__31))), (new Card__justAbilities((Card__ItemRef__8796__31), (new Card__noCharge((Card__ItemRef__8796__31))), (new Card__noTaunt((Card__ItemRef__8796__31))), (new Card__noStealth((Card__ItemRef__8796__31))), (new Card__noUntargetable((Card__ItemRef__8796__31))), (new Card__noShield((Card__ItemRef__8796__31))), (new Card__noPoisonous((Card__ItemRef__8796__31))), (new Card__noLifesteal((Card__ItemRef__8796__31))))), (new Card__specialEffects((Card__ItemRef__8796__31), (new Card__noTargetedPlayEff((Card__ItemRef__8796__31))), (new Card__consOtherEffs((Card__ItemRef__8796__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8796__31), (new Card__noCondUntargetedEff((Card__ItemRef__8796__31), (new Card__drawCardEff((Card__ItemRef__8796__31), 1, (new Card__allyAllegiance((Card__ItemRef__8796__31))))))))), (new Card__noOtherEffs((Card__ItemRef__8796__31))))))))))));
     (((card)->name) = "Novice Engineer");
     return (card);
   }
 }
-Card  *Card__ItemRef__8805__24;
+Card  *Card__ItemRef__8806__31;
 
 Card  *CreateRiverCrocolisk()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8805__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8805__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8805__24), 2, 2, 3, (new Card__singleAttack((Card__ItemRef__8805__24))), (new Card__beastMinion((Card__ItemRef__8805__24))), (new Card__justAbilities((Card__ItemRef__8805__24), (new Card__noCharge((Card__ItemRef__8805__24))), (new Card__noTaunt((Card__ItemRef__8805__24))), (new Card__noStealth((Card__ItemRef__8805__24))), (new Card__noUntargetable((Card__ItemRef__8805__24))), (new Card__noShield((Card__ItemRef__8805__24))), (new Card__noPoisonous((Card__ItemRef__8805__24))), (new Card__noLifesteal((Card__ItemRef__8805__24))))), (new Card__specialEffects((Card__ItemRef__8805__24), (new Card__noTargetedPlayEff((Card__ItemRef__8805__24))), (new Card__noOtherEffs((Card__ItemRef__8805__24))))))))));
+    Card  *card = (((Card__ItemRef__8806__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8806__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8806__31), 2, 2, 3, (new Card__singleAttack((Card__ItemRef__8806__31))), (new Card__beastMinion((Card__ItemRef__8806__31))), (new Card__justAbilities((Card__ItemRef__8806__31), (new Card__noCharge((Card__ItemRef__8806__31))), (new Card__noTaunt((Card__ItemRef__8806__31))), (new Card__noStealth((Card__ItemRef__8806__31))), (new Card__noUntargetable((Card__ItemRef__8806__31))), (new Card__noShield((Card__ItemRef__8806__31))), (new Card__noPoisonous((Card__ItemRef__8806__31))), (new Card__noLifesteal((Card__ItemRef__8806__31))))), (new Card__specialEffects((Card__ItemRef__8806__31), (new Card__noTargetedPlayEff((Card__ItemRef__8806__31))), (new Card__noOtherEffs((Card__ItemRef__8806__31))))))))));
     (((card)->name) = "River Crocolisk");
     return (card);
   }
 }
-Card  *Card__ItemRef__8812__24;
+Card  *Card__ItemRef__8813__31;
 
 Card  *CreateIronforgeRifleman()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8812__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8812__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8812__24), 3, 2, 2, (new Card__singleAttack((Card__ItemRef__8812__24))), (new Card__dragonMinion((Card__ItemRef__8812__24))), (new Card__justAbilities((Card__ItemRef__8812__24), (new Card__noCharge((Card__ItemRef__8812__24))), (new Card__noTaunt((Card__ItemRef__8812__24))), (new Card__noStealth((Card__ItemRef__8812__24))), (new Card__noUntargetable((Card__ItemRef__8812__24))), (new Card__noShield((Card__ItemRef__8812__24))), (new Card__noPoisonous((Card__ItemRef__8812__24))), (new Card__noLifesteal((Card__ItemRef__8812__24))))), (new Card__specialEffects((Card__ItemRef__8812__24), (new Card__targetedBattlecryEff((Card__ItemRef__8812__24), (new Card__noCondTargetedEff((Card__ItemRef__8812__24), (new Card__damageEff((Card__ItemRef__8812__24), 1, (new Card__damageAbilities((Card__ItemRef__8812__24), (new Card__noPoisonous((Card__ItemRef__8812__24))), (new Card__noLifesteal((Card__ItemRef__8812__24))))))), (new Card__charTargetCond((Card__ItemRef__8812__24), (new Card__justCharTargetCond((Card__ItemRef__8812__24), (new Card__anyAllegiance((Card__ItemRef__8812__24))), (new Card__isCharacter((Card__ItemRef__8812__24))), (new Card__noAbilCond((Card__ItemRef__8812__24))), (new Card__noStatCond((Card__ItemRef__8812__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8812__24))))))))));
+    Card  *card = (((Card__ItemRef__8813__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8813__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8813__31), 3, 2, 2, (new Card__singleAttack((Card__ItemRef__8813__31))), (new Card__dragonMinion((Card__ItemRef__8813__31))), (new Card__justAbilities((Card__ItemRef__8813__31), (new Card__noCharge((Card__ItemRef__8813__31))), (new Card__noTaunt((Card__ItemRef__8813__31))), (new Card__noStealth((Card__ItemRef__8813__31))), (new Card__noUntargetable((Card__ItemRef__8813__31))), (new Card__noShield((Card__ItemRef__8813__31))), (new Card__noPoisonous((Card__ItemRef__8813__31))), (new Card__noLifesteal((Card__ItemRef__8813__31))))), (new Card__specialEffects((Card__ItemRef__8813__31), (new Card__targetedBattlecryEff((Card__ItemRef__8813__31), (new Card__noCondTargetedEff((Card__ItemRef__8813__31), (new Card__damageEff((Card__ItemRef__8813__31), 1, (new Card__damageAbilities((Card__ItemRef__8813__31), (new Card__noPoisonous((Card__ItemRef__8813__31))), (new Card__noLifesteal((Card__ItemRef__8813__31))))))), (new Card__charTargetCond((Card__ItemRef__8813__31), (new Card__justCharTargetCond((Card__ItemRef__8813__31), (new Card__anyAllegiance((Card__ItemRef__8813__31))), (new Card__isCharacter((Card__ItemRef__8813__31))), (new Card__noAbilCond((Card__ItemRef__8813__31))), (new Card__noStatCond((Card__ItemRef__8813__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8813__31))))))))));
     (((card)->name) = "Ironforge Rifleman");
     return (card);
   }
 }
-Card  *Card__ItemRef__8821__24;
+Card  *Card__ItemRef__8822__31;
 
 Card  *CreateIronfurGrizzly()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8821__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8821__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8821__24), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8821__24))), (new Card__beastMinion((Card__ItemRef__8821__24))), (new Card__justAbilities((Card__ItemRef__8821__24), (new Card__noCharge((Card__ItemRef__8821__24))), (new Card__justTaunt((Card__ItemRef__8821__24))), (new Card__noStealth((Card__ItemRef__8821__24))), (new Card__noUntargetable((Card__ItemRef__8821__24))), (new Card__noShield((Card__ItemRef__8821__24))), (new Card__noPoisonous((Card__ItemRef__8821__24))), (new Card__noLifesteal((Card__ItemRef__8821__24))))), (new Card__specialEffects((Card__ItemRef__8821__24), (new Card__noTargetedPlayEff((Card__ItemRef__8821__24))), (new Card__noOtherEffs((Card__ItemRef__8821__24))))))))));
+    Card  *card = (((Card__ItemRef__8822__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8822__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8822__31), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__8822__31))), (new Card__beastMinion((Card__ItemRef__8822__31))), (new Card__justAbilities((Card__ItemRef__8822__31), (new Card__noCharge((Card__ItemRef__8822__31))), (new Card__justTaunt((Card__ItemRef__8822__31))), (new Card__noStealth((Card__ItemRef__8822__31))), (new Card__noUntargetable((Card__ItemRef__8822__31))), (new Card__noShield((Card__ItemRef__8822__31))), (new Card__noPoisonous((Card__ItemRef__8822__31))), (new Card__noLifesteal((Card__ItemRef__8822__31))))), (new Card__specialEffects((Card__ItemRef__8822__31), (new Card__noTargetedPlayEff((Card__ItemRef__8822__31))), (new Card__noOtherEffs((Card__ItemRef__8822__31))))))))));
     (((card)->name) = "Ironfur Grizzly");
     return (card);
   }
 }
-Card  *Card__ItemRef__8828__24;
+Card  *Card__ItemRef__8829__31;
 
 Card  *CreateMagmaRager()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8828__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8828__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8828__24), 3, 5, 1, (new Card__singleAttack((Card__ItemRef__8828__24))), (new Card__demonMinion((Card__ItemRef__8828__24))), (new Card__justAbilities((Card__ItemRef__8828__24), (new Card__noCharge((Card__ItemRef__8828__24))), (new Card__noTaunt((Card__ItemRef__8828__24))), (new Card__noStealth((Card__ItemRef__8828__24))), (new Card__noUntargetable((Card__ItemRef__8828__24))), (new Card__noShield((Card__ItemRef__8828__24))), (new Card__noPoisonous((Card__ItemRef__8828__24))), (new Card__noLifesteal((Card__ItemRef__8828__24))))), (new Card__specialEffects((Card__ItemRef__8828__24), (new Card__noTargetedPlayEff((Card__ItemRef__8828__24))), (new Card__noOtherEffs((Card__ItemRef__8828__24))))))))));
+    Card  *card = (((Card__ItemRef__8829__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8829__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8829__31), 3, 5, 1, (new Card__singleAttack((Card__ItemRef__8829__31))), (new Card__demonMinion((Card__ItemRef__8829__31))), (new Card__justAbilities((Card__ItemRef__8829__31), (new Card__noCharge((Card__ItemRef__8829__31))), (new Card__noTaunt((Card__ItemRef__8829__31))), (new Card__noStealth((Card__ItemRef__8829__31))), (new Card__noUntargetable((Card__ItemRef__8829__31))), (new Card__noShield((Card__ItemRef__8829__31))), (new Card__noPoisonous((Card__ItemRef__8829__31))), (new Card__noLifesteal((Card__ItemRef__8829__31))))), (new Card__specialEffects((Card__ItemRef__8829__31), (new Card__noTargetedPlayEff((Card__ItemRef__8829__31))), (new Card__noOtherEffs((Card__ItemRef__8829__31))))))))));
     (((card)->name) = "Magma Rager");
     return (card);
   }
 }
-Card  *Card__ItemRef__8835__25;
-Card  *Card__ItemRef__8837__24;
+Card  *Card__ItemRef__8836__32;
+Card  *Card__ItemRef__8838__31;
 
 Card  *CreateRazorfenHunter()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8835__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8835__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8835__25), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8835__25))), (new Card__beastMinion((Card__ItemRef__8835__25))), (new Card__justAbilities((Card__ItemRef__8835__25), (new Card__noCharge((Card__ItemRef__8835__25))), (new Card__noTaunt((Card__ItemRef__8835__25))), (new Card__noStealth((Card__ItemRef__8835__25))), (new Card__noUntargetable((Card__ItemRef__8835__25))), (new Card__noShield((Card__ItemRef__8835__25))), (new Card__noPoisonous((Card__ItemRef__8835__25))), (new Card__noLifesteal((Card__ItemRef__8835__25))))), (new Card__specialEffects((Card__ItemRef__8835__25), (new Card__noTargetedPlayEff((Card__ItemRef__8835__25))), (new Card__noOtherEffs((Card__ItemRef__8835__25))))))))));
+    Card  *token = (((Card__ItemRef__8836__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8836__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8836__32), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__8836__32))), (new Card__beastMinion((Card__ItemRef__8836__32))), (new Card__justAbilities((Card__ItemRef__8836__32), (new Card__noCharge((Card__ItemRef__8836__32))), (new Card__noTaunt((Card__ItemRef__8836__32))), (new Card__noStealth((Card__ItemRef__8836__32))), (new Card__noUntargetable((Card__ItemRef__8836__32))), (new Card__noShield((Card__ItemRef__8836__32))), (new Card__noPoisonous((Card__ItemRef__8836__32))), (new Card__noLifesteal((Card__ItemRef__8836__32))))), (new Card__specialEffects((Card__ItemRef__8836__32), (new Card__noTargetedPlayEff((Card__ItemRef__8836__32))), (new Card__noOtherEffs((Card__ItemRef__8836__32))))))))));
     (((token)->name) = "Boar");
-    Card  *card = (((Card__ItemRef__8837__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8837__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8837__24), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__8837__24))), (new Card__beastMinion((Card__ItemRef__8837__24))), (new Card__justAbilities((Card__ItemRef__8837__24), (new Card__noCharge((Card__ItemRef__8837__24))), (new Card__noTaunt((Card__ItemRef__8837__24))), (new Card__noStealth((Card__ItemRef__8837__24))), (new Card__noUntargetable((Card__ItemRef__8837__24))), (new Card__noShield((Card__ItemRef__8837__24))), (new Card__noPoisonous((Card__ItemRef__8837__24))), (new Card__noLifesteal((Card__ItemRef__8837__24))))), (new Card__specialEffects((Card__ItemRef__8837__24), (new Card__noTargetedPlayEff((Card__ItemRef__8837__24))), (new Card__consOtherEffs((Card__ItemRef__8837__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8837__24), (new Card__noCondUntargetedEff((Card__ItemRef__8837__24), (new Card__newEff((Card__ItemRef__8837__24), 1, (new Card__fieldDest((Card__ItemRef__8837__24), (new Card__allyAllegiance((Card__ItemRef__8837__24))))), (new Card__plainMinion((Card__ItemRef__8837__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8837__24))))))))))));
+    Card  *card = (((Card__ItemRef__8838__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8838__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8838__31), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__8838__31))), (new Card__beastMinion((Card__ItemRef__8838__31))), (new Card__justAbilities((Card__ItemRef__8838__31), (new Card__noCharge((Card__ItemRef__8838__31))), (new Card__noTaunt((Card__ItemRef__8838__31))), (new Card__noStealth((Card__ItemRef__8838__31))), (new Card__noUntargetable((Card__ItemRef__8838__31))), (new Card__noShield((Card__ItemRef__8838__31))), (new Card__noPoisonous((Card__ItemRef__8838__31))), (new Card__noLifesteal((Card__ItemRef__8838__31))))), (new Card__specialEffects((Card__ItemRef__8838__31), (new Card__noTargetedPlayEff((Card__ItemRef__8838__31))), (new Card__consOtherEffs((Card__ItemRef__8838__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8838__31), (new Card__noCondUntargetedEff((Card__ItemRef__8838__31), (new Card__newEff((Card__ItemRef__8838__31), 1, (new Card__fieldDest((Card__ItemRef__8838__31), (new Card__allyAllegiance((Card__ItemRef__8838__31))))), (new Card__plainMinion((Card__ItemRef__8838__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8838__31))))))))))));
     (((card)->name) = "Razorfen Hunter");
     return (card);
   }
 }
-Card  *Card__ItemRef__8847__24;
+Card  *Card__ItemRef__8848__31;
 
 Card  *CreateShatteredSunCleric()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8847__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8847__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8847__24), 3, 3, 2, (new Card__singleAttack((Card__ItemRef__8847__24))), (new Card__dragonMinion((Card__ItemRef__8847__24))), (new Card__justAbilities((Card__ItemRef__8847__24), (new Card__noCharge((Card__ItemRef__8847__24))), (new Card__noTaunt((Card__ItemRef__8847__24))), (new Card__noStealth((Card__ItemRef__8847__24))), (new Card__noUntargetable((Card__ItemRef__8847__24))), (new Card__noShield((Card__ItemRef__8847__24))), (new Card__noPoisonous((Card__ItemRef__8847__24))), (new Card__noLifesteal((Card__ItemRef__8847__24))))), (new Card__specialEffects((Card__ItemRef__8847__24), (new Card__targetedBattlecryEff((Card__ItemRef__8847__24), (new Card__noCondTargetedEff((Card__ItemRef__8847__24), (new Card__atkHpModEff((Card__ItemRef__8847__24), 1, 1)), (new Card__charTargetCond((Card__ItemRef__8847__24), (new Card__justCharTargetCond((Card__ItemRef__8847__24), (new Card__allyAllegiance((Card__ItemRef__8847__24))), (new Card__isMinion((Card__ItemRef__8847__24))), (new Card__noAbilCond((Card__ItemRef__8847__24))), (new Card__noStatCond((Card__ItemRef__8847__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8847__24))))))))));
+    Card  *card = (((Card__ItemRef__8848__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8848__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8848__31), 3, 3, 2, (new Card__singleAttack((Card__ItemRef__8848__31))), (new Card__dragonMinion((Card__ItemRef__8848__31))), (new Card__justAbilities((Card__ItemRef__8848__31), (new Card__noCharge((Card__ItemRef__8848__31))), (new Card__noTaunt((Card__ItemRef__8848__31))), (new Card__noStealth((Card__ItemRef__8848__31))), (new Card__noUntargetable((Card__ItemRef__8848__31))), (new Card__noShield((Card__ItemRef__8848__31))), (new Card__noPoisonous((Card__ItemRef__8848__31))), (new Card__noLifesteal((Card__ItemRef__8848__31))))), (new Card__specialEffects((Card__ItemRef__8848__31), (new Card__targetedBattlecryEff((Card__ItemRef__8848__31), (new Card__noCondTargetedEff((Card__ItemRef__8848__31), (new Card__atkHpModEff((Card__ItemRef__8848__31), 1, 1)), (new Card__charTargetCond((Card__ItemRef__8848__31), (new Card__justCharTargetCond((Card__ItemRef__8848__31), (new Card__allyAllegiance((Card__ItemRef__8848__31))), (new Card__isMinion((Card__ItemRef__8848__31))), (new Card__noAbilCond((Card__ItemRef__8848__31))), (new Card__noStatCond((Card__ItemRef__8848__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8848__31))))))))));
     (((card)->name) = "Shattered Sun Cleric");
     return (card);
   }
 }
-Card  *Card__ItemRef__8856__24;
+Card  *Card__ItemRef__8857__31;
 
 Card  *CreateSilverbackPatriarch()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8856__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8856__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8856__24), 3, 1, 4, (new Card__singleAttack((Card__ItemRef__8856__24))), (new Card__beastMinion((Card__ItemRef__8856__24))), (new Card__justAbilities((Card__ItemRef__8856__24), (new Card__noCharge((Card__ItemRef__8856__24))), (new Card__justTaunt((Card__ItemRef__8856__24))), (new Card__noStealth((Card__ItemRef__8856__24))), (new Card__noUntargetable((Card__ItemRef__8856__24))), (new Card__noShield((Card__ItemRef__8856__24))), (new Card__noPoisonous((Card__ItemRef__8856__24))), (new Card__noLifesteal((Card__ItemRef__8856__24))))), (new Card__specialEffects((Card__ItemRef__8856__24), (new Card__noTargetedPlayEff((Card__ItemRef__8856__24))), (new Card__noOtherEffs((Card__ItemRef__8856__24))))))))));
+    Card  *card = (((Card__ItemRef__8857__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8857__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8857__31), 3, 1, 4, (new Card__singleAttack((Card__ItemRef__8857__31))), (new Card__beastMinion((Card__ItemRef__8857__31))), (new Card__justAbilities((Card__ItemRef__8857__31), (new Card__noCharge((Card__ItemRef__8857__31))), (new Card__justTaunt((Card__ItemRef__8857__31))), (new Card__noStealth((Card__ItemRef__8857__31))), (new Card__noUntargetable((Card__ItemRef__8857__31))), (new Card__noShield((Card__ItemRef__8857__31))), (new Card__noPoisonous((Card__ItemRef__8857__31))), (new Card__noLifesteal((Card__ItemRef__8857__31))))), (new Card__specialEffects((Card__ItemRef__8857__31), (new Card__noTargetedPlayEff((Card__ItemRef__8857__31))), (new Card__noOtherEffs((Card__ItemRef__8857__31))))))))));
     (((card)->name) = "Silverback Patriarch");
     return (card);
   }
 }
-Card  *Card__ItemRef__8863__24;
+Card  *Card__ItemRef__8864__31;
 
 Card  *CreateWolfrider()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8863__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8863__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8863__24), 3, 3, 1, (new Card__singleAttack((Card__ItemRef__8863__24))), (new Card__beastMinion((Card__ItemRef__8863__24))), (new Card__justAbilities((Card__ItemRef__8863__24), (new Card__justCharge((Card__ItemRef__8863__24))), (new Card__noTaunt((Card__ItemRef__8863__24))), (new Card__noStealth((Card__ItemRef__8863__24))), (new Card__noUntargetable((Card__ItemRef__8863__24))), (new Card__noShield((Card__ItemRef__8863__24))), (new Card__noPoisonous((Card__ItemRef__8863__24))), (new Card__noLifesteal((Card__ItemRef__8863__24))))), (new Card__specialEffects((Card__ItemRef__8863__24), (new Card__noTargetedPlayEff((Card__ItemRef__8863__24))), (new Card__noOtherEffs((Card__ItemRef__8863__24))))))))));
+    Card  *card = (((Card__ItemRef__8864__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8864__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8864__31), 3, 3, 1, (new Card__singleAttack((Card__ItemRef__8864__31))), (new Card__beastMinion((Card__ItemRef__8864__31))), (new Card__justAbilities((Card__ItemRef__8864__31), (new Card__justCharge((Card__ItemRef__8864__31))), (new Card__noTaunt((Card__ItemRef__8864__31))), (new Card__noStealth((Card__ItemRef__8864__31))), (new Card__noUntargetable((Card__ItemRef__8864__31))), (new Card__noShield((Card__ItemRef__8864__31))), (new Card__noPoisonous((Card__ItemRef__8864__31))), (new Card__noLifesteal((Card__ItemRef__8864__31))))), (new Card__specialEffects((Card__ItemRef__8864__31), (new Card__noTargetedPlayEff((Card__ItemRef__8864__31))), (new Card__noOtherEffs((Card__ItemRef__8864__31))))))))));
     (((card)->name) = "Wolfrider");
     return (card);
   }
 }
-Card  *Card__ItemRef__8870__24;
+Card  *Card__ItemRef__8871__31;
 
 Card  *CreateChillwindYeti()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8870__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8870__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8870__24), 4, 4, 5, (new Card__singleAttack((Card__ItemRef__8870__24))), (new Card__demonMinion((Card__ItemRef__8870__24))), (new Card__justAbilities((Card__ItemRef__8870__24), (new Card__noCharge((Card__ItemRef__8870__24))), (new Card__noTaunt((Card__ItemRef__8870__24))), (new Card__noStealth((Card__ItemRef__8870__24))), (new Card__noUntargetable((Card__ItemRef__8870__24))), (new Card__noShield((Card__ItemRef__8870__24))), (new Card__noPoisonous((Card__ItemRef__8870__24))), (new Card__noLifesteal((Card__ItemRef__8870__24))))), (new Card__specialEffects((Card__ItemRef__8870__24), (new Card__noTargetedPlayEff((Card__ItemRef__8870__24))), (new Card__noOtherEffs((Card__ItemRef__8870__24))))))))));
+    Card  *card = (((Card__ItemRef__8871__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8871__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8871__31), 4, 4, 5, (new Card__singleAttack((Card__ItemRef__8871__31))), (new Card__demonMinion((Card__ItemRef__8871__31))), (new Card__justAbilities((Card__ItemRef__8871__31), (new Card__noCharge((Card__ItemRef__8871__31))), (new Card__noTaunt((Card__ItemRef__8871__31))), (new Card__noStealth((Card__ItemRef__8871__31))), (new Card__noUntargetable((Card__ItemRef__8871__31))), (new Card__noShield((Card__ItemRef__8871__31))), (new Card__noPoisonous((Card__ItemRef__8871__31))), (new Card__noLifesteal((Card__ItemRef__8871__31))))), (new Card__specialEffects((Card__ItemRef__8871__31), (new Card__noTargetedPlayEff((Card__ItemRef__8871__31))), (new Card__noOtherEffs((Card__ItemRef__8871__31))))))))));
     (((card)->name) = "Chillwind Yeti");
     return (card);
   }
 }
-Card  *Card__ItemRef__8877__25;
-Card  *Card__ItemRef__8879__24;
+Card  *Card__ItemRef__8878__32;
+Card  *Card__ItemRef__8880__31;
 
 Card  *CreateDragonlingMechanic()
 {
 
   {
-    Card  *token = (((Card__ItemRef__8877__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8877__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8877__25), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8877__25))), (new Card__dragonMinion((Card__ItemRef__8877__25))), (new Card__justAbilities((Card__ItemRef__8877__25), (new Card__noCharge((Card__ItemRef__8877__25))), (new Card__noTaunt((Card__ItemRef__8877__25))), (new Card__noStealth((Card__ItemRef__8877__25))), (new Card__noUntargetable((Card__ItemRef__8877__25))), (new Card__noShield((Card__ItemRef__8877__25))), (new Card__noPoisonous((Card__ItemRef__8877__25))), (new Card__noLifesteal((Card__ItemRef__8877__25))))), (new Card__specialEffects((Card__ItemRef__8877__25), (new Card__noTargetedPlayEff((Card__ItemRef__8877__25))), (new Card__noOtherEffs((Card__ItemRef__8877__25))))))))));
+    Card  *token = (((Card__ItemRef__8878__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8878__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8878__32), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__8878__32))), (new Card__dragonMinion((Card__ItemRef__8878__32))), (new Card__justAbilities((Card__ItemRef__8878__32), (new Card__noCharge((Card__ItemRef__8878__32))), (new Card__noTaunt((Card__ItemRef__8878__32))), (new Card__noStealth((Card__ItemRef__8878__32))), (new Card__noUntargetable((Card__ItemRef__8878__32))), (new Card__noShield((Card__ItemRef__8878__32))), (new Card__noPoisonous((Card__ItemRef__8878__32))), (new Card__noLifesteal((Card__ItemRef__8878__32))))), (new Card__specialEffects((Card__ItemRef__8878__32), (new Card__noTargetedPlayEff((Card__ItemRef__8878__32))), (new Card__noOtherEffs((Card__ItemRef__8878__32))))))))));
     (((token)->name) = "Mechanical Dragonling");
-    Card  *card = (((Card__ItemRef__8879__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8879__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8879__24), 4, 2, 4, (new Card__singleAttack((Card__ItemRef__8879__24))), (new Card__dragonMinion((Card__ItemRef__8879__24))), (new Card__justAbilities((Card__ItemRef__8879__24), (new Card__noCharge((Card__ItemRef__8879__24))), (new Card__noTaunt((Card__ItemRef__8879__24))), (new Card__noStealth((Card__ItemRef__8879__24))), (new Card__noUntargetable((Card__ItemRef__8879__24))), (new Card__noShield((Card__ItemRef__8879__24))), (new Card__noPoisonous((Card__ItemRef__8879__24))), (new Card__noLifesteal((Card__ItemRef__8879__24))))), (new Card__specialEffects((Card__ItemRef__8879__24), (new Card__noTargetedPlayEff((Card__ItemRef__8879__24))), (new Card__consOtherEffs((Card__ItemRef__8879__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8879__24), (new Card__noCondUntargetedEff((Card__ItemRef__8879__24), (new Card__newEff((Card__ItemRef__8879__24), 1, (new Card__fieldDest((Card__ItemRef__8879__24), (new Card__allyAllegiance((Card__ItemRef__8879__24))))), (new Card__plainMinion((Card__ItemRef__8879__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8879__24))))))))))));
+    Card  *card = (((Card__ItemRef__8880__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8880__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8880__31), 4, 2, 4, (new Card__singleAttack((Card__ItemRef__8880__31))), (new Card__dragonMinion((Card__ItemRef__8880__31))), (new Card__justAbilities((Card__ItemRef__8880__31), (new Card__noCharge((Card__ItemRef__8880__31))), (new Card__noTaunt((Card__ItemRef__8880__31))), (new Card__noStealth((Card__ItemRef__8880__31))), (new Card__noUntargetable((Card__ItemRef__8880__31))), (new Card__noShield((Card__ItemRef__8880__31))), (new Card__noPoisonous((Card__ItemRef__8880__31))), (new Card__noLifesteal((Card__ItemRef__8880__31))))), (new Card__specialEffects((Card__ItemRef__8880__31), (new Card__noTargetedPlayEff((Card__ItemRef__8880__31))), (new Card__consOtherEffs((Card__ItemRef__8880__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8880__31), (new Card__noCondUntargetedEff((Card__ItemRef__8880__31), (new Card__newEff((Card__ItemRef__8880__31), 1, (new Card__fieldDest((Card__ItemRef__8880__31), (new Card__allyAllegiance((Card__ItemRef__8880__31))))), (new Card__plainMinion((Card__ItemRef__8880__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__8880__31))))))))))));
     (((card)->name) = "Dragonling Mechanic");
     return (card);
   }
 }
-Card  *Card__ItemRef__8889__24;
+Card  *Card__ItemRef__8890__31;
 
 Card  *CreateGnomishInventor()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8889__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8889__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8889__24), 4, 2, 4, (new Card__singleAttack((Card__ItemRef__8889__24))), (new Card__dragonMinion((Card__ItemRef__8889__24))), (new Card__justAbilities((Card__ItemRef__8889__24), (new Card__noCharge((Card__ItemRef__8889__24))), (new Card__noTaunt((Card__ItemRef__8889__24))), (new Card__noStealth((Card__ItemRef__8889__24))), (new Card__noUntargetable((Card__ItemRef__8889__24))), (new Card__noShield((Card__ItemRef__8889__24))), (new Card__noPoisonous((Card__ItemRef__8889__24))), (new Card__noLifesteal((Card__ItemRef__8889__24))))), (new Card__specialEffects((Card__ItemRef__8889__24), (new Card__noTargetedPlayEff((Card__ItemRef__8889__24))), (new Card__consOtherEffs((Card__ItemRef__8889__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8889__24), (new Card__noCondUntargetedEff((Card__ItemRef__8889__24), (new Card__drawCardEff((Card__ItemRef__8889__24), 1, (new Card__allyAllegiance((Card__ItemRef__8889__24))))))))), (new Card__noOtherEffs((Card__ItemRef__8889__24))))))))))));
+    Card  *card = (((Card__ItemRef__8890__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8890__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8890__31), 4, 2, 4, (new Card__singleAttack((Card__ItemRef__8890__31))), (new Card__dragonMinion((Card__ItemRef__8890__31))), (new Card__justAbilities((Card__ItemRef__8890__31), (new Card__noCharge((Card__ItemRef__8890__31))), (new Card__noTaunt((Card__ItemRef__8890__31))), (new Card__noStealth((Card__ItemRef__8890__31))), (new Card__noUntargetable((Card__ItemRef__8890__31))), (new Card__noShield((Card__ItemRef__8890__31))), (new Card__noPoisonous((Card__ItemRef__8890__31))), (new Card__noLifesteal((Card__ItemRef__8890__31))))), (new Card__specialEffects((Card__ItemRef__8890__31), (new Card__noTargetedPlayEff((Card__ItemRef__8890__31))), (new Card__consOtherEffs((Card__ItemRef__8890__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8890__31), (new Card__noCondUntargetedEff((Card__ItemRef__8890__31), (new Card__drawCardEff((Card__ItemRef__8890__31), 1, (new Card__allyAllegiance((Card__ItemRef__8890__31))))))))), (new Card__noOtherEffs((Card__ItemRef__8890__31))))))))))));
     (((card)->name) = "Gnomish Inventor");
     return (card);
   }
 }
-Card  *Card__ItemRef__8899__24;
+Card  *Card__ItemRef__8900__31;
 
 Card  *CreateOasisSnapjaw()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8899__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8899__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8899__24), 4, 2, 7, (new Card__singleAttack((Card__ItemRef__8899__24))), (new Card__beastMinion((Card__ItemRef__8899__24))), (new Card__justAbilities((Card__ItemRef__8899__24), (new Card__noCharge((Card__ItemRef__8899__24))), (new Card__noTaunt((Card__ItemRef__8899__24))), (new Card__noStealth((Card__ItemRef__8899__24))), (new Card__noUntargetable((Card__ItemRef__8899__24))), (new Card__noShield((Card__ItemRef__8899__24))), (new Card__noPoisonous((Card__ItemRef__8899__24))), (new Card__noLifesteal((Card__ItemRef__8899__24))))), (new Card__specialEffects((Card__ItemRef__8899__24), (new Card__noTargetedPlayEff((Card__ItemRef__8899__24))), (new Card__noOtherEffs((Card__ItemRef__8899__24))))))))));
+    Card  *card = (((Card__ItemRef__8900__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8900__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8900__31), 4, 2, 7, (new Card__singleAttack((Card__ItemRef__8900__31))), (new Card__beastMinion((Card__ItemRef__8900__31))), (new Card__justAbilities((Card__ItemRef__8900__31), (new Card__noCharge((Card__ItemRef__8900__31))), (new Card__noTaunt((Card__ItemRef__8900__31))), (new Card__noStealth((Card__ItemRef__8900__31))), (new Card__noUntargetable((Card__ItemRef__8900__31))), (new Card__noShield((Card__ItemRef__8900__31))), (new Card__noPoisonous((Card__ItemRef__8900__31))), (new Card__noLifesteal((Card__ItemRef__8900__31))))), (new Card__specialEffects((Card__ItemRef__8900__31), (new Card__noTargetedPlayEff((Card__ItemRef__8900__31))), (new Card__noOtherEffs((Card__ItemRef__8900__31))))))))));
     (((card)->name) = "Oasis Snapjaw");
     return (card);
   }
 }
-Card  *Card__ItemRef__8906__24;
+Card  *Card__ItemRef__8907__31;
 
 Card  *CreateSenjinShieldmasta()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8906__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8906__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8906__24), 4, 3, 5, (new Card__singleAttack((Card__ItemRef__8906__24))), (new Card__demonMinion((Card__ItemRef__8906__24))), (new Card__justAbilities((Card__ItemRef__8906__24), (new Card__noCharge((Card__ItemRef__8906__24))), (new Card__justTaunt((Card__ItemRef__8906__24))), (new Card__noStealth((Card__ItemRef__8906__24))), (new Card__noUntargetable((Card__ItemRef__8906__24))), (new Card__noShield((Card__ItemRef__8906__24))), (new Card__noPoisonous((Card__ItemRef__8906__24))), (new Card__noLifesteal((Card__ItemRef__8906__24))))), (new Card__specialEffects((Card__ItemRef__8906__24), (new Card__noTargetedPlayEff((Card__ItemRef__8906__24))), (new Card__noOtherEffs((Card__ItemRef__8906__24))))))))));
+    Card  *card = (((Card__ItemRef__8907__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8907__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8907__31), 4, 3, 5, (new Card__singleAttack((Card__ItemRef__8907__31))), (new Card__demonMinion((Card__ItemRef__8907__31))), (new Card__justAbilities((Card__ItemRef__8907__31), (new Card__noCharge((Card__ItemRef__8907__31))), (new Card__justTaunt((Card__ItemRef__8907__31))), (new Card__noStealth((Card__ItemRef__8907__31))), (new Card__noUntargetable((Card__ItemRef__8907__31))), (new Card__noShield((Card__ItemRef__8907__31))), (new Card__noPoisonous((Card__ItemRef__8907__31))), (new Card__noLifesteal((Card__ItemRef__8907__31))))), (new Card__specialEffects((Card__ItemRef__8907__31), (new Card__noTargetedPlayEff((Card__ItemRef__8907__31))), (new Card__noOtherEffs((Card__ItemRef__8907__31))))))))));
     (((card)->name) = "Senjin Shieldmasta");
     return (card);
   }
 }
-Card  *Card__ItemRef__8913__24;
+Card  *Card__ItemRef__8914__31;
 
 Card  *CreateStormwindKnight()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8913__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8913__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8913__24), 4, 2, 5, (new Card__singleAttack((Card__ItemRef__8913__24))), (new Card__beastMinion((Card__ItemRef__8913__24))), (new Card__justAbilities((Card__ItemRef__8913__24), (new Card__justCharge((Card__ItemRef__8913__24))), (new Card__noTaunt((Card__ItemRef__8913__24))), (new Card__noStealth((Card__ItemRef__8913__24))), (new Card__noUntargetable((Card__ItemRef__8913__24))), (new Card__noShield((Card__ItemRef__8913__24))), (new Card__noPoisonous((Card__ItemRef__8913__24))), (new Card__noLifesteal((Card__ItemRef__8913__24))))), (new Card__specialEffects((Card__ItemRef__8913__24), (new Card__noTargetedPlayEff((Card__ItemRef__8913__24))), (new Card__noOtherEffs((Card__ItemRef__8913__24))))))))));
+    Card  *card = (((Card__ItemRef__8914__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8914__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8914__31), 4, 2, 5, (new Card__singleAttack((Card__ItemRef__8914__31))), (new Card__beastMinion((Card__ItemRef__8914__31))), (new Card__justAbilities((Card__ItemRef__8914__31), (new Card__justCharge((Card__ItemRef__8914__31))), (new Card__noTaunt((Card__ItemRef__8914__31))), (new Card__noStealth((Card__ItemRef__8914__31))), (new Card__noUntargetable((Card__ItemRef__8914__31))), (new Card__noShield((Card__ItemRef__8914__31))), (new Card__noPoisonous((Card__ItemRef__8914__31))), (new Card__noLifesteal((Card__ItemRef__8914__31))))), (new Card__specialEffects((Card__ItemRef__8914__31), (new Card__noTargetedPlayEff((Card__ItemRef__8914__31))), (new Card__noOtherEffs((Card__ItemRef__8914__31))))))))));
     (((card)->name) = "Stormwind Knight");
     return (card);
   }
 }
-Card  *Card__ItemRef__8920__24;
+Card  *Card__ItemRef__8921__31;
 
 Card  *CreateBootyBayBodyguard()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8920__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8920__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8920__24), 5, 5, 4, (new Card__singleAttack((Card__ItemRef__8920__24))), (new Card__demonMinion((Card__ItemRef__8920__24))), (new Card__justAbilities((Card__ItemRef__8920__24), (new Card__noCharge((Card__ItemRef__8920__24))), (new Card__justTaunt((Card__ItemRef__8920__24))), (new Card__noStealth((Card__ItemRef__8920__24))), (new Card__noUntargetable((Card__ItemRef__8920__24))), (new Card__noShield((Card__ItemRef__8920__24))), (new Card__noPoisonous((Card__ItemRef__8920__24))), (new Card__noLifesteal((Card__ItemRef__8920__24))))), (new Card__specialEffects((Card__ItemRef__8920__24), (new Card__noTargetedPlayEff((Card__ItemRef__8920__24))), (new Card__noOtherEffs((Card__ItemRef__8920__24))))))))));
+    Card  *card = (((Card__ItemRef__8921__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8921__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8921__31), 5, 5, 4, (new Card__singleAttack((Card__ItemRef__8921__31))), (new Card__demonMinion((Card__ItemRef__8921__31))), (new Card__justAbilities((Card__ItemRef__8921__31), (new Card__noCharge((Card__ItemRef__8921__31))), (new Card__justTaunt((Card__ItemRef__8921__31))), (new Card__noStealth((Card__ItemRef__8921__31))), (new Card__noUntargetable((Card__ItemRef__8921__31))), (new Card__noShield((Card__ItemRef__8921__31))), (new Card__noPoisonous((Card__ItemRef__8921__31))), (new Card__noLifesteal((Card__ItemRef__8921__31))))), (new Card__specialEffects((Card__ItemRef__8921__31), (new Card__noTargetedPlayEff((Card__ItemRef__8921__31))), (new Card__noOtherEffs((Card__ItemRef__8921__31))))))))));
     (((card)->name) = "Booty Bay Bodyguard");
     return (card);
   }
 }
-Card  *Card__ItemRef__8927__24;
+Card  *Card__ItemRef__8928__31;
 
 Card  *CreateDarkscaleHealer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8927__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8927__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8927__24), 5, 4, 5, (new Card__singleAttack((Card__ItemRef__8927__24))), (new Card__dragonMinion((Card__ItemRef__8927__24))), (new Card__justAbilities((Card__ItemRef__8927__24), (new Card__noCharge((Card__ItemRef__8927__24))), (new Card__noTaunt((Card__ItemRef__8927__24))), (new Card__noStealth((Card__ItemRef__8927__24))), (new Card__noUntargetable((Card__ItemRef__8927__24))), (new Card__noShield((Card__ItemRef__8927__24))), (new Card__noPoisonous((Card__ItemRef__8927__24))), (new Card__noLifesteal((Card__ItemRef__8927__24))))), (new Card__specialEffects((Card__ItemRef__8927__24), (new Card__noTargetedPlayEff((Card__ItemRef__8927__24))), (new Card__consOtherEffs((Card__ItemRef__8927__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8927__24), (new Card__noCondUntargetedEff((Card__ItemRef__8927__24), (new Card__aoeEff((Card__ItemRef__8927__24), (new Card__healEff((Card__ItemRef__8927__24), 2)), (new Card__charTargetCond((Card__ItemRef__8927__24), (new Card__justCharTargetCond((Card__ItemRef__8927__24), (new Card__allyAllegiance((Card__ItemRef__8927__24))), (new Card__isCharacter((Card__ItemRef__8927__24))), (new Card__noAbilCond((Card__ItemRef__8927__24))), (new Card__noStatCond((Card__ItemRef__8927__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8927__24))))))))))));
+    Card  *card = (((Card__ItemRef__8928__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8928__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8928__31), 5, 4, 5, (new Card__singleAttack((Card__ItemRef__8928__31))), (new Card__dragonMinion((Card__ItemRef__8928__31))), (new Card__justAbilities((Card__ItemRef__8928__31), (new Card__noCharge((Card__ItemRef__8928__31))), (new Card__noTaunt((Card__ItemRef__8928__31))), (new Card__noStealth((Card__ItemRef__8928__31))), (new Card__noUntargetable((Card__ItemRef__8928__31))), (new Card__noShield((Card__ItemRef__8928__31))), (new Card__noPoisonous((Card__ItemRef__8928__31))), (new Card__noLifesteal((Card__ItemRef__8928__31))))), (new Card__specialEffects((Card__ItemRef__8928__31), (new Card__noTargetedPlayEff((Card__ItemRef__8928__31))), (new Card__consOtherEffs((Card__ItemRef__8928__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8928__31), (new Card__noCondUntargetedEff((Card__ItemRef__8928__31), (new Card__aoeEff((Card__ItemRef__8928__31), (new Card__healEff((Card__ItemRef__8928__31), 2)), (new Card__charTargetCond((Card__ItemRef__8928__31), (new Card__justCharTargetCond((Card__ItemRef__8928__31), (new Card__allyAllegiance((Card__ItemRef__8928__31))), (new Card__isCharacter((Card__ItemRef__8928__31))), (new Card__noAbilCond((Card__ItemRef__8928__31))), (new Card__noStatCond((Card__ItemRef__8928__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8928__31))))))))))));
     (((card)->name) = "Darkscale Healer");
     return (card);
   }
 }
-Card  *Card__ItemRef__8937__24;
+Card  *Card__ItemRef__8938__31;
 
 Card  *CreateNightblade()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8937__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8937__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8937__24), 5, 4, 4, (new Card__singleAttack((Card__ItemRef__8937__24))), (new Card__dragonMinion((Card__ItemRef__8937__24))), (new Card__justAbilities((Card__ItemRef__8937__24), (new Card__noCharge((Card__ItemRef__8937__24))), (new Card__noTaunt((Card__ItemRef__8937__24))), (new Card__noStealth((Card__ItemRef__8937__24))), (new Card__noUntargetable((Card__ItemRef__8937__24))), (new Card__noShield((Card__ItemRef__8937__24))), (new Card__noPoisonous((Card__ItemRef__8937__24))), (new Card__noLifesteal((Card__ItemRef__8937__24))))), (new Card__specialEffects((Card__ItemRef__8937__24), (new Card__noTargetedPlayEff((Card__ItemRef__8937__24))), (new Card__consOtherEffs((Card__ItemRef__8937__24), (new Card__untargetedBattlecryEff((Card__ItemRef__8937__24), (new Card__noCondUntargetedEff((Card__ItemRef__8937__24), (new Card__leaderEff((Card__ItemRef__8937__24), (new Card__damageEff((Card__ItemRef__8937__24), 3, (new Card__damageAbilities((Card__ItemRef__8937__24), (new Card__noPoisonous((Card__ItemRef__8937__24))), (new Card__noLifesteal((Card__ItemRef__8937__24))))))), (new Card__oppoAllegiance((Card__ItemRef__8937__24))))))))), (new Card__noOtherEffs((Card__ItemRef__8937__24))))))))))));
+    Card  *card = (((Card__ItemRef__8938__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8938__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8938__31), 5, 4, 4, (new Card__singleAttack((Card__ItemRef__8938__31))), (new Card__dragonMinion((Card__ItemRef__8938__31))), (new Card__justAbilities((Card__ItemRef__8938__31), (new Card__noCharge((Card__ItemRef__8938__31))), (new Card__noTaunt((Card__ItemRef__8938__31))), (new Card__noStealth((Card__ItemRef__8938__31))), (new Card__noUntargetable((Card__ItemRef__8938__31))), (new Card__noShield((Card__ItemRef__8938__31))), (new Card__noPoisonous((Card__ItemRef__8938__31))), (new Card__noLifesteal((Card__ItemRef__8938__31))))), (new Card__specialEffects((Card__ItemRef__8938__31), (new Card__noTargetedPlayEff((Card__ItemRef__8938__31))), (new Card__consOtherEffs((Card__ItemRef__8938__31), (new Card__untargetedBattlecryEff((Card__ItemRef__8938__31), (new Card__noCondUntargetedEff((Card__ItemRef__8938__31), (new Card__leaderEff((Card__ItemRef__8938__31), (new Card__damageEff((Card__ItemRef__8938__31), 3, (new Card__damageAbilities((Card__ItemRef__8938__31), (new Card__noPoisonous((Card__ItemRef__8938__31))), (new Card__noLifesteal((Card__ItemRef__8938__31))))))), (new Card__oppoAllegiance((Card__ItemRef__8938__31))))))))), (new Card__noOtherEffs((Card__ItemRef__8938__31))))))))))));
     (((card)->name) = "Nightblade");
     return (card);
   }
 }
-Card  *Card__ItemRef__8947__24;
+Card  *Card__ItemRef__8948__31;
 
 Card  *CreateStormpikeCommando()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8947__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8947__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8947__24), 5, 4, 2, (new Card__singleAttack((Card__ItemRef__8947__24))), (new Card__dragonMinion((Card__ItemRef__8947__24))), (new Card__justAbilities((Card__ItemRef__8947__24), (new Card__noCharge((Card__ItemRef__8947__24))), (new Card__noTaunt((Card__ItemRef__8947__24))), (new Card__noStealth((Card__ItemRef__8947__24))), (new Card__noUntargetable((Card__ItemRef__8947__24))), (new Card__noShield((Card__ItemRef__8947__24))), (new Card__noPoisonous((Card__ItemRef__8947__24))), (new Card__noLifesteal((Card__ItemRef__8947__24))))), (new Card__specialEffects((Card__ItemRef__8947__24), (new Card__targetedBattlecryEff((Card__ItemRef__8947__24), (new Card__noCondTargetedEff((Card__ItemRef__8947__24), (new Card__damageEff((Card__ItemRef__8947__24), 2, (new Card__damageAbilities((Card__ItemRef__8947__24), (new Card__noPoisonous((Card__ItemRef__8947__24))), (new Card__noLifesteal((Card__ItemRef__8947__24))))))), (new Card__charTargetCond((Card__ItemRef__8947__24), (new Card__justCharTargetCond((Card__ItemRef__8947__24), (new Card__anyAllegiance((Card__ItemRef__8947__24))), (new Card__isCharacter((Card__ItemRef__8947__24))), (new Card__noAbilCond((Card__ItemRef__8947__24))), (new Card__noStatCond((Card__ItemRef__8947__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__8947__24))))))))));
+    Card  *card = (((Card__ItemRef__8948__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8948__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8948__31), 5, 4, 2, (new Card__singleAttack((Card__ItemRef__8948__31))), (new Card__dragonMinion((Card__ItemRef__8948__31))), (new Card__justAbilities((Card__ItemRef__8948__31), (new Card__noCharge((Card__ItemRef__8948__31))), (new Card__noTaunt((Card__ItemRef__8948__31))), (new Card__noStealth((Card__ItemRef__8948__31))), (new Card__noUntargetable((Card__ItemRef__8948__31))), (new Card__noShield((Card__ItemRef__8948__31))), (new Card__noPoisonous((Card__ItemRef__8948__31))), (new Card__noLifesteal((Card__ItemRef__8948__31))))), (new Card__specialEffects((Card__ItemRef__8948__31), (new Card__targetedBattlecryEff((Card__ItemRef__8948__31), (new Card__noCondTargetedEff((Card__ItemRef__8948__31), (new Card__damageEff((Card__ItemRef__8948__31), 2, (new Card__damageAbilities((Card__ItemRef__8948__31), (new Card__noPoisonous((Card__ItemRef__8948__31))), (new Card__noLifesteal((Card__ItemRef__8948__31))))))), (new Card__charTargetCond((Card__ItemRef__8948__31), (new Card__justCharTargetCond((Card__ItemRef__8948__31), (new Card__anyAllegiance((Card__ItemRef__8948__31))), (new Card__isCharacter((Card__ItemRef__8948__31))), (new Card__noAbilCond((Card__ItemRef__8948__31))), (new Card__noStatCond((Card__ItemRef__8948__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__8948__31))))))))));
     (((card)->name) = "Stormpike Commando");
     return (card);
   }
 }
-Card  *Card__ItemRef__8956__24;
+Card  *Card__ItemRef__8957__31;
 
 Card  *CreateBoulderfistOgre()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8956__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8956__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8956__24), 6, 6, 7, (new Card__singleAttack((Card__ItemRef__8956__24))), (new Card__beastMinion((Card__ItemRef__8956__24))), (new Card__justAbilities((Card__ItemRef__8956__24), (new Card__noCharge((Card__ItemRef__8956__24))), (new Card__noTaunt((Card__ItemRef__8956__24))), (new Card__noStealth((Card__ItemRef__8956__24))), (new Card__noUntargetable((Card__ItemRef__8956__24))), (new Card__noShield((Card__ItemRef__8956__24))), (new Card__noPoisonous((Card__ItemRef__8956__24))), (new Card__noLifesteal((Card__ItemRef__8956__24))))), (new Card__specialEffects((Card__ItemRef__8956__24), (new Card__noTargetedPlayEff((Card__ItemRef__8956__24))), (new Card__noOtherEffs((Card__ItemRef__8956__24))))))))));
+    Card  *card = (((Card__ItemRef__8957__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8957__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8957__31), 6, 6, 7, (new Card__singleAttack((Card__ItemRef__8957__31))), (new Card__beastMinion((Card__ItemRef__8957__31))), (new Card__justAbilities((Card__ItemRef__8957__31), (new Card__noCharge((Card__ItemRef__8957__31))), (new Card__noTaunt((Card__ItemRef__8957__31))), (new Card__noStealth((Card__ItemRef__8957__31))), (new Card__noUntargetable((Card__ItemRef__8957__31))), (new Card__noShield((Card__ItemRef__8957__31))), (new Card__noPoisonous((Card__ItemRef__8957__31))), (new Card__noLifesteal((Card__ItemRef__8957__31))))), (new Card__specialEffects((Card__ItemRef__8957__31), (new Card__noTargetedPlayEff((Card__ItemRef__8957__31))), (new Card__noOtherEffs((Card__ItemRef__8957__31))))))))));
     (((card)->name) = "Boulderfist Orge");
     return (card);
   }
 }
-Card  *Card__ItemRef__8963__24;
+Card  *Card__ItemRef__8964__31;
 
 Card  *CreateLordOfTheArena()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8963__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8963__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8963__24), 6, 6, 5, (new Card__singleAttack((Card__ItemRef__8963__24))), (new Card__dragonMinion((Card__ItemRef__8963__24))), (new Card__justAbilities((Card__ItemRef__8963__24), (new Card__noCharge((Card__ItemRef__8963__24))), (new Card__justTaunt((Card__ItemRef__8963__24))), (new Card__noStealth((Card__ItemRef__8963__24))), (new Card__noUntargetable((Card__ItemRef__8963__24))), (new Card__noShield((Card__ItemRef__8963__24))), (new Card__noPoisonous((Card__ItemRef__8963__24))), (new Card__noLifesteal((Card__ItemRef__8963__24))))), (new Card__specialEffects((Card__ItemRef__8963__24), (new Card__noTargetedPlayEff((Card__ItemRef__8963__24))), (new Card__noOtherEffs((Card__ItemRef__8963__24))))))))));
+    Card  *card = (((Card__ItemRef__8964__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8964__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8964__31), 6, 6, 5, (new Card__singleAttack((Card__ItemRef__8964__31))), (new Card__dragonMinion((Card__ItemRef__8964__31))), (new Card__justAbilities((Card__ItemRef__8964__31), (new Card__noCharge((Card__ItemRef__8964__31))), (new Card__justTaunt((Card__ItemRef__8964__31))), (new Card__noStealth((Card__ItemRef__8964__31))), (new Card__noUntargetable((Card__ItemRef__8964__31))), (new Card__noShield((Card__ItemRef__8964__31))), (new Card__noPoisonous((Card__ItemRef__8964__31))), (new Card__noLifesteal((Card__ItemRef__8964__31))))), (new Card__specialEffects((Card__ItemRef__8964__31), (new Card__noTargetedPlayEff((Card__ItemRef__8964__31))), (new Card__noOtherEffs((Card__ItemRef__8964__31))))))))));
     (((card)->name) = "Lord of the Arena");
     return (card);
   }
 }
-Card  *Card__ItemRef__8970__24;
+Card  *Card__ItemRef__8971__31;
 
 Card  *CreateRecklessRocketeer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8970__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8970__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8970__24), 6, 5, 2, (new Card__singleAttack((Card__ItemRef__8970__24))), (new Card__demonMinion((Card__ItemRef__8970__24))), (new Card__justAbilities((Card__ItemRef__8970__24), (new Card__justCharge((Card__ItemRef__8970__24))), (new Card__noTaunt((Card__ItemRef__8970__24))), (new Card__noStealth((Card__ItemRef__8970__24))), (new Card__noUntargetable((Card__ItemRef__8970__24))), (new Card__noShield((Card__ItemRef__8970__24))), (new Card__noPoisonous((Card__ItemRef__8970__24))), (new Card__noLifesteal((Card__ItemRef__8970__24))))), (new Card__specialEffects((Card__ItemRef__8970__24), (new Card__noTargetedPlayEff((Card__ItemRef__8970__24))), (new Card__noOtherEffs((Card__ItemRef__8970__24))))))))));
+    Card  *card = (((Card__ItemRef__8971__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8971__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8971__31), 6, 5, 2, (new Card__singleAttack((Card__ItemRef__8971__31))), (new Card__demonMinion((Card__ItemRef__8971__31))), (new Card__justAbilities((Card__ItemRef__8971__31), (new Card__justCharge((Card__ItemRef__8971__31))), (new Card__noTaunt((Card__ItemRef__8971__31))), (new Card__noStealth((Card__ItemRef__8971__31))), (new Card__noUntargetable((Card__ItemRef__8971__31))), (new Card__noShield((Card__ItemRef__8971__31))), (new Card__noPoisonous((Card__ItemRef__8971__31))), (new Card__noLifesteal((Card__ItemRef__8971__31))))), (new Card__specialEffects((Card__ItemRef__8971__31), (new Card__noTargetedPlayEff((Card__ItemRef__8971__31))), (new Card__noOtherEffs((Card__ItemRef__8971__31))))))))));
     (((card)->name) = "Reckless Rocketeer");
     return (card);
   }
 }
-Card  *Card__ItemRef__8977__24;
+Card  *Card__ItemRef__8978__31;
 
 Card  *CreateCoreHound()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8977__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8977__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8977__24), 7, 9, 5, (new Card__singleAttack((Card__ItemRef__8977__24))), (new Card__beastMinion((Card__ItemRef__8977__24))), (new Card__justAbilities((Card__ItemRef__8977__24), (new Card__noCharge((Card__ItemRef__8977__24))), (new Card__noTaunt((Card__ItemRef__8977__24))), (new Card__noStealth((Card__ItemRef__8977__24))), (new Card__noUntargetable((Card__ItemRef__8977__24))), (new Card__noShield((Card__ItemRef__8977__24))), (new Card__noPoisonous((Card__ItemRef__8977__24))), (new Card__noLifesteal((Card__ItemRef__8977__24))))), (new Card__specialEffects((Card__ItemRef__8977__24), (new Card__noTargetedPlayEff((Card__ItemRef__8977__24))), (new Card__noOtherEffs((Card__ItemRef__8977__24))))))))));
+    Card  *card = (((Card__ItemRef__8978__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8978__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8978__31), 7, 9, 5, (new Card__singleAttack((Card__ItemRef__8978__31))), (new Card__beastMinion((Card__ItemRef__8978__31))), (new Card__justAbilities((Card__ItemRef__8978__31), (new Card__noCharge((Card__ItemRef__8978__31))), (new Card__noTaunt((Card__ItemRef__8978__31))), (new Card__noStealth((Card__ItemRef__8978__31))), (new Card__noUntargetable((Card__ItemRef__8978__31))), (new Card__noShield((Card__ItemRef__8978__31))), (new Card__noPoisonous((Card__ItemRef__8978__31))), (new Card__noLifesteal((Card__ItemRef__8978__31))))), (new Card__specialEffects((Card__ItemRef__8978__31), (new Card__noTargetedPlayEff((Card__ItemRef__8978__31))), (new Card__noOtherEffs((Card__ItemRef__8978__31))))))))));
     (((card)->name) = "Core Hound");
     return (card);
   }
 }
-Card  *Card__ItemRef__8984__24;
+Card  *Card__ItemRef__8985__31;
 
 Card  *CreateWarGolem()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8984__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8984__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8984__24), 7, 7, 7, (new Card__singleAttack((Card__ItemRef__8984__24))), (new Card__demonMinion((Card__ItemRef__8984__24))), (new Card__justAbilities((Card__ItemRef__8984__24), (new Card__noCharge((Card__ItemRef__8984__24))), (new Card__noTaunt((Card__ItemRef__8984__24))), (new Card__noStealth((Card__ItemRef__8984__24))), (new Card__noUntargetable((Card__ItemRef__8984__24))), (new Card__noShield((Card__ItemRef__8984__24))), (new Card__noPoisonous((Card__ItemRef__8984__24))), (new Card__noLifesteal((Card__ItemRef__8984__24))))), (new Card__specialEffects((Card__ItemRef__8984__24), (new Card__noTargetedPlayEff((Card__ItemRef__8984__24))), (new Card__noOtherEffs((Card__ItemRef__8984__24))))))))));
+    Card  *card = (((Card__ItemRef__8985__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8985__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__8985__31), 7, 7, 7, (new Card__singleAttack((Card__ItemRef__8985__31))), (new Card__demonMinion((Card__ItemRef__8985__31))), (new Card__justAbilities((Card__ItemRef__8985__31), (new Card__noCharge((Card__ItemRef__8985__31))), (new Card__noTaunt((Card__ItemRef__8985__31))), (new Card__noStealth((Card__ItemRef__8985__31))), (new Card__noUntargetable((Card__ItemRef__8985__31))), (new Card__noShield((Card__ItemRef__8985__31))), (new Card__noPoisonous((Card__ItemRef__8985__31))), (new Card__noLifesteal((Card__ItemRef__8985__31))))), (new Card__specialEffects((Card__ItemRef__8985__31), (new Card__noTargetedPlayEff((Card__ItemRef__8985__31))), (new Card__noOtherEffs((Card__ItemRef__8985__31))))))))));
     (((card)->name) = "War Golem");
     return (card);
   }
 }
-Card  *Card__ItemRef__8991__24;
+Card  *Card__ItemRef__8992__31;
 
 Card  *CreateChaosNova()
 {
 
   {
-    Card  *card = (((Card__ItemRef__8991__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8991__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8991__24), 5, (new Card__justAbilities((Card__ItemRef__8991__24), (new Card__noCharge((Card__ItemRef__8991__24))), (new Card__noTaunt((Card__ItemRef__8991__24))), (new Card__noStealth((Card__ItemRef__8991__24))), (new Card__noUntargetable((Card__ItemRef__8991__24))), (new Card__noShield((Card__ItemRef__8991__24))), (new Card__noPoisonous((Card__ItemRef__8991__24))), (new Card__noLifesteal((Card__ItemRef__8991__24))))), (new Card__specialEffects((Card__ItemRef__8991__24), (new Card__noTargetedPlayEff((Card__ItemRef__8991__24))), (new Card__consOtherEffs((Card__ItemRef__8991__24), (new Card__untargetedCastEff((Card__ItemRef__8991__24), (new Card__noCondUntargetedEff((Card__ItemRef__8991__24), (new Card__aoeEff((Card__ItemRef__8991__24), (new Card__damageEff((Card__ItemRef__8991__24), 4, (new Card__damageAbilities((Card__ItemRef__8991__24), (new Card__noPoisonous((Card__ItemRef__8991__24))), (new Card__noLifesteal((Card__ItemRef__8991__24))))))), (new Card__charTargetCond((Card__ItemRef__8991__24), (new Card__justCharTargetCond((Card__ItemRef__8991__24), (new Card__anyAllegiance((Card__ItemRef__8991__24))), (new Card__isMinion((Card__ItemRef__8991__24))), (new Card__noAbilCond((Card__ItemRef__8991__24))), (new Card__noStatCond((Card__ItemRef__8991__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8991__24))))))))))));
+    Card  *card = (((Card__ItemRef__8992__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__8992__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__8992__31), 5, (new Card__justAbilities((Card__ItemRef__8992__31), (new Card__noCharge((Card__ItemRef__8992__31))), (new Card__noTaunt((Card__ItemRef__8992__31))), (new Card__noStealth((Card__ItemRef__8992__31))), (new Card__noUntargetable((Card__ItemRef__8992__31))), (new Card__noShield((Card__ItemRef__8992__31))), (new Card__noPoisonous((Card__ItemRef__8992__31))), (new Card__noLifesteal((Card__ItemRef__8992__31))))), (new Card__specialEffects((Card__ItemRef__8992__31), (new Card__noTargetedPlayEff((Card__ItemRef__8992__31))), (new Card__consOtherEffs((Card__ItemRef__8992__31), (new Card__untargetedCastEff((Card__ItemRef__8992__31), (new Card__noCondUntargetedEff((Card__ItemRef__8992__31), (new Card__aoeEff((Card__ItemRef__8992__31), (new Card__damageEff((Card__ItemRef__8992__31), 4, (new Card__damageAbilities((Card__ItemRef__8992__31), (new Card__noPoisonous((Card__ItemRef__8992__31))), (new Card__noLifesteal((Card__ItemRef__8992__31))))))), (new Card__charTargetCond((Card__ItemRef__8992__31), (new Card__justCharTargetCond((Card__ItemRef__8992__31), (new Card__anyAllegiance((Card__ItemRef__8992__31))), (new Card__isMinion((Card__ItemRef__8992__31))), (new Card__noAbilCond((Card__ItemRef__8992__31))), (new Card__noStatCond((Card__ItemRef__8992__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__8992__31))))))))))));
     (((card)->name) = "Chaos Nova");
     return (card);
   }
 }
-Card  *Card__ItemRef__9001__24;
+Card  *Card__ItemRef__9002__31;
 
 Card  *CreateMoonfire()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9001__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9001__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9001__24), 0, (new Card__justAbilities((Card__ItemRef__9001__24), (new Card__noCharge((Card__ItemRef__9001__24))), (new Card__noTaunt((Card__ItemRef__9001__24))), (new Card__noStealth((Card__ItemRef__9001__24))), (new Card__noUntargetable((Card__ItemRef__9001__24))), (new Card__noShield((Card__ItemRef__9001__24))), (new Card__noPoisonous((Card__ItemRef__9001__24))), (new Card__noLifesteal((Card__ItemRef__9001__24))))), (new Card__specialEffects((Card__ItemRef__9001__24), (new Card__targetedCastEff((Card__ItemRef__9001__24), (new Card__noCondTargetedEff((Card__ItemRef__9001__24), (new Card__damageEff((Card__ItemRef__9001__24), 1, (new Card__damageAbilities((Card__ItemRef__9001__24), (new Card__noPoisonous((Card__ItemRef__9001__24))), (new Card__noLifesteal((Card__ItemRef__9001__24))))))), (new Card__charTargetCond((Card__ItemRef__9001__24), (new Card__justCharTargetCond((Card__ItemRef__9001__24), (new Card__anyAllegiance((Card__ItemRef__9001__24))), (new Card__isCharacter((Card__ItemRef__9001__24))), (new Card__noAbilCond((Card__ItemRef__9001__24))), (new Card__noStatCond((Card__ItemRef__9001__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9001__24))))))))));
+    Card  *card = (((Card__ItemRef__9002__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9002__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9002__31), 0, (new Card__justAbilities((Card__ItemRef__9002__31), (new Card__noCharge((Card__ItemRef__9002__31))), (new Card__noTaunt((Card__ItemRef__9002__31))), (new Card__noStealth((Card__ItemRef__9002__31))), (new Card__noUntargetable((Card__ItemRef__9002__31))), (new Card__noShield((Card__ItemRef__9002__31))), (new Card__noPoisonous((Card__ItemRef__9002__31))), (new Card__noLifesteal((Card__ItemRef__9002__31))))), (new Card__specialEffects((Card__ItemRef__9002__31), (new Card__targetedCastEff((Card__ItemRef__9002__31), (new Card__noCondTargetedEff((Card__ItemRef__9002__31), (new Card__damageEff((Card__ItemRef__9002__31), 1, (new Card__damageAbilities((Card__ItemRef__9002__31), (new Card__noPoisonous((Card__ItemRef__9002__31))), (new Card__noLifesteal((Card__ItemRef__9002__31))))))), (new Card__charTargetCond((Card__ItemRef__9002__31), (new Card__justCharTargetCond((Card__ItemRef__9002__31), (new Card__anyAllegiance((Card__ItemRef__9002__31))), (new Card__isCharacter((Card__ItemRef__9002__31))), (new Card__noAbilCond((Card__ItemRef__9002__31))), (new Card__noStatCond((Card__ItemRef__9002__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9002__31))))))))));
     (((card)->name) = "Moonfire");
     return (card);
   }
 }
-Card  *Card__ItemRef__9010__24;
+Card  *Card__ItemRef__9011__31;
 
 Card  *CreateHealingTouch()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9010__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9010__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9010__24), 3, (new Card__justAbilities((Card__ItemRef__9010__24), (new Card__noCharge((Card__ItemRef__9010__24))), (new Card__noTaunt((Card__ItemRef__9010__24))), (new Card__noStealth((Card__ItemRef__9010__24))), (new Card__noUntargetable((Card__ItemRef__9010__24))), (new Card__noShield((Card__ItemRef__9010__24))), (new Card__noPoisonous((Card__ItemRef__9010__24))), (new Card__noLifesteal((Card__ItemRef__9010__24))))), (new Card__specialEffects((Card__ItemRef__9010__24), (new Card__targetedCastEff((Card__ItemRef__9010__24), (new Card__noCondTargetedEff((Card__ItemRef__9010__24), (new Card__healEff((Card__ItemRef__9010__24), 8)), (new Card__charTargetCond((Card__ItemRef__9010__24), (new Card__justCharTargetCond((Card__ItemRef__9010__24), (new Card__anyAllegiance((Card__ItemRef__9010__24))), (new Card__isCharacter((Card__ItemRef__9010__24))), (new Card__noAbilCond((Card__ItemRef__9010__24))), (new Card__noStatCond((Card__ItemRef__9010__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9010__24))))))))));
+    Card  *card = (((Card__ItemRef__9011__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9011__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9011__31), 3, (new Card__justAbilities((Card__ItemRef__9011__31), (new Card__noCharge((Card__ItemRef__9011__31))), (new Card__noTaunt((Card__ItemRef__9011__31))), (new Card__noStealth((Card__ItemRef__9011__31))), (new Card__noUntargetable((Card__ItemRef__9011__31))), (new Card__noShield((Card__ItemRef__9011__31))), (new Card__noPoisonous((Card__ItemRef__9011__31))), (new Card__noLifesteal((Card__ItemRef__9011__31))))), (new Card__specialEffects((Card__ItemRef__9011__31), (new Card__targetedCastEff((Card__ItemRef__9011__31), (new Card__noCondTargetedEff((Card__ItemRef__9011__31), (new Card__healEff((Card__ItemRef__9011__31), 8)), (new Card__charTargetCond((Card__ItemRef__9011__31), (new Card__justCharTargetCond((Card__ItemRef__9011__31), (new Card__anyAllegiance((Card__ItemRef__9011__31))), (new Card__isCharacter((Card__ItemRef__9011__31))), (new Card__noAbilCond((Card__ItemRef__9011__31))), (new Card__noStatCond((Card__ItemRef__9011__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9011__31))))))))));
     (((card)->name) = "Healing Touch");
     return (card);
   }
 }
-Card  *Card__ItemRef__9019__24;
+Card  *Card__ItemRef__9020__31;
 
 Card  *CreateStarfire()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9019__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9019__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9019__24), 6, (new Card__justAbilities((Card__ItemRef__9019__24), (new Card__noCharge((Card__ItemRef__9019__24))), (new Card__noTaunt((Card__ItemRef__9019__24))), (new Card__noStealth((Card__ItemRef__9019__24))), (new Card__noUntargetable((Card__ItemRef__9019__24))), (new Card__noShield((Card__ItemRef__9019__24))), (new Card__noPoisonous((Card__ItemRef__9019__24))), (new Card__noLifesteal((Card__ItemRef__9019__24))))), (new Card__specialEffects((Card__ItemRef__9019__24), (new Card__targetedCastEff((Card__ItemRef__9019__24), (new Card__noCondTargetedEff((Card__ItemRef__9019__24), (new Card__damageEff((Card__ItemRef__9019__24), 5, (new Card__damageAbilities((Card__ItemRef__9019__24), (new Card__noPoisonous((Card__ItemRef__9019__24))), (new Card__noLifesteal((Card__ItemRef__9019__24))))))), (new Card__charTargetCond((Card__ItemRef__9019__24), (new Card__justCharTargetCond((Card__ItemRef__9019__24), (new Card__anyAllegiance((Card__ItemRef__9019__24))), (new Card__isCharacter((Card__ItemRef__9019__24))), (new Card__noAbilCond((Card__ItemRef__9019__24))), (new Card__noStatCond((Card__ItemRef__9019__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9019__24), (new Card__untargetedCastEff((Card__ItemRef__9019__24), (new Card__noCondUntargetedEff((Card__ItemRef__9019__24), (new Card__drawCardEff((Card__ItemRef__9019__24), 1, (new Card__allyAllegiance((Card__ItemRef__9019__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9019__24))))))))))));
+    Card  *card = (((Card__ItemRef__9020__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9020__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9020__31), 6, (new Card__justAbilities((Card__ItemRef__9020__31), (new Card__noCharge((Card__ItemRef__9020__31))), (new Card__noTaunt((Card__ItemRef__9020__31))), (new Card__noStealth((Card__ItemRef__9020__31))), (new Card__noUntargetable((Card__ItemRef__9020__31))), (new Card__noShield((Card__ItemRef__9020__31))), (new Card__noPoisonous((Card__ItemRef__9020__31))), (new Card__noLifesteal((Card__ItemRef__9020__31))))), (new Card__specialEffects((Card__ItemRef__9020__31), (new Card__targetedCastEff((Card__ItemRef__9020__31), (new Card__noCondTargetedEff((Card__ItemRef__9020__31), (new Card__damageEff((Card__ItemRef__9020__31), 5, (new Card__damageAbilities((Card__ItemRef__9020__31), (new Card__noPoisonous((Card__ItemRef__9020__31))), (new Card__noLifesteal((Card__ItemRef__9020__31))))))), (new Card__charTargetCond((Card__ItemRef__9020__31), (new Card__justCharTargetCond((Card__ItemRef__9020__31), (new Card__anyAllegiance((Card__ItemRef__9020__31))), (new Card__isCharacter((Card__ItemRef__9020__31))), (new Card__noAbilCond((Card__ItemRef__9020__31))), (new Card__noStatCond((Card__ItemRef__9020__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9020__31), (new Card__untargetedCastEff((Card__ItemRef__9020__31), (new Card__noCondUntargetedEff((Card__ItemRef__9020__31), (new Card__drawCardEff((Card__ItemRef__9020__31), 1, (new Card__allyAllegiance((Card__ItemRef__9020__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9020__31))))))))))));
     (((card)->name) = "Starfire");
     return (card);
   }
 }
-Card  *Card__ItemRef__9029__24;
+Card  *Card__ItemRef__9030__31;
 
 Card  *CreateArcaneShot()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9029__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9029__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9029__24), 1, (new Card__justAbilities((Card__ItemRef__9029__24), (new Card__noCharge((Card__ItemRef__9029__24))), (new Card__noTaunt((Card__ItemRef__9029__24))), (new Card__noStealth((Card__ItemRef__9029__24))), (new Card__noUntargetable((Card__ItemRef__9029__24))), (new Card__noShield((Card__ItemRef__9029__24))), (new Card__noPoisonous((Card__ItemRef__9029__24))), (new Card__noLifesteal((Card__ItemRef__9029__24))))), (new Card__specialEffects((Card__ItemRef__9029__24), (new Card__targetedCastEff((Card__ItemRef__9029__24), (new Card__noCondTargetedEff((Card__ItemRef__9029__24), (new Card__damageEff((Card__ItemRef__9029__24), 2, (new Card__damageAbilities((Card__ItemRef__9029__24), (new Card__noPoisonous((Card__ItemRef__9029__24))), (new Card__noLifesteal((Card__ItemRef__9029__24))))))), (new Card__charTargetCond((Card__ItemRef__9029__24), (new Card__justCharTargetCond((Card__ItemRef__9029__24), (new Card__anyAllegiance((Card__ItemRef__9029__24))), (new Card__isCharacter((Card__ItemRef__9029__24))), (new Card__noAbilCond((Card__ItemRef__9029__24))), (new Card__noStatCond((Card__ItemRef__9029__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9029__24))))))))));
+    Card  *card = (((Card__ItemRef__9030__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9030__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9030__31), 1, (new Card__justAbilities((Card__ItemRef__9030__31), (new Card__noCharge((Card__ItemRef__9030__31))), (new Card__noTaunt((Card__ItemRef__9030__31))), (new Card__noStealth((Card__ItemRef__9030__31))), (new Card__noUntargetable((Card__ItemRef__9030__31))), (new Card__noShield((Card__ItemRef__9030__31))), (new Card__noPoisonous((Card__ItemRef__9030__31))), (new Card__noLifesteal((Card__ItemRef__9030__31))))), (new Card__specialEffects((Card__ItemRef__9030__31), (new Card__targetedCastEff((Card__ItemRef__9030__31), (new Card__noCondTargetedEff((Card__ItemRef__9030__31), (new Card__damageEff((Card__ItemRef__9030__31), 2, (new Card__damageAbilities((Card__ItemRef__9030__31), (new Card__noPoisonous((Card__ItemRef__9030__31))), (new Card__noLifesteal((Card__ItemRef__9030__31))))))), (new Card__charTargetCond((Card__ItemRef__9030__31), (new Card__justCharTargetCond((Card__ItemRef__9030__31), (new Card__anyAllegiance((Card__ItemRef__9030__31))), (new Card__isCharacter((Card__ItemRef__9030__31))), (new Card__noAbilCond((Card__ItemRef__9030__31))), (new Card__noStatCond((Card__ItemRef__9030__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9030__31))))))))));
     (((card)->name) = "Arcane Shot");
     return (card);
   }
 }
-Card  *Card__ItemRef__9038__25;
-Card  *Card__ItemRef__9040__24;
+Card  *Card__ItemRef__9039__32;
+Card  *Card__ItemRef__9041__31;
 
 Card  *CreateMirrorImage()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9038__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9038__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9038__25), 0, 0, 2, (new Card__singleAttack((Card__ItemRef__9038__25))), (new Card__dragonMinion((Card__ItemRef__9038__25))), (new Card__justAbilities((Card__ItemRef__9038__25), (new Card__noCharge((Card__ItemRef__9038__25))), (new Card__justTaunt((Card__ItemRef__9038__25))), (new Card__noStealth((Card__ItemRef__9038__25))), (new Card__noUntargetable((Card__ItemRef__9038__25))), (new Card__noShield((Card__ItemRef__9038__25))), (new Card__noPoisonous((Card__ItemRef__9038__25))), (new Card__noLifesteal((Card__ItemRef__9038__25))))), (new Card__specialEffects((Card__ItemRef__9038__25), (new Card__noTargetedPlayEff((Card__ItemRef__9038__25))), (new Card__noOtherEffs((Card__ItemRef__9038__25))))))))));
+    Card  *token = (((Card__ItemRef__9039__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9039__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9039__32), 0, 0, 2, (new Card__singleAttack((Card__ItemRef__9039__32))), (new Card__dragonMinion((Card__ItemRef__9039__32))), (new Card__justAbilities((Card__ItemRef__9039__32), (new Card__noCharge((Card__ItemRef__9039__32))), (new Card__justTaunt((Card__ItemRef__9039__32))), (new Card__noStealth((Card__ItemRef__9039__32))), (new Card__noUntargetable((Card__ItemRef__9039__32))), (new Card__noShield((Card__ItemRef__9039__32))), (new Card__noPoisonous((Card__ItemRef__9039__32))), (new Card__noLifesteal((Card__ItemRef__9039__32))))), (new Card__specialEffects((Card__ItemRef__9039__32), (new Card__noTargetedPlayEff((Card__ItemRef__9039__32))), (new Card__noOtherEffs((Card__ItemRef__9039__32))))))))));
     (((token)->name) = "Mirror Image (Token)");
-    Card  *card = (((Card__ItemRef__9040__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9040__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9040__24), 1, (new Card__justAbilities((Card__ItemRef__9040__24), (new Card__noCharge((Card__ItemRef__9040__24))), (new Card__noTaunt((Card__ItemRef__9040__24))), (new Card__noStealth((Card__ItemRef__9040__24))), (new Card__noUntargetable((Card__ItemRef__9040__24))), (new Card__noShield((Card__ItemRef__9040__24))), (new Card__noPoisonous((Card__ItemRef__9040__24))), (new Card__noLifesteal((Card__ItemRef__9040__24))))), (new Card__specialEffects((Card__ItemRef__9040__24), (new Card__noTargetedPlayEff((Card__ItemRef__9040__24))), (new Card__consOtherEffs((Card__ItemRef__9040__24), (new Card__untargetedCastEff((Card__ItemRef__9040__24), (new Card__noCondUntargetedEff((Card__ItemRef__9040__24), (new Card__newEff((Card__ItemRef__9040__24), 2, (new Card__fieldDest((Card__ItemRef__9040__24), (new Card__allyAllegiance((Card__ItemRef__9040__24))))), (new Card__plainMinion((Card__ItemRef__9040__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9040__24))))))))))));
+    Card  *card = (((Card__ItemRef__9041__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9041__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9041__31), 1, (new Card__justAbilities((Card__ItemRef__9041__31), (new Card__noCharge((Card__ItemRef__9041__31))), (new Card__noTaunt((Card__ItemRef__9041__31))), (new Card__noStealth((Card__ItemRef__9041__31))), (new Card__noUntargetable((Card__ItemRef__9041__31))), (new Card__noShield((Card__ItemRef__9041__31))), (new Card__noPoisonous((Card__ItemRef__9041__31))), (new Card__noLifesteal((Card__ItemRef__9041__31))))), (new Card__specialEffects((Card__ItemRef__9041__31), (new Card__noTargetedPlayEff((Card__ItemRef__9041__31))), (new Card__consOtherEffs((Card__ItemRef__9041__31), (new Card__untargetedCastEff((Card__ItemRef__9041__31), (new Card__noCondUntargetedEff((Card__ItemRef__9041__31), (new Card__newEff((Card__ItemRef__9041__31), 2, (new Card__fieldDest((Card__ItemRef__9041__31), (new Card__allyAllegiance((Card__ItemRef__9041__31))))), (new Card__plainMinion((Card__ItemRef__9041__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9041__31))))))))))));
     (((card)->name) = "Mirror Image");
     return (card);
   }
 }
-Card  *Card__ItemRef__9050__24;
+Card  *Card__ItemRef__9051__31;
 
 Card  *CreateArcaneExplosion()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9050__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9050__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9050__24), 2, (new Card__justAbilities((Card__ItemRef__9050__24), (new Card__noCharge((Card__ItemRef__9050__24))), (new Card__noTaunt((Card__ItemRef__9050__24))), (new Card__noStealth((Card__ItemRef__9050__24))), (new Card__noUntargetable((Card__ItemRef__9050__24))), (new Card__noShield((Card__ItemRef__9050__24))), (new Card__noPoisonous((Card__ItemRef__9050__24))), (new Card__noLifesteal((Card__ItemRef__9050__24))))), (new Card__specialEffects((Card__ItemRef__9050__24), (new Card__noTargetedPlayEff((Card__ItemRef__9050__24))), (new Card__consOtherEffs((Card__ItemRef__9050__24), (new Card__untargetedCastEff((Card__ItemRef__9050__24), (new Card__noCondUntargetedEff((Card__ItemRef__9050__24), (new Card__aoeEff((Card__ItemRef__9050__24), (new Card__damageEff((Card__ItemRef__9050__24), 1, (new Card__damageAbilities((Card__ItemRef__9050__24), (new Card__noPoisonous((Card__ItemRef__9050__24))), (new Card__noLifesteal((Card__ItemRef__9050__24))))))), (new Card__charTargetCond((Card__ItemRef__9050__24), (new Card__justCharTargetCond((Card__ItemRef__9050__24), (new Card__oppoAllegiance((Card__ItemRef__9050__24))), (new Card__isMinion((Card__ItemRef__9050__24))), (new Card__noAbilCond((Card__ItemRef__9050__24))), (new Card__noStatCond((Card__ItemRef__9050__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9050__24))))))))))));
+    Card  *card = (((Card__ItemRef__9051__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9051__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9051__31), 2, (new Card__justAbilities((Card__ItemRef__9051__31), (new Card__noCharge((Card__ItemRef__9051__31))), (new Card__noTaunt((Card__ItemRef__9051__31))), (new Card__noStealth((Card__ItemRef__9051__31))), (new Card__noUntargetable((Card__ItemRef__9051__31))), (new Card__noShield((Card__ItemRef__9051__31))), (new Card__noPoisonous((Card__ItemRef__9051__31))), (new Card__noLifesteal((Card__ItemRef__9051__31))))), (new Card__specialEffects((Card__ItemRef__9051__31), (new Card__noTargetedPlayEff((Card__ItemRef__9051__31))), (new Card__consOtherEffs((Card__ItemRef__9051__31), (new Card__untargetedCastEff((Card__ItemRef__9051__31), (new Card__noCondUntargetedEff((Card__ItemRef__9051__31), (new Card__aoeEff((Card__ItemRef__9051__31), (new Card__damageEff((Card__ItemRef__9051__31), 1, (new Card__damageAbilities((Card__ItemRef__9051__31), (new Card__noPoisonous((Card__ItemRef__9051__31))), (new Card__noLifesteal((Card__ItemRef__9051__31))))))), (new Card__charTargetCond((Card__ItemRef__9051__31), (new Card__justCharTargetCond((Card__ItemRef__9051__31), (new Card__oppoAllegiance((Card__ItemRef__9051__31))), (new Card__isMinion((Card__ItemRef__9051__31))), (new Card__noAbilCond((Card__ItemRef__9051__31))), (new Card__noStatCond((Card__ItemRef__9051__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9051__31))))))))))));
     (((card)->name) = "Arcane Explosion");
     return (card);
   }
 }
-Card  *Card__ItemRef__9060__24;
+Card  *Card__ItemRef__9061__31;
 
 Card  *CreateArcaneIntellect()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9060__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9060__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9060__24), 3, (new Card__justAbilities((Card__ItemRef__9060__24), (new Card__noCharge((Card__ItemRef__9060__24))), (new Card__noTaunt((Card__ItemRef__9060__24))), (new Card__noStealth((Card__ItemRef__9060__24))), (new Card__noUntargetable((Card__ItemRef__9060__24))), (new Card__noShield((Card__ItemRef__9060__24))), (new Card__noPoisonous((Card__ItemRef__9060__24))), (new Card__noLifesteal((Card__ItemRef__9060__24))))), (new Card__specialEffects((Card__ItemRef__9060__24), (new Card__noTargetedPlayEff((Card__ItemRef__9060__24))), (new Card__consOtherEffs((Card__ItemRef__9060__24), (new Card__untargetedCastEff((Card__ItemRef__9060__24), (new Card__noCondUntargetedEff((Card__ItemRef__9060__24), (new Card__drawCardEff((Card__ItemRef__9060__24), 2, (new Card__allyAllegiance((Card__ItemRef__9060__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9060__24))))))))))));
+    Card  *card = (((Card__ItemRef__9061__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9061__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9061__31), 3, (new Card__justAbilities((Card__ItemRef__9061__31), (new Card__noCharge((Card__ItemRef__9061__31))), (new Card__noTaunt((Card__ItemRef__9061__31))), (new Card__noStealth((Card__ItemRef__9061__31))), (new Card__noUntargetable((Card__ItemRef__9061__31))), (new Card__noShield((Card__ItemRef__9061__31))), (new Card__noPoisonous((Card__ItemRef__9061__31))), (new Card__noLifesteal((Card__ItemRef__9061__31))))), (new Card__specialEffects((Card__ItemRef__9061__31), (new Card__noTargetedPlayEff((Card__ItemRef__9061__31))), (new Card__consOtherEffs((Card__ItemRef__9061__31), (new Card__untargetedCastEff((Card__ItemRef__9061__31), (new Card__noCondUntargetedEff((Card__ItemRef__9061__31), (new Card__drawCardEff((Card__ItemRef__9061__31), 2, (new Card__allyAllegiance((Card__ItemRef__9061__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9061__31))))))))))));
     (((card)->name) = "Arcane Intellect");
     return (card);
   }
 }
-Card  *Card__ItemRef__9070__24;
+Card  *Card__ItemRef__9071__31;
 
 Card  *CreateFireball()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9070__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9070__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9070__24), 4, (new Card__justAbilities((Card__ItemRef__9070__24), (new Card__noCharge((Card__ItemRef__9070__24))), (new Card__noTaunt((Card__ItemRef__9070__24))), (new Card__noStealth((Card__ItemRef__9070__24))), (new Card__noUntargetable((Card__ItemRef__9070__24))), (new Card__noShield((Card__ItemRef__9070__24))), (new Card__noPoisonous((Card__ItemRef__9070__24))), (new Card__noLifesteal((Card__ItemRef__9070__24))))), (new Card__specialEffects((Card__ItemRef__9070__24), (new Card__targetedCastEff((Card__ItemRef__9070__24), (new Card__noCondTargetedEff((Card__ItemRef__9070__24), (new Card__damageEff((Card__ItemRef__9070__24), 6, (new Card__damageAbilities((Card__ItemRef__9070__24), (new Card__noPoisonous((Card__ItemRef__9070__24))), (new Card__noLifesteal((Card__ItemRef__9070__24))))))), (new Card__charTargetCond((Card__ItemRef__9070__24), (new Card__justCharTargetCond((Card__ItemRef__9070__24), (new Card__anyAllegiance((Card__ItemRef__9070__24))), (new Card__isCharacter((Card__ItemRef__9070__24))), (new Card__noAbilCond((Card__ItemRef__9070__24))), (new Card__noStatCond((Card__ItemRef__9070__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9070__24))))))))));
+    Card  *card = (((Card__ItemRef__9071__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9071__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9071__31), 4, (new Card__justAbilities((Card__ItemRef__9071__31), (new Card__noCharge((Card__ItemRef__9071__31))), (new Card__noTaunt((Card__ItemRef__9071__31))), (new Card__noStealth((Card__ItemRef__9071__31))), (new Card__noUntargetable((Card__ItemRef__9071__31))), (new Card__noShield((Card__ItemRef__9071__31))), (new Card__noPoisonous((Card__ItemRef__9071__31))), (new Card__noLifesteal((Card__ItemRef__9071__31))))), (new Card__specialEffects((Card__ItemRef__9071__31), (new Card__targetedCastEff((Card__ItemRef__9071__31), (new Card__noCondTargetedEff((Card__ItemRef__9071__31), (new Card__damageEff((Card__ItemRef__9071__31), 6, (new Card__damageAbilities((Card__ItemRef__9071__31), (new Card__noPoisonous((Card__ItemRef__9071__31))), (new Card__noLifesteal((Card__ItemRef__9071__31))))))), (new Card__charTargetCond((Card__ItemRef__9071__31), (new Card__justCharTargetCond((Card__ItemRef__9071__31), (new Card__anyAllegiance((Card__ItemRef__9071__31))), (new Card__isCharacter((Card__ItemRef__9071__31))), (new Card__noAbilCond((Card__ItemRef__9071__31))), (new Card__noStatCond((Card__ItemRef__9071__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9071__31))))))))));
     (((card)->name) = "Fireball");
     return (card);
   }
 }
-Card  *Card__ItemRef__9079__25;
-Card  *Card__ItemRef__9081__24;
+Card  *Card__ItemRef__9080__32;
+Card  *Card__ItemRef__9082__31;
 
 Card  *CreatePolymorph()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9079__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9079__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9079__25), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9079__25))), (new Card__beastMinion((Card__ItemRef__9079__25))), (new Card__justAbilities((Card__ItemRef__9079__25), (new Card__noCharge((Card__ItemRef__9079__25))), (new Card__noTaunt((Card__ItemRef__9079__25))), (new Card__noStealth((Card__ItemRef__9079__25))), (new Card__noUntargetable((Card__ItemRef__9079__25))), (new Card__noShield((Card__ItemRef__9079__25))), (new Card__noPoisonous((Card__ItemRef__9079__25))), (new Card__noLifesteal((Card__ItemRef__9079__25))))), (new Card__specialEffects((Card__ItemRef__9079__25), (new Card__noTargetedPlayEff((Card__ItemRef__9079__25))), (new Card__noOtherEffs((Card__ItemRef__9079__25))))))))));
+    Card  *token = (((Card__ItemRef__9080__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9080__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9080__32), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9080__32))), (new Card__beastMinion((Card__ItemRef__9080__32))), (new Card__justAbilities((Card__ItemRef__9080__32), (new Card__noCharge((Card__ItemRef__9080__32))), (new Card__noTaunt((Card__ItemRef__9080__32))), (new Card__noStealth((Card__ItemRef__9080__32))), (new Card__noUntargetable((Card__ItemRef__9080__32))), (new Card__noShield((Card__ItemRef__9080__32))), (new Card__noPoisonous((Card__ItemRef__9080__32))), (new Card__noLifesteal((Card__ItemRef__9080__32))))), (new Card__specialEffects((Card__ItemRef__9080__32), (new Card__noTargetedPlayEff((Card__ItemRef__9080__32))), (new Card__noOtherEffs((Card__ItemRef__9080__32))))))))));
     (((token)->name) = "Sheep");
-    Card  *card = (((Card__ItemRef__9081__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9081__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9081__24), 4, (new Card__justAbilities((Card__ItemRef__9081__24), (new Card__noCharge((Card__ItemRef__9081__24))), (new Card__noTaunt((Card__ItemRef__9081__24))), (new Card__noStealth((Card__ItemRef__9081__24))), (new Card__noUntargetable((Card__ItemRef__9081__24))), (new Card__noShield((Card__ItemRef__9081__24))), (new Card__noPoisonous((Card__ItemRef__9081__24))), (new Card__noLifesteal((Card__ItemRef__9081__24))))), (new Card__specialEffects((Card__ItemRef__9081__24), (new Card__targetedCastEff((Card__ItemRef__9081__24), (new Card__noCondTargetedEff((Card__ItemRef__9081__24), (new Card__transformEff((Card__ItemRef__9081__24), (new Card__plainMinion((Card__ItemRef__9081__24), (token))))), (new Card__charTargetCond((Card__ItemRef__9081__24), (new Card__justCharTargetCond((Card__ItemRef__9081__24), (new Card__anyAllegiance((Card__ItemRef__9081__24))), (new Card__isMinion((Card__ItemRef__9081__24))), (new Card__noAbilCond((Card__ItemRef__9081__24))), (new Card__noStatCond((Card__ItemRef__9081__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9081__24))))))))));
+    Card  *card = (((Card__ItemRef__9082__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9082__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9082__31), 4, (new Card__justAbilities((Card__ItemRef__9082__31), (new Card__noCharge((Card__ItemRef__9082__31))), (new Card__noTaunt((Card__ItemRef__9082__31))), (new Card__noStealth((Card__ItemRef__9082__31))), (new Card__noUntargetable((Card__ItemRef__9082__31))), (new Card__noShield((Card__ItemRef__9082__31))), (new Card__noPoisonous((Card__ItemRef__9082__31))), (new Card__noLifesteal((Card__ItemRef__9082__31))))), (new Card__specialEffects((Card__ItemRef__9082__31), (new Card__targetedCastEff((Card__ItemRef__9082__31), (new Card__noCondTargetedEff((Card__ItemRef__9082__31), (new Card__transformEff((Card__ItemRef__9082__31), (new Card__plainMinion((Card__ItemRef__9082__31), (token))))), (new Card__charTargetCond((Card__ItemRef__9082__31), (new Card__justCharTargetCond((Card__ItemRef__9082__31), (new Card__anyAllegiance((Card__ItemRef__9082__31))), (new Card__isMinion((Card__ItemRef__9082__31))), (new Card__noAbilCond((Card__ItemRef__9082__31))), (new Card__noStatCond((Card__ItemRef__9082__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9082__31))))))))));
     (((card)->name) = "Polymorph");
     return (card);
   }
 }
-Card  *Card__ItemRef__9090__24;
+Card  *Card__ItemRef__9091__31;
 
 Card  *CreateFlamestrike()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9090__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9090__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9090__24), 7, (new Card__justAbilities((Card__ItemRef__9090__24), (new Card__noCharge((Card__ItemRef__9090__24))), (new Card__noTaunt((Card__ItemRef__9090__24))), (new Card__noStealth((Card__ItemRef__9090__24))), (new Card__noUntargetable((Card__ItemRef__9090__24))), (new Card__noShield((Card__ItemRef__9090__24))), (new Card__noPoisonous((Card__ItemRef__9090__24))), (new Card__noLifesteal((Card__ItemRef__9090__24))))), (new Card__specialEffects((Card__ItemRef__9090__24), (new Card__noTargetedPlayEff((Card__ItemRef__9090__24))), (new Card__consOtherEffs((Card__ItemRef__9090__24), (new Card__untargetedCastEff((Card__ItemRef__9090__24), (new Card__noCondUntargetedEff((Card__ItemRef__9090__24), (new Card__aoeEff((Card__ItemRef__9090__24), (new Card__damageEff((Card__ItemRef__9090__24), 5, (new Card__damageAbilities((Card__ItemRef__9090__24), (new Card__noPoisonous((Card__ItemRef__9090__24))), (new Card__noLifesteal((Card__ItemRef__9090__24))))))), (new Card__charTargetCond((Card__ItemRef__9090__24), (new Card__justCharTargetCond((Card__ItemRef__9090__24), (new Card__oppoAllegiance((Card__ItemRef__9090__24))), (new Card__isMinion((Card__ItemRef__9090__24))), (new Card__noAbilCond((Card__ItemRef__9090__24))), (new Card__noStatCond((Card__ItemRef__9090__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9090__24))))))))))));
+    Card  *card = (((Card__ItemRef__9091__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9091__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9091__31), 7, (new Card__justAbilities((Card__ItemRef__9091__31), (new Card__noCharge((Card__ItemRef__9091__31))), (new Card__noTaunt((Card__ItemRef__9091__31))), (new Card__noStealth((Card__ItemRef__9091__31))), (new Card__noUntargetable((Card__ItemRef__9091__31))), (new Card__noShield((Card__ItemRef__9091__31))), (new Card__noPoisonous((Card__ItemRef__9091__31))), (new Card__noLifesteal((Card__ItemRef__9091__31))))), (new Card__specialEffects((Card__ItemRef__9091__31), (new Card__noTargetedPlayEff((Card__ItemRef__9091__31))), (new Card__consOtherEffs((Card__ItemRef__9091__31), (new Card__untargetedCastEff((Card__ItemRef__9091__31), (new Card__noCondUntargetedEff((Card__ItemRef__9091__31), (new Card__aoeEff((Card__ItemRef__9091__31), (new Card__damageEff((Card__ItemRef__9091__31), 5, (new Card__damageAbilities((Card__ItemRef__9091__31), (new Card__noPoisonous((Card__ItemRef__9091__31))), (new Card__noLifesteal((Card__ItemRef__9091__31))))))), (new Card__charTargetCond((Card__ItemRef__9091__31), (new Card__justCharTargetCond((Card__ItemRef__9091__31), (new Card__oppoAllegiance((Card__ItemRef__9091__31))), (new Card__isMinion((Card__ItemRef__9091__31))), (new Card__noAbilCond((Card__ItemRef__9091__31))), (new Card__noStatCond((Card__ItemRef__9091__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9091__31))))))))))));
     (((card)->name) = "Flame Strike");
     return (card);
   }
 }
-Card  *Card__ItemRef__9100__24;
+Card  *Card__ItemRef__9101__31;
 
 Card  *CreateBlessingOfMight()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9100__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9100__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9100__24), 1, (new Card__justAbilities((Card__ItemRef__9100__24), (new Card__noCharge((Card__ItemRef__9100__24))), (new Card__noTaunt((Card__ItemRef__9100__24))), (new Card__noStealth((Card__ItemRef__9100__24))), (new Card__noUntargetable((Card__ItemRef__9100__24))), (new Card__noShield((Card__ItemRef__9100__24))), (new Card__noPoisonous((Card__ItemRef__9100__24))), (new Card__noLifesteal((Card__ItemRef__9100__24))))), (new Card__specialEffects((Card__ItemRef__9100__24), (new Card__targetedCastEff((Card__ItemRef__9100__24), (new Card__noCondTargetedEff((Card__ItemRef__9100__24), (new Card__atkHpModEff((Card__ItemRef__9100__24), 3, 0)), (new Card__charTargetCond((Card__ItemRef__9100__24), (new Card__justCharTargetCond((Card__ItemRef__9100__24), (new Card__anyAllegiance((Card__ItemRef__9100__24))), (new Card__isMinion((Card__ItemRef__9100__24))), (new Card__noAbilCond((Card__ItemRef__9100__24))), (new Card__noStatCond((Card__ItemRef__9100__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9100__24))))))))));
+    Card  *card = (((Card__ItemRef__9101__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9101__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9101__31), 1, (new Card__justAbilities((Card__ItemRef__9101__31), (new Card__noCharge((Card__ItemRef__9101__31))), (new Card__noTaunt((Card__ItemRef__9101__31))), (new Card__noStealth((Card__ItemRef__9101__31))), (new Card__noUntargetable((Card__ItemRef__9101__31))), (new Card__noShield((Card__ItemRef__9101__31))), (new Card__noPoisonous((Card__ItemRef__9101__31))), (new Card__noLifesteal((Card__ItemRef__9101__31))))), (new Card__specialEffects((Card__ItemRef__9101__31), (new Card__targetedCastEff((Card__ItemRef__9101__31), (new Card__noCondTargetedEff((Card__ItemRef__9101__31), (new Card__atkHpModEff((Card__ItemRef__9101__31), 3, 0)), (new Card__charTargetCond((Card__ItemRef__9101__31), (new Card__justCharTargetCond((Card__ItemRef__9101__31), (new Card__anyAllegiance((Card__ItemRef__9101__31))), (new Card__isMinion((Card__ItemRef__9101__31))), (new Card__noAbilCond((Card__ItemRef__9101__31))), (new Card__noStatCond((Card__ItemRef__9101__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9101__31))))))))));
     (((card)->name) = "Blessing of Might");
     return (card);
   }
 }
-Card  *Card__ItemRef__9109__24;
+Card  *Card__ItemRef__9110__31;
 
 Card  *CreateHandOfProtection()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9109__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9109__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9109__24), 1, (new Card__justAbilities((Card__ItemRef__9109__24), (new Card__noCharge((Card__ItemRef__9109__24))), (new Card__noTaunt((Card__ItemRef__9109__24))), (new Card__noStealth((Card__ItemRef__9109__24))), (new Card__noUntargetable((Card__ItemRef__9109__24))), (new Card__noShield((Card__ItemRef__9109__24))), (new Card__noPoisonous((Card__ItemRef__9109__24))), (new Card__noLifesteal((Card__ItemRef__9109__24))))), (new Card__specialEffects((Card__ItemRef__9109__24), (new Card__targetedCastEff((Card__ItemRef__9109__24), (new Card__noCondTargetedEff((Card__ItemRef__9109__24), (new Card__giveShieldEff((Card__ItemRef__9109__24))), (new Card__charTargetCond((Card__ItemRef__9109__24), (new Card__justCharTargetCond((Card__ItemRef__9109__24), (new Card__anyAllegiance((Card__ItemRef__9109__24))), (new Card__isMinion((Card__ItemRef__9109__24))), (new Card__noAbilCond((Card__ItemRef__9109__24))), (new Card__noStatCond((Card__ItemRef__9109__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9109__24))))))))));
+    Card  *card = (((Card__ItemRef__9110__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9110__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9110__31), 1, (new Card__justAbilities((Card__ItemRef__9110__31), (new Card__noCharge((Card__ItemRef__9110__31))), (new Card__noTaunt((Card__ItemRef__9110__31))), (new Card__noStealth((Card__ItemRef__9110__31))), (new Card__noUntargetable((Card__ItemRef__9110__31))), (new Card__noShield((Card__ItemRef__9110__31))), (new Card__noPoisonous((Card__ItemRef__9110__31))), (new Card__noLifesteal((Card__ItemRef__9110__31))))), (new Card__specialEffects((Card__ItemRef__9110__31), (new Card__targetedCastEff((Card__ItemRef__9110__31), (new Card__noCondTargetedEff((Card__ItemRef__9110__31), (new Card__giveShieldEff((Card__ItemRef__9110__31))), (new Card__charTargetCond((Card__ItemRef__9110__31), (new Card__justCharTargetCond((Card__ItemRef__9110__31), (new Card__anyAllegiance((Card__ItemRef__9110__31))), (new Card__isMinion((Card__ItemRef__9110__31))), (new Card__noAbilCond((Card__ItemRef__9110__31))), (new Card__noStatCond((Card__ItemRef__9110__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9110__31))))))))));
     (((card)->name) = "Hand of Protection");
     return (card);
   }
 }
-Card  *Card__ItemRef__9118__24;
+Card  *Card__ItemRef__9119__31;
 
 Card  *CreateHolyLight()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9118__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9118__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9118__24), 2, (new Card__justAbilities((Card__ItemRef__9118__24), (new Card__noCharge((Card__ItemRef__9118__24))), (new Card__noTaunt((Card__ItemRef__9118__24))), (new Card__noStealth((Card__ItemRef__9118__24))), (new Card__noUntargetable((Card__ItemRef__9118__24))), (new Card__noShield((Card__ItemRef__9118__24))), (new Card__noPoisonous((Card__ItemRef__9118__24))), (new Card__noLifesteal((Card__ItemRef__9118__24))))), (new Card__specialEffects((Card__ItemRef__9118__24), (new Card__noTargetedPlayEff((Card__ItemRef__9118__24))), (new Card__consOtherEffs((Card__ItemRef__9118__24), (new Card__untargetedCastEff((Card__ItemRef__9118__24), (new Card__noCondUntargetedEff((Card__ItemRef__9118__24), (new Card__leaderEff((Card__ItemRef__9118__24), (new Card__healEff((Card__ItemRef__9118__24), 8)), (new Card__allyAllegiance((Card__ItemRef__9118__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9118__24))))))))))));
+    Card  *card = (((Card__ItemRef__9119__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9119__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9119__31), 2, (new Card__justAbilities((Card__ItemRef__9119__31), (new Card__noCharge((Card__ItemRef__9119__31))), (new Card__noTaunt((Card__ItemRef__9119__31))), (new Card__noStealth((Card__ItemRef__9119__31))), (new Card__noUntargetable((Card__ItemRef__9119__31))), (new Card__noShield((Card__ItemRef__9119__31))), (new Card__noPoisonous((Card__ItemRef__9119__31))), (new Card__noLifesteal((Card__ItemRef__9119__31))))), (new Card__specialEffects((Card__ItemRef__9119__31), (new Card__noTargetedPlayEff((Card__ItemRef__9119__31))), (new Card__consOtherEffs((Card__ItemRef__9119__31), (new Card__untargetedCastEff((Card__ItemRef__9119__31), (new Card__noCondUntargetedEff((Card__ItemRef__9119__31), (new Card__leaderEff((Card__ItemRef__9119__31), (new Card__healEff((Card__ItemRef__9119__31), 8)), (new Card__allyAllegiance((Card__ItemRef__9119__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9119__31))))))))))));
     (((card)->name) = "Holy Light");
     return (card);
   }
 }
-Card  *Card__ItemRef__9128__24;
+Card  *Card__ItemRef__9129__31;
 
 Card  *CreateBlessingOfKings()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9128__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9128__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9128__24), 4, (new Card__justAbilities((Card__ItemRef__9128__24), (new Card__noCharge((Card__ItemRef__9128__24))), (new Card__noTaunt((Card__ItemRef__9128__24))), (new Card__noStealth((Card__ItemRef__9128__24))), (new Card__noUntargetable((Card__ItemRef__9128__24))), (new Card__noShield((Card__ItemRef__9128__24))), (new Card__noPoisonous((Card__ItemRef__9128__24))), (new Card__noLifesteal((Card__ItemRef__9128__24))))), (new Card__specialEffects((Card__ItemRef__9128__24), (new Card__targetedCastEff((Card__ItemRef__9128__24), (new Card__noCondTargetedEff((Card__ItemRef__9128__24), (new Card__atkHpModEff((Card__ItemRef__9128__24), 4, 4)), (new Card__charTargetCond((Card__ItemRef__9128__24), (new Card__justCharTargetCond((Card__ItemRef__9128__24), (new Card__anyAllegiance((Card__ItemRef__9128__24))), (new Card__isMinion((Card__ItemRef__9128__24))), (new Card__noAbilCond((Card__ItemRef__9128__24))), (new Card__noStatCond((Card__ItemRef__9128__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9128__24))))))))));
+    Card  *card = (((Card__ItemRef__9129__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9129__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9129__31), 4, (new Card__justAbilities((Card__ItemRef__9129__31), (new Card__noCharge((Card__ItemRef__9129__31))), (new Card__noTaunt((Card__ItemRef__9129__31))), (new Card__noStealth((Card__ItemRef__9129__31))), (new Card__noUntargetable((Card__ItemRef__9129__31))), (new Card__noShield((Card__ItemRef__9129__31))), (new Card__noPoisonous((Card__ItemRef__9129__31))), (new Card__noLifesteal((Card__ItemRef__9129__31))))), (new Card__specialEffects((Card__ItemRef__9129__31), (new Card__targetedCastEff((Card__ItemRef__9129__31), (new Card__noCondTargetedEff((Card__ItemRef__9129__31), (new Card__atkHpModEff((Card__ItemRef__9129__31), 4, 4)), (new Card__charTargetCond((Card__ItemRef__9129__31), (new Card__justCharTargetCond((Card__ItemRef__9129__31), (new Card__anyAllegiance((Card__ItemRef__9129__31))), (new Card__isMinion((Card__ItemRef__9129__31))), (new Card__noAbilCond((Card__ItemRef__9129__31))), (new Card__noStatCond((Card__ItemRef__9129__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9129__31))))))))));
     (((card)->name) = "Blessing of Kings");
     return (card);
   }
 }
-Card  *Card__ItemRef__9137__24;
+Card  *Card__ItemRef__9138__31;
 
 Card  *CreateConsecration()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9137__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9137__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9137__24), 4, (new Card__justAbilities((Card__ItemRef__9137__24), (new Card__noCharge((Card__ItemRef__9137__24))), (new Card__noTaunt((Card__ItemRef__9137__24))), (new Card__noStealth((Card__ItemRef__9137__24))), (new Card__noUntargetable((Card__ItemRef__9137__24))), (new Card__noShield((Card__ItemRef__9137__24))), (new Card__noPoisonous((Card__ItemRef__9137__24))), (new Card__noLifesteal((Card__ItemRef__9137__24))))), (new Card__specialEffects((Card__ItemRef__9137__24), (new Card__noTargetedPlayEff((Card__ItemRef__9137__24))), (new Card__consOtherEffs((Card__ItemRef__9137__24), (new Card__untargetedCastEff((Card__ItemRef__9137__24), (new Card__noCondUntargetedEff((Card__ItemRef__9137__24), (new Card__aoeEff((Card__ItemRef__9137__24), (new Card__damageEff((Card__ItemRef__9137__24), 2, (new Card__damageAbilities((Card__ItemRef__9137__24), (new Card__noPoisonous((Card__ItemRef__9137__24))), (new Card__noLifesteal((Card__ItemRef__9137__24))))))), (new Card__charTargetCond((Card__ItemRef__9137__24), (new Card__justCharTargetCond((Card__ItemRef__9137__24), (new Card__oppoAllegiance((Card__ItemRef__9137__24))), (new Card__isCharacter((Card__ItemRef__9137__24))), (new Card__noAbilCond((Card__ItemRef__9137__24))), (new Card__noStatCond((Card__ItemRef__9137__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9137__24))))))))))));
+    Card  *card = (((Card__ItemRef__9138__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9138__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9138__31), 4, (new Card__justAbilities((Card__ItemRef__9138__31), (new Card__noCharge((Card__ItemRef__9138__31))), (new Card__noTaunt((Card__ItemRef__9138__31))), (new Card__noStealth((Card__ItemRef__9138__31))), (new Card__noUntargetable((Card__ItemRef__9138__31))), (new Card__noShield((Card__ItemRef__9138__31))), (new Card__noPoisonous((Card__ItemRef__9138__31))), (new Card__noLifesteal((Card__ItemRef__9138__31))))), (new Card__specialEffects((Card__ItemRef__9138__31), (new Card__noTargetedPlayEff((Card__ItemRef__9138__31))), (new Card__consOtherEffs((Card__ItemRef__9138__31), (new Card__untargetedCastEff((Card__ItemRef__9138__31), (new Card__noCondUntargetedEff((Card__ItemRef__9138__31), (new Card__aoeEff((Card__ItemRef__9138__31), (new Card__damageEff((Card__ItemRef__9138__31), 2, (new Card__damageAbilities((Card__ItemRef__9138__31), (new Card__noPoisonous((Card__ItemRef__9138__31))), (new Card__noLifesteal((Card__ItemRef__9138__31))))))), (new Card__charTargetCond((Card__ItemRef__9138__31), (new Card__justCharTargetCond((Card__ItemRef__9138__31), (new Card__oppoAllegiance((Card__ItemRef__9138__31))), (new Card__isCharacter((Card__ItemRef__9138__31))), (new Card__noAbilCond((Card__ItemRef__9138__31))), (new Card__noStatCond((Card__ItemRef__9138__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9138__31))))))))))));
     (((card)->name) = "Consecration");
     return (card);
   }
 }
-Card  *Card__ItemRef__9147__24;
+Card  *Card__ItemRef__9148__31;
 
 Card  *CreateHammerOfWrath()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9147__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9147__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9147__24), 4, (new Card__justAbilities((Card__ItemRef__9147__24), (new Card__noCharge((Card__ItemRef__9147__24))), (new Card__noTaunt((Card__ItemRef__9147__24))), (new Card__noStealth((Card__ItemRef__9147__24))), (new Card__noUntargetable((Card__ItemRef__9147__24))), (new Card__noShield((Card__ItemRef__9147__24))), (new Card__noPoisonous((Card__ItemRef__9147__24))), (new Card__noLifesteal((Card__ItemRef__9147__24))))), (new Card__specialEffects((Card__ItemRef__9147__24), (new Card__targetedCastEff((Card__ItemRef__9147__24), (new Card__noCondTargetedEff((Card__ItemRef__9147__24), (new Card__damageEff((Card__ItemRef__9147__24), 3, (new Card__damageAbilities((Card__ItemRef__9147__24), (new Card__noPoisonous((Card__ItemRef__9147__24))), (new Card__noLifesteal((Card__ItemRef__9147__24))))))), (new Card__charTargetCond((Card__ItemRef__9147__24), (new Card__justCharTargetCond((Card__ItemRef__9147__24), (new Card__anyAllegiance((Card__ItemRef__9147__24))), (new Card__isCharacter((Card__ItemRef__9147__24))), (new Card__noAbilCond((Card__ItemRef__9147__24))), (new Card__noStatCond((Card__ItemRef__9147__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9147__24), (new Card__untargetedCastEff((Card__ItemRef__9147__24), (new Card__noCondUntargetedEff((Card__ItemRef__9147__24), (new Card__drawCardEff((Card__ItemRef__9147__24), 1, (new Card__allyAllegiance((Card__ItemRef__9147__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9147__24))))))))))));
+    Card  *card = (((Card__ItemRef__9148__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9148__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9148__31), 4, (new Card__justAbilities((Card__ItemRef__9148__31), (new Card__noCharge((Card__ItemRef__9148__31))), (new Card__noTaunt((Card__ItemRef__9148__31))), (new Card__noStealth((Card__ItemRef__9148__31))), (new Card__noUntargetable((Card__ItemRef__9148__31))), (new Card__noShield((Card__ItemRef__9148__31))), (new Card__noPoisonous((Card__ItemRef__9148__31))), (new Card__noLifesteal((Card__ItemRef__9148__31))))), (new Card__specialEffects((Card__ItemRef__9148__31), (new Card__targetedCastEff((Card__ItemRef__9148__31), (new Card__noCondTargetedEff((Card__ItemRef__9148__31), (new Card__damageEff((Card__ItemRef__9148__31), 3, (new Card__damageAbilities((Card__ItemRef__9148__31), (new Card__noPoisonous((Card__ItemRef__9148__31))), (new Card__noLifesteal((Card__ItemRef__9148__31))))))), (new Card__charTargetCond((Card__ItemRef__9148__31), (new Card__justCharTargetCond((Card__ItemRef__9148__31), (new Card__anyAllegiance((Card__ItemRef__9148__31))), (new Card__isCharacter((Card__ItemRef__9148__31))), (new Card__noAbilCond((Card__ItemRef__9148__31))), (new Card__noStatCond((Card__ItemRef__9148__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9148__31), (new Card__untargetedCastEff((Card__ItemRef__9148__31), (new Card__noCondUntargetedEff((Card__ItemRef__9148__31), (new Card__drawCardEff((Card__ItemRef__9148__31), 1, (new Card__allyAllegiance((Card__ItemRef__9148__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9148__31))))))))))));
     (((card)->name) = "Hammer of Wrath");
     return (card);
   }
 }
-Card  *Card__ItemRef__9157__24;
+Card  *Card__ItemRef__9158__31;
 
 Card  *CreateGuardianOfKings()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9157__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9157__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9157__24), 7, 5, 7, (new Card__singleAttack((Card__ItemRef__9157__24))), (new Card__dragonMinion((Card__ItemRef__9157__24))), (new Card__justAbilities((Card__ItemRef__9157__24), (new Card__noCharge((Card__ItemRef__9157__24))), (new Card__justTaunt((Card__ItemRef__9157__24))), (new Card__noStealth((Card__ItemRef__9157__24))), (new Card__noUntargetable((Card__ItemRef__9157__24))), (new Card__noShield((Card__ItemRef__9157__24))), (new Card__noPoisonous((Card__ItemRef__9157__24))), (new Card__noLifesteal((Card__ItemRef__9157__24))))), (new Card__specialEffects((Card__ItemRef__9157__24), (new Card__noTargetedPlayEff((Card__ItemRef__9157__24))), (new Card__consOtherEffs((Card__ItemRef__9157__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9157__24), (new Card__noCondUntargetedEff((Card__ItemRef__9157__24), (new Card__leaderEff((Card__ItemRef__9157__24), (new Card__healEff((Card__ItemRef__9157__24), 6)), (new Card__allyAllegiance((Card__ItemRef__9157__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9157__24))))))))))));
+    Card  *card = (((Card__ItemRef__9158__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9158__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9158__31), 7, 5, 7, (new Card__singleAttack((Card__ItemRef__9158__31))), (new Card__dragonMinion((Card__ItemRef__9158__31))), (new Card__justAbilities((Card__ItemRef__9158__31), (new Card__noCharge((Card__ItemRef__9158__31))), (new Card__justTaunt((Card__ItemRef__9158__31))), (new Card__noStealth((Card__ItemRef__9158__31))), (new Card__noUntargetable((Card__ItemRef__9158__31))), (new Card__noShield((Card__ItemRef__9158__31))), (new Card__noPoisonous((Card__ItemRef__9158__31))), (new Card__noLifesteal((Card__ItemRef__9158__31))))), (new Card__specialEffects((Card__ItemRef__9158__31), (new Card__noTargetedPlayEff((Card__ItemRef__9158__31))), (new Card__consOtherEffs((Card__ItemRef__9158__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9158__31), (new Card__noCondUntargetedEff((Card__ItemRef__9158__31), (new Card__leaderEff((Card__ItemRef__9158__31), (new Card__healEff((Card__ItemRef__9158__31), 6)), (new Card__allyAllegiance((Card__ItemRef__9158__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9158__31))))))))))));
     (((card)->name) = "Guardian of Kings");
     return (card);
   }
 }
-Card  *Card__ItemRef__9167__24;
+Card  *Card__ItemRef__9168__31;
 
 Card  *CreatePowerWordShield()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9167__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9167__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9167__24), 1, (new Card__justAbilities((Card__ItemRef__9167__24), (new Card__noCharge((Card__ItemRef__9167__24))), (new Card__noTaunt((Card__ItemRef__9167__24))), (new Card__noStealth((Card__ItemRef__9167__24))), (new Card__noUntargetable((Card__ItemRef__9167__24))), (new Card__noShield((Card__ItemRef__9167__24))), (new Card__noPoisonous((Card__ItemRef__9167__24))), (new Card__noLifesteal((Card__ItemRef__9167__24))))), (new Card__specialEffects((Card__ItemRef__9167__24), (new Card__targetedCastEff((Card__ItemRef__9167__24), (new Card__noCondTargetedEff((Card__ItemRef__9167__24), (new Card__atkHpModEff((Card__ItemRef__9167__24), 0, 2)), (new Card__charTargetCond((Card__ItemRef__9167__24), (new Card__justCharTargetCond((Card__ItemRef__9167__24), (new Card__anyAllegiance((Card__ItemRef__9167__24))), (new Card__isMinion((Card__ItemRef__9167__24))), (new Card__noAbilCond((Card__ItemRef__9167__24))), (new Card__noStatCond((Card__ItemRef__9167__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9167__24), (new Card__untargetedCastEff((Card__ItemRef__9167__24), (new Card__noCondUntargetedEff((Card__ItemRef__9167__24), (new Card__drawCardEff((Card__ItemRef__9167__24), 1, (new Card__allyAllegiance((Card__ItemRef__9167__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9167__24))))))))))));
+    Card  *card = (((Card__ItemRef__9168__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9168__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9168__31), 1, (new Card__justAbilities((Card__ItemRef__9168__31), (new Card__noCharge((Card__ItemRef__9168__31))), (new Card__noTaunt((Card__ItemRef__9168__31))), (new Card__noStealth((Card__ItemRef__9168__31))), (new Card__noUntargetable((Card__ItemRef__9168__31))), (new Card__noShield((Card__ItemRef__9168__31))), (new Card__noPoisonous((Card__ItemRef__9168__31))), (new Card__noLifesteal((Card__ItemRef__9168__31))))), (new Card__specialEffects((Card__ItemRef__9168__31), (new Card__targetedCastEff((Card__ItemRef__9168__31), (new Card__noCondTargetedEff((Card__ItemRef__9168__31), (new Card__atkHpModEff((Card__ItemRef__9168__31), 0, 2)), (new Card__charTargetCond((Card__ItemRef__9168__31), (new Card__justCharTargetCond((Card__ItemRef__9168__31), (new Card__anyAllegiance((Card__ItemRef__9168__31))), (new Card__isMinion((Card__ItemRef__9168__31))), (new Card__noAbilCond((Card__ItemRef__9168__31))), (new Card__noStatCond((Card__ItemRef__9168__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9168__31), (new Card__untargetedCastEff((Card__ItemRef__9168__31), (new Card__noCondUntargetedEff((Card__ItemRef__9168__31), (new Card__drawCardEff((Card__ItemRef__9168__31), 1, (new Card__allyAllegiance((Card__ItemRef__9168__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9168__31))))))))))));
     (((card)->name) = "Power Word - Shield");
     return (card);
   }
 }
-Card  *Card__ItemRef__9177__24;
+Card  *Card__ItemRef__9178__31;
 
 Card  *CreateHolySmite()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9177__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9177__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9177__24), 1, (new Card__justAbilities((Card__ItemRef__9177__24), (new Card__noCharge((Card__ItemRef__9177__24))), (new Card__noTaunt((Card__ItemRef__9177__24))), (new Card__noStealth((Card__ItemRef__9177__24))), (new Card__noUntargetable((Card__ItemRef__9177__24))), (new Card__noShield((Card__ItemRef__9177__24))), (new Card__noPoisonous((Card__ItemRef__9177__24))), (new Card__noLifesteal((Card__ItemRef__9177__24))))), (new Card__specialEffects((Card__ItemRef__9177__24), (new Card__targetedCastEff((Card__ItemRef__9177__24), (new Card__noCondTargetedEff((Card__ItemRef__9177__24), (new Card__damageEff((Card__ItemRef__9177__24), 3, (new Card__damageAbilities((Card__ItemRef__9177__24), (new Card__noPoisonous((Card__ItemRef__9177__24))), (new Card__noLifesteal((Card__ItemRef__9177__24))))))), (new Card__charTargetCond((Card__ItemRef__9177__24), (new Card__justCharTargetCond((Card__ItemRef__9177__24), (new Card__anyAllegiance((Card__ItemRef__9177__24))), (new Card__isMinion((Card__ItemRef__9177__24))), (new Card__noAbilCond((Card__ItemRef__9177__24))), (new Card__noStatCond((Card__ItemRef__9177__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9177__24))))))))));
+    Card  *card = (((Card__ItemRef__9178__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9178__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9178__31), 1, (new Card__justAbilities((Card__ItemRef__9178__31), (new Card__noCharge((Card__ItemRef__9178__31))), (new Card__noTaunt((Card__ItemRef__9178__31))), (new Card__noStealth((Card__ItemRef__9178__31))), (new Card__noUntargetable((Card__ItemRef__9178__31))), (new Card__noShield((Card__ItemRef__9178__31))), (new Card__noPoisonous((Card__ItemRef__9178__31))), (new Card__noLifesteal((Card__ItemRef__9178__31))))), (new Card__specialEffects((Card__ItemRef__9178__31), (new Card__targetedCastEff((Card__ItemRef__9178__31), (new Card__noCondTargetedEff((Card__ItemRef__9178__31), (new Card__damageEff((Card__ItemRef__9178__31), 3, (new Card__damageAbilities((Card__ItemRef__9178__31), (new Card__noPoisonous((Card__ItemRef__9178__31))), (new Card__noLifesteal((Card__ItemRef__9178__31))))))), (new Card__charTargetCond((Card__ItemRef__9178__31), (new Card__justCharTargetCond((Card__ItemRef__9178__31), (new Card__anyAllegiance((Card__ItemRef__9178__31))), (new Card__isMinion((Card__ItemRef__9178__31))), (new Card__noAbilCond((Card__ItemRef__9178__31))), (new Card__noStatCond((Card__ItemRef__9178__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9178__31))))))))));
     (((card)->name) = "Holy Smite");
     return (card);
   }
 }
-Card  *Card__ItemRef__9186__24;
+Card  *Card__ItemRef__9187__31;
 
 Card  *CreateMindVision()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9186__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9186__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9186__24), 1, (new Card__justAbilities((Card__ItemRef__9186__24), (new Card__noCharge((Card__ItemRef__9186__24))), (new Card__noTaunt((Card__ItemRef__9186__24))), (new Card__noStealth((Card__ItemRef__9186__24))), (new Card__noUntargetable((Card__ItemRef__9186__24))), (new Card__noShield((Card__ItemRef__9186__24))), (new Card__noPoisonous((Card__ItemRef__9186__24))), (new Card__noLifesteal((Card__ItemRef__9186__24))))), (new Card__specialEffects((Card__ItemRef__9186__24), (new Card__noTargetedPlayEff((Card__ItemRef__9186__24))), (new Card__consOtherEffs((Card__ItemRef__9186__24), (new Card__untargetedCastEff((Card__ItemRef__9186__24), (new Card__noCondUntargetedEff((Card__ItemRef__9186__24), (new Card__randEff((Card__ItemRef__9186__24), (new Card__copyEff((Card__ItemRef__9186__24), (new Card__handDest((Card__ItemRef__9186__24), (new Card__allyAllegiance((Card__ItemRef__9186__24))))))), (new Card__cardTargetCond((Card__ItemRef__9186__24), (new Card__justCardTargetCond((Card__ItemRef__9186__24), (new Card__cardPosAtHand((Card__ItemRef__9186__24))), (new Card__oppoAllegiance((Card__ItemRef__9186__24))), (new Card__isCard((Card__ItemRef__9186__24))), (new Card__noAbilCond((Card__ItemRef__9186__24))), (new Card__noStatCond((Card__ItemRef__9186__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9186__24))))))))))));
+    Card  *card = (((Card__ItemRef__9187__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9187__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9187__31), 1, (new Card__justAbilities((Card__ItemRef__9187__31), (new Card__noCharge((Card__ItemRef__9187__31))), (new Card__noTaunt((Card__ItemRef__9187__31))), (new Card__noStealth((Card__ItemRef__9187__31))), (new Card__noUntargetable((Card__ItemRef__9187__31))), (new Card__noShield((Card__ItemRef__9187__31))), (new Card__noPoisonous((Card__ItemRef__9187__31))), (new Card__noLifesteal((Card__ItemRef__9187__31))))), (new Card__specialEffects((Card__ItemRef__9187__31), (new Card__noTargetedPlayEff((Card__ItemRef__9187__31))), (new Card__consOtherEffs((Card__ItemRef__9187__31), (new Card__untargetedCastEff((Card__ItemRef__9187__31), (new Card__noCondUntargetedEff((Card__ItemRef__9187__31), (new Card__randEff((Card__ItemRef__9187__31), (new Card__copyEff((Card__ItemRef__9187__31), (new Card__handDest((Card__ItemRef__9187__31), (new Card__allyAllegiance((Card__ItemRef__9187__31))))))), (new Card__cardTargetCond((Card__ItemRef__9187__31), (new Card__justCardTargetCond((Card__ItemRef__9187__31), (new Card__cardPosAtHand((Card__ItemRef__9187__31))), (new Card__oppoAllegiance((Card__ItemRef__9187__31))), (new Card__isCard((Card__ItemRef__9187__31))), (new Card__noAbilCond((Card__ItemRef__9187__31))), (new Card__noStatCond((Card__ItemRef__9187__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9187__31))))))))))));
     (((card)->name) = "Mind Vision");
     return (card);
   }
 }
-Card  *Card__ItemRef__9196__24;
+Card  *Card__ItemRef__9197__31;
 
 Card  *CreatePsychicConjurer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9196__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9196__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9196__24), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9196__24))), (new Card__demonMinion((Card__ItemRef__9196__24))), (new Card__justAbilities((Card__ItemRef__9196__24), (new Card__noCharge((Card__ItemRef__9196__24))), (new Card__noTaunt((Card__ItemRef__9196__24))), (new Card__noStealth((Card__ItemRef__9196__24))), (new Card__noUntargetable((Card__ItemRef__9196__24))), (new Card__noShield((Card__ItemRef__9196__24))), (new Card__noPoisonous((Card__ItemRef__9196__24))), (new Card__noLifesteal((Card__ItemRef__9196__24))))), (new Card__specialEffects((Card__ItemRef__9196__24), (new Card__noTargetedPlayEff((Card__ItemRef__9196__24))), (new Card__consOtherEffs((Card__ItemRef__9196__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9196__24), (new Card__noCondUntargetedEff((Card__ItemRef__9196__24), (new Card__randEff((Card__ItemRef__9196__24), (new Card__copyEff((Card__ItemRef__9196__24), (new Card__handDest((Card__ItemRef__9196__24), (new Card__allyAllegiance((Card__ItemRef__9196__24))))))), (new Card__cardTargetCond((Card__ItemRef__9196__24), (new Card__justCardTargetCond((Card__ItemRef__9196__24), (new Card__cardPosAtDeck((Card__ItemRef__9196__24))), (new Card__oppoAllegiance((Card__ItemRef__9196__24))), (new Card__isCard((Card__ItemRef__9196__24))), (new Card__noAbilCond((Card__ItemRef__9196__24))), (new Card__noStatCond((Card__ItemRef__9196__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9196__24))))))))))));
+    Card  *card = (((Card__ItemRef__9197__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9197__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9197__31), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9197__31))), (new Card__demonMinion((Card__ItemRef__9197__31))), (new Card__justAbilities((Card__ItemRef__9197__31), (new Card__noCharge((Card__ItemRef__9197__31))), (new Card__noTaunt((Card__ItemRef__9197__31))), (new Card__noStealth((Card__ItemRef__9197__31))), (new Card__noUntargetable((Card__ItemRef__9197__31))), (new Card__noShield((Card__ItemRef__9197__31))), (new Card__noPoisonous((Card__ItemRef__9197__31))), (new Card__noLifesteal((Card__ItemRef__9197__31))))), (new Card__specialEffects((Card__ItemRef__9197__31), (new Card__noTargetedPlayEff((Card__ItemRef__9197__31))), (new Card__consOtherEffs((Card__ItemRef__9197__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9197__31), (new Card__noCondUntargetedEff((Card__ItemRef__9197__31), (new Card__randEff((Card__ItemRef__9197__31), (new Card__copyEff((Card__ItemRef__9197__31), (new Card__handDest((Card__ItemRef__9197__31), (new Card__allyAllegiance((Card__ItemRef__9197__31))))))), (new Card__cardTargetCond((Card__ItemRef__9197__31), (new Card__justCardTargetCond((Card__ItemRef__9197__31), (new Card__cardPosAtDeck((Card__ItemRef__9197__31))), (new Card__oppoAllegiance((Card__ItemRef__9197__31))), (new Card__isCard((Card__ItemRef__9197__31))), (new Card__noAbilCond((Card__ItemRef__9197__31))), (new Card__noStatCond((Card__ItemRef__9197__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9197__31))))))))))));
     (((card)->name) = "Psychic Conjurer");
     return (card);
   }
 }
-Card  *Card__ItemRef__9206__24;
+Card  *Card__ItemRef__9207__31;
 
 Card  *CreateRadiance()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9206__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9206__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9206__24), 1, (new Card__justAbilities((Card__ItemRef__9206__24), (new Card__noCharge((Card__ItemRef__9206__24))), (new Card__noTaunt((Card__ItemRef__9206__24))), (new Card__noStealth((Card__ItemRef__9206__24))), (new Card__noUntargetable((Card__ItemRef__9206__24))), (new Card__noShield((Card__ItemRef__9206__24))), (new Card__noPoisonous((Card__ItemRef__9206__24))), (new Card__noLifesteal((Card__ItemRef__9206__24))))), (new Card__specialEffects((Card__ItemRef__9206__24), (new Card__noTargetedPlayEff((Card__ItemRef__9206__24))), (new Card__consOtherEffs((Card__ItemRef__9206__24), (new Card__untargetedCastEff((Card__ItemRef__9206__24), (new Card__noCondUntargetedEff((Card__ItemRef__9206__24), (new Card__leaderEff((Card__ItemRef__9206__24), (new Card__healEff((Card__ItemRef__9206__24), 5)), (new Card__allyAllegiance((Card__ItemRef__9206__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9206__24))))))))))));
+    Card  *card = (((Card__ItemRef__9207__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9207__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9207__31), 1, (new Card__justAbilities((Card__ItemRef__9207__31), (new Card__noCharge((Card__ItemRef__9207__31))), (new Card__noTaunt((Card__ItemRef__9207__31))), (new Card__noStealth((Card__ItemRef__9207__31))), (new Card__noUntargetable((Card__ItemRef__9207__31))), (new Card__noShield((Card__ItemRef__9207__31))), (new Card__noPoisonous((Card__ItemRef__9207__31))), (new Card__noLifesteal((Card__ItemRef__9207__31))))), (new Card__specialEffects((Card__ItemRef__9207__31), (new Card__noTargetedPlayEff((Card__ItemRef__9207__31))), (new Card__consOtherEffs((Card__ItemRef__9207__31), (new Card__untargetedCastEff((Card__ItemRef__9207__31), (new Card__noCondUntargetedEff((Card__ItemRef__9207__31), (new Card__leaderEff((Card__ItemRef__9207__31), (new Card__healEff((Card__ItemRef__9207__31), 5)), (new Card__allyAllegiance((Card__ItemRef__9207__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9207__31))))))))))));
     (((card)->name) = "Radiance");
     return (card);
   }
 }
-Card  *Card__ItemRef__9216__24;
+Card  *Card__ItemRef__9217__31;
 
 Card  *CreateShadowWordDeath()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9216__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9216__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9216__24), 2, (new Card__justAbilities((Card__ItemRef__9216__24), (new Card__noCharge((Card__ItemRef__9216__24))), (new Card__noTaunt((Card__ItemRef__9216__24))), (new Card__noStealth((Card__ItemRef__9216__24))), (new Card__noUntargetable((Card__ItemRef__9216__24))), (new Card__noShield((Card__ItemRef__9216__24))), (new Card__noPoisonous((Card__ItemRef__9216__24))), (new Card__noLifesteal((Card__ItemRef__9216__24))))), (new Card__specialEffects((Card__ItemRef__9216__24), (new Card__targetedCastEff((Card__ItemRef__9216__24), (new Card__noCondTargetedEff((Card__ItemRef__9216__24), (new Card__destroyEff((Card__ItemRef__9216__24))), (new Card__charTargetCond((Card__ItemRef__9216__24), (new Card__justCharTargetCond((Card__ItemRef__9216__24), (new Card__anyAllegiance((Card__ItemRef__9216__24))), (new Card__isMinion((Card__ItemRef__9216__24))), (new Card__noAbilCond((Card__ItemRef__9216__24))), (new Card__atkCond((Card__ItemRef__9216__24), (new Card__statGe((Card__ItemRef__9216__24), 5)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9216__24))))))))));
+    Card  *card = (((Card__ItemRef__9217__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9217__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9217__31), 2, (new Card__justAbilities((Card__ItemRef__9217__31), (new Card__noCharge((Card__ItemRef__9217__31))), (new Card__noTaunt((Card__ItemRef__9217__31))), (new Card__noStealth((Card__ItemRef__9217__31))), (new Card__noUntargetable((Card__ItemRef__9217__31))), (new Card__noShield((Card__ItemRef__9217__31))), (new Card__noPoisonous((Card__ItemRef__9217__31))), (new Card__noLifesteal((Card__ItemRef__9217__31))))), (new Card__specialEffects((Card__ItemRef__9217__31), (new Card__targetedCastEff((Card__ItemRef__9217__31), (new Card__noCondTargetedEff((Card__ItemRef__9217__31), (new Card__destroyEff((Card__ItemRef__9217__31))), (new Card__charTargetCond((Card__ItemRef__9217__31), (new Card__justCharTargetCond((Card__ItemRef__9217__31), (new Card__anyAllegiance((Card__ItemRef__9217__31))), (new Card__isMinion((Card__ItemRef__9217__31))), (new Card__noAbilCond((Card__ItemRef__9217__31))), (new Card__atkCond((Card__ItemRef__9217__31), (new Card__statGe((Card__ItemRef__9217__31), 5)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9217__31))))))))));
     (((card)->name) = "Shadow Word - Death");
     return (card);
   }
 }
-Card  *Card__ItemRef__9225__24;
+Card  *Card__ItemRef__9226__31;
 
 Card  *CreateShadowWordPain()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9225__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9225__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9225__24), 2, (new Card__justAbilities((Card__ItemRef__9225__24), (new Card__noCharge((Card__ItemRef__9225__24))), (new Card__noTaunt((Card__ItemRef__9225__24))), (new Card__noStealth((Card__ItemRef__9225__24))), (new Card__noUntargetable((Card__ItemRef__9225__24))), (new Card__noShield((Card__ItemRef__9225__24))), (new Card__noPoisonous((Card__ItemRef__9225__24))), (new Card__noLifesteal((Card__ItemRef__9225__24))))), (new Card__specialEffects((Card__ItemRef__9225__24), (new Card__targetedCastEff((Card__ItemRef__9225__24), (new Card__noCondTargetedEff((Card__ItemRef__9225__24), (new Card__destroyEff((Card__ItemRef__9225__24))), (new Card__charTargetCond((Card__ItemRef__9225__24), (new Card__justCharTargetCond((Card__ItemRef__9225__24), (new Card__anyAllegiance((Card__ItemRef__9225__24))), (new Card__isMinion((Card__ItemRef__9225__24))), (new Card__noAbilCond((Card__ItemRef__9225__24))), (new Card__atkCond((Card__ItemRef__9225__24), (new Card__statLe((Card__ItemRef__9225__24), 3)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9225__24))))))))));
+    Card  *card = (((Card__ItemRef__9226__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9226__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9226__31), 2, (new Card__justAbilities((Card__ItemRef__9226__31), (new Card__noCharge((Card__ItemRef__9226__31))), (new Card__noTaunt((Card__ItemRef__9226__31))), (new Card__noStealth((Card__ItemRef__9226__31))), (new Card__noUntargetable((Card__ItemRef__9226__31))), (new Card__noShield((Card__ItemRef__9226__31))), (new Card__noPoisonous((Card__ItemRef__9226__31))), (new Card__noLifesteal((Card__ItemRef__9226__31))))), (new Card__specialEffects((Card__ItemRef__9226__31), (new Card__targetedCastEff((Card__ItemRef__9226__31), (new Card__noCondTargetedEff((Card__ItemRef__9226__31), (new Card__destroyEff((Card__ItemRef__9226__31))), (new Card__charTargetCond((Card__ItemRef__9226__31), (new Card__justCharTargetCond((Card__ItemRef__9226__31), (new Card__anyAllegiance((Card__ItemRef__9226__31))), (new Card__isMinion((Card__ItemRef__9226__31))), (new Card__noAbilCond((Card__ItemRef__9226__31))), (new Card__atkCond((Card__ItemRef__9226__31), (new Card__statLe((Card__ItemRef__9226__31), 3)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9226__31))))))))));
     (((card)->name) = "Shadow Word - Pain");
     return (card);
   }
 }
-Card  *Card__ItemRef__9234__24;
+Card  *Card__ItemRef__9235__31;
 
 Card  *CreateHolyNova()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9234__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9234__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9234__24), 4, (new Card__justAbilities((Card__ItemRef__9234__24), (new Card__noCharge((Card__ItemRef__9234__24))), (new Card__noTaunt((Card__ItemRef__9234__24))), (new Card__noStealth((Card__ItemRef__9234__24))), (new Card__noUntargetable((Card__ItemRef__9234__24))), (new Card__noShield((Card__ItemRef__9234__24))), (new Card__noPoisonous((Card__ItemRef__9234__24))), (new Card__noLifesteal((Card__ItemRef__9234__24))))), (new Card__specialEffects((Card__ItemRef__9234__24), (new Card__noTargetedPlayEff((Card__ItemRef__9234__24))), (new Card__consOtherEffs((Card__ItemRef__9234__24), (new Card__untargetedCastEff((Card__ItemRef__9234__24), (new Card__noCondUntargetedEff((Card__ItemRef__9234__24), (new Card__aoeEff((Card__ItemRef__9234__24), (new Card__damageEff((Card__ItemRef__9234__24), 2, (new Card__damageAbilities((Card__ItemRef__9234__24), (new Card__noPoisonous((Card__ItemRef__9234__24))), (new Card__noLifesteal((Card__ItemRef__9234__24))))))), (new Card__charTargetCond((Card__ItemRef__9234__24), (new Card__justCharTargetCond((Card__ItemRef__9234__24), (new Card__oppoAllegiance((Card__ItemRef__9234__24))), (new Card__isMinion((Card__ItemRef__9234__24))), (new Card__noAbilCond((Card__ItemRef__9234__24))), (new Card__noStatCond((Card__ItemRef__9234__24))))))))))))), (new Card__consOtherEffs((Card__ItemRef__9234__24), (new Card__untargetedCastEff((Card__ItemRef__9234__24), (new Card__noCondUntargetedEff((Card__ItemRef__9234__24), (new Card__aoeEff((Card__ItemRef__9234__24), (new Card__healEff((Card__ItemRef__9234__24), 2)), (new Card__charTargetCond((Card__ItemRef__9234__24), (new Card__justCharTargetCond((Card__ItemRef__9234__24), (new Card__allyAllegiance((Card__ItemRef__9234__24))), (new Card__isCharacter((Card__ItemRef__9234__24))), (new Card__noAbilCond((Card__ItemRef__9234__24))), (new Card__noStatCond((Card__ItemRef__9234__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9234__24))))))))))))));
+    Card  *card = (((Card__ItemRef__9235__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9235__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9235__31), 4, (new Card__justAbilities((Card__ItemRef__9235__31), (new Card__noCharge((Card__ItemRef__9235__31))), (new Card__noTaunt((Card__ItemRef__9235__31))), (new Card__noStealth((Card__ItemRef__9235__31))), (new Card__noUntargetable((Card__ItemRef__9235__31))), (new Card__noShield((Card__ItemRef__9235__31))), (new Card__noPoisonous((Card__ItemRef__9235__31))), (new Card__noLifesteal((Card__ItemRef__9235__31))))), (new Card__specialEffects((Card__ItemRef__9235__31), (new Card__noTargetedPlayEff((Card__ItemRef__9235__31))), (new Card__consOtherEffs((Card__ItemRef__9235__31), (new Card__untargetedCastEff((Card__ItemRef__9235__31), (new Card__noCondUntargetedEff((Card__ItemRef__9235__31), (new Card__aoeEff((Card__ItemRef__9235__31), (new Card__damageEff((Card__ItemRef__9235__31), 2, (new Card__damageAbilities((Card__ItemRef__9235__31), (new Card__noPoisonous((Card__ItemRef__9235__31))), (new Card__noLifesteal((Card__ItemRef__9235__31))))))), (new Card__charTargetCond((Card__ItemRef__9235__31), (new Card__justCharTargetCond((Card__ItemRef__9235__31), (new Card__oppoAllegiance((Card__ItemRef__9235__31))), (new Card__isMinion((Card__ItemRef__9235__31))), (new Card__noAbilCond((Card__ItemRef__9235__31))), (new Card__noStatCond((Card__ItemRef__9235__31))))))))))))), (new Card__consOtherEffs((Card__ItemRef__9235__31), (new Card__untargetedCastEff((Card__ItemRef__9235__31), (new Card__noCondUntargetedEff((Card__ItemRef__9235__31), (new Card__aoeEff((Card__ItemRef__9235__31), (new Card__healEff((Card__ItemRef__9235__31), 2)), (new Card__charTargetCond((Card__ItemRef__9235__31), (new Card__justCharTargetCond((Card__ItemRef__9235__31), (new Card__allyAllegiance((Card__ItemRef__9235__31))), (new Card__isCharacter((Card__ItemRef__9235__31))), (new Card__noAbilCond((Card__ItemRef__9235__31))), (new Card__noStatCond((Card__ItemRef__9235__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9235__31))))))))))))));
     (((card)->name) = "Holy Nova");
     return (card);
   }
 }
-Card  *Card__ItemRef__9245__24;
+Card  *Card__ItemRef__9246__31;
 
 Card  *CreatePowerInfusion()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9245__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9245__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9245__24), 4, (new Card__justAbilities((Card__ItemRef__9245__24), (new Card__noCharge((Card__ItemRef__9245__24))), (new Card__noTaunt((Card__ItemRef__9245__24))), (new Card__noStealth((Card__ItemRef__9245__24))), (new Card__noUntargetable((Card__ItemRef__9245__24))), (new Card__noShield((Card__ItemRef__9245__24))), (new Card__noPoisonous((Card__ItemRef__9245__24))), (new Card__noLifesteal((Card__ItemRef__9245__24))))), (new Card__specialEffects((Card__ItemRef__9245__24), (new Card__targetedCastEff((Card__ItemRef__9245__24), (new Card__noCondTargetedEff((Card__ItemRef__9245__24), (new Card__atkHpModEff((Card__ItemRef__9245__24), 2, 6)), (new Card__charTargetCond((Card__ItemRef__9245__24), (new Card__justCharTargetCond((Card__ItemRef__9245__24), (new Card__anyAllegiance((Card__ItemRef__9245__24))), (new Card__isMinion((Card__ItemRef__9245__24))), (new Card__noAbilCond((Card__ItemRef__9245__24))), (new Card__noStatCond((Card__ItemRef__9245__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9245__24))))))))));
+    Card  *card = (((Card__ItemRef__9246__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9246__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9246__31), 4, (new Card__justAbilities((Card__ItemRef__9246__31), (new Card__noCharge((Card__ItemRef__9246__31))), (new Card__noTaunt((Card__ItemRef__9246__31))), (new Card__noStealth((Card__ItemRef__9246__31))), (new Card__noUntargetable((Card__ItemRef__9246__31))), (new Card__noShield((Card__ItemRef__9246__31))), (new Card__noPoisonous((Card__ItemRef__9246__31))), (new Card__noLifesteal((Card__ItemRef__9246__31))))), (new Card__specialEffects((Card__ItemRef__9246__31), (new Card__targetedCastEff((Card__ItemRef__9246__31), (new Card__noCondTargetedEff((Card__ItemRef__9246__31), (new Card__atkHpModEff((Card__ItemRef__9246__31), 2, 6)), (new Card__charTargetCond((Card__ItemRef__9246__31), (new Card__justCharTargetCond((Card__ItemRef__9246__31), (new Card__anyAllegiance((Card__ItemRef__9246__31))), (new Card__isMinion((Card__ItemRef__9246__31))), (new Card__noAbilCond((Card__ItemRef__9246__31))), (new Card__noStatCond((Card__ItemRef__9246__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9246__31))))))))));
     (((card)->name) = "Power Infusion");
     return (card);
   }
 }
-Card  *Card__ItemRef__9254__24;
+Card  *Card__ItemRef__9255__31;
 
 Card  *CreateSinisterStrike()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9254__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9254__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9254__24), 1, (new Card__justAbilities((Card__ItemRef__9254__24), (new Card__noCharge((Card__ItemRef__9254__24))), (new Card__noTaunt((Card__ItemRef__9254__24))), (new Card__noStealth((Card__ItemRef__9254__24))), (new Card__noUntargetable((Card__ItemRef__9254__24))), (new Card__noShield((Card__ItemRef__9254__24))), (new Card__noPoisonous((Card__ItemRef__9254__24))), (new Card__noLifesteal((Card__ItemRef__9254__24))))), (new Card__specialEffects((Card__ItemRef__9254__24), (new Card__noTargetedPlayEff((Card__ItemRef__9254__24))), (new Card__consOtherEffs((Card__ItemRef__9254__24), (new Card__untargetedCastEff((Card__ItemRef__9254__24), (new Card__noCondUntargetedEff((Card__ItemRef__9254__24), (new Card__leaderEff((Card__ItemRef__9254__24), (new Card__damageEff((Card__ItemRef__9254__24), 3, (new Card__damageAbilities((Card__ItemRef__9254__24), (new Card__noPoisonous((Card__ItemRef__9254__24))), (new Card__noLifesteal((Card__ItemRef__9254__24))))))), (new Card__oppoAllegiance((Card__ItemRef__9254__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9254__24))))))))))));
+    Card  *card = (((Card__ItemRef__9255__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9255__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9255__31), 1, (new Card__justAbilities((Card__ItemRef__9255__31), (new Card__noCharge((Card__ItemRef__9255__31))), (new Card__noTaunt((Card__ItemRef__9255__31))), (new Card__noStealth((Card__ItemRef__9255__31))), (new Card__noUntargetable((Card__ItemRef__9255__31))), (new Card__noShield((Card__ItemRef__9255__31))), (new Card__noPoisonous((Card__ItemRef__9255__31))), (new Card__noLifesteal((Card__ItemRef__9255__31))))), (new Card__specialEffects((Card__ItemRef__9255__31), (new Card__noTargetedPlayEff((Card__ItemRef__9255__31))), (new Card__consOtherEffs((Card__ItemRef__9255__31), (new Card__untargetedCastEff((Card__ItemRef__9255__31), (new Card__noCondUntargetedEff((Card__ItemRef__9255__31), (new Card__leaderEff((Card__ItemRef__9255__31), (new Card__damageEff((Card__ItemRef__9255__31), 3, (new Card__damageAbilities((Card__ItemRef__9255__31), (new Card__noPoisonous((Card__ItemRef__9255__31))), (new Card__noLifesteal((Card__ItemRef__9255__31))))))), (new Card__oppoAllegiance((Card__ItemRef__9255__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9255__31))))))))))));
     (((card)->name) = "Sinister Strike");
     return (card);
   }
 }
-Card  *Card__ItemRef__9264__24;
+Card  *Card__ItemRef__9265__31;
 
 Card  *CreateSap()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9264__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9264__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9264__24), 2, (new Card__justAbilities((Card__ItemRef__9264__24), (new Card__noCharge((Card__ItemRef__9264__24))), (new Card__noTaunt((Card__ItemRef__9264__24))), (new Card__noStealth((Card__ItemRef__9264__24))), (new Card__noUntargetable((Card__ItemRef__9264__24))), (new Card__noShield((Card__ItemRef__9264__24))), (new Card__noPoisonous((Card__ItemRef__9264__24))), (new Card__noLifesteal((Card__ItemRef__9264__24))))), (new Card__specialEffects((Card__ItemRef__9264__24), (new Card__targetedCastEff((Card__ItemRef__9264__24), (new Card__noCondTargetedEff((Card__ItemRef__9264__24), (new Card__moveEff((Card__ItemRef__9264__24), (new Card__handDest((Card__ItemRef__9264__24), (new Card__oppoAllegiance((Card__ItemRef__9264__24))))))), (new Card__charTargetCond((Card__ItemRef__9264__24), (new Card__justCharTargetCond((Card__ItemRef__9264__24), (new Card__oppoAllegiance((Card__ItemRef__9264__24))), (new Card__isMinion((Card__ItemRef__9264__24))), (new Card__noAbilCond((Card__ItemRef__9264__24))), (new Card__noStatCond((Card__ItemRef__9264__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9264__24))))))))));
+    Card  *card = (((Card__ItemRef__9265__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9265__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9265__31), 2, (new Card__justAbilities((Card__ItemRef__9265__31), (new Card__noCharge((Card__ItemRef__9265__31))), (new Card__noTaunt((Card__ItemRef__9265__31))), (new Card__noStealth((Card__ItemRef__9265__31))), (new Card__noUntargetable((Card__ItemRef__9265__31))), (new Card__noShield((Card__ItemRef__9265__31))), (new Card__noPoisonous((Card__ItemRef__9265__31))), (new Card__noLifesteal((Card__ItemRef__9265__31))))), (new Card__specialEffects((Card__ItemRef__9265__31), (new Card__targetedCastEff((Card__ItemRef__9265__31), (new Card__noCondTargetedEff((Card__ItemRef__9265__31), (new Card__moveEff((Card__ItemRef__9265__31), (new Card__handDest((Card__ItemRef__9265__31), (new Card__oppoAllegiance((Card__ItemRef__9265__31))))))), (new Card__charTargetCond((Card__ItemRef__9265__31), (new Card__justCharTargetCond((Card__ItemRef__9265__31), (new Card__oppoAllegiance((Card__ItemRef__9265__31))), (new Card__isMinion((Card__ItemRef__9265__31))), (new Card__noAbilCond((Card__ItemRef__9265__31))), (new Card__noStatCond((Card__ItemRef__9265__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9265__31))))))))));
     (((card)->name) = "Sap");
     return (card);
   }
 }
-Card  *Card__ItemRef__9273__24;
+Card  *Card__ItemRef__9274__31;
 
 Card  *CreateShiv()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9273__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9273__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9273__24), 2, (new Card__justAbilities((Card__ItemRef__9273__24), (new Card__noCharge((Card__ItemRef__9273__24))), (new Card__noTaunt((Card__ItemRef__9273__24))), (new Card__noStealth((Card__ItemRef__9273__24))), (new Card__noUntargetable((Card__ItemRef__9273__24))), (new Card__noShield((Card__ItemRef__9273__24))), (new Card__noPoisonous((Card__ItemRef__9273__24))), (new Card__noLifesteal((Card__ItemRef__9273__24))))), (new Card__specialEffects((Card__ItemRef__9273__24), (new Card__targetedCastEff((Card__ItemRef__9273__24), (new Card__noCondTargetedEff((Card__ItemRef__9273__24), (new Card__damageEff((Card__ItemRef__9273__24), 1, (new Card__damageAbilities((Card__ItemRef__9273__24), (new Card__noPoisonous((Card__ItemRef__9273__24))), (new Card__noLifesteal((Card__ItemRef__9273__24))))))), (new Card__charTargetCond((Card__ItemRef__9273__24), (new Card__justCharTargetCond((Card__ItemRef__9273__24), (new Card__anyAllegiance((Card__ItemRef__9273__24))), (new Card__isCharacter((Card__ItemRef__9273__24))), (new Card__noAbilCond((Card__ItemRef__9273__24))), (new Card__noStatCond((Card__ItemRef__9273__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9273__24), (new Card__untargetedCastEff((Card__ItemRef__9273__24), (new Card__noCondUntargetedEff((Card__ItemRef__9273__24), (new Card__drawCardEff((Card__ItemRef__9273__24), 1, (new Card__allyAllegiance((Card__ItemRef__9273__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9273__24))))))))))));
+    Card  *card = (((Card__ItemRef__9274__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9274__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9274__31), 2, (new Card__justAbilities((Card__ItemRef__9274__31), (new Card__noCharge((Card__ItemRef__9274__31))), (new Card__noTaunt((Card__ItemRef__9274__31))), (new Card__noStealth((Card__ItemRef__9274__31))), (new Card__noUntargetable((Card__ItemRef__9274__31))), (new Card__noShield((Card__ItemRef__9274__31))), (new Card__noPoisonous((Card__ItemRef__9274__31))), (new Card__noLifesteal((Card__ItemRef__9274__31))))), (new Card__specialEffects((Card__ItemRef__9274__31), (new Card__targetedCastEff((Card__ItemRef__9274__31), (new Card__noCondTargetedEff((Card__ItemRef__9274__31), (new Card__damageEff((Card__ItemRef__9274__31), 1, (new Card__damageAbilities((Card__ItemRef__9274__31), (new Card__noPoisonous((Card__ItemRef__9274__31))), (new Card__noLifesteal((Card__ItemRef__9274__31))))))), (new Card__charTargetCond((Card__ItemRef__9274__31), (new Card__justCharTargetCond((Card__ItemRef__9274__31), (new Card__anyAllegiance((Card__ItemRef__9274__31))), (new Card__isCharacter((Card__ItemRef__9274__31))), (new Card__noAbilCond((Card__ItemRef__9274__31))), (new Card__noStatCond((Card__ItemRef__9274__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9274__31), (new Card__untargetedCastEff((Card__ItemRef__9274__31), (new Card__noCondUntargetedEff((Card__ItemRef__9274__31), (new Card__drawCardEff((Card__ItemRef__9274__31), 1, (new Card__allyAllegiance((Card__ItemRef__9274__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9274__31))))))))))));
     (((card)->name) = "Shiv");
     return (card);
   }
 }
-Card  *Card__ItemRef__9283__24;
+Card  *Card__ItemRef__9284__31;
 
 Card  *CreateFanOfKnives()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9283__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9283__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9283__24), 3, (new Card__justAbilities((Card__ItemRef__9283__24), (new Card__noCharge((Card__ItemRef__9283__24))), (new Card__noTaunt((Card__ItemRef__9283__24))), (new Card__noStealth((Card__ItemRef__9283__24))), (new Card__noUntargetable((Card__ItemRef__9283__24))), (new Card__noShield((Card__ItemRef__9283__24))), (new Card__noPoisonous((Card__ItemRef__9283__24))), (new Card__noLifesteal((Card__ItemRef__9283__24))))), (new Card__specialEffects((Card__ItemRef__9283__24), (new Card__noTargetedPlayEff((Card__ItemRef__9283__24))), (new Card__consOtherEffs((Card__ItemRef__9283__24), (new Card__untargetedCastEff((Card__ItemRef__9283__24), (new Card__noCondUntargetedEff((Card__ItemRef__9283__24), (new Card__aoeEff((Card__ItemRef__9283__24), (new Card__damageEff((Card__ItemRef__9283__24), 1, (new Card__damageAbilities((Card__ItemRef__9283__24), (new Card__noPoisonous((Card__ItemRef__9283__24))), (new Card__noLifesteal((Card__ItemRef__9283__24))))))), (new Card__charTargetCond((Card__ItemRef__9283__24), (new Card__justCharTargetCond((Card__ItemRef__9283__24), (new Card__oppoAllegiance((Card__ItemRef__9283__24))), (new Card__isMinion((Card__ItemRef__9283__24))), (new Card__noAbilCond((Card__ItemRef__9283__24))), (new Card__noStatCond((Card__ItemRef__9283__24))))))))))))), (new Card__consOtherEffs((Card__ItemRef__9283__24), (new Card__untargetedCastEff((Card__ItemRef__9283__24), (new Card__noCondUntargetedEff((Card__ItemRef__9283__24), (new Card__drawCardEff((Card__ItemRef__9283__24), 1, (new Card__allyAllegiance((Card__ItemRef__9283__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9283__24))))))))))))));
+    Card  *card = (((Card__ItemRef__9284__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9284__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9284__31), 3, (new Card__justAbilities((Card__ItemRef__9284__31), (new Card__noCharge((Card__ItemRef__9284__31))), (new Card__noTaunt((Card__ItemRef__9284__31))), (new Card__noStealth((Card__ItemRef__9284__31))), (new Card__noUntargetable((Card__ItemRef__9284__31))), (new Card__noShield((Card__ItemRef__9284__31))), (new Card__noPoisonous((Card__ItemRef__9284__31))), (new Card__noLifesteal((Card__ItemRef__9284__31))))), (new Card__specialEffects((Card__ItemRef__9284__31), (new Card__noTargetedPlayEff((Card__ItemRef__9284__31))), (new Card__consOtherEffs((Card__ItemRef__9284__31), (new Card__untargetedCastEff((Card__ItemRef__9284__31), (new Card__noCondUntargetedEff((Card__ItemRef__9284__31), (new Card__aoeEff((Card__ItemRef__9284__31), (new Card__damageEff((Card__ItemRef__9284__31), 1, (new Card__damageAbilities((Card__ItemRef__9284__31), (new Card__noPoisonous((Card__ItemRef__9284__31))), (new Card__noLifesteal((Card__ItemRef__9284__31))))))), (new Card__charTargetCond((Card__ItemRef__9284__31), (new Card__justCharTargetCond((Card__ItemRef__9284__31), (new Card__oppoAllegiance((Card__ItemRef__9284__31))), (new Card__isMinion((Card__ItemRef__9284__31))), (new Card__noAbilCond((Card__ItemRef__9284__31))), (new Card__noStatCond((Card__ItemRef__9284__31))))))))))))), (new Card__consOtherEffs((Card__ItemRef__9284__31), (new Card__untargetedCastEff((Card__ItemRef__9284__31), (new Card__noCondUntargetedEff((Card__ItemRef__9284__31), (new Card__drawCardEff((Card__ItemRef__9284__31), 1, (new Card__allyAllegiance((Card__ItemRef__9284__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9284__31))))))))))))));
     (((card)->name) = "Fan of Knives");
     return (card);
   }
 }
-Card  *Card__ItemRef__9294__24;
+Card  *Card__ItemRef__9295__31;
 
 Card  *CreatePlaguebringer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9294__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9294__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9294__24), 4, 3, 3, (new Card__singleAttack((Card__ItemRef__9294__24))), (new Card__demonMinion((Card__ItemRef__9294__24))), (new Card__justAbilities((Card__ItemRef__9294__24), (new Card__noCharge((Card__ItemRef__9294__24))), (new Card__noTaunt((Card__ItemRef__9294__24))), (new Card__noStealth((Card__ItemRef__9294__24))), (new Card__noUntargetable((Card__ItemRef__9294__24))), (new Card__noShield((Card__ItemRef__9294__24))), (new Card__noPoisonous((Card__ItemRef__9294__24))), (new Card__noLifesteal((Card__ItemRef__9294__24))))), (new Card__specialEffects((Card__ItemRef__9294__24), (new Card__targetedBattlecryEff((Card__ItemRef__9294__24), (new Card__noCondTargetedEff((Card__ItemRef__9294__24), (new Card__givePoisonousEff((Card__ItemRef__9294__24))), (new Card__charTargetCond((Card__ItemRef__9294__24), (new Card__justCharTargetCond((Card__ItemRef__9294__24), (new Card__allyAllegiance((Card__ItemRef__9294__24))), (new Card__isMinion((Card__ItemRef__9294__24))), (new Card__noAbilCond((Card__ItemRef__9294__24))), (new Card__noStatCond((Card__ItemRef__9294__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9294__24))))))))));
+    Card  *card = (((Card__ItemRef__9295__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9295__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9295__31), 4, 3, 3, (new Card__singleAttack((Card__ItemRef__9295__31))), (new Card__demonMinion((Card__ItemRef__9295__31))), (new Card__justAbilities((Card__ItemRef__9295__31), (new Card__noCharge((Card__ItemRef__9295__31))), (new Card__noTaunt((Card__ItemRef__9295__31))), (new Card__noStealth((Card__ItemRef__9295__31))), (new Card__noUntargetable((Card__ItemRef__9295__31))), (new Card__noShield((Card__ItemRef__9295__31))), (new Card__noPoisonous((Card__ItemRef__9295__31))), (new Card__noLifesteal((Card__ItemRef__9295__31))))), (new Card__specialEffects((Card__ItemRef__9295__31), (new Card__targetedBattlecryEff((Card__ItemRef__9295__31), (new Card__noCondTargetedEff((Card__ItemRef__9295__31), (new Card__givePoisonousEff((Card__ItemRef__9295__31))), (new Card__charTargetCond((Card__ItemRef__9295__31), (new Card__justCharTargetCond((Card__ItemRef__9295__31), (new Card__allyAllegiance((Card__ItemRef__9295__31))), (new Card__isMinion((Card__ItemRef__9295__31))), (new Card__noAbilCond((Card__ItemRef__9295__31))), (new Card__noStatCond((Card__ItemRef__9295__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9295__31))))))))));
     (((card)->name) = "Plaguebringer");
     return (card);
   }
 }
-Card  *Card__ItemRef__9303__24;
+Card  *Card__ItemRef__9304__31;
 
 Card  *CreateAssassinate()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9303__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9303__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9303__24), 4, (new Card__justAbilities((Card__ItemRef__9303__24), (new Card__noCharge((Card__ItemRef__9303__24))), (new Card__noTaunt((Card__ItemRef__9303__24))), (new Card__noStealth((Card__ItemRef__9303__24))), (new Card__noUntargetable((Card__ItemRef__9303__24))), (new Card__noShield((Card__ItemRef__9303__24))), (new Card__noPoisonous((Card__ItemRef__9303__24))), (new Card__noLifesteal((Card__ItemRef__9303__24))))), (new Card__specialEffects((Card__ItemRef__9303__24), (new Card__targetedCastEff((Card__ItemRef__9303__24), (new Card__noCondTargetedEff((Card__ItemRef__9303__24), (new Card__destroyEff((Card__ItemRef__9303__24))), (new Card__charTargetCond((Card__ItemRef__9303__24), (new Card__justCharTargetCond((Card__ItemRef__9303__24), (new Card__oppoAllegiance((Card__ItemRef__9303__24))), (new Card__isMinion((Card__ItemRef__9303__24))), (new Card__noAbilCond((Card__ItemRef__9303__24))), (new Card__noStatCond((Card__ItemRef__9303__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9303__24))))))))));
+    Card  *card = (((Card__ItemRef__9304__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9304__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9304__31), 4, (new Card__justAbilities((Card__ItemRef__9304__31), (new Card__noCharge((Card__ItemRef__9304__31))), (new Card__noTaunt((Card__ItemRef__9304__31))), (new Card__noStealth((Card__ItemRef__9304__31))), (new Card__noUntargetable((Card__ItemRef__9304__31))), (new Card__noShield((Card__ItemRef__9304__31))), (new Card__noPoisonous((Card__ItemRef__9304__31))), (new Card__noLifesteal((Card__ItemRef__9304__31))))), (new Card__specialEffects((Card__ItemRef__9304__31), (new Card__targetedCastEff((Card__ItemRef__9304__31), (new Card__noCondTargetedEff((Card__ItemRef__9304__31), (new Card__destroyEff((Card__ItemRef__9304__31))), (new Card__charTargetCond((Card__ItemRef__9304__31), (new Card__justCharTargetCond((Card__ItemRef__9304__31), (new Card__oppoAllegiance((Card__ItemRef__9304__31))), (new Card__isMinion((Card__ItemRef__9304__31))), (new Card__noAbilCond((Card__ItemRef__9304__31))), (new Card__noStatCond((Card__ItemRef__9304__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9304__31))))))))));
     (((card)->name) = "Assassinate");
     return (card);
   }
 }
-Card  *Card__ItemRef__9312__25;
-Card  *Card__ItemRef__9314__24;
+Card  *Card__ItemRef__9313__32;
+Card  *Card__ItemRef__9315__31;
 
 Card  *CreateHex()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9312__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9312__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9312__25), 0, 0, 1, (new Card__singleAttack((Card__ItemRef__9312__25))), (new Card__demonMinion((Card__ItemRef__9312__25))), (new Card__justAbilities((Card__ItemRef__9312__25), (new Card__noCharge((Card__ItemRef__9312__25))), (new Card__justTaunt((Card__ItemRef__9312__25))), (new Card__noStealth((Card__ItemRef__9312__25))), (new Card__noUntargetable((Card__ItemRef__9312__25))), (new Card__noShield((Card__ItemRef__9312__25))), (new Card__noPoisonous((Card__ItemRef__9312__25))), (new Card__noLifesteal((Card__ItemRef__9312__25))))), (new Card__specialEffects((Card__ItemRef__9312__25), (new Card__noTargetedPlayEff((Card__ItemRef__9312__25))), (new Card__noOtherEffs((Card__ItemRef__9312__25))))))))));
+    Card  *token = (((Card__ItemRef__9313__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9313__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9313__32), 0, 0, 1, (new Card__singleAttack((Card__ItemRef__9313__32))), (new Card__demonMinion((Card__ItemRef__9313__32))), (new Card__justAbilities((Card__ItemRef__9313__32), (new Card__noCharge((Card__ItemRef__9313__32))), (new Card__justTaunt((Card__ItemRef__9313__32))), (new Card__noStealth((Card__ItemRef__9313__32))), (new Card__noUntargetable((Card__ItemRef__9313__32))), (new Card__noShield((Card__ItemRef__9313__32))), (new Card__noPoisonous((Card__ItemRef__9313__32))), (new Card__noLifesteal((Card__ItemRef__9313__32))))), (new Card__specialEffects((Card__ItemRef__9313__32), (new Card__noTargetedPlayEff((Card__ItemRef__9313__32))), (new Card__noOtherEffs((Card__ItemRef__9313__32))))))))));
     (((token)->name) = "Frog");
-    Card  *card = (((Card__ItemRef__9314__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9314__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9314__24), 4, (new Card__justAbilities((Card__ItemRef__9314__24), (new Card__noCharge((Card__ItemRef__9314__24))), (new Card__noTaunt((Card__ItemRef__9314__24))), (new Card__noStealth((Card__ItemRef__9314__24))), (new Card__noUntargetable((Card__ItemRef__9314__24))), (new Card__noShield((Card__ItemRef__9314__24))), (new Card__noPoisonous((Card__ItemRef__9314__24))), (new Card__noLifesteal((Card__ItemRef__9314__24))))), (new Card__specialEffects((Card__ItemRef__9314__24), (new Card__targetedCastEff((Card__ItemRef__9314__24), (new Card__noCondTargetedEff((Card__ItemRef__9314__24), (new Card__transformEff((Card__ItemRef__9314__24), (new Card__plainMinion((Card__ItemRef__9314__24), (token))))), (new Card__charTargetCond((Card__ItemRef__9314__24), (new Card__justCharTargetCond((Card__ItemRef__9314__24), (new Card__anyAllegiance((Card__ItemRef__9314__24))), (new Card__isMinion((Card__ItemRef__9314__24))), (new Card__noAbilCond((Card__ItemRef__9314__24))), (new Card__noStatCond((Card__ItemRef__9314__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9314__24))))))))));
+    Card  *card = (((Card__ItemRef__9315__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9315__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9315__31), 4, (new Card__justAbilities((Card__ItemRef__9315__31), (new Card__noCharge((Card__ItemRef__9315__31))), (new Card__noTaunt((Card__ItemRef__9315__31))), (new Card__noStealth((Card__ItemRef__9315__31))), (new Card__noUntargetable((Card__ItemRef__9315__31))), (new Card__noShield((Card__ItemRef__9315__31))), (new Card__noPoisonous((Card__ItemRef__9315__31))), (new Card__noLifesteal((Card__ItemRef__9315__31))))), (new Card__specialEffects((Card__ItemRef__9315__31), (new Card__targetedCastEff((Card__ItemRef__9315__31), (new Card__noCondTargetedEff((Card__ItemRef__9315__31), (new Card__transformEff((Card__ItemRef__9315__31), (new Card__plainMinion((Card__ItemRef__9315__31), (token))))), (new Card__charTargetCond((Card__ItemRef__9315__31), (new Card__justCharTargetCond((Card__ItemRef__9315__31), (new Card__anyAllegiance((Card__ItemRef__9315__31))), (new Card__isMinion((Card__ItemRef__9315__31))), (new Card__noAbilCond((Card__ItemRef__9315__31))), (new Card__noStatCond((Card__ItemRef__9315__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9315__31))))))))));
     (((card)->name) = "Hex");
     return (card);
   }
 }
-Card  *Card__ItemRef__9323__24;
+Card  *Card__ItemRef__9324__31;
 
 Card  *CreateFireElemental()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9323__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9323__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9323__24), 6, 6, 5, (new Card__singleAttack((Card__ItemRef__9323__24))), (new Card__demonMinion((Card__ItemRef__9323__24))), (new Card__justAbilities((Card__ItemRef__9323__24), (new Card__noCharge((Card__ItemRef__9323__24))), (new Card__noTaunt((Card__ItemRef__9323__24))), (new Card__noStealth((Card__ItemRef__9323__24))), (new Card__noUntargetable((Card__ItemRef__9323__24))), (new Card__noShield((Card__ItemRef__9323__24))), (new Card__noPoisonous((Card__ItemRef__9323__24))), (new Card__noLifesteal((Card__ItemRef__9323__24))))), (new Card__specialEffects((Card__ItemRef__9323__24), (new Card__targetedBattlecryEff((Card__ItemRef__9323__24), (new Card__noCondTargetedEff((Card__ItemRef__9323__24), (new Card__damageEff((Card__ItemRef__9323__24), 4, (new Card__damageAbilities((Card__ItemRef__9323__24), (new Card__noPoisonous((Card__ItemRef__9323__24))), (new Card__noLifesteal((Card__ItemRef__9323__24))))))), (new Card__charTargetCond((Card__ItemRef__9323__24), (new Card__justCharTargetCond((Card__ItemRef__9323__24), (new Card__anyAllegiance((Card__ItemRef__9323__24))), (new Card__isCharacter((Card__ItemRef__9323__24))), (new Card__noAbilCond((Card__ItemRef__9323__24))), (new Card__noStatCond((Card__ItemRef__9323__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9323__24))))))))));
+    Card  *card = (((Card__ItemRef__9324__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9324__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9324__31), 6, 6, 5, (new Card__singleAttack((Card__ItemRef__9324__31))), (new Card__demonMinion((Card__ItemRef__9324__31))), (new Card__justAbilities((Card__ItemRef__9324__31), (new Card__noCharge((Card__ItemRef__9324__31))), (new Card__noTaunt((Card__ItemRef__9324__31))), (new Card__noStealth((Card__ItemRef__9324__31))), (new Card__noUntargetable((Card__ItemRef__9324__31))), (new Card__noShield((Card__ItemRef__9324__31))), (new Card__noPoisonous((Card__ItemRef__9324__31))), (new Card__noLifesteal((Card__ItemRef__9324__31))))), (new Card__specialEffects((Card__ItemRef__9324__31), (new Card__targetedBattlecryEff((Card__ItemRef__9324__31), (new Card__noCondTargetedEff((Card__ItemRef__9324__31), (new Card__damageEff((Card__ItemRef__9324__31), 4, (new Card__damageAbilities((Card__ItemRef__9324__31), (new Card__noPoisonous((Card__ItemRef__9324__31))), (new Card__noLifesteal((Card__ItemRef__9324__31))))))), (new Card__charTargetCond((Card__ItemRef__9324__31), (new Card__justCharTargetCond((Card__ItemRef__9324__31), (new Card__anyAllegiance((Card__ItemRef__9324__31))), (new Card__isCharacter((Card__ItemRef__9324__31))), (new Card__noAbilCond((Card__ItemRef__9324__31))), (new Card__noStatCond((Card__ItemRef__9324__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9324__31))))))))));
     (((card)->name) = "Fire Elemental");
     return (card);
   }
 }
-Card  *Card__ItemRef__9332__24;
+Card  *Card__ItemRef__9333__31;
 
 Card  *CreateSoulfire()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9332__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9332__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9332__24), 1, (new Card__justAbilities((Card__ItemRef__9332__24), (new Card__noCharge((Card__ItemRef__9332__24))), (new Card__noTaunt((Card__ItemRef__9332__24))), (new Card__noStealth((Card__ItemRef__9332__24))), (new Card__noUntargetable((Card__ItemRef__9332__24))), (new Card__noShield((Card__ItemRef__9332__24))), (new Card__noPoisonous((Card__ItemRef__9332__24))), (new Card__noLifesteal((Card__ItemRef__9332__24))))), (new Card__specialEffects((Card__ItemRef__9332__24), (new Card__targetedCastEff((Card__ItemRef__9332__24), (new Card__noCondTargetedEff((Card__ItemRef__9332__24), (new Card__damageEff((Card__ItemRef__9332__24), 4, (new Card__damageAbilities((Card__ItemRef__9332__24), (new Card__noPoisonous((Card__ItemRef__9332__24))), (new Card__noLifesteal((Card__ItemRef__9332__24))))))), (new Card__charTargetCond((Card__ItemRef__9332__24), (new Card__justCharTargetCond((Card__ItemRef__9332__24), (new Card__anyAllegiance((Card__ItemRef__9332__24))), (new Card__isCharacter((Card__ItemRef__9332__24))), (new Card__noAbilCond((Card__ItemRef__9332__24))), (new Card__noStatCond((Card__ItemRef__9332__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9332__24), (new Card__untargetedCastEff((Card__ItemRef__9332__24), (new Card__noCondUntargetedEff((Card__ItemRef__9332__24), (new Card__randEff((Card__ItemRef__9332__24), (new Card__discardEff((Card__ItemRef__9332__24))), (new Card__cardTargetCond((Card__ItemRef__9332__24), (new Card__justCardTargetCond((Card__ItemRef__9332__24), (new Card__cardPosAtHand((Card__ItemRef__9332__24))), (new Card__allyAllegiance((Card__ItemRef__9332__24))), (new Card__isCard((Card__ItemRef__9332__24))), (new Card__noAbilCond((Card__ItemRef__9332__24))), (new Card__noStatCond((Card__ItemRef__9332__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9332__24))))))))))));
+    Card  *card = (((Card__ItemRef__9333__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9333__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9333__31), 1, (new Card__justAbilities((Card__ItemRef__9333__31), (new Card__noCharge((Card__ItemRef__9333__31))), (new Card__noTaunt((Card__ItemRef__9333__31))), (new Card__noStealth((Card__ItemRef__9333__31))), (new Card__noUntargetable((Card__ItemRef__9333__31))), (new Card__noShield((Card__ItemRef__9333__31))), (new Card__noPoisonous((Card__ItemRef__9333__31))), (new Card__noLifesteal((Card__ItemRef__9333__31))))), (new Card__specialEffects((Card__ItemRef__9333__31), (new Card__targetedCastEff((Card__ItemRef__9333__31), (new Card__noCondTargetedEff((Card__ItemRef__9333__31), (new Card__damageEff((Card__ItemRef__9333__31), 4, (new Card__damageAbilities((Card__ItemRef__9333__31), (new Card__noPoisonous((Card__ItemRef__9333__31))), (new Card__noLifesteal((Card__ItemRef__9333__31))))))), (new Card__charTargetCond((Card__ItemRef__9333__31), (new Card__justCharTargetCond((Card__ItemRef__9333__31), (new Card__anyAllegiance((Card__ItemRef__9333__31))), (new Card__isCharacter((Card__ItemRef__9333__31))), (new Card__noAbilCond((Card__ItemRef__9333__31))), (new Card__noStatCond((Card__ItemRef__9333__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9333__31), (new Card__untargetedCastEff((Card__ItemRef__9333__31), (new Card__noCondUntargetedEff((Card__ItemRef__9333__31), (new Card__randEff((Card__ItemRef__9333__31), (new Card__discardEff((Card__ItemRef__9333__31))), (new Card__cardTargetCond((Card__ItemRef__9333__31), (new Card__justCardTargetCond((Card__ItemRef__9333__31), (new Card__cardPosAtHand((Card__ItemRef__9333__31))), (new Card__allyAllegiance((Card__ItemRef__9333__31))), (new Card__isCard((Card__ItemRef__9333__31))), (new Card__noAbilCond((Card__ItemRef__9333__31))), (new Card__noStatCond((Card__ItemRef__9333__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9333__31))))))))))));
     (((card)->name) = "Soulfire");
     return (card);
   }
 }
-Card  *Card__ItemRef__9342__24;
+Card  *Card__ItemRef__9343__31;
 
 Card  *CreateFelstalker()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9342__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9342__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9342__24), 2, 4, 3, (new Card__singleAttack((Card__ItemRef__9342__24))), (new Card__demonMinion((Card__ItemRef__9342__24))), (new Card__justAbilities((Card__ItemRef__9342__24), (new Card__noCharge((Card__ItemRef__9342__24))), (new Card__noTaunt((Card__ItemRef__9342__24))), (new Card__noStealth((Card__ItemRef__9342__24))), (new Card__noUntargetable((Card__ItemRef__9342__24))), (new Card__noShield((Card__ItemRef__9342__24))), (new Card__noPoisonous((Card__ItemRef__9342__24))), (new Card__noLifesteal((Card__ItemRef__9342__24))))), (new Card__specialEffects((Card__ItemRef__9342__24), (new Card__noTargetedPlayEff((Card__ItemRef__9342__24))), (new Card__consOtherEffs((Card__ItemRef__9342__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9342__24), (new Card__noCondUntargetedEff((Card__ItemRef__9342__24), (new Card__randEff((Card__ItemRef__9342__24), (new Card__discardEff((Card__ItemRef__9342__24))), (new Card__cardTargetCond((Card__ItemRef__9342__24), (new Card__justCardTargetCond((Card__ItemRef__9342__24), (new Card__cardPosAtHand((Card__ItemRef__9342__24))), (new Card__allyAllegiance((Card__ItemRef__9342__24))), (new Card__isCard((Card__ItemRef__9342__24))), (new Card__noAbilCond((Card__ItemRef__9342__24))), (new Card__noStatCond((Card__ItemRef__9342__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9342__24))))))))))));
+    Card  *card = (((Card__ItemRef__9343__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9343__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9343__31), 2, 4, 3, (new Card__singleAttack((Card__ItemRef__9343__31))), (new Card__demonMinion((Card__ItemRef__9343__31))), (new Card__justAbilities((Card__ItemRef__9343__31), (new Card__noCharge((Card__ItemRef__9343__31))), (new Card__noTaunt((Card__ItemRef__9343__31))), (new Card__noStealth((Card__ItemRef__9343__31))), (new Card__noUntargetable((Card__ItemRef__9343__31))), (new Card__noShield((Card__ItemRef__9343__31))), (new Card__noPoisonous((Card__ItemRef__9343__31))), (new Card__noLifesteal((Card__ItemRef__9343__31))))), (new Card__specialEffects((Card__ItemRef__9343__31), (new Card__noTargetedPlayEff((Card__ItemRef__9343__31))), (new Card__consOtherEffs((Card__ItemRef__9343__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9343__31), (new Card__noCondUntargetedEff((Card__ItemRef__9343__31), (new Card__randEff((Card__ItemRef__9343__31), (new Card__discardEff((Card__ItemRef__9343__31))), (new Card__cardTargetCond((Card__ItemRef__9343__31), (new Card__justCardTargetCond((Card__ItemRef__9343__31), (new Card__cardPosAtHand((Card__ItemRef__9343__31))), (new Card__allyAllegiance((Card__ItemRef__9343__31))), (new Card__isCard((Card__ItemRef__9343__31))), (new Card__noAbilCond((Card__ItemRef__9343__31))), (new Card__noStatCond((Card__ItemRef__9343__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9343__31))))))))))));
     (((card)->name) = "Felstalker");
     return (card);
   }
 }
-Card  *Card__ItemRef__9352__24;
+Card  *Card__ItemRef__9353__31;
 
 Card  *CreateDrainLife()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9352__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9352__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9352__24), 3, (new Card__justAbilities((Card__ItemRef__9352__24), (new Card__noCharge((Card__ItemRef__9352__24))), (new Card__noTaunt((Card__ItemRef__9352__24))), (new Card__noStealth((Card__ItemRef__9352__24))), (new Card__noUntargetable((Card__ItemRef__9352__24))), (new Card__noShield((Card__ItemRef__9352__24))), (new Card__noPoisonous((Card__ItemRef__9352__24))), (new Card__noLifesteal((Card__ItemRef__9352__24))))), (new Card__specialEffects((Card__ItemRef__9352__24), (new Card__targetedCastEff((Card__ItemRef__9352__24), (new Card__noCondTargetedEff((Card__ItemRef__9352__24), (new Card__damageEff((Card__ItemRef__9352__24), 2, (new Card__damageAbilities((Card__ItemRef__9352__24), (new Card__noPoisonous((Card__ItemRef__9352__24))), (new Card__noLifesteal((Card__ItemRef__9352__24))))))), (new Card__charTargetCond((Card__ItemRef__9352__24), (new Card__justCharTargetCond((Card__ItemRef__9352__24), (new Card__anyAllegiance((Card__ItemRef__9352__24))), (new Card__isCharacter((Card__ItemRef__9352__24))), (new Card__noAbilCond((Card__ItemRef__9352__24))), (new Card__noStatCond((Card__ItemRef__9352__24))))))))))), (new Card__consOtherEffs((Card__ItemRef__9352__24), (new Card__untargetedCastEff((Card__ItemRef__9352__24), (new Card__noCondUntargetedEff((Card__ItemRef__9352__24), (new Card__leaderEff((Card__ItemRef__9352__24), (new Card__healEff((Card__ItemRef__9352__24), 2)), (new Card__allyAllegiance((Card__ItemRef__9352__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9352__24))))))))))));
+    Card  *card = (((Card__ItemRef__9353__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9353__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9353__31), 3, (new Card__justAbilities((Card__ItemRef__9353__31), (new Card__noCharge((Card__ItemRef__9353__31))), (new Card__noTaunt((Card__ItemRef__9353__31))), (new Card__noStealth((Card__ItemRef__9353__31))), (new Card__noUntargetable((Card__ItemRef__9353__31))), (new Card__noShield((Card__ItemRef__9353__31))), (new Card__noPoisonous((Card__ItemRef__9353__31))), (new Card__noLifesteal((Card__ItemRef__9353__31))))), (new Card__specialEffects((Card__ItemRef__9353__31), (new Card__targetedCastEff((Card__ItemRef__9353__31), (new Card__noCondTargetedEff((Card__ItemRef__9353__31), (new Card__damageEff((Card__ItemRef__9353__31), 2, (new Card__damageAbilities((Card__ItemRef__9353__31), (new Card__noPoisonous((Card__ItemRef__9353__31))), (new Card__noLifesteal((Card__ItemRef__9353__31))))))), (new Card__charTargetCond((Card__ItemRef__9353__31), (new Card__justCharTargetCond((Card__ItemRef__9353__31), (new Card__anyAllegiance((Card__ItemRef__9353__31))), (new Card__isCharacter((Card__ItemRef__9353__31))), (new Card__noAbilCond((Card__ItemRef__9353__31))), (new Card__noStatCond((Card__ItemRef__9353__31))))))))))), (new Card__consOtherEffs((Card__ItemRef__9353__31), (new Card__untargetedCastEff((Card__ItemRef__9353__31), (new Card__noCondUntargetedEff((Card__ItemRef__9353__31), (new Card__leaderEff((Card__ItemRef__9353__31), (new Card__healEff((Card__ItemRef__9353__31), 2)), (new Card__allyAllegiance((Card__ItemRef__9353__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9353__31))))))))))));
     (((card)->name) = "Drain Life");
     return (card);
   }
 }
-Card  *Card__ItemRef__9362__24;
+Card  *Card__ItemRef__9363__31;
 
 Card  *CreateShadowBolt()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9362__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9362__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9362__24), 3, (new Card__justAbilities((Card__ItemRef__9362__24), (new Card__noCharge((Card__ItemRef__9362__24))), (new Card__noTaunt((Card__ItemRef__9362__24))), (new Card__noStealth((Card__ItemRef__9362__24))), (new Card__noUntargetable((Card__ItemRef__9362__24))), (new Card__noShield((Card__ItemRef__9362__24))), (new Card__noPoisonous((Card__ItemRef__9362__24))), (new Card__noLifesteal((Card__ItemRef__9362__24))))), (new Card__specialEffects((Card__ItemRef__9362__24), (new Card__targetedCastEff((Card__ItemRef__9362__24), (new Card__noCondTargetedEff((Card__ItemRef__9362__24), (new Card__damageEff((Card__ItemRef__9362__24), 4, (new Card__damageAbilities((Card__ItemRef__9362__24), (new Card__noPoisonous((Card__ItemRef__9362__24))), (new Card__noLifesteal((Card__ItemRef__9362__24))))))), (new Card__charTargetCond((Card__ItemRef__9362__24), (new Card__justCharTargetCond((Card__ItemRef__9362__24), (new Card__anyAllegiance((Card__ItemRef__9362__24))), (new Card__isMinion((Card__ItemRef__9362__24))), (new Card__noAbilCond((Card__ItemRef__9362__24))), (new Card__noStatCond((Card__ItemRef__9362__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9362__24))))))))));
+    Card  *card = (((Card__ItemRef__9363__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9363__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9363__31), 3, (new Card__justAbilities((Card__ItemRef__9363__31), (new Card__noCharge((Card__ItemRef__9363__31))), (new Card__noTaunt((Card__ItemRef__9363__31))), (new Card__noStealth((Card__ItemRef__9363__31))), (new Card__noUntargetable((Card__ItemRef__9363__31))), (new Card__noShield((Card__ItemRef__9363__31))), (new Card__noPoisonous((Card__ItemRef__9363__31))), (new Card__noLifesteal((Card__ItemRef__9363__31))))), (new Card__specialEffects((Card__ItemRef__9363__31), (new Card__targetedCastEff((Card__ItemRef__9363__31), (new Card__noCondTargetedEff((Card__ItemRef__9363__31), (new Card__damageEff((Card__ItemRef__9363__31), 4, (new Card__damageAbilities((Card__ItemRef__9363__31), (new Card__noPoisonous((Card__ItemRef__9363__31))), (new Card__noLifesteal((Card__ItemRef__9363__31))))))), (new Card__charTargetCond((Card__ItemRef__9363__31), (new Card__justCharTargetCond((Card__ItemRef__9363__31), (new Card__anyAllegiance((Card__ItemRef__9363__31))), (new Card__isMinion((Card__ItemRef__9363__31))), (new Card__noAbilCond((Card__ItemRef__9363__31))), (new Card__noStatCond((Card__ItemRef__9363__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9363__31))))))))));
     (((card)->name) = "Shadow Bolt");
     return (card);
   }
 }
-Card  *Card__ItemRef__9371__24;
+Card  *Card__ItemRef__9372__31;
 
 Card  *CreateHellfire()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9371__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9371__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9371__24), 4, (new Card__justAbilities((Card__ItemRef__9371__24), (new Card__noCharge((Card__ItemRef__9371__24))), (new Card__noTaunt((Card__ItemRef__9371__24))), (new Card__noStealth((Card__ItemRef__9371__24))), (new Card__noUntargetable((Card__ItemRef__9371__24))), (new Card__noShield((Card__ItemRef__9371__24))), (new Card__noPoisonous((Card__ItemRef__9371__24))), (new Card__noLifesteal((Card__ItemRef__9371__24))))), (new Card__specialEffects((Card__ItemRef__9371__24), (new Card__noTargetedPlayEff((Card__ItemRef__9371__24))), (new Card__consOtherEffs((Card__ItemRef__9371__24), (new Card__untargetedCastEff((Card__ItemRef__9371__24), (new Card__noCondUntargetedEff((Card__ItemRef__9371__24), (new Card__aoeEff((Card__ItemRef__9371__24), (new Card__damageEff((Card__ItemRef__9371__24), 3, (new Card__damageAbilities((Card__ItemRef__9371__24), (new Card__noPoisonous((Card__ItemRef__9371__24))), (new Card__noLifesteal((Card__ItemRef__9371__24))))))), (new Card__charTargetCond((Card__ItemRef__9371__24), (new Card__justCharTargetCond((Card__ItemRef__9371__24), (new Card__anyAllegiance((Card__ItemRef__9371__24))), (new Card__isCharacter((Card__ItemRef__9371__24))), (new Card__noAbilCond((Card__ItemRef__9371__24))), (new Card__noStatCond((Card__ItemRef__9371__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9371__24))))))))))));
+    Card  *card = (((Card__ItemRef__9372__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9372__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9372__31), 4, (new Card__justAbilities((Card__ItemRef__9372__31), (new Card__noCharge((Card__ItemRef__9372__31))), (new Card__noTaunt((Card__ItemRef__9372__31))), (new Card__noStealth((Card__ItemRef__9372__31))), (new Card__noUntargetable((Card__ItemRef__9372__31))), (new Card__noShield((Card__ItemRef__9372__31))), (new Card__noPoisonous((Card__ItemRef__9372__31))), (new Card__noLifesteal((Card__ItemRef__9372__31))))), (new Card__specialEffects((Card__ItemRef__9372__31), (new Card__noTargetedPlayEff((Card__ItemRef__9372__31))), (new Card__consOtherEffs((Card__ItemRef__9372__31), (new Card__untargetedCastEff((Card__ItemRef__9372__31), (new Card__noCondUntargetedEff((Card__ItemRef__9372__31), (new Card__aoeEff((Card__ItemRef__9372__31), (new Card__damageEff((Card__ItemRef__9372__31), 3, (new Card__damageAbilities((Card__ItemRef__9372__31), (new Card__noPoisonous((Card__ItemRef__9372__31))), (new Card__noLifesteal((Card__ItemRef__9372__31))))))), (new Card__charTargetCond((Card__ItemRef__9372__31), (new Card__justCharTargetCond((Card__ItemRef__9372__31), (new Card__anyAllegiance((Card__ItemRef__9372__31))), (new Card__isCharacter((Card__ItemRef__9372__31))), (new Card__noAbilCond((Card__ItemRef__9372__31))), (new Card__noStatCond((Card__ItemRef__9372__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9372__31))))))))))));
     (((card)->name) = "Hellfire");
     return (card);
   }
 }
-Card  *Card__ItemRef__9381__24;
+Card  *Card__ItemRef__9382__31;
 
 Card  *CreateWhirlwind()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9381__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9381__24)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9381__24), 1, (new Card__justAbilities((Card__ItemRef__9381__24), (new Card__noCharge((Card__ItemRef__9381__24))), (new Card__noTaunt((Card__ItemRef__9381__24))), (new Card__noStealth((Card__ItemRef__9381__24))), (new Card__noUntargetable((Card__ItemRef__9381__24))), (new Card__noShield((Card__ItemRef__9381__24))), (new Card__noPoisonous((Card__ItemRef__9381__24))), (new Card__noLifesteal((Card__ItemRef__9381__24))))), (new Card__specialEffects((Card__ItemRef__9381__24), (new Card__noTargetedPlayEff((Card__ItemRef__9381__24))), (new Card__consOtherEffs((Card__ItemRef__9381__24), (new Card__untargetedCastEff((Card__ItemRef__9381__24), (new Card__noCondUntargetedEff((Card__ItemRef__9381__24), (new Card__aoeEff((Card__ItemRef__9381__24), (new Card__damageEff((Card__ItemRef__9381__24), 1, (new Card__damageAbilities((Card__ItemRef__9381__24), (new Card__noPoisonous((Card__ItemRef__9381__24))), (new Card__noLifesteal((Card__ItemRef__9381__24))))))), (new Card__charTargetCond((Card__ItemRef__9381__24), (new Card__justCharTargetCond((Card__ItemRef__9381__24), (new Card__anyAllegiance((Card__ItemRef__9381__24))), (new Card__isMinion((Card__ItemRef__9381__24))), (new Card__noAbilCond((Card__ItemRef__9381__24))), (new Card__noStatCond((Card__ItemRef__9381__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9381__24))))))))))));
+    Card  *card = (((Card__ItemRef__9382__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9382__31)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9382__31), 1, (new Card__justAbilities((Card__ItemRef__9382__31), (new Card__noCharge((Card__ItemRef__9382__31))), (new Card__noTaunt((Card__ItemRef__9382__31))), (new Card__noStealth((Card__ItemRef__9382__31))), (new Card__noUntargetable((Card__ItemRef__9382__31))), (new Card__noShield((Card__ItemRef__9382__31))), (new Card__noPoisonous((Card__ItemRef__9382__31))), (new Card__noLifesteal((Card__ItemRef__9382__31))))), (new Card__specialEffects((Card__ItemRef__9382__31), (new Card__noTargetedPlayEff((Card__ItemRef__9382__31))), (new Card__consOtherEffs((Card__ItemRef__9382__31), (new Card__untargetedCastEff((Card__ItemRef__9382__31), (new Card__noCondUntargetedEff((Card__ItemRef__9382__31), (new Card__aoeEff((Card__ItemRef__9382__31), (new Card__damageEff((Card__ItemRef__9382__31), 1, (new Card__damageAbilities((Card__ItemRef__9382__31), (new Card__noPoisonous((Card__ItemRef__9382__31))), (new Card__noLifesteal((Card__ItemRef__9382__31))))))), (new Card__charTargetCond((Card__ItemRef__9382__31), (new Card__justCharTargetCond((Card__ItemRef__9382__31), (new Card__anyAllegiance((Card__ItemRef__9382__31))), (new Card__isMinion((Card__ItemRef__9382__31))), (new Card__noAbilCond((Card__ItemRef__9382__31))), (new Card__noStatCond((Card__ItemRef__9382__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9382__31))))))))))));
     (((card)->name) = "Whirlwind");
     return (card);
   }
 }
-Card  *Card__ItemRef__9391__24;
+Card  *Card__ItemRef__9392__31;
 
 Card  *CreateKorkronElite()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9391__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9391__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9391__24), 4, 4, 3, (new Card__singleAttack((Card__ItemRef__9391__24))), (new Card__beastMinion((Card__ItemRef__9391__24))), (new Card__justAbilities((Card__ItemRef__9391__24), (new Card__justCharge((Card__ItemRef__9391__24))), (new Card__noTaunt((Card__ItemRef__9391__24))), (new Card__noStealth((Card__ItemRef__9391__24))), (new Card__noUntargetable((Card__ItemRef__9391__24))), (new Card__noShield((Card__ItemRef__9391__24))), (new Card__noPoisonous((Card__ItemRef__9391__24))), (new Card__noLifesteal((Card__ItemRef__9391__24))))), (new Card__specialEffects((Card__ItemRef__9391__24), (new Card__noTargetedPlayEff((Card__ItemRef__9391__24))), (new Card__noOtherEffs((Card__ItemRef__9391__24))))))))));
+    Card  *card = (((Card__ItemRef__9392__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9392__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9392__31), 4, 4, 3, (new Card__singleAttack((Card__ItemRef__9392__31))), (new Card__beastMinion((Card__ItemRef__9392__31))), (new Card__justAbilities((Card__ItemRef__9392__31), (new Card__justCharge((Card__ItemRef__9392__31))), (new Card__noTaunt((Card__ItemRef__9392__31))), (new Card__noStealth((Card__ItemRef__9392__31))), (new Card__noUntargetable((Card__ItemRef__9392__31))), (new Card__noShield((Card__ItemRef__9392__31))), (new Card__noPoisonous((Card__ItemRef__9392__31))), (new Card__noLifesteal((Card__ItemRef__9392__31))))), (new Card__specialEffects((Card__ItemRef__9392__31), (new Card__noTargetedPlayEff((Card__ItemRef__9392__31))), (new Card__noOtherEffs((Card__ItemRef__9392__31))))))))));
     (((card)->name) = "Korkron Elite");
     return (card);
   }
 }
-Card  *Card__ItemRef__9398__24;
+Card  *Card__ItemRef__9399__31;
 
 Card  *CreateWisp()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9398__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9398__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9398__24), 0, 1, 1, (new Card__singleAttack((Card__ItemRef__9398__24))), (new Card__demonMinion((Card__ItemRef__9398__24))), (new Card__justAbilities((Card__ItemRef__9398__24), (new Card__noCharge((Card__ItemRef__9398__24))), (new Card__noTaunt((Card__ItemRef__9398__24))), (new Card__noStealth((Card__ItemRef__9398__24))), (new Card__noUntargetable((Card__ItemRef__9398__24))), (new Card__noShield((Card__ItemRef__9398__24))), (new Card__noPoisonous((Card__ItemRef__9398__24))), (new Card__noLifesteal((Card__ItemRef__9398__24))))), (new Card__specialEffects((Card__ItemRef__9398__24), (new Card__noTargetedPlayEff((Card__ItemRef__9398__24))), (new Card__noOtherEffs((Card__ItemRef__9398__24))))))))));
+    Card  *card = (((Card__ItemRef__9399__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9399__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9399__31), 0, 1, 1, (new Card__singleAttack((Card__ItemRef__9399__31))), (new Card__demonMinion((Card__ItemRef__9399__31))), (new Card__justAbilities((Card__ItemRef__9399__31), (new Card__noCharge((Card__ItemRef__9399__31))), (new Card__noTaunt((Card__ItemRef__9399__31))), (new Card__noStealth((Card__ItemRef__9399__31))), (new Card__noUntargetable((Card__ItemRef__9399__31))), (new Card__noShield((Card__ItemRef__9399__31))), (new Card__noPoisonous((Card__ItemRef__9399__31))), (new Card__noLifesteal((Card__ItemRef__9399__31))))), (new Card__specialEffects((Card__ItemRef__9399__31), (new Card__noTargetedPlayEff((Card__ItemRef__9399__31))), (new Card__noOtherEffs((Card__ItemRef__9399__31))))))))));
     (((card)->name) = "Wisp");
     return (card);
   }
 }
-Card  *Card__ItemRef__9405__24;
+Card  *Card__ItemRef__9406__31;
 
 Card  *CreateLeperGnome()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9405__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9405__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9405__24), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9405__24))), (new Card__demonMinion((Card__ItemRef__9405__24))), (new Card__justAbilities((Card__ItemRef__9405__24), (new Card__noCharge((Card__ItemRef__9405__24))), (new Card__noTaunt((Card__ItemRef__9405__24))), (new Card__noStealth((Card__ItemRef__9405__24))), (new Card__noUntargetable((Card__ItemRef__9405__24))), (new Card__noShield((Card__ItemRef__9405__24))), (new Card__noPoisonous((Card__ItemRef__9405__24))), (new Card__noLifesteal((Card__ItemRef__9405__24))))), (new Card__specialEffects((Card__ItemRef__9405__24), (new Card__noTargetedPlayEff((Card__ItemRef__9405__24))), (new Card__consOtherEffs((Card__ItemRef__9405__24), (new Card__deathrattleEff((Card__ItemRef__9405__24), (new Card__noCondUntargetedEff((Card__ItemRef__9405__24), (new Card__leaderEff((Card__ItemRef__9405__24), (new Card__damageEff((Card__ItemRef__9405__24), 2, (new Card__damageAbilities((Card__ItemRef__9405__24), (new Card__noPoisonous((Card__ItemRef__9405__24))), (new Card__noLifesteal((Card__ItemRef__9405__24))))))), (new Card__oppoAllegiance((Card__ItemRef__9405__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9405__24))))))))))));
+    Card  *card = (((Card__ItemRef__9406__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9406__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9406__31), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9406__31))), (new Card__demonMinion((Card__ItemRef__9406__31))), (new Card__justAbilities((Card__ItemRef__9406__31), (new Card__noCharge((Card__ItemRef__9406__31))), (new Card__noTaunt((Card__ItemRef__9406__31))), (new Card__noStealth((Card__ItemRef__9406__31))), (new Card__noUntargetable((Card__ItemRef__9406__31))), (new Card__noShield((Card__ItemRef__9406__31))), (new Card__noPoisonous((Card__ItemRef__9406__31))), (new Card__noLifesteal((Card__ItemRef__9406__31))))), (new Card__specialEffects((Card__ItemRef__9406__31), (new Card__noTargetedPlayEff((Card__ItemRef__9406__31))), (new Card__consOtherEffs((Card__ItemRef__9406__31), (new Card__deathrattleEff((Card__ItemRef__9406__31), (new Card__noCondUntargetedEff((Card__ItemRef__9406__31), (new Card__leaderEff((Card__ItemRef__9406__31), (new Card__damageEff((Card__ItemRef__9406__31), 2, (new Card__damageAbilities((Card__ItemRef__9406__31), (new Card__noPoisonous((Card__ItemRef__9406__31))), (new Card__noLifesteal((Card__ItemRef__9406__31))))))), (new Card__oppoAllegiance((Card__ItemRef__9406__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9406__31))))))))))));
     (((card)->name) = "Leper Gnome");
     return (card);
   }
 }
-Card  *Card__ItemRef__9415__24;
+Card  *Card__ItemRef__9416__31;
 
 Card  *CreateWorgenInfiltrator()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9415__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9415__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9415__24), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9415__24))), (new Card__beastMinion((Card__ItemRef__9415__24))), (new Card__justAbilities((Card__ItemRef__9415__24), (new Card__noCharge((Card__ItemRef__9415__24))), (new Card__noTaunt((Card__ItemRef__9415__24))), (new Card__justStealth((Card__ItemRef__9415__24))), (new Card__noUntargetable((Card__ItemRef__9415__24))), (new Card__noShield((Card__ItemRef__9415__24))), (new Card__noPoisonous((Card__ItemRef__9415__24))), (new Card__noLifesteal((Card__ItemRef__9415__24))))), (new Card__specialEffects((Card__ItemRef__9415__24), (new Card__noTargetedPlayEff((Card__ItemRef__9415__24))), (new Card__noOtherEffs((Card__ItemRef__9415__24))))))))));
+    Card  *card = (((Card__ItemRef__9416__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9416__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9416__31), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9416__31))), (new Card__beastMinion((Card__ItemRef__9416__31))), (new Card__justAbilities((Card__ItemRef__9416__31), (new Card__noCharge((Card__ItemRef__9416__31))), (new Card__noTaunt((Card__ItemRef__9416__31))), (new Card__justStealth((Card__ItemRef__9416__31))), (new Card__noUntargetable((Card__ItemRef__9416__31))), (new Card__noShield((Card__ItemRef__9416__31))), (new Card__noPoisonous((Card__ItemRef__9416__31))), (new Card__noLifesteal((Card__ItemRef__9416__31))))), (new Card__specialEffects((Card__ItemRef__9416__31), (new Card__noTargetedPlayEff((Card__ItemRef__9416__31))), (new Card__noOtherEffs((Card__ItemRef__9416__31))))))))));
     (((card)->name) = "Worgen Infiltrator");
     return (card);
   }
 }
-Card  *Card__ItemRef__9422__24;
+Card  *Card__ItemRef__9423__31;
 
 Card  *CreateFaerieDragon()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9422__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9422__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9422__24), 2, 3, 2, (new Card__singleAttack((Card__ItemRef__9422__24))), (new Card__dragonMinion((Card__ItemRef__9422__24))), (new Card__justAbilities((Card__ItemRef__9422__24), (new Card__noCharge((Card__ItemRef__9422__24))), (new Card__noTaunt((Card__ItemRef__9422__24))), (new Card__noStealth((Card__ItemRef__9422__24))), (new Card__justUntargetable((Card__ItemRef__9422__24))), (new Card__noShield((Card__ItemRef__9422__24))), (new Card__noPoisonous((Card__ItemRef__9422__24))), (new Card__noLifesteal((Card__ItemRef__9422__24))))), (new Card__specialEffects((Card__ItemRef__9422__24), (new Card__noTargetedPlayEff((Card__ItemRef__9422__24))), (new Card__noOtherEffs((Card__ItemRef__9422__24))))))))));
+    Card  *card = (((Card__ItemRef__9423__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9423__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9423__31), 2, 3, 2, (new Card__singleAttack((Card__ItemRef__9423__31))), (new Card__dragonMinion((Card__ItemRef__9423__31))), (new Card__justAbilities((Card__ItemRef__9423__31), (new Card__noCharge((Card__ItemRef__9423__31))), (new Card__noTaunt((Card__ItemRef__9423__31))), (new Card__noStealth((Card__ItemRef__9423__31))), (new Card__justUntargetable((Card__ItemRef__9423__31))), (new Card__noShield((Card__ItemRef__9423__31))), (new Card__noPoisonous((Card__ItemRef__9423__31))), (new Card__noLifesteal((Card__ItemRef__9423__31))))), (new Card__specialEffects((Card__ItemRef__9423__31), (new Card__noTargetedPlayEff((Card__ItemRef__9423__31))), (new Card__noOtherEffs((Card__ItemRef__9423__31))))))))));
     (((card)->name) = "Wisp");
     return (card);
   }
 }
-Card  *Card__ItemRef__9429__24;
+Card  *Card__ItemRef__9430__31;
 
 Card  *CreateLootHoarder()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9429__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9429__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9429__24), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__9429__24))), (new Card__demonMinion((Card__ItemRef__9429__24))), (new Card__justAbilities((Card__ItemRef__9429__24), (new Card__noCharge((Card__ItemRef__9429__24))), (new Card__noTaunt((Card__ItemRef__9429__24))), (new Card__noStealth((Card__ItemRef__9429__24))), (new Card__noUntargetable((Card__ItemRef__9429__24))), (new Card__noShield((Card__ItemRef__9429__24))), (new Card__noPoisonous((Card__ItemRef__9429__24))), (new Card__noLifesteal((Card__ItemRef__9429__24))))), (new Card__specialEffects((Card__ItemRef__9429__24), (new Card__noTargetedPlayEff((Card__ItemRef__9429__24))), (new Card__consOtherEffs((Card__ItemRef__9429__24), (new Card__deathrattleEff((Card__ItemRef__9429__24), (new Card__noCondUntargetedEff((Card__ItemRef__9429__24), (new Card__drawCardEff((Card__ItemRef__9429__24), 1, (new Card__allyAllegiance((Card__ItemRef__9429__24))))))))), (new Card__noOtherEffs((Card__ItemRef__9429__24))))))))))));
+    Card  *card = (((Card__ItemRef__9430__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9430__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9430__31), 2, 2, 1, (new Card__singleAttack((Card__ItemRef__9430__31))), (new Card__demonMinion((Card__ItemRef__9430__31))), (new Card__justAbilities((Card__ItemRef__9430__31), (new Card__noCharge((Card__ItemRef__9430__31))), (new Card__noTaunt((Card__ItemRef__9430__31))), (new Card__noStealth((Card__ItemRef__9430__31))), (new Card__noUntargetable((Card__ItemRef__9430__31))), (new Card__noShield((Card__ItemRef__9430__31))), (new Card__noPoisonous((Card__ItemRef__9430__31))), (new Card__noLifesteal((Card__ItemRef__9430__31))))), (new Card__specialEffects((Card__ItemRef__9430__31), (new Card__noTargetedPlayEff((Card__ItemRef__9430__31))), (new Card__consOtherEffs((Card__ItemRef__9430__31), (new Card__deathrattleEff((Card__ItemRef__9430__31), (new Card__noCondUntargetedEff((Card__ItemRef__9430__31), (new Card__drawCardEff((Card__ItemRef__9430__31), 1, (new Card__allyAllegiance((Card__ItemRef__9430__31))))))))), (new Card__noOtherEffs((Card__ItemRef__9430__31))))))))))));
     (((card)->name) = "Loot Hoarder");
     return (card);
   }
 }
-Card  *Card__ItemRef__9439__24;
+Card  *Card__ItemRef__9440__31;
 
 Card  *CreateEarthenRingFarseer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9439__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9439__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9439__24), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__9439__24))), (new Card__dragonMinion((Card__ItemRef__9439__24))), (new Card__justAbilities((Card__ItemRef__9439__24), (new Card__noCharge((Card__ItemRef__9439__24))), (new Card__noTaunt((Card__ItemRef__9439__24))), (new Card__noStealth((Card__ItemRef__9439__24))), (new Card__noUntargetable((Card__ItemRef__9439__24))), (new Card__noShield((Card__ItemRef__9439__24))), (new Card__noPoisonous((Card__ItemRef__9439__24))), (new Card__noLifesteal((Card__ItemRef__9439__24))))), (new Card__specialEffects((Card__ItemRef__9439__24), (new Card__targetedBattlecryEff((Card__ItemRef__9439__24), (new Card__noCondTargetedEff((Card__ItemRef__9439__24), (new Card__healEff((Card__ItemRef__9439__24), 3)), (new Card__charTargetCond((Card__ItemRef__9439__24), (new Card__justCharTargetCond((Card__ItemRef__9439__24), (new Card__anyAllegiance((Card__ItemRef__9439__24))), (new Card__isCharacter((Card__ItemRef__9439__24))), (new Card__noAbilCond((Card__ItemRef__9439__24))), (new Card__noStatCond((Card__ItemRef__9439__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9439__24))))))))));
+    Card  *card = (((Card__ItemRef__9440__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9440__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9440__31), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__9440__31))), (new Card__dragonMinion((Card__ItemRef__9440__31))), (new Card__justAbilities((Card__ItemRef__9440__31), (new Card__noCharge((Card__ItemRef__9440__31))), (new Card__noTaunt((Card__ItemRef__9440__31))), (new Card__noStealth((Card__ItemRef__9440__31))), (new Card__noUntargetable((Card__ItemRef__9440__31))), (new Card__noShield((Card__ItemRef__9440__31))), (new Card__noPoisonous((Card__ItemRef__9440__31))), (new Card__noLifesteal((Card__ItemRef__9440__31))))), (new Card__specialEffects((Card__ItemRef__9440__31), (new Card__targetedBattlecryEff((Card__ItemRef__9440__31), (new Card__noCondTargetedEff((Card__ItemRef__9440__31), (new Card__healEff((Card__ItemRef__9440__31), 3)), (new Card__charTargetCond((Card__ItemRef__9440__31), (new Card__justCharTargetCond((Card__ItemRef__9440__31), (new Card__anyAllegiance((Card__ItemRef__9440__31))), (new Card__isCharacter((Card__ItemRef__9440__31))), (new Card__noAbilCond((Card__ItemRef__9440__31))), (new Card__noStatCond((Card__ItemRef__9440__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9440__31))))))))));
     (((card)->name) = "Earthen Ring Farseer");
     return (card);
   }
 }
-Card  *Card__ItemRef__9448__25;
-Card  *Card__ItemRef__9450__24;
+Card  *Card__ItemRef__9449__32;
+Card  *Card__ItemRef__9451__31;
 
 Card  *CreateHarvestGolem()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9448__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9448__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9448__25), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9448__25))), (new Card__demonMinion((Card__ItemRef__9448__25))), (new Card__justAbilities((Card__ItemRef__9448__25), (new Card__noCharge((Card__ItemRef__9448__25))), (new Card__noTaunt((Card__ItemRef__9448__25))), (new Card__noStealth((Card__ItemRef__9448__25))), (new Card__noUntargetable((Card__ItemRef__9448__25))), (new Card__noShield((Card__ItemRef__9448__25))), (new Card__noPoisonous((Card__ItemRef__9448__25))), (new Card__noLifesteal((Card__ItemRef__9448__25))))), (new Card__specialEffects((Card__ItemRef__9448__25), (new Card__noTargetedPlayEff((Card__ItemRef__9448__25))), (new Card__noOtherEffs((Card__ItemRef__9448__25))))))))));
+    Card  *token = (((Card__ItemRef__9449__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9449__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9449__32), 1, 2, 1, (new Card__singleAttack((Card__ItemRef__9449__32))), (new Card__demonMinion((Card__ItemRef__9449__32))), (new Card__justAbilities((Card__ItemRef__9449__32), (new Card__noCharge((Card__ItemRef__9449__32))), (new Card__noTaunt((Card__ItemRef__9449__32))), (new Card__noStealth((Card__ItemRef__9449__32))), (new Card__noUntargetable((Card__ItemRef__9449__32))), (new Card__noShield((Card__ItemRef__9449__32))), (new Card__noPoisonous((Card__ItemRef__9449__32))), (new Card__noLifesteal((Card__ItemRef__9449__32))))), (new Card__specialEffects((Card__ItemRef__9449__32), (new Card__noTargetedPlayEff((Card__ItemRef__9449__32))), (new Card__noOtherEffs((Card__ItemRef__9449__32))))))))));
     (((token)->name) = "Damaged Golem");
-    Card  *card = (((Card__ItemRef__9450__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9450__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9450__24), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__9450__24))), (new Card__demonMinion((Card__ItemRef__9450__24))), (new Card__justAbilities((Card__ItemRef__9450__24), (new Card__noCharge((Card__ItemRef__9450__24))), (new Card__noTaunt((Card__ItemRef__9450__24))), (new Card__noStealth((Card__ItemRef__9450__24))), (new Card__noUntargetable((Card__ItemRef__9450__24))), (new Card__noShield((Card__ItemRef__9450__24))), (new Card__noPoisonous((Card__ItemRef__9450__24))), (new Card__noLifesteal((Card__ItemRef__9450__24))))), (new Card__specialEffects((Card__ItemRef__9450__24), (new Card__noTargetedPlayEff((Card__ItemRef__9450__24))), (new Card__consOtherEffs((Card__ItemRef__9450__24), (new Card__deathrattleEff((Card__ItemRef__9450__24), (new Card__noCondUntargetedEff((Card__ItemRef__9450__24), (new Card__newEff((Card__ItemRef__9450__24), 1, (new Card__fieldDest((Card__ItemRef__9450__24), (new Card__allyAllegiance((Card__ItemRef__9450__24))))), (new Card__plainMinion((Card__ItemRef__9450__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9450__24))))))))))));
+    Card  *card = (((Card__ItemRef__9451__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9451__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9451__31), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__9451__31))), (new Card__demonMinion((Card__ItemRef__9451__31))), (new Card__justAbilities((Card__ItemRef__9451__31), (new Card__noCharge((Card__ItemRef__9451__31))), (new Card__noTaunt((Card__ItemRef__9451__31))), (new Card__noStealth((Card__ItemRef__9451__31))), (new Card__noUntargetable((Card__ItemRef__9451__31))), (new Card__noShield((Card__ItemRef__9451__31))), (new Card__noPoisonous((Card__ItemRef__9451__31))), (new Card__noLifesteal((Card__ItemRef__9451__31))))), (new Card__specialEffects((Card__ItemRef__9451__31), (new Card__noTargetedPlayEff((Card__ItemRef__9451__31))), (new Card__consOtherEffs((Card__ItemRef__9451__31), (new Card__deathrattleEff((Card__ItemRef__9451__31), (new Card__noCondUntargetedEff((Card__ItemRef__9451__31), (new Card__newEff((Card__ItemRef__9451__31), 1, (new Card__fieldDest((Card__ItemRef__9451__31), (new Card__allyAllegiance((Card__ItemRef__9451__31))))), (new Card__plainMinion((Card__ItemRef__9451__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9451__31))))))))))));
     (((card)->name) = "Harvest Golem");
     return (card);
   }
 }
-Card  *Card__ItemRef__9460__24;
+Card  *Card__ItemRef__9461__31;
 
 Card  *CreateJunglePanther()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9460__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9460__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9460__24), 3, 4, 2, (new Card__singleAttack((Card__ItemRef__9460__24))), (new Card__beastMinion((Card__ItemRef__9460__24))), (new Card__justAbilities((Card__ItemRef__9460__24), (new Card__noCharge((Card__ItemRef__9460__24))), (new Card__noTaunt((Card__ItemRef__9460__24))), (new Card__justStealth((Card__ItemRef__9460__24))), (new Card__noUntargetable((Card__ItemRef__9460__24))), (new Card__noShield((Card__ItemRef__9460__24))), (new Card__noPoisonous((Card__ItemRef__9460__24))), (new Card__noLifesteal((Card__ItemRef__9460__24))))), (new Card__specialEffects((Card__ItemRef__9460__24), (new Card__noTargetedPlayEff((Card__ItemRef__9460__24))), (new Card__noOtherEffs((Card__ItemRef__9460__24))))))))));
+    Card  *card = (((Card__ItemRef__9461__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9461__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9461__31), 3, 4, 2, (new Card__singleAttack((Card__ItemRef__9461__31))), (new Card__beastMinion((Card__ItemRef__9461__31))), (new Card__justAbilities((Card__ItemRef__9461__31), (new Card__noCharge((Card__ItemRef__9461__31))), (new Card__noTaunt((Card__ItemRef__9461__31))), (new Card__justStealth((Card__ItemRef__9461__31))), (new Card__noUntargetable((Card__ItemRef__9461__31))), (new Card__noShield((Card__ItemRef__9461__31))), (new Card__noPoisonous((Card__ItemRef__9461__31))), (new Card__noLifesteal((Card__ItemRef__9461__31))))), (new Card__specialEffects((Card__ItemRef__9461__31), (new Card__noTargetedPlayEff((Card__ItemRef__9461__31))), (new Card__noOtherEffs((Card__ItemRef__9461__31))))))))));
     (((card)->name) = "Jungle Panther");
     return (card);
   }
 }
-Card  *Card__ItemRef__9467__24;
+Card  *Card__ItemRef__9468__31;
 
 Card  *CreateScarletCrusader()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9467__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9467__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9467__24), 3, 3, 1, (new Card__singleAttack((Card__ItemRef__9467__24))), (new Card__dragonMinion((Card__ItemRef__9467__24))), (new Card__justAbilities((Card__ItemRef__9467__24), (new Card__noCharge((Card__ItemRef__9467__24))), (new Card__noTaunt((Card__ItemRef__9467__24))), (new Card__noStealth((Card__ItemRef__9467__24))), (new Card__noUntargetable((Card__ItemRef__9467__24))), (new Card__justShield((Card__ItemRef__9467__24))), (new Card__noPoisonous((Card__ItemRef__9467__24))), (new Card__noLifesteal((Card__ItemRef__9467__24))))), (new Card__specialEffects((Card__ItemRef__9467__24), (new Card__noTargetedPlayEff((Card__ItemRef__9467__24))), (new Card__noOtherEffs((Card__ItemRef__9467__24))))))))));
+    Card  *card = (((Card__ItemRef__9468__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9468__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9468__31), 3, 3, 1, (new Card__singleAttack((Card__ItemRef__9468__31))), (new Card__dragonMinion((Card__ItemRef__9468__31))), (new Card__justAbilities((Card__ItemRef__9468__31), (new Card__noCharge((Card__ItemRef__9468__31))), (new Card__noTaunt((Card__ItemRef__9468__31))), (new Card__noStealth((Card__ItemRef__9468__31))), (new Card__noUntargetable((Card__ItemRef__9468__31))), (new Card__justShield((Card__ItemRef__9468__31))), (new Card__noPoisonous((Card__ItemRef__9468__31))), (new Card__noLifesteal((Card__ItemRef__9468__31))))), (new Card__specialEffects((Card__ItemRef__9468__31), (new Card__noTargetedPlayEff((Card__ItemRef__9468__31))), (new Card__noOtherEffs((Card__ItemRef__9468__31))))))))));
     (((card)->name) = "Scarlet Crusader");
     return (card);
   }
 }
-Card  *Card__ItemRef__9474__24;
+Card  *Card__ItemRef__9475__31;
 
 Card  *CreateThrallmarFarseer()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9474__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9474__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9474__24), 3, 2, 3, (new Card__multipleAttack((Card__ItemRef__9474__24), 2)), (new Card__beastMinion((Card__ItemRef__9474__24))), (new Card__justAbilities((Card__ItemRef__9474__24), (new Card__noCharge((Card__ItemRef__9474__24))), (new Card__noTaunt((Card__ItemRef__9474__24))), (new Card__noStealth((Card__ItemRef__9474__24))), (new Card__noUntargetable((Card__ItemRef__9474__24))), (new Card__noShield((Card__ItemRef__9474__24))), (new Card__noPoisonous((Card__ItemRef__9474__24))), (new Card__noLifesteal((Card__ItemRef__9474__24))))), (new Card__specialEffects((Card__ItemRef__9474__24), (new Card__noTargetedPlayEff((Card__ItemRef__9474__24))), (new Card__noOtherEffs((Card__ItemRef__9474__24))))))))));
+    Card  *card = (((Card__ItemRef__9475__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9475__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9475__31), 3, 2, 3, (new Card__multipleAttack((Card__ItemRef__9475__31), 2)), (new Card__beastMinion((Card__ItemRef__9475__31))), (new Card__justAbilities((Card__ItemRef__9475__31), (new Card__noCharge((Card__ItemRef__9475__31))), (new Card__noTaunt((Card__ItemRef__9475__31))), (new Card__noStealth((Card__ItemRef__9475__31))), (new Card__noUntargetable((Card__ItemRef__9475__31))), (new Card__noShield((Card__ItemRef__9475__31))), (new Card__noPoisonous((Card__ItemRef__9475__31))), (new Card__noLifesteal((Card__ItemRef__9475__31))))), (new Card__specialEffects((Card__ItemRef__9475__31), (new Card__noTargetedPlayEff((Card__ItemRef__9475__31))), (new Card__noOtherEffs((Card__ItemRef__9475__31))))))))));
     (((card)->name) = "Thrallmar Farseer");
     return (card);
   }
 }
-Card  *Card__ItemRef__9481__24;
+Card  *Card__ItemRef__9482__31;
 
 Card  *CreateStranglethornTiger()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9481__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9481__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9481__24), 5, 5, 5, (new Card__singleAttack((Card__ItemRef__9481__24))), (new Card__beastMinion((Card__ItemRef__9481__24))), (new Card__justAbilities((Card__ItemRef__9481__24), (new Card__noCharge((Card__ItemRef__9481__24))), (new Card__noTaunt((Card__ItemRef__9481__24))), (new Card__justStealth((Card__ItemRef__9481__24))), (new Card__noUntargetable((Card__ItemRef__9481__24))), (new Card__noShield((Card__ItemRef__9481__24))), (new Card__noPoisonous((Card__ItemRef__9481__24))), (new Card__noLifesteal((Card__ItemRef__9481__24))))), (new Card__specialEffects((Card__ItemRef__9481__24), (new Card__noTargetedPlayEff((Card__ItemRef__9481__24))), (new Card__noOtherEffs((Card__ItemRef__9481__24))))))))));
+    Card  *card = (((Card__ItemRef__9482__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9482__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9482__31), 5, 5, 5, (new Card__singleAttack((Card__ItemRef__9482__31))), (new Card__beastMinion((Card__ItemRef__9482__31))), (new Card__justAbilities((Card__ItemRef__9482__31), (new Card__noCharge((Card__ItemRef__9482__31))), (new Card__noTaunt((Card__ItemRef__9482__31))), (new Card__justStealth((Card__ItemRef__9482__31))), (new Card__noUntargetable((Card__ItemRef__9482__31))), (new Card__noShield((Card__ItemRef__9482__31))), (new Card__noPoisonous((Card__ItemRef__9482__31))), (new Card__noLifesteal((Card__ItemRef__9482__31))))), (new Card__specialEffects((Card__ItemRef__9482__31), (new Card__noTargetedPlayEff((Card__ItemRef__9482__31))), (new Card__noOtherEffs((Card__ItemRef__9482__31))))))))));
     (((card)->name) = "Stranglethorn Tiger");
     return (card);
   }
 }
-Card  *Card__ItemRef__9488__24;
+Card  *Card__ItemRef__9489__31;
 
 Card  *CreateWindfuryHarpy()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9488__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9488__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9488__24), 6, 4, 5, (new Card__multipleAttack((Card__ItemRef__9488__24), 2)), (new Card__dragonMinion((Card__ItemRef__9488__24))), (new Card__justAbilities((Card__ItemRef__9488__24), (new Card__noCharge((Card__ItemRef__9488__24))), (new Card__noTaunt((Card__ItemRef__9488__24))), (new Card__noStealth((Card__ItemRef__9488__24))), (new Card__noUntargetable((Card__ItemRef__9488__24))), (new Card__noShield((Card__ItemRef__9488__24))), (new Card__noPoisonous((Card__ItemRef__9488__24))), (new Card__noLifesteal((Card__ItemRef__9488__24))))), (new Card__specialEffects((Card__ItemRef__9488__24), (new Card__noTargetedPlayEff((Card__ItemRef__9488__24))), (new Card__noOtherEffs((Card__ItemRef__9488__24))))))))));
+    Card  *card = (((Card__ItemRef__9489__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9489__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9489__31), 6, 4, 5, (new Card__multipleAttack((Card__ItemRef__9489__31), 2)), (new Card__dragonMinion((Card__ItemRef__9489__31))), (new Card__justAbilities((Card__ItemRef__9489__31), (new Card__noCharge((Card__ItemRef__9489__31))), (new Card__noTaunt((Card__ItemRef__9489__31))), (new Card__noStealth((Card__ItemRef__9489__31))), (new Card__noUntargetable((Card__ItemRef__9489__31))), (new Card__noShield((Card__ItemRef__9489__31))), (new Card__noPoisonous((Card__ItemRef__9489__31))), (new Card__noLifesteal((Card__ItemRef__9489__31))))), (new Card__specialEffects((Card__ItemRef__9489__31), (new Card__noTargetedPlayEff((Card__ItemRef__9489__31))), (new Card__noOtherEffs((Card__ItemRef__9489__31))))))))));
     (((card)->name) = "Windfury Harpy");
     return (card);
   }
 }
-Card  *Card__ItemRef__9495__24;
+Card  *Card__ItemRef__9496__31;
 
 Card  *CreateEmperorCobra()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9495__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9495__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9495__24), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__9495__24))), (new Card__beastMinion((Card__ItemRef__9495__24))), (new Card__justAbilities((Card__ItemRef__9495__24), (new Card__noCharge((Card__ItemRef__9495__24))), (new Card__noTaunt((Card__ItemRef__9495__24))), (new Card__noStealth((Card__ItemRef__9495__24))), (new Card__noUntargetable((Card__ItemRef__9495__24))), (new Card__noShield((Card__ItemRef__9495__24))), (new Card__justPoisonous((Card__ItemRef__9495__24))), (new Card__noLifesteal((Card__ItemRef__9495__24))))), (new Card__specialEffects((Card__ItemRef__9495__24), (new Card__noTargetedPlayEff((Card__ItemRef__9495__24))), (new Card__noOtherEffs((Card__ItemRef__9495__24))))))))));
+    Card  *card = (((Card__ItemRef__9496__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9496__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9496__31), 3, 2, 3, (new Card__singleAttack((Card__ItemRef__9496__31))), (new Card__beastMinion((Card__ItemRef__9496__31))), (new Card__justAbilities((Card__ItemRef__9496__31), (new Card__noCharge((Card__ItemRef__9496__31))), (new Card__noTaunt((Card__ItemRef__9496__31))), (new Card__noStealth((Card__ItemRef__9496__31))), (new Card__noUntargetable((Card__ItemRef__9496__31))), (new Card__noShield((Card__ItemRef__9496__31))), (new Card__justPoisonous((Card__ItemRef__9496__31))), (new Card__noLifesteal((Card__ItemRef__9496__31))))), (new Card__specialEffects((Card__ItemRef__9496__31), (new Card__noTargetedPlayEff((Card__ItemRef__9496__31))), (new Card__noOtherEffs((Card__ItemRef__9496__31))))))))));
     (((card)->name) = "Emperor Cobra");
     return (card);
   }
 }
-Card  *Card__ItemRef__9502__25;
-Card  *Card__ItemRef__9504__24;
+Card  *Card__ItemRef__9503__32;
+Card  *Card__ItemRef__9505__31;
 
 Card  *CreateImpMaster()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9502__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9502__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9502__25), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9502__25))), (new Card__demonMinion((Card__ItemRef__9502__25))), (new Card__justAbilities((Card__ItemRef__9502__25), (new Card__noCharge((Card__ItemRef__9502__25))), (new Card__noTaunt((Card__ItemRef__9502__25))), (new Card__noStealth((Card__ItemRef__9502__25))), (new Card__noUntargetable((Card__ItemRef__9502__25))), (new Card__noShield((Card__ItemRef__9502__25))), (new Card__noPoisonous((Card__ItemRef__9502__25))), (new Card__noLifesteal((Card__ItemRef__9502__25))))), (new Card__specialEffects((Card__ItemRef__9502__25), (new Card__noTargetedPlayEff((Card__ItemRef__9502__25))), (new Card__noOtherEffs((Card__ItemRef__9502__25))))))))));
+    Card  *token = (((Card__ItemRef__9503__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9503__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9503__32), 1, 1, 1, (new Card__singleAttack((Card__ItemRef__9503__32))), (new Card__demonMinion((Card__ItemRef__9503__32))), (new Card__justAbilities((Card__ItemRef__9503__32), (new Card__noCharge((Card__ItemRef__9503__32))), (new Card__noTaunt((Card__ItemRef__9503__32))), (new Card__noStealth((Card__ItemRef__9503__32))), (new Card__noUntargetable((Card__ItemRef__9503__32))), (new Card__noShield((Card__ItemRef__9503__32))), (new Card__noPoisonous((Card__ItemRef__9503__32))), (new Card__noLifesteal((Card__ItemRef__9503__32))))), (new Card__specialEffects((Card__ItemRef__9503__32), (new Card__noTargetedPlayEff((Card__ItemRef__9503__32))), (new Card__noOtherEffs((Card__ItemRef__9503__32))))))))));
     (((token)->name) = "Imp");
-    Card  *card = (((Card__ItemRef__9504__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9504__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9504__24), 3, 1, 5, (new Card__singleAttack((Card__ItemRef__9504__24))), (new Card__demonMinion((Card__ItemRef__9504__24))), (new Card__justAbilities((Card__ItemRef__9504__24), (new Card__noCharge((Card__ItemRef__9504__24))), (new Card__noTaunt((Card__ItemRef__9504__24))), (new Card__noStealth((Card__ItemRef__9504__24))), (new Card__noUntargetable((Card__ItemRef__9504__24))), (new Card__noShield((Card__ItemRef__9504__24))), (new Card__noPoisonous((Card__ItemRef__9504__24))), (new Card__noLifesteal((Card__ItemRef__9504__24))))), (new Card__specialEffects((Card__ItemRef__9504__24), (new Card__noTargetedPlayEff((Card__ItemRef__9504__24))), (new Card__consOtherEffs((Card__ItemRef__9504__24), (new Card__turnEndEff((Card__ItemRef__9504__24), (new Card__srcCondUntargetedEff((Card__ItemRef__9504__24), (new Card__selfEff((Card__ItemRef__9504__24), (new Card__damageEff((Card__ItemRef__9504__24), 1, (new Card__damageAbilities((Card__ItemRef__9504__24), (new Card__noPoisonous((Card__ItemRef__9504__24))), (new Card__noLifesteal((Card__ItemRef__9504__24))))))))), (new Card__charTargetCond((Card__ItemRef__9504__24), (new Card__justCharTargetCond((Card__ItemRef__9504__24), (new Card__anyAllegiance((Card__ItemRef__9504__24))), (new Card__isCharacter((Card__ItemRef__9504__24))), (new Card__noAbilCond((Card__ItemRef__9504__24))), (new Card__noStatCond((Card__ItemRef__9504__24))))))))), (new Card__allyAllegiance((Card__ItemRef__9504__24))))), (new Card__consOtherEffs((Card__ItemRef__9504__24), (new Card__turnEndEff((Card__ItemRef__9504__24), (new Card__srcCondUntargetedEff((Card__ItemRef__9504__24), (new Card__newEff((Card__ItemRef__9504__24), 1, (new Card__fieldDest((Card__ItemRef__9504__24), (new Card__allyAllegiance((Card__ItemRef__9504__24))))), (new Card__plainMinion((Card__ItemRef__9504__24), (token))))), (new Card__charTargetCond((Card__ItemRef__9504__24), (new Card__justCharTargetCond((Card__ItemRef__9504__24), (new Card__anyAllegiance((Card__ItemRef__9504__24))), (new Card__isCharacter((Card__ItemRef__9504__24))), (new Card__noAbilCond((Card__ItemRef__9504__24))), (new Card__noStatCond((Card__ItemRef__9504__24))))))))), (new Card__allyAllegiance((Card__ItemRef__9504__24))))), (new Card__noOtherEffs((Card__ItemRef__9504__24))))))))))))));
+    Card  *card = (((Card__ItemRef__9505__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9505__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9505__31), 3, 1, 5, (new Card__singleAttack((Card__ItemRef__9505__31))), (new Card__demonMinion((Card__ItemRef__9505__31))), (new Card__justAbilities((Card__ItemRef__9505__31), (new Card__noCharge((Card__ItemRef__9505__31))), (new Card__noTaunt((Card__ItemRef__9505__31))), (new Card__noStealth((Card__ItemRef__9505__31))), (new Card__noUntargetable((Card__ItemRef__9505__31))), (new Card__noShield((Card__ItemRef__9505__31))), (new Card__noPoisonous((Card__ItemRef__9505__31))), (new Card__noLifesteal((Card__ItemRef__9505__31))))), (new Card__specialEffects((Card__ItemRef__9505__31), (new Card__noTargetedPlayEff((Card__ItemRef__9505__31))), (new Card__consOtherEffs((Card__ItemRef__9505__31), (new Card__turnEndEff((Card__ItemRef__9505__31), (new Card__srcCondUntargetedEff((Card__ItemRef__9505__31), (new Card__selfEff((Card__ItemRef__9505__31), (new Card__damageEff((Card__ItemRef__9505__31), 1, (new Card__damageAbilities((Card__ItemRef__9505__31), (new Card__noPoisonous((Card__ItemRef__9505__31))), (new Card__noLifesteal((Card__ItemRef__9505__31))))))))), (new Card__charTargetCond((Card__ItemRef__9505__31), (new Card__justCharTargetCond((Card__ItemRef__9505__31), (new Card__anyAllegiance((Card__ItemRef__9505__31))), (new Card__isCharacter((Card__ItemRef__9505__31))), (new Card__noAbilCond((Card__ItemRef__9505__31))), (new Card__noStatCond((Card__ItemRef__9505__31))))))))), (new Card__allyAllegiance((Card__ItemRef__9505__31))))), (new Card__consOtherEffs((Card__ItemRef__9505__31), (new Card__turnEndEff((Card__ItemRef__9505__31), (new Card__srcCondUntargetedEff((Card__ItemRef__9505__31), (new Card__newEff((Card__ItemRef__9505__31), 1, (new Card__fieldDest((Card__ItemRef__9505__31), (new Card__allyAllegiance((Card__ItemRef__9505__31))))), (new Card__plainMinion((Card__ItemRef__9505__31), (token))))), (new Card__charTargetCond((Card__ItemRef__9505__31), (new Card__justCharTargetCond((Card__ItemRef__9505__31), (new Card__anyAllegiance((Card__ItemRef__9505__31))), (new Card__isCharacter((Card__ItemRef__9505__31))), (new Card__noAbilCond((Card__ItemRef__9505__31))), (new Card__noStatCond((Card__ItemRef__9505__31))))))))), (new Card__allyAllegiance((Card__ItemRef__9505__31))))), (new Card__noOtherEffs((Card__ItemRef__9505__31))))))))))))));
     (((card)->name) = "Imp Master");
     return (card);
   }
 }
-Card  *Card__ItemRef__9515__24;
+Card  *Card__ItemRef__9516__31;
 
 Card  *CreateInjuredBlademaster()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9515__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9515__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9515__24), 3, 4, 7, (new Card__singleAttack((Card__ItemRef__9515__24))), (new Card__beastMinion((Card__ItemRef__9515__24))), (new Card__justAbilities((Card__ItemRef__9515__24), (new Card__noCharge((Card__ItemRef__9515__24))), (new Card__noTaunt((Card__ItemRef__9515__24))), (new Card__noStealth((Card__ItemRef__9515__24))), (new Card__noUntargetable((Card__ItemRef__9515__24))), (new Card__noShield((Card__ItemRef__9515__24))), (new Card__noPoisonous((Card__ItemRef__9515__24))), (new Card__noLifesteal((Card__ItemRef__9515__24))))), (new Card__specialEffects((Card__ItemRef__9515__24), (new Card__noTargetedPlayEff((Card__ItemRef__9515__24))), (new Card__consOtherEffs((Card__ItemRef__9515__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9515__24), (new Card__noCondUntargetedEff((Card__ItemRef__9515__24), (new Card__selfEff((Card__ItemRef__9515__24), (new Card__damageEff((Card__ItemRef__9515__24), 4, (new Card__damageAbilities((Card__ItemRef__9515__24), (new Card__noPoisonous((Card__ItemRef__9515__24))), (new Card__noLifesteal((Card__ItemRef__9515__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9515__24))))))))))));
+    Card  *card = (((Card__ItemRef__9516__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9516__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9516__31), 3, 4, 7, (new Card__singleAttack((Card__ItemRef__9516__31))), (new Card__beastMinion((Card__ItemRef__9516__31))), (new Card__justAbilities((Card__ItemRef__9516__31), (new Card__noCharge((Card__ItemRef__9516__31))), (new Card__noTaunt((Card__ItemRef__9516__31))), (new Card__noStealth((Card__ItemRef__9516__31))), (new Card__noUntargetable((Card__ItemRef__9516__31))), (new Card__noShield((Card__ItemRef__9516__31))), (new Card__noPoisonous((Card__ItemRef__9516__31))), (new Card__noLifesteal((Card__ItemRef__9516__31))))), (new Card__specialEffects((Card__ItemRef__9516__31), (new Card__noTargetedPlayEff((Card__ItemRef__9516__31))), (new Card__consOtherEffs((Card__ItemRef__9516__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9516__31), (new Card__noCondUntargetedEff((Card__ItemRef__9516__31), (new Card__selfEff((Card__ItemRef__9516__31), (new Card__damageEff((Card__ItemRef__9516__31), 4, (new Card__damageAbilities((Card__ItemRef__9516__31), (new Card__noPoisonous((Card__ItemRef__9516__31))), (new Card__noLifesteal((Card__ItemRef__9516__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9516__31))))))))))));
     (((card)->name) = "Injured Blademaster");
     return (card);
   }
 }
-Card  *Card__ItemRef__9525__24;
+Card  *Card__ItemRef__9526__31;
 
 Card  *CreateAbomination()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9525__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9525__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9525__24), 5, 4, 4, (new Card__singleAttack((Card__ItemRef__9525__24))), (new Card__demonMinion((Card__ItemRef__9525__24))), (new Card__justAbilities((Card__ItemRef__9525__24), (new Card__noCharge((Card__ItemRef__9525__24))), (new Card__justTaunt((Card__ItemRef__9525__24))), (new Card__noStealth((Card__ItemRef__9525__24))), (new Card__noUntargetable((Card__ItemRef__9525__24))), (new Card__noShield((Card__ItemRef__9525__24))), (new Card__noPoisonous((Card__ItemRef__9525__24))), (new Card__noLifesteal((Card__ItemRef__9525__24))))), (new Card__specialEffects((Card__ItemRef__9525__24), (new Card__noTargetedPlayEff((Card__ItemRef__9525__24))), (new Card__consOtherEffs((Card__ItemRef__9525__24), (new Card__deathrattleEff((Card__ItemRef__9525__24), (new Card__noCondUntargetedEff((Card__ItemRef__9525__24), (new Card__aoeEff((Card__ItemRef__9525__24), (new Card__damageEff((Card__ItemRef__9525__24), 2, (new Card__damageAbilities((Card__ItemRef__9525__24), (new Card__noPoisonous((Card__ItemRef__9525__24))), (new Card__noLifesteal((Card__ItemRef__9525__24))))))), (new Card__charTargetCond((Card__ItemRef__9525__24), (new Card__justCharTargetCond((Card__ItemRef__9525__24), (new Card__anyAllegiance((Card__ItemRef__9525__24))), (new Card__isCharacter((Card__ItemRef__9525__24))), (new Card__noAbilCond((Card__ItemRef__9525__24))), (new Card__noStatCond((Card__ItemRef__9525__24))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9525__24))))))))))));
+    Card  *card = (((Card__ItemRef__9526__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9526__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9526__31), 5, 4, 4, (new Card__singleAttack((Card__ItemRef__9526__31))), (new Card__demonMinion((Card__ItemRef__9526__31))), (new Card__justAbilities((Card__ItemRef__9526__31), (new Card__noCharge((Card__ItemRef__9526__31))), (new Card__justTaunt((Card__ItemRef__9526__31))), (new Card__noStealth((Card__ItemRef__9526__31))), (new Card__noUntargetable((Card__ItemRef__9526__31))), (new Card__noShield((Card__ItemRef__9526__31))), (new Card__noPoisonous((Card__ItemRef__9526__31))), (new Card__noLifesteal((Card__ItemRef__9526__31))))), (new Card__specialEffects((Card__ItemRef__9526__31), (new Card__noTargetedPlayEff((Card__ItemRef__9526__31))), (new Card__consOtherEffs((Card__ItemRef__9526__31), (new Card__deathrattleEff((Card__ItemRef__9526__31), (new Card__noCondUntargetedEff((Card__ItemRef__9526__31), (new Card__aoeEff((Card__ItemRef__9526__31), (new Card__damageEff((Card__ItemRef__9526__31), 2, (new Card__damageAbilities((Card__ItemRef__9526__31), (new Card__noPoisonous((Card__ItemRef__9526__31))), (new Card__noLifesteal((Card__ItemRef__9526__31))))))), (new Card__charTargetCond((Card__ItemRef__9526__31), (new Card__justCharTargetCond((Card__ItemRef__9526__31), (new Card__anyAllegiance((Card__ItemRef__9526__31))), (new Card__isCharacter((Card__ItemRef__9526__31))), (new Card__noAbilCond((Card__ItemRef__9526__31))), (new Card__noStatCond((Card__ItemRef__9526__31))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9526__31))))))))))));
     (((card)->name) = "Abomination");
     return (card);
   }
 }
-Card  *Card__ItemRef__9535__24;
+Card  *Card__ItemRef__9536__31;
 
 Card  *CreateStampedingKodo()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9535__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9535__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9535__24), 5, 3, 5, (new Card__singleAttack((Card__ItemRef__9535__24))), (new Card__demonMinion((Card__ItemRef__9535__24))), (new Card__justAbilities((Card__ItemRef__9535__24), (new Card__noCharge((Card__ItemRef__9535__24))), (new Card__noTaunt((Card__ItemRef__9535__24))), (new Card__noStealth((Card__ItemRef__9535__24))), (new Card__noUntargetable((Card__ItemRef__9535__24))), (new Card__noShield((Card__ItemRef__9535__24))), (new Card__noPoisonous((Card__ItemRef__9535__24))), (new Card__noLifesteal((Card__ItemRef__9535__24))))), (new Card__specialEffects((Card__ItemRef__9535__24), (new Card__noTargetedPlayEff((Card__ItemRef__9535__24))), (new Card__consOtherEffs((Card__ItemRef__9535__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9535__24), (new Card__noCondUntargetedEff((Card__ItemRef__9535__24), (new Card__randEff((Card__ItemRef__9535__24), (new Card__destroyEff((Card__ItemRef__9535__24))), (new Card__charTargetCond((Card__ItemRef__9535__24), (new Card__justCharTargetCond((Card__ItemRef__9535__24), (new Card__oppoAllegiance((Card__ItemRef__9535__24))), (new Card__isMinion((Card__ItemRef__9535__24))), (new Card__noAbilCond((Card__ItemRef__9535__24))), (new Card__atkCond((Card__ItemRef__9535__24), (new Card__statLe((Card__ItemRef__9535__24), 2)))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9535__24))))))))))));
+    Card  *card = (((Card__ItemRef__9536__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9536__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9536__31), 5, 3, 5, (new Card__singleAttack((Card__ItemRef__9536__31))), (new Card__demonMinion((Card__ItemRef__9536__31))), (new Card__justAbilities((Card__ItemRef__9536__31), (new Card__noCharge((Card__ItemRef__9536__31))), (new Card__noTaunt((Card__ItemRef__9536__31))), (new Card__noStealth((Card__ItemRef__9536__31))), (new Card__noUntargetable((Card__ItemRef__9536__31))), (new Card__noShield((Card__ItemRef__9536__31))), (new Card__noPoisonous((Card__ItemRef__9536__31))), (new Card__noLifesteal((Card__ItemRef__9536__31))))), (new Card__specialEffects((Card__ItemRef__9536__31), (new Card__noTargetedPlayEff((Card__ItemRef__9536__31))), (new Card__consOtherEffs((Card__ItemRef__9536__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9536__31), (new Card__noCondUntargetedEff((Card__ItemRef__9536__31), (new Card__randEff((Card__ItemRef__9536__31), (new Card__destroyEff((Card__ItemRef__9536__31))), (new Card__charTargetCond((Card__ItemRef__9536__31), (new Card__justCharTargetCond((Card__ItemRef__9536__31), (new Card__oppoAllegiance((Card__ItemRef__9536__31))), (new Card__isMinion((Card__ItemRef__9536__31))), (new Card__noAbilCond((Card__ItemRef__9536__31))), (new Card__atkCond((Card__ItemRef__9536__31), (new Card__statLe((Card__ItemRef__9536__31), 2)))))))))))))), (new Card__noOtherEffs((Card__ItemRef__9536__31))))))))))));
     (((card)->name) = "Stampeding Kodo");
     return (card);
   }
 }
-Card  *Card__ItemRef__9545__24;
+Card  *Card__ItemRef__9546__31;
 
 Card  *CreateSunwalker()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9545__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9545__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9545__24), 6, 4, 5, (new Card__singleAttack((Card__ItemRef__9545__24))), (new Card__dragonMinion((Card__ItemRef__9545__24))), (new Card__justAbilities((Card__ItemRef__9545__24), (new Card__noCharge((Card__ItemRef__9545__24))), (new Card__justTaunt((Card__ItemRef__9545__24))), (new Card__noStealth((Card__ItemRef__9545__24))), (new Card__noUntargetable((Card__ItemRef__9545__24))), (new Card__justShield((Card__ItemRef__9545__24))), (new Card__noPoisonous((Card__ItemRef__9545__24))), (new Card__noLifesteal((Card__ItemRef__9545__24))))), (new Card__specialEffects((Card__ItemRef__9545__24), (new Card__noTargetedPlayEff((Card__ItemRef__9545__24))), (new Card__noOtherEffs((Card__ItemRef__9545__24))))))))));
+    Card  *card = (((Card__ItemRef__9546__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9546__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9546__31), 6, 4, 5, (new Card__singleAttack((Card__ItemRef__9546__31))), (new Card__dragonMinion((Card__ItemRef__9546__31))), (new Card__justAbilities((Card__ItemRef__9546__31), (new Card__noCharge((Card__ItemRef__9546__31))), (new Card__justTaunt((Card__ItemRef__9546__31))), (new Card__noStealth((Card__ItemRef__9546__31))), (new Card__noUntargetable((Card__ItemRef__9546__31))), (new Card__justShield((Card__ItemRef__9546__31))), (new Card__noPoisonous((Card__ItemRef__9546__31))), (new Card__noLifesteal((Card__ItemRef__9546__31))))), (new Card__specialEffects((Card__ItemRef__9546__31), (new Card__noTargetedPlayEff((Card__ItemRef__9546__31))), (new Card__noOtherEffs((Card__ItemRef__9546__31))))))))));
     (((card)->name) = "Sunwalker");
     return (card);
   }
 }
-Card  *Card__ItemRef__9552__24;
+Card  *Card__ItemRef__9553__31;
 
 Card  *CreateRavenholdtAssassin()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9552__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9552__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9552__24), 7, 7, 5, (new Card__singleAttack((Card__ItemRef__9552__24))), (new Card__dragonMinion((Card__ItemRef__9552__24))), (new Card__justAbilities((Card__ItemRef__9552__24), (new Card__noCharge((Card__ItemRef__9552__24))), (new Card__noTaunt((Card__ItemRef__9552__24))), (new Card__justStealth((Card__ItemRef__9552__24))), (new Card__noUntargetable((Card__ItemRef__9552__24))), (new Card__noShield((Card__ItemRef__9552__24))), (new Card__noPoisonous((Card__ItemRef__9552__24))), (new Card__noLifesteal((Card__ItemRef__9552__24))))), (new Card__specialEffects((Card__ItemRef__9552__24), (new Card__noTargetedPlayEff((Card__ItemRef__9552__24))), (new Card__noOtherEffs((Card__ItemRef__9552__24))))))))));
+    Card  *card = (((Card__ItemRef__9553__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9553__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9553__31), 7, 7, 5, (new Card__singleAttack((Card__ItemRef__9553__31))), (new Card__dragonMinion((Card__ItemRef__9553__31))), (new Card__justAbilities((Card__ItemRef__9553__31), (new Card__noCharge((Card__ItemRef__9553__31))), (new Card__noTaunt((Card__ItemRef__9553__31))), (new Card__justStealth((Card__ItemRef__9553__31))), (new Card__noUntargetable((Card__ItemRef__9553__31))), (new Card__noShield((Card__ItemRef__9553__31))), (new Card__noPoisonous((Card__ItemRef__9553__31))), (new Card__noLifesteal((Card__ItemRef__9553__31))))), (new Card__specialEffects((Card__ItemRef__9553__31), (new Card__noTargetedPlayEff((Card__ItemRef__9553__31))), (new Card__noOtherEffs((Card__ItemRef__9553__31))))))))));
     (((card)->name) = "Ravenholdt Assassin");
     return (card);
   }
 }
-Card  *Card__ItemRef__9559__24;
+Card  *Card__ItemRef__9560__31;
 
 Card  *CreateBigGameHunter()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9559__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9559__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9559__24), 4, 4, 2, (new Card__singleAttack((Card__ItemRef__9559__24))), (new Card__dragonMinion((Card__ItemRef__9559__24))), (new Card__justAbilities((Card__ItemRef__9559__24), (new Card__noCharge((Card__ItemRef__9559__24))), (new Card__noTaunt((Card__ItemRef__9559__24))), (new Card__noStealth((Card__ItemRef__9559__24))), (new Card__noUntargetable((Card__ItemRef__9559__24))), (new Card__noShield((Card__ItemRef__9559__24))), (new Card__noPoisonous((Card__ItemRef__9559__24))), (new Card__noLifesteal((Card__ItemRef__9559__24))))), (new Card__specialEffects((Card__ItemRef__9559__24), (new Card__targetedBattlecryEff((Card__ItemRef__9559__24), (new Card__noCondTargetedEff((Card__ItemRef__9559__24), (new Card__destroyEff((Card__ItemRef__9559__24))), (new Card__charTargetCond((Card__ItemRef__9559__24), (new Card__justCharTargetCond((Card__ItemRef__9559__24), (new Card__anyAllegiance((Card__ItemRef__9559__24))), (new Card__isMinion((Card__ItemRef__9559__24))), (new Card__noAbilCond((Card__ItemRef__9559__24))), (new Card__atkCond((Card__ItemRef__9559__24), (new Card__statGe((Card__ItemRef__9559__24), 7)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9559__24))))))))));
+    Card  *card = (((Card__ItemRef__9560__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9560__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9560__31), 4, 4, 2, (new Card__singleAttack((Card__ItemRef__9560__31))), (new Card__dragonMinion((Card__ItemRef__9560__31))), (new Card__justAbilities((Card__ItemRef__9560__31), (new Card__noCharge((Card__ItemRef__9560__31))), (new Card__noTaunt((Card__ItemRef__9560__31))), (new Card__noStealth((Card__ItemRef__9560__31))), (new Card__noUntargetable((Card__ItemRef__9560__31))), (new Card__noShield((Card__ItemRef__9560__31))), (new Card__noPoisonous((Card__ItemRef__9560__31))), (new Card__noLifesteal((Card__ItemRef__9560__31))))), (new Card__specialEffects((Card__ItemRef__9560__31), (new Card__targetedBattlecryEff((Card__ItemRef__9560__31), (new Card__noCondTargetedEff((Card__ItemRef__9560__31), (new Card__destroyEff((Card__ItemRef__9560__31))), (new Card__charTargetCond((Card__ItemRef__9560__31), (new Card__justCharTargetCond((Card__ItemRef__9560__31), (new Card__anyAllegiance((Card__ItemRef__9560__31))), (new Card__isMinion((Card__ItemRef__9560__31))), (new Card__noAbilCond((Card__ItemRef__9560__31))), (new Card__atkCond((Card__ItemRef__9560__31), (new Card__statGe((Card__ItemRef__9560__31), 7)))))))))))), (new Card__noOtherEffs((Card__ItemRef__9560__31))))))))));
     (((card)->name) = "Big Game Hunter");
     return (card);
   }
 }
-Card  *Card__ItemRef__9568__25;
-Card  *Card__ItemRef__9572__24;
+Card  *Card__ItemRef__9569__32;
+Card  *Card__ItemRef__9573__31;
 
 Card  *CreateKingMukla()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9568__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9568__25)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9568__25), 1, (new Card__justAbilities((Card__ItemRef__9568__25), (new Card__noCharge((Card__ItemRef__9568__25))), (new Card__noTaunt((Card__ItemRef__9568__25))), (new Card__noStealth((Card__ItemRef__9568__25))), (new Card__noUntargetable((Card__ItemRef__9568__25))), (new Card__noShield((Card__ItemRef__9568__25))), (new Card__noPoisonous((Card__ItemRef__9568__25))), (new Card__noLifesteal((Card__ItemRef__9568__25))))), (new Card__specialEffects((Card__ItemRef__9568__25), (new Card__targetedCastEff((Card__ItemRef__9568__25), (new Card__noCondTargetedEff((Card__ItemRef__9568__25), (new Card__atkHpModEff((Card__ItemRef__9568__25), 1, 1)), (new Card__charTargetCond((Card__ItemRef__9568__25), (new Card__justCharTargetCond((Card__ItemRef__9568__25), (new Card__anyAllegiance((Card__ItemRef__9568__25))), (new Card__isMinion((Card__ItemRef__9568__25))), (new Card__noAbilCond((Card__ItemRef__9568__25))), (new Card__noStatCond((Card__ItemRef__9568__25))))))))))), (new Card__noOtherEffs((Card__ItemRef__9568__25))))))))));
+    Card  *token = (((Card__ItemRef__9569__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9569__32)->Item__Constructor)((new Card__spellCard((Card__ItemRef__9569__32), 1, (new Card__justAbilities((Card__ItemRef__9569__32), (new Card__noCharge((Card__ItemRef__9569__32))), (new Card__noTaunt((Card__ItemRef__9569__32))), (new Card__noStealth((Card__ItemRef__9569__32))), (new Card__noUntargetable((Card__ItemRef__9569__32))), (new Card__noShield((Card__ItemRef__9569__32))), (new Card__noPoisonous((Card__ItemRef__9569__32))), (new Card__noLifesteal((Card__ItemRef__9569__32))))), (new Card__specialEffects((Card__ItemRef__9569__32), (new Card__targetedCastEff((Card__ItemRef__9569__32), (new Card__noCondTargetedEff((Card__ItemRef__9569__32), (new Card__atkHpModEff((Card__ItemRef__9569__32), 1, 1)), (new Card__charTargetCond((Card__ItemRef__9569__32), (new Card__justCharTargetCond((Card__ItemRef__9569__32), (new Card__anyAllegiance((Card__ItemRef__9569__32))), (new Card__isMinion((Card__ItemRef__9569__32))), (new Card__noAbilCond((Card__ItemRef__9569__32))), (new Card__noStatCond((Card__ItemRef__9569__32))))))))))), (new Card__noOtherEffs((Card__ItemRef__9569__32))))))))));
     (((token)->name) = "Bananas");
-    Card  *card = (((Card__ItemRef__9572__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9572__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9572__24), 3, 5, 5, (new Card__singleAttack((Card__ItemRef__9572__24))), (new Card__beastMinion((Card__ItemRef__9572__24))), (new Card__justAbilities((Card__ItemRef__9572__24), (new Card__noCharge((Card__ItemRef__9572__24))), (new Card__noTaunt((Card__ItemRef__9572__24))), (new Card__noStealth((Card__ItemRef__9572__24))), (new Card__noUntargetable((Card__ItemRef__9572__24))), (new Card__noShield((Card__ItemRef__9572__24))), (new Card__noPoisonous((Card__ItemRef__9572__24))), (new Card__noLifesteal((Card__ItemRef__9572__24))))), (new Card__specialEffects((Card__ItemRef__9572__24), (new Card__noTargetedPlayEff((Card__ItemRef__9572__24))), (new Card__consOtherEffs((Card__ItemRef__9572__24), (new Card__untargetedBattlecryEff((Card__ItemRef__9572__24), (new Card__noCondUntargetedEff((Card__ItemRef__9572__24), (new Card__newEff((Card__ItemRef__9572__24), 2, (new Card__handDest((Card__ItemRef__9572__24), (new Card__oppoAllegiance((Card__ItemRef__9572__24))))), (new Card__fixedCard((Card__ItemRef__9572__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9572__24))))))))))));
+    Card  *card = (((Card__ItemRef__9573__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9573__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9573__31), 3, 5, 5, (new Card__singleAttack((Card__ItemRef__9573__31))), (new Card__beastMinion((Card__ItemRef__9573__31))), (new Card__justAbilities((Card__ItemRef__9573__31), (new Card__noCharge((Card__ItemRef__9573__31))), (new Card__noTaunt((Card__ItemRef__9573__31))), (new Card__noStealth((Card__ItemRef__9573__31))), (new Card__noUntargetable((Card__ItemRef__9573__31))), (new Card__noShield((Card__ItemRef__9573__31))), (new Card__noPoisonous((Card__ItemRef__9573__31))), (new Card__noLifesteal((Card__ItemRef__9573__31))))), (new Card__specialEffects((Card__ItemRef__9573__31), (new Card__noTargetedPlayEff((Card__ItemRef__9573__31))), (new Card__consOtherEffs((Card__ItemRef__9573__31), (new Card__untargetedBattlecryEff((Card__ItemRef__9573__31), (new Card__noCondUntargetedEff((Card__ItemRef__9573__31), (new Card__newEff((Card__ItemRef__9573__31), 2, (new Card__handDest((Card__ItemRef__9573__31), (new Card__oppoAllegiance((Card__ItemRef__9573__31))))), (new Card__fixedCard((Card__ItemRef__9573__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9573__31))))))))))));
     (((card)->name) = "King Mukla");
     return (card);
   }
 }
-Card  *Card__ItemRef__9582__25;
-Card  *Card__ItemRef__9584__24;
+Card  *Card__ItemRef__9583__32;
+Card  *Card__ItemRef__9585__31;
 
 Card  *CreateCairneBloodhoof()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9582__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9582__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9582__25), 5, 5, 5, (new Card__singleAttack((Card__ItemRef__9582__25))), (new Card__beastMinion((Card__ItemRef__9582__25))), (new Card__justAbilities((Card__ItemRef__9582__25), (new Card__noCharge((Card__ItemRef__9582__25))), (new Card__noTaunt((Card__ItemRef__9582__25))), (new Card__noStealth((Card__ItemRef__9582__25))), (new Card__noUntargetable((Card__ItemRef__9582__25))), (new Card__noShield((Card__ItemRef__9582__25))), (new Card__noPoisonous((Card__ItemRef__9582__25))), (new Card__noLifesteal((Card__ItemRef__9582__25))))), (new Card__specialEffects((Card__ItemRef__9582__25), (new Card__noTargetedPlayEff((Card__ItemRef__9582__25))), (new Card__noOtherEffs((Card__ItemRef__9582__25))))))))));
+    Card  *token = (((Card__ItemRef__9583__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9583__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9583__32), 5, 5, 5, (new Card__singleAttack((Card__ItemRef__9583__32))), (new Card__beastMinion((Card__ItemRef__9583__32))), (new Card__justAbilities((Card__ItemRef__9583__32), (new Card__noCharge((Card__ItemRef__9583__32))), (new Card__noTaunt((Card__ItemRef__9583__32))), (new Card__noStealth((Card__ItemRef__9583__32))), (new Card__noUntargetable((Card__ItemRef__9583__32))), (new Card__noShield((Card__ItemRef__9583__32))), (new Card__noPoisonous((Card__ItemRef__9583__32))), (new Card__noLifesteal((Card__ItemRef__9583__32))))), (new Card__specialEffects((Card__ItemRef__9583__32), (new Card__noTargetedPlayEff((Card__ItemRef__9583__32))), (new Card__noOtherEffs((Card__ItemRef__9583__32))))))))));
     (((token)->name) = "Baine Bloodhoof");
-    Card  *card = (((Card__ItemRef__9584__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9584__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9584__24), 6, 5, 5, (new Card__singleAttack((Card__ItemRef__9584__24))), (new Card__beastMinion((Card__ItemRef__9584__24))), (new Card__justAbilities((Card__ItemRef__9584__24), (new Card__noCharge((Card__ItemRef__9584__24))), (new Card__noTaunt((Card__ItemRef__9584__24))), (new Card__noStealth((Card__ItemRef__9584__24))), (new Card__noUntargetable((Card__ItemRef__9584__24))), (new Card__noShield((Card__ItemRef__9584__24))), (new Card__noPoisonous((Card__ItemRef__9584__24))), (new Card__noLifesteal((Card__ItemRef__9584__24))))), (new Card__specialEffects((Card__ItemRef__9584__24), (new Card__noTargetedPlayEff((Card__ItemRef__9584__24))), (new Card__consOtherEffs((Card__ItemRef__9584__24), (new Card__deathrattleEff((Card__ItemRef__9584__24), (new Card__noCondUntargetedEff((Card__ItemRef__9584__24), (new Card__newEff((Card__ItemRef__9584__24), 1, (new Card__fieldDest((Card__ItemRef__9584__24), (new Card__allyAllegiance((Card__ItemRef__9584__24))))), (new Card__plainMinion((Card__ItemRef__9584__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9584__24))))))))))));
+    Card  *card = (((Card__ItemRef__9585__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9585__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9585__31), 6, 5, 5, (new Card__singleAttack((Card__ItemRef__9585__31))), (new Card__beastMinion((Card__ItemRef__9585__31))), (new Card__justAbilities((Card__ItemRef__9585__31), (new Card__noCharge((Card__ItemRef__9585__31))), (new Card__noTaunt((Card__ItemRef__9585__31))), (new Card__noStealth((Card__ItemRef__9585__31))), (new Card__noUntargetable((Card__ItemRef__9585__31))), (new Card__noShield((Card__ItemRef__9585__31))), (new Card__noPoisonous((Card__ItemRef__9585__31))), (new Card__noLifesteal((Card__ItemRef__9585__31))))), (new Card__specialEffects((Card__ItemRef__9585__31), (new Card__noTargetedPlayEff((Card__ItemRef__9585__31))), (new Card__consOtherEffs((Card__ItemRef__9585__31), (new Card__deathrattleEff((Card__ItemRef__9585__31), (new Card__noCondUntargetedEff((Card__ItemRef__9585__31), (new Card__newEff((Card__ItemRef__9585__31), 1, (new Card__fieldDest((Card__ItemRef__9585__31), (new Card__allyAllegiance((Card__ItemRef__9585__31))))), (new Card__plainMinion((Card__ItemRef__9585__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9585__31))))))))))));
     (((card)->name) = "CairneBloodhoof");
     return (card);
   }
 }
-Card  *Card__ItemRef__9594__25;
-Card  *Card__ItemRef__9596__24;
+Card  *Card__ItemRef__9595__32;
+Card  *Card__ItemRef__9597__31;
 
 Card  *CreateHogger()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9594__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9594__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9594__25), 2, 2, 2, (new Card__singleAttack((Card__ItemRef__9594__25))), (new Card__beastMinion((Card__ItemRef__9594__25))), (new Card__justAbilities((Card__ItemRef__9594__25), (new Card__noCharge((Card__ItemRef__9594__25))), (new Card__justTaunt((Card__ItemRef__9594__25))), (new Card__noStealth((Card__ItemRef__9594__25))), (new Card__noUntargetable((Card__ItemRef__9594__25))), (new Card__noShield((Card__ItemRef__9594__25))), (new Card__noPoisonous((Card__ItemRef__9594__25))), (new Card__noLifesteal((Card__ItemRef__9594__25))))), (new Card__specialEffects((Card__ItemRef__9594__25), (new Card__noTargetedPlayEff((Card__ItemRef__9594__25))), (new Card__noOtherEffs((Card__ItemRef__9594__25))))))))));
+    Card  *token = (((Card__ItemRef__9595__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9595__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9595__32), 2, 2, 2, (new Card__singleAttack((Card__ItemRef__9595__32))), (new Card__beastMinion((Card__ItemRef__9595__32))), (new Card__justAbilities((Card__ItemRef__9595__32), (new Card__noCharge((Card__ItemRef__9595__32))), (new Card__justTaunt((Card__ItemRef__9595__32))), (new Card__noStealth((Card__ItemRef__9595__32))), (new Card__noUntargetable((Card__ItemRef__9595__32))), (new Card__noShield((Card__ItemRef__9595__32))), (new Card__noPoisonous((Card__ItemRef__9595__32))), (new Card__noLifesteal((Card__ItemRef__9595__32))))), (new Card__specialEffects((Card__ItemRef__9595__32), (new Card__noTargetedPlayEff((Card__ItemRef__9595__32))), (new Card__noOtherEffs((Card__ItemRef__9595__32))))))))));
     (((token)->name) = "Gnoll");
-    Card  *card = (((Card__ItemRef__9596__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9596__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9596__24), 6, 4, 4, (new Card__singleAttack((Card__ItemRef__9596__24))), (new Card__beastMinion((Card__ItemRef__9596__24))), (new Card__justAbilities((Card__ItemRef__9596__24), (new Card__noCharge((Card__ItemRef__9596__24))), (new Card__noTaunt((Card__ItemRef__9596__24))), (new Card__noStealth((Card__ItemRef__9596__24))), (new Card__noUntargetable((Card__ItemRef__9596__24))), (new Card__noShield((Card__ItemRef__9596__24))), (new Card__noPoisonous((Card__ItemRef__9596__24))), (new Card__noLifesteal((Card__ItemRef__9596__24))))), (new Card__specialEffects((Card__ItemRef__9596__24), (new Card__noTargetedPlayEff((Card__ItemRef__9596__24))), (new Card__consOtherEffs((Card__ItemRef__9596__24), (new Card__turnEndEff((Card__ItemRef__9596__24), (new Card__srcCondUntargetedEff((Card__ItemRef__9596__24), (new Card__newEff((Card__ItemRef__9596__24), 1, (new Card__fieldDest((Card__ItemRef__9596__24), (new Card__allyAllegiance((Card__ItemRef__9596__24))))), (new Card__plainMinion((Card__ItemRef__9596__24), (token))))), (new Card__charTargetCond((Card__ItemRef__9596__24), (new Card__justCharTargetCond((Card__ItemRef__9596__24), (new Card__anyAllegiance((Card__ItemRef__9596__24))), (new Card__isCharacter((Card__ItemRef__9596__24))), (new Card__noAbilCond((Card__ItemRef__9596__24))), (new Card__noStatCond((Card__ItemRef__9596__24))))))))), (new Card__allyAllegiance((Card__ItemRef__9596__24))))), (new Card__noOtherEffs((Card__ItemRef__9596__24))))))))))));
+    Card  *card = (((Card__ItemRef__9597__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9597__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9597__31), 6, 4, 4, (new Card__singleAttack((Card__ItemRef__9597__31))), (new Card__beastMinion((Card__ItemRef__9597__31))), (new Card__justAbilities((Card__ItemRef__9597__31), (new Card__noCharge((Card__ItemRef__9597__31))), (new Card__noTaunt((Card__ItemRef__9597__31))), (new Card__noStealth((Card__ItemRef__9597__31))), (new Card__noUntargetable((Card__ItemRef__9597__31))), (new Card__noShield((Card__ItemRef__9597__31))), (new Card__noPoisonous((Card__ItemRef__9597__31))), (new Card__noLifesteal((Card__ItemRef__9597__31))))), (new Card__specialEffects((Card__ItemRef__9597__31), (new Card__noTargetedPlayEff((Card__ItemRef__9597__31))), (new Card__consOtherEffs((Card__ItemRef__9597__31), (new Card__turnEndEff((Card__ItemRef__9597__31), (new Card__srcCondUntargetedEff((Card__ItemRef__9597__31), (new Card__newEff((Card__ItemRef__9597__31), 1, (new Card__fieldDest((Card__ItemRef__9597__31), (new Card__allyAllegiance((Card__ItemRef__9597__31))))), (new Card__plainMinion((Card__ItemRef__9597__31), (token))))), (new Card__charTargetCond((Card__ItemRef__9597__31), (new Card__justCharTargetCond((Card__ItemRef__9597__31), (new Card__anyAllegiance((Card__ItemRef__9597__31))), (new Card__isCharacter((Card__ItemRef__9597__31))), (new Card__noAbilCond((Card__ItemRef__9597__31))), (new Card__noStatCond((Card__ItemRef__9597__31))))))))), (new Card__allyAllegiance((Card__ItemRef__9597__31))))), (new Card__noOtherEffs((Card__ItemRef__9597__31))))))))))));
     (((card)->name) = "Hogger");
     return (card);
   }
 }
-Card  *Card__ItemRef__9606__25;
-Card  *Card__ItemRef__9608__24;
+Card  *Card__ItemRef__9607__32;
+Card  *Card__ItemRef__9609__31;
 
 Card  *CreateTheBeast()
 {
 
   {
-    Card  *token = (((Card__ItemRef__9606__25) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9606__25)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9606__25), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__9606__25))), (new Card__beastMinion((Card__ItemRef__9606__25))), (new Card__justAbilities((Card__ItemRef__9606__25), (new Card__noCharge((Card__ItemRef__9606__25))), (new Card__noTaunt((Card__ItemRef__9606__25))), (new Card__noStealth((Card__ItemRef__9606__25))), (new Card__noUntargetable((Card__ItemRef__9606__25))), (new Card__noShield((Card__ItemRef__9606__25))), (new Card__noPoisonous((Card__ItemRef__9606__25))), (new Card__noLifesteal((Card__ItemRef__9606__25))))), (new Card__specialEffects((Card__ItemRef__9606__25), (new Card__noTargetedPlayEff((Card__ItemRef__9606__25))), (new Card__noOtherEffs((Card__ItemRef__9606__25))))))))));
+    Card  *token = (((Card__ItemRef__9607__32) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9607__32)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9607__32), 3, 3, 3, (new Card__singleAttack((Card__ItemRef__9607__32))), (new Card__beastMinion((Card__ItemRef__9607__32))), (new Card__justAbilities((Card__ItemRef__9607__32), (new Card__noCharge((Card__ItemRef__9607__32))), (new Card__noTaunt((Card__ItemRef__9607__32))), (new Card__noStealth((Card__ItemRef__9607__32))), (new Card__noUntargetable((Card__ItemRef__9607__32))), (new Card__noShield((Card__ItemRef__9607__32))), (new Card__noPoisonous((Card__ItemRef__9607__32))), (new Card__noLifesteal((Card__ItemRef__9607__32))))), (new Card__specialEffects((Card__ItemRef__9607__32), (new Card__noTargetedPlayEff((Card__ItemRef__9607__32))), (new Card__noOtherEffs((Card__ItemRef__9607__32))))))))));
     (((token)->name) = "Finkle Einhorn");
-    Card  *card = (((Card__ItemRef__9608__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9608__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9608__24), 6, 9, 7, (new Card__singleAttack((Card__ItemRef__9608__24))), (new Card__beastMinion((Card__ItemRef__9608__24))), (new Card__justAbilities((Card__ItemRef__9608__24), (new Card__noCharge((Card__ItemRef__9608__24))), (new Card__noTaunt((Card__ItemRef__9608__24))), (new Card__noStealth((Card__ItemRef__9608__24))), (new Card__noUntargetable((Card__ItemRef__9608__24))), (new Card__noShield((Card__ItemRef__9608__24))), (new Card__noPoisonous((Card__ItemRef__9608__24))), (new Card__noLifesteal((Card__ItemRef__9608__24))))), (new Card__specialEffects((Card__ItemRef__9608__24), (new Card__noTargetedPlayEff((Card__ItemRef__9608__24))), (new Card__consOtherEffs((Card__ItemRef__9608__24), (new Card__deathrattleEff((Card__ItemRef__9608__24), (new Card__noCondUntargetedEff((Card__ItemRef__9608__24), (new Card__newEff((Card__ItemRef__9608__24), 1, (new Card__fieldDest((Card__ItemRef__9608__24), (new Card__oppoAllegiance((Card__ItemRef__9608__24))))), (new Card__plainMinion((Card__ItemRef__9608__24), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9608__24))))))))))));
+    Card  *card = (((Card__ItemRef__9609__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9609__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9609__31), 6, 9, 7, (new Card__singleAttack((Card__ItemRef__9609__31))), (new Card__beastMinion((Card__ItemRef__9609__31))), (new Card__justAbilities((Card__ItemRef__9609__31), (new Card__noCharge((Card__ItemRef__9609__31))), (new Card__noTaunt((Card__ItemRef__9609__31))), (new Card__noStealth((Card__ItemRef__9609__31))), (new Card__noUntargetable((Card__ItemRef__9609__31))), (new Card__noShield((Card__ItemRef__9609__31))), (new Card__noPoisonous((Card__ItemRef__9609__31))), (new Card__noLifesteal((Card__ItemRef__9609__31))))), (new Card__specialEffects((Card__ItemRef__9609__31), (new Card__noTargetedPlayEff((Card__ItemRef__9609__31))), (new Card__consOtherEffs((Card__ItemRef__9609__31), (new Card__deathrattleEff((Card__ItemRef__9609__31), (new Card__noCondUntargetedEff((Card__ItemRef__9609__31), (new Card__newEff((Card__ItemRef__9609__31), 1, (new Card__fieldDest((Card__ItemRef__9609__31), (new Card__oppoAllegiance((Card__ItemRef__9609__31))))), (new Card__plainMinion((Card__ItemRef__9609__31), (token))))))))), (new Card__noOtherEffs((Card__ItemRef__9609__31))))))))))));
     (((card)->name) = "The Beast");
     return (card);
   }
 }
-Card  *Card__ItemRef__9618__24;
+Card  *Card__ItemRef__9619__31;
 
 Card  *CreateTheBlackKnight()
 {
 
   {
-    Card  *card = (((Card__ItemRef__9618__24) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9618__24)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9618__24), 6, 4, 5, (new Card__singleAttack((Card__ItemRef__9618__24))), (new Card__dragonMinion((Card__ItemRef__9618__24))), (new Card__justAbilities((Card__ItemRef__9618__24), (new Card__noCharge((Card__ItemRef__9618__24))), (new Card__noTaunt((Card__ItemRef__9618__24))), (new Card__noStealth((Card__ItemRef__9618__24))), (new Card__noUntargetable((Card__ItemRef__9618__24))), (new Card__noShield((Card__ItemRef__9618__24))), (new Card__noPoisonous((Card__ItemRef__9618__24))), (new Card__noLifesteal((Card__ItemRef__9618__24))))), (new Card__specialEffects((Card__ItemRef__9618__24), (new Card__targetedBattlecryEff((Card__ItemRef__9618__24), (new Card__noCondTargetedEff((Card__ItemRef__9618__24), (new Card__destroyEff((Card__ItemRef__9618__24))), (new Card__charTargetCond((Card__ItemRef__9618__24), (new Card__justCharTargetCond((Card__ItemRef__9618__24), (new Card__oppoAllegiance((Card__ItemRef__9618__24))), (new Card__isMinion((Card__ItemRef__9618__24))), (new Card__tauntCond((Card__ItemRef__9618__24))), (new Card__noStatCond((Card__ItemRef__9618__24))))))))))), (new Card__noOtherEffs((Card__ItemRef__9618__24))))))))));
+    Card  *card = (((Card__ItemRef__9619__31) = (new Card(((GetDefaultGenConfig)((-1), 0))))) , (((Card__ItemRef__9619__31)->Item__Constructor)((new Card__minionCard((Card__ItemRef__9619__31), 6, 4, 5, (new Card__singleAttack((Card__ItemRef__9619__31))), (new Card__dragonMinion((Card__ItemRef__9619__31))), (new Card__justAbilities((Card__ItemRef__9619__31), (new Card__noCharge((Card__ItemRef__9619__31))), (new Card__noTaunt((Card__ItemRef__9619__31))), (new Card__noStealth((Card__ItemRef__9619__31))), (new Card__noUntargetable((Card__ItemRef__9619__31))), (new Card__noShield((Card__ItemRef__9619__31))), (new Card__noPoisonous((Card__ItemRef__9619__31))), (new Card__noLifesteal((Card__ItemRef__9619__31))))), (new Card__specialEffects((Card__ItemRef__9619__31), (new Card__targetedBattlecryEff((Card__ItemRef__9619__31), (new Card__noCondTargetedEff((Card__ItemRef__9619__31), (new Card__destroyEff((Card__ItemRef__9619__31))), (new Card__charTargetCond((Card__ItemRef__9619__31), (new Card__justCharTargetCond((Card__ItemRef__9619__31), (new Card__oppoAllegiance((Card__ItemRef__9619__31))), (new Card__isMinion((Card__ItemRef__9619__31))), (new Card__tauntCond((Card__ItemRef__9619__31))), (new Card__noStatCond((Card__ItemRef__9619__31))))))))))), (new Card__noOtherEffs((Card__ItemRef__9619__31))))))))));
     (((card)->name) = "The Black Knight");
     return (card);
   }
