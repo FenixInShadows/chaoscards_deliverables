@@ -1,27 +1,31 @@
 This file contains the instruction for controls when running the demo. The information is also included on the website https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls (the website version has more demonstrations).
 
+
 ## Demo Modes
 
 When running the demo, the first thing you are prompted with is selecting the mode to run. Each mode provide a different functionality of the program. Here is the list.
 
 0. Randomly generate and display cards.
 
-1. Generate cards with specified seeds. The seed to generate a card is used in the name of card, so this mode can help revisiting some cards seen in other modes. Note that as RNG is system/compiler dependent. If a card is generated on a machine and read into the program from another machine (e.g. ones in mode 6 and 7), the number in the card name may not guarantee recovering the same card.
+1.  Generate cards with specified seeds. The seed to generate a card is used in the name of card, so this mode can help revisiting some cards seen in other modes. Note that as RNG is system/compiler dependent. If a card is generated on a machine and read into the program from another machine (e.g. ones in mode 6 and 7), the number in the card name may not guarantee recovering the same card.
 
-2. Playing with AI using randomly generated decks.
+2. Play against AI using decks generated freely or with specified seeds (card pool unknown; directly generating cards for decks).
 
-3. Playing with yourself using randomly generated decks.
+3. Play against yourself with decks generated freely or with specified seeds (card pool unknown; directly generating cards for decks).
 
-4. Simulating AI vs AI matches on the same set of random decks, used to test relative AI strengths. This takes very long (hours to days depending on the spec).
+4. Simulate AI Vs AI matches between (different) AI's on the same set of random decks based on a card pool (Warning: this can be long simulation depending on spec).
 
-5. Simulating AI (same AI) matches to evaluate card and decks (starting with a random card pool of 1000 cards), with both a random deck building scheme (random environment) or an evolutionary deck building scheme (meta environment). This is one main part of simulation done for the paper. This takes very long (hours to days depending on the spec). The output data files from one of the runs is provided, so that other modes (6 and 7) may directly use them without re-running this long simulation. Data files containing "human" in the name may make sense to be read. They contains the testing results for cards in the random environment and meta environment respectively.
+5. Simulate AI Vs AI matches (with same AI) for evaluating cards (decks) on the same card pool with both random and evolutionary deck building/matching scheme (Warning: this can be long simulation depending on spec). The output data files from one of the runs is provided, so that other modes (6 and 7) may directly use them without re-running this long simulation. Data files containing "human" in the name may make sense to be read. They contains the testing results for cards in the random environment and meta environment respectively.
 
-6. Simulating AI (same AI) matches between the meta decks (produced by the evolutionary simulation in mode 5) and the top 1% random decks (produced by the random simulation in mode 5). Both set of decks contains 30 decks, and the decks are matched pairwise and each pair is repeated for multiple times. The result is expected to be an overwhelming win for the meta decks. This takes very long (hours to days depending on the spec).
+6.Simulate AI Vs AI matches (with same AI) between different two sets of given decks on the same card pool (Warning: this can be long simulation depending on spec). Both set of decks contains 10 decks, and the decks are matched pairwise and each pair is repeated for multiple times, and the pairwise win rate gets output to a text file like a matrix. The result is expected to be an overwhelming win for the meta decks. 
 
-7. Playing with AI using either the meta decks (from mode 5) or the top 1% random decks (from mode 5). This give a directly feeling on how much better the evolutionary scheme does on evaluating good cards, as the meta decks isn't a simple concentration of what's good from the random decks. Certain utility centered or strategic cards are just not present in the top random decks, but is involved in the meta decks a lot, especially the top meta decks. This is related to one of the claims in the paper, i.e. game environment/context is very important for evaluating cards (and decks).
+7. Playing with AI using either the 10 meta decks (from mode 5) or the top 10 random decks (from mode 5) for the optimized set in the thesis. This give a directly feeling on how much better the evolutionary scheme does on evaluating good cards. This is related to one of the claims in the poster paper and the thesis, i.e. game environment/context is very important for evaluating cards (and decks).
 
-We recommend trying out mode 0, 2 and 7, and they are short to run. Mode 7 would be fun in that you can feel what it means to overwhelm your opponent, when you select a meta deck and the AI selects a top random deck (if you played some Hearthstone or other such games alike), or feel what it means to be overwhelmed by your opponent, when you do the opposite (if the ai level is decent, say >= 2).
+8. Test a card pool in terms of balance (Warning: this can be long simulation depending on spec).
 
+9.  Produce an html file for a given card pool. The output contains an html file which can be viewed by browsers.
+
+We recommend trying out mode 0, 2, 7, 9 and they are short and interactive to run. In Mode 7 you would generally expect to feel meta decks to be stronger (may be of similar strengths in rare cases) than top random decks, even given that the the random environment tried much more decks and matches.
 
 
 ## Game Control Commands
