@@ -26,13 +26,13 @@ The demo should have the compilation pipeline mostly setup. We separately made t
 
 ## Compilation Guides for Windows (Visual Studio)
 
-1. Load the solution file (ChaosCards.sln) using Visual Studio, check the compilation configuration mode is proper (Release/Debug, x86/x64).
+1. Load the solution file (ChaosCards.sln) using Visual Studio (originally created in Visual Studio 2019, may be upgradedable to later versions), check the compilation configuration mode is proper (Release/Debug, x86/x64). 
 
 2. Compile from Visual Studio. You may direct run from Visual Studio, or find the executable at wherever Visual Studio put it (but make sure also to copy the txt files to where the executable is, if running modes requiring reading data).
 
 3. In case some error occurs with messages like "Command CL is not found", try the following. Set up the path and environment variables for Visual Studio by starting "Developer Command Prompt for VSXXXX" (XXXX is the version of Visual Studio; this step can alternatively be changing the directory to the Visual Studio installation directory by normally starting "cmd"), then enter the command "vcvarsall x86" (or "vcvarsall x86_amd64" if the target platform is x64).
 
-4. In case of GIGL failure, select Release_SkipGigl or Debug_SkipGigl for the compilation configuration mode to skip the process of translating from "card.xc", but rather directly using the existing "card.generated.h" for compilation.
+4. In case of GIGL failure, select Release_SkipGigl or Debug_SkipGigl for the compilation configuration mode to skip the process of translating from "card.xc", but rather directly using the existing "card.generated.h" for compilation. If you have not changed card.xc and but changed other source files, you may also use these modes to compile to be a little faster.
 
 
 ## Compilation for Unix (g++)
