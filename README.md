@@ -15,13 +15,13 @@ The demo should have the compilation pipeline mostly setup. We separately made t
 
 * In Chaos Cards source directory, there are several text files (e.g. "match_card_data_evolved.txt") which are data produced by simulations. They are not needed for compilation, but some are needed for running certain modes of the demo without running other long simulations first.  These files has their copies in the separate executable folder for convenience of running.
 
-* If interested in more details about how GIGL works and wanting to set up the compilation pipeline from scratch, please refer to [Here].
+* If interested in more details about how GIGL works and wanting to set up the compilation pipeline from scratch, please refer to https://sites.google.com/a/umn.edu/grammatical-item-generation-language/downloads-and-instructions.
 
-* For running certain modes of the demo, you may want to disable most of the console outputs (e.g. the detailed game states for a large scale automated simulation). Due to having GIGL in the pipeline, we did not have a very nice way except that, we can suggesting un-commenting the "#define SUPPRESS_MATCH_PROMPTS" row at the start of both "card.xc" and "Player.h" and re-compile (in this case the outputs for game states are disabled, which wouldn't be good for human playing the game).
+* For running certain modes of the demo, you may want to disable most of the console outputs (e.g. the detailed game states for a large scale automated simulation). Due to having GIGL in the pipeline, we did not have a very nice way except that, we can suggesting un-commenting the "#define SUPPRESS_MATCH_PROMPTS" macro at the start of both "card.xc" and "Player.h" and re-compile (in this case the outputs for game states are disabled, which wouldn't be good for human playing the game).
 
-* In case the GIGL translation fails, or it needs to be skipped for some reason, the provided "card.generated.h" can be directly used for compilation (in which case JRE will not be needed either). In this case, make sure "card.generated.h" is not damaged or removed (if it is then revert). The downside is "card.generated.h" is less human readable (it is a machine generated file) as a source file. In addition, the modification in the entry above (#8) would not be effective if the GIGL part is skipped, as the provided "card.generated.h" was produced without that macro defined, and all macros are already preprocessed there. See the guides below for Windows and Unix for how the skip the GIGL part respectively for each case.
+* In case the GIGL translation fails, or it needs to be skipped for some reason, the provided "card.generated.h" can be directly used for compilation (in which case JRE will not be needed either). In this case, make sure "card.generated.h" is not damaged or removed (if it is then revert). The downside is "card.generated.h" is less human readable (it is a machine generated file) as a source file. In addition, the modification in the entry above (about the macro) would not be effective if the GIGL part is skipped, as the provided "card.generated.h" was produced without that macro defined, and all macros are already preprocessed there. See the guides below for Windows and Unix for how the skip the GIGL part respectively for each case.
 
-* The guides for I/O controls when running the demo can be seen [Here].
+* The guides for I/O controls when running the demo can be seen https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls.
 
 
 ## Compilation Guides for Windows (Visual Studio)
