@@ -1,6 +1,6 @@
 This repo contains the demo for Chaos Cards, a prototype research-purpose digital card game, with game rules in a similar style to Hearthstone. This file contains instructions for getting the demo running or compiling the demo, with some brief introduction on the file organization here. The information is also available on the website at https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions.
 
-The demo should have the compilation pipeline mostly setup. We separately made the executable folders (not where the compilation would put the executables) at "demo/Windows/Executables" and "demo/Unix/Executables" (along with some data file the program may need to read or some files it may output) for convenience of running. **If you are able to directly run one of those executable, and do not wish to recompile or read the source files, you can ignore the rest of the page** and directly skip to the guides for demo controls (see the "Demo Controls.md" or visiting https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls).
+The demo should have the compilation pipeline mostly setup. We separately made the executable folders (not where the compilation would put the executables) at "demo/Windows/Executables" and "demo/Unix/Executables" (along with some data file the program may need to read or some files it may output) for convenience of running. **If you are able to directly run one of those executable, and do not wish to recompile or read the source files, you can ignore the rest of the page** and directly skip to the guides for demo controls (see the **"Demo Controls.md"** or visiting https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls).
 
 
 ## Files / Compilation Basics
@@ -21,7 +21,7 @@ The demo should have the compilation pipeline mostly setup. We separately made t
 
 * In case the GIGL translation fails, or it needs to be skipped for some reason, the provided "card.generated.h" can be directly used for compilation (in which case JRE will not be needed either). In this case, make sure "card.generated.h" is not damaged or removed (if it is then revert). The downside is "card.generated.h" is less human readable (it is a machine generated file) as a source file. In addition, the modification in the entry above (about the macro) would not be effective if the GIGL part is skipped, as the provided "card.generated.h" was produced without that macro defined, and all macros are already preprocessed there. See the guides below for Windows and Unix for how the skip the GIGL part respectively for each case.
 
-* The guides for I/O controls when running the demo can be seen in "Demo Controls.md" or https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls.
+* The guides for I/O controls when running the demo can be seen in **"Demo Controls.md"** or https://sites.google.com/a/umn.edu/chaos-cards/downloads-instructions/demo-controls.
 
 
 ## Compilation Guides for Windows (Visual Studio)
